@@ -21,18 +21,18 @@
 
 	<main>
 	<section class="all-margin left">
-		<img alt="pawnShop" src="img/pawnshop.png" height="100" width="100" style="margin-bottom: 30px;">
+		<img alt="pawnshop" src="img/pawnshop.png" height="100" width="100" style="margin-bottom: 30px;">
 		<h2>สร้างบัญชีโรงรับจำนำของคุณ</h2>
 		<p>บัญชีเดียวควบคุมทุกอย่างตั้งแต่ รับจำนำยันปล่อยทรัพย์สินหลุดจำนำ</p>
 	</section>
 	<section class="all-margin">
 		<div class="sign-in-card round">
 			<h2>ลงทะเบียนโรงรับจำนำ</h2>
-			<form:form method="post" action="savePawnShop.do" commandName="pawnshop">
+			<form:form method="post" action="savePawnshop.do" commandName="pawnshop">
 				<div class="input-content">
-					<form:hidden path="pawnShopId" />
+					<form:hidden path="pawnshopId" />
 					<form:input path="licen" id="license" placeholder="เลขที่ใบอนุญาต" autofocus="autofocus" required="required"/>
-					<form:input path="pawnShopName" id="pawnShopName" placeholder="ชื่อโรงรับจำนำ" required="required"/>
+					<form:input path="pawnshopName" id="pawnshopName" placeholder="ชื่อโรงรับจำนำ" required="required"/>
 					<form:input path="address" placeholder="ที่อยู่โรงรับจำนำ" required="required"/>
 				</div>
 					
