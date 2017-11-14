@@ -1,5 +1,7 @@
 package controller;
 
+import java.util.List;
+
 import javax.ejb.EJB;
 import javax.servlet.http.HttpServletRequest;
 
@@ -37,10 +39,39 @@ public class PawnerController {
 		}return "redirect:index.do";
 	}
 	
+	@RequestMapping("/editPawner")
+	public ModelAndView editEmp(HttpServletRequest request) {
+		int paramId = Integer.parseInt(request.getParameter("id"));
+		Pawner foundPawner;
+		ModelAndView mv = new ModelAndView("pawnerForm.jsp");
+		try {
+			foundPawner = pmService.findPawnerById(paramId);
+			mv.addObject("pawner", foundPawner);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return mv;
+	}
+	
 	@RequestMapping("/deletePawner")
 	public String deletePawner(HttpServletRequest request){
 		pmService.delete(Long.valueOf(request.getParameter("id")));
 		return "redirect:listPawner.do";
 	
+	}
+	
+	@RequestMapping("/listPawner")
+	public ModelAndView listEmployee(HttpServletRequest request) {
+		ModelAndView mv = new ModelAndView("listPawner.jsp");
+		List<Pawner> pawnerList;
+		try {
+			pawnerList = pmService.getAllPawner();
+			mv.addObject("pawnerList", pawnerList);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return mv;
 	}
 }
