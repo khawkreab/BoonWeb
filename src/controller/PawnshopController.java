@@ -20,6 +20,14 @@ public class PawnshopController {
 	@EJB(mappedName = "ejb:/BoonEJB//PawnshopServiceBean!service.PawnshopService")
 	PawnshopService pawnshopServ;
 	
+	@RequestMapping("/pawnshopForm")
+	public ModelAndView newPawner(){
+		ModelAndView mv = new ModelAndView("pawnshopForm.jsp");
+		Pawnshop pawnshop = new Pawnshop();
+		mv.addObject("pawnshop" ,pawnshop);
+		return mv;
+	}
+	
 	@RequestMapping("/listPawnshop")
 	public ModelAndView listPawnshop(HttpServletRequest request){
 		ModelAndView mv = new ModelAndView("listPawnshop.jsp");
@@ -32,13 +40,13 @@ public class PawnshopController {
 		}return mv;
 	}
 	
-	@RequestMapping("/newPawnshop")
-	public ModelAndView newPawnshop(){
-		ModelAndView mv = new ModelAndView("pawnshopForm.jsp");
-		Pawnshop pawnshop = new Pawnshop();
-		mv.addObject("pawnshop",pawnshop);
-		return mv;
-	}
+//	@RequestMapping("/newPawnshop")
+//	public ModelAndView newPawnshop(){
+//		ModelAndView mv = new ModelAndView("pawnshopForm.jsp");
+//		Pawnshop pawnshop = new Pawnshop();
+//		mv.addObject("pawnshop",pawnshop);
+//		return mv;
+//	}
 	
 	@RequestMapping("/savaPawnshop")
 	public String savePawnshop(@ModelAttribute("pawnshop") Pawnshop pawnshop, BindingResult result, HttpServletRequest request){
@@ -49,7 +57,7 @@ public class PawnshopController {
 				pawnshopServ.update(pawnshop);
 			}
 		}catch (Exception e){
-		}return "redirect:index.do";
+		}return "redirect:listPawnshop.do";
 	}
 	
 	@RequestMapping("/editPawnshop")
