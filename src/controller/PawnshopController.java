@@ -1,5 +1,7 @@
 package controller;
 
+import java.util.List;
+
 import javax.ejb.EJB;
 import javax.servlet.http.HttpServletRequest;
 
@@ -17,6 +19,18 @@ public class PawnshopController {
 	
 	@EJB(mappedName = "ejb:/BoonEJB//PawnshopServiceBean!service.PawnshopService")
 	PawnshopService pawnshopServ;
+	
+	@RequestMapping("/listPawnshop")
+	public ModelAndView listPawnshop(HttpServletRequest request){
+		ModelAndView mv = new ModelAndView("listPawnshop.jsp");
+		List<Pawnshop> pawnshopList;
+		try{
+			pawnshopList = pawnshopServ.getAllPawnshop();
+			mv.addObject("pawnshopList",pawnshopList);
+		}catch (Exception e){
+			e.printStackTrace();
+		}return mv;
+	}
 	
 	@RequestMapping("/newPawnshop")
 	public ModelAndView newPawnshop(){
@@ -36,6 +50,19 @@ public class PawnshopController {
 			}
 		}catch (Exception e){
 		}return "redirect:index.do";
+	}
+	
+	@RequestMapping("/editPawnshop")
+	public ModelAndView editPawnshop(HttpServletRequest request){
+		int paramId = Integer.parseInt(request.getParameter("id"));
+		Pawnshop foundPawnshop;
+		ModelAndView mv = new ModelAndView("pawnshopForm.jsp");
+		try{
+			foundPawnshop = pawnshopServ.findPawnshopById(paramId);
+			mv.addObject("pawnshop",foundPawnshop);
+		}catch (Exception e){
+			e.printStackTrace();
+		}return mv;
 	}
 	
 	@RequestMapping("/deletePawnshop")
