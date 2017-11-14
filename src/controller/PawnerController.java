@@ -16,6 +16,7 @@ import service.PawnerService;
 
 @Controller
 public class PawnerController {
+	
 	@EJB(mappedName = "ejb:/BoonEJB//PawnerServiceBean!service.PawnerService")
 	PawnerService pmService;
 	
@@ -27,7 +28,7 @@ public class PawnerController {
 		return mv;
 	}
 	
-	@RequestMapping("/savaPawner")
+	@RequestMapping("/savePawner")
 	public String savePawnshop(@ModelAttribute("pawner") Pawner pawner, BindingResult result, HttpServletRequest request){
 		try {
 			if (pawner.getPawnerId() == 0){
@@ -36,7 +37,7 @@ public class PawnerController {
 				pmService.update(pawner);
 			}
 		}catch (Exception e){
-		}return "redirect:index.do";
+		}return "redirect:listPawner.do";
 	}
 	
 	@RequestMapping("/editPawner")
@@ -48,7 +49,6 @@ public class PawnerController {
 			foundPawner = pmService.findPawnerById(paramId);
 			mv.addObject("pawner", foundPawner);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return mv;
