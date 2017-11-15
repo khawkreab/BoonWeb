@@ -19,7 +19,6 @@
 				<td>${gold.goldPic}</td>
 				<td>${gold.goldPure}</td>
 				<td>${gold.goldWeight}</td>
-				<td><a href="proposePriceForm.do?id=${pawnshop.pawnshopId}">propose price</a></td>
 			</tr>
 		</c:forEach>
 	</table>

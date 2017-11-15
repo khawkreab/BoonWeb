@@ -14,16 +14,22 @@ import org.springframework.web.servlet.ModelAndView;
 
 import entity.Gold;
 import entity.Pawner;
+import entity.Pawnshop;
 import service.GoldService;
 import service.PawnerService;
+import service.PawnshopService;
 
 @Controller
 public class GoldController {
 	
 	@EJB(mappedName = "ejb:/BoonEJB//GoldServiceBean!service.GoldService")
 	GoldService goldService;
+	
 	@EJB(mappedName = "ejb:/BoonEJB//PawnerServiceBean!service.PawnerService")
 	PawnerService pmService;
+	
+	@EJB(mappedName = "ejb:/BoonEJB//PawnshopServiceBean!service.PawnshopService")
+	PawnshopService pawnshopServ;
 	
 	@RequestMapping("/goldForm")
 	public ModelAndView newGold(HttpServletRequest request) {
@@ -104,5 +110,34 @@ public class GoldController {
 		return mv;
 	}
 	
+	@RequestMapping("/listAllGold")
+	public ModelAndView listAllGold(HttpServletRequest request) {
+		String pawnshopId = null;
+		// check if pararameter passed
+		if (request.getParameter("id") != null) {
+			// add parameter value to session
+			pawnshopId = request.getParameter("id");
+			request.getSession().setAttribute("pawnshopId", pawnshopId);
+		} else {
+			// get parameter from session
+			pawnshopId = (String) request.getSession().getAttribute("pawnshopId");
+			System.out.println("pawnshopId " +pawnshopId);
+		}
+		ModelAndView mv = new ModelAndView("listAllGoldForPawnshop.jsp");
+		List<Gold> goldList;
+		Pawnshop shop;
+		try {
+			shop = pawnshopServ.findPawnshopById(Long.parseLong(pawnshopId));
+			goldList = goldService.getAllGold();
+			System.out.println(goldList);
+			mv.addObject("goldList", goldList);
+			mv.addObject("shop", shop);
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return mv;
+	}
 
 }

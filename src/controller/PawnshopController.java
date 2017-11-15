@@ -40,14 +40,6 @@ public class PawnshopController {
 		}return mv;
 	}
 	
-//	@RequestMapping("/newPawnshop")
-//	public ModelAndView newPawnshop(){
-//		ModelAndView mv = new ModelAndView("pawnshopForm.jsp");
-//		Pawnshop pawnshop = new Pawnshop();
-//		mv.addObject("pawnshop",pawnshop);
-//		return mv;
-//	}
-	
 	@RequestMapping("/savaPawnshop")
 	public String savePawnshop(@ModelAttribute("pawnshop") Pawnshop pawnshop, BindingResult result, HttpServletRequest request){
 		try {
