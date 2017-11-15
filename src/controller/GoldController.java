@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+
 import entity.Gold;
 import entity.Pawner;
 import service.GoldService;
@@ -71,7 +72,7 @@ public class GoldController {
 	
 	@RequestMapping("/deleteGold")
 	public String removeGold(HttpServletRequest request) {
-		String pawnerId = (String) request.getSession().getAttribute("pawnerId");
+		String pawnerId = (String) request.getSession().getAttribute("pawner");
 		long goldId = Long.parseLong(request.getParameter("id"));
 		goldService.delete(goldId);
 		return "redirect:listGold.do";
@@ -93,7 +94,8 @@ public class GoldController {
 		ModelAndView mv = new ModelAndView("listGold.jsp");
 		List<Gold> goldList;
 		try {
-			goldList = goldService.findGoldByPawner(Long.parseLong(pawnerId));
+			goldList = goldService.findGoldByPawnerId(Long.parseLong(pawnerId));
+			System.out.println(goldList);
 			mv.addObject("goldList", goldList);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -101,4 +103,6 @@ public class GoldController {
 		}
 		return mv;
 	}
+	
+
 }
