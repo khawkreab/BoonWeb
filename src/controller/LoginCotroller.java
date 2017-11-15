@@ -40,7 +40,9 @@ public class LoginCotroller {
 
 		Pawner pawner;
 		Pawnshop pawnshop;
-
+		
+		String adminName = "admin";
+		String adminPassword = "admin";
 		try {
 			pawner = pmService.findPawnerUserName(email, password);
 			if (pawner.equals(null)) {
@@ -68,6 +70,16 @@ public class LoginCotroller {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
+
+		try {
+			if (adminName.equals(email)&&adminPassword.equals(password)) {
+				return "redirect:listPawner.do?";
+			} 
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
 
 		return "redirect:signIn.do?";
 	}

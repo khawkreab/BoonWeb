@@ -13,7 +13,7 @@
 	
 		<form:hidden path="pawnshopId" />
 		<br/>
-		User Name: <form:input path="userName" />
+		E-mail: <form:input path="email" />
 		<br/>
 		Password : <form:input path="password" />
 		<br/>

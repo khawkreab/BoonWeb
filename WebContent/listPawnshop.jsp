@@ -13,7 +13,7 @@
 		<c:forEach items="${pawnshopList}" var="pawnshop">
 			<tr>
 				<td>${pawnshop.pawnshopId}</td>
-				<td>${pawnshop.userName}</td>
+				<td>${pawnshop.email}</td>
 				<td>${pawnshop.password}</td>
 				<td>${pawnshop.pawnshopName}</td>
 				<td>${pawnshop.credential}</td>
@@ -22,6 +22,6 @@
 			</tr>
 		</c:forEach>
 	</table>
-	<a href="newPawnshop.do">Add New Pawnshop</a>
+	<a href="pawnshopForm.do">Add New Pawnshop</a>
 </body>
 </html>
