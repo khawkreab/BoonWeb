@@ -14,7 +14,7 @@
 		<c:forEach items="${goldList}" var="gold">
 			<tr>
 				<td>${gold.goldId}</td>
-				<td>${gold.pawnerId}</td>
+
 				<td>${gold.goldBrand}</td>
 				<td>${gold.goldDetail}</td>
 				<td>${gold.goldName}</td>
