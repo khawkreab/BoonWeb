@@ -21,7 +21,7 @@ public class PawnerController {
 	PawnerService pmService;
 	
 	@RequestMapping("/pawnerForm")
-	public ModelAndView newPawnshop(){
+	public ModelAndView newPawner(){
 		ModelAndView mv = new ModelAndView("pawnerForm.jsp");
 		Pawner pawner = new Pawner();
 		mv.addObject("pawner",pawner);
@@ -29,7 +29,7 @@ public class PawnerController {
 	}
 	
 	@RequestMapping("/savePawner")
-	public String savePawnshop(@ModelAttribute("pawner") Pawner pawner, BindingResult result, HttpServletRequest request){
+	public String savePawner(@ModelAttribute("pawner") Pawner pawner, BindingResult result, HttpServletRequest request){
 		try {
 			if (pawner.getPawnerId() == 0){
 				pmService.insert(pawner);
@@ -41,7 +41,7 @@ public class PawnerController {
 	}
 	
 	@RequestMapping("/editPawner")
-	public ModelAndView editEmp(HttpServletRequest request) {
+	public ModelAndView editPawner(HttpServletRequest request) {
 		int paramId = Integer.parseInt(request.getParameter("id"));
 		Pawner foundPawner;
 		ModelAndView mv = new ModelAndView("pawnerForm.jsp");
@@ -62,7 +62,7 @@ public class PawnerController {
 	}
 	
 	@RequestMapping("/listPawner")
-	public ModelAndView listEmployee(HttpServletRequest request) {
+	public ModelAndView listPawner(HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView("listPawner.jsp");
 		List<Pawner> pawnerList;
 		try {
