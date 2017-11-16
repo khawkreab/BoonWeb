@@ -40,7 +40,7 @@ public class PawnshopController {
 		}return mv;
 	}
 	
-	@RequestMapping("/savaPawnshop")
+	@RequestMapping("/savePawnshop")
 	public String savePawnshop(@ModelAttribute("pawnshop") Pawnshop pawnshop, BindingResult result, HttpServletRequest request){
 		try {
 			if (pawnshop.getPawnshopId() == 0){

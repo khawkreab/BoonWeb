@@ -65,27 +65,24 @@
 			<div class="row main">
 				<div class="main-regist main-center">
 					<h5>Create Your Account Pawner</h5>
+					<!-- --------------------------------------------------------------- -->
+					<form:form method="post" action="savePawnshop.do"
+						commandName="pawnshop">
+						<form:hidden path="pawnshopId" />
 
-					<form:form method="post" action="savePawner.do"
-						commandName="pawner">
-						<form:hidden path="pawnerId" />
 						<div class="form-group">
-
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"> <i
 										class="fa fa-user fa" aria-hidden="true"></i>
 									</span>
-									<form:input path="firstName" class="form-control"
-										placeholder="First Name" />
-									<form:input path="lastName" class="form-control"
-										placeholder="Last Name" />
+									<form:input path="pawnshopName" class="form-control"
+										placeholder="pawnshopName" />
 								</div>
 							</div>
 						</div>
 
 						<div class="form-group">
-
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"> <i
@@ -99,7 +96,6 @@
 
 
 						<div class="form-group">
-
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"> <i
@@ -113,13 +109,26 @@
 						</div>
 
 						<div class="form-group">
-
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"> <i
 										class="fa fa-lock fa-lg" aria-hidden="true"></i>
 									</span> <input type="password" class="form-control" name="confirm"
 										id="confirm" placeholder="Confirm your Password" />
+								</div>
+							</div>
+						</div>
+						
+						
+						<div class="form-group">
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"> <i
+										class="fa fa-lock fa-lg" aria-hidden="true"></i>
+									</span>
+									<form:input path="credential" type="password"
+										class="form-control" placeholder="Enter your credential" />
+
 								</div>
 							</div>
 						</div>

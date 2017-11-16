@@ -20,9 +20,9 @@ public class PawnerController {
 	@EJB(mappedName = "ejb:/BoonEJB//PawnerServiceBean!service.PawnerService")
 	PawnerService pmService;
 	
-	@RequestMapping("/registerForm")
+	@RequestMapping("/pawnerForm")
 	public ModelAndView newPawner(){
-		ModelAndView mv = new ModelAndView("registerForm.jsp");
+		ModelAndView mv = new ModelAndView("pawnerForm.jsp");
 		Pawner pawner = new Pawner();
 		mv.addObject("pawner",pawner);
 		return mv;
