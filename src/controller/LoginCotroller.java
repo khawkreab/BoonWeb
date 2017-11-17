@@ -48,10 +48,10 @@ public class LoginCotroller {
 			if (pawner.equals(null)) {
 				return "redirect:signIn.do?";
 			} else {
-				request.getSession().setAttribute("email", pawner.getPawnerId());
+				request.getSession().setAttribute("id", pawner.getPawnerId());
 				request.getSession().setAttribute("isLogin", "yes");
 				request.getSession().setAttribute("userType", "pawner");
-				return "redirect:index.do";
+				return "redirect:pawnerIndex.do";
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -62,10 +62,10 @@ public class LoginCotroller {
 			if (pawnshop.equals(null)) {
 				return "redirect:signIn.do?";
 			} else {
-				request.getSession().setAttribute("email", pawnshop.getPawnshopId());
+				request.getSession().setAttribute("id", pawnshop.getPawnshopId());
 				request.getSession().setAttribute("isLogin", "yes");
 				request.getSession().setAttribute("userType", "pawnShop");
-				return "redirect:pawnShopIndex.do";
+				return "redirect:pawnshopIndex.do";
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -84,14 +84,29 @@ public class LoginCotroller {
 		return "redirect:signIn.do?";
 	}
 	
-	@RequestMapping("/index")
-	public ModelAndView index(HttpServletRequest request) {
-		ModelAndView mv = new ModelAndView("index.jsp");
+	@RequestMapping("/pawnerIndex")
+	public ModelAndView pawnerIndex(HttpServletRequest request) {
+		ModelAndView mv = new ModelAndView("pawnerIndex.jsp");
 		Pawner pawner;
 		try {
-			long userId = (long) request.getSession().getAttribute("user");
+			long userId = (long) request.getSession().getAttribute("id");
 			pawner = pmService.findPawnerById(userId);
+			request.getSession().setAttribute("idp", userId);
 			mv.addObject("pawner", pawner);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return mv;
+	}
+	
+	@RequestMapping("/pawnshopIndex")
+	public ModelAndView pawnshopIndex(HttpServletRequest request) {
+		ModelAndView mv = new ModelAndView("pawnshopIndex.jsp");
+		Pawnshop pawnshop;
+		try {
+			long userId = (long) request.getSession().getAttribute("id");
+			pawnshop = pawnshopServ.findPawnshopById(userId);
+			mv.addObject("pawnshop", pawnshop);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

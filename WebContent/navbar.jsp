@@ -48,7 +48,7 @@
 						class="nav-link js-scroll-trigger" href="index.html#as">การจำนำ</a></li>
 					<li class="nav-item nav-item-hover"><a
 						class="nav-link js-scroll-trigger" href="#portfolio">ซื้อของหลุดจำนำ</a></li>
-						<li class="nav-item nav-item-hover"><a
+					<li class="nav-item nav-item-hover"><a
 						class="nav-link js-scroll-trigger" href="#portfolio">ติดตามสถานะ</a></li>
 					<!-- -------------------------------------------------------------------- -->
 					<%
@@ -77,40 +77,65 @@
 			<%
 				if (session.isNew() || session.getAttribute("isLogin") == "no") {
 			%>
-			<li class="nav-item"><a
-				class="nav-item-reg btn btn-primary btn-sm" href="login.html">เข้าสู่ระบบ</a>
-			</li>
+			<div class="nav-item">
+				<a class="nav-item-reg btn btn-primary btn-sm" href="login.do">เข้าสู่ระบบ</a>
+			</div>
+			<!-- -------------------------------------------------------------------- -->
 			<%
 				} else if (session.getAttribute("isLogin") == "yes") {
 			%>
-			<li class="nav-item dropdown"><a
-				class="btn btn-light center-items dropdown-toggle"
-				data-toggle="dropdown" href="#">
+			<!-- -------------------------------------------------------------------- -->
+			<%
+				if (session.getAttribute("userType") == "pawner") {
+			%>
+			<div class="dropdown">
+				<i class="dropdown-toggle" data-toggle="dropdown" href="#">
+					${pawner.firstName} ${pawner.lastName} <img class="img-icon"
+					alt="profilePic" src="img/gold.png" />
 
-					<figure id="navigation">
-						<img id="navigation" alt="profilePic" src="img/gold.png"
-							width="40px" />
-					</figure> <label>${pawnShop.userName}</label>
-			</a>
-
+				</i>
+				<!-- -------------------------------------------------------------------- -->
 				<div class="dropdown-menu">
 					<div class="dropdown-item">
-						<i class="fa fa-cog" aria-hidden="true"></i><label
-							onclick="location.replace('pawnerAccount.do')">จัดการบัญชีโรงรับจำนำ</label>
-					</div>
-					<div class="dropdown-item">
-						<label>แก้ไขข้อมูลโรงรับจำนำ</label>
+						<label onclick="location.replace('#.do')">แก้ไขข้อมูลส่วนตัว</label>
 					</div>
 					<div class="dropdown-divider"></div>
 					<div class="dropdown-item">
-						<i class="fa fa-sign-out" aria-hidden="true"></i><label
-							onclick="location.replace('signOut.do')">ออกจากระบบ</label>
+						<label onclick="location.replace('signOut.do')">ออกจากระบบ</label>
 					</div>
-				</div></li>
+				</div>
+			</div>
+			<!-- -------------------------------------------------------------------- -->
 			<%
 				} else {
 			%>
-			<li class="nav-item"><a class="btn btn-light" href="signIn.do">เข้าสู่ระบบ</a></li>
+			<div class="dropdown">
+				<i class="dropdown-toggle" data-toggle="dropdown" href="#">${pawnshop.pawnshopName}
+					<img class="img-icon" alt="profilePic" src="img/gold.png" />
+
+				</i>
+				<!-- -------------------------------------------------------------------- -->
+				<div class="dropdown-menu">
+					<div class="dropdown-item">
+						<label onclick="location.replace('pawnerAccount.do')">จัดการบัญชีโรงรับจำนำ</label>
+					</div>
+					<div class="dropdown-item">
+						<label onclick="location.replace('#.do')">แก้ไขข้อมูลโรงรับจำนำ</label>
+					</div>
+					<div class="dropdown-divider"></div>
+					<div class="dropdown-item">
+						<label onclick="location.replace('signOut.do')">ออกจากระบบ</label>
+					</div>
+				</div>
+			</div>
+			<%
+				}
+			%>
+			<!-- -------------------------------------------------------------------- -->
+			<%
+				} else {
+			%>
+			<li class="nav-item"><a class="btn btn-light" href="login.do">เข้าสู่ระบบ</a></li>
 			<%
 				}
 			%>
@@ -118,6 +143,14 @@
 		</div>
 	</nav>
 
+	<!-- Bootstrap core JavaScript -->
+	<script src="vendor/jquery/jquery.min.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
+	<!-- Custom scripts for this template -->
+	<script src="js/agency.min.js"></script>
+
+	<!-- Plugin JavaScript -->
+	<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 </body>
 </html>
