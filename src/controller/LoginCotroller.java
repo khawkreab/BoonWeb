@@ -97,4 +97,17 @@ public class LoginCotroller {
 		}
 		return mv;
 	}
+	
+	@SuppressWarnings("deprecation")
+	@RequestMapping("/signOut")
+	public String signOut(HttpServletRequest request) {
+		try {
+			request.getSession().putValue("isLogin", "no");
+			request.getSession().removeAttribute("user");
+			request.getSession().removeAttribute("userType");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return "redirect:index.jsp";
+	}
 }

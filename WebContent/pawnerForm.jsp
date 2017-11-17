@@ -27,36 +27,8 @@
 <body id="page-top">
 
 	<!-- Navigation -->
-	<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-		<div class="container">
-			<a class="navbar-brand js-scroll-trigger nav-item-logo"
-				href="index.html"> <img src="img/logos/adswhite.png" width="100">
-			</a>
-			<button class="navbar-toggler navbar-toggler-right" type="button"
-				data-toggle="collapse" data-target="#navbarResponsive"
-				aria-controls="navbarResponsive" aria-expanded="false"
-				aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
+	<jsp:include page="navbar.jsp" />
 
-			<div class="collapse navbar-collapse" id="navbarResponsive">
-				<ul class="navbar-nav text-uppercase ml-auto">
-					<li class="nav-item"><a class="nav-link js-scroll-trigger"
-						href="index.html#as">การจำนำ</a></li>
-					<li class="nav-item"><a class="nav-link js-scroll-trigger"
-						href="#portfolio">ซื้อของหลุดจำนำ</a></li>
-					<li class="nav-item"><a class="nav-link js-scroll-trigger"
-						href="#about">ปล่อยของหลุดจำนำ</a></li>
-				</ul>
-			</div>
-			<ul class="navbar-nav text-uppercase ml-auto">
-				<li class="nav-item"><a
-					class="nav-item-reg btn btn-primary btn-sm" href="login.html">เข้าสู่ระบบ</a>
-				</li>
-		</div>
-	</nav>
-
-	<!-- Header -->
 
 	<section id="#">
 		<div class="container">
