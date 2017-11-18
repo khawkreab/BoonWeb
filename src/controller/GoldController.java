@@ -33,11 +33,13 @@ public class GoldController {
 	
 	@RequestMapping("/goldForm")
 	public ModelAndView newGold(HttpServletRequest request) {
-		ModelAndView mv = new ModelAndView("goldForm.jsp");
-		String pawnerId = (String) request.getSession().getAttribute("pawner");
-		Pawner pm = pmService.findPawnerById(Long.parseLong(pawnerId));
+		ModelAndView mv = new ModelAndView("pawnerGoldForm.jsp");
+		
+		long userId = (long) request.getSession().getAttribute("id");
+		Pawner pm = pmService.findPawnerById(userId);
 		Gold gold = new Gold();
 		gold.setPawner(pm);
+		mv.addObject("pawner", pm);
 		mv.addObject("gold", gold);
 		return mv;
 	}
@@ -58,7 +60,7 @@ public class GoldController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return "redirect:listGold.do";
+		return "redirect:listGold.do?pawnerId="+request.getSession().getAttribute("id");
 	}
 	
 	@RequestMapping("/editGold")
@@ -78,7 +80,7 @@ public class GoldController {
 	
 	@RequestMapping("/deleteGold")
 	public String removeGold(HttpServletRequest request) {
-		String pawnerId = (String) request.getSession().getAttribute("pawner");
+		String pawnerId = (String) request.getSession().getAttribute("pawner"); // ***************warring
 		long goldId = Long.parseLong(request.getParameter("id"));
 		goldService.delete(goldId);
 		return "redirect:listGold.do";
@@ -88,14 +90,14 @@ public class GoldController {
 	public ModelAndView listGold(HttpServletRequest request) {
 		String pawnerId = null;
 		// check if pararameter passed
-		if (request.getParameter("id") != null) {
+		if (request.getParameter("pawnerId") != null) {
 			// add parameter value to session
-			pawnerId = request.getParameter("id");
+			pawnerId = request.getParameter("pawnerId");
 			request.getSession().setAttribute("pawner", pawnerId);
 		} else {
 			// get parameter from session
-			pawnerId = (String) request.getSession().getAttribute("pawner");
-			System.out.println("pawner " +pawnerId);
+			pawnerId = (String) request.getSession().getAttribute("pawnerId");
+			System.out.println("pawner => " +pawnerId);
 		}
 		ModelAndView mv = new ModelAndView("listGold.jsp");
 		List<Gold> goldList;
@@ -112,26 +114,26 @@ public class GoldController {
 	
 	@RequestMapping("/listAllGold")
 	public ModelAndView listAllGold(HttpServletRequest request) {
-		String pawnshopId = null;
-		// check if pararameter passed
-		if (request.getParameter("id") != null) {
-			// add parameter value to session
-			pawnshopId = request.getParameter("id");
-			request.getSession().setAttribute("pawnshopId", pawnshopId);
-		} else {
-			// get parameter from session
-			pawnshopId = (String) request.getSession().getAttribute("pawnshopId");
-			System.out.println("pawnshopId " +pawnshopId);
-		}
+//		String pawnshopId = null;
+//		// check if pararameter passed
+//		if (request.getParameter("id") != null) {
+//			// add parameter value to session
+//			pawnshopId = request.getParameter("id");
+//			request.getSession().setAttribute("pawnshopId", pawnshopId);
+//		} else {
+//			// get parameter from session
+//			pawnshopId = (String) request.getSession().getAttribute("pawnshopId");
+//			System.out.println("pawnshopId " +pawnshopId);
+//		}
 		ModelAndView mv = new ModelAndView("listAllGoldForPawnshop.jsp");
 		List<Gold> goldList;
-		Pawnshop shop;
+//		Pawnshop shop;
 		try {
-			shop = pawnshopServ.findPawnshopById(Long.parseLong(pawnshopId));
+//			shop = pawnshopServ.findPawnshopById(Long.parseLong(pawnshopId));
 			goldList = goldService.getAllGold();
 			System.out.println(goldList);
 			mv.addObject("goldList", goldList);
-			mv.addObject("shop", shop);
+//			mv.addObject("shop", shop);
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

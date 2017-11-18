@@ -45,11 +45,11 @@
 						if (session.getAttribute("userType") == "pawner") {
 					%>
 					<li class="nav-item nav-item-hover"><a
-						class="nav-link js-scroll-trigger" href="index.html#as">การจำนำ</a></li>
+						class="nav-link js-scroll-trigger" href="goldForm.do">การจำนำ</a></li>
 					<li class="nav-item nav-item-hover"><a
 						class="nav-link js-scroll-trigger" href="#portfolio">ซื้อของหลุดจำนำ</a></li>
 					<li class="nav-item nav-item-hover"><a
-						class="nav-link js-scroll-trigger" href="#portfolio">ติดตามสถานะ</a></li>
+						class="nav-link js-scroll-trigger" href="listGold.do?pawnerId=${pawner.pawnerId}">ติดตามสถานะ</a></li>
 					<!-- -------------------------------------------------------------------- -->
 					<%
 						} else if (session.getAttribute("userType") == "pawnShop") {
@@ -135,7 +135,9 @@
 			<%
 				} else {
 			%>
-			<li class="nav-item"><a class="btn btn-light" href="login.do">เข้าสู่ระบบ</a></li>
+			<div class="nav-item">
+				<a class="btn btn-light" href="login.do">เข้าสู่ระบบ</a>
+			</div>
 			<%
 				}
 			%>

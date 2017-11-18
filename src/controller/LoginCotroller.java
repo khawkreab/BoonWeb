@@ -81,7 +81,7 @@ public class LoginCotroller {
 		}
 
 
-		return "redirect:signIn.do?";
+		return "redirect:login.do?";
 	}
 	
 	@RequestMapping("/pawnerIndex")

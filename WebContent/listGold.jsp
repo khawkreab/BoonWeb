@@ -14,11 +14,11 @@
 		<c:forEach items="${goldList}" var="gold">
 			<tr>
 				<td>${gold.goldId}</td>
+				<td>${gold.goldPic}</td>
 				<td>${gold.pawner.firstName}</td>
 				<td>${gold.goldBrand}</td>
 				<td>${gold.goldDetail}</td>
 				<td>${gold.goldName}</td>
-				<td>${gold.goldPic}</td>
 				<td>${gold.goldPure}</td>
 				<td>${gold.goldWeight}</td>
 				<td><a href="editGold.do?id=${gold.goldId}">Edit</a></td>
