@@ -55,7 +55,7 @@
 						} else if (session.getAttribute("userType") == "pawnShop") {
 					%>
 					<li class="nav-item nav-item-hover"><a
-						class="nav-link js-scroll-trigger" href="index.html#as">การประเมิน</a></li>
+						class="nav-link js-scroll-trigger" href="listAllGold.do">การประเมิน</a></li>
 					<li class="nav-item nav-item-hover"><a
 						class="nav-link js-scroll-trigger" href="index.html#as">ปล่อยของหลุดจำนำ</a></li>
 					<li class="nav-item nav-item-hover"><a

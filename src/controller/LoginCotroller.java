@@ -46,7 +46,7 @@ public class LoginCotroller {
 		try {
 			pawner = pmService.findPawnerUserName(email, password);
 			if (pawner.equals(null)) {
-				return "redirect:signIn.do?";
+				return "redirect:login.do?";
 			} else {
 				request.getSession().setAttribute("id", pawner.getPawnerId());
 				request.getSession().setAttribute("isLogin", "yes");
