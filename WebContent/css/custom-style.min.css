@@ -414,3 +414,8 @@ section#list-post div {
 	border-radius: 50%;
 	border: 2px solid #0078d7;
 }
+
+.card-img{
+	height: 12em;
+	overflow: hidden;
+}

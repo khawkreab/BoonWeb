@@ -250,7 +250,7 @@ figure {
 }
 
 img {
-	vertical-align: middle;
+	vertical-align: top;
 	border-style: none
 }
 
@@ -3999,7 +3999,7 @@ tbody.collapse.show {
 .card {
 	position: relative;
 	display: -ms-flexbox;
-	display: flex;
+	display: inline-flex;
 	-ms-flex-direction: column;
 	flex-direction: column;
 	min-width: 0;
@@ -4007,8 +4007,11 @@ tbody.collapse.show {
 	background-color: #fff;
 	background-clip: border-box;
 	border: 1px solid rgba(0, 0, 0, .125);
-	border-radius: .25rem
+	border-radius: .25rem;
+	margin: .30rem;
 }
+
+
 
 .card>hr {
 	margin-right: 0;
@@ -4032,7 +4035,7 @@ tbody.collapse.show {
 }
 
 .card-title {
-	margin-bottom: .75rem
+	margin: .75rem
 }
 
 .card-subtitle {
@@ -4041,7 +4044,7 @@ tbody.collapse.show {
 }
 
 .card-text:last-child {
-	margin-bottom: 0
+	margin: .75rem;
 }
 
 .card-link:hover {
@@ -6762,7 +6765,8 @@ a.bg-dark:focus, a.bg-dark:hover {
 	top: 0;
 	right: 0;
 	left: 0;
-	z-index: 1030
+	z-index: 1030;
+	padding: 10px;
 }
 
 .fixed-bottom {
