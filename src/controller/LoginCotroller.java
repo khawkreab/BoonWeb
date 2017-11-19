@@ -1,5 +1,7 @@
 package controller;
 
+import java.util.List;
+
 import javax.ejb.EJB;
 import javax.servlet.http.HttpServletRequest;
 
@@ -7,8 +9,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import entity.Gold;
 import entity.Pawner;
 import entity.Pawnshop;
+import service.GoldService;
 import service.PawnerService;
 import service.PawnshopService;
 
@@ -22,7 +26,9 @@ public class LoginCotroller {
 	
 	@EJB(mappedName = "ejb:/BoonEJB//PawnshopServiceBean!service.PawnshopService")
 	PawnshopService pawnshopServ;
-	
+
+	@EJB(mappedName = "ejb:/BoonEJB//GoldServiceBean!service.GoldService")
+	GoldService goldService;
 	
 	@RequestMapping("/login")
 	public ModelAndView signIn() {
@@ -103,15 +109,19 @@ public class LoginCotroller {
 	public ModelAndView pawnshopIndex(HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView("pawnshopIndex.jsp");
 		Pawnshop pawnshop;
+		List<Gold> listGold;
 		try {
 			long userId = (long) request.getSession().getAttribute("id");
 			pawnshop = pawnshopServ.findPawnshopById(userId);
+			listGold = goldService.getAllGold();
 			mv.addObject("pawnshop", pawnshop);
+			mv.addObject("listGold",listGold);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return mv;
 	}
+
 	
 	@SuppressWarnings("deprecation")
 	@RequestMapping("/signOut")
