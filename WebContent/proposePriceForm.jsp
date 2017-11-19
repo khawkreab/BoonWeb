@@ -20,11 +20,10 @@
 
 	<section>
 		<div class="container">
-
-			<form:form method="post" action="savaProposePrice.do"
-				commandName="proposePrice">
+<%=request.getParameter("goldId") %>
+			<form:form method="post" action="saveProposePrice.do" commandName="proposePrice">
 				<form:hidden path="pawnshopId.pawnshopId" />
-				<form:hidden path="goldId" />
+				<form:hidden path="goldId.goldId" />
 				<form:hidden path="proposePriceId" />
 				<br />
 		Price : <form:input path="price" />

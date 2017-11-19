@@ -65,7 +65,7 @@ public class ProposePriceController {
 				proposePriceServ.update(proposePrice);
 			}
 		}catch (Exception e){
-		}return "redirect:listProposePrice.do";
+		}return "redirect:index.jsp";
 	}
 	
 	
