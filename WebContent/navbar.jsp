@@ -49,7 +49,12 @@
 					<li class="nav-item nav-item-hover"><a
 						class="nav-link js-scroll-trigger" href="#portfolio">ซื้อของหลุดจำนำ</a></li>
 					<li class="nav-item nav-item-hover"><a
+<<<<<<< HEAD
 						class="nav-link js-scroll-trigger" href="listPawnerGold.do">ติดตามสถานะ</a></li>
+=======
+						class="nav-link js-scroll-trigger"
+						href="listGold.do?pawnerId=${pawner.pawnerId}">ติดตามสถานะ</a></li>
+>>>>>>> d4575ddde296a9f9fdde76b0fe6ec753c8e40ccb
 					<!-- -------------------------------------------------------------------- -->
 					<%
 						} else if (session.getAttribute("userType") == "pawnShop") {
@@ -68,6 +73,8 @@
 						class="nav-link js-scroll-trigger" href="index.html#as">การจำนำ</a></li>
 					<li class="nav-item nav-item-hover"><a
 						class="nav-link js-scroll-trigger" href="#portfolio">ซื้อของหลุดจำนำ</a></li>
+					<li class="nav-item nav-item-hover"><a
+						class="nav-link js-scroll-trigger" href="login.do">เข้าสู่ระบบ</a></li>
 					<%
 						}
 					%>
@@ -78,7 +85,7 @@
 				if (session.isNew() || session.getAttribute("isLogin") == "no") {
 			%>
 			<div class="nav-item">
-				<a class="nav-item-reg btn btn-primary btn-sm" href="login.do">เข้าสู่ระบบ</a>
+				<a class="nav-item-reg btn btn-primary btn-sm" href="register.html">สมัครสมาชิก</a>
 			</div>
 			<!-- -------------------------------------------------------------------- -->
 			<%
@@ -136,7 +143,7 @@
 				} else {
 			%>
 			<div class="nav-item">
-				<a class="btn btn-light" href="login.do">เข้าสู่ระบบ</a>
+				<a class="nav-item-reg btn btn-primary btn-sm" href="register.html">สมัครสมาชิก</a>
 			</div>
 			<%
 				}

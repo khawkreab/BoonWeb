@@ -30,9 +30,69 @@
 	<jsp:include page="navbar.jsp" />
 
 	<section>
-		<div class="container">pawner => ${pawner.pawnerId}
-			<%=session.getAttribute("userType")%>
-						<%=session.getAttribute("idp")%>
+		<div class="container">
+
+			<!-- ----------------------------------------------------------------------------  -->
+			<div class="card" style="width: 20rem;">
+				<div class="card-img">
+					<img class="card-img-top" src="img/header-bg.jpg"
+						alt="Card image cap">
+				</div>
+				<div class="card-block">
+					<h4 class="card-title">Card title</h4>
+					<p class="card-text">Some quick example text to build on the
+						card title and make up the bulk of the card's content.</p>
+				</div>
+				<ul class="list-group list-group-flush">
+					<li class="list-group-item">Cras justo odio</li>
+				</ul>
+			</div>
+			<!-- ----------------------------------------------------------------------------  -->
+
+			<div class="card" style="width: 20rem;">
+			<div class="card-img">
+				<img class="card-img-top" src="img/portfolio/01-full.jpg"
+					alt="Card image cap"></div>
+				<div class="card-block">
+					<h4 class="card-title">Card title</h4>
+					<p class="card-text">Some quick example text to build on the
+						card title and make up the bulk of the card's content.</p>
+				</div>
+				<ul class="list-group list-group-flush">
+					<li class="list-group-item">Cras justo odio</li>
+				</ul>
+			</div>
+			<!-- ----------------------------------------------------------------------------  -->
+				<div class="card" style="width: 20rem;">
+				<div class="card-img">
+					<img class="card-img-top" src="img/header-bg.jpg"
+						alt="Card image cap">
+				</div>
+				<div class="card-block">
+					<h4 class="card-title">Card title</h4>
+					<p class="card-text">Some quick example text to build on the
+						card title and make up the bulk of the card's content.</p>
+				</div>
+				<ul class="list-group list-group-flush">
+					<li class="list-group-item">Cras justo odio</li>
+				</ul>
+			</div>
+			<!-- ----------------------------------------------------------------------------  -->
+
+			<div class="card" style="width: 20rem;">
+			<div class="card-img">
+				<img class="card-img-top" src="img/portfolio/01-full.jpg"
+					alt="Card image cap"></div>
+				<div class="card-block">
+					<h4 class="card-title">Card title</h4>
+					<p class="card-text">Some quick example text to build on the
+						card title and make up the bulk of the card's content.</p>
+				</div>
+				<ul class="list-group list-group-flush">
+					<li class="list-group-item">Cras justo odio</li>
+				</ul>
+			</div>
+			<!-- ----------------------------------------------------------------------------  -->
 		</div>
 	</section>
 

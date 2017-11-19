@@ -17,7 +17,7 @@ import service.PawnerService;
 @Controller
 public class PawnerController {
 	
-	@EJB(mappedName = "ejb:/BoonEJB//PawnerServiceBean!service.PawnerService")
+	@EJB(mappedName = "ejb:/BoonWeb/PawnerServiceBean!service.PawnerService")
 	PawnerService pmService;
 	
 	@RequestMapping("/pawnerForm")
