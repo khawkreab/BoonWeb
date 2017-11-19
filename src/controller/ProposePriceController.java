@@ -33,7 +33,7 @@ public class ProposePriceController {
 	
 	@RequestMapping("/proposePriceForm")
 	public ModelAndView  newProposePrice(HttpServletRequest request){
-		ModelAndView mv = new ModelAndView("pawnshopForm.jsp");
+		ModelAndView mv = new ModelAndView("proposePriceForm.jsp");
 		long pawnshopId = (long) request.getSession().getAttribute("id");
 		long goldId = Long.parseLong(request.getParameter("goldId"));
 		
@@ -45,6 +45,7 @@ public class ProposePriceController {
 		proposePrice.setPawnshopId(pawnshop);
 		
 		mv.addObject("proposePrice" ,proposePrice);
+		mv.addObject("pawnshop", pawnshop);
 		return mv;
 	}
 	

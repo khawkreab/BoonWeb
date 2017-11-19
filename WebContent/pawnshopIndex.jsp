@@ -29,25 +29,28 @@
 
 	<!-- Navigation -->
 	<jsp:include page="navbar.jsp" />
-<br>
-<br>
-<br>
-<br>
 
-<!--  List Gold -->
-<table border="1">
-		<c:forEach items="${listGold}" var="gold">
-			<tr>
-				<td>${gold.goldPic}</td>
-				<td>${gold.pawner.firstName}</td>
-				<td>${gold.goldBrand}</td>
-				<td>${gold.goldDetail}</td>
-				<td>${gold.goldName}</td>
-				<td>${gold.goldPure}</td>
-				<td>${gold.goldWeight}</td>
-				<td><a href="proposePriceForm.do?goldId=${gold.goldId}">Propose Price</a></td>
-			</tr>
-		</c:forEach>
-	</table>
+
+	<section>
+		<div class="container">
+
+			<!--  List Gold -->
+			<table border="1">
+				<c:forEach items="${listGold}" var="gold">
+					<tr>
+						<td>${gold.goldPic}</td>
+						<td>${gold.pawner.firstName}</td>
+						<td>${gold.goldBrand}</td>
+						<td>${gold.goldDetail}</td>
+						<td>${gold.goldName}</td>
+						<td>${gold.goldPure}</td>
+						<td>${gold.goldWeight}</td>
+						<td><a href="proposePriceForm.do?goldId=${gold.goldId}">Propose
+								Price</a></td>
+					</tr>
+				</c:forEach>
+			</table>
+		</div>
+	</section>
 </body>
 </html>
