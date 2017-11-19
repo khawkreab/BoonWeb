@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
-<%@ taglib uri="http://www.springframework.org/tags/form"
-prefix="form"%>
+	pageEncoding="utf-8"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <html lang="en">
 
 <head>
@@ -33,94 +32,65 @@ body {
 <body id="page-top">
 
 	<!-- Navigation -->
-	<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-		<div class="container">
-			<a class="navbar-brand js-scroll-trigger nav-item-logo"
-				href="index.html"> <img src="img/logos/adswhite.png" width="100">
-			</a>
-			<button class="navbar-toggler navbar-toggler-right" type="button"
-				data-toggle="collapse" data-target="#navbarResponsive"
-				aria-controls="navbarResponsive" aria-expanded="false"
-				aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-
-			<div class="collapse navbar-collapse" id="navbarResponsive">
-				<ul class="navbar-nav text-uppercase ml-auto">
-					<li class="nav-item"><a class="nav-link js-scroll-trigger"
-						href="index.html#as">การจำนำ</a></li>
-					<li class="nav-item"><a class="nav-link js-scroll-trigger"
-						href="#portfolio">ซื้อของหลุดจำนำ</a></li>
-					<li class="nav-item"><a class="nav-link js-scroll-trigger"
-						href="#about">ปล่อยของหลุดจำนำ</a></li>
-
-				</ul>
-			</div>
-			<ul class="navbar-nav text-uppercase ml-auto">
-				<li class="nav-item"><a
-					class="nav-item-reg btn btn-primary btn-sm" href="register.html">ลงทะเบียน</a>
-				</li>
-			</ul>
-		</div>
-	</nav>
+	<jsp:include page="navbar.jsp" />
 
 	<!-- Header -->
 	<section id="#" style="text-align: center;">
 		<div class="container">
-				<div class="row-login col-5">
-					<div class="main-login">
-						<h5>Welcome</h5>
-						<p></p>
-						<form:form method="POST" action="loginProcess.do"
-							commandName="pawner">
+			<div class="row-login col-5">
+				<div class="main-login">
+					<h5>Welcome</h5>
+					<p></p>
+					<form:form method="POST" action="loginProcess.do"
+						commandName="pawner">
 
-							<div class="form-group">
+						<div class="form-group">
 
-								<div class="cols-sm-10">
-									<div class="input-group">
-										<span class="input-group-addon"> <i
-											class="fa fa-envelope fa" aria-hidden="true"></i>
-										</span>
-										<form:input class="form-control" placeholder="Email"
-											path="email" autofocus="autofocus" required="required" />
-										<form:errors path="email" />
-									</div>
-								</div>
-							</div>
-
-
-							<div class="form-group">
-
-								<div class="cols-sm-10">
-									<div class="input-group">
-										<span class="input-group-addon"> <i
-											class="fa fa-lock fa-lg" aria-hidden="true"></i>
-										</span>
-										<form:password class="form-control" placeholder="password"
-											path="password" required="required" />
-										<form:errors path="password" />
-									</div>
-								</div>
-							</div>
-
-
-
-
-							<div class="cols-sm-12">
+							<div class="cols-sm-10">
 								<div class="input-group">
-									<button class="btn-custom col-sm-3" type="submit">
-										Login <i class="fa fa-chevron-right" aria-hidden="true"></i>
-									</button>
-									<span class="">
-										<div class="btn-right-r50"></div>
+									<span class="input-group-addon"> <i
+										class="fa fa-envelope fa" aria-hidden="true"></i>
 									</span>
-
+									<form:input class="form-control" placeholder="Email"
+										path="email" autofocus="autofocus" required="required" />
+									<form:errors path="email" />
 								</div>
 							</div>
-						</form:form>
-					</div>
+						</div>
 
+
+						<div class="form-group">
+
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"> <i
+										class="fa fa-lock fa-lg" aria-hidden="true"></i>
+									</span>
+									<form:password class="form-control" placeholder="password"
+										path="password" required="required" />
+									<form:errors path="password" />
+								</div>
+							</div>
+						</div>
+
+
+
+
+						<div class="cols-sm-12">
+							<div class="input-group">
+								<button class="btn-custom col-sm-3" type="submit">
+									Login <i class="fa fa-chevron-right" aria-hidden="true"></i>
+								</button>
+								<span class="">
+									<div class="btn-right-r50"></div>
+								</span>
+
+							</div>
+						</div>
+					</form:form>
 				</div>
+
+			</div>
 		</div>
 	</section>
 
