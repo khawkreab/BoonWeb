@@ -48,14 +48,8 @@
 						class="nav-link js-scroll-trigger" href="goldForm.do">การจำนำ</a></li>
 					<li class="nav-item nav-item-hover"><a
 						class="nav-link js-scroll-trigger" href="#portfolio">ซื้อของหลุดจำนำ</a></li>
-					<li class="nav-item nav-item-hover"><a
-<<<<<<< HEAD
-						class="nav-link js-scroll-trigger" href="listPawnerGold.do">ติดตามสถานะ</a></li>
-=======
-						class="nav-link js-scroll-trigger"
-						href="listGold.do?pawnerId=${pawner.pawnerId}">ติดตามสถานะ</a></li>
->>>>>>> d4575ddde296a9f9fdde76b0fe6ec753c8e40ccb
-					<!-- -------------------------------------------------------------------- -->
+					<li class="nav-item nav-item-hover">
+					<a class="nav-link js-scroll-trigger" href="listPawnerGold.do">ติดตามสถานะ</a></li>
 					<%
 						} else if (session.getAttribute("userType") == "pawnShop") {
 					%>
