@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-
 import entity.Gold;
 import entity.Pawner;
 import entity.Pawnshop;
@@ -86,27 +85,19 @@ public class GoldController {
 		return "redirect:listGold.do";
 	}
 	
-	@RequestMapping("/listGold")
+	@RequestMapping("/listPawnerGold")
 	public ModelAndView listGold(HttpServletRequest request) {
-		String pawnerId = null;
-		// check if pararameter passed
-		if (request.getParameter("pawnerId") != null) {
-			// add parameter value to session
-			pawnerId = request.getParameter("pawnerId");
-			request.getSession().setAttribute("pawner", pawnerId);
-		} else {
-			// get parameter from session
-			pawnerId = (String) request.getSession().getAttribute("pawnerId");
-			System.out.println("pawner => " +pawnerId);
-		}
-		ModelAndView mv = new ModelAndView("listGold.jsp");
+		ModelAndView mv = new ModelAndView("listPawnerGold.jsp");
+		Pawner pawner;
 		List<Gold> goldList;
 		try {
-			goldList = goldService.findGoldByPawnerId(Long.parseLong(pawnerId));
-			System.out.println(goldList);
+			long userId = (long) request.getSession().getAttribute("id");
+			pawner = pmService.findPawnerById(userId);
+			goldList = goldService.findGoldByPawnerId(userId);
+	
+			mv.addObject("pawner", pawner);
 			mv.addObject("goldList", goldList);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return mv;

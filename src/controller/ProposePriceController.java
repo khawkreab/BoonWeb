@@ -13,9 +13,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import entity.Gold;
+import entity.Pawner;
 import entity.Pawnshop;
 import entity.ProposePrice;
 import service.GoldService;
+import service.PawnerService;
 import service.PawnshopService;
 import service.ProposePriceService;
 
@@ -30,6 +32,9 @@ public class ProposePriceController {
 	
 	@EJB(mappedName = "ejb:/BoonEJB//GoldServiceBean!service.GoldService")
 	GoldService goldService;
+	
+	@EJB(mappedName = "ejb:/BoonEJB//PawnerServiceBean!service.PawnerService")
+	PawnerService pmService;
 	
 	@RequestMapping("/proposePriceForm")
 	public ModelAndView  newProposePrice(HttpServletRequest request){
@@ -79,6 +84,26 @@ public class ProposePriceController {
 		}catch (Exception e){
 			e.printStackTrace();
 		}return mv;
+	}
+	
+	@RequestMapping("/listProposeBygold")
+	public ModelAndView listProposeBygold(HttpServletRequest request) {
+		ModelAndView mv = new ModelAndView("listProposeByGold.jsp");
+		Pawner pawner;
+		List<ProposePrice> ppList;
+		try {
+			long userId = (long) request.getSession().getAttribute("id");
+			long goldId = Long.parseLong(request.getParameter("goldId"));
+			
+			pawner = pmService.findPawnerById(userId);
+			ppList = proposePriceServ.listProposeBygold(goldId);
+	
+			mv.addObject("pawner", pawner);
+			mv.addObject("ppList", ppList);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return mv;
 	}
 	
 	@RequestMapping("/editProposePrice")

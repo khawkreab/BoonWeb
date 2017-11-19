@@ -49,7 +49,7 @@
 					<li class="nav-item nav-item-hover"><a
 						class="nav-link js-scroll-trigger" href="#portfolio">ซื้อของหลุดจำนำ</a></li>
 					<li class="nav-item nav-item-hover"><a
-						class="nav-link js-scroll-trigger" href="listGold.do?pawnerId=${pawner.pawnerId}">ติดตามสถานะ</a></li>
+						class="nav-link js-scroll-trigger" href="listPawnerGold.do">ติดตามสถานะ</a></li>
 					<!-- -------------------------------------------------------------------- -->
 					<%
 						} else if (session.getAttribute("userType") == "pawnShop") {
