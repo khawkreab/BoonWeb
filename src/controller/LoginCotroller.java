@@ -97,7 +97,6 @@ public class LoginCotroller {
 		try {
 			long userId = (long) request.getSession().getAttribute("id");
 			pawner = pmService.findPawnerById(userId);
-			request.getSession().setAttribute("idp", userId);
 			mv.addObject("pawner", pawner);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -128,7 +127,7 @@ public class LoginCotroller {
 	public String signOut(HttpServletRequest request) {
 		try {
 			request.getSession().putValue("isLogin", "no");
-			request.getSession().removeAttribute("user");
+			request.getSession().removeAttribute("id");
 			request.getSession().removeAttribute("userType");
 		} catch (Exception e) {
 			e.printStackTrace();
