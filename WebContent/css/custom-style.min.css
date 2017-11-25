@@ -72,7 +72,8 @@
 body {
 	overflow-x: hidden;
 	font-family: 'Roboto Slab', 'Helvetica Neue', Helvetica, Arial,
-		sans-serif
+		sans-serif;
+	background-color: #e6ecf0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -415,62 +416,48 @@ section#list-post div {
 	border: 2px solid #0078d7;
 }
 
-.card-img{
+.card-img {
 	height: 12em;
 	overflow: hidden;
 }
 
+.dashboard {
+	width: 290px;
+	background-color: #1DA1F2;
+	padding-top: 100px;
+	position: relative;
+}
 
-.dashboard{
+.dashboard-left {
 	float: left;
-    width: 290px;
-	background-color: #000;
 }
 
 .DashboardProfileCard {
-    border: 1px solid #e6ecf0;
-    background: #fff;
-}
-
-.DashboardProfileCard-bg {
-    background-size: 100%;
-    height: 95px;
-    border-top-left-radius: inherit;
-    border-top-right-radius: inherit;
-    background-position: 0 50%;
-    width: 100%;
-    padding: 0;
-    margin-top: -1px;
+	position: absolute;
+	top: 60px;
+	left: 10px;
+	overflow: hidden;
+	border-radius: 50%;
+	border: 2px solid #fff;
+	width: 80px;
+	height: 80px;
 }
 
 .DashboardProfileCard-userFields {
-    position: absolute;
-    top: 103px;
-    left: 90px;
-    width: 185px;
+	background-color: #fff;
+	padding-left: 120px;
+	padding-top:20px;
+	height: 100px;
+	
 }
 
-.u-bgUserColor, .u-bgUserColorHover:hover, .u-bgUserColorHover:focus {
-    background-color: #1DA1F2 !important;
-}
 
-.u-block {
-    display: block!important;
-}
-
-.module {
-    background-clip: padding-box;
-    border: 0;
-    position: relative;
-    margin-bottom: 10px;
-}
-
-.tbody{
+.tbody {
 	display: inline-flex;
-	width: 20rem;
+	background-color: #fff;
 }
 
-.appove{
+.appove {
 	display: inline-flex;
 	width: 20rem;
 }
