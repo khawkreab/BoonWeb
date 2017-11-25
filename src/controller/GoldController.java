@@ -13,7 +13,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import entity.Gold;
 import entity.Pawner;
-import entity.Pawnshop;
 import service.GoldService;
 import service.PawnerService;
 import service.PawnshopService;
@@ -56,7 +55,7 @@ public class GoldController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return "redirect:listGold.do?pawnerId="+request.getSession().getAttribute("id");
+		return "redirect:listPawnerGold.do?pawnerId="+request.getSession().getAttribute("id");
 	}
 	
 	@RequestMapping("/editGold")

@@ -34,22 +34,26 @@
 	<section>
 		<div class="container">
 
-			<!--  List Gold -->
-			<table border="1">
-				<c:forEach items="${listGold}" var="gold">
-					<tr>
-						<td>${gold.goldPic}</td>
-						<td>${gold.pawner.firstName}</td>
-						<td>${gold.goldBrand}</td>
-						<td>${gold.goldDetail}</td>
-						<td>${gold.goldName}</td>
-						<td>${gold.goldPure}</td>
-						<td>${gold.goldWeight}</td>
-						<td><a href="proposePriceForm.do?goldId=${gold.goldId}">Propose
-								Price</a></td>
-					</tr>
+			<!-- ----------------------------------------------------------------------------  -->
+			<c:forEach items="${listGold}" var="gold">
+				<div class="card" style="width: 20rem;">
+					<div class="card-img">
+						<img class="card-img-top" src="img/header-bg.jpg"
+							alt="Card image cap">
+					</div>
+					<div class="card-block">
+						<h4 class="card-title">${gold.goldName}</h4>
+						<p class="card-text">${gold.goldBrand}</p>
+					</div>
+					<ul class="list-group list-group-flush">
+						<li class="list-group-item"><a href="proposePriceForm.do?goldId=${gold.goldId}">Propose
+									Price</a></li>
+					</ul>
+				</div>
 				</c:forEach>
-			</table>
+				<!-- ----------------------------------------------------------------------------  -->
+
+					
 		</div>
 	</section>
 </body>
