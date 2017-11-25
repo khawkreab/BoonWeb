@@ -34,7 +34,7 @@
 				<td>${gold.goldWeight}</td>
 				<td><a href="editGold.do?id=${gold.goldId}">Edit</a></td>
 				<td><a href="deleteGold.do?id=${gold.goldId}">Remove</a></td>
-				<td><a href="listProposeBygold.do?id=${gold.goldId}">list Propose</a></td>
+				<td><a href="listProposeBygold.do?goldId=${gold.goldId}">list Propose</a></td>
 			</tr>
 		</c:forEach>
 	</table>
