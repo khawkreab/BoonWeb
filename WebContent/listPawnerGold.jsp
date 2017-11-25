@@ -32,7 +32,6 @@
 				<td>${gold.goldName}</td>
 				<td>${gold.goldPure}</td>
 				<td>${gold.goldWeight}</td>
-				<td><a href="editGold.do?id=${gold.goldId}">Edit</a></td>
 				<td><a href="deleteGold.do?id=${gold.goldId}">Remove</a></td>
 				<td><a href="listProposeBygold.do?goldId=${gold.goldId}">list Propose</a></td>
 			</tr>
@@ -40,6 +39,5 @@
 	</table>
 		</div>
 	</section>
-	<a href="goldForm.do">Add New gold</a>s
 </body>
 </html>

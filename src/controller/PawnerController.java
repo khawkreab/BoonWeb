@@ -37,7 +37,7 @@ public class PawnerController {
 				pmService.update(pawner);
 			}
 		}catch (Exception e){
-		}return "redirect:listPawner.do";
+		}return "redirect:login.do";
 	}
 	
 	@RequestMapping("/editPawner")

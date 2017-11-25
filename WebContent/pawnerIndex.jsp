@@ -26,7 +26,7 @@
 
 <body id="page-top">
 
-<%if (session.getAttribute("isLogin") == "no") { 
+<%if (session.getAttribute("isLogin") == "") { 
 response.sendRedirect("index.jsp");
 }
 %>

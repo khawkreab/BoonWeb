@@ -49,7 +49,7 @@ public class PawnshopController {
 				pawnshopServ.update(pawnshop);
 			}
 		}catch (Exception e){
-		}return "redirect:listPawnshop.do";
+		}return "redirect:login.do";
 	}
 	
 	@RequestMapping("/editPawnshop")
