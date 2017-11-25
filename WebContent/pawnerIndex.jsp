@@ -26,6 +26,11 @@
 
 <body id="page-top">
 
+<%if (session.getAttribute("isLogin") == "no") { 
+response.sendRedirect("index.jsp");
+}
+%>
+
 	<!-- Navigation -->
 	<jsp:include page="navbar.jsp" />
 

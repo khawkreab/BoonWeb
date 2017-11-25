@@ -642,7 +642,9 @@ pre code {
 	padding-right: 15px;
 	padding-left: 15px;
 	margin-right: auto;
-	margin-left: auto
+	margin-left: auto;
+	display: flex;
+	justify-content: center;
 }
 
 .row {
@@ -2856,7 +2858,7 @@ tbody.collapse.show {
 .dropdown-menu {
 	position: absolute;
 	top: 100%;
-	left: 0;
+	right: 0;
 	z-index: 1000;
 	display: none;
 	float: left;
