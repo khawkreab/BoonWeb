@@ -119,7 +119,6 @@ body {
 	line-height: 1.5;
 	color: #212529;
 	text-align: left;
-	background-color: #fff
 }
 
 [tabindex="-1"]:focus {
@@ -597,7 +596,9 @@ pre code {
 	padding-right: 15px;
 	padding-left: 15px;
 	margin-right: auto;
-	margin-left: auto
+	margin-left: auto;
+	display: flex;
+    justify-content: center;
 }
 
 @media ( min-width : 576px) {

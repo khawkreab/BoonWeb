@@ -33,66 +33,147 @@
 
 	<section>
 		<div class="container">
+			<div class="dashboard-left">
 
-			<!-- ----------------------------------------------------------------------------  -->
-			<div class="dashboard">
 				<!-- ----------------------------------------------------------------------------  -->
-				<div class="DashboardProfileCard  module">
-					<a class="DashboardProfileCard-bg u-bgUserColor u-block"
-						href="/GuoChakkaphat" tabindex="-1" aria-hidden="true"
-						rel="noopener"> </a>
-					<div class="DashboardProfileCard-content">
-						<a class="DashboardProfileCard-avatarLink u-inlineBlock"
-							href="/GuoChakkaphat" title="K'win" tabindex="-1"
-							aria-hidden="true" rel="noopener"> <img
-							class="DashboardProfileCard-avatarImage js-action-profile-avatar"
-							src="https://pbs.twimg.com/profile_images/900580000620924928/jW4Umfy3_bigger.jpg"
-							alt="">
-						</a>
-						<div class="DashboardProfileCard-userFields account-group">
-							<div class="DashboardProfileCard-name u-textTruncate">
-								<a class="u-textInheritColor js-nav" href="/GuoChakkaphat"
-									rel="noopener">K'win</a><span class="UserBadges"></span>
-							</div>
-							<span class="DashboardProfileCard-screenname u-inlineBlock u-dir"
-								dir="ltr"> <a
-								class="DashboardProfileCard-screennameLink u-linkComplex u-linkClean js-nav"
-								href="/GuoChakkaphat" rel="noopener"><span
-									class="username u-dir" dir="ltr">@<b
-										class="u-linkComplex-target">GuoChakkaphat</b></span></a>
-							</span>
-						</div>
+				<div class="dashboard">
+					<!-- ----------------------------------------------------------------------------  -->
+					<a> <img class="DashboardProfileCard" src="img/profile.jpg"></a>
+					<!-- ----------------------------------------------------------------------------  -->
+					<div class="DashboardProfileCard-userFields">
+						<a>K'win</a> <br> <a>@<b>GuoChakkaphat</b></a>
 					</div>
+					<!-- ----------------------------------------------------------------------------  -->
 				</div>
-			</div>
-			<!-- ----------------------------------------------------------------------------  -->
-			<div class="list-type"></div>
-			<!-- ----------------------------------------------------------------------------  -->
-		</div>
-		<!-- ----------------------------------------------------------------------------  -->
-		<div class="tbody">
-			<c:forEach items="${listGold}" var="gold">
-				<div class="card" style="width: 500px;">
-					<div class="card-img">
-						<img class="card-img-top" src="img/header-bg.jpg"
-							alt="Card image cap">
-					</div>
-					<div class="card-block">
-						<h4 class="card-title">${gold.goldName}</h4>
-						<p class="card-text">${gold.goldBrand}</p>
-					</div>
-					<ul class="list-group list-group-flush">
-						<li class="list-group-item"><a
-							href="proposePriceForm.do?goldId=${gold.goldId}">Propose
-								Price</a></li>
+				<!-- ----------------------------------------------------------------------------  -->
+				<div class="list-type">
+
+					<ul class="list-group">
+						<li class="list-group-item active">list</li>
+						<li class="list-group-item">New <span class="badge">12</span></li>
+						<li class="list-group-item">Deleted <span class="badge">5</span></li>
+						<li class="list-group-item">Warnings <span class="badge">3</span></li>
 					</ul>
 				</div>
-			</c:forEach>
-		</div>
-		<!-- ----------------------------------------------------------------------------  -->
-		<div class="appove">approve</div>
+				<!-- ----------------------------------------------------------------------------  -->
+			</div>
+			<!-- ----------------------------------------------------------------------------  -->
+			<div class="dashboard-list">
+				<ul>
+					<li class="tbody">
+						<div class="d-flex flex-column tbody-pd">
+							<div class="p-2">
+								<!-- ----------------------------------------------------------------------------  -->
+								<div class="tbody-content">
+									<div class="d-flex justify-content-end">
+										<div class="mr-auto p-2 fs">
+											<img class="img-icon" alt="profilePic" src="img/gold.png" />
+											user name
+										</div>
+										<div class="p-2">06:00 21/11/2560</div>
+									</div>
+								</div>
+								<!-- ----------------------------------------------------------------------------  -->
+							</div>
+							<div class="p-2">
+								<!-- ----------------------------------------------------------------------------  -->
+								<div class="tbody-element">
+									<div class="d-flex flex-column">
+										<div class="p-2">gold name , gold brand , gold Pure ,
+											gold Weight</div>
+										<div class="p-2">Detail</div>
+										<div class="p-2 img-flame">
+											<img class="img-list" src="img/profile.jpg">
+										</div>
+										<div class="p-2 flex-row">
+											<div class="d-flex justify-content-end">
+												<div class="mr-auto p-2">if you want</div>
+												<div class="p-2">
+													<a class="btn btn-sm btn-primary">Propost</a>
+												</div>
+											</div>
 
-		<!-- ----------------------------------------------------------------------------  -->
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- ----------------------------------------------------------------------------  -->
+						</div>
+					</li>
+
+					<!-- ----------------------------------------------------------------------------  -->
+					<li class="tbody">
+						<div class="d-flex flex-column tbody-pd">
+							<div class="p-2">
+								<!-- ----------------------------------------------------------------------------  -->
+								<div class="tbody-content">
+									<div class="d-flex justify-content-end">
+										<div class="mr-auto p-2 fs">
+											<img class="img-icon" alt="profilePic" src="img/gold.png" />
+											user name
+										</div>
+										<div class="p-2">06:00 21/11/2560</div>
+									</div>
+								</div>
+								<!-- ----------------------------------------------------------------------------  -->
+							</div>
+							<div class="p-2">
+								<!-- ----------------------------------------------------------------------------  -->
+								<div class="tbody-element">
+									<div class="d-flex flex-column">
+										<div class="p-2">gold name , gold brand , gold Pure ,
+											gold Weight</div>
+										<div class="p-2">Detail</div>
+										<div class="p-2 img-flame">
+											<img class="img-list" src="img/profile.jpg">
+										</div>
+										<div class="p-2">
+											<div class="d-flex justify-content-end">
+												<div class="mr-auto p-2">if you want</div>
+												<div class="p-2">
+													<a class="btn btn-sm btn-primary">Propost</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- ----------------------------------------------------------------------------  -->
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<!-- ----------------------------------------------------------------------------  -->
+			<%-- <c:forEach items="${listGold}" var="gold">
+					<div class="card" style="width: 500px;">
+						<div class="card-img">
+							<img class="card-img-top" src="img/header-bg.jpg"
+								alt="Card image cap">
+						</div>
+						<div class="card-block">
+							<h4 class="card-title">${gold.goldName}</h4>
+							<p class="card-text">${gold.goldBrand}</p>
+						</div>
+						<ul class="list-group list-group-flush">
+							<li class="list-group-item"><a
+								href="proposePriceForm.do?goldId=${gold.goldId}">Propose
+									Price</a></li>
+						</ul>
+					</div>
+				</c:forEach> --%>
+
+			<!-- ----------------------------------------------------------------------------  -->
+			<div class="appove">
+				<ul class="list-group">
+					<li class="list-group-item active">Cras justo odio</li>
+					<li class="list-group-item">Dapibus ac facilisis in</li>
+					<li class="list-group-item">Morbi leo risus</li>
+					<li class="list-group-item">Porta ac consectetur ac</li>
+					<li class="list-group-item">Vestibulum at eros</li>
+				</ul>
+			</div>
+
+			<!-- ----------------------------------------------------------------------------  -->
 
 
 		</div>
