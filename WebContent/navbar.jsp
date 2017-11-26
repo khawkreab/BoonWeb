@@ -59,7 +59,9 @@
 						class="nav-link js-scroll-trigger" href="index.html#as">ปล่อยของหลุดจำนำ</a></li>
 					<li class="nav-item nav-item-hover"><a
 						class="nav-link js-scroll-trigger" href="#portfolio">ประวัติการประเมิน</a></li>
-
+					<%
+						} else if (session.getAttribute("userType") == "admin") {
+					%>
 					<%
 						} else {
 					%>
@@ -107,6 +109,28 @@
 				</div>
 			</div>
 			<!-- -------------------------------------------------------------------- -->
+			<%
+				}else if (session.getAttribute("userType") == "admin") {
+			%>
+			<div class="dropdown">
+				<i class="dropdown-toggle" data-toggle="dropdown" href="#">Admin
+					<img class="img-icon" alt="profilePic" src="img/gold.png" />
+
+				</i>
+				<!-- -------------------------------------------------------------------- -->
+				<div class="dropdown-menu">
+					<div class="dropdown-item">
+						<label onclick="location.replace('pawnerAccount.do')">จัดการบัญชีโรงรับจำนำ</label>
+					</div>
+					<div class="dropdown-item">
+						<label onclick="location.replace('#.do')">แก้ไขข้อมูลโรงรับจำนำ</label>
+					</div>
+					<div class="dropdown-divider"></div>
+					<div class="dropdown-item">
+						<label onclick="location.replace('signOut.do')">ออกจากระบบ</label>
+					</div>
+				</div>
+			</div>
 			<%
 				} else {
 			%>

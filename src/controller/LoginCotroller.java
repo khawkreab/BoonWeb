@@ -43,7 +43,7 @@ public class LoginCotroller {
 		
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
-
+		
 		Pawner pawner;
 		Pawnshop pawnshop;
 		
@@ -80,7 +80,9 @@ public class LoginCotroller {
 
 		try {
 			if (adminName.equals(email)&&adminPassword.equals(password)) {
-				return "redirect:listPawner.do?";
+				request.getSession().setAttribute("isLogin", "yes");
+				request.getSession().setAttribute("userType", "admin");
+				return "redirect:board.do";
 			} 
 		} catch (Exception e) {
 			e.printStackTrace();
