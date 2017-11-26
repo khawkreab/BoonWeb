@@ -78,10 +78,10 @@
 
 						<li><a href="board.do"><i class="fa fa-table fa-fw"></i>
 								Dashboard</a></li>
-						<li><a href="pawnshopList.do"><i
-								class="fa fa-table fa-fw"></i> List PawnShop</a></li>
-						<li><a href="pawnerList.do"><i
-								class="fa fa-table fa-fw"></i> List Pawner</a></li>
+						<li><a href="pawnshopList.do"><i class="fa fa-table fa-fw"></i> 
+								List PawnShop</a></li>
+						<li><a href="pawnerList.do"><i class="fa fa-table fa-fw"></i>
+								List Pawner</a></li>
 
 					</ul>
 				</div>
@@ -93,11 +93,54 @@
 		<div id="page-wrapper">
 			<div class="row">
 				<div class="col-lg-12">
-					<h1 class="page-header">Deam ทำสะ</h1>
+					<h1 class="page-header">List Pawnshop</h1>
 				</div>
 				<!-- /.col-lg-12 -->
 			</div>
-	
+			<!-- /.row -->
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="panel panel-default">
+						<div class="panel-heading">DataTables Advanced Tables</div>
+						<!-- /.panel-heading -->
+						<div class="panel-body">
+							<div class="dataTable_wrapper">
+								<table class="table table-striped table-bordered table-hover"
+									id="dataTables-example">
+									<thead>
+										<tr>
+											<th>ID</th>
+											<th>Pawnshop Name</th>
+											<th>Credential</th>
+											<th>E-mail</th>
+											<th>Password</th>
+											<th>Edit</th>
+											<th>Remove</th>
+										</tr>
+									</thead>
+									<c:forEach items="${pawnshopList}" var="pawnshop">
+										<tbody>
+											<tr class="odd gradeX">
+												<td>${pawnshop.pawnshopId}</td>
+												<td>${pawnshop.pawnshopName}</td>
+												<td>${pawnshop.email}</td>
+												<td>${pawnshop.password}</td>
+												<td>${pawnshop.credential}</td>
+												<td><a href="editPawnshop.do?id=${pawnshop.pawnshopId}">Edit</a></td>
+												<td><a
+													href="deletePawnshop.do?id=${pawnshop.pawnshopId}">Remove</a></td>
+											</tr>
+										</tbody>
+									</c:forEach>
+								</table>
+							</div>
+						</div>
+						<!-- /.panel-body -->
+					</div>
+					<!-- /.panel -->
+				</div>
+				<!-- /.col-lg-12 -->
+			</div>
 
 		</div>
 		<!-- /#page-wrapper -->

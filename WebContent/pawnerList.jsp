@@ -93,11 +93,56 @@
 		<div id="page-wrapper">
 			<div class="row">
 				<div class="col-lg-12">
-					<h1 class="page-header">Deam ทำสะ</h1>
+					<h1 class="page-header">Tables</h1>
 				</div>
 				<!-- /.col-lg-12 -->
 			</div>
-	
+			<!-- /.row -->
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="panel panel-default">
+						<div class="panel-heading">DataTables Advanced Tables</div>
+						<!-- /.panel-heading -->
+						<div class="panel-body">
+							<div class="dataTable_wrapper">
+								<table class="table table-striped table-bordered table-hover"
+									id="dataTables-example">
+									<thead>
+										<tr>
+											<th>ID</th>
+											<th>Frist Name</th>
+											<th>Last Name</th>
+											<th>E-mail</th>
+											<th>Password</th>
+											<th>Edit</th>
+											<th>Remove</th>
+											<th>List Gold</th>
+										</tr>
+									</thead>
+									<c:forEach items="${pawnerList}" var="pm">
+										<tbody>
+											<tr class="odd gradeX">
+												<td>${pm.pawnerId}</td>
+												<td>${pm.firstName}</td>
+												<td>${pm.lastName}</td>
+												<td>${pm.email}</td>
+												<td>${pm.password}</td>
+												<td><a href="editPawner.do?id=${pm.pawnerId}">Edit</a></td>
+												<td><a href="deletePawner.do?id=${pm.pawnerId}">Remove</a></td>
+												<td><a href="listGold.do?id=${pm.pawnerId}">List
+														Gold</a></td>
+											</tr>
+										</tbody>
+									</c:forEach>
+								</table>
+							</div>
+						</div>
+						<!-- /.panel-body -->
+					</div>
+					<!-- /.panel -->
+				</div>
+				<!-- /.col-lg-12 -->
+			</div>
 
 		</div>
 		<!-- /#page-wrapper -->
