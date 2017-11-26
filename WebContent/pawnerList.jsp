@@ -56,7 +56,7 @@
 				</a>
 					<ul class="dropdown-menu dropdown-user">
 						<li class="divider"></li>
-						<li><a href="login.do"><i class="fa fa-sign-out fa-fw"></i>
+						<li><a href="signOut.do"><i class="fa fa-sign-out fa-fw"></i>
 								Logout</a></li>
 					</ul></li>
 			</ul>
@@ -93,7 +93,7 @@
 		<div id="page-wrapper">
 			<div class="row">
 				<div class="col-lg-12">
-					<h1 class="page-header">Tables</h1>
+					<h1 class="page-header">List Pawner</h1>
 				</div>
 				<!-- /.col-lg-12 -->
 			</div>

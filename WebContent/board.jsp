@@ -56,7 +56,7 @@
 				</a>
 					<ul class="dropdown-menu dropdown-user">
 						<li class="divider"></li>
-						<li><a href="login.do"><i class="fa fa-sign-out fa-fw"></i>
+						<li><a href="signOut.do"><i class="fa fa-sign-out fa-fw"></i>
 								Logout</a></li>
 					</ul></li>
 			</ul>
