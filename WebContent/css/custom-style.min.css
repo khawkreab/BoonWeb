@@ -82,7 +82,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 section {
-	padding: 100px 0;
+	padding: 60px 0;
 }
 
 section h2.section-heading {
@@ -103,7 +103,7 @@ section h3.section-subheading {
 
 @media ( min-width : 768px) {
 	section {
-		padding: 100px 0
+		padding: 60px 0
 	}
 }
 
@@ -413,7 +413,7 @@ section#list-post div {
 	height: 36px;
 	overflow: hidden;
 	border-radius: 50%;
-	border: 2px solid #0078d7;
+	border: 2px solid #fff;
 }
 
 .card-img {
@@ -446,18 +446,92 @@ section#list-post div {
 .DashboardProfileCard-userFields {
 	background-color: #fff;
 	padding-left: 120px;
-	padding-top:20px;
+	padding-top: 20px;
 	height: 100px;
-	
 }
 
+.dashboard-list {
+	float: left;
+	width: 600px;
+	background-color: #fff;
+	margin: 0 10px;
+}
 
 .tbody {
-	display: inline-flex;
-	background-color: #fff;
+	border-bottom: 1px solid #c4c7ca;;
+}
+
+.tbody-pd {
+	padding: 10px;
+}
+
+.tbody-content {
+	width: 100%;
+}
+
+.tbody-element {
+	width: 100%;
+	padding-left: 55px;
+}
+
+.d-flex {
+	width: 100%;
+}
+
+.img-flame {
+	height: 350px;
+	overflow: hidden;
+	border-radius: 2%;
+}
+
+.img-list {
+	width: 520px;
 }
 
 .appove {
 	display: inline-flex;
-	width: 20rem;
+}
+
+.p-2 {
+	padding: .1rem !important;
+}
+
+.fs {
+	font-size: 1.5em;
+}
+
+dl, ol, ul {
+	padding: 0px;
+}
+
+li {
+	list-style: none;
+}
+
+.list-type {
+	margin-top: 20px;
+}
+
+.list-group-item:first-child {
+	border-top-left-radius: 0rem;
+	border-top-right-radius: 0rem;
+}
+
+.badge {
+	display: inline-block;
+	min-width: 10px;
+	padding: 3px 7px;
+	font-size: 12px;
+	font-weight: 700;
+	line-height: 1;
+	color: #fff;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	background-color: #777;
+	border-radius: 10px;
+}
+
+.list-group-item>.badge {
+    float: right;
 }
