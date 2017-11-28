@@ -70,7 +70,7 @@ public class ProposePriceController {
 				proposePriceServ.update(proposePrice);
 			}
 		}catch (Exception e){
-		}return "redirect:index.jsp";
+		}return "redirect:pawnshopIndex.do";
 	}
 	
 	
