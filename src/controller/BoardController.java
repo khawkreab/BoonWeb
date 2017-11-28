@@ -26,6 +26,19 @@ public class BoardController {
 	@RequestMapping("/board")
 	public ModelAndView board(HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView("board.jsp");
+		List<Pawner> pawnerList;
+		List<Pawnshop> pawnshopList;
+		try {
+			pawnshopList = pawnshopServ.getAllPawnshop();
+			pawnerList = pmService.getAllPawner();
+			//mv.addObject("pawnerList", pawnerList);
+			mv.addObject("pawnshop", pawnshopList.size());
+			mv.addObject("pawner", pawnerList.size());
+			//System.out.println(o.size());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return mv;
 	}
 	

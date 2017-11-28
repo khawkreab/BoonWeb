@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <html>
@@ -11,6 +11,47 @@
 <meta name="author" content="">
 
 <title>Admin Page</title>
+
+<meta name="description" content="chart created using amCharts live editor" />
+		
+<!-- amCharts javascript sources -->
+<script type="text/javascript" src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+<script type="text/javascript" src="https://www.amcharts.com/lib/3/pie.js"></script>
+
+
+<!-- amCharts javascript code -->
+		<script  type="text/javascript" language="javascript">
+			var sumuser = [];
+			
+			sumuser.push(
+						 {"category": "Pawner","column-1": parseInt(${pawner})}
+						,{"category": "Pawn Shop","column-1": parseInt(${pawnshop})}
+						);
+			
+			AmCharts.makeChart("chartdiv",
+				{
+					"type": "pie",
+					"balloonText": "[[title]]<br><span style='font-size:14px'><b>[[value]]</b> ([[percents]]%)</span>",
+					"colors": [
+						"#FF9E01",
+						"#999999"
+					],
+					"titleField": "category",
+					"valueField": "column-1",
+					"allLabels": [],
+					"balloon": {},
+					"legend": {
+						"enabled": true,
+						"align": "center",
+						"markerType": "circle"
+					},
+					"titles": [],
+					"dataProvider": sumuser
+				}
+			);
+</script>
+
+
 
 <!-- Bootstrap core CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -93,7 +134,10 @@
 		<div id="page-wrapper">
 			<div class="row">
 				<div class="col-lg-12">
-					<h1 class="page-header">Deam ทำสะ</h1>
+					<h1 class="page-header">Chart</h1>
+				
+				<div id="chartdiv" style="width: 100%; height: 400px; background-color: #FFFFFF;" ></div>
+				
 				</div>
 				<!-- /.col-lg-12 -->
 			</div>
