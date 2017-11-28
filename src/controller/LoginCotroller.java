@@ -92,37 +92,7 @@ public class LoginCotroller {
 		return "redirect:login.do?";
 	}
 	
-	@RequestMapping("/pawnerIndex")
-	public ModelAndView pawnerIndex(HttpServletRequest request) {
-		ModelAndView mv = new ModelAndView("pawnerIndex.jsp");
-		Pawner pawner;
-		try {
-			long userId = (long) request.getSession().getAttribute("id");
-			pawner = pmService.findPawnerById(userId);
-			mv.addObject("pawner", pawner);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return mv;
-	}
 	
-	@RequestMapping("/pawnshopIndex")
-	public ModelAndView pawnshopIndex(HttpServletRequest request) {
-		ModelAndView mv = new ModelAndView("pawnshopIndex.jsp");
-		Pawnshop pawnshop;
-		List<Gold> listGold;
-		try {
-			long userId = (long) request.getSession().getAttribute("id");
-			pawnshop = pawnshopServ.findPawnshopById(userId);
-			listGold = goldService.getAllGold();
-			mv.addObject("pawnshop", pawnshop);
-			mv.addObject("listGold",listGold);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return mv;
-	}
-
 	
 	@SuppressWarnings("deprecation")
 	@RequestMapping("/signOut")
