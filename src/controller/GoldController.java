@@ -36,9 +36,7 @@ public class GoldController {
 		long userId = (long) request.getSession().getAttribute("id");
 		Pawner pm = pmService.findPawnerById(userId);
 		Gold gold = new Gold();
-		Date date = new Date();
 		gold.setPawner(pm);
-		gold.setDate(date);
 		mv.addObject("pawner", pm);
 		mv.addObject("gold", gold);
 		return mv;
@@ -47,9 +45,11 @@ public class GoldController {
 	@RequestMapping("/saveGold")
 	public String saveGold(@ModelAttribute("gold") Gold gold, BindingResult result,
 			HttpServletRequest request) {
+		Date date = new Date();
 		try {
 			System.out.println(gold.getClass());
 			if (0 == gold.getGoldId()) { 
+				gold.setDate(date);
 				goldService.insert(gold);
 			} else {
 				goldService.update(gold);
