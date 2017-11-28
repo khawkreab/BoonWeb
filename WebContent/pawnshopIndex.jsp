@@ -60,108 +60,51 @@
 			<!-- ----------------------------------------------------------------------------  -->
 			<div class="dashboard-list">
 				<ul>
-					<li class="tbody">
-						<div class="d-flex flex-column tbody-pd">
-							<div class="p-2">
-								<!-- ----------------------------------------------------------------------------  -->
-								<div class="tbody-content">
-									<div class="d-flex justify-content-end">
-										<div class="mr-auto p-2 fs">
-											<img class="img-icon" alt="profilePic" src="img/gold.png" />
-											user name
-										</div>
-										<div class="p-2">06:00 21/11/2560</div>
-									</div>
-								</div>
-								<!-- ----------------------------------------------------------------------------  -->
-							</div>
-							<div class="p-2">
-								<!-- ----------------------------------------------------------------------------  -->
-								<div class="tbody-element">
-									<div class="d-flex flex-column">
-										<div class="p-2">gold name , gold brand , gold Pure ,
-											gold Weight</div>
-										<div class="p-2">Detail</div>
-										<div class="p-2 img-flame">
-											<img class="img-list" src="img/profile.jpg">
-										</div>
-										<div class="p-2 flex-row">
-											<div class="d-flex justify-content-end">
-												<div class="mr-auto p-2">if you want</div>
-												<div class="p-2">
-													<a class="btn btn-sm btn-primary">Propost</a>
-												</div>
+					<c:forEach items="${listGold}" var="gold">
+						<li class="tbody">
+							<div class="d-flex flex-column tbody-pd">
+								<div class="p-2">
+									<!-- ----------------------------------------------------------------------------  -->
+									<div class="tbody-content">
+										<div class="d-flex justify-content-end">
+											<div class="mr-auto p-2 fs">
+												<img class="img-icon" alt="profilePic" src="img/gold.png" />
+												${gold.pawner.firstName}  ${gold.pawner.lastName}
 											</div>
-
+											<div class="p-2">06:00 21/11/2560</div>
 										</div>
 									</div>
+									<!-- ----------------------------------------------------------------------------  -->
 								</div>
-							</div>
-							<!-- ----------------------------------------------------------------------------  -->
-						</div>
-					</li>
-
-					<!-- ----------------------------------------------------------------------------  -->
-					<li class="tbody">
-						<div class="d-flex flex-column tbody-pd">
-							<div class="p-2">
-								<!-- ----------------------------------------------------------------------------  -->
-								<div class="tbody-content">
-									<div class="d-flex justify-content-end">
-										<div class="mr-auto p-2 fs">
-											<img class="img-icon" alt="profilePic" src="img/gold.png" />
-											user name
-										</div>
-										<div class="p-2">06:00 21/11/2560</div>
-									</div>
-								</div>
-								<!-- ----------------------------------------------------------------------------  -->
-							</div>
-							<div class="p-2">
-								<!-- ----------------------------------------------------------------------------  -->
-								<div class="tbody-element">
-									<div class="d-flex flex-column">
-										<div class="p-2">gold name , gold brand , gold Pure ,
-											gold Weight</div>
-										<div class="p-2">Detail</div>
-										<div class="p-2 img-flame">
-											<img class="img-list" src="img/profile.jpg">
-										</div>
-										<div class="p-2">
-											<div class="d-flex justify-content-end">
-												<div class="mr-auto p-2">if you want</div>
-												<div class="p-2">
-													<a class="btn btn-sm btn-primary">Propost</a>
+								<div class="p-2">
+									<!-- ----------------------------------------------------------------------------  -->
+									<div class="tbody-element">
+										<div class="d-flex flex-column">
+											<div class="p-2"><b>${gold.goldName}</b> , <b>brand</b>
+												${gold.goldBrand} , <b>Pure</b> , <b>Weight</b></div>
+											<div class="p-2">${gold.goldDetail}</div>
+											<div class="p-2 img-flame">
+												<img class="img-list" src="img/profile.jpg">
+											</div>
+											<div class="p-2 flex-row">
+												<div class="d-flex justify-content-end">
+													<div class="mr-auto p-2">if you want</div>
+													<div class="p-2">
+														<a class="btn btn-sm btn-primary"
+															href="proposePriceForm.do?goldId=${gold.goldId}">Propost</a>
+													</div>
 												</div>
+
 											</div>
 										</div>
 									</div>
 								</div>
 								<!-- ----------------------------------------------------------------------------  -->
 							</div>
-						</div>
-					</li>
+						</li>
+					</c:forEach>
 				</ul>
 			</div>
-			<!-- ----------------------------------------------------------------------------  -->
-			<%-- <c:forEach items="${listGold}" var="gold">
-					<div class="card" style="width: 500px;">
-						<div class="card-img">
-							<img class="card-img-top" src="img/header-bg.jpg"
-								alt="Card image cap">
-						</div>
-						<div class="card-block">
-							<h4 class="card-title">${gold.goldName}</h4>
-							<p class="card-text">${gold.goldBrand}</p>
-						</div>
-						<ul class="list-group list-group-flush">
-							<li class="list-group-item"><a
-								href="proposePriceForm.do?goldId=${gold.goldId}">Propose
-									Price</a></li>
-						</ul>
-					</div>
-				</c:forEach> --%>
-
 			<!-- ----------------------------------------------------------------------------  -->
 			<div class="appove">
 				<ul class="list-group">
@@ -172,11 +115,12 @@
 					<li class="list-group-item">Vestibulum at eros</li>
 				</ul>
 			</div>
-
 			<!-- ----------------------------------------------------------------------------  -->
-
-
 		</div>
 	</section>
+		<!-- ----------------------------------------------------------------------------  -->
+		<jsp:include page="footer.jsp" />
+	
+	
 </body>
 </html>

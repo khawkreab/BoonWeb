@@ -157,7 +157,7 @@ address {
 
 dl, ol, ul {
 	margin-top: 0;
-	margin-bottom: 1rem
+	margin-bottom: 0
 }
 
 ol ol, ol ul, ul ol, ul ul {
