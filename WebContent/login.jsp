@@ -41,9 +41,15 @@ body {
 				<div class="main-login">
 					<h5>Welcome</h5>
 					<p></p>
+					<%
+						if (request.getAttribute("error") == "yes") {
+					%>
+					<p style="color: red">Login Failed. Please try again.</p>
+					<%
+						}
+					%>
 					<form:form method="POST" action="loginProcess.do"
 						commandName="pawner">
-
 						<div class="form-group">
 
 							<div class="cols-sm-10">
