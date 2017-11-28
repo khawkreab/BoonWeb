@@ -64,8 +64,10 @@
 										class="fa fa-envelope fa" aria-hidden="true"></i>
 									</span>
 									<form:input path="email" class="form-control"
-										placeholder="Enter your Email" />
+										placeholder="pawner@hotmail.com"
+										pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" />
 								</div>
+								<p>pleas input eng</p>
 							</div>
 						</div>
 
@@ -126,7 +128,7 @@
 
 		</div>
 	</section>
-	
+
 </body>
 
 </html>

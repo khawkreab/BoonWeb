@@ -88,7 +88,7 @@ public class LoginCotroller {
 			e.printStackTrace();
 		}
 
-
+		request.getSession().setAttribute("error", "yes");
 		return "redirect:login.do?";
 	}
 	
