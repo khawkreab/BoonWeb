@@ -57,7 +57,7 @@ public class PawnerController {
 	@RequestMapping("/deletePawner")
 	public String deletePawner(HttpServletRequest request){
 		pmService.delete(Long.valueOf(request.getParameter("id")));
-		return "redirect:listPawner.do";
+		return "redirect:pawnerList.do";
 	
 	}
 	

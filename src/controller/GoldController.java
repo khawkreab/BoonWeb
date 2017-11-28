@@ -1,5 +1,6 @@
 package controller;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.ejb.EJB;
@@ -32,11 +33,12 @@ public class GoldController {
 	@RequestMapping("/goldForm")
 	public ModelAndView newGold(HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView("pawnerGoldForm.jsp");
-		
 		long userId = (long) request.getSession().getAttribute("id");
 		Pawner pm = pmService.findPawnerById(userId);
 		Gold gold = new Gold();
+		Date date = new Date();
 		gold.setPawner(pm);
+		gold.setDate(date);
 		mv.addObject("pawner", pm);
 		mv.addObject("gold", gold);
 		return mv;

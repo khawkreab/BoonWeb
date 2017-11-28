@@ -68,7 +68,7 @@ public class PawnshopController {
 	@RequestMapping("/deletePawnshop")
 	public String deletePawnshop(HttpServletRequest request){
 		pawnshopServ.delete(Long.valueOf(request.getParameter("id")));
-		return "redirect:listPawnshop.do";
+		return "redirect:pawnshopList.do";
 	}
 	
 	
