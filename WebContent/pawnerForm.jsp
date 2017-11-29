@@ -63,20 +63,14 @@
 									<span class="input-group-addon"> <i
 										class="fa fa-user fa" aria-hidden="true"></i>
 									</span>
-									<form:input path="firstName" class="form-control"
-<<<<<<< HEAD
-										placeholder="First Name"
-										pattern="[A-Za-z]{3,}" required="required" />
+									<form:input path="firstName" class="form-control"/>
 									<form:input path="lastName" class="form-control"
-										placeholder="Last Name"
-										pattern="[A-Za-z]{3,}" required="required"/>
-=======
-										placeholder="First Name" pattern="[A-Za-z]{6,}"
-										required="required" />
+											placeholder="Last Name" pattern="[A-Za-z]{3,}"
+											required="required" />
+
 									<form:input path="lastName" class="form-control"
-										placeholder="Last Name" pattern="[A-Za-z]{6,}"
-										required="required" />
->>>>>>> 496267ab74593ecdec742c1163afb81d41c433b5
+											placeholder="Last Name" pattern="[A-Za-z]{6,}"
+											required="required" />								
 								</div>
 							</div>
 						</div>
@@ -90,12 +84,8 @@
 									</span>
 									<form:input path="email" class="form-control"
 										placeholder="pawner@hotmail.com"
-<<<<<<< HEAD
-										pattern="[A-Za-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required="required" />
-=======
-										pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+										pattern="[A-Za-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
 										required="required" />
->>>>>>> 496267ab74593ecdec742c1163afb81d41c433b5
 								</div>
 							</div>
 						</div>
@@ -129,13 +119,13 @@
 							</div>
 						</div>
 
-<!-- 						<div class="col-sm-12"> -->
-<!-- 							<div class="checkbox"> -->
-<!-- 								<label> <input type="checkbox" value="" id="block"> -->
-<!-- 									I agree with the Bounyong Terms of Service -->
-<!-- 								</label> -->
-<!-- 							</div> -->
-<!-- 						</div> -->
+						<!-- 						<div class="col-sm-12"> -->
+						<!-- 							<div class="checkbox"> -->
+						<!-- 								<label> <input type="checkbox" value="" id="block"> -->
+						<!-- 									I agree with the Bounyong Terms of Service -->
+						<!-- 								</label> -->
+						<!-- 							</div> -->
+						<!-- 						</div> -->
 						<div class="cols-sm-12">
 							<div class="input-group">
 								<button class="btn-custom col-sm-3" type="submit"
