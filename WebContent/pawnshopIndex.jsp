@@ -81,7 +81,7 @@
 												</div>
 												${gold.pawner.firstName} ${gold.pawner.lastName}
 											</div>
-											<div class="p-2">${gold.date}</div>
+											<div class="p-2">${gold.date.format('d.m.Y')}</div>
 										</div>
 									</div>
 									<!-- ----------------------------------------------------------------------------  -->
