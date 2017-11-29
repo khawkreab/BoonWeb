@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import entity.Gold;
 import entity.Pawnshop;
+import entity.ProposePrice;
 import service.GoldService;
 import service.PawnshopService; 
 
@@ -78,9 +79,16 @@ public class PawnshopController {
 	}
 	
 	@RequestMapping("/pawnshopIndex")
-	public ModelAndView pawnshopIndex(HttpServletRequest request) {
+	public ModelAndView pawnshopIndex(@ModelAttribute("proposePrice") ProposePrice proposePrice, BindingResult result,
+			HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView("pawnshopIndex.jsp");
-		Pawnshop pawnshop;
+		
+		Pawnshop pawnshop = new Pawnshop();
+		
+//		long goldId = Long.parseLong(request.getParameter("goldId"));
+//		Gold gold = goldService.findGoldById(goldId);
+		
+				
 		List<Gold> listGold;
 		try {
 			long userId = (long) request.getSession().getAttribute("id");
