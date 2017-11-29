@@ -22,6 +22,21 @@
 <link href="vendor/font-awesome/css/font-awesome.min.css"
 	rel="stylesheet" type="text/css">
 
+<script>
+	function checkmathpate() {
+		var pass1 = document.getElementById("pass").value;
+		var pass2 = document.getElementById("confirm").value;
+
+		if (pass1 != pass2) {
+			alert("Passwords Do not match");
+			document.getElementById("pass").style.borderColor = "#E34234";
+			document.getElementById("confirm").style.borderColor = "#E34234";
+		} else {
+			//alert("Passwords Match!!!");
+		}
+	}
+</script>
+
 </head>
 
 <body id="page-top">
@@ -49,11 +64,19 @@
 										class="fa fa-user fa" aria-hidden="true"></i>
 									</span>
 									<form:input path="firstName" class="form-control"
+<<<<<<< HEAD
 										placeholder="First Name"
 										pattern="[A-Za-z]{3,}" required="required" />
 									<form:input path="lastName" class="form-control"
 										placeholder="Last Name"
 										pattern="[A-Za-z]{3,}" required="required"/>
+=======
+										placeholder="First Name" pattern="[A-Za-z]{6,}"
+										required="required" />
+									<form:input path="lastName" class="form-control"
+										placeholder="Last Name" pattern="[A-Za-z]{6,}"
+										required="required" />
+>>>>>>> 496267ab74593ecdec742c1163afb81d41c433b5
 								</div>
 							</div>
 						</div>
@@ -67,7 +90,12 @@
 									</span>
 									<form:input path="email" class="form-control"
 										placeholder="pawner@hotmail.com"
+<<<<<<< HEAD
 										pattern="[A-Za-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required="required" />
+=======
+										pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+										required="required" />
+>>>>>>> 496267ab74593ecdec742c1163afb81d41c433b5
 								</div>
 							</div>
 						</div>
@@ -81,10 +109,11 @@
 										class="fa fa-lock fa-lg" aria-hidden="true"></i>
 									</span>
 									<form:input path="password" type="password"
-										class="form-control" placeholder="Enter your Password, more than 6 charter"
-										pattern="[A-Za-z0-9]{6,}" required="required" />
+										class="form-control"
+										placeholder="Enter your Password, more than 6 charter"
+										pattern="[A-Za-z0-9]{6,}" required="required" id="pass" />
 								</div>
-								
+
 							</div>
 						</div>
 
@@ -94,23 +123,23 @@
 								<div class="input-group">
 									<span class="input-group-addon"> <i
 										class="fa fa-lock fa-lg" aria-hidden="true"></i>
-									</span> <input type="password" class="form-control" name="confirm"
-										id="confirm" placeholder="Confirm your Password" required="required"/>
+									</span> <input type="password" class="form-control" id="confirm"
+										placeholder="Confirm your Password" required="required" />
 								</div>
 							</div>
 						</div>
 
-						<div class="col-sm-12">
-							<div class="checkbox">
-								<label> <input type="checkbox" value=""> I agree
-									with the Bounyong Terms of Service
-								</label>
-							</div>
-
-						</div>
+<!-- 						<div class="col-sm-12"> -->
+<!-- 							<div class="checkbox"> -->
+<!-- 								<label> <input type="checkbox" value="" id="block"> -->
+<!-- 									I agree with the Bounyong Terms of Service -->
+<!-- 								</label> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
 						<div class="cols-sm-12">
 							<div class="input-group">
-								<button class="btn-custom col-sm-3" type="submit">
+								<button class="btn-custom col-sm-3" type="submit"
+									onclick="checkmathpate()">
 									Register <i class="fa fa-chevron-right" aria-hidden="true"></i>
 
 								</button>

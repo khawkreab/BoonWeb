@@ -21,6 +21,22 @@
 <link href="css/custom-style.min.css" rel="stylesheet">
 <link href="vendor/font-awesome/css/font-awesome.min.css"
 	rel="stylesheet" type="text/css">
+	
+		<!-- --------------------------------------------------------------- -->
+	<script>
+	function checkmathpate() {
+		var pass1 = document.getElementById("pass").value;
+		var pass2 = document.getElementById("confirm").value;
+
+		if (pass1 != pass2) {
+			alert("Passwords Do not match");
+			document.getElementById("pass").style.borderColor = "#E34234";
+			document.getElementById("confirm").style.borderColor = "#E34234";
+		} else {
+			//alert("Passwords Match!!!");
+		}
+	}
+</script>
 
 </head>
 
@@ -76,7 +92,7 @@
 									<span class="input-group-addon"> <i
 										class="fa fa-lock fa-lg" aria-hidden="true"></i>
 									</span>
-									<form:input path="password" type="password"
+									<form:input path="password" type="password" id="pass"
 										class="form-control" placeholder="Enter your Password" 
 										pattern="[A-Za-z0-9]{6,}" required="required" />
 
@@ -89,7 +105,7 @@
 								<div class="input-group">
 									<span class="input-group-addon"> <i
 										class="fa fa-lock fa-lg" aria-hidden="true"></i>
-									</span> <input type="password" class="form-control" name="confirm"
+									</span> <input type="password" class="form-control" 
 										id="confirm" placeholder="Confirm your Password" 
 										pattern="[A-Za-z0-9]{6,}" required="required" />
 								</div>
@@ -112,14 +128,13 @@
 						</div>
 						 -->
 
-						<div class="col-sm-12">
+		<!-- 				<div class="col-sm-12">
 							<div class="checkbox">
 								<label> <input type="checkbox" value=""> I agree
 									with the Bounyong Terms of Service
 								</label>
 							</div>
-
-						</div>
+						</div> -->
 						<div class="cols-sm-12">
 							<div class="input-group">
 								<button class="btn-custom col-sm-3" type="submit">
