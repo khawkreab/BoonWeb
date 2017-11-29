@@ -66,10 +66,6 @@
 									<form:input path="firstName" class="form-control"/>
 									<form:input path="lastName" class="form-control"
 											placeholder="Last Name" pattern="[A-Za-z]{3,}"
-											required="required" />
-
-									<form:input path="lastName" class="form-control"
-											placeholder="Last Name" pattern="[A-Za-z]{6,}"
 											required="required" />								
 								</div>
 							</div>
