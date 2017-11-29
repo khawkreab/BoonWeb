@@ -35,7 +35,6 @@
 		<!-- Navigation -->
 		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="index.html">Startmin</a>
 			</div>
 
 			<button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -46,7 +45,6 @@
 			</button>
 
 			<ul class="nav navbar-nav navbar-left navbar-top-links">
-				<li><a href="#"><i class="fa fa-home fa-fw"></i> Website</a></li>
 			</ul>
 
 			<ul class="nav navbar-right navbar-top-links">
@@ -67,11 +65,7 @@
 					<ul class="nav" id="side-menu">
 						<li class="sidebar-search">
 							<div class="input-group custom-search-form">
-								<input type="text" class="form-control" placeholder="Search...">
 								<span class="input-group-btn">
-									<button class="btn btn-primary" type="button">
-										<i class="fa fa-search"></i>
-									</button>
 								</span>
 							</div> <!-- /input-group -->
 						</li>
@@ -104,9 +98,9 @@
 						<div class="panel-heading">DataTables Advanced Tables</div>
 						<!-- /.panel-heading -->
 						<div class="panel-body">
-							<div class="dataTable_wrapper">
+							<div class="">
 								<table class="table table-striped table-bordered table-hover"
-									id="dataTables-example">
+									id="">
 									<thead>
 										<tr>
 											<th>ID</th>
@@ -114,7 +108,6 @@
 											<th>Credential</th>
 											<th>E-mail</th>
 											<th>Password</th>
-											<th>Edit</th>
 											<th>Remove</th>
 										</tr>
 									</thead>
@@ -126,7 +119,6 @@
 												<td>${pawnshop.credential}</td>
 												<td>${pawnshop.email}</td>
 												<td>${pawnshop.password}</td>
-												<td><a href="editPawnshop.do?id=${pawnshop.pawnshopId}">Edit</a></td>
 												<td><a
 													href="deletePawnshop.do?id=${pawnshop.pawnshopId}">Remove</a></td>
 											</tr>
