@@ -67,7 +67,7 @@
 									</span>
 									<form:input path="email" class="form-control"
 										placeholder="pawner@hotmail.com"
-										pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required="required"/>
+										pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required="required" />
 								</div>
 							</div>
 						</div>
