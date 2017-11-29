@@ -50,12 +50,12 @@
 									</span>
 									<form:input path="firstName" class="form-control"
 										placeholder="First Name"
-										pattern="[A-Za-z]{10}" />
+										pattern="[A-Za-z]{20}" required="required" />
 									<form:input path="lastName" class="form-control"
 										placeholder="Last Name"
-										pattern="[A-Za-z]{10}" />
+										pattern="[A-Za-z]{20}" required="required"/>
 								</div>
-								<p>pleas input English</p>
+								
 							</div>
 						</div>
 
@@ -68,9 +68,8 @@
 									</span>
 									<form:input path="email" class="form-control"
 										placeholder="pawner@hotmail.com"
-										pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" />
+										pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required="required"/>
 								</div>
-								<p>pleas input English</p>
 							</div>
 						</div>
 
@@ -83,10 +82,10 @@
 										class="fa fa-lock fa-lg" aria-hidden="true"></i>
 									</span>
 									<form:input path="password" type="password"
-										class="form-control" placeholder="Enter your Password"
-										pattern=".{6,}" />
+										class="form-control" placeholder="Enter your Password, more than 6 charter"
+										pattern="[A-Za-z]{6,}" required="required" />
 								</div>
-								<p>pleas input 6 or more</p>
+								
 							</div>
 						</div>
 
@@ -97,7 +96,7 @@
 									<span class="input-group-addon"> <i
 										class="fa fa-lock fa-lg" aria-hidden="true"></i>
 									</span> <input type="password" class="form-control" name="confirm"
-										id="confirm" placeholder="Confirm your Password" />
+										id="confirm" placeholder="Confirm your Password" required="required"/>
 								</div>
 							</div>
 						</div>
