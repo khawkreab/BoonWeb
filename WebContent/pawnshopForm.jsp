@@ -50,7 +50,8 @@
 										class="fa fa-user fa" aria-hidden="true"></i>
 									</span>
 									<form:input path="pawnshopName" class="form-control"
-										placeholder="pawnshopName" />
+										placeholder="pawnshopName" 
+										pattern="[A-Za-z]{6,}" required="required" />
 								</div>
 							</div>
 						</div>
@@ -62,7 +63,8 @@
 										class="fa fa-envelope fa" aria-hidden="true"></i>
 									</span>
 									<form:input path="email" class="form-control"
-										placeholder="Enter your Email" />
+										placeholder="Enter your Email" 
+										pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required="required" />
 								</div>
 							</div>
 						</div>
@@ -75,7 +77,8 @@
 										class="fa fa-lock fa-lg" aria-hidden="true"></i>
 									</span>
 									<form:input path="password" type="password"
-										class="form-control" placeholder="Enter your Password" />
+										class="form-control" placeholder="Enter your Password" 
+										pattern="[A-Za-z0-9]{6,}" required="required" />
 
 								</div>
 							</div>
@@ -87,12 +90,14 @@
 									<span class="input-group-addon"> <i
 										class="fa fa-lock fa-lg" aria-hidden="true"></i>
 									</span> <input type="password" class="form-control" name="confirm"
-										id="confirm" placeholder="Confirm your Password" />
+										id="confirm" placeholder="Confirm your Password" 
+										pattern="[A-Za-z0-9]{6,}" required="required" />
 								</div>
 							</div>
 						</div>
 						
 						
+						<!-- 	
 						<div class="form-group">
 							<div class="cols-sm-10">
 								<div class="input-group">
@@ -105,6 +110,7 @@
 								</div>
 							</div>
 						</div>
+						 -->
 
 						<div class="col-sm-12">
 							<div class="checkbox">
