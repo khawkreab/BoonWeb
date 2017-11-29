@@ -50,10 +50,10 @@
 									</span>
 									<form:input path="firstName" class="form-control"
 										placeholder="First Name"
-										pattern="[A-Za-z]{20}" required="required" />
+										pattern="[A-Za-z]{10}" required="required" />
 									<form:input path="lastName" class="form-control"
 										placeholder="Last Name"
-										pattern="[A-Za-z]{20}" required="required"/>
+										pattern="[A-Za-z]{10}" required="required"/>
 								</div>
 								
 							</div>
