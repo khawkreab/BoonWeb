@@ -27,6 +27,7 @@
 				<td>${pp.proposeDate}</td>
 				<td>${pp.status}</td>
 				<td>${pp.pawnshopId.pawnshopName}</td>
+				<td><a href="editProposePrice.do?id=${pp.proposePriceId}">Approved</a></td>
 			</tr>
 		</c:forEach>
 	</table>
