@@ -52,28 +52,35 @@
 
 						<div class="input-content">
 							<div class="form-group">
-								<form:input path="goldName" class="form-control"
-									placeholder="ชื่อทอง " />
+								<form:select path="goldName" class="form-control"
+									placeholder="Category" required="required" >
+									<option value="Gold ornament">Gold ornament</option>
+									<option value="Gold bars 96.5%">Gold bars 96.5%</option>
+									<option value="Gold bars 99.99%">Gold bars 99.99%</option>
+									<option value="Gold Master">Gold Master</option>
+									<option value="Amulet frame">Amulet frame</option>
+								</form:select>
 							</div>
 							<div class="form-group">
 								<form:input path="goldBrand" class="form-control"
-									placeholder="ชื่อยี่ห้อ" />
+									placeholder="Brand" pattern="[A-Za-z]{3,}" required="required" />
 							</div>
 
 							<div class="form-group">
 								<form:input path="goldWeight" class="form-control"
-									placeholder="น้ำหนัก" />
+									placeholder="Weight" pattern="[0-9A-Za-z]{3,}"
+									required="required" />
 							</div>
 
 							<div class="form-group">
 								<form:input path="goldPure" class="form-control"
-									placeholder="ความบริสุทธิ์" />
+									placeholder="Purity" pattern="[0-9]+%{1,}" required="required" />
 							</div>
 						</div>
 
 						<div class="form-group">
 							<form:textarea path="goldDetail" class="form-control"
-								placeholder="ลายละเอียด"></form:textarea>
+								placeholder="Other information"></form:textarea>
 						</div>
 						<div class="form-group">
 							<label class="custom-file"> <input type="file" id="file"
