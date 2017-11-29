@@ -50,12 +50,11 @@
 									</span>
 									<form:input path="firstName" class="form-control"
 										placeholder="First Name"
-										pattern="[A-Za-z]{20}" required="required" />
+										pattern="[A-Za-z]{6,}" required="required" />
 									<form:input path="lastName" class="form-control"
 										placeholder="Last Name"
-										pattern="[A-Za-z]{20}" required="required"/>
+										pattern="[A-Za-z]{6,}" required="required"/>
 								</div>
-								
 							</div>
 						</div>
 
@@ -83,7 +82,7 @@
 									</span>
 									<form:input path="password" type="password"
 										class="form-control" placeholder="Enter your Password, more than 6 charter"
-										pattern="[A-Za-z]{6,}" required="required" />
+										pattern="[A-Za-z0-9]{6,}" required="required" />
 								</div>
 								
 							</div>
