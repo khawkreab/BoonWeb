@@ -27,7 +27,7 @@
 		<div class="container">
 			<!-- -------------------------------------------------------------------- -->
 			<a class="navbar-brand js-scroll-trigger nav-item-logo"
-				href="index.html"> <img src="img/logos/adswhite.png" width="100">
+				href=""> <img src="img/logos/adswhite.png" width="100">
 			</a>
 			<!-- -------------------------------------------------------------------- -->
 			<button class="navbar-toggler navbar-toggler-right" type="button"
@@ -47,16 +47,12 @@
 					<li class="nav-item nav-item-hover"><a
 						class="nav-link js-scroll-trigger" href="goldForm.do">การจำนำ</a></li>
 					<li class="nav-item nav-item-hover"><a
-						class="nav-link js-scroll-trigger" href="#portfolio">ซื้อของหลุดจำนำ</a></li>
-					<li class="nav-item nav-item-hover"><a
 						class="nav-link js-scroll-trigger" href="listPawnerGold.do">ติดตามสถานะ</a></li>
 					<%
 						} else if (session.getAttribute("userType") == "pawnShop") {
 					%>
 					<li class="nav-item nav-item-hover"><a
 						class="nav-link js-scroll-trigger" href="listAllGold.do">การประเมิน</a></li>
-					<li class="nav-item nav-item-hover"><a
-						class="nav-link js-scroll-trigger" href="index.html#as">ปล่อยของหลุดจำนำ</a></li>
 					<li class="nav-item nav-item-hover"><a
 						class="nav-link js-scroll-trigger" href="#portfolio">ประวัติการประเมิน</a></li>
 					<%
@@ -65,10 +61,12 @@
 					<%
 						} else {
 					%>
+					<!--  
 					<li class="nav-item nav-item-hover"><a
-						class="nav-link js-scroll-trigger" href="index.html#as">การจำนำ</a></li>
+						class="nav-link js-scroll-trigger" href="login.do">การจำนำ</a></li>
 					<li class="nav-item nav-item-hover"><a
-						class="nav-link js-scroll-trigger" href="#portfolio">ซื้อของหลุดจำนำ</a></li>
+						class="nav-link js-scroll-trigger" href="login.do">ซื้อของหลุดจำนำ</a></li>
+						-->
 					<li class="nav-item nav-item-hover"><a
 						class="nav-link js-scroll-trigger" href="login.do">เข้าสู่ระบบ</a></li>
 					<%
@@ -101,7 +99,7 @@
 				<!-- -------------------------------------------------------------------- -->
 				<div class="dropdown-menu">
 					<div class="dropdown-item">
-						<label onclick="location.replace('#.do')">แก้ไขข้อมูลส่วนตัว</label>
+						<label onclick="location.replace('editPawner.do')">แก้ไขข้อมูลส่วนตัว</label>
 					</div>
 					<div class="dropdown-divider"></div>
 					<div class="dropdown-item">

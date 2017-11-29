@@ -35,6 +35,7 @@ public class PawnerController {
 				pmService.insert(pawner);
 			}else{
 				pmService.update(pawner);
+				return "redirect:pawnerIndex.do";
 			}
 		}catch (Exception e){
 		}return "redirect:login.do";
@@ -42,7 +43,7 @@ public class PawnerController {
 	
 	@RequestMapping("/editPawner")
 	public ModelAndView editPawner(HttpServletRequest request) {
-		int paramId = Integer.parseInt(request.getParameter("id"));
+		long paramId = (long) request.getSession().getAttribute("id");
 		Pawner foundPawner;
 		ModelAndView mv = new ModelAndView("pawnerForm.jsp");
 		try {
