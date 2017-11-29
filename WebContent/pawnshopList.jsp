@@ -123,9 +123,9 @@
 											<tr class="odd gradeX">
 												<td>${pawnshop.pawnshopId}</td>
 												<td>${pawnshop.pawnshopName}</td>
+												<td>${pawnshop.credential}</td>
 												<td>${pawnshop.email}</td>
 												<td>${pawnshop.password}</td>
-												<td>${pawnshop.credential}</td>
 												<td><a href="editPawnshop.do?id=${pawnshop.pawnshopId}">Edit</a></td>
 												<td><a
 													href="deletePawnshop.do?id=${pawnshop.pawnshopId}">Remove</a></td>

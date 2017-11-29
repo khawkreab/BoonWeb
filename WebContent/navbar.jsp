@@ -48,8 +48,8 @@
 						class="nav-link js-scroll-trigger" href="goldForm.do">การจำนำ</a></li>
 					<li class="nav-item nav-item-hover"><a
 						class="nav-link js-scroll-trigger" href="#portfolio">ซื้อของหลุดจำนำ</a></li>
-					<li class="nav-item nav-item-hover">
-					<a class="nav-link js-scroll-trigger" href="listPawnerGold.do">ติดตามสถานะ</a></li>
+					<li class="nav-item nav-item-hover"><a
+						class="nav-link js-scroll-trigger" href="listPawnerGold.do">ติดตามสถานะ</a></li>
 					<%
 						} else if (session.getAttribute("userType") == "pawnShop") {
 					%>
@@ -92,11 +92,12 @@
 				if (session.getAttribute("userType") == "pawner") {
 			%>
 			<div class="dropdown">
-				<i class="dropdown-toggle" data-toggle="dropdown" href="#">
-					${pawner.firstName} ${pawner.lastName} <img class="img-icon"
-					alt="profilePic" src="img/gold.png" />
+				<div class="user-avatar dropdown-toggle" data-toggle="dropdown">
+					<div class="user-avatar__inner">
+						<span class="">${pawner.firstName.substring(0,1).toUpperCase()}</span>
+					</div>
+				</div>
 
-				</i>
 				<!-- -------------------------------------------------------------------- -->
 				<div class="dropdown-menu">
 					<div class="dropdown-item">
@@ -110,13 +111,14 @@
 			</div>
 			<!-- -------------------------------------------------------------------- -->
 			<%
-				}else if (session.getAttribute("userType") == "admin") {
+				} else if (session.getAttribute("userType") == "admin") {
 			%>
 			<div class="dropdown">
-				<i class="dropdown-toggle" data-toggle="dropdown" href="#">Admin
-					<img class="img-icon" alt="profilePic" src="img/gold.png" />
-
-				</i>
+				<div class="user-avatar dropdown-toggle" data-toggle="dropdown">
+					<div class="user-avatar__inner">
+						<span class="">A</span>
+					</div>
+				</div>
 				<!-- -------------------------------------------------------------------- -->
 				<div class="dropdown-menu">
 					<div class="dropdown-item">
@@ -135,10 +137,11 @@
 				} else {
 			%>
 			<div class="dropdown">
-				<i class="dropdown-toggle" data-toggle="dropdown" href="#">${pawnshop.pawnshopName}
-					<img class="img-icon" alt="profilePic" src="img/gold.png" />
-
-				</i>
+				<div class="user-avatar dropdown-toggle" data-toggle="dropdown">
+					<div class="user-avatar__inner">
+						<span class="">${pawnshop.pawnshopName.substring(0,1).toUpperCase()}</span>
+					</div>
+				</div>
 				<!-- -------------------------------------------------------------------- -->
 				<div class="dropdown-menu">
 					<div class="dropdown-item">

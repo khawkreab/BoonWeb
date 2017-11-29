@@ -409,11 +409,16 @@ section#list-post div {
 }
 
 .img-icon {
-	width: 36px;
-	height: 36px;
-	overflow: hidden;
+	width: 45px;
+	height: 45px;
+	position: relative;
 	border-radius: 50%;
-	border: 2px solid #fff;
+	border: 2px solid #000;
+	color: #000000;
+	font-size: 1.5rem;
+	float: left;
+	margin-right: 10px;
+	background-color: #e6ecf0;
 }
 
 .card-img {
@@ -423,7 +428,7 @@ section#list-post div {
 
 .dashboard {
 	width: 290px;
-	background-color: #1DA1F2;
+	background-color: #007bff;
 	padding-top: 100px;
 	position: relative;
 }
@@ -441,6 +446,8 @@ section#list-post div {
 	border: 2px solid #fff;
 	width: 80px;
 	height: 80px;
+	background-color: #e6ecf0;
+	font-size: 4rem;
 }
 
 .DashboardProfileCard-userFields {
@@ -498,6 +505,8 @@ section#list-post div {
 
 .fs {
 	font-size: 1.5em;
+	align-items: center;
+    display: flex;
 }
 
 dl, ol, ul {
@@ -533,5 +542,27 @@ li {
 }
 
 .list-group-item>.badge {
-    float: right;
+	float: right;
+}
+
+.user-avatar {
+	width: 45px;
+	height: 45px;
+	position: relative;
+	border-radius: 50%;
+	border: 2px solid #fff;
+	color: #ffffff;
+	font-size: 1.5rem;
+}
+
+.user-avatar__inner {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	flex-direction: row;
+	align-items: center;
+	display: flex;
+	justify-content: center;
 }

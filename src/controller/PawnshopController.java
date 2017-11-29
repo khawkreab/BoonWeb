@@ -11,7 +11,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import entity.Gold;
 import entity.Pawnshop;
+import entity.ProposePrice;
+import service.GoldService;
 import service.PawnshopService; 
 
 @Controller
@@ -19,6 +22,10 @@ public class PawnshopController {
 	
 	@EJB(mappedName = "ejb:/BoonEJB//PawnshopServiceBean!service.PawnshopService")
 	PawnshopService pawnshopServ;
+	
+
+	@EJB(mappedName = "ejb:/BoonEJB//GoldServiceBean!service.GoldService")
+	GoldService goldService;
 	
 	@RequestMapping("/pawnshopForm")
 	public ModelAndView newPawner(){
@@ -69,6 +76,30 @@ public class PawnshopController {
 	public String deletePawnshop(HttpServletRequest request){
 		pawnshopServ.delete(Long.valueOf(request.getParameter("id")));
 		return "redirect:pawnshopList.do";
+	}
+	
+	@RequestMapping("/pawnshopIndex")
+	public ModelAndView pawnshopIndex(@ModelAttribute("proposePrice") ProposePrice proposePrice, BindingResult result,
+			HttpServletRequest request) {
+		ModelAndView mv = new ModelAndView("pawnshopIndex.jsp");
+		
+		Pawnshop pawnshop = new Pawnshop();
+		
+//		long goldId = Long.parseLong(request.getParameter("goldId"));
+//		Gold gold = goldService.findGoldById(goldId);
+		
+				
+		List<Gold> listGold;
+		try {
+			long userId = (long) request.getSession().getAttribute("id");
+			pawnshop = pawnshopServ.findPawnshopById(userId);
+			listGold = goldService.getAllGold();
+			mv.addObject("pawnshop", pawnshop);
+			mv.addObject("listGold",listGold);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return mv;
 	}
 	
 	

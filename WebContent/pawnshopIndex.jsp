@@ -30,7 +30,9 @@
 	<!-- Navigation -->
 	<jsp:include page="navbar.jsp" />
 
-
+	<%
+		Long id = (Long) request.getSession().getAttribute("id");
+	%>
 	<section>
 		<div class="container">
 			<div class="dashboard-left">
@@ -38,7 +40,11 @@
 				<!-- ----------------------------------------------------------------------------  -->
 				<div class="dashboard">
 					<!-- ----------------------------------------------------------------------------  -->
-					<a> <img class="DashboardProfileCard" src="img/profile.jpg"></a>
+					<div class="DashboardProfileCard">
+						<div class="user-avatar__inner">
+							<span class="">${pawnshop.pawnshopName.substring(0,1).toUpperCase()}</span>
+						</div>
+					</div>
 					<!-- ----------------------------------------------------------------------------  -->
 					<div class="DashboardProfileCard-userFields">
 						<a>K'win</a> <br> <a>@<b>GuoChakkaphat</b></a>
@@ -68,10 +74,14 @@
 									<div class="tbody-content">
 										<div class="d-flex justify-content-end">
 											<div class="mr-auto p-2 fs">
-												<img class="img-icon" alt="profilePic" src="img/gold.png" />
-												${gold.pawner.firstName}  ${gold.pawner.lastName}
+												<div class="img-icon">
+													<div class="user-avatar__inner">
+														<span class="">${gold.pawner.firstName.substring(0,1).toUpperCase()}</span>
+													</div>
+												</div>
+												${gold.pawner.firstName} ${gold.pawner.lastName}
 											</div>
-											<div class="p-2">06:00 21/11/2560</div>
+											<div class="p-2">${gold.date}</div>
 										</div>
 									</div>
 									<!-- ----------------------------------------------------------------------------  -->
@@ -80,9 +90,11 @@
 									<!-- ----------------------------------------------------------------------------  -->
 									<div class="tbody-element">
 										<div class="d-flex flex-column">
-											<div class="p-2"><b>${gold.goldName}</b> , <b>brand</b>
-												${gold.goldBrand} , <b>Pure</b> , <b>Weight</b></div>
-											<div class="p-2">${gold.goldDetail}</div>
+											<div class="p-2">
+												<b>${gold.goldName}</b> , <b>brand</b> ${gold.goldBrand} , <b>Pure</b>
+												, <b>Weight</b>
+											</div>
+											<div class="p-2"><b>Detail</b>${gold.goldDetail}</div>
 											<div class="p-2 img-flame">
 												<img class="img-list" src="img/profile.jpg">
 											</div>
@@ -90,8 +102,17 @@
 												<div class="d-flex justify-content-end">
 													<div class="mr-auto p-2">if you want</div>
 													<div class="p-2">
-														<a class="btn btn-sm btn-primary"
-															href="proposePriceForm.do?goldId=${gold.goldId}">Propost</a>
+
+														<form:form action="saveProposePrice.do"
+															commandName="proposePrice">
+
+															<form:hidden path="pawnshopId.pawnshopId" value="<%=id%>" />
+															<form:hidden path="goldId.goldId" value="${gold.goldId}" />
+															<form:hidden path="proposePriceId" />
+															<form:input path="price" />
+
+															<button type="submit" class="btn btn-sm btn-primary">Propost</button>
+														</form:form>
 													</div>
 												</div>
 
@@ -118,9 +139,9 @@
 			<!-- ----------------------------------------------------------------------------  -->
 		</div>
 	</section>
-		<!-- ----------------------------------------------------------------------------  -->
-		<jsp:include page="footer.jsp" />
-	
-	
+	<!-- ----------------------------------------------------------------------------  -->
+	<jsp:include page="footer.jsp" />
+
+
 </body>
 </html>

@@ -74,4 +74,18 @@ public class PawnerController {
 		}
 		return mv;
 	}
+	
+	@RequestMapping("/pawnerIndex")
+	public ModelAndView pawnerIndex(HttpServletRequest request) {
+		ModelAndView mv = new ModelAndView("pawnerIndex.jsp");
+		Pawner pawner;
+		try {
+			long userId = (long) request.getSession().getAttribute("id");
+			pawner = pmService.findPawnerById(userId);
+			mv.addObject("pawner", pawner);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return mv;
+	}
 }
