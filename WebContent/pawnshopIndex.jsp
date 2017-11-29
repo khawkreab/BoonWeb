@@ -109,7 +109,7 @@
 															<form:hidden path="pawnshopId.pawnshopId" value="<%=id%>" />
 															<form:hidden path="goldId.goldId" value="${gold.goldId}" />
 															<form:hidden path="proposePriceId" />
-															<form:input path="price" placeholder="Money(THB)"/>
+															<form:input  path="price" type="number" value="THB" pattern="[0-9]" min="1" max="1000000" />THB
 
 															<button type="submit" class="btn btn-sm btn-primary" >Propost</button>
 														</form:form>
