@@ -59,20 +59,39 @@ public class ProposePriceController {
 			HttpServletRequest request) {
 
 		Date date = new Date();
-		String status = "processing";
 
 		try {
 			if (proposePrice.getProposePriceId() == 0) {
 				proposePrice.setProposeDate(date);
-				proposePrice.setStatus(status);
 				proposePriceServ.insert(proposePrice);
 
 			} else {
+				proposePrice.setProposeDate(date);
 				proposePriceServ.update(proposePrice);
 			}
 		} catch (Exception e) {
 		}
 		return "redirect:pawnshopIndex.do";
+	}
+	
+	@RequestMapping("/approveProposePrice")
+	public String approveProposePrice(@ModelAttribute("proposePrice") ProposePrice proposePrice, BindingResult result,
+			HttpServletRequest request) {
+
+		Date date = new Date();
+
+		try {
+			if (proposePrice.getProposePriceId() == 0) {
+				proposePrice.setProposeDate(date);
+				proposePriceServ.insert(proposePrice);
+
+			} else {
+				proposePrice.setProposeDate(date);
+				proposePriceServ.update(proposePrice);
+			}
+		} catch (Exception e) {
+		}
+		return "redirect:listPawnerGold.do";
 	}
 
 	@RequestMapping("/listProposePrice")
@@ -89,7 +108,7 @@ public class ProposePriceController {
 	}
 
 	@RequestMapping("/listProposeBygold")
-	public ModelAndView listProposeBygold(HttpServletRequest request) {
+	public ModelAndView listProposeBygold(@ModelAttribute("proposePrice") ProposePrice proposePrice, BindingResult result, HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView("listProposeByGold.jsp");
 		Pawner pawner;
 		List<ProposePrice> ppList;

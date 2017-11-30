@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page import="java.util.Date" %>
 
 <html lang="en">
 
@@ -26,7 +27,6 @@
 </head>
 
 <body id="page-top">
-
 	<!-- Navigation -->
 	<jsp:include page="navbar.jsp" />
 
@@ -94,7 +94,8 @@
 												<b>${gold.goldName}</b> , <b>brand</b> ${gold.goldBrand} , <b>Pure</b>
 												, <b>Weight</b>
 											</div>
-											<div class="p-2"><b>Detail</b>${gold.goldDetail}</div>
+											<div class="p-2">
+												<b>Detail</b>${gold.goldDetail}</div>
 											<div class="p-2 img-flame">
 												<img class="img-list" src="img/profile.jpg">
 											</div>
@@ -105,13 +106,14 @@
 
 														<form:form action="saveProposePrice.do"
 															commandName="proposePrice">
-
+															<form:hidden path="proposePriceId" />
 															<form:hidden path="pawnshopId.pawnshopId" value="<%=id%>" />
 															<form:hidden path="goldId.goldId" value="${gold.goldId}" />
-															<form:hidden path="proposePriceId" />
-															<form:input  path="price" type="number" value="THB" pattern="[0-9]" min="1" max="1000000" />THB
+															<form:hidden path="status" value="Processing" />
+															<form:input path="price" type="number" value="THB"
+																pattern="[0-9]" min="1" max="1000000" />THB
 
-															<button type="submit" class="btn btn-sm btn-primary" >Propost</button>
+															<button type="submit" class="btn btn-sm btn-primary">Propost</button>
 														</form:form>
 													</div>
 												</div>
