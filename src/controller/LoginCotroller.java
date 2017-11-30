@@ -57,7 +57,7 @@ public class LoginCotroller {
 				request.getSession().setAttribute("id", pawner.getPawnerId());
 				request.getSession().setAttribute("isLogin", "yes");
 				request.getSession().setAttribute("userType", "pawner");
-				return "redirect:pawnerIndex.do";
+				return "redirect:goldForm.do";
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
