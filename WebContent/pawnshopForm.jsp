@@ -67,7 +67,7 @@
 									</span>
 									<form:input path="pawnshopName" class="form-control"
 										placeholder="pawnshopName" 
-										pattern="[A-Za-z]{6,}" required="required" />
+										pattern="[A-Za-z]{3,}" required="required" />
 								</div>
 							</div>
 						</div>

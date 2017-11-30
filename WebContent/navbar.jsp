@@ -52,9 +52,7 @@
 						} else if (session.getAttribute("userType") == "pawnShop") {
 					%>
 					<li class="nav-item nav-item-hover"><a
-						class="nav-link js-scroll-trigger" href="listAllGold.do">การประเมิน</a></li>
-					<li class="nav-item nav-item-hover"><a
-						class="nav-link js-scroll-trigger" href="#portfolio">ประวัติการประเมิน</a></li>
+						class="nav-link js-scroll-trigger" href="">ประวัติการประเมิน</a></li>
 					<%
 						} else if (session.getAttribute("userType") == "admin") {
 					%>
@@ -119,12 +117,6 @@
 				</div>
 				<!-- -------------------------------------------------------------------- -->
 				<div class="dropdown-menu">
-					<div class="dropdown-item">
-						<label onclick="location.replace('pawnerAccount.do')">จัดการบัญชีโรงรับจำนำ</label>
-					</div>
-					<div class="dropdown-item">
-						<label onclick="location.replace('#.do')">แก้ไขข้อมูลโรงรับจำนำ</label>
-					</div>
 					<div class="dropdown-divider"></div>
 					<div class="dropdown-item">
 						<label onclick="location.replace('signOut.do')">ออกจากระบบ</label>
@@ -143,10 +135,7 @@
 				<!-- -------------------------------------------------------------------- -->
 				<div class="dropdown-menu">
 					<div class="dropdown-item">
-						<label onclick="location.replace('pawnerAccount.do')">จัดการบัญชีโรงรับจำนำ</label>
-					</div>
-					<div class="dropdown-item">
-						<label onclick="location.replace('#.do')">แก้ไขข้อมูลโรงรับจำนำ</label>
+						<label onclick="location.replace('editPawnshop.do')">แก้ไขข้อมูลโรงรับจำนำ</label>
 					</div>
 					<div class="dropdown-divider"></div>
 					<div class="dropdown-item">

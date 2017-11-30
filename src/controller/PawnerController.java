@@ -38,6 +38,7 @@ public class PawnerController {
 				return "redirect:pawnerIndex.do";
 			}
 		}catch (Exception e){
+			return "redirect:pawnerForm.do";
 		}return "redirect:login.do";
 	}
 	

@@ -63,10 +63,12 @@
 									<span class="input-group-addon"> <i
 										class="fa fa-user fa" aria-hidden="true"></i>
 									</span>
-									<form:input path="firstName" class="form-control"/>
+									<form:input path="firstName" class="form-control"
+										placeholder="First Name" pattern="[A-Za-z]{3,}"
+										required="required" />
 									<form:input path="lastName" class="form-control"
-											placeholder="Last Name" pattern="[A-Za-z]{3,}"
-											required="required" />								
+										placeholder="Last Name" pattern="[A-Za-z]{3,}"
+										required="required" />
 								</div>
 							</div>
 						</div>

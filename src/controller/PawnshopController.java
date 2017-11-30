@@ -61,7 +61,7 @@ public class PawnshopController {
 	
 	@RequestMapping("/editPawnshop")
 	public ModelAndView editPawnshop(HttpServletRequest request){
-		int paramId = Integer.parseInt(request.getParameter("id"));
+		long paramId = (long) request.getSession().getAttribute("id");
 		Pawnshop foundPawnshop;
 		ModelAndView mv = new ModelAndView("pawnshopForm.jsp");
 		try{

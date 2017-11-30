@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import entity.Gold;
 import entity.Pawner;
 import entity.Pawnshop;
 import entity.ProposePrice;
@@ -20,6 +19,7 @@ import service.GoldService;
 import service.PawnerService;
 import service.PawnshopService;
 import service.ProposePriceService;
+
 
 @Controller
 public class ProposePriceController {
@@ -59,12 +59,11 @@ public class ProposePriceController {
 			HttpServletRequest request) {
 
 		Date date = new Date();
-
+		
 		try {
 			if (proposePrice.getProposePriceId() == 0) {
-				proposePrice.setProposeDate(date);
-				proposePriceServ.insert(proposePrice);
-
+					proposePrice.setProposeDate(date);
+					proposePriceServ.insert(proposePrice);
 			} else {
 				proposePrice.setProposeDate(date);
 				proposePriceServ.update(proposePrice);
@@ -145,5 +144,23 @@ public class ProposePriceController {
 	public String deleteProposePrice(HttpServletRequest request) {
 		proposePriceServ.delete(Long.valueOf(request.getParameter("id")));
 		return "redirect:listProposePrice.do";
+	}
+	
+	@RequestMapping("/listProposeByPawnshop")
+	public ModelAndView listProposeByPawnshop(HttpServletRequest request) {
+		ModelAndView mv = new ModelAndView("listProposeByPawnshop.jsp");
+		Pawnshop pawnshop;
+		List<ProposePrice> proposeList;
+		try {
+			long userId = (long) request.getSession().getAttribute("id");
+			pawnshop = pawnshopServ.findPawnshopById(userId);
+			proposeList = proposePriceServ.findProposeByPawnshopId(userId);
+	
+			mv.addObject("pawnshop", pawnshop);
+			mv.addObject("proposeList", proposeList);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return mv;
 	}
 }
