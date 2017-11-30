@@ -52,7 +52,9 @@
 						} else if (session.getAttribute("userType") == "pawnShop") {
 					%>
 					<li class="nav-item nav-item-hover"><a
-						class="nav-link js-scroll-trigger" href="">ประวัติการประเมิน</a></li>
+						class="nav-link js-scroll-trigger" href="pawnshopIndex.do">Home</a></li>
+					<li class="nav-item nav-item-hover"><a
+						class="nav-link js-scroll-trigger" href="listProposeByPawnshop.do">ประวัติการประเมิน</a></li>
 					<%
 						} else if (session.getAttribute("userType") == "admin") {
 					%>
