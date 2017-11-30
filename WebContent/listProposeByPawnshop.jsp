@@ -25,11 +25,11 @@
 	<jsp:include page="navbar.jsp" />
 	
 	<table border="1">
-		<c:forEach items="${proposeList}" var="proposeList">
+		<c:forEach items="${proposeList}" var="pp">
 			<tr>
-				<td>${proposeList.price}</td>
-				<td>${proposeList.proposeDate}</td>
-				<td>${proposeList.status}</td>
+				<td>${pp.price}</td>
+				<td>${pp.proposeDate}</td>
+				<td>${pp.status}</td>
 			</tr>
 		</c:forEach>
 	</table>
