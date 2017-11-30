@@ -56,6 +56,7 @@ public class PawnshopController {
 				pawnshopServ.update(pawnshop);
 			}
 		}catch (Exception e){
+			return "redirect:pawnshopForm.do";
 		}return "redirect:login.do";
 	}
 	
