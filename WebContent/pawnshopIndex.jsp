@@ -67,6 +67,7 @@
 			<div class="dashboard-list">
 				<ul>
 					<c:forEach items="${listGold}" var="gold">
+					<c:if test="${gold.goldBrand == 'meforu'}">
 						<li class="tbody">
 							<div class="d-flex flex-column tbody-pd">
 								<div class="p-2">
@@ -125,6 +126,7 @@
 								<!-- ----------------------------------------------------------------------------  -->
 							</div>
 						</li>
+						</c:if>
 					</c:forEach>
 				</ul>
 			</div>

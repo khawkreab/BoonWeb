@@ -36,23 +36,6 @@ public class ProposePriceController {
 	@EJB(mappedName = "ejb:/BoonEJB//PawnerServiceBean!service.PawnerService")
 	PawnerService pmService;
 
-//	@RequestMapping("/proposePriceForm")
-//	public ModelAndView newProposePrice(HttpServletRequest request) {
-//		ModelAndView mv = new ModelAndView("proposePriceForm.jsp");
-//		long pawnshopId = (long) request.getSession().getAttribute("id");
-//		long goldId = Long.parseLong(request.getParameter("goldId"));
-//
-//		Pawnshop pawnshop = pawnshopServ.findPawnshopById(pawnshopId);
-//		Gold gold = goldService.findGoldById(goldId);
-//
-//		ProposePrice proposePrice = new ProposePrice();
-//		proposePrice.setGoldId(gold);
-//		proposePrice.setPawnshopId(pawnshop);
-//
-//		mv.addObject("proposePrice", proposePrice);
-//		mv.addObject("pawnshop", pawnshop);
-//		return mv;
-//	}
 
 	@RequestMapping("/saveProposePrice")
 	public String saveProposePrice(@ModelAttribute("proposePrice") ProposePrice proposePrice, BindingResult result,
