@@ -19,44 +19,16 @@
 <link href="css/custom-style.min.css" rel="stylesheet">
 <link href="vendor/font-awesome/css/font-awesome.min.css"
 	rel="stylesheet" type="text/css">
-<style>
-#customers {
-	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-	border-collapse: collapse;
-	width: 100%;
-}
-
-#customers td, #customers th {
-	border: 1px solid #ddd;
-	padding: 8px;
-}
-
-#customers tr:nth-child(even) {
-	background-color: #f2f2f2;
-}
-
-#customers tr:hover {
-	background-color: #ddd;
-}
-
-#customers th {
-	padding-top: 12px;
-	padding-bottom: 12px;
-	text-align: left;
-	background-color: #4CAF50;
-	color: white;
-}
-</style>
 </head>
 <body>
 	<jsp:include page="navbar.jsp" />
 	<!-- -------------------------------------------------------------------------- -->
 	<section>
 	<div class="container">
-		<table id="customers">
+		<table border="1">
 			<c:forEach items="${ppList}" var="pp">
 				<tr>
-					<td>propose : ${pp.price} baht</td>
+					<td>${pp.price}</td>
 					<td>${pp.proposeDate}</td>
 					<td>${pp.status}</td>
 					<td>${pp.pawnshopId.pawnshopName}</td>

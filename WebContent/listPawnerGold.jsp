@@ -17,39 +17,11 @@
 <link href="vendor/font-awesome/css/font-awesome.min.css"
 	rel="stylesheet" type="text/css">
 </head>
-<style>
-#customers {
-	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-	border-collapse: collapse;
-	width: 100%;
-}
-
-#customers td, #customers th {
-	border: 1px solid #ddd;
-	padding: 8px;
-}
-
-#customers tr:nth-child(even) {
-	background-color: #f2f2f2;
-}
-
-#customers tr:hover {
-	background-color: #ddd;
-}
-
-#customers th {
-	padding-top: 12px;
-	padding-bottom: 12px;
-	text-align: left;
-	background-color: #4CAF50;
-	color: white;
-}
-</style>
 <body>
 <jsp:include page="navbar.jsp" />
 <section>
 		<div class="container">
-<table id="customers">
+<table border="1">
 		<c:forEach items="${goldList}" var="gold">
 			<tr>
 				<td>${gold.goldId}</td>
@@ -58,8 +30,8 @@
 				<td>${gold.goldBrand}</td>
 				<td>${gold.goldDetail}</td>
 				<td>${gold.goldName}</td>
-				<td>${gold.goldPure} %</td>
-				<td>${gold.goldWeight} g.</td>
+				<td>${gold.goldPure}</td>
+				<td>${gold.goldWeight}</td>
 				<td><a href="deleteGold.do?id=${gold.goldId}">Remove</a></td>
 				<td><a href="listProposeBygold.do?goldId=${gold.goldId}">list Propose</a></td>
 			</tr>

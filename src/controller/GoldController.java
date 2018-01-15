@@ -77,9 +77,10 @@ public class GoldController {
 	
 	@RequestMapping("/deleteGold")
 	public String removeGold(HttpServletRequest request) {
+		String pawnerId = (String) request.getSession().getAttribute("pawner"); // ***************warring
 		long goldId = Long.parseLong(request.getParameter("id"));
 		goldService.delete(goldId);
-		return "redirect:listPawnerGold.do";
+		return "redirect:listGold.do";
 	}
 	
 	@RequestMapping("/listPawnerGold")
