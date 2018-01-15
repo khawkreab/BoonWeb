@@ -63,18 +63,18 @@
 							</div>
 							<div class="form-group">
 								<form:input path="goldBrand" class="form-control"
-									placeholder="Brand" pattern="[A-Za-z]{3,}" required="required" />
+									placeholder="Brand" pattern="[A-Za-z]{1,}" required="required" />
 							</div>
 
 							<div class="form-group">
 								<form:input path="goldWeight" class="form-control"
-									placeholder="Weight" pattern="[0-9A-Za-z]{3,}"
+									placeholder="Weight" pattern="[0-9A-Za-z]{1,}"
 									required="required" />
 							</div>
 
 							<div class="form-group">
 								<form:input path="goldPure" class="form-control"
-									placeholder="Purity" pattern="[0-9]+%{1,}" required="required" />
+									placeholder="Purity" pattern="[0-9]{1,}" required="required" />
 							</div>
 						</div>
 

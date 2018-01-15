@@ -47,7 +47,7 @@
 					</div>
 					<!-- ----------------------------------------------------------------------------  -->
 					<div class="DashboardProfileCard-userFields">
-						<a>K'win</a> <br> <a>@<b>GuoChakkaphat</b></a>
+						<a>${pawnshop.pawnshopName}</a> <br> <a><b>${pawnshop.email}</b></a>
 					</div>
 					<!-- ----------------------------------------------------------------------------  -->
 				</div>
@@ -96,9 +96,9 @@
 												, <b>Weight</b>
 											</div>
 											<div class="p-2">
-												<b>Detail</b>${gold.goldDetail}</div>
+												<b>Detail : </b> ${gold.goldDetail}</div>
 											<div class="p-2 img-flame">
-												<img class="img-list" src="img/profile.jpg">
+												<img class="img-list" src="img/gold.png">
 											</div>
 											<div class="p-2 flex-row">
 												<div class="d-flex justify-content-end">
