@@ -32,7 +32,7 @@ public class LoginCotroller {
 	
 	@RequestMapping("/login")
 	public ModelAndView signIn() {
-		ModelAndView mv = new ModelAndView("login.jsp");
+		ModelAndView mv = new ModelAndView("navbar.jsp");
 		Pawner pawner = new Pawner();
 		mv.addObject("pawner", pawner);
 		return mv;

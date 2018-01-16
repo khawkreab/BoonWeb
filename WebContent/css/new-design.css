@@ -1,0 +1,264 @@
+/*!
+ * khawkreab Grid v1.0.0-beta.2 (new design)
+ * Copyright 2011-2018 khawkreab
+ * Licensed khawkreab
+ */
+
+/*!
+  * Add your styles for devices screen default  
+  * Add your styles for devices more than screen width of 992px 
+  */
+body {
+	overflow-x: hidden;
+	font-family: 'Roboto Slab', 'Helvetica Neue', Helvetica, Arial,
+		sans-serif;
+	background-color: #e6ecf0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 700;
+	font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif
+}
+
+section {
+	padding: 60px 0;
+}
+
+section h2.section-heading {
+	font-size: 40px;
+	margin-top: 0;
+	margin-bottom: 15px
+}
+
+section h3.section-subheading {
+	font-size: 16px;
+	font-weight: 400;
+	font-style: italic;
+	margin-bottom: 75px;
+	text-transform: none;
+	font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, Arial,
+		sans-serif
+}
+
+::selection {
+	background: #007bff;
+	text-shadow: none
+}
+
+dl, ol, ul {
+	padding: 0px;
+}
+
+/*!
+* li
+*/
+li {
+	list-style: none;
+	padding: 0px 15px;
+}
+
+li:hover {
+	background-color: #ccc
+}
+
+/************************************** override *********************************************/
+.modal-footer {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-align: center;
+	align-items: center;
+	-ms-flex-pack: end;
+	justify-content: center;
+	padding: 15px;
+	border-top: 1px solid #e9ecef;
+	coloe: #007bff;
+}
+
+/************************************** end override *********************************************/
+
+/*! 
+*navbar 
+*/
+#mainNav {
+	background-color: #fff
+}
+
+#mainNav .navbar-toggler {
+	font-size: 20px;
+	left: 0;
+	padding: 1px;
+	text-transform: uppercase;
+	color: #000;
+	border: 0;
+	background-color: transparent;
+	font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif
+}
+
+#mainNav .navbar-brand {
+	color: #ff7f00;
+	font-family: 'Kaushan Script', 'Helvetica Neue', Helvetica, Arial,
+		cursive
+}
+
+#mainNav .navbar-brand.active, #mainNav .navbar-brand:active, #mainNav .navbar-brand:focus,
+	#mainNav .navbar-brand:hover {
+	color: #ff7f00;
+}
+
+#mainNav .navbar-nav .nav-item .nav-link {
+	font-size: 90%;
+	font-weight: 400;
+	padding: .75em 0;
+	letter-spacing: 1px;
+	color: #000;
+	font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif
+}
+
+#mainNav.navbar-shrink {
+	padding-top: 10;
+	padding-bottom: 10;
+	background-color: #fff;
+}
+
+#mainNav .navbar-nav .nav-item .nav-link.active, #mainNav .navbar-nav .nav-item .nav-link:hover
+	{
+	color: #ff7f00;
+}
+
+#mainNav {
+	padding: 0px;
+	-webkit-transition: padding-top .3s, padding-bottom .3s;
+	-moz-transition: padding-top .3s, padding-bottom .3s;
+	transition: padding-top .3s, padding-bottom .3s;
+	border: none;
+	background-color: #fff
+}
+
+#mainNav .navbar-brand {
+	font-size: 1.75em;
+	-webkit-transition: all .3s;
+	-moz-transition: all .3s;
+	transition: all .3s
+}
+
+#mainNav .navbar-nav .nav-item .nav-link {
+	padding: 1.1em 1em !important
+}
+
+#mainNav.navbar-shrink .navbar-brand {
+	font-size: 1.25em;
+	top: 10px;
+}
+
+.nav-item-logo {
+	transition: top 600ms 0s ease;
+}
+
+.nav-item-logo-container {
+	margin: 0;
+	position: relative;
+	width: 100%;
+	height: 100%
+}
+
+.nav-item-logo-icon {
+	display: block;
+	fill: #5fcf80
+}
+
+.nav-item:hover .nav-item-logo-icon {
+	fill: #3ac162
+}
+
+/************************************** end navbar *********************************************/
+.box-left {
+	width: 50%;
+	height: 400;
+	background-color: #fff;
+}
+
+.box-right {
+	width: 50%;
+	height: 400;
+	background-color: #fff;
+}
+
+.box-center {
+	width: 100;
+	height: 100;
+	border-radius: 50%;
+	background-color: #fd0404;
+	position: absolute;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+}
+
+.line-center {
+	width: 1px;
+	height: 100%;
+	background-color: #000;
+	position: absolute;
+}
+
+.container {
+	align-items: center;
+}
+
+/************************************************************************************************/
+
+/*!
+ * Add your styles for devices less than screen width of 320px 
+ * Add your styles for devices less than screen width of 480px 
+ * Add your styles for devices less than screen width of 768px 
+ * Add your styles for devices less than screen width of 992px 
+*/
+@media screen and (max-width: 992px) {
+	/* Add your styles for devices with a maximum width of 992px */
+	/*!
+ * nav bar
+ */
+	.nav-item-logo {
+		width: 48px;
+		height: 32px;
+		top: 0px;
+		overflow: hidden;
+		position: absolute;
+		margin-left: 0px;
+	}
+	.nav-item-reg {
+		margin-top: 1px;
+		position: absolute;
+		top: 10px;
+		right: 10px;
+	}
+	.nav-item-logo {
+		position: absolute;
+		left: 50%;
+		-webkit-transform: translatex(-50%);
+		-moz-transform: translatex(-50%);
+		-ms-transform: translatex(-50%);
+		-o-transform: translatex(-50%);
+		transform: translatex(-50%);
+	}
+	#mainNav {
+		padding: 10px;
+		-webkit-transition: padding-top .3s, padding-bottom .3s;
+		-moz-transition: padding-top .3s, padding-bottom .3s;
+		transition: padding-top .3s, padding-bottom .3s;
+		border: none;
+		background-color: #fff;
+	}
+	#mainNav.navbar-shrink {
+		padding-top: 15;
+		padding-bottom: 15;
+		background-color: #fff;
+	}
+	/*!
+* li
+*/
+	li:first-child {
+		border-top: 1px solid #ccc;
+		margin-top: 5px;
+	}
+}

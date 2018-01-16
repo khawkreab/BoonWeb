@@ -19,6 +19,7 @@
 
 <!-- Custom styles for this template -->
 <link href="css/custom-style.min.css" rel="stylesheet">
+<link href="css/new-design.css" rel="stylesheet">
 <link href="vendor/font-awesome/css/font-awesome.min.css"
 	rel="stylesheet" type="text/css">
 
@@ -26,10 +27,11 @@
 
 <body id="page-top">
 
-<%if (session.getAttribute("isLogin") == "") { 
-response.sendRedirect("index.jsp");
-}
-%>
+	<%
+		if (session.getAttribute("isLogin") == "") {
+			response.sendRedirect("index.jsp");
+		}
+	%>
 
 	<!-- Navigation -->
 	<jsp:include page="navbar.jsp" />
@@ -37,66 +39,11 @@ response.sendRedirect("index.jsp");
 	<section>
 		<div class="container">
 
-			<!-- ----------------------------------------------------------------------------  -->
-			<div class="card" style="width: 20rem;">
-				<div class="card-img">
-					<img class="card-img-top" src="img/header-bg.jpg"
-						alt="Card image cap">
-				</div>
-				<div class="card-block">
-					<h4 class="card-title">Card title</h4>
-					<p class="card-text">Some quick example text to build on the
-						card title and make up the bulk of the card's content.</p>
-				</div>
-				<ul class="list-group list-group-flush">
-					<li class="list-group-item">Cras justo odio</li>
-				</ul>
-			</div>
-			<!-- ----------------------------------------------------------------------------  -->
+			<div class="box-left">จำนำของ</div>
+			<div class="box-right">ซื้อของหลุดจำนำ</div>
+			<div class="line-center"></div>
+			<div class="box-center">OR</div>
 
-			<div class="card" style="width: 20rem;">
-			<div class="card-img">
-				<img class="card-img-top" src="img/portfolio/01-full.jpg"
-					alt="Card image cap"></div>
-				<div class="card-block">
-					<h4 class="card-title">Card title</h4>
-					<p class="card-text">Some quick example text to build on the
-						card title and make up the bulk of the card's content.</p>
-				</div>
-				<ul class="list-group list-group-flush">
-					<li class="list-group-item">Cras justo odio</li>
-				</ul>
-			</div>
-			<!-- ----------------------------------------------------------------------------  -->
-				<div class="card" style="width: 20rem;">
-				<div class="card-img">
-					<img class="card-img-top" src="img/header-bg.jpg"
-						alt="Card image cap">
-				</div>
-				<div class="card-block">
-					<h4 class="card-title">Card title</h4>
-					<p class="card-text">Some quick example text to build on the
-						card title and make up the bulk of the card's content.</p>
-				</div>
-				<ul class="list-group list-group-flush">
-					<li class="list-group-item">Cras justo odio</li>
-				</ul>
-			</div>
-			<!-- ----------------------------------------------------------------------------  -->
-
-			<div class="card" style="width: 20rem;">
-			<div class="card-img">
-				<img class="card-img-top" src="img/portfolio/01-full.jpg"
-					alt="Card image cap"></div>
-				<div class="card-block">
-					<h4 class="card-title">Card title</h4>
-					<p class="card-text">Some quick example text to build on the
-						card title and make up the bulk of the card's content.</p>
-				</div>
-				<ul class="list-group list-group-flush">
-					<li class="list-group-item">Cras justo odio</li>
-				</ul>
-			</div>
 			<!-- ----------------------------------------------------------------------------  -->
 		</div>
 	</section>
