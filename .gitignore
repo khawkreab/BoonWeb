@@ -1,2 +1,1 @@
-/bin/
-git rm --cached .classpath
+.classpath
