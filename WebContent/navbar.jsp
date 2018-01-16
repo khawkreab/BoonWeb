@@ -32,70 +32,67 @@
 				<i class="fa fa-bars" aria-hidden="true"></i>
 			</button>
 			<!-- -------------------------------------------------------------------- -->
+
+			<%
+				if (session.getAttribute("userType") == "pawner") {
+			%>
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav text-uppercase ml-auto">
-
-					<!-- -------------------------------------------------------------------- -->
-					<%
-						if (session.getAttribute("userType") == "pawner") {
-					%>
 					<li class="nav-item nav-item-hover"><a
 						class="nav-link js-scroll-trigger" href="goldForm.do">การจำนำ</a></li>
 					<li class="nav-item nav-item-hover"><a
 						class="nav-link js-scroll-trigger" href="listPawnerGold.do">ติดตามสถานะ</a></li>
-					<%
-						} else if (session.getAttribute("userType") == "pawnShop") {
-					%>
+				</ul>
+
+
+			</div>
+			<%
+				} else if (session.getAttribute("userType") == "pawnShop") {
+			%>
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav text-uppercase ml-auto">
 					<li class="nav-item nav-item-hover"><a
 						class="nav-link js-scroll-trigger" href="pawnshopIndex.do">Home</a></li>
 					<li class="nav-item nav-item-hover"><a
 						class="nav-link js-scroll-trigger" href="listProposeByPawnshop.do">ประวัติการประเมิน</a></li>
-					<%
-						} else if (session.getAttribute("userType") == "admin") {
-					%>
-					<%
-						} else {
-					%>
-					<!--  
-					<li class="nav-item nav-item-hover"><a
-						class="nav-link js-scroll-trigger" href="login.do">การจำนำ</a></li>
-					<li class="nav-item nav-item-hover"><a
-						class="nav-link js-scroll-trigger" href="login.do">ซื้อของหลุดจำนำ</a></li>
-						-->
+				</ul>
+			</div>
+
+			<%
+				} else {
+			%>
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav text-uppercase ml-auto">
 					<li class="nav-item nav-item-hover"><a data-toggle="modal"
 						data-target="#myModal" class="nav-link js-scroll-trigger"
 						href="login.do">Sign in</a></li>
-					<%
-						}
-					%>
-
-					<!-- -------------------------------------------------------------------- -->
-					<%
-						if (session.isNew() || session.getAttribute("isLogin") == "no") {
-					%>
-					<!-- <div class="nav-item">
-				<a class="nav-item-reg btn btn-primary btn-sm" href="register.html">สมัครสมาชิก</a>
-			</div> -->
-
-					<li class="nav-item nav-item-hover"><a class="nav-link js-scroll-trigger" href="register.html">Sign up</a></li>
+					<li class="nav-item nav-item-hover"><a
+						class="nav-link js-scroll-trigger" href="register.html">Sign
+							up</a></li>
 				</ul>
 			</div>
+			<%
+				}
+			%>
 			<!-- -------------------------------------------------------------------- -->
 			<%
-				} else if (session.getAttribute("isLogin") == "yes") {
+				if (session.getAttribute("isLogin") == "yes") {
 			%>
 			<!-- -------------------------------------------------------------------- -->
 			<%
 				if (session.getAttribute("userType") == "pawner") {
 			%>
-			<div class="dropdown">
-				<div class="user-avatar dropdown-toggle" data-toggle="dropdown">
-					<div class="user-avatar__inner">
-						<span class="">${pawner.firstName.substring(0,1).toUpperCase()}</span>
-					</div>
-				</div>
+			<div class="nav-item-account navbar-brand">
+				<div class="dropdown-toggle" data-toggle="dropdown"
+					data-target="#dropdown">
 
-				<!-- -------------------------------------------------------------------- -->
+					<i class="fa fa-user-circle-o" aria-hidden="true"></i>
+					${pawner.firstName}
+
+				</div>
+			</div>
+			<!-- -------------------------------------------------------------------- -->
+			<div id="dropdown">
 				<div class="dropdown-menu">
 					<div class="dropdown-item">
 						<label onclick="location.replace('editPawner.do')">แก้ไขข้อมูลส่วนตัว</label>
@@ -110,13 +107,16 @@
 			<%
 				} else if (session.getAttribute("userType") == "admin") {
 			%>
-			<div class="dropdown">
-				<div class="user-avatar dropdown-toggle" data-toggle="dropdown">
+			<div class="nav-item-account navbar-brand">
+				<div class="dropdown-toggle" data-toggle="dropdown"
+					data-target="#dropdown">
 					<div class="user-avatar__inner">
 						<span class="">A</span>
 					</div>
 				</div>
-				<!-- -------------------------------------------------------------------- -->
+			</div>
+			<!-- -------------------------------------------------------------------- -->
+			<div id="dropdown">
 				<div class="dropdown-menu">
 					<div class="dropdown-divider"></div>
 					<div class="dropdown-item">
@@ -125,15 +125,18 @@
 				</div>
 			</div>
 			<%
-				} else {
+				} else if (session.getAttribute("userType") == "pawnshop") {
 			%>
-			<div class="dropdown">
-				<div class="user-avatar dropdown-toggle" data-toggle="dropdown">
+			<div class="nav-item-account navbar-brand">
+				<div class="dropdown-toggle" data-toggle="dropdown"
+					data-target="#dropdown">
 					<div class="user-avatar__inner">
 						<span class="">${pawnshop.pawnshopName.substring(0,1).toUpperCase()}</span>
 					</div>
 				</div>
-				<!-- -------------------------------------------------------------------- -->
+			</div>
+			<!-- -------------------------------------------------------------------- -->
+			<div id="dropdown">
 				<div class="dropdown-menu">
 					<div class="dropdown-item">
 						<label onclick="location.replace('editPawnshop.do')">แก้ไขข้อมูลโรงรับจำนำ</label>
@@ -146,17 +149,9 @@
 			</div>
 			<%
 				}
-			%>
-			<!-- -------------------------------------------------------------------- -->
-			<%
-				} else {
-			%>
-			<ul>
-				<li class="nav-item nav-item-hover"><a href="register.html">สมัครสมาชิก</a></li>
-			</ul>
-			<%
 				}
 			%>
+			<!-- -------------------------------------------------------------------- -->
 
 		</div>
 	</nav>

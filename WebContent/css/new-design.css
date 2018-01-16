@@ -61,6 +61,30 @@ li:hover {
 	background-color: #ccc
 }
 
+/*!
+* override dropdown menu
+*/
+.dropdown-menu {
+	position: absolute;
+	width: 330;
+	top: 100%;
+	right: 0;
+	z-index: 1000;
+	display: none;
+	float: left;
+	min-width: 10rem;
+	padding: .5rem 0;
+	margin: .125rem 0 0;
+	font-size: 1rem;
+	color: #212529;
+	text-align: left;
+	list-style: none;
+	background-color: #fff;
+	background-clip: padding-box;
+	border: 1px solid rgba(0, 0, 0, .15);
+	border-radius: 0rem 0rem 0rem .5rem;
+}
+
 /************************************** override *********************************************/
 .modal-footer {
 	display: -ms-flexbox;
@@ -80,7 +104,8 @@ li:hover {
 *navbar 
 */
 #mainNav {
-	background-color: #fff
+	background-color: #fff;
+	box-shadow: 0px 0px 5px #ccc
 }
 
 #mainNav .navbar-toggler {
@@ -135,7 +160,6 @@ li:hover {
 }
 
 #mainNav .navbar-brand {
-	font-size: 1.75em;
 	-webkit-transition: all .3s;
 	-moz-transition: all .3s;
 	transition: all .3s
@@ -143,11 +167,6 @@ li:hover {
 
 #mainNav .navbar-nav .nav-item .nav-link {
 	padding: 1.1em 1em !important
-}
-
-#mainNav.navbar-shrink .navbar-brand {
-	font-size: 1.25em;
-	top: 10px;
 }
 
 .nav-item-logo {
@@ -170,6 +189,12 @@ li:hover {
 	fill: #3ac162
 }
 
+.nav-item-account {
+	padding: 10px 10px;
+	cursor: pointer;
+	margin: 0px;
+}
+
 /************************************** end navbar *********************************************/
 .box-left {
 	width: 50%;
@@ -179,7 +204,7 @@ li:hover {
 
 .box-right {
 	width: 50%;
-	height: 400;
+	height: 1000;
 	background-color: #fff;
 }
 
@@ -214,10 +239,19 @@ li:hover {
  * Add your styles for devices less than screen width of 992px 
 */
 @media screen and (max-width: 992px) {
-	/* Add your styles for devices with a maximum width of 992px */
+	/*!
+	* Add your styles for devices with a maximum width of 992px
+	 */
 	/*!
  * nav bar
  */
+	.nav-item-account {
+		position: absolute;
+		top: 0px;
+		right: 0px;
+		padding-right: 10px;
+		margin: 0px;
+	}
 	.nav-item-logo {
 		width: 48px;
 		height: 32px;
@@ -254,6 +288,10 @@ li:hover {
 		padding-bottom: 15;
 		background-color: #fff;
 	}
+	#mainNav.navbar-shrink .navbar-brand {
+		top: 5px;
+	}
+
 	/*!
 * li
 */
