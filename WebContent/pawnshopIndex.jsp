@@ -20,6 +20,7 @@
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
 <!-- Custom styles for this template -->
+<link href="css/new-design.css" rel="stylesheet">
 <link href="css/custom-style.min.css" rel="stylesheet">
 <link href="vendor/font-awesome/css/font-awesome.min.css"
 	rel="stylesheet" type="text/css">
@@ -35,39 +36,10 @@
 	%>
 	<section>
 		<div class="container">
-			<div class="dashboard-left">
-
-				<!-- ----------------------------------------------------------------------------  -->
-				<div class="dashboard">
-					<!-- ----------------------------------------------------------------------------  -->
-					<div class="DashboardProfileCard">
-						<div class="user-avatar__inner">
-							<span class="">${pawnshop.pawnshopName.substring(0,1).toUpperCase()}</span>
-						</div>
-					</div>
-					<!-- ----------------------------------------------------------------------------  -->
-					<div class="DashboardProfileCard-userFields">
-						<a>K'win</a> <br> <a>@<b>GuoChakkaphat</b></a>
-					</div>
-					<!-- ----------------------------------------------------------------------------  -->
-				</div>
-				<!-- ----------------------------------------------------------------------------  -->
-				<div class="list-type">
-
-					<ul class="list-group">
-						<li class="list-group-item active">list</li>
-						<li class="list-group-item">New <span class="badge">12</span></li>
-						<li class="list-group-item">Deleted <span class="badge">5</span></li>
-						<li class="list-group-item">Warnings <span class="badge">3</span></li>
-					</ul>
-				</div>
-				<!-- ----------------------------------------------------------------------------  -->
-			</div>
 			<!-- ----------------------------------------------------------------------------  -->
 			<div class="dashboard-list">
 				<ul>
 					<c:forEach items="${listGold}" var="gold">
-					<c:if test="${gold.goldBrand == 'meforu'}">
 						<li class="tbody">
 							<div class="d-flex flex-column tbody-pd">
 								<div class="p-2">
@@ -126,20 +98,10 @@
 								<!-- ----------------------------------------------------------------------------  -->
 							</div>
 						</li>
-						</c:if>
 					</c:forEach>
 				</ul>
 			</div>
 			<!-- ----------------------------------------------------------------------------  -->
-			<div class="appove">
-				<ul class="list-group">
-					<li class="list-group-item active">Cras justo odio</li>
-					<li class="list-group-item">Dapibus ac facilisis in</li>
-					<li class="list-group-item">Morbi leo risus</li>
-					<li class="list-group-item">Porta ac consectetur ac</li>
-					<li class="list-group-item">Vestibulum at eros</li>
-				</ul>
-			</div>
 			<!-- ----------------------------------------------------------------------------  -->
 		</div>
 	</section>

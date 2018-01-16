@@ -125,25 +125,23 @@
 				</div>
 			</div>
 			<%
-				} else if (session.getAttribute("userType") == "pawnshop") {
+				} else if (session.getAttribute("userType") == "pawnShop") {
 			%>
 			<div class="nav-item-account navbar-brand">
 				<div class="dropdown-toggle" data-toggle="dropdown"
 					data-target="#dropdown">
-					<div class="user-avatar__inner">
-						<span class="">${pawnshop.pawnshopName.substring(0,1).toUpperCase()}</span>
-					</div>
+							<i class="fa fa-user-circle-o" aria-hidden="true"></i> ${pawnshop.pawnshopName}
 				</div>
 			</div>
 			<!-- -------------------------------------------------------------------- -->
 			<div id="dropdown">
 				<div class="dropdown-menu">
 					<div class="dropdown-item">
-						<label onclick="location.replace('editPawnshop.do')">แก้ไขข้อมูลโรงรับจำนำ</label>
+						<label onclick="location.replace('editPawnshop.do')">แก้ไขข้อมูลโรงรับจำนำ <%= session.getAttribute("id") %></label>
 					</div>
 					<div class="dropdown-divider"></div>
 					<div class="dropdown-item">
-						<label onclick="location.replace('signOut.do')">ออกจากระบบ</label>
+						<label onclick="location.replace('signOut.do')">ออกจากระบบ ${pawnshop.pawnshopId}</label>
 					</div>
 				</div>
 			</div>

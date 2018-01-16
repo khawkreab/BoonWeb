@@ -79,6 +79,8 @@ public class PawnshopController {
 		return "redirect:pawnshopList.do";
 	}
 	
+	
+	
 	@RequestMapping("/pawnshopIndex")
 	public ModelAndView pawnshopIndex(@ModelAttribute("proposePrice") ProposePrice proposePrice, BindingResult result,
 			HttpServletRequest request) {
@@ -86,15 +88,11 @@ public class PawnshopController {
 		
 		Pawnshop pawnshop = new Pawnshop();
 		
-//		long goldId = Long.parseLong(request.getParameter("goldId"));
-//		Gold gold = goldService.findGoldById(goldId);
-		
-				
 		List<Gold> listGold;
 		try {
-			long userId = (long) request.getSession().getAttribute("id");
+			long userId =  (long) request.getSession().getAttribute("id");
 			pawnshop = pawnshopServ.findPawnshopById(userId);
-			listGold = goldService.getAllGold();
+			listGold = goldService.findGoldByPawnshopId(userId);
 			mv.addObject("pawnshop", pawnshop);
 			mv.addObject("listGold",listGold);
 		} catch (Exception e) {
