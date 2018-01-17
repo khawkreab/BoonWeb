@@ -24,16 +24,16 @@ import service.ProposePriceService;
 @Controller
 public class ProposePriceController {
 
-	@EJB(mappedName = "ejb:/BoonEJB//ProposePriceServiceBean!service.ProposePriceService")
+	@EJB(mappedName = "ejb:/BoonWeb//ProposePriceServiceBean!service.ProposePriceService")
 	ProposePriceService proposePriceServ;
 
-	@EJB(mappedName = "ejb:/BoonEJB//PawnshopServiceBean!service.PawnshopService")
+	@EJB(mappedName = "ejb:/BoonWeb//PawnshopServiceBean!service.PawnshopService")
 	PawnshopService pawnshopServ;
 
-	@EJB(mappedName = "ejb:/BoonEJB//GoldServiceBean!service.GoldService")
+	@EJB(mappedName = "ejb:/BoonWeb//GoldServiceBean!service.GoldService")
 	GoldService goldService;
 
-	@EJB(mappedName = "ejb:/BoonEJB//PawnerServiceBean!service.PawnerService")
+	@EJB(mappedName = "ejb:/BoonWeb//PawnerServiceBean!service.PawnerService")
 	PawnerService pmService;
 
 

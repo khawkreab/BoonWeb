@@ -20,11 +20,11 @@ import service.PawnshopService;
 @Controller
 public class PawnshopController {
 	
-	@EJB(mappedName = "ejb:/BoonEJB//PawnshopServiceBean!service.PawnshopService")
+	@EJB(mappedName = "ejb:/BoonWeb//PawnshopServiceBean!service.PawnshopService")
 	PawnshopService pawnshopServ;
 	
 
-	@EJB(mappedName = "ejb:/BoonEJB//GoldServiceBean!service.GoldService")
+	@EJB(mappedName = "ejb:/BoonWeb//GoldServiceBean!service.GoldService")
 	GoldService goldService;
 	
 	@RequestMapping("/pawnshopForm")

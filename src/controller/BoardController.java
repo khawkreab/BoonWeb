@@ -20,7 +20,7 @@ public class BoardController {
 	@EJB(mappedName = "ejb:/BoonWeb/PawnerServiceBean!service.PawnerService")
 	PawnerService pmService;
 	
-	@EJB(mappedName = "ejb:/BoonEJB//PawnshopServiceBean!service.PawnshopService")
+	@EJB(mappedName = "ejb:/BoonWeb//PawnshopServiceBean!service.PawnshopService")
 	PawnshopService pawnshopServ;
 	
 	@RequestMapping("/board")

@@ -21,13 +21,13 @@ import service.PawnshopService;
 @Controller
 public class LoginCotroller {
 	
-	@EJB(mappedName = "ejb:/BoonEJB//PawnerServiceBean!service.PawnerService")
+	@EJB(mappedName = "ejb:/BoonWeb//PawnerServiceBean!service.PawnerService")
 	PawnerService pmService;
 	
-	@EJB(mappedName = "ejb:/BoonEJB//PawnshopServiceBean!service.PawnshopService")
+	@EJB(mappedName = "ejb:/BoonWeb//PawnshopServiceBean!service.PawnshopService")
 	PawnshopService pawnshopServ;
 
-	@EJB(mappedName = "ejb:/BoonEJB//GoldServiceBean!service.GoldService")
+	@EJB(mappedName = "ejb:/BoonWeb//GoldServiceBean!service.GoldService")
 	GoldService goldService;
 	
 	@RequestMapping("/login")
