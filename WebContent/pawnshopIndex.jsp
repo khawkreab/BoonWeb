@@ -102,64 +102,163 @@
 			</div> --%>
 			<!-- ----------------------------------------------------------------------------  -->
 			<!-- ----------------------------------------------------------------------------  -->
-			<ul class="product-li">
-				<li >
-					<div class="product">
-						<div class="img-container">
-							<img
-								src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?dpr=1&auto=compress,format&fit=crop&w=1400&h=&q=80&cs=tinysrgb&crop=">
-						</div>
-						<div class="product-info">
-							<div class="product-content">
-								<h6>Nike Airmax</h6>
-
-							</div>
-						</div>
-					</div>
-				</li>
-				<li class="tbody">
-					<div class="product">
-						<div class="img-container">
-							<img
-								src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?dpr=1&auto=compress,format&fit=crop&w=1400&h=&q=80&cs=tinysrgb&crop=">
-						</div>
-						<div class="product-info">
-							<div class="product-content">
-								<h6>Nike Airmax</h6>
-
-							</div>
+			<div class="card-deck">
+				<a href="#">
+					<div class="card">
+						<span class="card-img-top"> <img src="img/profile.jpg"
+							alt="Card image cap"></span>
+						<div class="card-body">
+							<span class="card-title">Card title
+								gdfuyrfikfuilfliydfuyklflfrlufg;uil</span> <span class="card-text">This
+								is a wider card with supporting text below as a natural lead-in
+								to additional content. This content is a little bit longer.</span> <span
+								class="card-footer"> <small class="text-muted">Last
+									updated 3 mins ago</small>
+							</span>
 						</div>
 					</div>
-				</li>
-				<li class="tbody">
-					<div class="product">
-						<div class="img-container">
-							<img
-								src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?dpr=1&auto=compress,format&fit=crop&w=1400&h=&q=80&cs=tinysrgb&crop=">
-						</div>
-						<div class="product-info">
-							<div class="product-content">
-								<h6>Nike Airmax</h6>
-
-							</div>
-						</div>
-					</div>
-				</li>
-				<li class="tbody">
-					<div class="product">
-						<div class="img-container">
-							<img
-								src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?dpr=1&auto=compress,format&fit=crop&w=1400&h=&q=80&cs=tinysrgb&crop=">
-						</div>
-						<div class="product-info">
-							<div class="product-content">
-								<h6>Nike Airmax</h6>
-
-							</div>
+				</a> <a href="#">
+					<div class="card">
+						<span class="card-img-top"> <img src="img/profile.jpg"
+							alt="Card image cap"></span>
+						<div class="card-body">
+							<span class="card-title">Card title
+								gdfuyrfikfuilfliydfuyklflfrlufg;uil</span> <span class="card-text">This
+								is a wider card with supporting text below as a natural lead-in
+								to additional content. This content is a little bit longer.</span> <span
+								class="card-footer"> <small class="text-muted">Last
+									updated 3 mins ago</small>
+							</span>
 						</div>
 					</div>
-				</li>
-			</ul>
+				</a> <a href="#">
+					<div class="card">
+						<span class="card-img-top"> <img src="img/profile.jpg"
+							alt="Card image cap"></span>
+						<div class="card-body">
+							<span class="card-title">Card title
+								gdfuyrfikfuilfliydfuyklflfrlufg;uil</span> <span class="card-text">This
+								is a wider card with supporting text below as a natural lead-in
+								to additional content. This content is a little bit longer.</span> <span
+								class="card-footer"> <small class="text-muted">Last
+									updated 3 mins ago</small>
+							</span>
+						</div>
+					</div>
+				</a> <a href="#">
+					<div class="card">
+						<span class="card-img-top"> <img src="img/profile.jpg"
+							alt="Card image cap"></span>
+						<div class="card-body">
+							<span class="card-title">Card title
+								gdfuyrfikfuilfliydfuyklflfrlufg;uil</span> <span class="card-text">This
+								is a wider card with supporting text below as a natural lead-in
+								to additional content. This content is a little bit longer.</span> <span
+								class="card-footer"> <small class="text-muted">Last
+									updated 3 mins ago</small>
+							</span>
+						</div>
+					</div>
+				</a> <a href="#">
+					<div class="card">
+						<span class="card-img-top"> <img src="img/profile.jpg"
+							alt="Card image cap"></span>
+						<div class="card-body">
+							<span class="card-title">Card title
+								gdfuyrfikfuilfliydfuyklflfrlufg;uil</span> <span class="card-text">This
+								is a wider card with supporting text below as a natural lead-in
+								to additional content. This content is a little bit longer.</span> <span
+								class="card-footer"> <small class="text-muted">Last
+									updated 3 mins ago</small>
+							</span>
+						</div>
+					</div>
+				</a> <a href="#">
+					<div class="card">
+						<span class="card-img-top"> <img src="img/profile.jpg"
+							alt="Card image cap"></span>
+						<div class="card-body">
+							<span class="card-title">Card title
+								gdfuyrfikfuilfliydfuyklflfrlufg;uil</span> <span class="card-text">This
+								is a wider card with supporting text below as a natural lead-in
+								to additional content. This content is a little bit longer.</span> <span
+								class="card-footer"> <small class="text-muted">Last
+									updated 3 mins ago</small>
+							</span>
+						</div>
+					</div>
+				</a> <a href="#">
+					<div class="card">
+						<span class="card-img-top"> <img src="img/profile.jpg"
+							alt="Card image cap"></span>
+						<div class="card-body">
+							<span class="card-title">Card title
+								gdfuyrfikfuilfliydfuyklflfrlufg;uil</span> <span class="card-text">This
+								is a wider card with supporting text below as a natural lead-in
+								to additional content. This content is a little bit longer.</span> <span
+								class="card-footer"> <small class="text-muted">Last
+									updated 3 mins ago</small>
+							</span>
+						</div>
+					</div>
+				</a> <a href="#">
+					<div class="card">
+						<span class="card-img-top"> <img src="img/profile.jpg"
+							alt="Card image cap"></span>
+						<div class="card-body">
+							<span class="card-title">Card title
+								gdfuyrfikfuilfliydfuyklflfrlufg;uil</span> <span class="card-text">This
+								is a wider card with supporting text below as a natural lead-in
+								to additional content. This content is a little bit longer.</span> <span
+								class="card-footer"> <small class="text-muted">Last
+									updated 3 mins ago</small>
+							</span>
+						</div>
+					</div>
+				</a> <a href="#">
+					<div class="card">
+						<span class="card-img-top"> <img src="img/profile.jpg"
+							alt="Card image cap"></span>
+						<div class="card-body">
+							<span class="card-title">Card title
+								gdfuyrfikfuilfliydfuyklflfrlufg;uil</span> <span class="card-text">This
+								is a wider card with supporting text below as a natural lead-in
+								to additional content. This content is a little bit longer.</span> <span
+								class="card-footer"> <small class="text-muted">Last
+									updated 3 mins ago</small>
+							</span>
+						</div>
+					</div>
+				</a> <a href="#">
+					<div class="card">
+						<span class="card-img-top"> <img src="img/profile.jpg"
+							alt="Card image cap"></span>
+						<div class="card-body">
+							<span class="card-title">Card title
+								gdfuyrfikfuilfliydfuyklflfrlufg;uil</span> <span class="card-text">This
+								is a wider card with supporting text below as a natural lead-in
+								to additional content. This content is a little bit longer.</span> <span
+								class="card-footer"> <small class="text-muted">Last
+									updated 3 mins ago</small>
+							</span>
+						</div>
+					</div>
+				</a> <a href="#">
+					<div class="card">
+						<span class="card-img-top"> <img src="img/profile.jpg"
+							alt="Card image cap"></span>
+						<div class="card-body">
+							<span class="card-title">Card title
+								gdfuyrfikfuilfliydfuyklflfrlufg;uil</span> <span class="card-text">This
+								is a wider card with supporting text below as a natural lead-in
+								to additional content. This content is a little bit longer.</span> <span
+								class="card-footer"> <small class="text-muted">Last
+									updated 3 mins ago</small>
+							</span>
+						</div>
+					</div>
+				</a>
+			</div>
 		</div>
 	</section>
 	<!-- ----------------------------------------------------------------------------  -->
