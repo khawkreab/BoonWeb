@@ -85,33 +85,34 @@
 	<!-- Services -->
 	<section id="as">
 		<div class="container">
-			<div class="row">
-				<div class="col-lg-12 text-center">
-					<h2 class="section-heading text-uppercase">การจำนำ</h2>
-					<h3 class="section-subheading text-muted">Lorem ipsum dolor
-						sit amet consectetur.</h3>
-				</div>
-			</div>
 			<div class="row text-center">
 				<div class="col-md-4">
-					<span class="fa-stack fa-4x"> <i
-						class="fa fa-circle fa-stack-2x text-primary"></i> <i
-						class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
-					</span>
-					<h4 class="service-heading">E-Commerce</h4>
-					<p class="text-muted">Lorem ipsum dolor sit amet, consectetur
-						adipisicing elit. Minima maxime quam architecto quo inventore
-						harum ex magni, dicta impedit.</p>
+						<div class="product">
+						<div class="img-container">
+							<img
+								src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?dpr=1&auto=compress,format&fit=crop&w=1400&h=&q=80&cs=tinysrgb&crop=">
+						</div>
+						<div class="product-info">
+							<div class="product-content">
+								<h6>Nike Airmax</h6>
+
+							</div>
+						</div>
+					</div>
 				</div>
 				<div class="col-md-4">
-					<span class="fa-stack fa-4x"> <i
-						class="fa fa-circle fa-stack-2x text-primary"></i> <i
-						class="fa fa-laptop fa-stack-1x fa-inverse"></i>
-					</span>
-					<h4 class="service-heading">Responsive Design</h4>
-					<p class="text-muted">Lorem ipsum dolor sit amet, consectetur
-						adipisicing elit. Minima maxime quam architecto quo inventore
-						harum ex magni, dicta impedit.</p>
+					<div class="product">
+						<div class="img-container">
+							<img
+								src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?dpr=1&auto=compress,format&fit=crop&w=1400&h=&q=80&cs=tinysrgb&crop=">
+						</div>
+						<div class="product-info">
+							<div class="product-content">
+								<h6>Nike Airmax</h6>
+
+							</div>
+						</div>
+					</div>
 				</div>
 				<div class="col-md-4">
 					<span class="fa-stack fa-4x"> <i

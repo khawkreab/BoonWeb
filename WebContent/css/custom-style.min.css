@@ -84,16 +84,13 @@ img::-moz-selection {
 
 .footer-copyright {
 	font-size: 90%;
-*
-/
-/* 	line-height: 40px;
+ 	line-height: 40px;
 	text-transform: none;
 	text-align: center;
 	font-family: Montserrat,'Helvetica Neue',Helvetica,Arial,sans-serif
  
-*
-/
-/* }
+
+ }
 
 footer ul.quicklinks {
 	font-size: 90%;
@@ -149,10 +146,7 @@ footer ul.quicklinks {
 }
 
 
- 
-*
-/
-/* .row-login {
+ .row-login {
 	display: -ms-flexbox;
 	display: -webkit-inline-box;
 	-ms-flex-wrap: wrap;
@@ -167,9 +161,7 @@ footer ul.quicklinks {
 
 post
  
-*
-/
-/* .sign-in-card {
+ .sign-in-card {
 	width: 500px;
 	background: #fff;
 	padding: 50px;
@@ -177,9 +169,7 @@ post
 	border-radius: 7px 7px 0 0;
 	box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 5px 0 rgba(0, 0, 0, 0.19);
  
-*
-/
-/* }
+ }
 
 main {
 	display: flex !important;
@@ -199,9 +189,7 @@ section.all-margin {
 
 list
  
-*
-/
-/* #list-post {
+ #list-post {
 	padding: 10px !important;
 }
 
@@ -315,22 +303,7 @@ select type
 	margin: 0 10px;
 }
 
-.tbody {
-	border-bottom: 1px solid #c4c7ca;;
-}
 
-.tbody-pd {
-	padding: 10px;
-}
-
-.tbody-content {
-	width: 100%;
-}
-
-.tbody-element {
-	width: 100%;
-	padding-left: 55px;
-}
 
 .d-flex {
 	width: 100%;

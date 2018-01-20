@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ page import="java.util.Date" %>
+<%@ page import="java.util.Date"%>
 
 <html lang="en">
 
@@ -21,7 +21,6 @@
 
 <!-- Custom styles for this template -->
 <link href="css/new-design.css" rel="stylesheet">
-<link href="css/custom-style.min.css" rel="stylesheet">
 <link href="vendor/font-awesome/css/font-awesome.min.css"
 	rel="stylesheet" type="text/css">
 
@@ -37,7 +36,7 @@
 	<section>
 		<div class="container">
 			<!-- ----------------------------------------------------------------------------  -->
-			<div class="dashboard-list">
+			<%-- <div class="dashboard-list">
 				<ul>
 					<c:forEach items="${listGold}" var="gold">
 						<li class="tbody">
@@ -100,9 +99,67 @@
 						</li>
 					</c:forEach>
 				</ul>
-			</div>
+			</div> --%>
 			<!-- ----------------------------------------------------------------------------  -->
 			<!-- ----------------------------------------------------------------------------  -->
+			<ul class="product-li">
+				<li >
+					<div class="product">
+						<div class="img-container">
+							<img
+								src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?dpr=1&auto=compress,format&fit=crop&w=1400&h=&q=80&cs=tinysrgb&crop=">
+						</div>
+						<div class="product-info">
+							<div class="product-content">
+								<h6>Nike Airmax</h6>
+
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="tbody">
+					<div class="product">
+						<div class="img-container">
+							<img
+								src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?dpr=1&auto=compress,format&fit=crop&w=1400&h=&q=80&cs=tinysrgb&crop=">
+						</div>
+						<div class="product-info">
+							<div class="product-content">
+								<h6>Nike Airmax</h6>
+
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="tbody">
+					<div class="product">
+						<div class="img-container">
+							<img
+								src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?dpr=1&auto=compress,format&fit=crop&w=1400&h=&q=80&cs=tinysrgb&crop=">
+						</div>
+						<div class="product-info">
+							<div class="product-content">
+								<h6>Nike Airmax</h6>
+
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="tbody">
+					<div class="product">
+						<div class="img-container">
+							<img
+								src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?dpr=1&auto=compress,format&fit=crop&w=1400&h=&q=80&cs=tinysrgb&crop=">
+						</div>
+						<div class="product-info">
+							<div class="product-content">
+								<h6>Nike Airmax</h6>
+
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
 		</div>
 	</section>
 	<!-- ----------------------------------------------------------------------------  -->
