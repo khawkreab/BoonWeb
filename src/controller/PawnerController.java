@@ -56,27 +56,6 @@ public class PawnerController {
 		return mv;
 	}
 	
-	@RequestMapping("/deletePawner")
-	public String deletePawner(HttpServletRequest request){
-		pmService.delete(Long.valueOf(request.getParameter("id")));
-		return "redirect:pawnerList.do";
-	
-	}
-	
-	@RequestMapping("/listPawner")
-	public ModelAndView listPawner(HttpServletRequest request) {
-		ModelAndView mv = new ModelAndView("adminlistPawner.jsp");
-		List<Pawner> pawnerList;
-		try {
-			pawnerList = pmService.getAllPawner();
-			mv.addObject("pawnerList", pawnerList);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return mv;
-	}
-	
 	@RequestMapping("/pawnerIndex")
 	public ModelAndView pawnerIndex(HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView("pawnerIndex.jsp");

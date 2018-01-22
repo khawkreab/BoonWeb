@@ -22,7 +22,7 @@ import service.ProposePriceService;
 
 
 @Controller
-public class ProposePriceController {
+public class EstimateController {
 
 	@EJB(mappedName = "ejb:/BoonWeb//ProposePriceServiceBean!service.ProposePriceService")
 	ProposePriceService proposePriceServ;

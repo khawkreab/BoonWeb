@@ -5,7 +5,6 @@ import java.util.List;
 import javax.ejb.EJB;
 import javax.servlet.http.HttpServletRequest;
 
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -14,18 +13,16 @@ import entity.Pawnshop;
 import service.PawnerService;
 import service.PawnshopService;
 
-@Controller
-public class BoardController {
-	
+public class AdminContorller {
 	@EJB(mappedName = "ejb:/BoonWeb/PawnerServiceBean!service.PawnerService")
 	PawnerService pmService;
 	
 	@EJB(mappedName = "ejb:/BoonWeb//PawnshopServiceBean!service.PawnshopService")
 	PawnshopService pawnshopServ;
 	
-	@RequestMapping("/board")
-	public ModelAndView board(HttpServletRequest request) {
-		ModelAndView mv = new ModelAndView("board.jsp");
+	@RequestMapping("/admin_index")
+	public ModelAndView adminDashboard(HttpServletRequest request) {
+		ModelAndView mv = new ModelAndView("adminDashboard.jsp");
 		List<Pawner> pawnerList;
 		List<Pawnshop> pawnshopList;
 		try {
@@ -42,9 +39,10 @@ public class BoardController {
 		return mv;
 	}
 	
-	@RequestMapping("/pawnerList")
-	public ModelAndView pawnerList(HttpServletRequest request) {
-		ModelAndView mv = new ModelAndView("pawnerList.jsp");
+	//Control About Pawner
+	@RequestMapping("/admin_listpawner")
+	public ModelAndView adminListPawner(HttpServletRequest request) {
+		ModelAndView mv = new ModelAndView("adminListPawner.jsp");
 		List<Pawner> pawnerList;
 		try {
 			pawnerList = pmService.getAllPawner();
@@ -56,9 +54,17 @@ public class BoardController {
 		return mv;
 	}
 	
-	@RequestMapping("/pawnshopList")
-	public ModelAndView pawnshopList(HttpServletRequest request) {
-		ModelAndView mv = new ModelAndView("pawnshopList.jsp");
+	@RequestMapping("/deletePawner")
+	public String deletePawner(HttpServletRequest request){
+		pmService.delete(Long.valueOf(request.getParameter("id")));
+		return "redirect:admin_listpawner.do";
+	
+	}
+	
+	//Control About Pawnshop
+	@RequestMapping("/admin_listpawnshop")
+	public ModelAndView adminListPawnshop(HttpServletRequest request) {
+		ModelAndView mv = new ModelAndView("adminListPawnshop.jsp");
 		List<Pawnshop> pawnshopList;
 		try {
 			pawnshopList = pawnshopServ.getAllPawnshop();
@@ -69,5 +75,10 @@ public class BoardController {
 		}
 		return mv;
 	}
-
+	
+	@RequestMapping("/deletePawnshop")
+	public String deletePawnshop(HttpServletRequest request){
+		pawnshopServ.delete(Long.valueOf(request.getParameter("id")));
+		return "redirect:pawnshopList.do";
+	}
 }

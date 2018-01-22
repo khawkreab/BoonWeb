@@ -35,18 +35,6 @@ public class PawnshopController {
 		return mv;
 	}
 	
-	@RequestMapping("/listPawnshop")
-	public ModelAndView listPawnshop(HttpServletRequest request){
-		ModelAndView mv = new ModelAndView("adminlistPawnshop.jsp");
-		List<Pawnshop> pawnshopList;
-		try{
-			pawnshopList = pawnshopServ.getAllPawnshop();
-			mv.addObject("pawnshopList",pawnshopList);
-		}catch (Exception e){
-			e.printStackTrace();
-		}return mv;
-	}
-	
 	@RequestMapping("/savePawnshop")
 	public String savePawnshop(@ModelAttribute("pawnshop") Pawnshop pawnshop, BindingResult result, HttpServletRequest request){
 		try {
@@ -72,13 +60,6 @@ public class PawnshopController {
 			e.printStackTrace();
 		}return mv;
 	}
-	
-	@RequestMapping("/deletePawnshop")
-	public String deletePawnshop(HttpServletRequest request){
-		pawnshopServ.delete(Long.valueOf(request.getParameter("id")));
-		return "redirect:pawnshopList.do";
-	}
-	
 	
 	
 	@RequestMapping("/pawnshopIndex")
