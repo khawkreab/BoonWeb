@@ -23,10 +23,10 @@ public class PawnshopController {
 	PawnshopService pawnshopServ;
 	
 
-	@EJB(mappedName = "ejb:/BoonWeb//PawnerPostsServiceBean!service.PawnerPostsService")
+	@EJB(mappedName = "ejb:/BoonWeb//PawnerPostServiceBean!service.PawnerPostService")
 	PawnerPostService pawnerPostService;
 	
-	@RequestMapping("/pawnshopForm")
+	@RequestMapping("/pawnshop-register-form")
 	public ModelAndView newPawner(){
 		ModelAndView mv = new ModelAndView("pawnshopRegisterForm.jsp");
 		Pawnshop pawnshop = new Pawnshop();
@@ -61,7 +61,7 @@ public class PawnshopController {
 	}
 	
 	
-	@RequestMapping("/pawnshopIndex")
+	@RequestMapping("/pawnshop-index")
 	public ModelAndView pawnshopIndex(@ModelAttribute("PawnerPost") PawnerPost pawnerPost, BindingResult result,
 			HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView("pawnshopIndex.jsp");

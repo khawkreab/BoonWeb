@@ -14,7 +14,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import entity.Estimate;
 import entity.Pawner;
-import entity.PawnerPost;
 import entity.Pawnshop;
 import service.EstimateService;
 import service.PawnerPostService;
@@ -30,7 +29,7 @@ public class EstimateController {
 	@EJB(mappedName = "ejb:/BoonWeb//PawnshopServiceBean!service.PawnshopService")
 	PawnshopService pawnshopServ;
 
-	@EJB(mappedName = "ejb:/BoonWeb//PawnerPostBean!service.PawnerPost")
+	@EJB(mappedName = "ejb:/BoonWeb//PawnerPostServiceBean!service.PawnerPostService")
 	PawnerPostService postService;
 
 	@EJB(mappedName = "ejb:/BoonWeb//PawnerServiceBean!service.PawnerService")
@@ -75,40 +74,6 @@ public class EstimateController {
 		return "redirect:listPawnerGold.do";
 	}
 
-	@RequestMapping("/listProposePrice")
-	public ModelAndView listProposePrice(HttpServletRequest request) {
-		ModelAndView mv = new ModelAndView("listProposePrice.jsp");
-		List<Estimate> estimateList;
-		try {
-			estimateList = estimateService.getAllEstimate();
-			mv.addObject("proposePriceList", estimateList);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return mv;
-	}
-
-	@RequestMapping("/listProposeBygold")
-	public ModelAndView listProposeBygold(@ModelAttribute("proposePrice") Estimate estimate,
-			BindingResult result, HttpServletRequest request) {
-		ModelAndView mv = new ModelAndView("listProposeByGold.jsp");
-		Pawner pawner;
-		List<Estimate> estimatesList;
-		try {
-			long userId = (long) request.getSession().getAttribute("id");
-			long pawnerPostId = Long.parseLong(request.getParameter("pawnerPostId"));
-
-			pawner = pmService.findPawnerById(userId);
-			estimatesList = estimateService.listEstimateByPawnerPost(pawnerPostId);
-
-			mv.addObject("pawner", pawner);
-			mv.addObject("estimatesList", estimatesList);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return mv;
-	}
-
 	@RequestMapping("/editProposePrice")
 	public ModelAndView editProposePrice(HttpServletRequest request) {
 		int paramId = Integer.parseInt(request.getParameter("id"));
@@ -129,7 +94,7 @@ public class EstimateController {
 		return "redirect:listProposePrice.do";
 	}
 
-	@RequestMapping("/listProposeByPawnshop")
+	@RequestMapping("/pawnshop-estimate-list")
 	public ModelAndView listProposeByPawnshop(HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView("listProposeByPawnshop.jsp");
 		Pawnshop pawnshop;
@@ -141,6 +106,27 @@ public class EstimateController {
 
 			mv.addObject("pawnshop", pawnshop);
 			mv.addObject("eList", eList);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return mv;
+	}
+	
+	@RequestMapping("/pawner-estimate-list")
+	public ModelAndView listProposeBygold(@ModelAttribute("proposePrice") Estimate estimate,
+			BindingResult result, HttpServletRequest request) {
+		ModelAndView mv = new ModelAndView("listProposeByGold.jsp");
+		Pawner pawner;
+		List<Estimate> estimatesList;
+		try {
+			long userId = (long) request.getSession().getAttribute("id");
+			long pawnerPostId = Long.parseLong(request.getParameter("pawnerPostId"));
+
+			pawner = pmService.findPawnerById(userId);
+			estimatesList = estimateService.listEstimateByPawnerPost(pawnerPostId);
+
+			mv.addObject("pawner", pawner);
+			mv.addObject("estimatesList", estimatesList);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
