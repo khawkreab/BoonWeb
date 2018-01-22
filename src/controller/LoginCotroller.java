@@ -56,7 +56,7 @@ public class LoginCotroller {
 				request.getSession().setAttribute("id", pawner.getPawnerId());
 				request.getSession().setAttribute("isLogin", "yes");
 				request.getSession().setAttribute("userType", "pawner");
-				return "redirect:pawnerIndex.html";
+				return "redirect:pawner-index.html";
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -70,7 +70,7 @@ public class LoginCotroller {
 				request.getSession().setAttribute("id", pawnshop.getPawnshopId());
 				request.getSession().setAttribute("isLogin", "yes");
 				request.getSession().setAttribute("userType", "pawnShop");
-				return "redirect:pawnshopIndex.html";
+				return "redirect:pawnshop-index.html";
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -81,7 +81,7 @@ public class LoginCotroller {
 			if (adminName.equals(email)&&adminPassword.equals(password)) {
 				request.getSession().setAttribute("isLogin", "yes");
 				request.getSession().setAttribute("userType", "admin");
-				return "redirect:adminDashboard.html";
+				return "redirect:admin-dashboard.html";
 			} 
 		} catch (Exception e) {
 			e.printStackTrace();
