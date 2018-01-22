@@ -43,10 +43,12 @@ public class PawnshopController {
 				pawnshopServ.update(pawnshop);
 			}
 		}catch (Exception e){
-			return "redirect:pawnshopForm.do";
-		}return "redirect:login.do";
+			return "redirect:pawnshop-register-form.html";
+		}return "redirect:login.html";
 	}
 	
+	
+	//********* ยังไม่มีหน้า ***********//
 	@RequestMapping("/editPawnshop")
 	public ModelAndView editPawnshop(HttpServletRequest request){
 		long paramId = (long) request.getSession().getAttribute("id");

@@ -35,7 +35,7 @@ public class EstimateController {
 	@EJB(mappedName = "ejb:/BoonWeb//PawnerServiceBean!service.PawnerService")
 	PawnerService pmService;
 
-	@RequestMapping("/saveProposePrice")
+	@RequestMapping("/saveEstimate")
 	public String saveProposePrice(@ModelAttribute("estimate") Estimate estimate, BindingResult result,
 			HttpServletRequest request) {
 
@@ -51,10 +51,10 @@ public class EstimateController {
 			}
 		} catch (Exception e) {
 		}
-		return "redirect:pawnshopIndex.do";
+		return "redirect:pawnshop-index.html";
 	}
 
-	@RequestMapping("/approveProposePrice")
+	@RequestMapping("/approveEsimate")
 	public String approveProposePrice(@ModelAttribute("estimate") Estimate estimate, BindingResult result,
 			HttpServletRequest request) {
 
@@ -74,29 +74,16 @@ public class EstimateController {
 		return "redirect:listPawnerGold.do";
 	}
 
-	@RequestMapping("/editProposePrice")
-	public ModelAndView editProposePrice(HttpServletRequest request) {
-		int paramId = Integer.parseInt(request.getParameter("id"));
-		Estimate foundEstimates;
-		ModelAndView mv = new ModelAndView("proposePriceForm.jsp");
-		try {
-			foundEstimates = estimateService.findEstimateById(paramId);
-			mv.addObject("estimates", foundEstimates);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return mv;
-	}
 
-	@RequestMapping("/deleteProposePrice")
+	@RequestMapping("/deleteEstimate")
 	public String deleteProposePrice(HttpServletRequest request) {
 		estimateService.delete(Long.valueOf(request.getParameter("id")));
-		return "redirect:listProposePrice.do";
+		return "redirect:pawnshop-estimate-list.html";
 	}
 
 	@RequestMapping("/pawnshop-estimate-list")
 	public ModelAndView listProposeByPawnshop(HttpServletRequest request) {
-		ModelAndView mv = new ModelAndView("listProposeByPawnshop.jsp");
+		ModelAndView mv = new ModelAndView("pawnshopEstimateList.jsp");
 		Pawnshop pawnshop;
 		List<Estimate> eList;
 		try {
@@ -113,9 +100,9 @@ public class EstimateController {
 	}
 	
 	@RequestMapping("/pawner-estimate-list")
-	public ModelAndView listProposeBygold(@ModelAttribute("proposePrice") Estimate estimate,
+	public ModelAndView listProposeBygold(@ModelAttribute("estimate") Estimate estimate,
 			BindingResult result, HttpServletRequest request) {
-		ModelAndView mv = new ModelAndView("listProposeByGold.jsp");
+		ModelAndView mv = new ModelAndView("pawnerPostList.jsp");
 		Pawner pawner;
 		List<Estimate> estimatesList;
 		try {
