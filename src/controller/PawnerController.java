@@ -35,11 +35,11 @@ public class PawnerController {
 				pmService.insert(pawner);
 			}else{
 				pmService.update(pawner);
-				return "redirect:pawnerIndex.do";
+				return "redirect:pawner-index.html";
 			}
 		}catch (Exception e){
-			return "redirect:pawnerForm.do";
-		}return "redirect:login.do";
+			return "redirect:pawner-register-form.html";
+		}return "redirect:login.html";
 	}
 	
 	@RequestMapping("/editPawner")
@@ -56,7 +56,7 @@ public class PawnerController {
 		return mv;
 	}
 	
-	@RequestMapping("/pawner-index.")
+	@RequestMapping("/pawner-index")
 	public ModelAndView pawnerIndex(HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView("pawnerIndex.jsp");
 		Pawner pawner;
