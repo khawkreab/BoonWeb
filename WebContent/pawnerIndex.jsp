@@ -37,19 +37,27 @@
 				<div class="box-sup">
 					<div class="box-semi text-center">
 						<h1>The 5 Step</h1>
-						<h6>---- easy to pawn ----</h6> <br> <button>Pawn</button>
+						<h6>---- easy to pawn ----</h6>
+						<br>
 					</div>
 					<div class="box-semi">
 						<span class="time-line"></span>
 						<ul>
 							<li><span class="cycle">1</span> Enter item information</li>
-							<li><span class="cycle">2</span> Upload picture and post item</li>
+							<li><span class="cycle">2</span> Upload picture and post
+								item</li>
 							<li><span class="cycle">3</span> Get offers from pawner shop</li>
 							<li><span class="cycle">4</span> Walk in pawn shop</li>
-							<li><span class="cycle">5</span> Deal rice again with pawn shop</li>
+							<li><span class="cycle">5</span> Deal rice again with pawn
+								shop</li>
 						</ul>
 					</div>
+					<div class="clear"></div>
+					<div class="box-sup text-center">
+						<button class="btn btn-primary">Pawn</button>
+					</div>
 				</div>
+
 			</div>
 			<div class="box-main">
 				<div class="box-sup">

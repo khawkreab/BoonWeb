@@ -53,6 +53,10 @@ li {
 	list-style: none;
 }
 
+.clear{
+	clear: both;
+}
+
 /*!
 * li navber
 */
@@ -223,7 +227,7 @@ li {
 	align-items: center;
 	justify-content: center;
 	display: flex;
-	margin: auto;
+	margin-top: 10px;
 }
 /*! 
 *navbar 
