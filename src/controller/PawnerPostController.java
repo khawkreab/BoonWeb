@@ -38,7 +38,7 @@ public class PawnerPostController {
 		PawnerPost pawnerPost = new PawnerPost();
 		pawnerPost.setPawner(pm);
 		mv.addObject("pawner", pm);
-		mv.addObject("gold", pawnerPost);
+		mv.addObject("pawnerPost", pawnerPost);
 		return mv;
 	}
 	
@@ -57,7 +57,7 @@ public class PawnerPostController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return "redirect:listPawnerGold.do?pawnerId="+request.getSession().getAttribute("id");
+		return "redirect:pawner-post-list.html";
 	}
 	
 	
@@ -66,7 +66,7 @@ public class PawnerPostController {
 		String pawnerId = (String) request.getSession().getAttribute("pawner"); // ***************warring
 		long goldId = Long.parseLong(request.getParameter("id"));
 		pawnerPostService.delete(goldId);
-		return "redirect:listGold.do";
+		return "redirect:pawner-post-list.html";
 	}
 	
 	@RequestMapping("/pawner-post-list")
