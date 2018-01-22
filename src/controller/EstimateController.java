@@ -12,64 +12,62 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import entity.Estimate;
 import entity.Pawner;
+import entity.PawnerPost;
 import entity.Pawnshop;
-import entity.ProposePrice;
-import service.GoldService;
+import service.EstimateService;
 import service.PawnerService;
 import service.PawnshopService;
-import service.ProposePriceService;
-
 
 @Controller
 public class EstimateController {
 
-	@EJB(mappedName = "ejb:/BoonWeb//ProposePriceServiceBean!service.ProposePriceService")
-	ProposePriceService proposePriceServ;
+	@EJB(mappedName = "ejb:/BoonWeb//EstimateServiceServiceBean!service.EstimateService")
+	EstimateService estimateService;
 
 	@EJB(mappedName = "ejb:/BoonWeb//PawnshopServiceBean!service.PawnshopService")
 	PawnshopService pawnshopServ;
 
-	@EJB(mappedName = "ejb:/BoonWeb//GoldServiceBean!service.GoldService")
-	GoldService goldService;
+	@EJB(mappedName = "ejb:/BoonWeb//PawnerPostBean!service.PawnerPost")
+	PawnerPost pawnerPost;
 
 	@EJB(mappedName = "ejb:/BoonWeb//PawnerServiceBean!service.PawnerService")
 	PawnerService pmService;
 
-
 	@RequestMapping("/saveProposePrice")
-	public String saveProposePrice(@ModelAttribute("proposePrice") ProposePrice proposePrice, BindingResult result,
+	public String saveProposePrice(@ModelAttribute("estimate") Estimate estimate, BindingResult result,
 			HttpServletRequest request) {
 
 		Date date = new Date();
-		
+
 		try {
-			if (proposePrice.getProposePriceId() == 0) {
-					proposePrice.setProposeDate(date);
-					proposePriceServ.insert(proposePrice);
+			if (estimate.getEstimateId() == 0) {
+				estimate.setEstimateDate(date);
+				estimateService.insert(estimate);
 			} else {
-				proposePrice.setProposeDate(date);
-				proposePriceServ.update(proposePrice);
+				estimate.setEstimateDate(date);
+				estimateService.update(estimate);
 			}
 		} catch (Exception e) {
 		}
 		return "redirect:pawnshopIndex.do";
 	}
-	
+
 	@RequestMapping("/approveProposePrice")
-	public String approveProposePrice(@ModelAttribute("proposePrice") ProposePrice proposePrice, BindingResult result,
+	public String approveProposePrice(@ModelAttribute("estimate") Estimate estimate, BindingResult result,
 			HttpServletRequest request) {
 
 		Date date = new Date();
 
 		try {
-			if (proposePrice.getProposePriceId() == 0) {
-				proposePrice.setProposeDate(date);
-				proposePriceServ.insert(proposePrice);
+			if (estimate.getEstimateId() == 0) {
+				estimate.setEstimateDate(date);
+				estimateService.insert(estimate);
 
 			} else {
-				proposePrice.setProposeDate(date);
-				proposePriceServ.update(proposePrice);
+				estimate.setEstimateDate(date);
+				estimateService.update(estimate);
 			}
 		} catch (Exception e) {
 		}
@@ -79,10 +77,10 @@ public class EstimateController {
 	@RequestMapping("/listProposePrice")
 	public ModelAndView listProposePrice(HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView("listProposePrice.jsp");
-		List<ProposePrice> proposePriceList;
+		List<Estimate> estimateList;
 		try {
-			proposePriceList = proposePriceServ.getAllProposePrice();
-			mv.addObject("proposePriceList", proposePriceList);
+			estimateList = estimateService.getAllEstimate();
+			mv.addObject("proposePriceList", estimateList);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -90,19 +88,20 @@ public class EstimateController {
 	}
 
 	@RequestMapping("/listProposeBygold")
-	public ModelAndView listProposeBygold(@ModelAttribute("proposePrice") ProposePrice proposePrice, BindingResult result, HttpServletRequest request) {
+	public ModelAndView listProposeBygold(@ModelAttribute("proposePrice") Estimate estimate,
+			BindingResult result, HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView("listProposeByGold.jsp");
 		Pawner pawner;
-		List<ProposePrice> ppList;
+		List<Estimate> estimatesList;
 		try {
 			long userId = (long) request.getSession().getAttribute("id");
-			long goldId = Long.parseLong(request.getParameter("goldId"));
+			long pawnerPostId = Long.parseLong(request.getParameter("pawnerPostId"));
 
 			pawner = pmService.findPawnerById(userId);
-			ppList = proposePriceServ.listProposeBygold(goldId);
+			estimatesList = estimateService.listEstimateByPawnerPost(pawnerPostId);
 
 			mv.addObject("pawner", pawner);
-			mv.addObject("ppList", ppList);
+			mv.addObject("estimatesList", estimatesList);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -112,11 +111,11 @@ public class EstimateController {
 	@RequestMapping("/editProposePrice")
 	public ModelAndView editProposePrice(HttpServletRequest request) {
 		int paramId = Integer.parseInt(request.getParameter("id"));
-		ProposePrice foundProposePrice;
+		Estimate foundEstimates;
 		ModelAndView mv = new ModelAndView("proposePriceForm.jsp");
 		try {
-			foundProposePrice = proposePriceServ.findProposePriceById(paramId);
-			mv.addObject("proposePrice", foundProposePrice);
+			foundEstimates = estimateService.findEstimateById(paramId);
+			mv.addObject("estimates", foundEstimates);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -125,22 +124,22 @@ public class EstimateController {
 
 	@RequestMapping("/deleteProposePrice")
 	public String deleteProposePrice(HttpServletRequest request) {
-		proposePriceServ.delete(Long.valueOf(request.getParameter("id")));
+		estimateService.delete(Long.valueOf(request.getParameter("id")));
 		return "redirect:listProposePrice.do";
 	}
-	
+
 	@RequestMapping("/listProposeByPawnshop")
 	public ModelAndView listProposeByPawnshop(HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView("listProposeByPawnshop.jsp");
 		Pawnshop pawnshop;
-		List<ProposePrice> proposeList;
+		List<Estimate> eList;
 		try {
 			long userId = (long) request.getSession().getAttribute("id");
 			pawnshop = pawnshopServ.findPawnshopById(userId);
-			proposeList = proposePriceServ.findProposeByPawnshopId(userId);
-	
+			eList = estimateService.findEstimateByPawnshopId(userId);
+
 			mv.addObject("pawnshop", pawnshop);
-			mv.addObject("proposeList", proposeList);
+			mv.addObject("eList", eList);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

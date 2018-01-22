@@ -9,10 +9,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import entity.Gold;
 import entity.Pawner;
 import entity.Pawnshop;
-import service.GoldService;
+import service.PawnerPostService;
 import service.PawnerService;
 import service.PawnshopService;
 
@@ -27,8 +26,8 @@ public class LoginCotroller {
 	@EJB(mappedName = "ejb:/BoonWeb//PawnshopServiceBean!service.PawnshopService")
 	PawnshopService pawnshopServ;
 
-	@EJB(mappedName = "ejb:/BoonWeb//GoldServiceBean!service.GoldService")
-	GoldService goldService;
+	@EJB(mappedName = "ejb:/BoonWeb//PawnerPostServiceBean!service.PawnerPostService")
+	PawnerPostService pawnerPostService;
 	
 	@RequestMapping("/login")
 	public ModelAndView signIn() {
@@ -50,7 +49,7 @@ public class LoginCotroller {
 		String adminName = "admin";
 		String adminPassword = "admin";
 		try {
-			pawner = pmService.findPawnerUserName(email, password);
+			pawner = pmService.findPawnerByEmailAndPassword(email, password);
 			if (pawner.equals(null)) {
 				return "redirect:login.do?";
 			} else {
@@ -64,7 +63,7 @@ public class LoginCotroller {
 		}
 
 		try {
-			pawnshop = pawnshopServ.findPawnShopUserName(email, password);
+			pawnshop = pawnshopServ.findPawnShopByEmailAndPassword(email, password);
 			if (pawnshop.equals(null)) {
 				return "redirect:signIn.do?";
 			} else {

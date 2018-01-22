@@ -12,17 +12,17 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import entity.Gold;
 import entity.Pawner;
-import service.GoldService;
+import entity.PawnerPost;
+import service.PawnerPostService;
 import service.PawnerService;
 import service.PawnshopService;
 
 @Controller
-public class GoldController {
+public class PawnerPostController {
 	
-	@EJB(mappedName = "ejb:/BoonWeb//GoldServiceBean!service.GoldService")
-	GoldService goldService;
+	@EJB(mappedName = "ejb:/BoonWeb//PawnerPostServiceBean!service.PawnerPostService")
+	PawnerPostService pawnerPostService;
 	
 	@EJB(mappedName = "ejb:/BoonWeb//PawnerServiceBean!service.PawnerService")
 	PawnerService pmService;
@@ -35,24 +35,24 @@ public class GoldController {
 		ModelAndView mv = new ModelAndView("pawnerPostForm.jsp");
 		long userId = (long) request.getSession().getAttribute("id");
 		Pawner pm = pmService.findPawnerById(userId);
-		Gold gold = new Gold();
-		gold.setPawner(pm);
+		PawnerPost pawnerPost = new PawnerPost();
+		pawnerPost.setPawner(pm);
 		mv.addObject("pawner", pm);
-		mv.addObject("gold", gold);
+		mv.addObject("gold", pawnerPost);
 		return mv;
 	}
 	
 	@RequestMapping("/savePost")
-	public String saveGold(@ModelAttribute("gold") Gold gold, BindingResult result,
+	public String saveGold(@ModelAttribute("PawnerPost") PawnerPost pawnerPost, BindingResult result,
 			HttpServletRequest request) {
 		Date date = new Date();
 		try {
-			System.out.println(gold.getClass());
-			if (0 == gold.getGoldId()) { 
-				gold.setDate(date);
-				goldService.insert(gold);
+			System.out.println(pawnerPost.getClass());
+			if (0 == pawnerPost.getPawnerPostId()) { 
+				pawnerPost.setPawnerPostDate(date);
+				pawnerPostService.insert(pawnerPost);
 			} else {
-				goldService.update(gold);
+				pawnerPostService.update(pawnerPost);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -65,7 +65,7 @@ public class GoldController {
 	public String removeGold(HttpServletRequest request) {
 		String pawnerId = (String) request.getSession().getAttribute("pawner"); // ***************warring
 		long goldId = Long.parseLong(request.getParameter("id"));
-		goldService.delete(goldId);
+		pawnerPostService.delete(goldId);
 		return "redirect:listGold.do";
 	}
 	
@@ -73,14 +73,14 @@ public class GoldController {
 	public ModelAndView listGold(HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView("pawnerPostList.jsp");
 		Pawner pawner;
-		List<Gold> goldList;
+		List<PawnerPost> pawnerPosts;
 		try {
 			long userId = (long) request.getSession().getAttribute("id");
 			pawner = pmService.findPawnerById(userId);
-			goldList = goldService.findGoldByPawnerId(userId);
+			pawnerPosts = pawnerPostService.findPawnerPostByPawnerId(userId);
 	
 			mv.addObject("pawner", pawner);
-			mv.addObject("goldList", goldList);
+			mv.addObject("pawnerPosts", pawnerPosts);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
