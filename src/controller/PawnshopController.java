@@ -29,7 +29,7 @@ public class PawnshopController {
 	
 	@RequestMapping("/pawnshopForm")
 	public ModelAndView newPawner(){
-		ModelAndView mv = new ModelAndView("pawnshopForm.jsp");
+		ModelAndView mv = new ModelAndView("pawnshopRegisterForm.jsp");
 		Pawnshop pawnshop = new Pawnshop();
 		mv.addObject("pawnshop" ,pawnshop);
 		return mv;
@@ -37,7 +37,7 @@ public class PawnshopController {
 	
 	@RequestMapping("/listPawnshop")
 	public ModelAndView listPawnshop(HttpServletRequest request){
-		ModelAndView mv = new ModelAndView("listPawnshop.jsp");
+		ModelAndView mv = new ModelAndView("adminlistPawnshop.jsp");
 		List<Pawnshop> pawnshopList;
 		try{
 			pawnshopList = pawnshopServ.getAllPawnshop();

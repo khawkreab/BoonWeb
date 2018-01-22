@@ -22,7 +22,7 @@ public class PawnerController {
 	
 	@RequestMapping("/pawnerForm")
 	public ModelAndView newPawner(){
-		ModelAndView mv = new ModelAndView("pawnerForm.jsp");
+		ModelAndView mv = new ModelAndView("pawnerRegisterForm.jsp");
 		Pawner pawner = new Pawner();
 		mv.addObject("pawner",pawner);
 		return mv;
@@ -46,7 +46,7 @@ public class PawnerController {
 	public ModelAndView editPawner(HttpServletRequest request) {
 		long paramId = (long) request.getSession().getAttribute("id");
 		Pawner foundPawner;
-		ModelAndView mv = new ModelAndView("pawnerForm.jsp");
+		ModelAndView mv = new ModelAndView("pawnerRegisterForm.jsp");
 		try {
 			foundPawner = pmService.findPawnerById(paramId);
 			mv.addObject("pawner", foundPawner);
@@ -65,7 +65,7 @@ public class PawnerController {
 	
 	@RequestMapping("/listPawner")
 	public ModelAndView listPawner(HttpServletRequest request) {
-		ModelAndView mv = new ModelAndView("listPawner.jsp");
+		ModelAndView mv = new ModelAndView("adminlistPawner.jsp");
 		List<Pawner> pawnerList;
 		try {
 			pawnerList = pmService.getAllPawner();

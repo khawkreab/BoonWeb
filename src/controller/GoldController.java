@@ -30,9 +30,9 @@ public class GoldController {
 	@EJB(mappedName = "ejb:/BoonWeb//PawnshopServiceBean!service.PawnshopService")
 	PawnshopService pawnshopServ;
 	
-	@RequestMapping("/goldForm")
+	@RequestMapping("/pawnerPostForm")
 	public ModelAndView newGold(HttpServletRequest request) {
-		ModelAndView mv = new ModelAndView("pawnerGoldForm.jsp");
+		ModelAndView mv = new ModelAndView("pawnerPostForm.jsp");
 		long userId = (long) request.getSession().getAttribute("id");
 		Pawner pm = pmService.findPawnerById(userId);
 		Gold gold = new Gold();
@@ -42,7 +42,7 @@ public class GoldController {
 		return mv;
 	}
 	
-	@RequestMapping("/saveGold")
+	@RequestMapping("/savePost")
 	public String saveGold(@ModelAttribute("gold") Gold gold, BindingResult result,
 			HttpServletRequest request) {
 		Date date = new Date();
@@ -60,20 +60,6 @@ public class GoldController {
 		return "redirect:listPawnerGold.do?pawnerId="+request.getSession().getAttribute("id");
 	}
 	
-	@RequestMapping("/editGold")
-	public ModelAndView editGold(HttpServletRequest request) {
-		int goldId = Integer.parseInt(request.getParameter("id"));
-		Gold foundGold;
-		ModelAndView mv = new ModelAndView("goldForm.jsp");
-		try {
-			foundGold = goldService.findGoldById(goldId);
-			mv.addObject("foundGold", foundGold);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return mv;
-	}
 	
 	@RequestMapping("/deleteGold")
 	public String removeGold(HttpServletRequest request) {
@@ -85,7 +71,7 @@ public class GoldController {
 	
 	@RequestMapping("/listPawnerGold")
 	public ModelAndView listGold(HttpServletRequest request) {
-		ModelAndView mv = new ModelAndView("listPawnerGold.jsp");
+		ModelAndView mv = new ModelAndView("pawnerPostList.jsp");
 		Pawner pawner;
 		List<Gold> goldList;
 		try {
@@ -101,20 +87,6 @@ public class GoldController {
 		return mv;
 	}
 	
-	@RequestMapping("/listAllGold")
-	public ModelAndView listAllGold(HttpServletRequest request) {
-		ModelAndView mv = new ModelAndView("listAllGoldForPawnshop.jsp");
-		List<Gold> goldList;
-		try {
-			goldList = goldService.getAllGold();
-			System.out.println(goldList);
-			mv.addObject("goldList", goldList);
-			
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return mv;
-	}
+	
 
 }
