@@ -17,6 +17,7 @@ import entity.Pawner;
 import entity.PawnerPost;
 import entity.Pawnshop;
 import service.EstimateService;
+import service.PawnerPostService;
 import service.PawnerService;
 import service.PawnshopService;
 
@@ -30,7 +31,7 @@ public class EstimateController {
 	PawnshopService pawnshopServ;
 
 	@EJB(mappedName = "ejb:/BoonWeb//PawnerPostBean!service.PawnerPost")
-	PawnerPost pawnerPost;
+	PawnerPostService postService;
 
 	@EJB(mappedName = "ejb:/BoonWeb//PawnerServiceBean!service.PawnerService")
 	PawnerService pmService;
