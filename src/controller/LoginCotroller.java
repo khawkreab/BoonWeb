@@ -51,12 +51,12 @@ public class LoginCotroller {
 		try {
 			pawner = pmService.findPawnerByEmailAndPassword(email, password);
 			if (pawner.equals(null)) {
-				return "redirect:login.do?";
+				return "redirect:login.html?";
 			} else {
 				request.getSession().setAttribute("id", pawner.getPawnerId());
 				request.getSession().setAttribute("isLogin", "yes");
 				request.getSession().setAttribute("userType", "pawner");
-				return "redirect:pawnerIndex.do";
+				return "redirect:pawnerIndex.html";
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -65,12 +65,12 @@ public class LoginCotroller {
 		try {
 			pawnshop = pawnshopServ.findPawnShopByEmailAndPassword(email, password);
 			if (pawnshop.equals(null)) {
-				return "redirect:signIn.do?";
+				return "redirect:login.html?";
 			} else {
 				request.getSession().setAttribute("id", pawnshop.getPawnshopId());
 				request.getSession().setAttribute("isLogin", "yes");
 				request.getSession().setAttribute("userType", "pawnShop");
-				return "redirect:pawnshopIndex.do";
+				return "redirect:pawnshopIndex.html";
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -81,20 +81,20 @@ public class LoginCotroller {
 			if (adminName.equals(email)&&adminPassword.equals(password)) {
 				request.getSession().setAttribute("isLogin", "yes");
 				request.getSession().setAttribute("userType", "admin");
-				return "redirect:board.do";
+				return "redirect:adminDashboard.html";
 			} 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
 		request.getSession().setAttribute("error", "yes");
-		return "redirect:login.do?";
+		return "redirect:login.html?";
 	}
 	
 	
 	
 	@SuppressWarnings("deprecation")
-	@RequestMapping("/signOut")
+	@RequestMapping("/logout")
 	public String signOut(HttpServletRequest request) {
 		try {
 			request.getSession().putValue("isLogin", "no");
