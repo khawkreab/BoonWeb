@@ -30,7 +30,7 @@ public class PawnerPostController {
 	@EJB(mappedName = "ejb:/BoonWeb//PawnshopServiceBean!service.PawnshopService")
 	PawnshopService pawnshopServ;
 	
-	@RequestMapping("/pawnerPostForm")
+	@RequestMapping("/pawner-post-form")
 	public ModelAndView newGold(HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView("pawnerPostForm.jsp");
 		long userId = (long) request.getSession().getAttribute("id");
@@ -61,7 +61,7 @@ public class PawnerPostController {
 	}
 	
 	
-	@RequestMapping("/deleteGold")
+	@RequestMapping("/deletePost")
 	public String removeGold(HttpServletRequest request) {
 		String pawnerId = (String) request.getSession().getAttribute("pawner"); // ***************warring
 		long goldId = Long.parseLong(request.getParameter("id"));
@@ -69,7 +69,7 @@ public class PawnerPostController {
 		return "redirect:listGold.do";
 	}
 	
-	@RequestMapping("/listPawnerGold")
+	@RequestMapping("/pawner-post-list")
 	public ModelAndView listGold(HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView("pawnerPostList.jsp");
 		Pawner pawner;

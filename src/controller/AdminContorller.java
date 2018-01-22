@@ -16,11 +16,11 @@ import service.PawnshopService;
 public class AdminContorller {
 	@EJB(mappedName = "ejb:/BoonWeb/PawnerServiceBean!service.PawnerService")
 	PawnerService pmService;
-	
+
 	@EJB(mappedName = "ejb:/BoonWeb//PawnshopServiceBean!service.PawnshopService")
 	PawnshopService pawnshopServ;
-	
-	@RequestMapping("/admin_index")
+
+	@RequestMapping("/admin-dashboard")
 	public ModelAndView adminDashboard(HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView("adminDashboard.jsp");
 		List<Pawner> pawnerList;
@@ -28,41 +28,19 @@ public class AdminContorller {
 		try {
 			pawnshopList = pawnshopServ.getAllPawnshop();
 			pawnerList = pmService.getAllPawner();
-			//mv.addObject("pawnerList", pawnerList);
+			// mv.addObject("pawnerList", pawnerList);
 			mv.addObject("pawnshop", pawnshopList.size());
 			mv.addObject("pawner", pawnerList.size());
-			//System.out.println(o.size());
+			// System.out.println(o.size());
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return mv;
 	}
-	
-	//Control About Pawner
-	@RequestMapping("/admin_listpawner")
-	public ModelAndView adminListPawner(HttpServletRequest request) {
-		ModelAndView mv = new ModelAndView("adminListPawner.jsp");
-		List<Pawner> pawnerList;
-		try {
-			pawnerList = pmService.getAllPawner();
-			mv.addObject("pawnerList", pawnerList);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return mv;
-	}
-	
-	@RequestMapping("/deletePawner")
-	public String deletePawner(HttpServletRequest request){
-		pmService.delete(Long.valueOf(request.getParameter("id")));
-		return "redirect:admin_listpawner.do";
-	
-	}
-	
-	//Control About Pawnshop
-	@RequestMapping("/admin_listpawnshop")
+
+	// Control About Pawnshop
+	@RequestMapping("/admin-list-pawnshop")
 	public ModelAndView adminListPawnshop(HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView("adminListPawnshop.jsp");
 		List<Pawnshop> pawnshopList;
@@ -75,10 +53,32 @@ public class AdminContorller {
 		}
 		return mv;
 	}
-	
+
 	@RequestMapping("/deletePawnshop")
-	public String deletePawnshop(HttpServletRequest request){
+	public String deletePawnshop(HttpServletRequest request) {
 		pawnshopServ.delete(Long.valueOf(request.getParameter("id")));
 		return "redirect:pawnshopList.do";
+	}
+
+	// Control About Pawner
+	@RequestMapping("/admin-listpawner")
+	public ModelAndView adminListPawner(HttpServletRequest request) {
+		ModelAndView mv = new ModelAndView("adminListPawner.jsp");
+		List<Pawner> pawnerList;
+		try {
+			pawnerList = pmService.getAllPawner();
+			mv.addObject("pawnerList", pawnerList);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return mv;
+	}
+
+	@RequestMapping("/deletePawner")
+	public String deletePawner(HttpServletRequest request) {
+		pmService.delete(Long.valueOf(request.getParameter("id")));
+		return "redirect:admin_listpawner.do";
+
 	}
 }
