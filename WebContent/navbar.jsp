@@ -87,7 +87,7 @@
 					data-target="#dropdown">
 
 					<i class="fa fa-user-circle-o" aria-hidden="true"></i>
-					${pawner.firstName}
+					${pawner.pawnerFirstname}
 
 				</div>
 			</div>
@@ -171,7 +171,7 @@
 					<%
 						}
 					%>
-					<form method="POST" action="loginProcess.do">
+					<form method="POST" action="loginProcess.html">
 						<div class="form-group">
 
 							<div class="cols-sm-10">

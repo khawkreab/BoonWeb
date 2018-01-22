@@ -24,13 +24,8 @@
 
 </head>
 
-<body id="page-top">
+<body id="page-top" style="overflow-y: hidden">
 
-	<%
-		if (session.getAttribute("isLogin") == "") {
-			response.sendRedirect("index.jsp");
-		}
-	%>
 
 	<!-- Navigation -->
 	<jsp:include page="navbar.jsp" />
@@ -38,10 +33,35 @@
 	<section>
 		<div class="container">
 
-			<div class="box-left">จำนำของ</div>
-			<div class="box-right">ซื้อของหลุดจำนำ</div>
-			<div class="line-center"></div>
-			<div class="box-center">OR</div>
+			<div class="box-main">
+				<div class="box-sup">
+					<div class="box-semi text-center">
+						<h1>The 5 Step</h1>
+						<h6>---- easy to pawn ----</h6> <br> <button>Pawn</button>
+					</div>
+					<div class="box-semi">
+						<span class="time-line"></span>
+						<ul>
+							<li><span class="cycle">1</span> Enter item information</li>
+							<li><span class="cycle">2</span> Upload picture and post item</li>
+							<li><span class="cycle">3</span> Get offers from pawner shop</li>
+							<li><span class="cycle">4</span> Walk in pawn shop</li>
+							<li><span class="cycle">5</span> Deal rice again with pawn shop</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="box-main">
+				<div class="box-sup">
+					<div class="box-semi">
+						<span class="time-line"></span>
+						<ul>
+							<li><span class="cycle"></span></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
 
 			<!-- ----------------------------------------------------------------------------  -->
 		</div>
