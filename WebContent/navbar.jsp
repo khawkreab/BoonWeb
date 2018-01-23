@@ -1,6 +1,6 @@
 <!-- 
-// version : 1.0
-// task : --
+// version : 2.0
+// task : change myModal to modalLogin
 // edit by : khawkreab
  -->
 
@@ -70,7 +70,7 @@
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav text-uppercase ml-auto">
 					<li class="nav-item nav-item-hover"><a data-toggle="modal"
-						data-target="#myModal" class="nav-link js-scroll-trigger"
+						data-target="#modalLogin" class="nav-link js-scroll-trigger"
 						href="login.do">Sign in</a></li>
 					<li class="nav-item nav-item-hover"><a
 						class="nav-link js-scroll-trigger" href="register.html">Sign
@@ -161,7 +161,7 @@
 	</nav>
 
 	<!------------------------------------------------ popup -------------------------------------------------->
-	<div class="modal fade" id="myModal" role="dialog">
+	<div class="modal fade" id="modalLogin" role="dialog">
 		<div class="modal-dialog modal-sm">
 			<div class="modal-content">
 				<div class="modal-header">
