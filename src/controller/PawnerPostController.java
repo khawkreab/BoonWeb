@@ -43,7 +43,7 @@ public class PawnerPostController {
 	}
 	
 	@RequestMapping("/savePost")
-	public String saveGold(@ModelAttribute("PawnerPost") PawnerPost pawnerPost, BindingResult result,
+	public String savePost(@ModelAttribute("pawnerPost") PawnerPost pawnerPost, BindingResult result,
 			HttpServletRequest request) {
 		Date date = new Date();
 		try {
