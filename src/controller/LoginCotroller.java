@@ -1,3 +1,10 @@
+/*!-- 
+// page : LoginCotroller
+// version : 1.0
+// task : add session name
+// edit by : khawkreab
+ --*/
+
 package controller;
 
 import java.util.List;
@@ -56,6 +63,7 @@ public class LoginCotroller {
 				request.getSession().setAttribute("id", pawner.getPawnerId());
 				request.getSession().setAttribute("isLogin", "yes");
 				request.getSession().setAttribute("userType", "pawner");
+				request.getSession().setAttribute("username", pawner.getPawnerFirstname());
 				return "redirect:pawner-index.html";
 			}
 		} catch (Exception e) {
@@ -70,6 +78,7 @@ public class LoginCotroller {
 				request.getSession().setAttribute("id", pawnshop.getPawnshopId());
 				request.getSession().setAttribute("isLogin", "yes");
 				request.getSession().setAttribute("userType", "pawnShop");
+				request.getSession().setAttribute("username", pawnshop.getPawnshopName());
 				return "redirect:pawnshop-index.html";
 			}
 		} catch (Exception e) {
@@ -81,6 +90,7 @@ public class LoginCotroller {
 			if (adminName.equals(email)&&adminPassword.equals(password)) {
 				request.getSession().setAttribute("isLogin", "yes");
 				request.getSession().setAttribute("userType", "admin");
+				request.getSession().setAttribute("username", "Admin");
 				return "redirect:admin-dashboard.html";
 			} 
 		} catch (Exception e) {
