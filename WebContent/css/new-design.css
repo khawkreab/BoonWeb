@@ -11,8 +11,8 @@
   
 /*!
 // page : new-design.css
-// version : 1.0
-// task : add css post form
+// version : 2.0
+// task : เปลี่ยน navber
 // edit by : khawkreab
 */
 body {
@@ -276,8 +276,8 @@ li {
 }
 
 #mainNav.navbar-shrink {
-	padding-top: 10;
-	padding-bottom: 10;
+/* 	padding-top: 10;
+	padding-bottom: 10; */
 	background-color: #fff;
 }
 
@@ -638,8 +638,8 @@ strong {
 		background-color: #fff;
 	}
 	#mainNav.navbar-shrink {
-		padding-top: 15;
-		padding-bottom: 15;
+		/* padding-top: 15;
+		padding-bottom: 15; */
 		background-color: #fff;
 	}
 	#mainNav.navbar-shrink .navbar-brand {
