@@ -1,0 +1,315 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Pawner Post</title>
+    <script>
+        function openType(type) {
+            var i;
+            var x = document.getElementsByClassName("type");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            document.getElementById(type).style.display = "block";
+        }
+    </script>
+    <style>
+        body {
+            line-height: 10px;
+            box-sizing: border-box;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            color: black;
+            font-size: 14px;
+        }
+
+        section {
+            text-align: center;
+            background-color: white;
+            overflow: hidden;
+        }
+
+        select {
+            position: relative;
+            display: inline-block;
+            padding: 6px 12px;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 20px;
+            white-space: nowrap;
+            cursor: pointer;
+            color: black;
+            border: 1px solid #d1d5da;
+            border-radius: 3px;
+            background-color: #fafbfc;
+
+        }
+
+        select:focus {
+            background-color: #fff;
+            border: 1px solid #2188ff;
+            border-radius: 3px;
+        }
+
+
+        .re-contain {
+            width: 700px;
+            margin: 40px auto 0;
+        }
+
+        .Subhead {
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+            flex-flow: row wrap;
+            margin-bottom: 30px;
+            padding-bottom: 8px;
+            border-bottom: 1px #e1e4e8 solid;
+        }
+
+        .Subhead-heading {
+            font-size: 24px;
+            font-weight: normal;
+            -webkit-box-flex: 1;
+            flex: 1 1 auto;
+        }
+
+        .Subhead-description {
+            font-size: 14px;
+            color: #586069;
+            font-weight: normal;
+            -webkit-box-flex: 1;
+            flex: 1 100%;
+            margin-top: 0px;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        .form-group {
+            margin: 18.22px;
+        }
+
+        .float-left {
+            float: left !important;
+        }
+
+        .post-name {
+            width: 250;
+            background-color: #fafbfc;
+            margin-top: 12px;
+            min-height: 34;
+            padding: 6px 8px;
+            color: black;
+            vertical-align: middle;
+            background-repeat: repeat;
+            background-position: right 8px center;
+            border: 1px solid #d1d5da;
+            border-radius: 3px;
+            margin-bottom: 10px;
+        }
+        .post-description {
+            width: 100%;
+            background-color: #fafbfc;
+            margin-top: 12px;
+            min-height: 34;
+            padding: 6px 8px;
+            color: black;
+            vertical-align: middle;
+            background-repeat: repeat;
+            background-position: right 8px center;
+            border: 1px solid #d1d5da;
+            border-radius: 3px;
+            margin-bottom: 10px;
+        }
+
+        .post-name:hover {
+            background-color: #fff;
+            border: 1px solid #2188ff;
+            border-radius: 3px;
+            margin-bottom: 10px;
+        }
+        .post-description:hover {
+            background-color: #fff;
+            border: 1px solid #2188ff;
+            border-radius: 3px;
+            margin-bottom: 10px;
+        }
+
+        strong {
+            color: #34631a;
+            cursor: pointer;
+
+        }
+
+        .enter-data {
+            padding-bottom: 8px;
+            border-bottom: 1px #e1e4e8 solid;
+        }
+        .summit-data{
+            position:relative;
+            display:inline-block;
+            padding:6px 12px;
+            font-size: 14px;
+            font-weight:600;
+            white-space:nowrap;
+            vertical-align:middle;
+            cursor:pointer;
+            color:#fff;
+            background-color: #28a745;
+            border:1px solid rgba(27,31,35,0.2);
+            border-radius:0.25em;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation  <jsp:include page="navbar.jsp" /> -->
+
+    <div class="re-contain">
+        <div class="Subhead">
+            <h2 class="Subhead-heading">Create Post</h2>
+            <p class="Subhead-description">This post will show on pawnshop's page for them estimate your post.</p>
+        </div>
+        <div class="form-group float-lef">
+            <dt>Select your item type(Golde,computer,watch)</dt>
+            <br>
+            <select>
+                <option onclick="openType('Gold')">Gold</option>
+                <option onclick="openType('Watch')">Watch</option>
+                <option onclick="openType('Computer')">Computer&TV</option>
+            </select>
+        </div>
+
+
+        <div id="Gold" class="type">
+            <div style="margin-bottom:20px;">
+                <div class="form-group float-left">
+                    <dt>
+                        <img alt="user" src="img/gold.png" height="100" width="100" style=" margin-bottom:12px;border:1px solid#c8cbcf">
+                    </dt>
+                    <input class="bth" type="file" style="width:80px;">
+                </div>
+                <div class="form-group float-left" style="margin-bottom:30px;">
+                    <dt>Post name</dt>
+                    <dt>
+                        <input class="post-name" />
+                    </dt>
+                    <p class="Subhead-description">plass enter data about your item for pawnshop to understand.
+                        <strong>readmore</strong>
+                    </p>
+                </div>
+            </div>
+            <div class="form-group float-left Subhead" style="margin-top:10px; ">
+                <div class="form-group enter-data">
+                    <p>Enter the correct data for your post.Thsi data will show to pawnshop.
+                        <strong>readmore</strong>
+                    </p>
+                </div>
+                <div class="form-group float-left ">
+                    <dt>Weigh of gold.
+                        <strong>readmore</strong>
+                    </dt>
+                    <dt>
+                        <input class="post-name" placeholder=" 24.8 g." />
+                    </dt>
+                </div>
+                <div class="form-group float-left ">
+                    <dt>Size of gold.
+                        <strong>readmore</strong>
+                    </dt>
+                    <dt>
+                        <input class="post-name" placeholder=" 23.5x3cm or 5.3cm" />
+                    </dt>
+                </div>
+                <div class="form-group ">
+                    <dt>Description</dt>
+                    <dt>
+                        <input class="post-description" style="max-width:100%"  />
+                    </dt>
+                    <p class="Subhead-description">(optional) If you have more data input here!</p>
+                </div>
+                
+            </div>
+            <div class="form-group float-left">
+                <button class="summit-data">Create post</button>
+            </div>
+        </div>
+
+        <div id="Watch" class="w3-container type" style="display:none">
+            <h2>Paris</h2>
+            <p>Paris is the capital of France.</p>
+        </div>
+
+        <div id="Computer" class="w3-container type" style="display:none">
+            <h2>Tokyo</h2>
+            <p>Tokyo is the capital of Japan.</p>
+        </div>
+    <!-- </div>
+    <section>
+
+        <div class="d-flex justify-content-around">
+            <div class="p-2">
+
+                <h2>เลือกรูปภาพสิ่งของ ของคุณ</h2>
+                <p>Upload รูปภาพเพื่อใช้ในการจำนำ</p>
+                <br>
+                <p class="no-margin">
+                    หากมีข้อส่งสัยในการใช้งาน
+                    <a href="">อ่านเพิ่ม</a>
+                </p>
+            </div>
+            <div class="p-2">
+
+                <div class="sign-in-card round">
+                    <h2>จำนำทอง</h2>
+
+                    <form:form method="post" action="saveGold.do" commandName="gold">
+                        <form:hidden path="goldId" />
+                        <form:hidden path="pawner.pawnerId" />
+
+                        <div class="input-content">
+                            <div class="form-group">
+                                <form:select path="goldName" class="form-control" placeholder="Category" required="required">
+                                    <option value="Gold ornament">Gold ornament</option>
+                                    <option value="Gold bars 96.5%">Gold bars 96.5%</option>
+                                    <option value="Gold bars 99.99%">Gold bars 99.99%</option>
+                                    <option value="Gold Master">Gold Master</option>
+                                    <option value="Amulet frame">Amulet frame</option>
+                                </form:select>
+                            </div>
+                            <div class="form-group">
+                                <form:input path="goldBrand" class="form-control" placeholder="Brand" pattern="[A-Za-z]{3,}" required="required" />
+                            </div>
+
+                            <div class="form-group">
+                                <form:input path="goldWeight" class="form-control" placeholder="Weight" pattern="[0-9A-Za-z]{3,}" required="required" />
+                            </div>
+
+                            <div class="form-group">
+                                <form:input path="goldPure" class="form-control" placeholder="Purity" pattern="[0-9]+%{1,}" required="required" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <form:textarea path="goldDetail" class="form-control" placeholder="Other information"></form:textarea>
+                        </div>
+                        <div class="form-group">
+                            <label class="custom-file">
+
+                                <span class="custom-file-control"></span>
+                            </label>
+                        </div>
+
+                        <input type="submit" class="btn btn-block btn-primary">
+                    </form:form>
+                </div>
+            </div>
+        </div>
+
+
+    </section> -->
+    <!-- <jsp:include page="footer.jsp"  -->
+
+
+</body>
+
+</html>
