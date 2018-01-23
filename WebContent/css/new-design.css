@@ -8,6 +8,13 @@
   * Add your styles for devices screen default  
   * Add your styles for devices more than screen width of 992px 
   */
+  
+/*!
+// page : new-design.css
+// version : 1.0
+// task : add css post form
+// edit by : khawkreab
+*/
 body {
 	overflow-x: hidden;
 	font-family: 'Roboto Slab', 'Helvetica Neue', Helvetica, Arial,
@@ -436,6 +443,145 @@ li {
 .product-li li {
 	float: left;
 	padding-left: 5px;
+}
+
+
+/*!
+* post form
+*/
+select {
+	position: relative;
+	display: inline-block;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 20px;
+	white-space: nowrap;
+	cursor: pointer;
+	color: black;
+	border: 1px solid #d1d5da;
+	border-radius: 3px;
+	background-color: #fafbfc;
+	min-height: 34;
+}
+
+select:focus {
+	background-color: #fff;
+	border: 1px solid #2188ff;
+	border-radius: 3px;
+}
+
+.re-contain {
+	width: 700px;
+	margin: 40px auto 0;
+	line-height: 10px;
+	box-sizing: border-box;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: black;
+	font-size: 14px;
+}
+
+.Subhead {
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	flex-flow: row wrap;
+	margin-bottom: 30px;
+	padding-bottom: 8px;
+	border-bottom: 1px #e1e4e8 solid;
+}
+
+.Subhead-heading {
+	font-size: 24px;
+	font-weight: normal;
+	-webkit-box-flex: 1;
+	flex: 1 1 auto;
+}
+
+.Subhead-description {
+	font-size: 14px;
+	color: #586069;
+	font-weight: normal;
+	-webkit-box-flex: 1;
+	flex: 1 100%;
+	margin-top: 0px;
+	margin-bottom: 10px;
+	cursor: pointer;
+}
+
+.form-group-post {
+	margin: 18.22px;
+}
+
+.float-left {
+	float: left !important;
+}
+
+.post-name {
+	width: 250;
+	background-color: #fafbfc;
+	margin-top: 12px;
+	min-height: 34;
+	padding: 6px 8px;
+	color: black;
+	vertical-align: middle;
+	background-repeat: repeat;
+	background-position: right 8px center;
+	border: 1px solid #d1d5da;
+	border-radius: 3px;
+	margin-bottom: 10px;
+}
+
+.post-description {
+	width: 100%;
+	background-color: #fafbfc;
+	margin-top: -10px;
+	min-height: 34;
+	padding: 6px 8px;
+	color: black;
+	vertical-align: middle;
+	background-repeat: repeat;
+	background-position: right 8px center;
+	border: 1px solid #d1d5da;
+	border-radius: 3px;
+	margin-bottom: 10px;
+}
+
+.post-name:hover {
+	background-color: #fff;
+	border: 1px solid #2188ff;
+	border-radius: 3px;
+	margin-bottom: 10px;
+}
+
+.post-description:hover {
+	background-color: #fff;
+	border: 1px solid #2188ff;
+	border-radius: 3px;
+	margin-bottom: 10px;
+}
+
+strong {
+	color: #34631a;
+	cursor: pointer;
+}
+
+.enter-data {
+	padding-bottom: 8px;
+	border-bottom: 1px #e1e4e8 solid;
+}
+
+.summit-data {
+	position: relative;
+	display: inline-block;
+	padding: 6px 12px;
+	font-size: 14px;
+	font-weight: 600;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	color: #fff;
+	background-color: #28a745;
+	border: 1px solid rgba(27, 31, 35, 0.2);
+	border-radius: 0.25em;
 }
 
 /************************************************************************************************/
