@@ -1,6 +1,7 @@
 <!-- 
-// version : 2.0
-// task : change myModal to modalLogin
+// page : navber
+// version : 3.0
+// task : change signOut.do to logout.html
 // edit by : khawkreab
  -->
 
@@ -101,11 +102,11 @@
 			<div id="dropdown">
 				<div class="dropdown-menu">
 					<div class="dropdown-item">
-						<label onclick="location.replace('editPawner.do')">แก้ไขข้อมูลส่วนตัว</label>
+						<label onclick="location.replace('editPawner.html')">แก้ไขข้อมูลส่วนตัว</label>
 					</div>
 					<div class="dropdown-divider"></div>
 					<div class="dropdown-item">
-						<label onclick="location.replace('signOut.do')">ออกจากระบบ</label>
+						<label onclick="location.replace('logout.html')">ออกจากระบบ</label>
 					</div>
 				</div>
 			</div>
@@ -126,7 +127,7 @@
 				<div class="dropdown-menu">
 					<div class="dropdown-divider"></div>
 					<div class="dropdown-item">
-						<label onclick="location.replace('signOut.do')">ออกจากระบบ</label>
+						<label onclick="location.replace('logout.html')">ออกจากระบบ</label>
 					</div>
 				</div>
 			</div>
@@ -143,11 +144,11 @@
 			<div id="dropdown">
 				<div class="dropdown-menu">
 					<div class="dropdown-item">
-						<label onclick="location.replace('editPawnshop.do')">แก้ไขข้อมูลโรงรับจำนำ <%= session.getAttribute("id") %></label>
+						<label onclick="location.replace('editPawnshop.html')">แก้ไขข้อมูลโรงรับจำนำ <%= session.getAttribute("id") %></label>
 					</div>
 					<div class="dropdown-divider"></div>
 					<div class="dropdown-item">
-						<label onclick="location.replace('signOut.do')">ออกจากระบบ ${pawnshop.pawnshopId}</label>
+						<label onclick="location.replace('logout.html')">ออกจากระบบ ${pawnshop.pawnshopId}</label>
 					</div>
 				</div>
 			</div>
