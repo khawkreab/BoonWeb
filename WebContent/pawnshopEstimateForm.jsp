@@ -1,4 +1,5 @@
 <!-- 
+// page : pawnshop-estimate-form
 // version : 1.0
 // task : --
 // edit by : 
@@ -11,7 +12,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Propose Price Form</title>
+<title>pawnshop-estimate-form</title>
 <!-- Bootstrap core CSS -->
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 

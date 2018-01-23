@@ -1,4 +1,5 @@
 <!-- 
+// page : pawnshop-estimate-list
 // version : 1.0
 // task : --
 // edit by : 
@@ -15,7 +16,7 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="">
 <meta name="author" content="">
-<title>Insert title here</title>
+<title>pawnshop-estimate-list</title>
 
 <!-- Bootstrap core CSS -->
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">

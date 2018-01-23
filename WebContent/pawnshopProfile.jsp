@@ -1,4 +1,5 @@
 <!-- 
+// page : pawnshop-profile
 // version : 1.0
 // task : --
 // edit by : 
@@ -9,7 +10,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>pawnshop-profile</title>
 </head>
 <body>
 

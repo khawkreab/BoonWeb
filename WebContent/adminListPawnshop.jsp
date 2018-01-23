@@ -1,4 +1,5 @@
 <!-- 
+// page : admin-list-pawnshop
 // version : 1.0
 // task : --
 // edit by : 
@@ -15,7 +16,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Admin Page</title>
+<title>admin-list-pawnshop</title>
 
 <!-- Bootstrap core CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">

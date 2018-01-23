@@ -1,4 +1,5 @@
 <!-- 
+// page : pawner-post-form
 // version : 1.0
 // task : --
 // edit by : 
@@ -17,7 +18,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>pawner Post Gold</title>
+<title>pawner-post-form</title>
 
 <!-- Bootstrap core CSS -->
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">

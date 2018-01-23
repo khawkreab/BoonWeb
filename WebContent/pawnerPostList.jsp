@@ -1,4 +1,5 @@
 <!-- 
+// page : pawner-post-list
 // version : 1.0
 // task : --
 // edit by : 
@@ -12,7 +13,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="">
 <meta name="author" content="">
-<title>Insert title here</title>
+<title>pawner-post-list</title>
 
 <!-- Bootstrap core CSS -->
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">

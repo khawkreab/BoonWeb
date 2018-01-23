@@ -1,5 +1,6 @@
 <!-- 
-// version : 1.1
+// page : pawner-index
+// version : 1.2
 // task : modal select type 
 // edit by : khawkreab
  -->
@@ -17,7 +18,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>home page</title>
+<title>pawner-index</title>
 
 <!-- Bootstrap core CSS -->
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -59,9 +60,8 @@
 					</div>
 					<div class="clear"></div>
 					<div class="box-sup text-center">
-						<a data-toggle="modal"
-						data-target="#modalSelectType" class="nav-link js-scroll-trigger"
-						href="login.do">Sign in</a>
+						<a 
+						data-target="#modalSelectType" >Pawn</a>
 					</div>
 				</div>
 
