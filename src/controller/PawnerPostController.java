@@ -35,10 +35,10 @@ public class PawnerPostController {
 		ModelAndView mv = new ModelAndView("pawnerPostForm.jsp");
 //		long userId = (long) request.getSession().getAttribute("id");
 //		Pawner pm = pmService.findPawnerById(userId);
-//		PawnerPost pawnerPost = new PawnerPost();
+		PawnerPost pawnerPost = new PawnerPost();
 //		pawnerPost.setPawner(pm);
 //		mv.addObject("pawner", pm);
-//		mv.addObject("pawnerPost", pawnerPost);
+		mv.addObject("pawnerPost", pawnerPost);
 		return mv;
 	}
 	

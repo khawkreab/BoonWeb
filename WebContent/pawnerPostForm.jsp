@@ -1,8 +1,8 @@
 <!-- 
 // page : pawner-post-form
-// version : 1.0
-// task : --
-// edit by : 
+// version : 2.0
+// task : change pattern
+// edit by : khawkreab
  -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -189,7 +189,7 @@ strong {
 				<div class="form-group float-left" style="margin-bottom: 30px;">
 					<dt>Post name</dt>
 					<dt>
-						<form:input path="pawnerPostItem1" class="post-name" pattern="[A-Za-z]{12,}"
+						<form:input path="pawnerPostItem1" class="post-name" pattern="[A-Za-z]{3,45}"
 							required="required" />
 					</dt>
 					<p class="Subhead-description">plass enter data about your item
@@ -216,7 +216,7 @@ strong {
 				<div class="form-group float-left ">
 					<dt>Pure of gold.</dt>
 					<dt>
-						<form:input path="pawnerPostItem17" class="post-name" placeholder=" 90%" pattern="[0-9]+%{1,}"
+						<form:input path="pawnerPostItem17" class="post-name" placeholder=" 90%" pattern="[0-9]{1,}"
 							required="required" />
 					</dt>
 				</div>
@@ -225,14 +225,14 @@ strong {
 					<dt>Weigh of gold.</dt>
 					<dt>
 						<form:input path="pawnerPostItem16" class="post-name" placeholder=" 24.8 g."
-							pattern="[0-9A-Za-z]{6,}" required="required" />
+							pattern="[0-9A-Za-z]{1,}" required="required" />
 					</dt>
 				</div>
 				<div class="form-group float-left ">
 					<dt>Size of gold.</dt>
 					<dt>
 						<form:input path="pawnerPostItem13" class="post-name" placeholder=" 23.5x3cm or 5.3cm"
-							pattern="[0-9A-Za-z]{6,}" />
+							pattern="[0-9A-Za-z]{1,15}" />
 					</dt>
 				</div>
 				<div class="form-group  float-left">
@@ -241,7 +241,7 @@ strong {
 				<div class="form-group">
 					<dt>
 						<form:input path="pawnerPostItem3" class="post-description" style="max-width: 100%"
-							pattern="[0-9A-Za-z]{20,}" />
+							pattern="[0-9A-Za-z]{0,}" />
 					</dt>
 					<p class="Subhead-description">(optional) If you have more data
 						input here!</p>
