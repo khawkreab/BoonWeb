@@ -1,7 +1,7 @@
 <!-- 
 // version : 1.0
 // task : --
-// edit by : khawkreab
+// edit by : 
  -->
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
