@@ -1,3 +1,10 @@
+/*!-- 
+// page : EstimateController
+// version : 1.0
+// task : add page pawnshop-estimate-form.html
+// edit by : khawkreab
+ --*/
+
 package controller;
 
 import java.util.Date;
@@ -34,6 +41,14 @@ public class EstimateController {
 
 	@EJB(mappedName = "ejb:/BoonWeb//PawnerServiceBean!service.PawnerService")
 	PawnerService pmService;
+	
+	@RequestMapping("/pawnshop-estimate-form")
+	public ModelAndView newestimate(){
+		ModelAndView mv = new ModelAndView("pawnshopEstimateForm.jsp");
+		Estimate estimate = new Estimate();
+		mv.addObject("estimate" ,estimate);
+		return mv;
+	}
 
 	@RequestMapping("/saveEstimate")
 	public String saveProposePrice(@ModelAttribute("estimate") Estimate estimate, BindingResult result,

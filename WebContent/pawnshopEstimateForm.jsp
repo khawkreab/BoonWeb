@@ -1,6 +1,6 @@
 <!-- 
 // page : pawnshop-estimate-form
-// version : 1.0
+// version : 1.1
 // task : new design
 // edit by : khawkreab 
  -->
@@ -17,7 +17,7 @@
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
 <!-- Custom styles for this template -->
-<link href="css/custom-style.min.css" rel="stylesheet">
+<link href="css/new-design.css" rel="stylesheet">
 <link href="vendor/font-awesome/css/font-awesome.min.css"
 	rel="stylesheet" type="text/css">
 </head>
@@ -26,7 +26,7 @@
 
 	<section>
 		<div class="container">
-		<div class="card">
+		<div class="card-main-detail">
 			<div class="container-fliud">
 				<div class="wrapper row">
 					<div class="preview col-md-6">

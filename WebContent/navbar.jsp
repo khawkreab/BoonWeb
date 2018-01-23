@@ -1,6 +1,6 @@
 <!-- 
 // page : navber
-// version : 5.0
+// version : 5.1
 // task : แก้  dropdown menu
 // edit by : khawkreab
  -->
@@ -89,7 +89,6 @@
 				if (session.getAttribute("userType") == "pawner") {
 			%>
 			<div>
-				<div class="collapse navbar-collapse" id="navbarResponsive">
 					<ul class="navbar-nav text-uppercase ml-auto">
 						<li class="nav-item nav-item-hover"><a
 							class="nav-link js-scroll-trigger" data-toggle="dropdown"><%=session.getAttribute("username")%>
@@ -103,13 +102,11 @@
 									onclick="location.replace('logout.html')">Log out</a></li>
 							</ul></li>
 					</ul>
-				</div>
 
 				<!-- -------------------------------------------------------------------- -->
 				<%
 					} else if (session.getAttribute("userType") == "admin") {
 				%>
-				<div class="collapse navbar-collapse" id="navbarResponsive">
 					<ul class="navbar-nav text-uppercase ml-auto">
 						<li class="nav-item nav-item-hover"><a
 							class="nav-link js-scroll-trigger" data-toggle="dropdown"><%=session.getAttribute("username")%>
@@ -120,11 +117,9 @@
 									onclick="location.replace('logout.html')">Log out</a></li>
 							</ul></li>
 					</ul>
-				</div>
 				<%
 					} else if (session.getAttribute("userType") == "pawnShop") {
 				%>
-				<div class="collapse navbar-collapse" id="navbarResponsive">
 					<ul class="navbar-nav text-uppercase ml-auto">
 						<li class="nav-item nav-item-hover"><a
 							class="nav-link js-scroll-trigger" data-toggle="dropdown"><%=session.getAttribute("username")%>
@@ -138,7 +133,6 @@
 									onclick="location.replace('logout.html')">Log out</a></li>
 							</ul></li>
 					</ul>
-				</div>
 				<%
 					}
 					}
