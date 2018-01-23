@@ -1,7 +1,7 @@
 <!-- 
 // page : navber
-// version : 3.0
-// task : change signOut.do to logout.html
+// version : 4.0
+// task : change name แบบ spring เป็น call session
 // edit by : khawkreab
  -->
 
@@ -72,10 +72,9 @@
 				<ul class="navbar-nav text-uppercase ml-auto">
 					<li class="nav-item nav-item-hover"><a data-toggle="modal"
 						data-target="#modalLogin" class="nav-link js-scroll-trigger"
-						href="login.do">Sign in</a></li>
+						href="login.do">Login</a></li>
 					<li class="nav-item nav-item-hover"><a
-						class="nav-link js-scroll-trigger" href="register.html">Sign
-							up</a></li>
+						class="nav-link js-scroll-trigger" href="register.html">Register</a></li>
 				</ul>
 			</div>
 			<%
@@ -94,7 +93,7 @@
 					data-target="#dropdown">
 
 					<i class="fa fa-user-circle-o" aria-hidden="true"></i>
-					${pawner.pawnerFirstname}
+					<%=session.getAttribute("username") %>
 
 				</div>
 			</div>
@@ -137,18 +136,18 @@
 			<div class="nav-item-account navbar-brand">
 				<div class="dropdown-toggle" data-toggle="dropdown"
 					data-target="#dropdown">
-							<i class="fa fa-user-circle-o" aria-hidden="true"></i> ${pawnshop.pawnshopName}
+							<i class="fa fa-user-circle-o" aria-hidden="true"></i> <%=session.getAttribute("username") %>
 				</div>
 			</div>
 			<!-- -------------------------------------------------------------------- -->
 			<div id="dropdown">
 				<div class="dropdown-menu">
 					<div class="dropdown-item">
-						<label onclick="location.replace('editPawnshop.html')">แก้ไขข้อมูลโรงรับจำนำ <%= session.getAttribute("id") %></label>
+						<label onclick="location.replace('editPawnshop.html')">แก้ไขข้อมูลโรงรับจำนำ </label>
 					</div>
 					<div class="dropdown-divider"></div>
 					<div class="dropdown-item">
-						<label onclick="location.replace('logout.html')">ออกจากระบบ ${pawnshop.pawnshopId}</label>
+						<label onclick="location.replace('logout.html')">ออกจากระบบ </label>
 					</div>
 				</div>
 			</div>
