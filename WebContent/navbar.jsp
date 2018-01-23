@@ -1,7 +1,7 @@
 <!-- 
 // page : navber
-// version : 4.0
-// task : change name แบบ spring เป็น call session
+// version : 5.0
+// task : แก้  dropdown menu
 // edit by : khawkreab
  -->
 
@@ -88,76 +88,64 @@
 			<%
 				if (session.getAttribute("userType") == "pawner") {
 			%>
-			<div class="nav-item-account navbar-brand">
-				<div class="dropdown-toggle" data-toggle="dropdown"
-					data-target="#dropdown">
+			<div>
+				<div class="collapse navbar-collapse" id="navbarResponsive">
+					<ul class="navbar-nav text-uppercase ml-auto">
+						<li class="nav-item nav-item-hover"><a
+							class="nav-link js-scroll-trigger" data-toggle="dropdown"><%=session.getAttribute("username")%>
+								<i class="fa fa-cog" aria-hidden="true"></i></a>
+							<ul class="dropdown-menu">
+								<li class="nav-item nav-item-hover"><a
+									class="nav-link js-scroll-trigger"
+									onclick="location.replace('editPawner.html')">แก้ไขข้อมูลส่วนตัว</a></li>
+								<li class="nav-item nav-item-hover"><a
+									class="nav-link js-scroll-trigger"
+									onclick="location.replace('logout.html')">Log out</a></li>
+							</ul></li>
+					</ul>
+				</div>
 
-					<i class="fa fa-user-circle-o" aria-hidden="true"></i>
-					<%=session.getAttribute("username") %>
+				<!-- -------------------------------------------------------------------- -->
+				<%
+					} else if (session.getAttribute("userType") == "admin") {
+				%>
+				<div class="collapse navbar-collapse" id="navbarResponsive">
+					<ul class="navbar-nav text-uppercase ml-auto">
+						<li class="nav-item nav-item-hover"><a
+							class="nav-link js-scroll-trigger" data-toggle="dropdown"><%=session.getAttribute("username")%>
+								<i class="fa fa-cog" aria-hidden="true"></i></a>
+							<ul class="dropdown-menu">
+								<li class="nav-item nav-item-hover"><a
+									class="nav-link js-scroll-trigger"
+									onclick="location.replace('logout.html')">Log out</a></li>
+							</ul></li>
+					</ul>
+				</div>
+				<%
+					} else if (session.getAttribute("userType") == "pawnShop") {
+				%>
+				<div class="collapse navbar-collapse" id="navbarResponsive">
+					<ul class="navbar-nav text-uppercase ml-auto">
+						<li class="nav-item nav-item-hover"><a
+							class="nav-link js-scroll-trigger" data-toggle="dropdown"><%=session.getAttribute("username")%>
+								<i class="fa fa-cog" aria-hidden="true"></i></a>
+							<ul class="dropdown-menu">
+								<li class="nav-item nav-item-hover"><a
+									class="nav-link js-scroll-trigger"
+									onclick="location.replace('editPawner.html')">แก้ไขข้อมูลส่วนตัว</a></li>
+								<li class="nav-item nav-item-hover"><a
+									class="nav-link js-scroll-trigger"
+									onclick="location.replace('logout.html')">Log out</a></li>
+							</ul></li>
+					</ul>
+				</div>
+				<%
+					}
+					}
+				%>
+				<!-- -------------------------------------------------------------------- -->
 
-				</div>
 			</div>
-			<!-- -------------------------------------------------------------------- -->
-			<div id="dropdown">
-				<div class="dropdown-menu">
-					<div class="dropdown-item">
-						<label onclick="location.replace('editPawner.html')">แก้ไขข้อมูลส่วนตัว</label>
-					</div>
-					<div class="dropdown-divider"></div>
-					<div class="dropdown-item">
-						<label onclick="location.replace('logout.html')">ออกจากระบบ</label>
-					</div>
-				</div>
-			</div>
-			<!-- -------------------------------------------------------------------- -->
-			<%
-				} else if (session.getAttribute("userType") == "admin") {
-			%>
-			<div class="nav-item-account navbar-brand">
-				<div class="dropdown-toggle" data-toggle="dropdown"
-					data-target="#dropdown">
-					<div class="user-avatar__inner">
-						<span class="">A</span>
-					</div>
-				</div>
-			</div>
-			<!-- -------------------------------------------------------------------- -->
-			<div id="dropdown">
-				<div class="dropdown-menu">
-					<div class="dropdown-divider"></div>
-					<div class="dropdown-item">
-						<label onclick="location.replace('logout.html')">ออกจากระบบ</label>
-					</div>
-				</div>
-			</div>
-			<%
-				} else if (session.getAttribute("userType") == "pawnShop") {
-			%>
-			<div class="nav-item-account navbar-brand">
-				<div class="dropdown-toggle" data-toggle="dropdown"
-					data-target="#dropdown">
-							<i class="fa fa-user-circle-o" aria-hidden="true"></i> <%=session.getAttribute("username") %>
-				</div>
-			</div>
-			<!-- -------------------------------------------------------------------- -->
-			<div id="dropdown">
-				<div class="dropdown-menu">
-					<div class="dropdown-item">
-						<label onclick="location.replace('editPawnshop.html')">แก้ไขข้อมูลโรงรับจำนำ </label>
-					</div>
-					<div class="dropdown-divider"></div>
-					<div class="dropdown-item">
-						<label onclick="location.replace('logout.html')">ออกจากระบบ </label>
-					</div>
-				</div>
-			</div>
-			<%
-				}
-				}
-			%>
-			<!-- -------------------------------------------------------------------- -->
-
-		</div>
 	</nav>
 
 	<!------------------------------------------------ popup -------------------------------------------------->

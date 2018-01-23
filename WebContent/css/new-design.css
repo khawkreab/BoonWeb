@@ -12,7 +12,7 @@
 /*!
 // page : new-design.css
 // version : 2.0
-// task : เปลี่ยน navber
+// task : เปลี่ยน navber at drop down
 // edit by : khawkreab
 */
 body {
@@ -20,6 +20,10 @@ body {
 	font-family: 'Roboto Slab', 'Helvetica Neue', Helvetica, Arial,
 		sans-serif;
 	background-color: #fff;
+}
+
+a{
+	cursor: pointer;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -82,13 +86,14 @@ li {
 .dropdown-menu {
 	position: absolute;
 	width: 330;
+	height: 800px;
 	top: 100%;
 	right: 0;
 	z-index: 1000;
 	display: none;
 	float: left;
 	min-width: 10rem;
-	padding: .5rem 0;
+	padding: 0;
 	margin: 0;
 	font-size: 1rem;
 	color: #212529;
@@ -583,6 +588,9 @@ strong {
 	border: 1px solid rgba(27, 31, 35, 0.2);
 	border-radius: 0.25em;
 }
+
+
+
 
 /************************************************************************************************/
 

@@ -1,6 +1,6 @@
 <!-- 
 // page : pawner-index
-// version : 1.2
+// version : 1.3
 // task : modal select type 
 // edit by : khawkreab
  -->
@@ -60,25 +60,15 @@
 					</div>
 					<div class="clear"></div>
 					<div class="box-sup text-center">
-						<a 
-						data-target="#modalSelectType" >Pawn</a>
+						<a data-toggle="modal" data-target="#modalSelectType">Pawn</a>
 					</div>
 				</div>
 
 			</div>
 			<div class="box-main">
-				<div class="box-sup">
-					<div class="box-semi">
-						<span class="time-line"></span>
-						<ul>
-							<li><span class="cycle"></span></li>
-						</ul>
-					</div>
-				</div>
+		
 			</div>
 
-
-			<!-- ----------------------------------------------------------------------------  -->
 		</div>
 	</section>
 
@@ -137,14 +127,6 @@
 			</div>
 		</div>
 	</div>
-	<!-- Bootstrap core JavaScript -->
-	<script src="vendor/jquery/jquery.min.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-	
-	<!-- Custom scripts for this template -->
-	<script src="js/agency.min.js"></script>
 
-	<!-- Plugin JavaScript -->
-	<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 </body>
 </html>
