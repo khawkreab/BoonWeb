@@ -1,3 +1,8 @@
+<!-- 
+// version : 1.0
+// task : --
+// edit by : 
+ -->
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
@@ -17,6 +22,7 @@
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
 <!-- Custom styles for this template -->
+<link href="css/new-design.css" rel="stylesheet">
 <link href="css/custom-style.min.css" rel="stylesheet">
 <link href="vendor/font-awesome/css/font-awesome.min.css"
 	rel="stylesheet" type="text/css">

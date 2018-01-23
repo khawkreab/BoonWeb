@@ -1,3 +1,9 @@
+<!-- 
+// version : 1.0
+// task : --
+// edit by : khawkreab
+ -->
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
@@ -87,7 +93,7 @@
 					data-target="#dropdown">
 
 					<i class="fa fa-user-circle-o" aria-hidden="true"></i>
-					${pawner.firstName}
+					${pawner.pawnerFirstname}
 
 				</div>
 			</div>
@@ -171,7 +177,7 @@
 					<%
 						}
 					%>
-					<form method="POST" action="loginProcess.do">
+					<form method="POST" action="loginProcess.html">
 						<div class="form-group">
 
 							<div class="cols-sm-10">

@@ -3,21 +3,13 @@
 <head>
     <meta charset="utf-8">
     <title>Pawner Post</title>
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/custom-style.min.css" rel="stylesheet">
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <style>
-        body {
-            line-height: 10px;
-            box-sizing: border-box;
-            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-            color: black;
-            font-size: 14px;
-        }
-
-        section {
-            text-align: center;
-            background-color: white;
-            overflow: hidden;
-        }
-
         select {
             position: relative;
             display: inline-block;
@@ -44,6 +36,11 @@
         .re-contain {
             width: 700px;
             margin: 40px auto 0;
+            line-height: 10px;
+            box-sizing: border-box;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            color: black;
+            font-size: 14px;
         }
 
         .Subhead {
@@ -162,68 +159,68 @@
             <h2 class="Subhead-heading">Create Post</h2>
             <p class="Subhead-description">This post will show on pawnshop's page for them estimate your post.</p>
         </div>
-        <div id="Gold" class="type">
-            <div style="margin-bottom:20px;">
-                <div class="form-group float-left">
-                    <dt>
-                        <img alt="user" src="img/gold.png" height="100" width="100" style=" margin-bottom:12px;border:1px solid#c8cbcf">
-                    </dt>
-                    <input type="file" id="file" name="file" multiple style="width:70px;">
-                </div>
-                <div class="form-group float-left" style="margin-bottom:30px;">
-                    <dt>Post name</dt>
-                    <dt>
-                        <input class="post-name" pattern="[A-Za-z]{12,}" required="required" />
-                    </dt>
-                    <p class="Subhead-description">plass enter data about your item for pawnshop to understand.</p>
-                </div>
+
+        <div style="margin-bottom:20px;">
+            <div class="form-group float-left">
+                <dt>
+                    <img alt="user" src="img/gold.png" height="100" width="100" style=" margin-bottom:12px;border:1px solid#c8cbcf">
+                </dt>
+                <input type="file" id="file" name="file" multiple style="width:70px;">
             </div>
-            <div class="form-group float-left Subhead" style="margin-top:10px; ">
-                <div class="form-group enter-data">
-                    <p>Enter the correct data for your post.Thsi data will show to pawnshop.</p>
-                </div>
-                <div class="form-group float-left ">
-                        <dt>Type of gold.</dt>
-                        <div class="float-left" style="margin-top:11.5px;">
-                            <select required="required">
-                                <option>Fine glod</option>
-                                <option>Prima Gold/Gold Master</option>
-                                <option>Amulet frames</option>
-                                <option>Platinum</option>
-                                <option>Other</option>
-                            </select>
-                        </div>
-                    </div>
-                <div class="form-group float-left ">
-                    <dt>Pure of gold.</dt>
-                    <dt>
-                        <input class="post-name" placeholder=" 90%" pattern="[0-9]+%{1,}" required="required" />
-                    </dt>
-                </div>
-                
-                <div class="form-group float-left ">
-                    <dt>Weigh of gold.</dt>
-                    <dt>
-                        <input class="post-name" placeholder=" 24.8 g." pattern="[0-9A-Za-z]{6,}" required="required"/>
-                    </dt>
-                </div>
-                <div class="form-group float-left ">
-                    <dt>Size of gold.</dt>
-                    <dt>
-                        <input class="post-name" placeholder=" 23.5x3cm or 5.3cm" pattern="[0-9A-Za-z]{6,}"/>
-                    </dt>
-                </div>
-                <div class="form-group  float-left">
-                    <dt>Description</dt>
-                </div>
-                <div class="form-group">
-                    <dt>
-                        <input class="post-description" style="max-width:100%" pattern="[0-9A-Za-z]{20,}"/>
-                    </dt>
-                    <p class="Subhead-description">(optional) If you have more data input here!</p>
-                </div>
+            <div class="form-group float-left" style="margin-bottom:30px;">
+                <dt>Post name</dt>
+                <dt>
+                    <input class="post-name" pattern="[A-Za-z]{12,}" required="required" />
+                </dt>
+                <p class="Subhead-description">plass enter data about your item for pawnshop to understand.</p>
             </div>
         </div>
+        <div class="form-group float-left Subhead" style="margin-top:10px; ">
+            <div class="form-group enter-data">
+                <p>Enter the correct data for your post.Thsi data will show to pawnshop.</p>
+            </div>
+            <div class="form-group float-left ">
+                <dt>Type of gold.</dt>
+                <div class="float-left" style="margin-top:11.5px;">
+                    <select required="required">
+                        <option>Fine glod</option>
+                        <option>Prima Gold/Gold Master</option>
+                        <option>Amulet frames</option>
+                        <option>Platinum</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group float-left ">
+                <dt>Pure of gold.</dt>
+                <dt>
+                    <input class="post-name" placeholder=" 90%" pattern="[0-9]+%{1,}" required="required" />
+                </dt>
+            </div>
+
+            <div class="form-group float-left ">
+                <dt>Weigh of gold.</dt>
+                <dt>
+                    <input class="post-name" placeholder=" 24.8 g." pattern="[0-9A-Za-z]{6,}" required="required" />
+                </dt>
+            </div>
+            <div class="form-group float-left ">
+                <dt>Size of gold.</dt>
+                <dt>
+                    <input class="post-name" placeholder=" 23.5x3cm or 5.3cm" pattern="[0-9A-Za-z]{6,}" />
+                </dt>
+            </div>
+            <div class="form-group  float-left">
+                <dt>Description</dt>
+            </div>
+            <div class="form-group">
+                <dt>
+                    <input class="post-description" style="max-width:100%" pattern="[0-9A-Za-z]{20,}" />
+                </dt>
+                <p class="Subhead-description">(optional) If you have more data input here!</p>
+            </div>
+        </div>
+
         <div class="form-group float-left">
             <input type="checkbox" required="required">I agree to the
             <strong>trem of service</strong>
@@ -298,8 +295,6 @@
 
     </section> -->
     <!-- <jsp:include page="footer.jsp"  -->
-
-
 </body>
 
 </html>

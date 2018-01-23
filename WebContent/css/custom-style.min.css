@@ -19,12 +19,7 @@ li:hover {
  * Copyright 2013-2017 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-agency/blob/master/LICENSE)
  */
-body {
-	overflow-x: hidden;
-	font-family: 'Roboto Slab', 'Helvetica Neue', Helvetica, Arial,
-		sans-serif;
-	background-color: #e6ecf0;
-}
+
 
 h1, h2, h3, h4, h5, h6 {
 	font-weight: 700;
