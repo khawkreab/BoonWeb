@@ -1,7 +1,7 @@
 <!-- 
 // page : pawner-post-form
-// version : 2.0
-// task : change pattern
+// version : 3.0
+// task : แก้บัค save ไม่เข้า
 // edit by : khawkreab
  -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -22,6 +22,7 @@
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
 <!-- Custom styles for this template -->
+<link href="css/new-design.css" rel="stylesheet">
 <link href="css/custom-style.min.css" rel="stylesheet">
 <link href="vendor/font-awesome/css/font-awesome.min.css"
 	rel="stylesheet" type="text/css">
@@ -176,7 +177,7 @@ strong {
 		</div>
 		<form:form method="post" action="savePost.html" commandName="pawnerPost">
 			<form:hidden path="pawnerPostId" />
-			<form:hidden path="pawner.pawnerId" />
+			<form:hidden path="pawnerId.pawnerId"/>
 			<div style="margin-bottom: 20px;">
 				<div class="form-group float-left">
 					<dt>
@@ -189,7 +190,7 @@ strong {
 				<div class="form-group float-left" style="margin-bottom: 30px;">
 					<dt>Post name</dt>
 					<dt>
-						<form:input path="pawnerPostItem1" class="post-name" pattern="[A-Za-z]{3,45}"
+						<form:input path="pawnerPostItem1" class="post-name" pattern="[A-Za-z0-9]{3,45}"
 							required="required" />
 					</dt>
 					<p class="Subhead-description">plass enter data about your item

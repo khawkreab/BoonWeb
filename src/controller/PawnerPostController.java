@@ -33,11 +33,10 @@ public class PawnerPostController {
 	@RequestMapping("/pawner-post-form")
 	public ModelAndView newGold(HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView("pawnerPostForm.jsp");
-//		long userId = (long) request.getSession().getAttribute("id");
-//		Pawner pm = pmService.findPawnerById(userId);
+		long userId = (long) request.getSession().getAttribute("id");
+		Pawner pm = pmService.findPawnerById(userId);
 		PawnerPost pawnerPost = new PawnerPost();
-//		pawnerPost.setPawner(pm);
-//		mv.addObject("pawner", pm);
+		pawnerPost.setPawner(pm);
 		mv.addObject("pawnerPost", pawnerPost);
 		return mv;
 	}
