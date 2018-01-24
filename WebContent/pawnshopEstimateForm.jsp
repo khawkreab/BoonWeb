@@ -1,7 +1,7 @@
 <!-- 
 // page : pawnshop-estimate-form
-// version : 1.1
-// task : new design
+// version : 2.0
+// task : connect database 
 // edit by : khawkreab 
  -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -81,6 +81,7 @@
 				</div>
 			</div>
 		</div>
+		dfghjklghjkghjkljk<%=request.getParameter("postId") %>
 	</div>
 	</section>
 </body>

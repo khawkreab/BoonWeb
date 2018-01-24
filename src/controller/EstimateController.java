@@ -1,7 +1,7 @@
 /*!-- 
 // page : EstimateController
 // version : 1.0
-// task : add page pawnshop-estimate-form.html
+// task : connect database in pawnshop-estimate-form
 // edit by : khawkreab
  --*/
 
@@ -43,7 +43,8 @@ public class EstimateController {
 	PawnerService pmService;
 	
 	@RequestMapping("/pawnshop-estimate-form")
-	public ModelAndView newestimate(){
+	public ModelAndView newestimate(@ModelAttribute("postid") Estimate postid, BindingResult result,
+			HttpServletRequest request){
 		ModelAndView mv = new ModelAndView("pawnshopEstimateForm.jsp");
 		Estimate estimate = new Estimate();
 		mv.addObject("estimate" ,estimate);

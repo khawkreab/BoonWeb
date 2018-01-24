@@ -33,6 +33,7 @@
 			sumuser.push(
 						 {"category": "Pawner","column-1": parseInt(${pawner})}
 						,{"category": "Pawn Shop","column-1": parseInt(${pawnshop})});
+						
 			
 			AmCharts.makeChart("chartdiv",
 				{
