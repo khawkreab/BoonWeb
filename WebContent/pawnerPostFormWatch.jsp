@@ -1,3 +1,12 @@
+<!-- 
+// page : pawner-post-form-watch
+// version : 1.0
+// task : create
+// edit by : ter
+ -->
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <html lang="en">
 
 <head>
@@ -28,6 +37,11 @@
 					<h2 class="Subhead-heading">Create Post Watch</h2>
 					<p class="Subhead-description">This post will show on pawnshop's page for them estimate your post.</p>
 				</div>
+				<form:form method="post" action="savePost.html"
+					commandName="pawnerPost">
+					<form:hidden path="pawnerPostId" />
+					<form:hidden path="pawnerId.pawnerId" />
+					<form:hidden path="pawnerPostItemType" value="watch"/>
 				<div style="margin-bottom: 20px;">
 					<div class="form-group float-left">
 						<dt>
@@ -38,7 +52,7 @@
 					<div class="form-group-post float-left" style="margin-bottom: 30px;">
 						<dt>Post name</dt>
 						<dt>
-							<input class="post-name" pattern="[A-Za-z0-9]{3,45}" required="required" />
+							<form:input path="pawnerPostItem17" class="post-name" pattern="[A-Za-z0-9]{3,45}" required="required" />
 						</dt>
 						<p class="Subhead-description">plass enter data about your item for pawnshop to understand.</p>
 					</div>
@@ -50,67 +64,67 @@
 					<div class="form-group-post float-left ">
 						<dt>Brand</dt>
 						<div class="float-left" style="margin-top: 11.5px;">
-							<select>
+							<form:select path="pawnerPostItem2">
 								<option>casio</option>
 								<option>Sony</option>
-							</select>
+							</form:select>
 						</div>
 					</div>
 					<div class="form-group-post float-left ">
 						<dt>Type</dt>
 						<div class="float-left" style="margin-top: 11.5px;">
-							<select>
+							<form:select path="pawnerPostItem16">
 								<option>Stainless steel</option>
 								<option>other</option>
-							</select>
+							</form:select>
 						</div>
 					</div>
 					<div class="form-group-post float-left ">
 						<dt>System</dt>
 						<div class="float-left" style="margin-top: 11.5px;">
-							<select>
+							<form:select path="pawnerPostItem11">
 								<option>Quartz</option>
 								<option>other</option>
-							</select>
+							</form:select>
 						</div>
 					</div>
 					<div class="form-group-post float-left ">
 						<dt>Model</dt>
 						<dt>
-							<input class="post-name" placeholder="" pattern="[0-9A-Za-z]{1,15}" required="required" />
+							<form:input path="pawnerPostItem6" class="post-name" placeholder="" pattern="[0-9A-Za-z]{1,15}" required="required" />
 						</dt>
 					</div>
 					<div class="form-group-post float-left ">
 						<dt>Condition</dt>
 						<dt>
-							<input class="post-name" placeholder="90%" pattern="[0-9]{1,}" required="required" />
+							<form:input path="pawnerPostItem7" class="post-name" placeholder="90%" pattern="[0-9]{1,}" required="required" />
 						</dt>
 					</div>
 					<div class="form-group-post float-left ">
 						<dt>Size of cord</dt>
 						<dt>
-							<input class="post-name" placeholder=" 23cm" pattern="[0-9A-Za-z]{1,15}" required="required" />
+							<form:input path="pawnerPostItem13" class="post-name" placeholder=" 23cm" pattern="[0-9A-Za-z]{1,15}" required="required" />
 						</dt>
 					</div>
 					<div class="form-group-post float-left ">
 						<dt>Code Number</dt>
 						<dt>
-							<input class="post-name" placeholder="" pattern="[0-9A-Za-z]{1,15}" required="required" />
+							<form:input path="pawnerPostItem5" class="post-name" placeholder="" pattern="[0-9A-Za-z]{1,15}" required="required" />
 						</dt>
 					</div>
 					<div class="form-group-post float-left ">
 						<dt>Year of purchase</dt>
 						<dt>
-							<input type="date" class="post-name" required="required" />
+							<form:input path="pawnerPostItem15" type="date" class="post-name" required="required" />
 						</dt>
 					</div>
 					<div class="form-group-post float-left">
 						<dt style="line-height:45px;">
-							<input type="checkbox"> Diamond
+							<form:checkbox path="pawnerPostItem10" value="yes"/> Diamond
 							<strong>(If you have)</strong>
 						</dt>
 						<dt style="line-height:5px;">
-							<input type="checkbox"> Ansurranc
+							<form:checkbox path="pawnerPostItem12" value="yes"/> Ansurranc
 							<strong>(If you have)</strong>
 						</dt>
 					</div>
@@ -120,7 +134,7 @@
 				</div>
 				<div class="form-group-post">
 					<dt>
-						<input class="post-description" style="max-width: 100%" pattern="[0-9A-Za-z]{0,}" />
+						<form:input path="pawnerPostItem3" class="post-description" style="max-width: 100%" pattern="[0-9A-Za-z]{0,}" />
 					</dt>
 					<p class="Subhead-description">(optional) If you have more data input here!</p>
 				</div>
