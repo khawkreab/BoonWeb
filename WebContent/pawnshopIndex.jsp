@@ -1,7 +1,7 @@
 <!-- 
 // page : pawnshop-index
-// version : 1.0
-// task : connect data base
+// version : 2.0
+// task : design
 // edit by : khawkreab
  -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -44,23 +44,24 @@
 				<form method="post" action="pawnshop-estimate-form.html">
 					<c:forEach items="${pawnerPosts}" var="post">
 						<input type="hidden" name="postId" value="${post.pawnerPostId}" />
-						<button type="submit">
-							<a href="#">
-								<div class="card">
+						<div class="card">
+							<button type="submit" class="btn-card">
+								<div>
 									<span class="card-img-top"> <img src="img/profile.jpg"
 										alt="Card image cap"></span>
 									<div class="card-body">
-										<span class="card-title">${post.pawnerPostItem1} -
-											${post.pawnerPostItem2}</span> <span class="card-text">Province
+										<span class="card-title"><p>${post.pawnerPostItem1}
+												-sdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsfsfd
+												${post.pawnerPostItem2}</p></span> <span class="card-text">Province
 											: ${post.pawnerId.pawnerProvince }</span> <span class="card-footer">
 											<small class="text-muted">${post.pawnerPostDate }</small>
 										</span>
 									</div>
 								</div>
-							</a>
-						</button>
+							</button>
+						</div>
 					</c:forEach>
-					</form>
+				</form>
 			</div>
 	</section>
 	<!-- ----------------------------------------------------------------------------  -->
