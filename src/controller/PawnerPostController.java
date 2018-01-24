@@ -30,9 +30,20 @@ public class PawnerPostController {
 	@EJB(mappedName = "ejb:/BoonWeb//PawnshopServiceBean!service.PawnshopService")
 	PawnshopService pawnshopServ;
 	
-	@RequestMapping("/pawner-post-form")
+	@RequestMapping("/pawner-post-form-gold")
 	public ModelAndView newGold(HttpServletRequest request) {
-		ModelAndView mv = new ModelAndView("pawnerPostForm.jsp");
+		ModelAndView mv = new ModelAndView("pawnerPostFormGold.jsp");
+		long userId = (long) request.getSession().getAttribute("id");
+		Pawner pm = pmService.findPawnerById(userId);
+		PawnerPost pawnerPost = new PawnerPost();
+		pawnerPost.setPawner(pm);
+		mv.addObject("pawnerPost", pawnerPost);
+		return mv;
+	}
+	
+	@RequestMapping("/pawner-post-form-com")
+	public ModelAndView newCom(HttpServletRequest request) {
+		ModelAndView mv = new ModelAndView("pawnerPostFormCom.jsp");
 		long userId = (long) request.getSession().getAttribute("id");
 		Pawner pm = pmService.findPawnerById(userId);
 		PawnerPost pawnerPost = new PawnerPost();

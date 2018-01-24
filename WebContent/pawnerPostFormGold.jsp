@@ -44,6 +44,7 @@
 					commandName="pawnerPost">
 					<form:hidden path="pawnerPostId" />
 					<form:hidden path="pawnerId.pawnerId" />
+					<form:hidden path="pawnerPostItemType" value="gold"/>
 					<div style="margin-bottom: 20px;">
 						<div class="form-group float-left">
 							<dt>
@@ -56,7 +57,7 @@
 							style="margin-bottom: 30px;">
 							<dt>Post name</dt>
 							<dt>
-								<form:input path="pawnerPostItem1" class="post-name"
+								<form:input path="pawnerPostItem17" class="post-name"
 									pattern="[A-Za-z0-9]{3,45}" required="required" />
 							</dt>
 							<p class="Subhead-description">plass enter data about your
@@ -72,7 +73,7 @@
 						<div class="form-group-post float-left ">
 							<dt>Type of gold.</dt>
 							<div class="float-left" style="margin-top: 11.5px;">
-								<form:select path="pawnerPostItemType" required="required">
+								<form:select path="pawnerPostItem1" required="required">
 									<option>Fine glod</option>
 									<option>Prima Gold/Gold Master</option>
 									<option>Amulet frames</option>
@@ -84,7 +85,7 @@
 						<div class="form-group-post float-left ">
 							<dt>Pure of gold.</dt>
 							<dt>
-								<form:input path="pawnerPostItem17" class="post-name"
+								<form:input path="pawnerPostItem14" class="post-name"
 									placeholder=" 90%" pattern="[0-9]{1,}" required="required" />
 							</dt>
 						</div>
