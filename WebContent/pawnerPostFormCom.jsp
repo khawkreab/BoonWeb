@@ -1,3 +1,9 @@
+<!-- 
+// page : pawner-post-form-com
+// version : 1.0
+// task : create
+// edit by : ter
+ -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
@@ -98,11 +104,11 @@
 					</div>
 					<div class="form-group-post float-left">
 						<dt style="line-height:45px;">
-							<form:input path="pawnerPostItem14" type="checkbox" /> Remote
+							<form:checkbox path="pawnerPostItem14" value="yes"  /> Remote
 							<strong>(only TV)</strong>
 						</dt>
 						<dt style="line-height:5px;">
-							<form:input path="pawnerPostItem12" type="checkbox" /> Ansurranc
+							<form:checkbox path="pawnerPostItem12" value="yes"  /> Ansurranc
 							<strong>(If you have)</strong>
 						</dt>
 					</div>

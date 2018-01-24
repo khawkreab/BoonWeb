@@ -1,10 +1,11 @@
 
 <!-- 
 // page : teamdev
-// version : 1.0
-// task : --
-// edit by : 
- --><%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+// version : 2.0
+// task : design
+// edit by : khawkreab
+ -->
+ <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
@@ -13,7 +14,7 @@
     <!-- This file has been downloaded from Bootsnipp.com. Enjoy! -->
     <title>dev(slide)</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+    
     <style type="text/css">
         /* carousel */
 #quote-carousel 

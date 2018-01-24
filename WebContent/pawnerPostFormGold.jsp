@@ -85,7 +85,7 @@
 						<div class="form-group-post float-left ">
 							<dt>Pure of gold.</dt>
 							<dt>
-								<form:input path="pawnerPostItem14" class="post-name"
+								<form:input path="pawnerPostItem7" class="post-name"
 									placeholder=" 90%" pattern="[0-9]{1,}" required="required" />
 							</dt>
 						</div>
