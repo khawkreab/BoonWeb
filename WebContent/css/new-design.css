@@ -11,8 +11,8 @@
 
 /*!
 // page : new-design.css
-// version : 4.2
-// task : update design pawnshop-index
+// version : 5
+// task : footer
 // edit by : khawkreab
 */
 body {
@@ -66,6 +66,16 @@ li {
 
 .clear {
 	clear: both;
+}
+
+.bg-glay {
+	background-color: #202020;
+	color: #ffffff;
+}
+
+.bg-black {
+	background-color: #000000;
+	color: #ffffff;
 }
 
 /*!
@@ -737,177 +747,24 @@ strong {
 	transform: scale(3);
 }
 
-100%
-{
-opacity
-
-
-
-
-
-
-
-
-:
-
-
-
-
- 
-
-
-
-
-1;
--webkit-transform
-
-
-
-
-
-
-
-
-:
-
-
-
-
- 
-
-
-
-
-scale
-
-
-
-
-
-
-
-
-(1);
-transform
-
-
-
-
-
-
-
-
-:
-
-
-
-
- 
-
-
-
-
-scale
-
-
-
-
-
-
-
-
-(1);
-}
-}
-@
-keyframes opacity { 0% {
-	opacity: 0;
-	-webkit-transform: scale(3);
-	transform: scale(3);
+/*!
+* footer
+*/
+footer { 
+	padding: 25px 0 0 0;
+	text-align: left
 }
 
-100%
-{
-opacity
-
-
-
-
-
-
-
-
-:
-
-
-
-
+.footer-copyright {
+	font-size: 90%;
+ 	line-height: 40px;
+	text-transform: none;
+	text-align: center;
+	font-family: Montserrat,'Helvetica Neue',Helvetica,Arial,sans-serif
  
 
+ }
 
-
-
-1;
--webkit-transform
-
-
-
-
-
-
-
-
-:
-
-
-
-
- 
-
-
-
-
-scale
-
-
-
-
-
-
-
-
-(1);
-transform
-
-
-
-
-
-
-
-
-:
-
-
-
-
- 
-
-
-
-
-scale
-
-
-
-
-
-
-
-
-(1);
-}
-}
 
 /************************************************************************************************/
 
