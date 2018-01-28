@@ -1,6 +1,6 @@
 <!-- 
 // page : pawnshop-index
-// version : 2.0
+// version : 2.1
 // task : design
 // edit by : khawkreab
  -->
@@ -39,30 +39,29 @@
 
 	<section>
 		<div class="container">
-
-			<div class="card-deck">
+		<div class="list-body">
+			<div class="list-filter"></div>
+			<div class="list-main">
 				<form method="post" action="pawnshop-estimate-form.html">
 					<c:forEach items="${pawnerPosts}" var="post">
 						<input type="hidden" name="postId" value="${post.pawnerPostId}" />
-						<div class="card">
-							<button type="submit" class="btn-card">
-								<div>
-									<span class="card-img-top"> <img src="img/profile.jpg"
-										alt="Card image cap"></span>
-									<div class="card-body">
-										<span class="card-title"><p>${post.pawnerPostItem1}
-												-sdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsfsfd
-												${post.pawnerPostItem2}</p></span> <span class="card-text">Province
-											: ${post.pawnerId.pawnerProvince }</span> <span class="card-footer">
-											<small class="text-muted">${post.pawnerPostDate }</small>
-										</span>
-									</div>
-								</div>
-							</button>
-						</div>
+						<button type="submit" class="card btn-card">
+							<span class="card-img-top"> <img src="img/profile.jpg"
+								alt="Card image cap"></span>
+							<div class="card-body">
+								<span class="card-title"><p>${post.pawnerPostItem1}
+										-sdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsfsfd
+										${post.pawnerPostItem2}</p></span> <span class="card-text">Province
+									: ${post.pawnerId.pawnerProvince }</span> <span class="card-footer">
+									<small class="text-muted">${post.pawnerPostDate }</small>
+								</span>
+							</div>
+						</button>
 					</c:forEach>
 				</form>
 			</div>
+			</div>
+		</div>
 	</section>
 	<!-- ----------------------------------------------------------------------------  -->
 	<jsp:include page="footer.jsp" />
