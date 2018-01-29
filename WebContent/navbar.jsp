@@ -74,7 +74,7 @@
 						data-target="#modalLogin" class="nav-link js-scroll-trigger"
 						href="login.do">Login</a></li>
 					<li class="nav-item nav-item-hover"><a
-						class="nav-link js-scroll-trigger" href="register.html">Register</a></li>
+						class="nav-link js-scroll-trigger" href="pawner-register-form.html">Register</a></li>
 				</ul>
 			</div>
 			<%

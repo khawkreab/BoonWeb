@@ -15,126 +15,105 @@
 	<link href="css/new-design.css" rel="stylesheet">
 	<link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
+	<script>
+		function checkmathpate() {
+			var pass1 = document.getElementById("pass").value;
+			var pass2 = document.getElementById("confirm").value;
+
+			if (pass1 != pass2) {
+				alert("Passwords Do not match");
+				document.getElementById("pass").style.borderColor = "#E34234";
+				document.getElementById("confirm").style.borderColor = "#E34234";
+			} else {
+				//alert("Passwords Match!!!");
+			}
+		}
+	</script>
+
+
 </head>
 
 <body>
 
-	<!-- Navigation   -->
+	<!-- Navigation -->
 	<jsp:include page="navbar.jsp" />
+
 	<section>
 		<div class="container">
-			<div class="re-contain">
+			<div class="re-contain" style="border-bottom:1px solid #e1e4e8 ;;">
 				<div class="Subhead">
-					<h2 class="Subhead-heading">Create Post Watch</h2>
-					<p class="Subhead-description">This post will show on pawnshop's page for them estimate your post.</p>
-				</div>
-				<div style="margin-bottom: 20px;">
-					<div class="form-group float-left">
-						<dt>
-							<img alt="user" src="img/gold.png" height="100" width="100" style="margin-bottom: 12px; border: 1px solid #c8cbcf">
-						</dt>
-						<input type="file" id="file" multiple style="width: 70px;">
-					</div>
-					<div class="form-group-post float-left" style="margin-bottom: 30px;">
-						<dt>Post name</dt>
-						<dt>
-							<input class="post-name" pattern="[A-Za-z0-9]{3,45}" required="required" />
-						</dt>
-						<p class="Subhead-description">plass enter data about your item for pawnshop to understand.</p>
-					</div>
-				</div>
-				<div class="form-group-post float-left Subhead" style="margin-top: 10px;">
-					<div class="form-group enter-data">
-						<p>Enter the correct data for your post.Thsi data will show to pawnshop.</p>
-					</div>
-					<div class="form-group-post float-left ">
-						<dt>Brand</dt>
-						<div class="float-left" style="margin-top: 11.5px;">
-							<select>
-								<option>casio</option>
-								<option>Sony</option>
-							</select>
-						</div>
-					</div>
-					<div class="form-group-post float-left ">
-						<dt>Type</dt>
-						<div class="float-left" style="margin-top: 11.5px;">
-							<select>
-								<option>Stainless steel</option>
-								<option>other</option>
-							</select>
-						</div>
-					</div>
-					<div class="form-group-post float-left ">
-						<dt>System</dt>
-						<div class="float-left" style="margin-top: 11.5px;">
-							<select>
-								<option>Quartz</option>
-								<option>other</option>
-							</select>
-						</div>
-					</div>
-					<div class="form-group-post float-left ">
-						<dt>Model</dt>
-						<dt>
-							<input class="post-name" placeholder="" pattern="[0-9A-Za-z]{1,15}" required="required" />
-						</dt>
-					</div>
-					<div class="form-group-post float-left ">
-						<dt>Condition</dt>
-						<dt>
-							<input class="post-name" placeholder="90%" pattern="[0-9]{1,}" required="required" />
-						</dt>
-					</div>
-					<div class="form-group-post float-left ">
-						<dt>Size of cord</dt>
-						<dt>
-							<input class="post-name" placeholder=" 23cm" pattern="[0-9A-Za-z]{1,15}" required="required" />
-						</dt>
-					</div>
-					<div class="form-group-post float-left ">
-						<dt>Code Number</dt>
-						<dt>
-							<input class="post-name" placeholder="" pattern="[0-9A-Za-z]{1,15}" required="required" />
-						</dt>
-					</div>
-					<div class="form-group-post float-left ">
-						<dt>Year of purchase</dt>
-						<dt>
-							<input type="date" class="post-name" required="required" />
-						</dt>
-					</div>
-					<div class="form-group-post float-left">
-						<dt style="line-height:45px;">
-							<input type="checkbox"> Diamond
-							<strong>(If you have)</strong>
-						</dt>
-						<dt style="line-height:5px;">
-							<input type="checkbox"> Ansurranc
-							<strong>(If you have)</strong>
-						</dt>
-					</div>
-				</div>
-				<div class="form-group-post  float-left">
-					<dt>Description</dt>
-				</div>
-				<div class="form-group-post">
-					<dt>
-						<input class="post-description" style="max-width: 100%" pattern="[0-9A-Za-z]{0,}" />
-					</dt>
-					<p class="Subhead-description">(optional) If you have more data input here!</p>
+					<h2 class="Subhead-heading">Pawner Registration</h2>
 				</div>
 				<div class="form-group-post float-left">
-					<input type="checkbox" required="required">I agree to the
-					<strong>trem of service</strong>
+					<div class="form-group ">
+						<dt>Firstname</dt>
+						<input class="post-name" pattern="[A-Za-z]{1,}" required="required">
+					</div>
+
+					<div class="form-group ">
+						<dt>Lastname</dt>
+						<input class="post-name" pattern="[A-Za-z]{1,}" required="required">
+					</div>
+
+					<div class="form-group ">
+						<dt>Password</dt>
+						<input class="post-name" type="password" id="pass" pattern="[0-9A-Za-z]{1,}" required="required">
+					</div>
+
+					<div class="form-group ">
+						<dt>Confirm Password</dt>
+						<input class="post-name" type="password" id="confirm" pattern="[0-9A-Za-z]{1,}" required="required">
+					</div>
+
+					<div class="form-group ">
+						<dt>Email Address</dt>
+						<input class="post-name" pattern="[0-9A-Za-z]{1,}" required="required">
+					</div>
+
+					<div class="form-group float-left ">
+						<dt>Sex</dt>
+						<div class="float-left" style="margin-top: 11.5px;">
+							<select>
+								<option>Male</option>
+								<option>Female</option>
+							</select>
+						</div>
+					</div>
 				</div>
-				<div class="form-group-post float-left">
-					<button type="submit" class="summit-data">Create post</button>
+				<div class="form-group-post float-left" style="margin-left:65px;">
+					<p class="lead" style="line-height:2; font-size:30px;">Register now for
+						<span class="text-success">FREE</span>
+					</p>
+					<ul class="list-unstyled" style="line-height:2; font-size:22px;">
+						<li>
+							<span class="fa fa-check text-success"></span> See many product on shop</li>
+						<li>
+							<span class="fa fa-check text-success"></span> Create your post </li>
+						<li>
+							<span class="fa fa-check text-success"></span> Check all estimate</li>
+						<li>
+							<span class="fa fa-check text-success"></span> Check pawnshop location</li>
+						<li>
+							<span class="fa fa-check text-success"></span> Create post unlimited
+						</li>
+						<li>
+							<span class="fa fa-check text-success"></span> See all your post
+						</li>
+					</ul>
 				</div>
-				</form:form>
 			</div>
 		</div>
 	</section>
-</body>
+	<div class="re-contain" style="margin-top:-40px;">
+		<div class="form-group ">
+			<input type="checkbox" required="required">I agree to the
+			<strong>trem of service</strong>
+		</div>
+		<div class="form-group ">
+			<button type="submit" class="summit-data">Create Account</button>
+		</div>
+	</div>
 
-</html>
+
+
+</body>
