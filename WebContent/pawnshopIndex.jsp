@@ -1,7 +1,7 @@
 <!-- 
 // page : pawnshop-index
-// version : 2.1
-// task : design
+// version : 3.0
+// task : send data to pawnshop-estimate-form
 // edit by : khawkreab
  -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -39,27 +39,30 @@
 
 	<section>
 		<div class="container">
-		<div class="list-body">
-			<div class="list-filter"></div>
-			<div class="list-main">
-				<form method="post" action="pawnshop-estimate-form.html">
+			<div class="list-body">
+				<div class="list-filter"></div>
+				<div class="list-main">
 					<c:forEach items="${pawnerPosts}" var="post">
-						<input type="hidden" name="postId" value="${post.pawnerPostId}" />
-						<button type="submit" class="card btn-card">
-							<span class="card-img-top"> <img src="img/profile.jpg"
-								alt="Card image cap"></span>
-							<div class="card-body">
-								<span class="card-title"><p>${post.pawnerPostItem1}
-										-sdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsfsfd
-										${post.pawnerPostItem2}</p></span> <span class="card-text">Province
-									: ${post.pawnerId.pawnerProvince }</span> <span class="card-footer">
-									<small class="text-muted">${post.pawnerPostDate }</small>
-								</span>
-							</div>
-						</button>
+						<form method="post" action="pawnshop-estimate-form.html" class="card">
+
+							<input type="hidden" name="postId" value="${post.pawnerPostId}" />
+							<input type="hidden" name="postType"
+								value="${post.pawnerPostItemType}" />
+							<button type="submit" class="btn-card">
+								<span class="card-img-top"> <img src="img/profile.jpg"
+									alt="Card image cap"></span>
+								<div class="card-body">
+									<span class="card-title"><p>${post.pawnerPostItem1}
+											- ${post.pawnerPostItem2}</p></span> <span class="card-text">Province
+										: ${post.pawnerId.pawnerProvince }</span> <span class="card-footer">
+										<small class="text-muted">${post.pawnerPostDate }</small>
+									</span>
+								</div>
+							</button>
+
+						</form>
 					</c:forEach>
-				</form>
-			</div>
+				</div>
 			</div>
 		</div>
 	</section>
