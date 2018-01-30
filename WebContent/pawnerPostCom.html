@@ -1,0 +1,304 @@
+<!-- 
+// page : pawner-post-form-com
+// version : 1.0
+// task : Switch
+// edit by : Kwin
+ -->
+
+ 
+		<html lang="en">
+
+		<head>
+			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+			<meta name="description" content="">
+			<meta name="author" content="">
+
+			<title>pawner-post-form</title>
+
+			<!-- Bootstrap core CSS -->
+			<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+			<!-- Custom styles for this template -->
+			<link href="css/new-design.css" rel="stylesheet">
+			<link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+		</head>
+
+<style>
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+</style>
+
+
+		<body>
+
+			<!-- Navigation   -->
+		 
+			<section>
+				<div class="container">
+					<div class="re-contain">
+						<div class="Subhead">
+							<h2 class="Subhead-heading">Create Post Computer/TV</h2>
+							<p class="Subhead-description">This post will show on pawnshop's page for them estimate your post.</p>
+						</div>
+						 
+							
+							<div style="margin-bottom: 20px;">
+								<div class="form-group float-left">
+									<dt>
+										<img alt="user" src="img/gold.png" height="100" width="100" style="margin-bottom: 12px; border: 1px solid #c8cbcf">
+									</dt>
+									<input type="file" id="file" multiple style="width: 70px;">
+								</div>
+								<div class="form-group-post float-left" style="margin-bottom: 30px;">
+									<dt>Post name</dt>
+									<dt>
+										<input path="pawnerPostItem17" class="post-name" pattern="[A-Za-z0-9]{3,45}" required="required" />
+									</dt>
+									<p class="Subhead-description">plass enter data about your item for pawnshop to understand.</p>
+								</div>
+							</div>
+							<div class="form-group-post float-left Subhead" style="margin-top: 10px;">
+								<div class="form-group enter-data">
+									<p>Enter the correct data for your post.Thsi data will show to pawnshop.</p>
+								</div>
+
+
+
+						<div class="form-group-post float-left ">
+							 
+							<div class="float-left" style="margin-top: 11.5px;">
+									<div class="float-left" style="margin-top: 11.5px;">
+										<div class="dropdown">
+  											<button class="dropbtn">Category</button>
+  												<div class="dropdown-content">
+   													<a href="#" onclick="openCity('tv')">TV (LED / LCD)</a>
+    												<a href="#"onclick="openCity('mobile')">Mobile phone</a>
+   													<a href="#" onclick="openCity('tablet')">Tablet</a>
+   													<a href="#" onclick="openCity('camera')">Camera</a>
+   													<a href="#" onclick="openCity('notebook')">Notebook</a>
+   													<a href="#" onclick="openCity('other')">Others</a>
+ 												</div>
+										</div>
+
+
+
+									<div id="tv" class="w3-container city">
+  										<div class="form-group-post float-left ">
+											<dt>Brand</dt>
+												<select path="pawnerPostItem2">
+													<option value="1">Samsung</option>
+													<option value="2">LG</option>
+													<option value="3">Sony</option>
+													<option value="4">Panasonic</option>
+													<option value="5">Philips</option>
+													<option value="6">Toshiba</option>
+													<option value="7">TCL</option>
+													<option value="8">Sharp</option>
+													<option value="9">Others</option>
+												</select>
+										</div>
+										<div class="form-group-post float-left ">
+											<dt>Size</dt>
+											<dt>
+												<input path="pawnerPostItem13" class="post-name" placeholder=" 23.5x3cm" pattern="[0-9A-Za-z]{1,15}" required="required"/>
+											</dt>
+										</div>
+										<div class="form-group-post float-left ">
+											<dt>Serial Number</dt>
+											<dt>
+												<input path="pawnerPostItem8" class="post-name" placeholder="" pattern="[0-9A-Za-z]{1,15}" required="required" />
+											</dt>
+										</div>
+										<div class="form-group-post float-left ">
+											<dt>Year of purchase</dt>
+											<dt>
+												<input path="pawnerPostItem15" type="date" class="post-name" required="required" />
+											</dt>
+										</div>
+										<div class="form-group-post float-left">
+											<dt style="line-height:45px;">
+												<checkbox path="pawnerPostItem14" value="yes" /> Remote control
+												<strong>(only TV)</strong>
+											</dt>
+											<dt style="line-height:5px;">
+												<checkbox path="pawnerPostItem12" value="yes" /> Ansurranc 
+												<strong>(If you have)</strong>
+											</dt>
+										</div>
+										<div class="form-group-post  float-left">
+												<dt>Description</dt>
+										</div>
+										<div class="form-group-post">
+											<dt>
+												<input path="pawnerPostItem3" class="post-description" style="max-width: 100%" pattern="[0-9A-Za-z]{0,}" />
+											</dt>
+												<p class="Subhead-description">(optional) If you have more data input here!</p>
+										</div>
+										<div class="form-group-post float-left">
+												<input type="checkbox" required="required">I agree to the
+												<strong>trem of service</strong>
+										</div>
+										<div class="form-group-post float-left">
+												<button type="submit" class="summit-data">Create post</button>
+										</div>
+									</div>
+
+
+
+
+
+									<div id="mobile" class="w3-container city" style="display:none">
+  										<div class="form-group-post float-left ">
+												<dt>Brand</dt>
+											<div class="float-left" style="margin-top: 11.5px;">
+												<select path="pawnerPostItem2">
+													<option value="2">Apple</option>
+													<option value="1">Samsung</option>
+													<option value="3">Others</option>
+												</select>
+											</div>
+										</div>
+								 
+										<div class="form-group-post float-left ">
+											<dt>Serial Number</dt>
+											<dt>
+												<input path="pawnerPostItem8" class="post-name" placeholder="" pattern="[0-9A-Za-z]{1,15}" required="required" />
+											</dt>
+										</div>
+
+										<div class="form-group-post float-left ">
+											<dt>Year of purchase</dt>
+											<dt>
+												<input path="pawnerPostItem15" type="date" class="post-name" required="required" />
+											</dt>
+										</div>
+
+										<div class="form-group-post float-left ">
+											<dt>Capacity</dt>
+											<dt>
+												<input path="pawnerPostItem6" class="post-name" placeholder="" pattern="[0-9A-Za-z]{1,}" required="required" />
+											</dt>
+										</div>
+								
+										<div class="form-group-post float-left">
+											<dt style="line-height:45px;">
+												<checkbox path="pawnerPostItem14" value="yes" /> Battery charger
+												<strong>(only Mobile phone)</strong>
+											</dt>
+											<dt style="line-height:5px;">
+												<checkbox path="pawnerPostItem12" value="yes" /> Ansurranc 
+												<strong>(If you have)</strong>
+											</dt>
+										</div>
+
+										<div class="form-group-post  float-left">
+											<dt>Description</dt>
+										</div>
+										<div class="form-group-post">
+											<dt>
+												<input path="pawnerPostItem3" class="post-description" style="max-width: 100%" pattern="[0-9A-Za-z]{0,}" />
+											</dt>
+												<p class="Subhead-description">(optional) If you have more data input here!</p>
+										</div>
+										<div class="form-group-post float-left">
+												<input type="checkbox" required="required">I agree to the
+												<strong>trem of service</strong>
+										</div>
+										<div class="form-group-post float-left">
+												<button type="submit" class="summit-data">Create post</button>
+										</div>
+									</div>
+
+
+
+
+
+									<div id="tablet" class="w3-container city" style="display:none">
+  										<h2>Tokyo</h2>
+  										<p>Tokyo is the capital of Japan.</p>
+									</div>
+
+									<div id="camera" class="w3-container city" style="display:none">
+  										<h2>Tokyo</h2>
+  										<p>Tokyo is the capital of Japan.</p>
+									</div>
+
+									<div id="notebook" class="w3-container city" style="display:none">
+  										<h2>Tokyo</h2>
+  										<p>Tokyo is the capital of Japan.</p>
+									</div>
+
+									<div id="Other" class="w3-container city" style="display:none">
+  										<h2>Tokyo</h2>
+  										<p>Tokyo is the capital of Japan.</p>
+									</div>
+
+
+
+									</div>	
+							</div>
+
+
+ 					</div>
+ 
+
+
+
+
+
+
+
+
+
+<script>
+function openCity(cityName) {
+    var i;
+    var x = document.getElementsByClassName("city");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    document.getElementById(cityName).style.display = "block";  
+}
+</script>
+		</body>
+
+		</html>
