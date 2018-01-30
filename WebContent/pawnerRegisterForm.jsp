@@ -99,8 +99,6 @@
 								<li>
 									<span class="fa fa-check text-success"></span> See many product on shop</li>
 								<li>
-									<span class="fa fa-check text-success"></span> Create your post </li>
-								<li>
 									<span class="fa fa-check text-success"></span> Check all estimate</li>
 								<li>
 									<span class="fa fa-check text-success"></span> Check pawnshop location</li>
