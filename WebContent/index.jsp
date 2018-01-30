@@ -1,8 +1,8 @@
 <!-- 
 // page : index
-// version : 1.1
-// task : --
-// edit by : 
+// version : 2.0
+// task : team dev
+// edit by : khawkreab
  -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -22,7 +22,7 @@
 
 <!-- Bootstrap core CSS -->
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
- 
+
 
 <!-- Custom styles for this template -->
 <!-- <link href="css/custom-style.min.css" rel="stylesheet"> -->
@@ -30,15 +30,15 @@
 <link href="vendor/font-awesome/css/font-awesome.min.css"
 	rel="stylesheet" type="text/css">
 
- 
+
 
 <script>
-$(document).ready(function() {
-	  //Set the carousel options
-	  $('#quote-carousel').carousel({
-	    pause: true,
-	    interval: 4000,
-	  });
+	$(document).ready(function() {
+		//Set the carousel options
+		$('#quote-carousel').carousel({
+			pause : true,
+			interval : 4000,
+		});
 	});
 </script>
 
@@ -90,11 +90,11 @@ $(document).ready(function() {
 				</div>
 				<a class="carousel-control-prev" href="#carouselExampleIndicators"
 					role="button" data-slide="prev"> <span
-					class="carousel-control-prev-icon" aria-hidden="true"></span> <span
+					class="fa fa-chevron-left" aria-hidden="true"></span> <span
 					class="sr-only">Previous</span>
 				</a> <a class="carousel-control-next" href="#carouselExampleIndicators"
 					role="button" data-slide="next"> <span
-					class="carousel-control-next-icon" aria-hidden="true"></span> <span
+					class="fa fa-chevron-right" aria-hidden="true"></span> <span
 					class="sr-only">Next</span>
 				</a>
 			</div>
@@ -129,62 +129,55 @@ $(document).ready(function() {
 		</div>
 	</div>
 
-	<section id="as">
-		<div class="container">
-			<div class="row text-center">
-				<div class="col-md-4">
-					<div class="product">
-						<div class="img-container">
-							<img
-								src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?dpr=1&auto=compress,format&fit=crop&w=1400&h=&q=80&cs=tinysrgb&crop=">
-						</div>
-						<div class="product-info">
-							<div class="product-content">
-								<h6>Nike Airmax</h6>
 
-							</div>
+	<!--  -->
+	<div class="container">
+		<div class="dev-title">
+			<h1>Welcome to Team deverlop</h1>
+			<h7>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</h7>
+		</div>
+	</div>
+	<div class="container">
+		<div class="dev">
+			<div id="teamdev" class="carousel slide" data-ride="carousel"
+				data-interval="5000">
+				<ol class="carousel-indicators">
+					<li data-target="#teamdev" data-slide-to="0" class="active"></li>
+					<li data-target="#teamdev" data-slide-to="1"></li>
+					<li data-target="#teamdev" data-slide-to="2"></li>
+				</ol>
+				<div class="carousel-inner margin-lr-20">
+					<div class="carousel-item active">
+						<div class="inline-block">
+							<span class="dev-img-circle"> <img src="img/profile.jpg">
+							</span> <span class="dev-detail">12345679879647964</span>
+						</div>
+					</div>
+					<div class="carousel-item">
+						<div class="inline-block">
+							<span class="dev-img-circle"> <img class="dev-img-circle"
+								src="img/profile(Dream).jpg">
+							</span> <span class="dev-detail">794464113</span>
+						</div>
+					</div>
+					<div class="carousel-item">
+						<div class="inline-block">
+							<span class="dev-img-circle"> <img class="dev-img-circle"
+								src="img/profile(Ter).jpg">
+							</span> <span class="dev-detail">232569821</span>
 						</div>
 					</div>
 				</div>
-				<div class="col-md-4">
-					<div class="product">
-						<div class="img-container">
-							<img
-								src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?dpr=1&auto=compress,format&fit=crop&w=1400&h=&q=80&cs=tinysrgb&crop=">
-						</div>
-						<div class="product-info">
-							<div class="product-content">
-								<h6>Nike Airmax</h6>
-
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-md-4">
-					<div class="product">
-						<div class="img-container">
-							<img
-								src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?dpr=1&auto=compress,format&fit=crop&w=1400&h=&q=80&cs=tinysrgb&crop=">
-						</div>
-						<div class="product-info">
-							<div class="product-content">
-								<h6>Nike Airmax</h6>
-
-							</div>
-						</div>
-					</div>
-				</div>
-
+				<a class="carousel-control-prev" href="#teamdev" role="button"
+					data-slide="prev"> <span class="fa fa-chevron-left"
+					aria-hidden="true"></span> <span class="sr-only">Previous</span>
+				</a> <a class="carousel-control-next" href="#teamdev" role="button"
+					data-slide="next"> <span class="fa fa-chevron-right"
+					aria-hidden="true"></span> <span class="sr-only">Next</span>
+				</a>
 			</div>
 		</div>
-
-
-	</section>
-
-	
-	<jsp:include page="teamdev.jsp"></jsp:include>
+	</div>
 	<jsp:include page="footer.jsp"></jsp:include>
-
 </body>
 </html>
