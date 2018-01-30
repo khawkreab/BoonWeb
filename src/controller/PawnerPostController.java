@@ -1,3 +1,10 @@
+/*!-- 
+// page : PawnerPostController
+// version : 1.0
+// task : change link pawner-post-history
+// edit by : khawkreab
+ --*/
+
 package controller;
 
 import java.util.Date;
@@ -90,9 +97,9 @@ public class PawnerPostController {
 		return "redirect:pawner-post-list.html";
 	}
 	
-	@RequestMapping("/pawner-post-list")
+	@RequestMapping("/pawner-post-history")
 	public ModelAndView listGold(HttpServletRequest request) {
-		ModelAndView mv = new ModelAndView("pawnerPostList.jsp");
+		ModelAndView mv = new ModelAndView("pawnerPostHistoy.jsp");
 		Pawner pawner;
 		List<PawnerPost> pawnerPosts;
 		try {
