@@ -1,7 +1,7 @@
 <!-- 
 // page : navber
-// version : 5.1
-// task : แก้  dropdown menu
+// version : 6
+// task : change link redirect 
 // edit by : khawkreab
  -->
 
@@ -46,9 +46,9 @@
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav text-uppercase ml-auto">
 					<li class="nav-item nav-item-hover"><a
-						class="nav-link js-scroll-trigger" href="goldForm.do">การจำนำ</a></li>
+						class="nav-link js-scroll-trigger" href="pawner-index.html">Home</a></li>
 					<li class="nav-item nav-item-hover"><a
-						class="nav-link js-scroll-trigger" href="listPawnerGold.do">ติดตามสถานะ</a></li>
+						class="nav-link js-scroll-trigger" href="pawner-post-history.html">History</a></li>
 				</ul>
 
 
@@ -59,9 +59,9 @@
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav text-uppercase ml-auto">
 					<li class="nav-item nav-item-hover"><a
-						class="nav-link js-scroll-trigger" href="pawnshopIndex.do">Home</a></li>
+						class="nav-link js-scroll-trigger" href="pawnshop-index.html">Home</a></li>
 					<li class="nav-item nav-item-hover"><a
-						class="nav-link js-scroll-trigger" href="listProposeByPawnshop.do">ประวัติการประเมิน</a></li>
+						class="nav-link js-scroll-trigger" href="pawnshop-estimate-history.html">History</a></li>
 				</ul>
 			</div>
 
@@ -96,7 +96,7 @@
 							<ul class="dropdown-menu">
 								<li class="nav-item nav-item-hover"><a
 									class="nav-link js-scroll-trigger"
-									onclick="location.replace('editPawner.html')">แก้ไขข้อมูลส่วนตัว</a></li>
+									onclick="location.replace('editPawner.html')">Profile</a></li>
 								<li class="nav-item nav-item-hover"><a
 									class="nav-link js-scroll-trigger"
 									onclick="location.replace('logout.html')">Log out</a></li>
@@ -127,7 +127,7 @@
 							<ul class="dropdown-menu">
 								<li class="nav-item nav-item-hover"><a
 									class="nav-link js-scroll-trigger"
-									onclick="location.replace('editPawner.html')">แก้ไขข้อมูลส่วนตัว</a></li>
+									onclick="location.replace('editPawner.html')">Profile</a></li>
 								<li class="nav-item nav-item-hover"><a
 									class="nav-link js-scroll-trigger"
 									onclick="location.replace('logout.html')">Log out</a></li>

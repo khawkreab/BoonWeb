@@ -1,6 +1,6 @@
 /*!-- 
 // page : EstimateController
-// version : 1.0
+// version : 1.1
 // task : connect database in pawnshop-estimate-form
 // edit by : khawkreab
  --*/
@@ -21,6 +21,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import entity.Estimate;
 import entity.Pawner;
+import entity.PawnerPost;
 import entity.Pawnshop;
 import service.EstimateService;
 import service.PawnerPostService;
@@ -47,7 +48,17 @@ public class EstimateController {
 			HttpServletRequest request){
 		ModelAndView mv = new ModelAndView("pawnshopEstimateForm.jsp");
 		Estimate estimate = new Estimate();
-		mv.addObject("estimate" ,estimate);
+		PawnerPost pawnerPost = new PawnerPost();
+		
+		try {
+			long postId = Long.parseLong(request.getParameter("postId"));
+			pawnerPost = postService.findPostById(postId);
+			
+			mv.addObject("pawnerPost", pawnerPost);
+			mv.addObject("estimate" ,estimate);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		return mv;
 	}
 
