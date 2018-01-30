@@ -20,173 +20,22 @@
             }
             document.getElementById(type).style.display = "block";
         }
+
+        function openCity(evt, cityName) {
+            var i, x, tablinks;
+            x = document.getElementsByClassName("city");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < x.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" w3-border-red", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.firstElementChild.className += " w3-border-red";
+        }
     </script>
 
-    
-<script>
-function openCity(evt, cityName) {
-  var i, x, tablinks;
-  x = document.getElementsByClassName("city");
-  for (i = 0; i < x.length; i++) {
-     x[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablink");
-  for (i = 0; i < x.length; i++) {
-     tablinks[i].className = tablinks[i].className.replace(" w3-border-red", "");
-  }
-  document.getElementById(cityName).style.display = "block";
-  evt.currentTarget.firstElementChild.className += " w3-border-red";
-}
-</script>
-
-    <style>
-        body {
-            line-height: 10px;
-            box-sizing: border-box;
-            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-            color: black;
-            font-size: 14px;
-        }
-
-        section {
-            text-align: center;
-            background-color: white;
-            overflow: hidden;
-        }
-
-        select {
-            position: relative;
-            display: inline-block;
-            padding: 6px 12px;
-            font-size: 14px;
-            font-weight: 600;
-            line-height: 20px;
-            white-space: nowrap;
-            cursor: pointer;
-            color: black;
-            border: 1px solid #d1d5da;
-            border-radius: 3px;
-            background-color: #fafbfc;
-
-        }
-
-        select:focus {
-            background-color: #fff;
-            border: 1px solid #2188ff;
-            border-radius: 3px;
-        }
-
-
-        .re-contain {
-            width: 700px;
-            margin: 40px auto 0;
-        }
-
-        .Subhead {
-            -webkit-box-orient: horizontal;
-            -webkit-box-direction: normal;
-            flex-flow: row wrap;
-            margin-bottom: 30px;
-            padding-bottom: 8px;
-            border-bottom: 1px #e1e4e8 solid;
-        }
-
-        .Subhead-heading {
-            font-size: 24px;
-            font-weight: normal;
-            -webkit-box-flex: 1;
-            flex: 1 1 auto;
-        }
-
-        .Subhead-description {
-            font-size: 14px;
-            color: #586069;
-            font-weight: normal;
-            -webkit-box-flex: 1;
-            flex: 1 100%;
-            margin-top: 0px;
-            margin-bottom: 10px;
-            cursor: pointer;
-        }
-
-        .form-group {
-            margin: 18.22px;
-        }
-
-        .float-left {
-            float: left !important;
-        }
-
-        .post-name {
-            width: 250;
-            background-color: #fafbfc;
-            margin-top: 12px;
-            min-height: 34;
-            padding: 6px 8px;
-            color: black;
-            vertical-align: middle;
-            background-repeat: repeat;
-            background-position: right 8px center;
-            border: 1px solid #d1d5da;
-            border-radius: 3px;
-            margin-bottom: 10px;
-        }
-        .post-description {
-            width: 100%;
-            background-color: #fafbfc;
-            margin-top: 12px;
-            min-height: 34;
-            padding: 6px 8px;
-            color: black;
-            vertical-align: middle;
-            background-repeat: repeat;
-            background-position: right 8px center;
-            border: 1px solid #d1d5da;
-            border-radius: 3px;
-            margin-bottom: 10px;
-        }
-
-        .post-name:hover {
-            background-color: #fff;
-            border: 1px solid #2188ff;
-            border-radius: 3px;
-            margin-bottom: 10px;
-        }
-        .post-description:hover {
-            background-color: #fff;
-            border: 1px solid #2188ff;
-            border-radius: 3px;
-            margin-bottom: 10px;
-        }
-
-        strong {
-            color: #34631a;
-            cursor: pointer;
-
-        }
-
-        .enter-data {
-            padding-bottom: 8px;
-            border-bottom: 1px #e1e4e8 solid;
-        }
-        .summit-data{
-            position:relative;
-            display:inline-block;
-            padding:6px 12px;
-            font-size: 14px;
-            font-weight:600;
-            white-space:nowrap;
-            vertical-align:middle;
-            cursor:pointer;
-            color:#fff;
-            background-color: #28a745;
-            border:1px solid rgba(27,31,35,0.2);
-            border-radius:0.25em;
-        }
-
-
-
-    </style>
 </head>
 
 <body>
@@ -199,20 +48,20 @@ function openCity(evt, cityName) {
             <p class="Subhead-description">This is a information of pawn</p>
         </div>
         <div class="form-group float-lef">
-           
+
             <select>
                 <option onclick="openType('Photo')">Photo</option>
                 <option onclick="openType('All')">360 ํ</option>
-      
+
             </select>
-        </div>      
-         <div id="Photo" class="type" style="display:none">
-           <div style="margin-bottom:20px;">
+        </div>
+        <div id="Photo" class="type" style="display:none">
+            <div style="margin-bottom:20px;">
                 <div class="form-group float-left">
                     <dt>
                         <img alt="user" src="img/gold.png" height="100" width="100" style=" margin-bottom:12px;border:1px solid#c8cbcf">
                     </dt>
-                    
+
                 </div>
             </div>
         </div>
@@ -223,7 +72,7 @@ function openCity(evt, cityName) {
                     <dt>
                         <img alt="user" src="img/gold.png" height="100" width="100" style=" margin-bottom:12px;border:1px solid#c8cbcf">
                     </dt>
-                    
+
                 </div>
             </div>
         </div>
@@ -235,55 +84,56 @@ function openCity(evt, cityName) {
 
 
 
-<div class="w3-container">
-  <h2>Price 20,000.00 baht</h2>
+        <div class="w3-container">
+            <h2>Price 20,000.00 baht</h2>
 
-  <div class="w3-row">
-    <a href="javascript:void(0)" onclick="openCity(event, 'Description');">
-      <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Description</div>
-    </a>
-    <a href="javascript:void(0)" onclick="openCity(event, 'Specifications');">
-      <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Specifications</div>
-    </a>
+            <div class="w3-row">
+                <a href="javascript:void(0)" onclick="openCity(event, 'Description');">
+                    <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Description</div>
+                </a>
+                <a href="javascript:void(0)" onclick="openCity(event, 'Specifications');">
+                    <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Specifications</div>
+                </a>
 
-  </div>
+            </div>
 
-  <div id="Description" class="w3-container city" style="display:none">
-      <div class="form-group float-left Subhead" style="margin-top:10px; ">
-                <div class="form-group enter-data">
-                    <p>Description
-                    </p>
+            <div id="Description" class="w3-container city" style="display:none">
+                <div class="form-group float-left Subhead" style="margin-top:10px; ">
+                    <div class="form-group enter-data">
+                        <p>Description
+                        </p>
+                    </div>
+
+                    <p>Yellow Gold Diamond Ring</p>
+                    <p>Weight :11.4 g</p>
+                    <p>Diamond 0.20 carat (1diamond)</p>
+                    <p>Diamond 0.015 carat (20diamonds),M Color</p>
+                    <p>Gold Purity : 90 %</p>
+                    <p>Size : 58 mm.</p>
+
+
+
                 </div>
-                   
-                <p>Yellow Gold Diamond Ring</p>
-                <p>Weight :11.4 g</p>
-                <p>Diamond 0.20 carat (1diamond)</p>
-                <p>Diamond 0.015 carat (20diamonds),M Color</p>
-                <p>Gold Purity : 90 %</p>
-                <p>Size : 58 mm.</p>
-              
-            
-                
+                <div class="form-group float-left">
+                    <button class="summit-data">Estimation</button>
+                </div>
+
             </div>
-            <div class="form-group float-left">
-                <button class="summit-data">Estimation</button>
+
+
+
+
+            <div id="Specifications" class="w3-container city" style="display:none">
+                <h2>Specifications</h2>
+                <p>Pawn code :881702-3014-01</p>
             </div>
-      
-  </div>
 
 
-
-
-  <div id="Specifications" class="w3-container city" style="display:none">
-    <h2>Specifications</h2>
-    <p>Pawn code :881702-3014-01</p> 
-  </div>
-
-
-</div>
+        </div>
 
 
 </body>
 
 </html>
+
 </html>
