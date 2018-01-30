@@ -1,6 +1,6 @@
 <!-- 
 // page : pawnshop-index
-// version : 3.0
+// version : 3.1
 // task : send data to pawnshop-estimate-form
 // edit by : khawkreab
  -->
@@ -52,8 +52,8 @@
 								<span class="card-img-top"> <img src="img/profile.jpg"
 									alt="Card image cap"></span>
 								<div class="card-body">
-									<span class="card-title"><p>${post.pawnerPostItem1}
-											- ${post.pawnerPostItem2}</p></span> <span class="card-text">Province
+									<span class="card-title"><p>${post.pawnerPostName}
+											- ${post.pawnerPostItemType}</p></span> <span class="card-text">Province
 										: ${post.pawnerId.pawnerProvince }</span> <span class="card-footer">
 										<small class="text-muted">${post.pawnerPostDate }</small>
 									</span>
