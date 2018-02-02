@@ -48,9 +48,9 @@ public class PawnerPostController {
 		return mv;
 	}
 	
-	@RequestMapping("/pawner-post-form-com")
+	@RequestMapping("/pawner-post-form-electronic")
 	public ModelAndView newCom(HttpServletRequest request) {
-		ModelAndView mv = new ModelAndView("pawnerPostFormCom.jsp");
+		ModelAndView mv = new ModelAndView("pawnerPostFormElectronic.jsp");
 		long userId = (long) request.getSession().getAttribute("id");
 		Pawner pm = pmService.findPawnerById(userId);
 		PawnerPost pawnerPost = new PawnerPost();
