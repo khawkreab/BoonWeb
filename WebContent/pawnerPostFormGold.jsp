@@ -102,7 +102,7 @@
 							</div>
 							<div class="form-group-post">
 								<dt>
-									<form:input path="pawnerPostDescription" class="post-description" style="max-width: 100%" pattern="[0-9A-Za-z]{0,}" />
+									<form:textarea path="pawnerPostDescription" class="post-description" style="max-width:100%" pattern="[0-9A-Za-z]{0,}"></form:textarea>
 								</dt>
 								<p class="Subhead-description">(optional) If you have more data input here!</p>
 							</div>
