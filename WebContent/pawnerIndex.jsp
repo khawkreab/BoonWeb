@@ -59,74 +59,19 @@
 						</ul>
 					</div>
 					<div class="clear"></div>
-					<div class="box-sup text-center">
-						<a data-toggle="modal" data-target="#modalSelectType">Pawn</a>
-					</div>
 				</div>
 
 			</div>
 			<div class="box-main">
-		
+				<div class="box-semi">
+					<a href="pawner-post-form-gold.html">Create post gold</a> <a href="pawner-post-form-watch.html">Create post watch</a>
+					<a href="pawner-post-form-electronic.html">Create post electronic</a>
+				</div>
 			</div>
 
 		</div>
 	</section>
 
-	<!------------------------------------------------ popup -------------------------------------------------->
-	<div class="modal fade" id="modalSelectType" role="dialog">
-		<div class="modal-dialog modal-sm">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h4 class="modal-title">Login</h4>
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-
-				</div>
-				<div class="modal-body">
-					<%
-						if (request.getAttribute("error") == "yes") {
-					%>
-					<p style="color: red">Login Failed. Please try again.</p>
-					<%
-						}
-					%>
-					<form method="POST" action="loginProcess.html">
-						<div class="form-group">
-
-							<div class="cols-sm-10">
-								<div class="input-group">
-									<span class="input-group-addon"> <i
-										class="fa fa-envelope fa" aria-hidden="true"></i>
-									</span> <input class="form-control" placeholder="Email" name="email"
-										autofocus="autofocus" required="required" />
-									<errors path="email" />
-								</div>
-							</div>
-						</div>
-
-
-						<div class="form-group">
-
-							<div class="cols-sm-10">
-								<div class="input-group">
-									<span class="input-group-addon"> <i
-										class="fa fa-lock fa-lg" aria-hidden="true"></i>
-									</span> <input type="password" class="form-control"
-										placeholder="password" name="password" required="required" />
-									<errors path="password" />
-								</div>
-							</div>
-						</div>
-
-						<div class="d-flex justify-content-end">
-							<button class="btn btn-primary btn-sm btn-block" type="submit">
-								Login</button>
-						</div>
-					</form>
-				</div>
-				<div class="modal-footer">create account</div>
-			</div>
-		</div>
-	</div>
 
 </body>
 </html>
