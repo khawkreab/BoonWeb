@@ -31,7 +31,7 @@ import service.PawnshopService;
 @Controller
 public class EstimateController {
 
-	@EJB(mappedName = "ejb:/BoonWeb//EstimateServiceServiceBean!service.EstimateService")
+	@EJB(mappedName = "ejb:/BoonWeb//EstimateServiceBean!service.EstimateService")
 	EstimateService estimateService;
 
 	@EJB(mappedName = "ejb:/BoonWeb//PawnshopServiceBean!service.PawnshopService")
@@ -42,20 +42,25 @@ public class EstimateController {
 
 	@EJB(mappedName = "ejb:/BoonWeb//PawnerServiceBean!service.PawnerService")
 	PawnerService pmService;
-	
+
 	@RequestMapping("/pawnshop-estimate-form")
 	public ModelAndView newestimate(@ModelAttribute("postid") Estimate postid, BindingResult result,
-			HttpServletRequest request){
+			HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView("pawnshopEstimateForm.jsp");
 		Estimate estimate = new Estimate();
 		PawnerPost pawnerPost = new PawnerPost();
-		
+
 		try {
+			long userId = (long) request.getSession().getAttribute("id");
+			Pawnshop ps = pawnshopServ.findPawnshopById(userId);
+			
 			long postId = Long.parseLong(request.getParameter("postId"));
 			pawnerPost = postService.findPostById(postId);
 			
+			estimate.setPawnshopId(ps);
+			
 			mv.addObject("pawnerPost", pawnerPost);
-			mv.addObject("estimate" ,estimate);
+			mv.addObject("estimate", estimate);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -69,13 +74,11 @@ public class EstimateController {
 		Date date = new Date();
 
 		try {
-			if (estimate.getEstimateId() == 0) {
-				estimate.setEstimateDate(date);
-				estimateService.insert(estimate);
-			} else {
-				estimate.setEstimateDate(date);
-				estimateService.update(estimate);
-			}
+
+			estimate.setEstimateDate(date);
+			estimate.setEstimateStatus("proceed");
+			estimateService.insert(estimate);
+
 		} catch (Exception e) {
 		}
 		return "redirect:pawnshop-index.html";
@@ -101,7 +104,6 @@ public class EstimateController {
 		return "redirect:listPawnerGold.do";
 	}
 
-
 	@RequestMapping("/deleteEstimate")
 	public String deleteProposePrice(HttpServletRequest request) {
 		estimateService.delete(Long.valueOf(request.getParameter("id")));
@@ -125,10 +127,10 @@ public class EstimateController {
 		}
 		return mv;
 	}
-	
+
 	@RequestMapping("/pawner-estimate-list")
-	public ModelAndView listProposeBygold(@ModelAttribute("estimate") Estimate estimate,
-			BindingResult result, HttpServletRequest request) {
+	public ModelAndView listProposeBygold(@ModelAttribute("estimate") Estimate estimate, BindingResult result,
+			HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView("pawnerPostList.jsp");
 		Pawner pawner;
 		List<Estimate> estimatesList;

@@ -61,6 +61,26 @@
 						<h3 class="product-title">men's shoes fashion</h3>
 						<%=request.getParameter("postId")%>
 						<%=request.getParameter("postType")%>
+						<form:form method="post" action="saveEstimate.html" commandName="estimate">
+							<form:hidden path="estimateId" />
+							<form:hidden path="pawnshopId.pawnshopId" />
+							<form:hidden path="pawnerPostId.pawnerPostId" value="${pawnerPost.pawnerPostId}" />
+							<div class="re-contain">
+								<div class="form-group">
+									<div class="form-group-post float-left">
+										<dt>Min</dt>
+										<form:input path="estimatePriceMin" class="post-name" pattern="[0-9]{3,45}" required="required"/>
+									</div>
+									<div class="form-group-post float-left">
+										<dt>Max</dt>
+										<form:input path="estimatePriceMax" class="post-name" pattern="[0-9]{3,45}" required="required"/>
+									</div>
+								</div>
+								<div class="form-group-post float-left">
+									<button type="submit" class="summit-data">Create post</button>
+								</div>
+							</div>
+						</form:form>
 					</div>
 					<div class="preview col-md-3">
 						<h3 class="product-title">men's shoes fashion</h3>
