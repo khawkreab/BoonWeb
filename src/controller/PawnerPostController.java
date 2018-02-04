@@ -1,7 +1,7 @@
 /*!-- 
 // page : PawnerPostController
-// version : 1.0
-// task : change link pawner-post-history
+// version : 2.0
+// task : connect datat
 // edit by : khawkreab
  --*/
 
@@ -19,14 +19,19 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import entity.Estimate;
 import entity.Pawner;
 import entity.PawnerPost;
+import service.EstimateService;
 import service.PawnerPostService;
 import service.PawnerService;
 import service.PawnshopService;
 
 @Controller
 public class PawnerPostController {
+	
+	@EJB(mappedName = "ejb:/BoonWeb//EstimateServiceServiceBean!service.EstimateService")
+	EstimateService estimateService;
 	
 	@EJB(mappedName = "ejb:/BoonWeb//PawnerPostServiceBean!service.PawnerPostService")
 	PawnerPostService pawnerPostService;
@@ -100,15 +105,17 @@ public class PawnerPostController {
 	@RequestMapping("/pawner-post-history")
 	public ModelAndView listGold(HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView("pawnerPostHistoy.jsp");
-		Pawner pawner;
 		List<PawnerPost> pawnerPosts;
+		List<Estimate> estimatesList;
 		try {
 			long userId = (long) request.getSession().getAttribute("id");
-			pawner = pmService.findPawnerById(userId);
 			pawnerPosts = pawnerPostService.findPawnerPostByPawnerId(userId);
+			
+			
+			estimatesList = estimateService.listEstimateByPawnerId(userId);
 	
-			mv.addObject("pawner", pawner);
 			mv.addObject("pawnerPosts", pawnerPosts);
+			mv.addObject("estimatesList", estimatesList);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

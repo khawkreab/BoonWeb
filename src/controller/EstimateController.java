@@ -132,16 +132,13 @@ public class EstimateController {
 	public ModelAndView listProposeBygold(@ModelAttribute("estimate") Estimate estimate, BindingResult result,
 			HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView("pawnerPostList.jsp");
-		Pawner pawner;
 		List<Estimate> estimatesList;
 		try {
 			long userId = (long) request.getSession().getAttribute("id");
 			long pawnerPostId = Long.parseLong(request.getParameter("pawnerPostId"));
 
-			pawner = pmService.findPawnerById(userId);
 			estimatesList = estimateService.listEstimateByPawnerPost(pawnerPostId);
 
-			mv.addObject("pawner", pawner);
 			mv.addObject("estimatesList", estimatesList);
 		} catch (Exception e) {
 			e.printStackTrace();

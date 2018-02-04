@@ -45,7 +45,7 @@ section h3.section-subheading {
 	font-size: 16px;
 	font-weight: 400;
 	font-style: italic;
-	margin-bottom: 75px;
+	margin-bottom: 80px;
 	text-transform: none;
 	font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, Arial,
 		sans-serif
@@ -79,37 +79,40 @@ li {
 }
 
 .line {
-	border-bottom: 1px solid #ccc;
+	border-bottom: 1px solid #ccc6;
 	margin-top: 16px;
 	margin-bottom: 16px;
 }
 
-.inline-block{
+.inline-block {
 	display: -webkit-inline-box;
 }
 
-.margin-lr-20{
+.margin-lr-20 {
 	margin: 0 100px
+}
+
+.margin-lr-1 {
+	margin: 0 1%
 }
 
 /*!
 * override carousel-control-next, .carousel-control-prev
 */
 .carousel-control-next, .carousel-control-prev {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-align: center;
-    align-items: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    width: 15%;
-    color: #000;
-    text-align: center;
-    opacity: .5;
-    
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-align: center;
+	align-items: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	width: 15%;
+	color: #000;
+	text-align: center;
+	opacity: .5;
 }
 
 /*!
@@ -633,7 +636,7 @@ strong {
 .preview-thumbnail {
 	height: 350px;
 	border: none;
-	border-right: solid #ddd 1px;
+	border-right: solid #ccc 1px;
 }
 
 .preview-thumbnail li {
@@ -694,17 +697,16 @@ strong {
 	border-bottom: 1px solid #ddd;
 }
 
-
 /*!
 * team dev
 */
-.dev{
+.dev {
 	display: block;
 	width: 900px;
 	height: 100px;
-	
 }
-.dev-img-circle{
+
+.dev-img-circle {
 	display: block;
 	width: 100px;
 	height: 100px;
@@ -712,18 +714,42 @@ strong {
 	overflow: hidden;
 }
 
-.dev-img-circle img{
+.dev-img-circle img {
 	width: 100%;
 }
 
-.dev-detail{
+.dev-detail {
 	margin: 10px;
 }
 
-.dev-title{
+.dev-title {
 	display: block;
 }
 
+/*!
+* history
+*/
+.history-main, .history-filter{
+	width: 1000px;
+	background-color: #fff;
+	box-shadow: 0 1px 1px #ccc6;
+	margin-bottom: 14px;
+}
+
+.history-title {
+	display: block;
+	font-size: 14px;
+	color: #202020;
+	border-bottom: 1px solid #ccc6;
+}
+
+.history-body{
+	padding: 10px;
+}
+
+.history-show-estimate{
+	padding: 10px;
+}
 /*!
 * footer
 */
