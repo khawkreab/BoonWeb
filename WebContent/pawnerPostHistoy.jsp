@@ -1,7 +1,7 @@
 <!-- 
 // page : pawner-post-history
-// version : 1.0
-// task : design
+// version : 2.0
+// task : connect data
 // edit by : khawkreab
  -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -69,14 +69,20 @@
 					</div>
 					<div class="line margin-lr-1"></div>
 					<div class="history-show-estimate">
-						<div id="showlist" class="collapse">
-							<c:forEach items="${estimatesList}" var="estimates">
-							${estimates.estimateId}
+						<div id="showlist${post.pawnerPostId}" class="collapse">
+							<c:forEach items="${estimatesList}" var="estimate">
+								<c:if
+									test="${estimate.pawnerPostId.pawnerPostId == post.pawnerPostId}">
+							ID post ${estimate.pawnerPostId.pawnerPostId}
+							
+							</c:if>
+
 							</c:forEach>
 						</div>
 						<div class="d-flex justify-content-center">
 							<span> <a id="more" class="show" href="#"
-								data-toggle="collapse" data-target="#showlist">more</a></span>
+								data-toggle="collapse"
+								data-target="#showlist${post.pawnerPostId}">more</a></span>
 						</div>
 					</div>
 				</div>

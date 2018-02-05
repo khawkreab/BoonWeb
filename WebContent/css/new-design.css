@@ -11,8 +11,8 @@
 
 /*!
 // page : new-design.css
-// version : 7.0
-// task : team dev
+// version : 8.0
+// task : nav bar design
 // edit by : khawkreab
 */
 body {
@@ -144,7 +144,7 @@ li {
 */
 .dropdown-menu {
 	position: absolute;
-	width: 330;
+	width: 330px;
 	height: 800px;
 	top: 100%;
 	right: 0;

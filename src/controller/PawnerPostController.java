@@ -30,7 +30,7 @@ import service.PawnshopService;
 @Controller
 public class PawnerPostController {
 	
-	@EJB(mappedName = "ejb:/BoonWeb//EstimateServiceServiceBean!service.EstimateService")
+	@EJB(mappedName = "ejb:/BoonWeb/EstimateServiceBean!service.EstimateService")
 	EstimateService estimateService;
 	
 	@EJB(mappedName = "ejb:/BoonWeb//PawnerPostServiceBean!service.PawnerPostService")
@@ -110,12 +110,11 @@ public class PawnerPostController {
 		try {
 			long userId = (long) request.getSession().getAttribute("id");
 			pawnerPosts = pawnerPostService.findPawnerPostByPawnerId(userId);
+			estimatesList =estimateService.findEstimateByPawnerId(userId);
 			
 			
-			estimatesList = estimateService.listEstimateByPawnerId(userId);
-	
-			mv.addObject("pawnerPosts", pawnerPosts);
 			mv.addObject("estimatesList", estimatesList);
+			mv.addObject("pawnerPosts", pawnerPosts);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
