@@ -1,7 +1,7 @@
 /*!-- 
 // page : EstimateController
-// version : 1.1
-// task : connect database in pawnshop-estimate-form
+// version : 2.0
+// task : pawner approve in pawner-post-history
 // edit by : khawkreab
  --*/
 
@@ -20,7 +20,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import entity.Estimate;
-import entity.Pawner;
 import entity.PawnerPost;
 import entity.Pawnshop;
 import service.EstimateService;
@@ -53,12 +52,12 @@ public class EstimateController {
 		try {
 			long userId = (long) request.getSession().getAttribute("id");
 			Pawnshop ps = pawnshopServ.findPawnshopById(userId);
-			
+
 			long postId = Long.parseLong(request.getParameter("postId"));
 			pawnerPost = postService.findPostById(postId);
-			
+
 			estimate.setPawnshopId(ps);
-			
+
 			mv.addObject("pawnerPost", pawnerPost);
 			mv.addObject("estimate", estimate);
 		} catch (Exception e) {
@@ -144,5 +143,23 @@ public class EstimateController {
 			e.printStackTrace();
 		}
 		return mv;
+	}
+
+	@RequestMapping("/pawner-approve")
+	public String pawnerApprove(HttpServletRequest request) {
+		Estimate estimate;
+		long estimateId = Long.parseLong(request.getParameter("estimateId"));
+		long pawnerPostId = Long.parseLong(request.getParameter("pawnerPostId"));
+		try {
+			
+			 estimateService.updateStatus(pawnerPostId);
+			
+			estimate = estimateService.findEstimateById(estimateId);
+			estimate.setEstimateStatus("Approve");
+			estimateService.update(estimate);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return "redirect:pawner-post-history.html?";
 	}
 }

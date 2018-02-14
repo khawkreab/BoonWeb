@@ -1,7 +1,7 @@
 <!-- 
 // page : pawner-post-history
-// version : 2.0
-// task : connect data
+// version : 3.0
+// task : pawner approve
 // edit by : khawkreab
  -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -70,14 +70,22 @@
 					<div class="line margin-lr-1"></div>
 					<div class="history-show-estimate">
 						<div id="showlist${post.pawnerPostId}" class="collapse">
-							<c:forEach items="${estimatesList}" var="estimate">
-								<c:if
-									test="${estimate.pawnerPostId.pawnerPostId == post.pawnerPostId}">
-							ID post ${estimate.pawnerPostId.pawnerPostId}
-							
-							</c:if>
+							<ul>
+								<c:forEach items="${estimatesList}" var="estimate">
+									<c:if
+										test="${estimate.pawnerPostId.pawnerPostId == post.pawnerPostId}">
+										<li>ID post ${estimate.pawnerPostId.pawnerPostId}
+											<form action="pawner-approve.html" method="post">
+												<input type="hidden" name="estimateId" value="${estimate.estimateId}">
+												<input type="hidden" name="pawnerPostId" value="${post.pawnerPostId}">
+												<button type="submit">Approve</button>
+											</form>
+										</li>
 
-							</c:forEach>
+									</c:if>
+
+								</c:forEach>
+							</ul>
 						</div>
 						<div class="d-flex justify-content-center">
 							<span> <a id="more" class="show" href="#"
