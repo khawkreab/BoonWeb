@@ -1,86 +1,135 @@
-<!DOCTYPE html>
-<html>
-<title>W3.CSS</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-.dropbtn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-}
-
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown-content a:hover {background-color: #f1f1f1}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-.dropdown:hover .dropbtn {
-    background-color: #3e8e41;
-}
-</style>
-<body>
-<div class="dropdown">
-  <button class="dropbtn">Dropdown</button>
-  <div class="dropdown-content">
-    <a href="#" onclick="openCity('London')">Link 1</a>
-    <a href="#"onclick="openCity('Paris')">Link 2</a>
-    <a href="#" onclick="openCity('Tokyo')">Link 3</a>
-  </div>
-</div>
+<!-- 
+// page : pawner-index
+// version : 1.3
+// task : modal select type 
+// edit by : khawkreab
+ -->
 
 
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>pawner-index</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/new-design.css" rel="stylesheet">
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <style>
+        .icon {
+            width: 200px;
+            margin: auto;
+
+        }
+
+        .scrollbar-auto {
+            overflow-y: auto;
+        }
+    </style>
+</head>
+
+<body id="page-top" style="overflow-y: hidden">
 
 
-<div id="London" class="w3-container city">
-  <h2>London</h2>
-  <p>London is the capital city of England.</p>
-</div>
+    <!-- Navigation -->
+    <jsp:include page="navbar.jsp" />
 
-<div id="Paris" class="w3-container city" style="display:none">
-  <h2>Paris</h2>
-  <p>Paris is the capital of France.</p> 
-</div>
+    <section>
+        <div class="container">
 
-<div id="Tokyo" class="w3-container city" style="display:none">
-  <h2>Tokyo</h2>
-  <p>Tokyo is the capital of Japan.</p>
-</div>
+            <div class="box-main">
+                <div class="box-sup">
+                    <div class="box-semi text-center">
+                        <h1>The 5 Step</h1>
+                        <h6>---- easy to pawn ----</h6>
+                        <br>
+                    </div>
+                    <div class="box-semi">
+                        <span class="time-line"></span>
+                        <ul>
+                            <li>
+                                <span class="cycle">1</span> Enter item information</li>
+                            <li>
+                                <span class="cycle">2</span> Upload picture and post item
+                            </li>
+                            <li>
+                                <span class="cycle">3</span> Get offers from pawner shop</li>
+                            <li>
+                                <span class="cycle">4</span> Walk in pawn shop</li>
+                            <li>
+                                <span class="cycle">5</span> Deal rice again with pawn shop
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="clear"></div>
+                </div>
 
-<script>
-function openCity(cityName) {
-    var i;
-    var x = document.getElementsByClassName("city");
-    for (i = 0; i < x.length; i++) {
-       x[i].style.display = "none";  
-    }
-    document.getElementById(cityName).style.display = "block";  
-}
-</script>
-
+            </div>
+            <div class="box-main">
+                <div class="box-semi">
+                    <div class="Subhead ">
+                        <h2 class="Subhead-heading">Select Pledge Item...</h2>
+                        <p class="Subhead-description">We have 7 items</p>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div class="box-semi  scrollbar-auto">
+                    <div class="d-flex flex-row align-content-between flex-wrap ">
+                        <div class="p-2">
+                            <div class="box-icon">
+                                <img class="icon" src="img/icon/gold-ingots.png">
+                                <p>Gold</p>
+                            </div>
+                        </div>
+                        <div class="p-2">
+                            <div class="box-icon">
+                                <img class="icon" src="img/icon/wristwatch.png">
+                                <p>Watch</p>
+                            </div>
+                        </div>
+                        <div class="p-2">
+                            <div class="box-icon">
+                                <img class="icon" src="img/icon/smartphone.png">
+                                <p>Smart Phone</p>
+                            </div>
+                        </div>
+                        <div class="p-2">
+                            <div class="box-icon">
+                                <img class="icon" src="img/icon/laptop.png">
+                                <p> Laptop</p>
+                            </div>
+                        </div>
+                        <div class="p-2">
+                            <div class="box-icon">
+                                <img class="icon" src="img/icon/photo-camera.png">
+                                <p> Camera</p>
+                            </div>
+                        </div>
+                        <div class="p-2">
+                            <div class="box-icon">
+                                <img class="icon" src="img/icon/tv.png">
+                                <p>TV</p>
+                            </div>
+                        </div>
+                        <div class="p-2">
+                            <div class="box-icon">
+                                <img class="icon" src="img/icon/receipt.png">
+                                <p> Other</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
 </body>
+
 </html>
