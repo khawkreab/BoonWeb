@@ -28,12 +28,24 @@
         .icon {
             width: 150px;
             margin: auto;
-
         }
 
         .scrollbar-auto {
             overflow-y: auto;
             height: 75%;
+        }
+
+        .card-icon {
+            border: 1px solid #999999;
+            border-radius: 4px;
+            margin: 16px;
+        }
+
+        .card-icon:hover {
+            transition: 0.3s;
+            box-shadow: 4px 4px 4px 0 rgba(141, 139, 139, 0.2);
+            border: 1px solid #999999;
+            border-radius: 4px;
         }
     </style>
 </head>
@@ -77,51 +89,49 @@
 
                 </div>
                 <div class="col-md-6">
-
                     <div class="Subhead ">
                         <h2 class="Subhead-heading">Select Pledge Item...</h2>
                         <p class="Subhead-description">We have 7 items</p>
                     </div>
-
                     <div class="scrollbar-auto">
-                        <div class="d-flex flex-row flex-wrap text-center">
-                            <div class="p-2">
+                        <div class="d-flex flex-row flex-wrap text-center backgroup-icon">
+                            <div class="p-2 card-icon">
                                 <div class="box-icon">
                                     <img class="icon" src="img/icon/gold-ingots.png">
-                                    <p>Gold</p>
                                 </div>
+                                <p>Gold</p>
                             </div>
-                            <div class="p-2">
+                            <div class="p-2 card-icon">
                                 <div class="box-icon">
                                     <img class="icon" src="img/icon/wristwatch.png">
                                     <p>Watch</p>
                                 </div>
                             </div>
-                            <div class="p-2">
+                            <div class="p-2 card-icon">
                                 <div class="box-icon">
                                     <img class="icon" src="img/icon/smartphone.png">
                                     <p>Smart Phone</p>
                                 </div>
                             </div>
-                            <div class="p-2">
+                            <div class="p-2 card-icon">
                                 <div class="box-icon">
                                     <img class="icon" src="img/icon/laptop.png">
                                     <p> Laptop</p>
                                 </div>
                             </div>
-                            <div class="p-2">
+                            <div class="p-2 card-icon">
                                 <div class="box-icon">
                                     <img class="icon" src="img/icon/photo-camera.png">
                                     <p> Camera</p>
                                 </div>
                             </div>
-                            <div class="p-2">
+                            <div class="p-2 card-icon">
                                 <div class="box-icon">
                                     <img class="icon" src="img/icon/tv.png">
                                     <p>TV</p>
                                 </div>
                             </div>
-                            <div class="p-2">
+                            <div class="p-2 card-icon">
                                 <div class="box-icon">
                                     <img class="icon" src="img/icon/receipt.png">
                                     <p> Other</p>
