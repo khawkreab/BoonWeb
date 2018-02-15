@@ -28,9 +28,17 @@
 		<div class="container">
 			<div class="preview-main">
 				<div class="preview-header-wrapper">
-					<h3 class="product-title">men's shoes fashion</h3>
-					<%=request.getParameter("postId")%>
-					<%=request.getParameter("postType")%>
+					<div class="d-flex">
+						<div class="mr-auto p-2">
+							<h5 class="product-title">${pawnerPost.pawnerPostName}-
+								${pawnerPost.pawnerPostItemType} ${pawnerPost.pawnerPostBrand}</h5>
+						</div>
+						<div class="ml-auto p-2">${pawnerPost.pawnerPostDate}</div>
+					</div>
+
+					<br>ผู้จำนำ ${pawnerPost.pawnerId.pawnerFirstname}
+					${pawnerPost.pawnerId.pawnerLastname} จังหวัด
+					${pawnerPost.pawnerId.pawnerProvince}
 				</div>
 				<div class="preview-wrapper row">
 					<div class="preview col-md-5">
@@ -57,41 +65,52 @@
 							</div>
 						</div>
 					</div>
+
 					<div class="preview col-md-4">
-						<h3 class="product-title">men's shoes fashion</h3>
-						<%=request.getParameter("postId")%>
-						<%=request.getParameter("postType")%>
-						<form:form method="post" action="saveEstimate.html" commandName="estimate">
-							<form:hidden path="estimateId" />
-							<form:hidden path="pawnshopId.pawnshopId" />
-							<form:hidden path="pawnerPostId.pawnerPostId" value="${pawnerPost.pawnerPostId}" />
-							<div class="re-contain">
+						<h6 class="product-title">Detail</h6>
+						<ul>
+							<li>- Pure ${pawnerPost.pawnerPostPure}</li>
+							<li>- Brand ${pawnerPost.pawnerPostBrand}</li>
+							<li>- Model ${pawnerPost.pawnerPostModel}</li>
+							<li>- Weigh ${pawnerPost.pawnerPostWeigh}</li>
+							<li>- Description ${pawnerPost.pawnerPostDescription}</li>
+						</ul>
+
+
+
+
+					</div>
+					<div class="preview col-md-3 border-left-1">
+						<h7 class="product-title">ต้องการประเมิน</h7>
+						<div class="line"></div>
+						<div class="re-contain">
+							<form:form method="post" action="saveEstimate.html"
+								commandName="estimate">
+								<form:hidden path="estimateId" />
+								<form:hidden path="pawnshopId.pawnshopId" />
+								<form:hidden path="pawnerPostId.pawnerPostId"
+									value="${pawnerPost.pawnerPostId}" />
 								<div class="form-group">
-									<div class="form-group-post float-left">
-										<dt>Min</dt>
-										<form:input path="estimatePriceMin" class="post-name" pattern="[0-9]{3,45}" required="required"/>
+									<div class="form-group-post ">
+										<span>Min</span>
+										<form:input path="estimatePriceMin" class="post-name"
+											pattern="[0-9]{3,45}" required="required" />
 									</div>
-									<div class="form-group-post float-left">
-										<dt>Max</dt>
-										<form:input path="estimatePriceMax" class="post-name" pattern="[0-9]{3,45}" required="required"/>
+									<div class="form-group-post ">
+										<span>Max</span>
+										<form:input path="estimatePriceMax" class="post-name"
+											pattern="[0-9]{3,45}" required="required" />
 									</div>
 								</div>
 								<div class="form-group-post float-left">
 									<button type="submit" class="summit-data">Create post</button>
 								</div>
-							</div>
-						</form:form>
-					</div>
-					<div class="preview col-md-3">
-						<h3 class="product-title">men's shoes fashion</h3>
-						<div class="line"></div>
-						<%=request.getParameter("postId")%>
-						<%=request.getParameter("postType")%>
+							</form:form>
+						</div>
 					</div>
 				</div>
-			</div>
 
-		</div>
+			</div>
 	</section>
 </body>
 </html>

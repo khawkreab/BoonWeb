@@ -73,11 +73,13 @@
 							<ul>
 								<c:forEach items="${estimatesList}" var="estimate">
 									<c:if
-										test="${estimate.pawnerPostId.pawnerPostId == post.pawnerPostId}">
+										test="${estimate.pawnerPostId.pawnerPostId == post.pawnerPostId }">
 										<li>ID post ${estimate.pawnerPostId.pawnerPostId}
 											<form action="pawner-approve.html" method="post">
-												<input type="hidden" name="estimateId" value="${estimate.estimateId}">
-												<input type="hidden" name="pawnerPostId" value="${post.pawnerPostId}">
+												<input type="hidden" name="estimateId"
+													value="${estimate.estimateId}"> <input
+													type="hidden" name="pawnerPostId"
+													value="${post.pawnerPostId}">
 												<button type="submit">Approve</button>
 											</form>
 										</li>

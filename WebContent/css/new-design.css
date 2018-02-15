@@ -26,7 +26,7 @@ a {
 	cursor: pointer;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6 h7{
 	font-weight: 700;
 	font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif
 }
@@ -94,6 +94,10 @@ li {
 
 .margin-lr-1 {
 	margin: 0 1%
+}
+
+.border-left-1{
+	boder-left: 1px solid #ccc;
 }
 
 /*!
