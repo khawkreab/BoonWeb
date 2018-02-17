@@ -27,6 +27,17 @@ public class LinkController {
 		mv.addObject("pawnerPost", pawnerPost);
 		return mv;
 	}
+
+	@RequestMapping("/pawner-pledge")
+	public ModelAndView pledge(HttpServletRequest request) {
+		ModelAndView mv = new ModelAndView("pawnerPledge.jsp");
+		long userId = (long) request.getSession().getAttribute("id");
+		Pawner pm = pmService.findPawnerById(userId);
+		PawnerPost pawnerPost = new PawnerPost();
+		pawnerPost.setPawner(pm);
+		mv.addObject("pawnerPost", pawnerPost);
+		return mv;
+	}
 	
 
 	@RequestMapping("/pawner-post-form-laptop")
