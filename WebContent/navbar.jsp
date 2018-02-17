@@ -1,7 +1,7 @@
 <!-- 
 // page : navber
-// version : 6
-// task : change link redirect 
+// version : 7.0
+// task : add menu
 // edit by : khawkreab
  -->
 
@@ -47,6 +47,10 @@
 				<ul class="navbar-nav text-uppercase ml-auto">
 					<li class="nav-item nav-item-hover"><a
 						class="nav-link js-scroll-trigger" href="pawner-index.html">Home</a></li>
+						<li class="nav-item nav-item-hover"><a
+						class="nav-link js-scroll-trigger" href="pawner-pledge.html">pledge</a></li>
+						<li class="nav-item nav-item-hover"><a
+						class="nav-link js-scroll-trigger" href="pawner-track-pledge.html">track my pledge</a></li>
 					<li class="nav-item nav-item-hover"><a
 						class="nav-link js-scroll-trigger" href="pawner-post-history.html">History</a></li>
 				</ul>
@@ -60,6 +64,8 @@
 				<ul class="navbar-nav text-uppercase ml-auto">
 					<li class="nav-item nav-item-hover"><a
 						class="nav-link js-scroll-trigger" href="pawnshop-index.html">Home</a></li>
+						<li class="nav-item nav-item-hover"><a
+						class="nav-link js-scroll-trigger" href="pawnshop-track-estimate.html">track my estimate</a></li>
 					<li class="nav-item nav-item-hover"><a
 						class="nav-link js-scroll-trigger" href="pawnshop-estimate-history.html">History</a></li>
 				</ul>

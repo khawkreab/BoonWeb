@@ -94,7 +94,7 @@ public class PawnerPostController {
 	}
 	
 	@RequestMapping("/pawner-post-history")
-	public ModelAndView listGold(HttpServletRequest request) {
+	public ModelAndView history(HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView("pawnerPostHistoy.jsp");
 		List<PawnerPost> pawnerPosts;
 		List<Estimate> estimatesList;
@@ -112,6 +112,23 @@ public class PawnerPostController {
 		return mv;
 	}
 	
-	
+	@RequestMapping("/pawner-track-pledge")
+	public ModelAndView pledge(HttpServletRequest request) {
+		ModelAndView mv = new ModelAndView("pawnerPostHistoy.jsp");
+		List<PawnerPost> pawnerPosts;
+		List<Estimate> estimatesList;
+		try {
+			long userId = (long) request.getSession().getAttribute("id");
+			pawnerPosts = pawnerPostService.findPawnerPostByPawnerId(userId);
+			estimatesList =estimateService.findEstimateByPawnerId(userId);
+			
+			
+			mv.addObject("estimatesList", estimatesList);
+			mv.addObject("pawnerPosts", pawnerPosts);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return mv;
+	}
 
 }
