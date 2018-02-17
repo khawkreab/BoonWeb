@@ -100,7 +100,7 @@
                         <div class="d-flex flex-row flex-wrap text-center backgroup-icon">
                         <a href="pawner-post-form-gold.html">
                             <div class="p-2 card-icon">
-                                <div class="box-icon">
+                                <div>
                                     <img class="icon" src="img/icon/gold-ingots.png">
                                 </div>
                                 <p>Gold</p>
@@ -108,7 +108,7 @@
                             </a>
                             <a href="pawner-post-form-watch.html">
                             <div class="p-2 card-icon">
-                                <div class="box-icon">
+                                <div>
                                     <img class="icon" src="img/icon/wristwatch.png">
                                     <p>Watch</p>
                                 </div>
@@ -116,7 +116,7 @@
                             </a>
                             <a href="pawner-post-form-smartphone.html">
                             <div class="p-2 card-icon">
-                                <div class="box-icon">
+                                <div >
                                     <img class="icon" src="img/icon/smartphone.png">
                                     <p>Smart Phone</p>
                                 </div>
@@ -124,7 +124,7 @@
                             </a>
                             <a href="pawner-post-form-laptop.html">
                             <div class="p-2 card-icon">
-                                <div class="box-icon">
+                                <div>
                                     <img class="icon" src="img/icon/laptop.png">
                                     <p> Laptop</p>
                                 </div>
@@ -132,7 +132,7 @@
                             </a>
                             <a href="pawner-post-form-camera.html">
                             <div class="p-2 card-icon">
-                                <div class="box-icon">
+                                <div>
                                     <img class="icon" src="img/icon/photo-camera.png">
                                     <p> Camera</p>
                                 </div>
@@ -140,7 +140,7 @@
                             </a>
                              <a href="pawner-post-form-tv.html">
                             <div class="p-2 card-icon">
-                                <div class="box-icon">
+                                <div>
                                     <img class="icon" src="img/icon/tv.png">
                                     <p>TV</p>
                                 </div>
