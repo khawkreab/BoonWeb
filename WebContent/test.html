@@ -39,13 +39,31 @@
             border: 1px solid #999999;
             border-radius: 4px;
             margin: 16px;
+            text-align: center;
+            width: 168px;
         }
 
         .card-icon:hover {
+            text-align: center;
             transition: 0.3s;
             box-shadow: 0 0 2px 2px rgba(20, 23, 28, .1), 0 4px 1px 0 rgba(20, 23, 28, .1);
             border: 1px solid #999999;
             border-radius: 4px;
+            transform: scale3d(1.006, 1.006, 1);
+        }
+
+        .card-font {
+            border: none;
+            outline: 0;
+            display: inline-block;
+            padding: 8px;
+            margin-top: .5rem;
+            color: white;
+            background-color: #4CAF50;
+            text-align: center;
+            cursor: pointer;
+            width: 100%;
+            font-size: 18px;
         }
     </style>
 </head>
@@ -58,86 +76,56 @@
 
     <section>
         <div class="container">
-
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="box-sup">
-                        <div class="box-semi text-center">
-                            <h1>The 5 Step</h1>
-                            <h6>---- easy to pawn ----</h6>
-                            <br>
-                        </div>
-                        <div class="box-semi">
-                            <span class="time-line"></span>
-                            <ul>
-                                <li>
-                                    <span class="cycle">1</span> Enter item information</li>
-                                <li>
-                                    <span class="cycle">2</span> Upload picture and post item
-                                </li>
-                                <li>
-                                    <span class="cycle">3</span> Get offers from pawner shop</li>
-                                <li>
-                                    <span class="cycle">4</span> Walk in pawn shop</li>
-                                <li>
-                                    <span class="cycle">5</span> Deal rice again with pawn shop
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-
+            <div class="re-contain" style="	width:85%;">
+                <div class="Subhead ">
+                    <h2 class="Subhead-heading">Select Pledge Item...</h2>
+                    <p class="Subhead-description">We have 7 items</p>
                 </div>
-                <div class="col-md-6">
-                    <div class="Subhead ">
-                        <h2 class="Subhead-heading">Select Pledge Item...</h2>
-                        <p class="Subhead-description">We have 7 items</p>
-                    </div>
-                    <div class="scrollbar-auto">
-                        <div class="d-flex flex-row flex-wrap text-center backgroup-icon">
-                            <div class="p-2 card-icon">
-                                <div class="box-icon">
-                                    <img class="icon" src="img/icon/gold-ingots.png">
-                                </div>
-                                <p>Gold</p>
-                            </div>
-                            <div class="p-2 card-icon">
-                                <div class="box-icon">
-                                    <img class="icon" src="img/icon/wristwatch.png">
-                                    <p>Watch</p>
-                                </div>
-                            </div>
-                            <div class="p-2 card-icon">
-                                <div class="box-icon">
-                                    <img class="icon" src="img/icon/smartphone.png">
-                                    <p>Smart Phone</p>
-                                </div>
-                            </div>
-                            <div class="p-2 card-icon">
-                                <div class="box-icon">
-                                    <img class="icon" src="img/icon/laptop.png">
-                                    <p> Laptop</p>
-                                </div>
-                            </div>
-                            <div class="p-2 card-icon">
-                                <div class="box-icon">
-                                    <img class="icon" src="img/icon/photo-camera.png">
-                                    <p> Camera</p>
-                                </div>
-                            </div>
-                            <div class="p-2 card-icon">
-                                <div class="box-icon">
-                                    <img class="icon" src="img/icon/tv.png">
-                                    <p>TV</p>
-                                </div>
-                            </div>
-                            <div class="p-2 card-icon">
-                                <div class="box-icon">
-                                    <img class="icon" src="img/icon/receipt.png">
-                                    <p> Other</p>
-                                </div>
+                <div class="scrollbar-auto">
+                    <div class="d-flex flex-row flex-wrap text-center backgroup-icon">
+                        <div class="card-icon">
+                            <dt>
+                                <img class="icon" src="img/icon/gold-ingots.png">
+                            </dt>
+                            <label class="card-font">GOLD</label>
+                        </div>
+                        <div class=" card-icon">
+                            <dt>
+                                <img class="icon" src="img/icon/wristwatch.png">
+                            </dt>
+                            <label class="card-font">WATCH</label>
+                        </div>
+                        <div class="card-icon">
+                            <dt>
+                                <img class="icon" src="img/icon/smartphone.png">
+                            </dt>
+                            <label class="card-font">SMARTPHONE</label>
+                        </div>
+                        <div class="card-icon">
+                            <dt>
+                                <img class="icon" src="img/icon/laptop.png">
+                            </dt>
+                            <label class="card-font">LAPTOP</label>
+                        </div>
+                        <div class="card-icon">
+                            <dt>
+                                <img class="icon" src="img/icon/photo-camera.png">
+                            </dt>
+                            <label class="card-font">CAMERA</label>
+                        </div>
+                        <div class="card-icon">
+                            <dt>
+                                <img class="icon" src="img/icon/tv.png">
+                            </dt>
+                            <label class="card-font">TV</label>
+                        </div>
+                        <div class="card-icon">
+                            <div>
+                                <img class="icon" src="img/icon/receipt.png">
+                                <p> Other</p>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>

@@ -35,7 +35,7 @@
 				<div class="container">
 					<div class="re-contain">
 						<div class="Subhead">
-							<h2 class="Subhead-heading">Create Post Electronic</h2>
+							<h2 class="Subhead-heading">TV</h2>
 							<p class="Subhead-description">This post will show on pawnshop's page for them estimate your post.</p>
 						</div>
 						<form:form method="post" action="savePost.html" commandName="pawnerPost">
@@ -61,39 +61,28 @@
 								<div class="form-group enter-data">
 									<p>Enter the correct data for your post.Thsi data will show to pawnshop.</p>
 								</div>
-								<div class=" form-group-post Subhead">
-									<div class="form-group  ">
-										<span>Brand</span>
-										<div class="form-group" style="margin-top: 11.5px;">
-											<form:select path="pawnerPostBrand">
-												<option>Acer</option>
-												<option>Apple</option>
-												<option>Asus</option>
-												<option>Canon</option>
-												<option>Dell</option>
-												<option>Fuji Film</option>
-												<option>HP</option>
-												<option>Lenovo</option>
-												<option>LG</option>
-												<option>MSI</option>
-												<option>Nikon</option>
-												<option>Olympus</option>
-												<option>Panasonic</option>
-												<option>Philips</option>
-												<option>Samsung</option>
-												<option>Sony</option>
-												<option>Sharp</option>
-												<option>TCL</option>
-												<option>Toshiba</option>
-												<option>Others</option>
-											</form:select>
-										</div>
-									</div>
-								</div>
 								<!-- TV -->
 								<div id="TV" class="w3-container city">
 									<div class="form-group float-left ">
-										<h2 style="font-weight: normal">TV</h2>
+
+										<div class=" form-group ">
+
+											<span>Brand</span>
+											<div class="form-group" style="margin-top: 11.5px;">
+												<form:select path="pawnerPostBrand">
+													<option>Apple</option>
+													<option>LG</option>
+													<option>Panasonic</option>
+													<option>Samsung</option>
+													<option>Sony</option>
+													<option>Sharp</option>
+													<option>TCL</option>
+													<option>Toshiba</option>
+													<option>Others</option>
+												</form:select>
+
+											</div>
+										</div>
 
 										<div class="form-group-post float-left ">
 											<dt>Model</dt>
@@ -132,26 +121,26 @@
 										</div>
 									</div>
 								</div>
-
-								<div class="form-group-post  float-left">
-									<dt>Description</dt>
-								</div>
-								<div class="form-group-post">
-									<dt>
-										<form:textarea path="pawnerPostDescription" class="post-description" style="max-width: 100%" pattern="[0-9A-Za-z]{0,}"></form:textarea>
-									</dt>
-									<p class="Subhead-description">(optional) If you have more data input here!</p>
-								</div>
-								<div class="form-group-post float-left">
-									<input type="checkbox" required="required">I agree to the
-									<strong>trem of service</strong>
-								</div>
-								<div class="form-group-post float-left">
-									<button type="submit" class="summit-data">Create post</button>
-								</div>
+							</div>
+							<div class="form-group-post  float-left">
+								<dt>Description</dt>
+							</div>
+							<div class="form-group-post">
+								<dt>
+									<form:textarea path="pawnerPostDescription" class="post-description" style="max-width: 100%" pattern="[0-9A-Za-z]{0,}"></form:textarea>
+								</dt>
+								<p class="Subhead-description">(optional) If you have more data input here!</p>
+							</div>
+							<div class="form-group-post float-left">
+								<input type="checkbox" required="required">I agree to the
+								<strong>trem of service</strong>
+							</div>
+							<div class="form-group-post float-left">
+								<button type="submit" class="summit-data">Create post</button>
+							</div>
 						</form:form>
-						</div>
 					</div>
+				</div>
 			</section>
 		</body>
 
