@@ -79,7 +79,7 @@ public class PawnerPostController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return "redirect:pawner-post-list.html";
+		return "redirect:pawner-pledge.html";
 	}
 	
 	
