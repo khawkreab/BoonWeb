@@ -68,10 +68,12 @@ public class PawnerPostController {
 	public String savePost(@ModelAttribute("pawnerPost") PawnerPost pawnerPost, BindingResult result,
 			HttpServletRequest request) {
 		Date date = new Date();
+		String status = "waiting";
 		try {
 			System.out.println(pawnerPost.getClass());
 			if (0 == pawnerPost.getPawnerPostId()) { 
 				pawnerPost.setPawnerPostDate(date);
+				pawnerPost.setPawnerPostStatus(status);
 				pawnerPostService.insert(pawnerPost);
 			} else {
 				pawnerPostService.update(pawnerPost);
@@ -79,7 +81,7 @@ public class PawnerPostController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return "redirect:pawner-post-list.html";
+		return "redirect:pawner-pledge.html";
 	}
 	
 	
