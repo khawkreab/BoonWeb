@@ -511,7 +511,6 @@ select:focus {
 
 .re-contain {
 	width: 700px;
-	margin: 40px auto 0;
 	line-height: 10px;
 	box-sizing: border-box;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -525,7 +524,7 @@ select:focus {
 	flex-flow: row wrap;
 	margin-bottom: 30px;
 	padding-bottom: 8px;
-	border-bottom: 1px #e1e4e8 solid;
+	border-bottom: 1px #a1a4a7 solid;
 }
 
 .Subhead-heading {

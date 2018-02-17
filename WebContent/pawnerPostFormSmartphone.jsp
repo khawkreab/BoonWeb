@@ -33,7 +33,7 @@
 				<div class="container">
 					<div class="re-contain">
 						<div class="Subhead">
-							<h2 class="Subhead-heading">Create Post Electronic</h2>
+							<h2 class="Subhead-heading">Smart Phone</h2>
 							<p class="Subhead-description">This post will show on pawnshop's page for them estimate your post.</p>
 						</div>
 						<form:form method="post" action="savePost.html" commandName="pawnerPost">
@@ -59,71 +59,56 @@
 								<div class="form-group enter-data">
 									<p>Enter the correct data for your post.Thsi data will show to pawnshop.</p>
 								</div>
-								<div class=" form-group-post Subhead">
-									<div class="form-group  ">
+
+								<!-- Mobile -->
+								<div id="Mobile" class="w3-container ">
+									<div class=" form-group">
 										<span>Brand</span>
 										<div class="form-group" style="margin-top: 11.5px;">
 											<form:select path="pawnerPostBrand">
-												<option>Acer</option>
 												<option>Apple</option>
-												<option>Asus</option>
-												<option>Canon</option>
-												<option>Dell</option>
-												<option>Fuji Film</option>
 												<option>HP</option>
 												<option>Lenovo</option>
 												<option>LG</option>
-												<option>MSI</option>
-												<option>Nikon</option>
-												<option>Olympus</option>
-												<option>Panasonic</option>
-												<option>Philips</option>
 												<option>Samsung</option>
 												<option>Sony</option>
-												<option>Sharp</option>
-												<option>TCL</option>
-												<option>Toshiba</option>
 												<option>Others</option>
 											</form:select>
 										</div>
-									</div>
-								</div>
-								<!-- Mobile -->
-								<div id="Mobile" class="w3-container ">
-									<h2 style="font-weight: normal">Mobile</h2>
-									<div class="form-group float-left">
-										<div class="form-group-post float-left ">
-											<dt>Model</dt>
-											<dt>
-												<form:input path="pawnerPostModel" class="post-name" placeholder="" pattern="[0-9A-Za-z]{1,15}" required="required" />
-											</dt>
-										</div>
-										<div class="form-group-post float-left ">
-											<dt>Serial Number</dt>
-											<dt>
-												<form:input path="pawnerPostSerial" class="post-name" placeholder="" pattern="[0-9A-Za-z]{1,15}" required="required" />
-											</dt>
-										</div>
-										<div class="form-group-post float-left ">
-											<dt>Capacity</dt>
-											<dt>
-												<form:input path="pawnerPostCapacity" class="post-name" placeholder="" pattern="[0-9A-Za-z]{1,}" required="required" />
-											</dt>
-										</div>
-										<div class="form-group-post float-left ">
-											<dt>Year of purchase</dt>
-											<dt>
-												<form:input path="pawnerPostPurchase" type="date" class="post-name" required="required" />
-											</dt>
-										</div>
-										<div class="form-group-post float-left">
-											<dt style="line-height: 45px;">
-												<form:checkbox path="pawnerPostBattery" value="yes" /> Battery charger
-											</dt>
-											<dt style="line-height: 5px;">
-												<form:checkbox path="pawnerPostWarranty" value="yes" /> Warranty Certificate
-												<strong>(If you have)</strong>
-											</dt>
+										<div class="form-group float-left">
+											<div class="form-group-post float-left ">
+												<dt>Model</dt>
+												<dt>
+													<form:input path="pawnerPostModel" class="post-name" placeholder="" pattern="[0-9A-Za-z]{1,15}" required="required" />
+												</dt>
+											</div>
+											<div class="form-group-post float-left ">
+												<dt>Serial Number</dt>
+												<dt>
+													<form:input path="pawnerPostSerial" class="post-name" placeholder="" pattern="[0-9A-Za-z]{1,15}" required="required" />
+												</dt>
+											</div>
+											<div class="form-group-post float-left ">
+												<dt>Capacity</dt>
+												<dt>
+													<form:input path="pawnerPostCapacity" class="post-name" placeholder="" pattern="[0-9A-Za-z]{1,}" required="required" />
+												</dt>
+											</div>
+											<div class="form-group-post float-left ">
+												<dt>Year of purchase</dt>
+												<dt>
+													<form:input path="pawnerPostPurchase" type="date" class="post-name" required="required" />
+												</dt>
+											</div>
+											<div class="form-group-post float-left">
+												<dt style="line-height: 45px;">
+													<form:checkbox path="pawnerPostBattery" value="yes" /> Battery charger
+												</dt>
+												<dt style="line-height: 5px;">
+													<form:checkbox path="pawnerPostWarranty" value="yes" /> Warranty Certificate
+													<strong>(If you have)</strong>
+												</dt>
+											</div>
 										</div>
 									</div>
 								</div>

@@ -34,7 +34,7 @@
 				<div class="container">
 					<div class="re-contain">
 						<div class="Subhead">
-							<h2 class="Subhead-heading">Create Post Electronic</h2>
+							<h2 class="Subhead-heading">Laptop</h2>
 							<p class="Subhead-description">This post will show on pawnshop's page for them estimate your post.</p>
 						</div>
 						<form:form method="post" action="savePost.html" commandName="pawnerPost">
@@ -60,39 +60,38 @@
 								<div class="form-group enter-data">
 									<p>Enter the correct data for your post.Thsi data will show to pawnshop.</p>
 								</div>
-								<div class=" form-group-post Subhead">
-									<div class="form-group  ">
-										<span>Brand</span>
-										<div class="form-group" style="margin-top: 11.5px;">
-											<form:select path="pawnerPostBrand">
-												<option>Acer</option>
-												<option>Apple</option>
-												<option>Asus</option>
-												<option>Canon</option>
-												<option>Dell</option>
-												<option>Fuji Film</option>
-												<option>HP</option>
-												<option>Lenovo</option>
-												<option>LG</option>
-												<option>MSI</option>
-												<option>Nikon</option>
-												<option>Olympus</option>
-												<option>Panasonic</option>
-												<option>Philips</option>
-												<option>Samsung</option>
-												<option>Sony</option>
-												<option>Sharp</option>
-												<option>TCL</option>
-												<option>Toshiba</option>
-												<option>Others</option>
-											</form:select>
-										</div>
+								<div class=" form-group">
+
+									<span>Brand</span>
+									<div class="form-group" style="margin-top: 11.5px;">
+										<form:select path="pawnerPostBrand">
+											<option>Acer</option>
+											<option>Apple</option>
+											<option>Asus</option>
+											<option>Canon</option>
+											<option>Dell</option>
+											<option>Fuji Film</option>
+											<option>HP</option>
+											<option>Lenovo</option>
+											<option>LG</option>
+											<option>MSI</option>
+											<option>Nikon</option>
+											<option>Olympus</option>
+											<option>Panasonic</option>
+											<option>Philips</option>
+											<option>Samsung</option>
+											<option>Sony</option>
+											<option>Sharp</option>
+											<option>TCL</option>
+											<option>Toshiba</option>
+											<option>Others</option>
+										</form:select>
 									</div>
+
 								</div>
 
 								<!-- laptop -->
 								<div id="laptop" class="w3-container">
-									<h2 style="font-weight: normal">Laptop</h2>
 									<div class="form-group-post float-left ">
 										<dt>Model</dt>
 										<dt>

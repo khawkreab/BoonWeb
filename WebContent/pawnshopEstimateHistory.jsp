@@ -1,8 +1,8 @@
 <!-- 
 // page : pawnshop-estimate-list
 // version : 1.0
-// task : --
-// edit by : 
+// task : list track
+// edit by : K'win
  -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -32,12 +32,46 @@
 	<section>
 	<div class="container">
 		<table border="1">
-			<c:forEach items="${proposeList}" var="pp">
-				<tr>
-					<td>${pp.price}</td>
-					<td>${pp.proposeDate}</td>
-					<td>${pp.status}</td>
-				</tr>
+			<c:forEach items="${eList}" var="estimate">
+				<ul>
+				<c:if test = "${track.estimateStatus == 'complete'}">
+				
+				<li>${estimate.pawnerPostId.pawnerPostItemType}</li>
+				<li>${estimate.pawnerPostId.pawnerPostName}</li>
+				<li>${estimate.pawnerPostId.pawnerPostDescription}</li>
+				<li>${estimate.pawnerPostId.pawnerPostBrand}</li>
+				<li>${estimate.pawnerPostId.pawnerPostPure}</li>
+				<li>${estimate.pawnerPostId.pawnerPostWeigh}</li>
+				<li>${estimate.pawnerPostId.pawnerPostCategory}</li>
+				<li>${estimate.pawnerPostId.pawnerPostProduction}</li>
+				<li>${estimate.pawnerPostId.pawnerPostModel}</li>
+				<li>${estimate.pawnerPostId.pawnerPostSerial}</li>
+				<li>${estimate.pawnerPostId.pawnerPostCase}</li>
+				<li>${estimate.pawnerPostId.pawnerPostBracelet}</li>
+				<li>${estimate.pawnerPostId.pawnerPostDiamond}</li>
+				<li>${estimate.pawnerPostId.pawnerPostPackage}</li>
+				<li>${estimate.pawnerPostId.pawnerPostWarranty}</li>
+				
+				<li>${estimate.pawnerPostId.pawnerPostSize}</li>
+				<li>${estimate.pawnerPostId.panwePostRemote}</li>
+				<li>${estimate.pawnerPostId.pawnerPostCapacity}</li>
+				<li>${estimate.pawnerPostId.pawnerPostPurchase}</li>
+				<li>${estimate.pawnerPostId.pawnerPostBattery}</li>
+				<li>${estimate.pawnerPostId.pawnerPostTypeCamera}</li>
+				<li>${estimate.pawnerPostId.pawnerPostCameraLen}</li>
+				<li>${estimate.pawnerPostId.pawnerPostHarddisk}</li>
+				<li>${estimate.pawnerPostId.pawnerPostRam}</li>
+				<li>${estimate.pawnerPostId.pawnerPostDevice}</li>
+					
+					<li>${estimate.estimatePriceMin}</li>
+					<li>${estimate.estimatePriceMax}</li>
+					<li>${estimate.estimateDate}</li>
+					<li>${estimate.estimateAccessDate}</li>
+					<li>${estimate.estimateStatus}</li>
+					
+				</c:if>
+				</ul>
+				
 			</c:forEach>
 		</table>
 	</div>

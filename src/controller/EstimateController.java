@@ -42,6 +42,9 @@ public class EstimateController {
 	@EJB(mappedName = "ejb:/BoonWeb//PawnerServiceBean!service.PawnerService")
 	PawnerService pmService;
 
+	@EJB(mappedName = "ejb:/BoonWeb//PawnerPostServiceBean!service.PawnerPostService")
+	PawnerPostService pawnerPostService;
+	
 	@RequestMapping("/pawnshop-estimate-form")
 	public ModelAndView newestimate(@ModelAttribute("postid") Estimate postid, BindingResult result,
 			HttpServletRequest request) {
@@ -110,17 +113,20 @@ public class EstimateController {
 		return "redirect:pawnshop-estimate-list.html";
 	}
 
-	@RequestMapping("/pawnshop-estimate-list")
+	@RequestMapping("/pawnshop-estimate-history")
 	public ModelAndView listProposeByPawnshop(HttpServletRequest request) {
-		ModelAndView mv = new ModelAndView("pawnshopEstimateList.jsp");
+		ModelAndView mv = new ModelAndView("pawnshopEstimateHistory.jsp");
 		Pawnshop pawnshop;
 		List<Estimate> eList;
+		List<PawnerPost> pawnerPosts;
 		try {
 			long userId = (long) request.getSession().getAttribute("id");
 			pawnshop = pawnshopServ.findPawnshopById(userId);
+			pawnerPosts = pawnerPostService.findPawnerPostByPawnerId(userId);
 			eList = estimateService.findEstimateByPawnshopId(userId);
 
 			mv.addObject("pawnshop", pawnshop);
+			mv.addObject("pawnerPosts", pawnerPosts);
 			mv.addObject("eList", eList);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -162,5 +168,26 @@ public class EstimateController {
 			e.printStackTrace();
 		}
 		return "redirect:pawner-post-history.html?";
+	}
+	
+	@RequestMapping("/pawnshop-track-estimate")
+	public ModelAndView trackMyEstimate(HttpServletRequest request) {
+		ModelAndView mv = new ModelAndView("pawnshopTrackEstimate.jsp");
+		Pawnshop pawnshop;
+		List<Estimate> trackMyEstimate;
+		List<PawnerPost> pawnerPosts;
+		try {
+			long userId = (long) request.getSession().getAttribute("id");
+			pawnshop = pawnshopServ.findPawnshopById(userId);
+			pawnerPosts = pawnerPostService.findPawnerPostByPawnerId(userId);
+			trackMyEstimate = estimateService.findEstimateByPawnshopId(userId);
+
+			mv.addObject("pawnshop", pawnshop);
+			mv.addObject("pawnerPosts", pawnerPosts);
+			mv.addObject("trackMyEstimate", trackMyEstimate);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return mv;
 	}
 }
