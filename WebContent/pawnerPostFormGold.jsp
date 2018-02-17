@@ -63,7 +63,7 @@
 								<div class="form-group-post float-left">
 									<dt>Brand or trademark</dt>
 									<dt>
-										<form:input path="pawnerPostBrand" class="post-name" placeholder=" 23.5x3cm or 5.3cm" pattern="[0-9A-Za-z]{1,15}" />
+										<form:input path="pawnerPostBrand" class="post-name" placeholder="" pattern="[0-9A-Za-z]{1,15}" />
 									</dt>
 								</div>
 								<div class="form-group-post float-left">
