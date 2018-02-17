@@ -1,6 +1,6 @@
 <!-- 
 // page : pawner-post-history
-// version : 3.0
+// version : 3.1
 // task : pawner approve
 // edit by : khawkreab
  -->
@@ -67,34 +67,55 @@
 						</div>
 
 					</div>
-					<div class="line margin-lr-1"></div>
-					<div class="history-show-estimate">
-						<div id="showlist${post.pawnerPostId}" class="collapse">
-							<ul>
-								<c:forEach items="${estimatesList}" var="estimate">
-									<c:if
-										test="${estimate.pawnerPostId.pawnerPostId == post.pawnerPostId }">
-										<li>ID post ${estimate.pawnerPostId.pawnerPostId}
-											<form action="pawner-approve.html" method="post">
-												<input type="hidden" name="estimateId"
-													value="${estimate.estimateId}"> <input
-													type="hidden" name="pawnerPostId"
-													value="${post.pawnerPostId}">
-												<button type="submit">Approve</button>
-											</form>
-										</li>
 
-									</c:if>
+					<c:if test="${post.pawnerPostStatus == 'waiting'}">
+						<div class="line margin-lr-1"></div>
+					ยังไม่ประเมิน
+					</c:if>
+					<c:if test="${post.pawnerPostStatus == 'process'}">
+						<div class="line margin-lr-1"></div>
+						<div class="history-show-estimate">
+							<div id="showlist${post.pawnerPostId}" class="collapse">
+								<div class="row">
+									<div class="col-md-6">Pawn Shop</div>
+									<div class="col-md-2">min</div>
+									<div class="col-md-2">max</div>
+									<div class="col-md-2">*****</div>
+								</div>
+								<ul>
+									<c:forEach items="${estimatesList}" var="estimate">
+										<c:if
+											test="${estimate.pawnerPostId.pawnerPostId == post.pawnerPostId }">
 
-								</c:forEach>
-							</ul>
+											<li>
+												<div class="row">
+													<div class="col-md-6">
+														${estimate.pawnshopId.pawnshopName}</div>
+													<div class="col-md-2">${estimate.estimatePriceMin}</div>
+													<div class="col-md-2">${estimate.estimatePriceMax}</div>
+													<div class="col-md-2">
+														<form action="pawner-approve.html" method="post">
+															<input type="hidden" name="estimateId"
+																value="${estimate.estimateId}"> <input
+																type="hidden" name="pawnerPostId"
+																value="${post.pawnerPostId}">
+															<button type="submit">Approve</button>
+														</form>
+													</div>
+												</div>
+											</li>
+										</c:if>
+
+									</c:forEach>
+								</ul>
+							</div>
+							<div class="d-flex justify-content-center">
+								<span> <a id="more" class="show" href="#"
+									data-toggle="collapse"
+									data-target="#showlist${post.pawnerPostId}">more</a></span>
+							</div>
 						</div>
-						<div class="d-flex justify-content-center">
-							<span> <a id="more" class="show" href="#"
-								data-toggle="collapse"
-								data-target="#showlist${post.pawnerPostId}">more</a></span>
-						</div>
-					</div>
+					</c:if>
 				</div>
 			</div>
 		</c:forEach>
