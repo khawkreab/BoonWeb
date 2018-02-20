@@ -83,54 +83,54 @@
                     </div>
                     <div class="scrollbar-auto">
                         <div class="d-flex flex-row flex-wrap text-center backgroup-icon">
-                            <a href="pawner-post-form-gold.html">
-                                <div class="card-icon">
+                            <div class="card-icon">
+                                <a href="pawner-post-form-gold.html">
                                     <dt>
                                         <img class="icon" src="img/icon/gold-ingots.png">
                                     </dt>
-                                    <label class="card-font">GOLD</label>
-                                </div>
-                            </a>
-                            <a href="pawner-post-form-watch.html">
-                                <div class=" card-icon">
+                                    <p class="card-font">GOLD</p>
+                                </a>
+                            </div>
+                            <div class=" card-icon">
+                                <a href="pawner-post-form-watch.html">
                                     <dt>
                                         <img class="icon" src="img/icon/wristwatch.png">
                                     </dt>
-                                    <label class="card-font">WATCH</label>
-                                </div>
-                            </a>
-                            <a href="pawner-post-form-smartphone.html">
-                                <div class="card-icon">
+                                    <p class="card-font">WATCH</p>
+                                </a>
+                            </div>
+                            <div class="card-icon">
+                                <a href="pawner-post-form-smartphone.html">
                                     <dt>
                                         <img class="icon" src="img/icon/smartphone.png">
                                     </dt>
-                                    <label class="card-font">SMARTPHONE</label>
-                                </div>
-                            </a>
-                            <a href="pawner-post-form-laptop.html">
-                                <div class="card-icon">
+                                    <p class="card-font">SMARTPHONE</p>
+                                </a>
+                            </div>
+                            <div class="card-icon">
+                                <a href="pawner-post-form-laptop.html">
                                     <dt>
                                         <img class="icon" src="img/icon/laptop.png">
                                     </dt>
-                                    <label class="card-font">LAPTOP</label>
-                                </div>
-                            </a>
-                            <a href="pawner-post-form-camera.html">
-                                <div class="card-icon">
+                                    <p class="card-font">LAPTOP</p>
+                                </a>
+                            </div>
+                            <div class="card-icon">
+                                <a href="pawner-post-form-camera.html">
                                     <dt>
                                         <img class="icon" src="img/icon/photo-camera.png">
                                     </dt>
-                                    <label class="card-font">CAMERA</label>
-                                </div>
-                            </a>
-                            <a href="pawner-post-form-tv.html">
-                                <div class="card-icon">
+                                    <p class="card-font">CAMERA</p>
+                                </a>
+                            </div>
+                            <div class="card-icon">
+                                <a href="pawner-post-form-tv.html">
                                     <dt>
                                         <img class="icon" src="img/icon/tv.png">
                                     </dt>
-                                    <label class="card-font">TV</label>
-                                </div>
-                            </a>
+                                    <p class="card-font">TV</p>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
