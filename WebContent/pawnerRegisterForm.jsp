@@ -55,7 +55,7 @@
 			<div class="container">
 				<div class="re-contain">
 					<div class="Subhead">
-						<h2 class="Subhead-heading">Pawner Registration</h2>
+						<h2 class="Subhead-heading"><span style="color:#ff7f00;">Pawner</span> Registration</h2>
 					</div>
 					<div class="form-group-post float-left">
 						<div class="form-group ">

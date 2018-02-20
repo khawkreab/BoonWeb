@@ -58,7 +58,8 @@
             <jsp:include page="navbar.jsp" />
 
             <section>
-                <div class="container">
+                <h2>Coming Soon</h2>
+                <!-- <div class="container">
 
                     <div class="row">
                         <div class="col-md-6">
@@ -93,7 +94,7 @@
                       
                         </div>
                     </div>
-                </div>
+                </div> -->
             </section>
 
 
