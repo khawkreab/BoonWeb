@@ -1,7 +1,7 @@
 <!-- 
 // page : pawnshop-estimate-list
 // version : 1.0
-// task : list track
+// task : list Complete
 // edit by : K'win
  -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -34,7 +34,7 @@
 		<table border="1">
 			<c:forEach items="${eList}" var="estimate">
 				<ul>
-				<c:if test = "${track.estimateStatus == 'complete'}">
+				<c:if test = "${estimate.estimateStatus == 'Complete'}">
 				
 				<li>${estimate.pawnerPostId.pawnerPostItemType}</li>
 				<li>${estimate.pawnerPostId.pawnerPostName}</li>
@@ -70,6 +70,7 @@
 					<li>${estimate.estimateStatus}</li>
 					
 				</c:if>
+				
 				</ul>
 				
 			</c:forEach>
