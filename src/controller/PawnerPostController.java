@@ -86,7 +86,7 @@ public class PawnerPostController {
 	
 	
 	@RequestMapping("/deletePost")
-	public String removeGold(HttpServletRequest request) {
+	public String deletePost(HttpServletRequest request) {
 		String pawnerId = (String) request.getSession().getAttribute("pawner"); // ***************warring
 		long goldId = Long.parseLong(request.getParameter("id"));
 		pawnerPostService.delete(goldId);
@@ -114,7 +114,7 @@ public class PawnerPostController {
 	
 	@RequestMapping("/pawner-track-pledge")
 	public ModelAndView pledge(HttpServletRequest request) {
-		ModelAndView mv = new ModelAndView("pawnerPostHistoy.jsp");
+		ModelAndView mv = new ModelAndView("pawnerTrackMyPlege.jsp");
 		List<PawnerPost> pawnerPosts;
 		List<Estimate> estimatesList;
 		try {

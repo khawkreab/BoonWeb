@@ -1,5 +1,5 @@
 <!-- 
-// page : pawner-post-history
+// page : pawner-track-pledge
 // version : 3.1
 // task : pawner approve
 // edit by : khawkreab
@@ -15,7 +15,7 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="">
 <meta name="author" content="">
-<title>pawner-post-history</title>
+<title>pawner-track-pledge</title>
 
 <!-- Bootstrap core CSS -->
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -68,7 +68,15 @@
 
 					</div>
 
-					<c:if test="${post.pawnerPostStatus == 'complete'}">
+					<c:if test="${post.pawnerPostStatus == 'waiting'}">
+						<div class="line margin-lr-1"></div>
+					ยังไม่ประเมิน
+					</c:if>
+					<c:if test="${post.pawnerPostStatus == 'approve'}">
+						<div class="line margin-lr-1"></div>
+					Print
+					</c:if>
+					<c:if test="${post.pawnerPostStatus == 'process'}">
 						<div class="line margin-lr-1"></div>
 						<div class="history-show-estimate">
 							<div id="showlist${post.pawnerPostId}" class="collapse">

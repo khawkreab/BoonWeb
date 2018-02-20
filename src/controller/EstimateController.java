@@ -77,7 +77,7 @@ public class EstimateController {
 		long postId = Long.parseLong(request.getParameter("pawnerPostId.pawnerPostId"));
 
 		try {
-			postService.updateStatus(postId);
+			postService.updateStatus(postId , "process");
 			estimate.setEstimateDate(date);
 			estimate.setEstimateStatus("proceed");
 			estimateService.insert(estimate);
@@ -159,7 +159,8 @@ public class EstimateController {
 		long pawnerPostId = Long.parseLong(request.getParameter("pawnerPostId"));
 		try {
 
-			estimateService.updateStatus(pawnerPostId);
+			estimateService.updateStatus(pawnerPostId , "disconnect");
+			postService.updateStatus(pawnerPostId , "approve");
 
 			estimate = estimateService.findEstimateById(estimateId);
 			estimate.setEstimateStatus("Approve");
