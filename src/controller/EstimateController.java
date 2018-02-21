@@ -68,6 +68,12 @@ public class EstimateController {
 		}
 		return mv;
 	}
+	
+	@RequestMapping("/uploadform")
+	public ModelAndView uploadform(HttpServletRequest request) {
+		ModelAndView mv = new ModelAndView("uploadform.jsp");
+		return mv;
+	}
 
 	@RequestMapping("/saveEstimate")
 	public String saveProposePrice(@ModelAttribute("estimate") Estimate estimate, BindingResult result,
