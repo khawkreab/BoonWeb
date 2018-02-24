@@ -21,6 +21,20 @@
 
 <title>nav bar</title>
 
+ <style>
+
+            .role {
+               	font-size:19px;
+                color:#000;
+                text-align: center;
+            }
+
+            .role:hover {
+                transition: 0.3s;
+                transform: scale3d(1.006, 1.006, 1);
+            }
+
+ </style>
 </head>
 <body>
 
@@ -47,10 +61,11 @@
 				<ul class="navbar-nav text-uppercase ml-auto">
 					<li class="nav-item nav-item-hover"><a
 						class="nav-link js-scroll-trigger" href="pawner-index.html">Home</a></li>
-						<li class="nav-item nav-item-hover"><a
+					<li class="nav-item nav-item-hover"><a
 						class="nav-link js-scroll-trigger" href="pawner-pledge.html">pledge</a></li>
-						<li class="nav-item nav-item-hover"><a
-						class="nav-link js-scroll-trigger" href="pawner-track-pledge.html">track my pledge</a></li>
+					<li class="nav-item nav-item-hover"><a
+						class="nav-link js-scroll-trigger" href="pawner-track-pledge.html">track
+							my pledge</a></li>
 					<li class="nav-item nav-item-hover"><a
 						class="nav-link js-scroll-trigger" href="pawner-post-history.html">History</a></li>
 				</ul>
@@ -64,10 +79,12 @@
 				<ul class="navbar-nav text-uppercase ml-auto">
 					<li class="nav-item nav-item-hover"><a
 						class="nav-link js-scroll-trigger" href="pawnshop-index.html">Home</a></li>
-						<li class="nav-item nav-item-hover"><a
-						class="nav-link js-scroll-trigger" href="pawnshop-track-estimate.html">track my estimate</a></li>
 					<li class="nav-item nav-item-hover"><a
-						class="nav-link js-scroll-trigger" href="pawnshop-estimate-history.html">History</a></li>
+						class="nav-link js-scroll-trigger"
+						href="pawnshop-track-estimate.html">track my estimate</a></li>
+					<li class="nav-item nav-item-hover"><a
+						class="nav-link js-scroll-trigger"
+						href="pawnshop-estimate-history.html">History</a></li>
 				</ul>
 			</div>
 
@@ -76,11 +93,12 @@
 			%>
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav text-uppercase ml-auto">
-					<li class="nav-item nav-item-hover"><a data-toggle="modal"
-						data-target="#modalLogin" class="nav-link js-scroll-trigger"
-						href="login.do">Login</a></li>
-					<li class="nav-item nav-item-hover"><a
-						class="nav-link js-scroll-trigger" href="pawner-register-form.html">Register</a></li>
+					<li class="nav-item nav-item-hover">
+						<a data-toggle="modal" data-target="#modalLogin" class="nav-link js-scroll-trigger" href="login.do">Login</a>
+					</li>
+					<li class="nav-item nav-item-hover">
+						<a data-toggle="modal" data-target="#modalRole" class="nav-link js-scroll-trigger">Register</a>
+					</li>
 				</ul>
 			</div>
 			<%
@@ -95,50 +113,50 @@
 				if (session.getAttribute("userType") == "pawner") {
 			%>
 			<div>
-					<ul class="navbar-nav text-uppercase ml-auto">
-						<li class="nav-item nav-item-hover"><a
-							class="nav-link js-scroll-trigger" data-toggle="dropdown"><%=session.getAttribute("username")%>
-								<i class="fa fa-cog" aria-hidden="true"></i></a>
-							<ul class="dropdown-menu">
-								<li class="nav-item nav-item-hover"><a
-									class="nav-link js-scroll-trigger"
-									onclick="location.replace('editPawner.html')">Profile</a></li>
-								<li class="nav-item nav-item-hover"><a
-									class="nav-link js-scroll-trigger"
-									onclick="location.replace('logout.html')">Log out</a></li>
-							</ul></li>
-					</ul>
+				<ul class="navbar-nav text-uppercase ml-auto">
+					<li class="nav-item nav-item-hover"><a
+						class="nav-link js-scroll-trigger" data-toggle="dropdown"><%=session.getAttribute("username")%>
+							<i class="fa fa-cog" aria-hidden="true"></i></a>
+						<ul class="dropdown-menu">
+							<li class="nav-item nav-item-hover"><a
+								class="nav-link js-scroll-trigger"
+								onclick="location.replace('editPawner.html')">Profile</a></li>
+							<li class="nav-item nav-item-hover"><a
+								class="nav-link js-scroll-trigger"
+								onclick="location.replace('logout.html')">Log out</a></li>
+						</ul></li>
+				</ul>
 
 				<!-- -------------------------------------------------------------------- -->
 				<%
 					} else if (session.getAttribute("userType") == "admin") {
 				%>
-					<ul class="navbar-nav text-uppercase ml-auto">
-						<li class="nav-item nav-item-hover"><a
-							class="nav-link js-scroll-trigger" data-toggle="dropdown"><%=session.getAttribute("username")%>
-								<i class="fa fa-cog" aria-hidden="true"></i></a>
-							<ul class="dropdown-menu">
-								<li class="nav-item nav-item-hover"><a
-									class="nav-link js-scroll-trigger"
-									onclick="location.replace('logout.html')">Log out</a></li>
-							</ul></li>
-					</ul>
+				<ul class="navbar-nav text-uppercase ml-auto">
+					<li class="nav-item nav-item-hover"><a
+						class="nav-link js-scroll-trigger" data-toggle="dropdown"><%=session.getAttribute("username")%>
+							<i class="fa fa-cog" aria-hidden="true"></i></a>
+						<ul class="dropdown-menu">
+							<li class="nav-item nav-item-hover"><a
+								class="nav-link js-scroll-trigger"
+								onclick="location.replace('logout.html')">Log out</a></li>
+						</ul></li>
+				</ul>
 				<%
 					} else if (session.getAttribute("userType") == "pawnShop") {
 				%>
-					<ul class="navbar-nav text-uppercase ml-auto">
-						<li class="nav-item nav-item-hover"><a
-							class="nav-link js-scroll-trigger" data-toggle="dropdown"><%=session.getAttribute("username")%>
-								<i class="fa fa-cog" aria-hidden="true"></i></a>
-							<ul class="dropdown-menu">
-								<li class="nav-item nav-item-hover"><a
-									class="nav-link js-scroll-trigger"
-									onclick="location.replace('editPawner.html')">Profile</a></li>
-								<li class="nav-item nav-item-hover"><a
-									class="nav-link js-scroll-trigger"
-									onclick="location.replace('logout.html')">Log out</a></li>
-							</ul></li>
-					</ul>
+				<ul class="navbar-nav text-uppercase ml-auto">
+					<li class="nav-item nav-item-hover"><a
+						class="nav-link js-scroll-trigger" data-toggle="dropdown"><%=session.getAttribute("username")%>
+							<i class="fa fa-cog" aria-hidden="true"></i></a>
+						<ul class="dropdown-menu">
+							<li class="nav-item nav-item-hover"><a
+								class="nav-link js-scroll-trigger"
+								onclick="location.replace('editPawner.html')">Profile</a></li>
+							<li class="nav-item nav-item-hover"><a
+								class="nav-link js-scroll-trigger"
+								onclick="location.replace('logout.html')">Log out</a></li>
+						</ul></li>
+				</ul>
 				<%
 					}
 					}
@@ -153,7 +171,7 @@
 		<div class="modal-dialog modal-sm">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h4 class="modal-title">Login</h4>
+					<p style="font-size:24px;margin-bottom: 0;">Login</p>
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
 
 				</div>
@@ -199,11 +217,38 @@
 						</div>
 					</form>
 				</div>
-				<div class="modal-footer">create account</div>
 			</div>
 		</div>
 	</div>
 	<!-- -------------------------------------------------------------------------------------------------- -->
+
+	<!------------------------------------------------ popup2 -------------------------------------------------->
+	<div class="modal fade" id="modalRole" role="dialog">
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content">
+				<div class="modal-header">
+					<p style="font-size:24px;margin-bottom: 0;">User Role</p>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-md-6 ">
+							<a class="role" onclick="location.replace('pawner-register-form.html')">
+								<i class="fa fa-user-circle" aria-hidden="true" style="font-size:80px;"></i>Pawner
+							</a>
+						</div>
+						<div class="col-md-6 role">
+							<a class="role" onclick="location.replace('ppawnshop-register-form.html')">
+								<i class="fa fa-user-circle" aria-hidden="true" style="font-size:80px;"></i>Pawnshop	
+							</a>
+						</div>				
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- -------------------------------------------------------------------------------------------------- -->
+
 
 	<!-- Bootstrap core JavaScript -->
 	<script src="vendor/jquery/jquery.min.js"></script>
