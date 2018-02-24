@@ -1,8 +1,8 @@
 /*!-- 
 // page : EstimateController
 // version : 3.0
-// task : update status pawner post in saveEstimate
-// edit by : khawkreab
+// task : create pawnshop-estimate-approve
+// edit by : K'win
  --*/
 
 package controller;
@@ -170,6 +170,26 @@ public class EstimateController {
 		}
 		return "redirect:pawner-post-history.html?";
 	}
+	
+	@RequestMapping("/pawnshop-estimate-approve")
+	public String pawnshopApprove(HttpServletRequest request) {
+		Estimate estimate;
+		long estimateId = Long.parseLong(request.getParameter("estimateId"));
+		long pawnerPostId = Long.parseLong(request.getParameter("pawnerPostId"));
+		try {
+
+			estimateService.updateStatus(pawnerPostId , "complete");
+		
+
+			estimate = estimateService.findEstimateById(estimateId);
+			estimate.setEstimateStatus("Complete");
+			estimateService.update(estimate);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return "redirect:pawnshop-estimate-history.html?";
+	}
+	
 	
 	@RequestMapping("/pawnshop-track-estimate")
 	public ModelAndView trackMyEstimate(HttpServletRequest request) {
