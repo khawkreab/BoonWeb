@@ -1,7 +1,7 @@
 <!-- 
 // page : pawnshop-Track-estimate
 // version : 1.0
-// task : list
+// task : liSt & submit complete
 // edit by : K'win
  -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -33,12 +33,12 @@
 	<div class="container">
 		<table border="1">
 			<c:forEach items="${trackMyEstimate}" var="track">
-			
+
 				<ul>
-				
-					<c:if test = "${track.estimateStatus == 'proceed'}">
-				
-        				<li>${track.pawnerPostId.pawnerPostItemType}</li>
+
+					<c:if test="${track.estimateStatus != 'complete'}">
+
+						<li>${track.pawnerPostId.pawnerPostItemType}</li>
 						<li>${track.pawnerPostId.pawnerPostName}</li>
 						<li>${track.pawnerPostId.pawnerPostDescription}</li>
 						<li>${track.pawnerPostId.pawnerPostBrand}</li>
@@ -53,7 +53,7 @@
 						<li>${track.pawnerPostId.pawnerPostDiamond}</li>
 						<li>${track.pawnerPostId.pawnerPostPackage}</li>
 						<li>${track.pawnerPostId.pawnerPostWarranty}</li>
-				
+
 						<li>${track.pawnerPostId.pawnerPostSize}</li>
 						<li>${track.pawnerPostId.panwePostRemote}</li>
 						<li>${track.pawnerPostId.pawnerPostCapacity}</li>
@@ -64,18 +64,34 @@
 						<li>${track.pawnerPostId.pawnerPostHarddisk}</li>
 						<li>${track.pawnerPostId.pawnerPostRam}</li>
 						<li>${track.pawnerPostId.pawnerPostDevice}</li>
-					
-					
+
+
 						<li>${track.estimatePriceMin}</li>
 						<li>${track.estimatePriceMax}</li>
 						<li>${track.estimateDate}</li>
 						<li>${track.estimateAccessDate}</li>
 						<li>${track.estimateStatus}</li>
+
+
+
+						<c:if test="${track.estimateStatus == 'Approve'}">
+							<form action="pawnshop-estimate-approve.html" method="post">
+								<input type="hidden" name="estimateId" value="${track.estimateId}"> 
+								<input type="hidden" name="pawnerPostId" value="${track.pawnerPostId.pawnerPostId}">
+								<button type="submit">Approve</button>
+							</form>
+						</c:if>
 						
-    				</c:if>
-    			
+					</c:if>
+
 				</ul>
-				
+
+				<ul>
+
+
+
+				</ul>
+
 			</c:forEach>
 		</table>
 	</div>
