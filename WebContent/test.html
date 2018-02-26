@@ -1,7 +1,12 @@
-<html>
+<html lang="en">
 
 <head>
-    <title>Pawnshop Registation</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Registration</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -9,132 +14,40 @@
     <!-- Custom styles for this template -->
     <link href="css/new-design.css" rel="stylesheet">
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
 </head>
-<style>
-    .bg {
-        background-image: url("img/body/body.jpg");
-        height: 100%;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-color: black;
-        margin: auto;
-        display: flex;
-        align-items: center;
-        justify-content: center;
 
-    }
+<body>
+    <!-- Navigation -->
+    <section>
+        
+            <ul style="padding-left:7px;">
+                <li>
+                    <input type="text" class="input-regis" placeholder="pawnshop name" path="pawnshopName" />
+                </li>
+                <li>
+                    <input type="text" class="input-regis" placeholder="email" path="pawnshopEmail" />
+                </li>
+                <li>
+                    <input type="text" class="input-regis" placeholder="password" path="pawnshopPassword" />
+                </li>
+                <li>
+                    <input type="text" class="input-regis" placeholder="tell" path="pawnshopTel" />
+                </li>
+                <li>
+                    <select class="input-regis" path="pawnshopProvince">
+                        <option>province</option>
+                        <option>Bangkok</option>
+                        <option>Chiang rai</option>
+                    </select>
+                </li>
+                <li>
+                    <button type="submit" class="input-submit">Create Account</button>
+                </li>
+            </ul>
+     
 
-    .bg2 {
-        background-image: url("img/body/body2.jpg");
-        height: 100%;
-        width: 100%;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        margin: auto;
-        border-top-left-radius: 10px;
-        border-bottom-left-radius: 10px;
-    }
-
-    .re-con {
-        background-color: #fff;
-        background-repeat: no-repeat;
-        position: relative;
-        border: 1px;
-        border-radius: 10px;
-    }
-
-    .form-regis {
-        margin: 18.22px;
-        display: block;
-        width: 650px;
-
-
-    }
-
-    .input-regis {
-        width: 300;
-        background-color: #fafbfc;
-        margin-top: 12px;
-        padding: 6px 8px;
-        color: #555;
-        background-position: right 8px center;
-        border: 1px solid #d1d5da;
-        border-radius: 3px;
-    }
-    
-    .input-submit {
-        width: 300;
-        background-color:#ff7f00;
-        margin-top: 12px;
-        padding: 6px 8px;
-        color:white;
-        background-position: right 8px center;
-        border: 1px solid #d1d5da;
-        border-radius: 3px;
-        font-weight: 700;
-    }
-</style>
-
-<body style="overflow: hidden">
-
-    <div class="bg">
-        <div style="height:500px;">
-            <div class="re-con">
-                <div class="row">
-                    <div class="col-md-6 bg2">
-                    </div>
-                    <div class="col-md-6 ">
-                        <div class="form-regis">
-                            <div style="text-align: center;width:45%;">
-                                <img src="img/logos/Artboard.png" style="height:80px;" />
-                                <h1 style="font-size:24px;letter-spacing: -1px;color: #555;">Expand your business.</h1>
-                                <p class="Subhead-description">Connext to pawner</p>
-                            </div>
-                            <ul style="padding-left:7px;">
-                                <li>
-                                    <input type="text" class="input-regis" placeholder="pawnshop name" />
-                                </li>
-                                <li>
-                                    <input type="text" class="input-regis" placeholder="email" />
-                                </li>
-                                <li>
-                                    <input type="text" class="input-regis" placeholder="password" />
-                                </li>
-                                <li>
-                                    <input type="text" class="input-regis" placeholder="tell" />
-                                </li>
-                                <li>
-                                    <select class="input-regis">
-                                        <option>province</option>
-                                        <option>Bangkok</option>
-                                        <option>Chiang rai</option>
-                                    </select>
-                                </li>
-                                <li>
-                                   <button type="submit"  class="input-submit">Create Account</button>
-                                </li>
-                            </ul>
-
-
-                            <!-- <input type="text" path="pawnshopName" class="post-name" pattern="[A-Za-z]{1,}" required="required" placeholder="081-xxxxxxx/021-xxxxxxx"
-                            />
-                            <input  type="text" path="pawnshopEmail" class="post-name" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required="required" />
-                            <input type="text" path="pawnshopPassword" class="post-name" type="password" id="pass" pattern="[0-9A-Za-z]{1,}" required="required"
-                            />
-                            <input type="text" path="pawnshopTel" class="post-name" pattern="[A-Za-z]{1,}" required="required" placeholder="081-xxxxxxx/021-xxxxxxx"
-                            />
-                            <textarea type="text" path="pawnshopAddress" class="post-description" style="max-width:100%; margin-top:14px;" pattern="[0-9A-Za-z]{0,}"></textarea> -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-    </div>
-
+    </section>
 </body>
 
 </html>

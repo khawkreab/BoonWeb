@@ -51,7 +51,7 @@ public class PawnshopController {
 		} catch (Exception e) {
 			return "redirect:pawnshop-register-form.html";
 		}
-		return "redirect:login.html";
+		return "redirect:editPawnshop.html";
 	}
 
 	// ********* ยังไม่มีหน้า ***********//
@@ -59,7 +59,7 @@ public class PawnshopController {
 	public ModelAndView editPawnshop(HttpServletRequest request) {
 		long paramId = (long) request.getSession().getAttribute("id");
 		Pawnshop foundPawnshop;
-		ModelAndView mv = new ModelAndView("pawnshopForm.jsp");
+		ModelAndView mv = new ModelAndView("pawnshopProfile.jsp");
 		try {
 			foundPawnshop = pawnshopServ.findPawnshopById(paramId);
 			mv.addObject("pawnshop", foundPawnshop);

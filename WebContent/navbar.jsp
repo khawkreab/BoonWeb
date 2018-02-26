@@ -19,48 +19,8 @@
 			<meta name="author" content="">
 
 			<title>nav bar</title>
-
-			<style>
-				.role {
-					font-size: 19px;
-					color: #000;
-					text-align: center;
-				}
-
-				.role:hover {
-					transition: 0.3s;
-					transform: scale3d(1.006, 1.006, 1);
-				}
-
-				.icon-header {
-					text-align: center;
-					padding: 16px;
-					margin-top: 16px;
-					border-bottom: 1px solid #e9ecef;
-				}
-
-				.input-regis {
-					background-color: #fafbfc;
-					margin-top: 12px;
-					padding: 6px 8px;
-					color: #555;
-					background-position: right 8px center;
-					border: 1px solid #d1d5da;
-					border-radius: 3px;
-				}
-
-				.input-submit {
-					width: 84%;
-					background-color: #ff7f00;
-					margin-top: 12px;
-					padding: 6px 8px;
-					color: white;
-					background-position: right 8px center;
-					border: 1px solid #d1d5da;
-					border-radius: 3px;
-					font-weight: 700;
-				}
-			</style>
+			<!-- Custom styles for this template -->
+			<link href="css/new-design.css" rel="stylesheet">
 		</head>
 
 		<body>
@@ -187,7 +147,7 @@
 																</a>
 																<ul class="dropdown-menu">
 																	<li class="nav-item nav-item-hover">
-																		<a class="nav-link js-scroll-trigger" onclick="location.replace('editPawner.html')">Profile</a>
+																		<a class="nav-link js-scroll-trigger" onclick="location.replace('editPawnshop.html')">Profile</a>
 																	</li>
 																	<li class="nav-item nav-item-hover">
 																		<a class="nav-link js-scroll-trigger" onclick="location.replace('logout.html')">Log out</a>
@@ -270,13 +230,13 @@
 							<p class="Subhead-description">Discover new experiences to try.</p>
 							<ul style="padding-left:7px;">
 								<li>
-									<input type="text" class="input-regis" placeholder="email" />
+									<input type="text" class="account-regis" placeholder="email" />
 								</li>
 								<li>
-									<input type="text" class="input-regis" placeholder="password" />
+									<input type="text" class="account-regis" placeholder="password" />
 								</li>
 								<li>
-									<button type="submit" class="input-submit">Create Account</button>
+									<button type="submit" class="account-submit">Create Account</button>
 								</li>
 								<li>
 									<p class="Subhead-description" style="margin-top:10px;">or</p>
@@ -289,7 +249,7 @@
 							</ul>
 						</div>
 						<div class="modal-footer">
-							<a href="pawnshop-register-form.html" style="color:#555;">Continue as a pawnshop account</a>
+							<a href="pawnshop-register-form.html" style="color:#555;">Create as a pawnshop account</a>
 						</div>
 					</div>
 				</div>
