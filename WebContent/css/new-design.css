@@ -839,3 +839,105 @@ footer {
 		margin-top: 5px;
 	}
 }
+/* ter*/
+.role {
+	font-size: 19px;
+	color: #000;
+	text-align: center;
+}
+
+.role:hover {
+	transition: 0.3s;
+	transform: scale3d(1.006, 1.006, 1);
+}
+
+.icon-header {
+	text-align: center;
+	padding: 16px;
+	margin-top: 16px;
+	border-bottom: 1px solid #e9ecef;
+}
+
+.account-regis {
+	background-color: #fafbfc;
+	margin-top: 12px;
+	padding: 6px 8px;
+	color: #555;
+	background-position: right 8px center;
+	border: 1px solid #d1d5da;
+	border-radius: 3px;
+}
+
+.account-submit {
+	width: 84%;
+	background-color: #ff7f00;
+	margin-top: 12px;
+	padding: 6px 8px;
+	color: white;
+	background-position: right 8px center;
+	border: 1px solid #d1d5da;
+	border-radius: 3px;
+	font-weight: 700;
+}
+.bg {
+	background-image: url("../img/body/body.jpg");
+	height: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color: black;
+	margin: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+}
+
+.bg2 {
+	background-image: url("../img/body/body2.jpg");
+	height: 100%;
+	width: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin: auto;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+
+.re-con {
+	background-color: #fff;
+	background-repeat: no-repeat;
+	position: relative;
+	border: 1px;
+	border-radius: 10px;
+}
+
+.form-regis {
+	margin: 18.22px;
+	display: block;
+	width: 650px;
+}
+
+.input-regis {
+	width: 300;
+	background-color: #fafbfc;
+	margin-top: 12px;
+	padding: 6px 8px;
+	color: #555;
+	background-position: right 8px center;
+	border: 1px solid #d1d5da;
+	border-radius: 3px;
+}
+
+.input-submit {
+	width: 300;
+	background-color: #ff7f00;
+	margin-top: 12px;
+	padding: 6px 8px;
+	color: white;
+	background-position: right 8px center;
+	border: 1px solid #d1d5da;
+	border-radius: 3px;
+	font-weight: 700;
+}
