@@ -30,8 +30,14 @@
 				<div class="preview-header-wrapper">
 					<div class="d-flex">
 						<div class="mr-auto p-2">
-							<h5 class="product-title">${pawnerPost.pawnerPostName}-
-								${pawnerPost.pawnerPostItemType} ${pawnerPost.pawnerPostBrand}</h5>
+							<h5 class="product-title">${pawnerPost.pawnerPostName }
+								${post.pawnerPostBrand }
+								<!-- Electronic camera-->
+								<c:if test="${pawnerPost.pawnerPostTypeCamera != null}">
+									${pawnerPost.pawnerPostTypeCamera }
+									${pawnerPost.pawnerPostCameraLen }
+								</c:if>
+							</h5>
 						</div>
 						<div class="ml-auto p-2">${pawnerPost.pawnerPostDate}</div>
 					</div>
@@ -69,11 +75,63 @@
 					<div class="preview col-md-4">
 						<h6 class="product-title">Detail</h6>
 						<ul>
-							<li>- Pure ${pawnerPost.pawnerPostPure}</li>
-							<li>- Brand ${pawnerPost.pawnerPostBrand}</li>
-							<li>- Model ${pawnerPost.pawnerPostModel}</li>
-							<li>- Weigh ${pawnerPost.pawnerPostWeigh}</li>
-							<li>- Description ${pawnerPost.pawnerPostDescription}</li>
+
+							<!-- Watch,Electronic -->
+							<c:if test="${pawnerPost.pawnerPostModel != null}">
+								<li>Production : ${pawnerPost.pawnerPostProduction}</li>
+								<li>Model : ${pawnerPost.pawnerPostModel}</li>
+								<li>Serial : ${pawnerPost.pawnerPostSerial}</li>
+								<li>Warranty : ${pawnerPost.pawnerPostWarranty}</li>
+								<li>Purchase : ${pawnerPost.pawnerPostPurchase }</li>
+							</c:if>
+
+							<!-- Gold -->
+							<c:if test="${pawnerPost.pawnerPostPure != null}">
+								<li>Pure : ${pawnerPost.pawnerPostPure  }</li>
+								<li>Weigh : ${pawnerPost.pawnerPostWeigh }</li>
+								<li>Category : ${pawnerPost.pawnerPostCategory }</li>
+							</c:if>
+
+							<!-- Watch -->
+							<c:if test="${pawnerPost.pawnerPostCase != null}">
+								<li>Case : ${pawnerPost.pawnerPostCase }</li>
+								<li>Bracelet : ${pawnerPost.pawnerPostBracelet }</li>
+								<c:if test="${pawnerPost.pawnerPostDiamond != null}">
+									<li>Diamond : ${pawnerPost.pawnerPostDiamond }</li>
+								</c:if>
+								<c:if test="${pawnerPost.pawnerPostPackage != null}">
+									<li>Package : ${pawnerPost.pawnerPostPackage }</li>
+								</c:if>
+							</c:if>
+
+							<!-- Electronic tv com telephone -->
+							<c:if test="${pawnerPost.pawnerPostSize != null}">
+								<li>Size : ${pawnerPost.pawnerPostSize }</li>
+							</c:if>
+
+							<!-- Electronic camera com telephone -->
+							<c:if test="${pawnerPost.pawnerPostBattery != null}">
+								<li>Battery : ${pawnerPost.pawnerPostBattery }</li>
+							</c:if>
+
+							<!-- Electronic com telephone -->
+							<c:if test="${pawnerPost.pawnerPostHarddisk != null}">
+								<li>Harddisk : ${pawnerPost.pawnerPostHarddisk }</li>
+							</c:if>
+
+							<!-- Electronic tv -->
+							<c:if test="${pawnerPost.panwePostRemote != null}">
+								<li>Remote : ${pawnerPost.panwePostRemote }</li>
+							</c:if>
+
+							<!-- Electronic com-->
+							<c:if test="${pawnerPost.pawnerPostRam != null}">
+								<li>Ram : ${pawnerPost.pawnerPostRam }</li>
+							</c:if>
+
+
+							<!-- Electronic telephone-->
+							<li>Description : ${pawnerPost.pawnerPostDescription }</li>
 						</ul>
 
 

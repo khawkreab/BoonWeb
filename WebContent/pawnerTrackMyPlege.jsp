@@ -1,6 +1,6 @@
 <!-- 
 // page : pawner-track-pledge
-// version : 3.1
+// version : 3.2
 // task : pawner approve
 // edit by : khawkreab
  -->
@@ -55,14 +55,72 @@
 					</div>
 					<div class="history-body">
 						<span class="history-img"><img class="" src="" /></span> <span
-							class="history-name">${post.pawnerPostName }</span>
+							class="history-name">${post.pawnerPostName }
+							${post.pawnerPostBrand } <!-- Electronic camera--> <c:if
+								test="${post.pawnerPostTypeCamera != null}">
+									${post.pawnerPostTypeCamera }
+									${post.pawnerPostCameraLen }
+								</c:if>
+						</span>
 						<div class="history-detail">
 							<ul>
-								<li>${post.pawnerPostBrand }</li>
-								<li>${post.pawnerPostPure  }</li>
-								<li>${post.pawnerPostWeigh }</li>
-								<li>${post.pawnerPostCategory }</li>
-								<li>${post.pawnerPostDescription }</li>
+
+								<!-- Watch,Electronic -->
+								<c:if test="${post.pawnerPostModel != null}">
+									<li>Production : ${post.pawnerPostProduction}</li>
+									<li>Model : ${post.pawnerPostModel}</li>
+									<li>Serial : ${post.pawnerPostSerial}</li>
+									<li>Warranty : ${post.pawnerPostWarranty}</li>
+									<li>Purchase : ${post.pawnerPostPurchase }</li>
+								</c:if>
+
+								<!-- Gold -->
+								<c:if test="${post.pawnerPostPure != null}">
+									<li>Pure : ${post.pawnerPostPure  }</li>
+									<li>Weigh : ${post.pawnerPostWeigh }</li>
+									<li>Category : ${post.pawnerPostCategory }</li>
+								</c:if>
+
+								<!-- Watch -->
+								<c:if test="${post.pawnerPostCase != null}">
+									<li>Case : ${post.pawnerPostCase }</li>
+									<li>Bracelet : ${post.pawnerPostBracelet }</li>
+									<c:if test="${post.pawnerPostDiamond != null}">
+										<li>Diamond : ${post.pawnerPostDiamond }</li>
+									</c:if>
+									<c:if test="${post.pawnerPostPackage != null}">
+										<li>Package : ${post.pawnerPostPackage }</li>
+									</c:if>
+								</c:if>
+
+								<!-- Electronic tv com telephone -->
+								<c:if test="${post.pawnerPostSize != null}">
+									<li>Size : ${post.pawnerPostSize }</li>
+								</c:if>
+
+								<!-- Electronic camera com telephone -->
+								<c:if test="${post.pawnerPostBattery != null}">
+									<li>Battery : ${post.pawnerPostBattery }</li>
+								</c:if>
+
+								<!-- Electronic com telephone -->
+								<c:if test="${post.pawnerPostHarddisk != null}">
+									<li>Harddisk : ${post.pawnerPostHarddisk }</li>
+								</c:if>
+
+								<!-- Electronic tv -->
+								<c:if test="${post.panwePostRemote != null}">
+									<li>Remote : ${post.panwePostRemote }</li>
+								</c:if>
+
+								<!-- Electronic com-->
+								<c:if test="${post.pawnerPostRam != null}">
+									<li>Ram : ${post.pawnerPostRam }</li>
+								</c:if>
+
+
+								<!-- Electronic telephone-->
+								<li>Description : ${post.pawnerPostDescription }</li>
 							</ul>
 						</div>
 
@@ -70,7 +128,7 @@
 
 					<c:if test="${post.pawnerPostStatus == 'waiting'}">
 						<div class="line margin-lr-1"></div>
-					ยังไม่ประเมิน
+						<span class="text-center"> ยังไม่ประเมิน </span>
 					</c:if>
 					<c:if test="${post.pawnerPostStatus == 'approve'}">
 						<div class="line margin-lr-1"></div>
