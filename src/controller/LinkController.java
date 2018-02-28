@@ -9,7 +9,10 @@ import org.springframework.web.servlet.ModelAndView;
 
 import entity.Pawner;
 import entity.PawnerPost;
+import entity.Pawnshop;
+import entity.PawnshopPost;
 import service.PawnerService;
+import service.PawnshopService;
 
 @Controller
 public class LinkController {
@@ -17,6 +20,10 @@ public class LinkController {
 	@EJB(mappedName = "ejb:/BoonWeb//PawnerServiceBean!service.PawnerService")
 	PawnerService pmService;
 	
+	@EJB(mappedName = "ejb:/BoonWeb//PawnshopServiceBean!service.PawnshopService")
+	PawnshopService pawnshopServ;
+	
+
 	@RequestMapping("/pawner-post-form-tv")
 	public ModelAndView tv(HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView("pawnerPostFormTv.jsp");
@@ -36,6 +43,17 @@ public class LinkController {
 		PawnerPost pawnerPost = new PawnerPost();
 		pawnerPost.setPawner(pm);
 		mv.addObject("pawnerPost", pawnerPost);
+		return mv;
+	}
+	
+	@RequestMapping("/pawnshop-pledge-sell")
+	public ModelAndView pledgesell(HttpServletRequest request) {
+		ModelAndView mv = new ModelAndView("pawnshopPledgeSell.jsp");
+		long userId = (long) request.getSession().getAttribute("id");
+		Pawnshop pm = pawnshopServ.findPawnshopById(userId);
+		PawnshopPost pawnshopPost = new PawnshopPost();
+		pawnshopPost.setPawnshop(pm);
+		mv.addObject("pawnshopPost", pawnshopPost);
 		return mv;
 	}
 	
