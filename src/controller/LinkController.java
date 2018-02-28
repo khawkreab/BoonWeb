@@ -34,6 +34,17 @@ public class LinkController {
 		mv.addObject("pawnerPost", pawnerPost);
 		return mv;
 	}
+	
+	@RequestMapping("/pawnshop-post-form-tv")
+	public ModelAndView selltv(HttpServletRequest request) {
+		ModelAndView mv = new ModelAndView("pawnshopPostFormTv.jsp");
+		long userId = (long) request.getSession().getAttribute("id");
+		Pawnshop pm = pawnshopServ.findPawnshopById(userId);
+		PawnshopPost pawnshopPost = new PawnshopPost();
+		pawnshopPost.setPawnshop(pm);
+		mv.addObject("pawnshopPost", pawnshopPost);
+		return mv;
+	}
 
 	@RequestMapping("/pawner-pledge")
 	public ModelAndView pledge(HttpServletRequest request) {
