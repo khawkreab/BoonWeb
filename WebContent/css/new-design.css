@@ -100,6 +100,10 @@ li {
 	boder-left: 1px solid #ccc;
 }
 
+.text-center{
+	text-align: center;
+}
+
 /*!
 * override carousel-control-next, .carousel-control-prev
 */
@@ -690,7 +694,6 @@ strong {
 	float: none;
 	margin-right: 0;
 	font-family: inherit;
-	margin-top: 40px;
 	color: #3a4346;
 }
 
