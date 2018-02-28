@@ -69,10 +69,10 @@
 										<a class="nav-link js-scroll-trigger" href="pawnshop-index.html">Home</a>
 									</li>
 									<li class="nav-item nav-item-hover">
-										<a class="nav-link js-scroll-trigger" href="pawnshop-track-estimate.html">track my estimate</a>
+										<a class="nav-link js-scroll-trigger" href="pawnshop-pledge-sell.html">pledge sell</a>
 									</li>
 									<li class="nav-item nav-item-hover">
-										<a class="nav-link js-scroll-trigger" href="pawnshop-estimate-history.html">History</a>
+										<a class="nav-link js-scroll-trigger" href="pawnshop-track-estimate.html">track my estimate</a>
 									</li>
 								</ul>
 							</div>
@@ -149,6 +149,8 @@
 																	<li class="nav-item nav-item-hover">
 																		<a class="nav-link js-scroll-trigger" onclick="location.replace('editPawnshop.html')">Profile</a>
 																	</li>
+																	<li class="nav-item nav-item-hover">
+																		<a class="nav-link js-scroll-trigger" href="pawnshop-estimate-history.html">History</a>																	</li>
 																	<li class="nav-item nav-item-hover">
 																		<a class="nav-link js-scroll-trigger" onclick="location.replace('logout.html')">Log out</a>
 																	</li>
