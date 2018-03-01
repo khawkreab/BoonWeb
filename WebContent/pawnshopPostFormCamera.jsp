@@ -1,5 +1,5 @@
 <!-- 
-// page : pawnshop-post-form-tv
+// page : pawnshop-post-form-Electronic
 // version : 1.0
 // task : create
 // edit by : ter
@@ -24,8 +24,6 @@
 			<!-- Custom styles for this template -->
 			<link href="css/new-design.css" rel="stylesheet">
 			<link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-
 		</head>
 
 		<body>
@@ -35,10 +33,10 @@
 				<div class="container">
 					<div class="re-contain">
 						<div class="Subhead">
-							<h2 class="Subhead-heading">TV</h2>
+							<h2 class="Subhead-heading">Camera</h2>
 							<p class="Subhead-description">This post will show on pawnshop's page for them estimate your post.</p>
 						</div>
-						<form:form method="post" action="saveShopPost.html" commandName="pawnshopPost">
+						<form:form method="post" action="savePost.html" commandName="pawnshopPost">
 							<form:hidden path="pawnshopPostId" />
 							<form:hidden path="pawnshopId.pawnshopId" />
 							<form:hidden path="pawnshopPostItemType" value="Electronic" />
@@ -61,62 +59,73 @@
 								<div class="form-group enter-data">
 									<p>Enter the correct data for your post.Thsi data will show to pawnshop.</p>
 								</div>
-								<!-- TV -->
-								<div id="TV" class="w3-container city">
-									<div class="form-group float-left ">
-
-										<div class=" form-group ">
-
-											<span>Brand</span>
-											<div class="form-group" style="margin-top: 11.5px;">
-												<form:select path="pawnshopPostBrand">
-													<option>Apple</option>
-													<option>LG</option>
-													<option>Panasonic</option>
-													<option>Samsung</option>
-													<option>Sony</option>
-													<option>Sharp</option>
-													<option>TCL</option>
-													<option>Toshiba</option>
-													<option>Others</option>
-												</form:select>
-
-											</div>
+								<!-- camera -->
+								<div id="camera" class="w3-container ">
+									<div class="form-group  ">
+										<span>Brand</span>
+										<div class="form-group" style="margin-top: 11.5px;">
+											<form:select path="pawnshopPostBrand">
+												<option>Canon</option>
+												<option>Fuji Film</option>
+												<option>Nikon</option>
+												<option>Olympus</option>
+												<option>Samsung</option>
+												<option>Sony</option>
+												<option>Others</option>
+											</form:select>
 										</div>
-
-										<div class="form-group-post float-left ">
-											<dt>Model</dt>
-											<dt>
-												<form:input path="pawnshopPostModel" class="post-name" placeholder="" pattern="[0-9A-Za-z]{1,15}" required="required" />
-											</dt>
-										</div>
-										<div class="form-group-post float-left ">
-											<dt>Serial Number</dt>
-											<dt>
-												<form:input path="pawnshopPostSerial" class="post-name" placeholder="" pattern="[0-9A-Za-z]{1,15}" required="required" />
-											</dt>
-										</div>
-										<div class="form-group-post float-left">
-											<dt>Size</dt>
-											<dt>
-												<form:input path="pawnshopPostSize" class="post-name" placeholder=" 23.5x3cm" pattern="[0-9A-Za-z]{1,15}" required="required"
-												/>
-											</dt>
-										</div>
-										<div class="form-group-post float-left ">
-											<dt>Production year</dt>
-											<dt>
-												<form:input path="pawnshopPostProduction" type="date" class="post-name" required="required" />
-											</dt>
-										</div>
-										<div class="form-group-post float-left">
-											<dt style="line-height: 45px;">
-												<form:checkbox path="pawnshopPostRemote" value="yes" /> Remote control
-											</dt>
-											<dt style="line-height: 5px;">
-												<form:checkbox path="pawnshopPostWarranty" value="yes" /> Warranty Certificate
-											</dt>
-										</div>
+									</div>
+									<div class="form-group-post float-left ">
+										<dt>Type of camera</dt>
+										<dt>
+											<form:input path="pawnshopPostTypeCamera" class="post-name" placeholder=" Mirrorless / DSLR " pattern="[0-9A-Za-z]{1,15}" required="required"
+											/>
+										</dt>
+									</div>
+									<div class="form-group-post float-left ">
+										<dt>Model</dt>
+										<dt>
+											<form:input path="pawnshopPostModel" class="post-name" placeholder="" pattern="[0-9A-Za-z]{1,15}" required="required" />
+										</dt>
+									</div>
+									<div class="form-group-post float-left ">
+										<dt>Display size(inch)</dt>
+										<dt>
+											<form:input path="pawnshopPostSize" class="post-name" placeholder="" pattern="[0-9]{1,15}" required="required" />
+										</dt>
+									</div>
+									<div class="form-group-post float-left ">
+										<dt>Serial Number</dt>
+										<dt>
+											<form:input path="pawnshopPostSerial" class="post-name" placeholder="" pattern="[0-9A-Za-z]{1,15}" required="required" />
+										</dt>
+									</div>
+									<div class="form-group-post float-left ">
+										<dt>Type of len</dt>
+										<dt>
+											<form:input path="pawnshopPostCameraLen" class="post-name" placeholder="" pattern="[0-9A-Za-z]{1,15}" required="required" />
+										</dt>
+									</div>
+									<div class="form-group-post float-left ">
+										<dt>Capacity</dt>
+										<dt>
+											<input path="pawnshopPostCapacity" class="post-name" placeholder="" pattern="[0-9]{1,}" required="required" />
+										</dt>
+									</div>
+									<div class="form-group-post float-left ">
+										<dt>Year of purchase</dt>
+										<dt>
+											<input path="pawnshopPostPurchase" type="date" class="post-name" required="required" />
+										</dt>
+									</div>
+									<div class="form-group-post float-left">
+										<dt style="line-height: 45px;">
+											<form:checkbox path="pawnshopPostBattery" value="yes" /> Battery charger
+										</dt>
+										<dt style="line-height: 5px;">
+											<form:checkbox path="pawnshopPostWarranty" value="yes" /> Warranty Certificate
+											<strong>(If you have)</strong>
+										</dt>
 									</div>
 								</div>
 							</div>
