@@ -39,7 +39,7 @@
 						</div>
 						<form:form method="post" action="saveShopPost.html" commandName="pawnshopPost">
 							<form:hidden path="pawnerPostId" />
-							<form:hidden path="pawnerId.pawnerId" />
+							<form:hidden path="pawnshopId.pawnshopId" />
 							<form:hidden path="pawnerPostItemType" value="Electronic" />
 							<div style="margin-bottom: 20px;">
 								<div class="form-group float-left">

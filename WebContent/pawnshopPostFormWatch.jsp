@@ -37,9 +37,9 @@
 							<h2 class="Subhead-heading">Create Post Watch</h2>
 							<p class="Subhead-description">This post will show on pawnshop's page for them estimate your post.</p>
 						</div>
-						<form:form method="post" action="savePost.html" commandName="pawnerPost">
+						<form:form method="post" action="saveShopPost.html" commandName="pawnShopPost">
 							<form:hidden path="pawnerPostId" />
-							<form:hidden path="pawnerId.pawnerId" />
+							<form:hidden path="pawnshopId.pawnshopId" />
 							<form:hidden path="pawnerPostItemType" value="watch" />
 							<div style="margin-bottom: 20px;">
 								<div class="form-group float-left">
