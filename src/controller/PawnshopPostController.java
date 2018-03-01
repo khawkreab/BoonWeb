@@ -45,6 +45,21 @@ public class PawnshopPostController {
 		return "redirect:pawnshop-pledge-sell.html";
 	}
 	
+	@RequestMapping("/pawnshop-list-post")
+	public ModelAndView list(HttpServletRequest request) {
+		ModelAndView mv = new ModelAndView("pawnshopListPost.jsp");
+		List<PawnshopPost> pawnshopPosts;
+		try {
+			long userId = (long) request.getSession().getAttribute("id");
+			pawnshopPosts = pawnshopPostService.findPawnshopPostByPawnshopId(userId);
+			
+			mv.addObject("pawnshopPosts", pawnshopPosts);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return mv;
+	}
+	
 //	@RequestMapping("/pawnshop-track-sellpledge")
 //	public ModelAndView sellpledge(HttpServletRequest request) {
 //		ModelAndView mv = new ModelAndView("pawnshopTrackMySellPlege.jsp");
