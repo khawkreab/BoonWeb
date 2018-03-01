@@ -84,7 +84,10 @@
 								</button>
 
 							</form>
-							<button class="btn btn-primary btn-block">add to order</button>
+							<form method="post" action="saveOrder.html" >
+								<input type="hidden" name="pawnshopPostId" value="${pawnshopPosts.pawnshopPostId}"/>
+								<button type="submit" class="btn btn-primary btn-block">add to order</button>
+							</form>
 							<small class="text-muted float-right">Province
 								${pawnshopPosts.pawnshopId.pawnshopProvince }</small>
 						</div>
