@@ -68,7 +68,7 @@
 
 					</div>
 
-					<c:if test="${post.pawnerPostStatus == 'complete'}">
+					<c:if test="${post.pawnerPostStatus == 'Complete'}">
 						<div class="line margin-lr-1"></div>
 						<div class="history-show-estimate">
 							<div id="showlist${post.pawnerPostId}" class="collapse">
