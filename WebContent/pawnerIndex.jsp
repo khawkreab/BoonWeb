@@ -67,7 +67,7 @@
 				<div class="list-filter"></div>
 				<div class="list-main">
 					<c:forEach items="${pawnshopPosts}" var="pawnshopPosts">
-						<div class="card">
+						<div class="card-h card">
 							<form method="post" action="pawnshop-estimate-form.html">
 
 								<input type="hidden" name="postId"

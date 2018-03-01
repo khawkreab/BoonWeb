@@ -28,7 +28,8 @@
 
 <!-- Custom styles for this template -->
 <link href="css/new-design.css" rel="stylesheet">
-<link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="vendor/font-awesome/css/font-awesome.min.css"
+	rel="stylesheet" type="text/css">
 
 </head>
 
@@ -43,7 +44,8 @@
 				<div class="list-filter"></div>
 				<div class="list-main">
 					<c:forEach items="${pawnerPosts}" var="post">
-						<form method="post" action="pawnshop-estimate-form.html" class="card">
+						<form method="post" action="pawnshop-estimate-form.html"
+							class="card">
 
 							<input type="hidden" name="postId" value="${post.pawnerPostId}" />
 							<input type="hidden" name="postType"
@@ -52,10 +54,12 @@
 								<span class="card-img-top"> <img src="img/profile.jpg"
 									alt="Card image cap"></span>
 								<div class="card-body">
-									<span class="card-title"><p>${post.pawnerPostName}
-											- ${post.pawnerPostItemType}</p></span> <span class="card-text">Province
-										: ${post.pawnerId.pawnerProvince }</span> <span class="card-footer">
-										<small class="text-muted">${post.pawnerPostDate }</small>
+									<span class="card-title"><p>${post.pawnerPostName}-
+											${post.pawnerPostItemType}</p></span> <span class="card-text"></span> <span
+										class="card-footer"> <small class="text-muted">
+											Province : ${post.pawnerId.pawnerProvince } <br>
+											${post.pawnerPostDate }
+									</small>
 									</span>
 								</div>
 							</button>

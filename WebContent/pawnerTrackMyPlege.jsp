@@ -54,75 +54,86 @@
 						</div>
 					</div>
 					<div class="history-body">
-						<span class="history-img"><img class="" src="" /></span> <span
-							class="history-name">${post.pawnerPostName }
-							${post.pawnerPostBrand } ${post.pawnerPostTypeCamera }
-							${post.pawnerPostCameraLen } </span>
-						<div class="history-detail">
-							<ul>
-
-								<!-- Watch,Electronic -->
-								<c:if test="${post.pawnerPostModel != null}">
-									<li>Production : ${post.pawnerPostProduction}</li>
-									<li>Model : ${post.pawnerPostModel}</li>
-									<li>Serial : ${post.pawnerPostSerial}</li>
-								</c:if>
-
-								<c:if test="${post.pawnerPostWarranty != null}">
-									<li>Warranty : ${post.pawnerPostWarranty}</li>
-								</c:if>
-								<c:if test="${post.pawnerPostPurchase != null}">
-									<li>Purchase : ${post.pawnerPostPurchase }</li>
-								</c:if>
-
-								<!-- Gold -->
-								<c:if test="${post.pawnerPostPure != null}">
-									<li>Pure : ${post.pawnerPostPure  }</li>
-									<li>Weigh : ${post.pawnerPostWeigh }</li>
-									<li>Category : ${post.pawnerPostCategory }</li>
-								</c:if>
-
-								<!-- Watch -->
-								<c:if test="${post.pawnerPostCase != null}">
-									<li>Case : ${post.pawnerPostCase }</li>
-									<li>Bracelet : ${post.pawnerPostBracelet }</li>
-									<c:if test="${post.pawnerPostDiamond != null}">
-										<li>Diamond : ${post.pawnerPostDiamond }</li>
-									</c:if>
-									<c:if test="${post.pawnerPostPackage != null}">
-										<li>Package : ${post.pawnerPostPackage }</li>
-									</c:if>
-								</c:if>
-
-								<!-- Electronic tv com telephone -->
-								<c:if test="${post.pawnerPostSize != null}">
-									<li>Size : ${post.pawnerPostSize }</li>
-								</c:if>
-
-								<!-- Electronic camera com telephone -->
-								<c:if test="${post.pawnerPostBattery != null}">
-									<li>Battery : ${post.pawnerPostBattery }</li>
-								</c:if>
-
-								<!-- Electronic com telephone -->
-								<c:if test="${post.pawnerPostHarddisk != null}">
-									<li>Harddisk : ${post.pawnerPostHarddisk }</li>
-								</c:if>
-
-								<!-- Electronic tv -->
-								<c:if test="${post.panwePostRemote != null}">
-									<li>Remote : ${post.panwePostRemote }</li>
-								</c:if>
-
-								<!-- Electronic com-->
-								<c:if test="${post.pawnerPostRam != null}">
-									<li>Ram : ${post.pawnerPostRam }</li>
-								</c:if>
+						<div class="row">
+							<div class="col-sm-5">
 
 
-								<!-- Electronic telephone-->
-								<li>Description : ${post.pawnerPostDescription }</li>
-							</ul>
+
+								<span class="history-img"><img class=""
+									src="img/gold.png" width="300" /></span>
+							</div>
+							<div class="col-sm-7">
+
+								<span class="history-name">${post.pawnerPostName }
+									${post.pawnerPostBrand } ${post.pawnerPostTypeCamera }
+									${post.pawnerPostCameraLen } </span>
+								<div class="history-detail">
+									<ul>
+
+										<!-- Watch,Electronic -->
+										<c:if test="${post.pawnerPostModel != null}">
+											<li>Production : ${post.pawnerPostProduction}</li>
+											<li>Model : ${post.pawnerPostModel}</li>
+											<li>Serial : ${post.pawnerPostSerial}</li>
+										</c:if>
+
+										<c:if test="${post.pawnerPostWarranty != null}">
+											<li>Warranty : ${post.pawnerPostWarranty}</li>
+										</c:if>
+										<c:if test="${post.pawnerPostPurchase != null}">
+											<li>Purchase : ${post.pawnerPostPurchase }</li>
+										</c:if>
+
+										<!-- Gold -->
+										<c:if test="${post.pawnerPostPure != null}">
+											<li>Pure : ${post.pawnerPostPure  }</li>
+											<li>Weigh : ${post.pawnerPostWeigh }</li>
+											<li>Category : ${post.pawnerPostCategory }</li>
+										</c:if>
+
+										<!-- Watch -->
+										<c:if test="${post.pawnerPostCase != null}">
+											<li>Case : ${post.pawnerPostCase }</li>
+											<li>Bracelet : ${post.pawnerPostBracelet }</li>
+											<c:if test="${post.pawnerPostDiamond != null}">
+												<li>Diamond : ${post.pawnerPostDiamond }</li>
+											</c:if>
+											<c:if test="${post.pawnerPostPackage != null}">
+												<li>Package : ${post.pawnerPostPackage }</li>
+											</c:if>
+										</c:if>
+
+										<!-- Electronic tv com telephone -->
+										<c:if test="${post.pawnerPostSize != null}">
+											<li>Size : ${post.pawnerPostSize }</li>
+										</c:if>
+
+										<!-- Electronic camera com telephone -->
+										<c:if test="${post.pawnerPostBattery != null}">
+											<li>Battery : ${post.pawnerPostBattery }</li>
+										</c:if>
+
+										<!-- Electronic com telephone -->
+										<c:if test="${post.pawnerPostHarddisk != null}">
+											<li>Harddisk : ${post.pawnerPostHarddisk }</li>
+										</c:if>
+
+										<!-- Electronic tv -->
+										<c:if test="${post.panwePostRemote != null}">
+											<li>Remote : ${post.panwePostRemote }</li>
+										</c:if>
+
+										<!-- Electronic com-->
+										<c:if test="${post.pawnerPostRam != null}">
+											<li>Ram : ${post.pawnerPostRam }</li>
+										</c:if>
+
+
+										<!-- Electronic telephone-->
+										<li>Description : ${post.pawnerPostDescription }</li>
+									</ul>
+								</div>
+							</div>
 						</div>
 
 					</div>
