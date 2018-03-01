@@ -1,5 +1,5 @@
 <!-- 
-// page : pawner-post-form-Electronic
+// page : pawnshop-post-form-Electronic
 // version : 1.0
 // task : create
 // edit by : ter
@@ -16,7 +16,7 @@
 			<meta name="description" content="">
 			<meta name="author" content="">
 
-			<title>pawner-post-form</title>
+			<title>pawnshop-post-form</title>
 
 			<!-- Bootstrap core CSS -->
 			<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -37,9 +37,9 @@
 							<p class="Subhead-description">This post will show on pawnshop's page for them estimate your post.</p>
 						</div>
 						<form:form method="post" action="saveShopPost.html" commandName="pawnshopPost">
-							<form:hidden path="pawnerPostId" />
+							<form:hidden path="pawnshopPostId" />
 							<form:hidden path="pawnshopId.pawnshopId" />
-							<form:hidden path="pawnerPostItemType" value="Electronic" />
+							<form:hidden path="pawnshopPostItemType" value="Electronic" />
 							<div style="margin-bottom: 20px;">
 								<div class="form-group float-left">
 									<dt>
@@ -50,7 +50,7 @@
 								<div class="form-group-post float-left" style="margin-bottom: 30px;">
 									<span>Post name</span>
 									<span>
-										<form:input path="pawnerPostName" class="post-name" pattern="[A-Za-z0-9]{3,45}" required="required" />
+										<form:input path="pawnshopPostName" class="post-name" pattern="[A-Za-z0-9]{3,45}" required="required" />
 									</span>
 									<p class="Subhead-description">plass enter data about your item for pawnshop to understand.</p>
 								</div>
@@ -65,7 +65,7 @@
 									<div class=" form-group">
 										<span>Brand</span>
 										<div class="form-group" style="margin-top: 11.5px;">
-											<form:select path="pawnerPostBrand">
+											<form:select path="pawnshopPostBrand">
 												<option>Apple</option>
 												<option>HP</option>
 												<option>Lenovo</option>
@@ -79,33 +79,33 @@
 											<div class="form-group-post float-left ">
 												<dt>Model</dt>
 												<dt>
-													<form:input path="pawnerPostModel" class="post-name" placeholder="" pattern="[0-9A-Za-z]{1,15}" required="required" />
+													<form:input path="pawnshopPostModel" class="post-name" placeholder="" pattern="[0-9A-Za-z]{1,15}" required="required" />
 												</dt>
 											</div>
 											<div class="form-group-post float-left ">
 												<dt>Serial Number</dt>
 												<dt>
-													<form:input path="pawnerPostSerial" class="post-name" placeholder="" pattern="[0-9A-Za-z]{1,15}" required="required" />
+													<form:input path="pawnshopPostSerial" class="post-name" placeholder="" pattern="[0-9A-Za-z]{1,15}" required="required" />
 												</dt>
 											</div>
 											<div class="form-group-post float-left ">
 												<dt>Capacity</dt>
 												<dt>
-													<form:input path="pawnerPostCapacity" class="post-name" placeholder="" pattern="[0-9A-Za-z]{1,}" required="required" />
+													<form:input path="pawnshopPostCapacity" class="post-name" placeholder="" pattern="[0-9A-Za-z]{1,}" required="required" />
 												</dt>
 											</div>
 											<div class="form-group-post float-left ">
 												<dt>Year of purchase</dt>
 												<dt>
-													<form:input path="pawnerPostPurchase" type="date" class="post-name" required="required" />
+													<form:input path="pawnshopPostPurchase" type="date" class="post-name" required="required" />
 												</dt>
 											</div>
 											<div class="form-group-post float-left">
 												<dt style="line-height: 45px;">
-													<form:checkbox path="pawnerPostBattery" value="yes" /> Battery charger
+													<form:checkbox path="pawnshopPostBattery" value="yes" /> Battery charger
 												</dt>
 												<dt style="line-height: 5px;">
-													<form:checkbox path="pawnerPostWarranty" value="yes" /> Warranty Certificate
+													<form:checkbox path="pawnshopPostWarranty" value="yes" /> Warranty Certificate
 													<strong>(If you have)</strong>
 												</dt>
 											</div>
@@ -118,7 +118,7 @@
 							</div>
 							<div class="form-group-post">
 								<dt>
-									<form:textarea path="pawnerPostDescription" class="post-description" style="max-width: 100%" pattern="[0-9A-Za-z]{0,}"></form:textarea>
+									<form:textarea path="pawnshopPostDescription" class="post-description" style="max-width: 100%" pattern="[0-9A-Za-z]{0,}"></form:textarea>
 								</dt>
 								<p class="Subhead-description">(optional) If you have more data input here!</p>
 							</div>
