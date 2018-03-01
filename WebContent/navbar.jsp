@@ -53,9 +53,6 @@
 								<li class="nav-item nav-item-hover">
 									<a class="nav-link js-scroll-trigger" href="pawner-track-pledge.html">track my pledge</a>
 								</li>
-								<li class="nav-item nav-item-hover">
-									<a class="nav-link js-scroll-trigger" href="pawner-post-history.html">History</a>
-								</li>
 							</ul>
 
 
@@ -73,6 +70,9 @@
 									</li>
 									<li class="nav-item nav-item-hover">
 										<a class="nav-link js-scroll-trigger" href="pawnshop-track-estimate.html">track my estimate</a>
+									</li>
+									<li class="nav-item nav-item-hover">
+										<a class="nav-link js-scroll-trigger" href="pawnshop-list-post.html">my post</a>
 									</li>
 								</ul>
 							</div>
@@ -113,6 +113,9 @@
 																<a class="nav-link js-scroll-trigger" onclick="location.replace('editPawner.html')">Profile</a>
 															</li>
 															<li class="nav-item nav-item-hover">
+																<a class="nav-link js-scroll-trigger" href="pawner-post-history.html">History</a>
+															</li>
+															<li class="nav-item nav-item-hover">
 																<a class="nav-link js-scroll-trigger" onclick="location.replace('logout.html')">Log out</a>
 															</li>
 														</ul>
@@ -150,7 +153,8 @@
 																		<a class="nav-link js-scroll-trigger" onclick="location.replace('editPawnshop.html')">Profile</a>
 																	</li>
 																	<li class="nav-item nav-item-hover">
-																		<a class="nav-link js-scroll-trigger" href="pawnshop-estimate-history.html">History</a>																	</li>
+																		<a class="nav-link js-scroll-trigger" href="pawnshop-estimate-history.html">History</a>	
+																	</li>																</li>
 																	<li class="nav-item nav-item-hover">
 																		<a class="nav-link js-scroll-trigger" onclick="location.replace('logout.html')">Log out</a>
 																	</li>
