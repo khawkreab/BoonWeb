@@ -36,7 +36,7 @@
 							<h2 class="Subhead-heading">Camera</h2>
 							<p class="Subhead-description">This post will show on pawnshop's page for them estimate your post.</p>
 						</div>
-						<form:form method="post" action="savePost.html" commandName="pawnshopPost">
+						<form:form method="post" action="saveShopPost.html" commandName="pawnshopPost">
 							<form:hidden path="pawnshopPostId" />
 							<form:hidden path="pawnshopId.pawnshopId" />
 							<form:hidden path="pawnshopPostItemType" value="Electronic" />

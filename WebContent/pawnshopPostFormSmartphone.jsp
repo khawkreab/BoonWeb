@@ -36,7 +36,7 @@
 							<h2 class="Subhead-heading">Smart Phone</h2>
 							<p class="Subhead-description">This post will show on pawnshop's page for them estimate your post.</p>
 						</div>
-						<form:form method="post" action="savePost.html" commandName="pawnerPost">
+						<form:form method="post" action="saveShopPost.html" commandName="pawnshopPost">
 							<form:hidden path="pawnerPostId" />
 							<form:hidden path="pawnerId.pawnerId" />
 							<form:hidden path="pawnerPostItemType" value="Electronic" />
