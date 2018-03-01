@@ -66,7 +66,12 @@
 									<li>Production : ${post.pawnerPostProduction}</li>
 									<li>Model : ${post.pawnerPostModel}</li>
 									<li>Serial : ${post.pawnerPostSerial}</li>
+								</c:if>
+
+								<c:if test="${post.pawnerPostWarranty != null}">
 									<li>Warranty : ${post.pawnerPostWarranty}</li>
+								</c:if>
+								<c:if test="${post.pawnerPostPurchase != null}">
 									<li>Purchase : ${post.pawnerPostPurchase }</li>
 								</c:if>
 
