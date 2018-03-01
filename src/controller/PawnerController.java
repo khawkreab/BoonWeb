@@ -11,14 +11,24 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import entity.OrderItem;
 import entity.Pawner;
+import entity.PawnshopPost;
+import service.OrderItemService;
 import service.PawnerService;
+import service.PawnshopPostService;
 
 @Controller
 public class PawnerController {
 	
 	@EJB(mappedName = "ejb:/BoonWeb/PawnerServiceBean!service.PawnerService")
 	PawnerService pmService;
+	
+	@EJB(mappedName = "ejb:/BoonWeb/OrderItemServiceBean!service.OrderItemService")
+	OrderItemService orService;
+	
+	@EJB(mappedName = "ejb:/BoonWeb/PawnshopPostServiceBean!service.PawnshopPostService")
+	PawnshopPostService psService;
 	
 	@RequestMapping("/pawner-register-form")
 	public ModelAndView newGold(){
@@ -61,11 +71,12 @@ public class PawnerController {
 	@RequestMapping("/pawner-index")
 	public ModelAndView pawnerIndex(HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView("pawnerIndex.jsp");
-		Pawner pawner;
+		List<PawnshopPost> pawnshopPosts;
 		try {
 			long userId = (long) request.getSession().getAttribute("id");
-			pawner = pmService.findPawnerById(userId);
-			mv.addObject("pawner", pawner);
+			
+			pawnshopPosts = psService.getAllPawnshopPost();
+			mv.addObject("pawnshopPosts", pawnshopPosts);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

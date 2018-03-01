@@ -7,8 +7,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
     <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-        <html lang="en">
+        <!Document html>
 
         <head>
 
@@ -57,45 +58,35 @@
             <!-- Navigation -->
             <jsp:include page="navbar.jsp" />
 
-            <section>
-                <h2>Coming Soon</h2>
-                <!-- <div class="container">
+           	<section>
+		<div class="container">
+			<div class="list-body">
+				<div class="list-filter"></div>
+				<div class="list-main">
+					<c:forEach items="${pawnshopPosts}" var="pawnshopPosts">
+						<form method="post" action="pawnshop-estimate-form.html" class="card">
 
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="box-sup">
-                                <div class="box-semi text-center">
-                                    <h1>The 5 Step</h1>
-                                    <h6>---- easy to pawn ----</h6>
-                                    <br>
-                                </div>
-                                <div class="box-semi">
-                                    <span class="time-line"></span>
-                                    <ul>
-                                        <li>
-                                            <span class="cycle">1</span> Enter item information</li>
-                                        <li>
-                                            <span class="cycle">2</span> Upload picture and post item
-                                        </li>
-                                        <li>
-                                            <span class="cycle">3</span> Get offers from pawner shop</li>
-                                        <li>
-                                            <span class="cycle">4</span> Walk in pawn shop</li>
-                                        <li>
-                                            <span class="cycle">5</span> Deal rice again with pawn shop
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="clear"></div>
-                            </div>
+							<input type="hidden" name="postId" value="${pawnshopPosts.pawnshopPostId}" />
+							<input type="hidden" name="postType"
+								value="${pawnshopPosts.pawnshopPostItemType}" />
+							<button type="submit" class="btn-card">
+								<span class="card-img-top"> <img src="img/profile.jpg"
+									alt="Card image cap"></span>
+								<div class="card-body">
+									<span class="card-title"><p>${pawnshopPosts.pawnshopPostName}
+											- ${pawnshopPosts.pawnshopPostBrand}</p></span> <span class="card-text">Province
+										: </span> <span class="card-footer">
+										<small class="text-muted">${pawnshopPosts.pawnshopPostDate }</small>
+									</span>
+								</div>
+							</button>
 
-                        </div>
-                        <div class="col-md-6">
-                      
-                        </div>
-                    </div>
-                </div> -->
-            </section>
+						</form>
+					</c:forEach>
+				</div>
+			</div>
+		</div>
+	</section>
 
 
         </body>

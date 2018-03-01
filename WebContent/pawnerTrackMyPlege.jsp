@@ -56,12 +56,8 @@
 					<div class="history-body">
 						<span class="history-img"><img class="" src="" /></span> <span
 							class="history-name">${post.pawnerPostName }
-							${post.pawnerPostBrand } <!-- Electronic camera--> <c:if
-								test="${post.pawnerPostTypeCamera != null}">
-									${post.pawnerPostTypeCamera }
-									${post.pawnerPostCameraLen }
-								</c:if>
-						</span>
+							${post.pawnerPostBrand } ${post.pawnerPostTypeCamera }
+							${post.pawnerPostCameraLen } </span>
 						<div class="history-detail">
 							<ul>
 

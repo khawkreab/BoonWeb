@@ -32,7 +32,7 @@ public class PawnshopPostController {
 		
 		try {
 			System.out.println(pawnshopPost.getClass());
-			if (0 == pawnshopPost.getPawnshopPostId()) { 
+			if (pawnshopPost.getPawnshopPostId() == 0) { 
 				pawnshopPost.setPawnshopPostDate(date);
 				pawnshopPost.setPawnshopPostStatus(status);
 				pawnshopPostService.insert(pawnshopPost);

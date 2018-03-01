@@ -10,7 +10,8 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page import="java.util.Date"%>
 
-<html lang="en">
+<!DOCTYPE html>
+<html>
 
 <head>
 
@@ -27,8 +28,7 @@
 
 <!-- Custom styles for this template -->
 <link href="css/new-design.css" rel="stylesheet">
-<link href="vendor/font-awesome/css/font-awesome.min.css"
-	rel="stylesheet" type="text/css">
+<link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
 </head>
 
