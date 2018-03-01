@@ -80,6 +80,17 @@ public class LinkController {
 		return mv;
 	}
 	
+	@RequestMapping("/pawnshop-post-form-laptop")
+	public ModelAndView selllaptop(HttpServletRequest request) {
+		ModelAndView mv = new ModelAndView("pawnshopPostFormLaptop.jsp");
+		long userId = (long) request.getSession().getAttribute("id");
+		Pawnshop pm = pawnshopServ.findPawnshopById(userId);
+		PawnshopPost pawnshopPost = new PawnshopPost();
+		pawnshopPost.setPawnshop(pm);
+		mv.addObject("pawnshopPost", pawnshopPost);
+		return mv;
+	}
+	
 	@RequestMapping("/pawner-post-form-smartphone")
 	public ModelAndView smartphone(HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView("pawnerPostFormSmartphone.jsp");
@@ -88,6 +99,17 @@ public class LinkController {
 		PawnerPost pawnerPost = new PawnerPost();
 		pawnerPost.setPawner(pm);
 		mv.addObject("pawnerPost", pawnerPost);
+		return mv;
+	}
+	
+	@RequestMapping("/pawnshop-post-form-smartphone")
+	public ModelAndView sellsmartphone(HttpServletRequest request) {
+		ModelAndView mv = new ModelAndView("pawnshopPostFormSmartphone.jsp");
+		long userId = (long) request.getSession().getAttribute("id");
+		Pawnshop pm = pawnshopServ.findPawnshopById(userId);
+		PawnshopPost pawnshopPost = new PawnshopPost();
+		pawnshopPost.setPawnshop(pm);
+		mv.addObject("pawnshopPost", pawnshopPost);
 		return mv;
 	}
 	
@@ -101,15 +123,37 @@ public class LinkController {
 		mv.addObject("pawnerPost", pawnerPost);
 		return mv;
 	}
-
-	@RequestMapping("/pawner-post-form-receipt")
-	public ModelAndView receipt(HttpServletRequest request) {
-		ModelAndView mv = new ModelAndView("pawnerPostFormReceipt.jsp");
+	@RequestMapping("/pawnshop-post-form-camera")
+	public ModelAndView sellcamera(HttpServletRequest request) {
+		ModelAndView mv = new ModelAndView("pawnshopPostFormCamera.jsp");
 		long userId = (long) request.getSession().getAttribute("id");
-		Pawner pm = pmService.findPawnerById(userId);
-		PawnerPost pawnerPost = new PawnerPost();
-		pawnerPost.setPawner(pm);
-		mv.addObject("pawnerPost", pawnerPost);
+		Pawnshop pm = pawnshopServ.findPawnshopById(userId);
+		PawnshopPost pawnshopPost = new PawnshopPost();
+		pawnshopPost.setPawnshop(pm);
+		mv.addObject("pawnshopPost", pawnshopPost);
 		return mv;
 	}
+	
+	@RequestMapping("/pawnshop-post-form-gold")
+	public ModelAndView sellgold(HttpServletRequest request) {
+		ModelAndView mv = new ModelAndView("pawnshopPostFormGold.jsp");
+		long userId = (long) request.getSession().getAttribute("id");
+		Pawnshop pm = pawnshopServ.findPawnshopById(userId);
+		PawnshopPost pawnshopPost = new PawnshopPost();
+		pawnshopPost.setPawnshop(pm);
+		mv.addObject("pawnshopPost", pawnshopPost);
+		return mv;
+	}
+	
+	@RequestMapping("/pawnshop-post-form-watch")
+	public ModelAndView sellwatch(HttpServletRequest request) {
+		ModelAndView mv = new ModelAndView("pawnshopPostFormWatch.jsp");
+		long userId = (long) request.getSession().getAttribute("id");
+		Pawnshop pm = pawnshopServ.findPawnshopById(userId);
+		PawnshopPost pawnshopPost = new PawnshopPost();
+		pawnshopPost.setPawnshop(pm);
+		mv.addObject("pawnshopPost", pawnshopPost);
+		return mv;
+	}
+
 }
