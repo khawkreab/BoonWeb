@@ -1,8 +1,8 @@
 <!-- 
 // page : pawnshop-Track-estimate
-// version : 1.1
-// task : liSt & submit complete
-// edit by : khawkreab
+// version : 1.2
+// task : liSt pawner 
+// edit by : Kwin
  -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -130,6 +130,15 @@
 							<li>${track.estimatePriceMax}</li>
 							<li>${track.estimateDate}</li>
 							<li>${track.estimateAccessDate}</li>
+							
+							
+							
+							
+							<li>${track.pawnerPostId.pawnerId.pawnerFirstname}</li>
+							<li>${track.pawnerPostId.pawnerId.pawnerLastname}</li>
+							<li>${track.pawnerPostId.pawnerId.pawnerEmail}</li>
+							<li>${track.pawnerPostId.pawnerId.pawnerSex}</li>
+							
 							<li>${track.estimateStatus}</li>
 
 

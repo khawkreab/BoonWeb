@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import entity.Estimate;
+import entity.Pawner;
 import entity.PawnerPost;
 import entity.Pawnshop;
 import service.EstimateService;
@@ -201,15 +202,18 @@ public class EstimateController {
 	public ModelAndView trackMyEstimate(HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView("pawnshopTrackEstimate.jsp");
 		Pawnshop pawnshop;
+		Pawner pawner;
 		List<Estimate> trackMyEstimate;
 		List<PawnerPost> pawnerPosts;
 		try {
 			long userId = (long) request.getSession().getAttribute("id");
 			pawnshop = pawnshopServ.findPawnshopById(userId);
+			pawner = pmService.findPawnerById(userId);
 			pawnerPosts = pawnerPostService.findPawnerPostByPawnerId(userId);
 			trackMyEstimate = estimateService.findEstimateByPawnshopId(userId);
 
 			mv.addObject("pawnshop", pawnshop);
+			mv.addObject("pawner",pawner);
 			mv.addObject("pawnerPosts", pawnerPosts);
 			mv.addObject("trackMyEstimate", trackMyEstimate);
 		} catch (Exception e) {
