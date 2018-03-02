@@ -9,6 +9,7 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page import="java.util.Date"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 <!DOCTYPE html>
 <html>
@@ -55,13 +56,15 @@
 									alt="Card image cap"></span>
 								<div class="card-body">
 									<span class="card-title"><p>${post.pawnerPostName}-
-											${post.pawnerPostItemType}</p></span> <span class="card-text"></span> <span
-										class="card-footer"> <small class="text-muted">
-											Province : ${post.pawnerId.pawnerProvince } <br>
-											${post.pawnerPostDate }
-									</small>
-									</span>
+											${post.pawnerPostItemType}</p> </span>
 								</div>
+								<small class="text-muted"> Province :
+									${post.pawnerId.pawnerProvince } <br> <fmt:formatDate
+										type="both" dateStyle="long" timeStyle="short"
+										value="${post.pawnerPostDate }" />
+								</small>
+
+
 							</button>
 
 						</form>

@@ -106,7 +106,7 @@
 
 								<!-- Electronic tv -->
 								<c:if test="${post.pawnshopPostRemote != null}">
-									<li>Remote : ${post.panwePostRemote }</li>
+									<li>Remote : ${post.pawnshopPostRemote }</li>
 								</c:if>
 
 								<!-- Electronic com-->

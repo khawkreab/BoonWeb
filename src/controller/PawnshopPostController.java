@@ -42,7 +42,7 @@ public class PawnshopPostController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return "redirect:pawnshop-pledge-sell.html";
+		return "redirect:pawnshop-list-post.html";
 	}
 	
 	@RequestMapping("/pawnshop-list-post")

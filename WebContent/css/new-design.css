@@ -104,6 +104,9 @@ li {
 	text-align: center;
 }
 
+form{
+	margin: 0px;
+}
 /*!
 * override carousel-control-next, .carousel-control-prev
 */

@@ -53,6 +53,9 @@
 								<li class="nav-item nav-item-hover">
 									<a class="nav-link js-scroll-trigger" href="pawner-track-pledge.html">track my pledge</a>
 								</li>
+									<li class="nav-item nav-item-hover">
+									<a class="nav-link js-scroll-trigger" href="pawner-order.html">my order</a>
+								</li>
 							</ul>
 
 
