@@ -8,6 +8,8 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page import="java.util.Date"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 <html>
 <head>
@@ -39,7 +41,9 @@
 								</c:if>
 							</h5>
 						</div>
-						<div class="ml-auto p-2">${pawnerPost.pawnerPostDate}</div>
+						<div class="ml-auto p-2"><fmt:formatDate
+										type="both" dateStyle="long" timeStyle="short"
+										value="${post.pawnerPostDate }" /></div>
 					</div>
 
 					<br>ผู้จำนำ ${pawnerPost.pawnerId.pawnerFirstname}

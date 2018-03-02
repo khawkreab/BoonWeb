@@ -14,6 +14,8 @@
 <link href="css/new-design.css" rel="stylesheet">
 <link href="vendor/font-awesome/css/font-awesome.min.css"
 	rel="stylesheet" type="text/css">
+	<%@ page import="java.util.Date"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 </head>
 <body>
 	<jsp:include page="navbar.jsp" />
@@ -37,7 +39,9 @@
 				<div class="history-main">
 					<div class="d-flex history-title">
 						<div class="mr-auto p-2">
-							<span>${order.orderItemDateIn }</span>
+						<fmt:formatDate
+										type="both" dateStyle="long" timeStyle="short"
+										value="${order.orderItemDateIn }" />
 						</div>
 						<div class="ml-auto p-2">
 							<span>${order.pawnshopPostId.pawnshopId.pawnshopName } shop</span>

@@ -7,6 +7,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page import="java.util.Date"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -47,7 +49,9 @@
 				<div class="history-main">
 					<div class="d-flex history-title">
 						<div class="mr-auto p-2">
-							<span>${post.pawnerPostDate }</span>
+							<fmt:formatDate
+										type="both" dateStyle="long" timeStyle="short"
+										value="${post.pawnerPostDate }" />
 						</div>
 						<div class="ml-auto p-2">
 							<span>Delete</span>
