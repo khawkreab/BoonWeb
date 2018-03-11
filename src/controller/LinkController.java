@@ -1,5 +1,7 @@
 package controller;
 
+import java.util.List;
+
 import javax.ejb.EJB;
 import javax.servlet.http.HttpServletRequest;
 
@@ -155,5 +157,5 @@ public class LinkController {
 		mv.addObject("pawnshopPost", pawnshopPost);
 		return mv;
 	}
-
+	
 }

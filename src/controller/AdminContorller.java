@@ -5,6 +5,7 @@ import java.util.List;
 import javax.ejb.EJB;
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -13,6 +14,7 @@ import entity.Pawnshop;
 import service.PawnerService;
 import service.PawnshopService;
 
+@Controller
 public class AdminContorller {
 	@EJB(mappedName = "ejb:/BoonWeb/PawnerServiceBean!service.PawnerService")
 	PawnerService pmService;
@@ -38,7 +40,6 @@ public class AdminContorller {
 		}
 		return mv;
 	}
-
 	// Control About Pawnshop
 	@RequestMapping("/admin-list-pawnshop")
 	public ModelAndView adminListPawnshop(HttpServletRequest request) {
