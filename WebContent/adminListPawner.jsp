@@ -18,78 +18,25 @@
 
 <title>admin-list-pawner</title>
 
-<!-- Bootstrap core CSS -->
-<link href="css/bootstrap.min.css" rel="stylesheet">
 
-<!-- MetisMenu CSS -->
-<link href="css/metisMenu.min.css" rel="stylesheet">
+
+<!-- Bootstrap core CSS -->
+<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
 <!-- Custom styles for this template -->
+<link href="css/new-design.css" rel="stylesheet">
 <link href="vendor/font-awesome/css/font-awesome.min.css"
 	rel="stylesheet" type="text/css">
 
-<!-- Custom CSS -->
-<link href="css/startmin.css" rel="stylesheet">
-
-<!-- Custom Fonts -->
-<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
 </head>
 <body>
 	<div id="">
 
 		<!-- Navigation -->
-		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-			<div class="navbar-header">
-			</div>
-
-			<button type="button" class="navbar-toggle" data-toggle="collapse"
-				data-target=".navbar-collapse">
-				<span class="sr-only">Toggle navigation</span> <span
-					class="icon-bar"></span> <span class="icon-bar"></span> <span
-					class="icon-bar"></span>
-			</button>
-
-			<ul class="nav navbar-nav navbar-left navbar-top-links">
-			</ul>
-
-			<ul class="nav navbar-right navbar-top-links">
-				<li class="dropdown"><a class="dropdown-toggle"
-					data-toggle="dropdown" href="#"> <i class="fa fa-user fa-fw"></i>
-						Admin <b class="caret"></b>
-				</a>
-					<ul class="dropdown-menu dropdown-user">
-						<li class="divider"></li>
-						<li><a href="signOut.do"><i class="fa fa-sign-out fa-fw"></i>
-								Logout</a></li>
-					</ul></li>
-			</ul>
-			<!-- /.navbar-top-links -->
-
-			<div class="navbar-default sidebar" role="navigation">
-				<div class="sidebar-nav navbar-collapse">
-					<ul class="nav" id="side-menu">
-						<li class="sidebar-search">
-							<div class="input-group custom-search-form">
-								<span class="input-group-btn">
-								</span>
-							</div> <!-- /input-group -->
-						</li>
-
-						<li><a href="board.do"><i class="fa fa-table fa-fw"></i>
-								Dashboard</a></li>
-						<li><a href="pawnshopList.do"><i
-								class="fa fa-table fa-fw"></i> List PawnShop</a></li>
-						<li><a href="pawnerList.do"><i
-								class="fa fa-table fa-fw"></i> List Pawner</a></li>
-
-					</ul>
-				</div>
-				<!-- /.sidebar-collapse -->
-			</div>
-			<!-- /.navbar-static-side -->
-		</nav>
-
+		<jsp:include page="navbar.jsp" />
+		
+		
 		<div id="page-wrapper">
 			<div class="row">
 				<div class="col-lg-12">
@@ -121,11 +68,11 @@
 										<tbody>
 											<tr class="odd gradeX">
 												<td>${pm.pawnerId}</td>
-												<td>${pm.firstName}</td>
-												<td>${pm.lastName}</td>
-												<td>${pm.email}</td>
-												<td>${pm.password}</td>
-												<td><a href="deletePawner.do?id=${pm.pawnerId}">Remove</a></td>
+												<td>${pm.pawnerFirstname}</td> 
+												<td>${pm.pawnerLastname}</td>
+												<td>${pm.pawnerEmail}</td>
+												<td>${pm.pawnerPassword}</td>
+												<td><a href="deletePawner.html?id=${pm.pawnerId}">Remove</a></td>
 												
 											</tr>
 										</tbody>

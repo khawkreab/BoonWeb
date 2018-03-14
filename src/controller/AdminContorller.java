@@ -9,6 +9,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import entity.Estimate;
+import entity.PawnerPost;
+import service.EstimateService;
+import service.PawnerPostService;
+
 import entity.Pawner;
 import entity.Pawnshop;
 import service.PawnerService;
@@ -22,6 +27,13 @@ public class AdminContorller {
 	@EJB(mappedName = "ejb:/BoonWeb//PawnshopServiceBean!service.PawnshopService")
 	PawnshopService pawnshopServ;
 
+	@EJB(mappedName = "ejb:/BoonWeb//PawnerPostServiceBean!service.PawnerPostService")
+	PawnerPostService pawnerPostService;
+	
+	@EJB(mappedName = "ejb:/BoonWeb//EstimateServiceBean!service.EstimateService")
+	EstimateService estimateService;
+	
+	
 	@RequestMapping("/admin-dashboard")
 	public ModelAndView adminDashboard(HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView("adminDashboard.jsp");
@@ -58,7 +70,7 @@ public class AdminContorller {
 	@RequestMapping("/deletePawnshop")
 	public String deletePawnshop(HttpServletRequest request) {
 		pawnshopServ.delete(Long.valueOf(request.getParameter("id")));
-		return "redirect:pawnshopList.do";
+		return "redirect:admin-list-pawnshop.html";
 	}
 
 	// Control About Pawner
@@ -79,7 +91,31 @@ public class AdminContorller {
 	@RequestMapping("/deletePawner")
 	public String deletePawner(HttpServletRequest request) {
 		pmService.delete(Long.valueOf(request.getParameter("id")));
-		return "redirect:admin_listpawner.do";
+		return "redirect:admin_listpawner.html";
 
 	}
+	
+	// Admin List Estimate
+	@RequestMapping("/admin-list-estimate")
+	public ModelAndView listProposeByPawnshop(HttpServletRequest request) {
+		ModelAndView mv = new ModelAndView("adminListEstimate.jsp");
+		List<Pawnshop> pawnshop;
+		List<Estimate> adminEList;
+		List<PawnerPost> pawnerPosts;
+		try {
+			
+			pawnshop = pawnshopServ.getAllPawnshop();
+			pawnerPosts = pawnerPostService.getAllPawnerPost();
+			adminEList = estimateService.getAllEstimate();
+
+			mv.addObject("pawnshop", pawnshop);
+			mv.addObject("pawnerPosts", pawnerPosts);
+			mv.addObject("adminEList", adminEList);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return mv;
+	}
+	// Admin List Order
+	
 }

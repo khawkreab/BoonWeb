@@ -81,6 +81,24 @@
 							</div>
 
 							<%
+				
+				} else if (session.getAttribute("userType") == "admin") {
+					%>
+									<div class="collapse navbar-collapse" id="navbarResponsive">
+										<ul class="navbar-nav text-uppercase ml-auto">
+											<li class="nav-item nav-item-hover">
+													<a class="nav-link js-scroll-trigger" href="admin-list-estimate.html">List Estimate</a>
+											</li>
+											<li class="nav-item nav-item-hover">
+													<a class="nav-link js-scroll-trigger" href="admin-listpawner.html">List Pawner</a>
+											</li>
+											<li class="nav-item nav-item-hover">
+													<a class="nav-link js-scroll-trigger" href="admin-list-pawnshop.html">List Pawnshop</a>
+											</li>												
+										</ul>
+									</div>
+
+									<%
 				} else {
 			%>
 								<div class="collapse navbar-collapse" id="navbarResponsive">
