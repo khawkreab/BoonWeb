@@ -53,7 +53,7 @@
 								<li class="nav-item nav-item-hover">
 									<a class="nav-link js-scroll-trigger" href="pawner-track-pledge.html">track my pledge</a>
 								</li>
-									<li class="nav-item nav-item-hover">
+								<li class="nav-item nav-item-hover">
 									<a class="nav-link js-scroll-trigger" href="pawner-order.html">my order</a>
 								</li>
 							</ul>
@@ -156,12 +156,13 @@
 																		<a class="nav-link js-scroll-trigger" onclick="location.replace('editPawnshop.html')">Profile</a>
 																	</li>
 																	<li class="nav-item nav-item-hover">
-																		<a class="nav-link js-scroll-trigger" href="pawnshop-estimate-history.html">History</a>	
-																	</li>																</li>
-																	<li class="nav-item nav-item-hover">
-																		<a class="nav-link js-scroll-trigger" onclick="location.replace('logout.html')">Log out</a>
+																		<a class="nav-link js-scroll-trigger" href="pawnshop-estimate-history.html">History</a>
 																	</li>
-																</ul>
+															</li>
+															<li class="nav-item nav-item-hover">
+																<a class="nav-link js-scroll-trigger" onclick="location.replace('logout.html')">Log out</a>
+															</li>
+															</ul>
 															</li>
 														</ul>
 														<%
@@ -175,8 +176,40 @@
 
 			<!------------------------------------------------ popup -------------------------------------------------->
 			<div class="modal fade" id="modalLogin" role="dialog">
-				<div class="modal-dialog modal-sm">
+				<div class="modal-dialog">
 					<div class="modal-content">
+						<div class="re-con">
+							<div class="row">
+								<div class="col-md-6 ">
+									<div class="form-login float-left" style="margin-top:50px;">
+										<h1 style="font-size:35px;font-weight: 500;">Welcome to BoonYoung</h1>
+										<p class="Subhead-description" style="margin-bottom:35px;width:300px;">
+											This used to enter boonyoung. Any pawnshop will be able to see your information.
+										</p>
+										<form method="POST" action="loginProcess.html">
+											<div class="form-group float-left ">
+												<dt style="font-weight:500;color:#555;">Email</dt>
+												<input class="post-login" name="email"  required="required" />
+												<errors path="email" />
+											</div>
+											<div class="form-group float-left ">
+												<dt style="font-weight:500;color:#555;">Password</dt>
+												<input type="password"  class="post-login" name="password"  required="required" />
+												<errors path="password" />
+											</div>
+											<div class="form-group float-left ">
+												<button type="submit" class="btn btn-sm btn-primary" style="margin-right:10px;">Continue</button>
+												<button type="button" data-dismiss="modal" class="btn btn-sm btn-default">Cancel</button>
+											</div>
+										</form>
+									</div>
+								</div>
+								<div class="col-md-6 bg3">
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- <div class="modal-content">
 						<div class="modal-header">
 							<p style="font-size:24px;margin-bottom: 0;">Login</p>
 							<button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -224,19 +257,19 @@
 										</div>
 									</form>
 						</div>
-					</div>
+					</div> -->
 				</div>
 			</div>
 			<!-- -------------------------------------------------------------------------------------------------- -->
 
 			<!------------------------------------------------ popup2 -------------------------------------------------->
 			<div class="modal fade" id="modalRole" role="dialog">
-				<div class="modal-dialog modal-sm">
-					<div class="modal-content">
-						<div class="icon-header">
-							<img src="img/logos/Artboard.png" style="height:50px;margin-bottom:10px;" />
-							<h1 style="font-size:24px;letter-spacing: -1px;color: #555;">Wellcome to Boonyoung</h1>
-							<p class="Subhead-description">Discover new experiences to try.</p>
+				<div class="modal-dialog modal-sm" style="margin-top:6%">
+					<div class="modal-content" style="width:400px;border-radius: .5rem;">
+						<div class="icon-header" style="width:80%; margin:auto;">
+							<img src="img/logos/Artboard.png" style="height:50px;margin-bottom:10px;margin-top:20px;" />
+							<h1 style="font-size:30px;letter-spacing: -1px;color: #555;">Welcome to BY</h1>
+							<p class="Subhead-description">Enter data to login or register </p>
 							<ul style="padding-left:7px;">
 								<li>
 									<input type="text" class="account-regis" placeholder="email" />
@@ -245,7 +278,7 @@
 									<input type="text" class="account-regis" placeholder="password" />
 								</li>
 								<li>
-									<button type="submit" class="account-submit">Create Account</button>
+									<button type="submit" class="account-submit">Next</button>
 								</li>
 								<li>
 									<p class="Subhead-description" style="margin-top:10px;">or</p>
@@ -263,6 +296,7 @@
 					</div>
 				</div>
 			</div>
+
 			<!-- -------------------------------------------------------------------------------------------------- -->
 
 
