@@ -878,10 +878,11 @@ footer {
 	background-position: right 8px center;
 	border: 1px solid #d1d5da;
 	border-radius: 3px;
+	width: 90%;
 }
 
 .account-submit {
-	width: 84%;
+	width: 90%;
 	background-color: #ff7f00;
 	margin-top: 12px;
 	padding: 6px 8px;
@@ -916,6 +917,15 @@ footer {
 	border-top-left-radius: 10px;
 	border-bottom-left-radius: 10px;
 }
+.bg3 {
+	background-image: url("../img/body/body2.jpg");
+	height: 100%;
+	width: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin: auto;	
+}
 
 .re-con {
 	background-color: #fff;
@@ -930,7 +940,11 @@ footer {
 	display: block;
 	width: 650px;
 }
-
+.form-login {
+	margin: 18.22px;
+	display: block;
+	width: 500px;;
+}
 .input-regis {
 	width: 300;
 	background-color: #fafbfc;
@@ -941,7 +955,19 @@ footer {
 	border: 1px solid #d1d5da;
 	border-radius: 3px;
 }
-
+.post-login {
+	width: 350px;
+	background-color: #fafbfc;
+	min-height: 34;
+	padding: 6px 8px;
+	color: black;
+	vertical-align: middle;
+	background-repeat: repeat;
+	background-position: right 8px center;
+	border: 1px solid #d1d5da;
+	border-radius: 3px;
+	margin-bottom: 10px;
+}
 .input-submit {
 	width: 300;
 	background-color: #ff7f00;
@@ -952,4 +978,12 @@ footer {
 	border: 1px solid #d1d5da;
 	border-radius: 3px;
 	font-weight: 700;
+}
+.modal-dialog{
+	margin:30px auto ;
+	width: 60%;
+	margin-top:6%;
+	width:60%;
+	height:60%;
+	max-width: 900px;
 }
