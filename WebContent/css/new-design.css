@@ -15,12 +15,7 @@
 // task : nav bar design
 // edit by : khawkreab
 */
-body {
-	overflow-x: hidden;
-	font-family: 'Roboto Slab', 'Helvetica Neue', Helvetica, Arial,
-		sans-serif;
-	background-color: #fff;
-}
+
 
 a {
 	cursor: pointer;
@@ -31,30 +26,9 @@ h1, h2, h3, h4, h5, h6 h7{
 	font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif
 }
 
-section {
-	padding: 100px 0;
-}
 
-section h2.section-heading {
-	font-size: 40px;
-	margin-top: 0;
-	margin-bottom: 15px
-}
 
-section h3.section-subheading {
-	font-size: 16px;
-	font-weight: 400;
-	font-style: italic;
-	margin-bottom: 80px;
-	text-transform: none;
-	font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, Arial,
-		sans-serif
-}
 
-::selection {
-	background: #007bff;
-	text-shadow: none
-}
 
 dl, ol, ul {
 	padding: 0px;
@@ -141,14 +115,7 @@ form{
 /*!
 * li navber
 */
-.navbar-nav li {
-	list-style: none;
-	padding: 0px;
-}
 
-.navbar-nav li:hover {
-	background-color: #ccc
-}
 
 /*!
 * override dropdown menu
@@ -464,20 +431,6 @@ form{
 /*!
 * container override
 */
-.container {
-	align-items: center;
-	position: relative;
-}
-
-.container {
-	width: 100%;
-	padding-right: 0px;
-	padding-left: 0px;
-	margin-right: auto;
-	margin-left: auto;
-	display: flex;
-	justify-content: center;
-}
 
 /*!
 * list post
@@ -976,7 +929,8 @@ footer {
 	font-weight: 700;
 }
 .modal-dialog{
-	margin:30px auto ;
+    position: absolute;
+    margin: 100px auto;
 	width: 60%;
 	margin-top:6%;
 	width:60%;

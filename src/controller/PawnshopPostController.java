@@ -60,20 +60,22 @@ public class PawnshopPostController {
 		return mv;
 	}
 	
-//	@RequestMapping("/pawnshop-track-sellpledge")
-//	public ModelAndView sellpledge(HttpServletRequest request) {
-//		ModelAndView mv = new ModelAndView("pawnshopTrackMySellPlege.jsp");
-//		List<PawnshopPost> pawnshopPosts;
-//		
-//		try {
-//			long userId = (long) request.getSession().getAttribute("id");
-//			pawnshopPosts = pawnshopPostService.getAllPawnshopPost()(userId);
-//			
-//			mv.addObject("pawnshopPosts", pawnshopPosts);
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}
-//		return mv;
-//	}
+	@RequestMapping("/post-detail")
+	public ModelAndView detail(HttpServletRequest request) {
+		ModelAndView mv = new ModelAndView("postDetail.jsp");
+		PawnshopPost pawnshopPost;
+		
+		try {
+			long userId = (long) request.getSession().getAttribute("id");
+			
+			long postId = Long.parseLong(request.getParameter("postId"));
+			pawnshopPost = pawnshopPostService.findPawnshopPostById(postId);
+			
+			mv.addObject("pawnshopPost", pawnshopPost);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return mv;
+	}
 	
 }
