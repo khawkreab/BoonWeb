@@ -49,22 +49,28 @@
 				<form:form method="post" action="savePawner.html" commandName="pawner">
 					<div class="bg">
 						<div style="height:500px;">
-							<div style="margin-top: 6%;max-width:900px;">
+							<div style="max-width:900px;">
 								<div class="modal-content" style="width: 400px; border-radius: .5rem;">
 									<div class="icon-header" style="width: 80%; margin: auto;">
 										<img src="img/logos/Artboard.png" style="height: 50px; margin-bottom: 10px; margin-top: 20px;" />
-										<h1 style="font-size: 30px; letter-spacing: -1px; color: #555;">Welcome to BY</h1>
-										<p class="Subhead-description">Enter data to login or register
+										<h1 style="font-size: 30px; letter-spacing: -1px; color: #555;">Welcome</h1>
+										<p class="Subhead-description">Register for get new exper
 										</p>
 										<ul style="padding-left: 7px;">
 											<li>
-												<form:input path="pawnerEmail" type="text" class="account-regis" placeholder="email" />
+												<form:input path="pawnerFirstname" type="text" class="account-regis" placeholder="firstname" required="required"/>
 											</li>
 											<li>
-												<form:input path="pawnerPassword" type="text" class="account-regis" placeholder="password" />
+												<form:input path="pawnerLastname" type="text" class="account-regis" placeholder="lastname" required="required"/>
 											</li>
 											<li>
-												<button type="submit" class="account-submit">Next</button>
+												<form:input path="pawnerEmail" type="text" class="account-regis" placeholder="email" required="required"/>
+											</li>
+											<li>
+												<form:input path="pawnerPassword" type="text" class="account-regis" placeholder="password" required="required"/>
+											</li>
+											<li>
+												<button type="submit" class="account-submit">Create Account</button>
 											</li>
 											<li>
 												<p class="Subhead-description" style="margin-top: 10px;">or</p>
