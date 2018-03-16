@@ -75,7 +75,7 @@ public class PawnerController {
 		try {
 			long userId = (long) request.getSession().getAttribute("id");
 			
-			pawnshopPosts = psService.getAllPawnshopPost();
+			pawnshopPosts = psService.listPawnshopPostByPawnerId(userId);
 			mv.addObject("pawnshopPosts", pawnshopPosts);
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -59,7 +59,8 @@
 											${post.pawnerPostItemType}</p> </span>
 								</div>
 								<small class="text-muted"> Province :
-									${post.pawnerId.pawnerProvince } <br> <fmt:formatDate
+									${post.pawnerId.pawnerProvince } <br>
+									<fmt:setLocale value="en_US" /> <fmt:formatDate
 										type="both" dateStyle="long" timeStyle="short"
 										value="${post.pawnerPostDate }" />
 								</small>

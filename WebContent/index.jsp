@@ -1,11 +1,11 @@
 <!-- 
 // page : index
-// version : 2.0
-// task : team dev
+// version : 1.0
+// task : new
 // edit by : khawkreab
  -->
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+ <%@ page language="java" contentType="text/html; charset=UTF-8"
+ pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
 <html lang="en">
@@ -14,170 +14,387 @@
 
 <meta charset="utf-8">
 <meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="">
 <meta name="author" content="">
 
 <title>Boonyong</title>
 
-<!-- Bootstrap core CSS -->
-<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-
-<!-- Custom styles for this template -->
-<!-- <link href="css/custom-style.min.css" rel="stylesheet"> -->
-<link href="css/new-design.css" rel="stylesheet">
-<link href="vendor/font-awesome/css/font-awesome.min.css"
-	rel="stylesheet" type="text/css">
-
-
-
-<script>
-	$(document).ready(function() {
-		//Set the carousel options
-		$('#quote-carousel').carousel({
-			pause : true,
-			interval : 4000,
-		});
-	});
-</script>
-
-
 </head>
 
 <body id="page-top">
 
-	<!-- Navigation -->
-	<jsp:include page="navbar.jsp" />
+ <!-- Navigation -->
+ <jsp:include page="navbar.jsp" />
 
-	<!-- Header -->
-	<header class="masthead" id="#">
-		<div class="container">
-			<!--  -->
-			<div id="carouselExampleIndicators" class="carousel slide"
-				data-ride="carousel" data-interval="5000">
-				<ol class="carousel-indicators">
-					<li data-target="#carouselExampleIndicators" data-slide-to="0"
-						class="active"></li>
-					<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-					<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-				</ol>
-				<div class="carousel-inner" role="listbox">
-					<div class="carousel-item active">
-						<img class="d-block img-fluid" src="img/header-bg.jpg"
-							alt="First slide">
-						<div class="carousel-caption d-none d-md-block">
-							<h3>Pledge online</h3>
-							<p>Updated every day</p>
-						</div>
-					</div>
-					<div class="carousel-item">
-						<img class="d-block img-fluid" src="img/header-gold.jpg"
-							alt="Second slide">
-						<div class="carousel-caption d-none d-md-block">
-							<h3>How to pledge</h3>
-							<p>Easy Convenient Fast</p>
-						</div>
-					</div>
-					<div class="carousel-item">
-						<img class="d-block img-fluid" src="img/header-bank.jpg"
-							alt="Third slide">
-						<div class="carousel-caption d-none d-md-block">
-							<h3>BoonYong</h3>
-							<p>Support your dream</p>
-						</div>
-					</div>
-				</div>
-				<a class="carousel-control-prev" href="#carouselExampleIndicators"
-					role="button" data-slide="prev"> <span
-					class="fa fa-chevron-left" aria-hidden="true"></span> <span
-					class="sr-only">Previous</span>
-				</a> <a class="carousel-control-next" href="#carouselExampleIndicators"
-					role="button" data-slide="next"> <span
-					class="fa fa-chevron-right" aria-hidden="true"></span> <span
-					class="sr-only">Next</span>
-				</a>
-			</div>
-		</div>
-	</header>
+	 <!--banner-->
+ <div class="banner">
+	 <div class="container">
+		 <section class="rw-wrapper">
+			 <h1 class="rw-sentence">
+				 <span>Fashion &amp; Beauty</span>
+				 <div class="rw-words rw-words-1">
+					 <span>Beautiful Designs</span> <span>Sed ut perspiciatis</span> <span>
+						 Totam rem aperiam</span> <span>Nemo enim ipsam</span> <span>Temporibus
+						 autem</span> <span>intelligent systems</span>
+				 </div>
+				 <div class="rw-words rw-words-2">
+					 <span>We denounce with right</span> <span>But in certain
+						 circum</span> <span>Sed ut perspiciatis unde</span> <span>There
+						 are many variation</span> <span>The generated Lorem Ipsum</span> <span>Excepteur
+						 sint occaecat</span>
+				 </div>
+			 </h1>
+		 </section>
+	 </div>
+ </div>
+ <!--content-->
+ <div class="content">
+	 <div class="container">
+		 <!--products-->
+		 <div class="content-mid">
+			 <h3>Trending Items</h3>
+			 <label class="line"></label>
+			 <div class="mid-popular">
+				 <div class="col-md-3 item-grid simpleCart_shelfItem">
+					 <div class=" mid-pop">
+						 <div class="pro-img">
+							 <img src="images/pc.jpg" class="img-responsive" alt="">
+							 <div class="zoom-icon ">
+								 <a class="picture" href="images/pc.jpg" rel="title"
+									 class="b-link-stripe b-animate-go  thickbox"><i
+									 class="glyphicon glyphicon-search icon "></i></a> <a
+									 href="single.html"><i
+									 class="glyphicon glyphicon-menu-right icon"></i></a>
+							 </div>
+						 </div>
+						 <div class="mid-1">
+							 <div class="women">
+								 <div class="women-top">
+									 <span>Women</span>
+									 <h6>
+										 <a href="single.html">Sed ut perspiciati</a>
+									 </h6>
+								 </div>
+								 <div class="img item_add">
+									 <a href="#"><img src="images/ca.png" alt=""></a>
+								 </div>
+								 <div class="clearfix"></div>
+							 </div>
+							 <div class="mid-2">
+								 <p>
+									 <label>$100.00</label><em class="item_price">$70.00</em>
+								 </p>
+								 <div class="block">
+									 <div class="starbox small ghosting"></div>
+								 </div>
 
-	<!-- Services -->
+								 <div class="clearfix"></div>
+							 </div>
 
+						 </div>
+					 </div>
+				 </div>
+				 <div class="col-md-3 item-grid simpleCart_shelfItem">
+					 <div class=" mid-pop">
+						 <div class="pro-img">
+							 <img src="images/pc1.jpg" class="img-responsive" alt="">
+							 <div class="zoom-icon ">
+								 <a class="picture" href="images/pc1.jpg" rel="title"
+									 class="b-link-stripe b-animate-go  thickbox"><i
+									 class="glyphicon glyphicon-search icon "></i></a> <a
+									 href="single.html"><i
+									 class="glyphicon glyphicon-menu-right icon"></i></a>
+							 </div>
+						 </div>
+						 <div class="mid-1">
+							 <div class="women">
+								 <div class="women-top">
+									 <span>Women</span>
+									 <h6>
+										 <a href="single.html">At vero eos</a>
+									 </h6>
+								 </div>
+								 <div class="img item_add">
+									 <a href="#"><img src="images/ca.png" alt=""></a>
+								 </div>
+								 <div class="clearfix"></div>
+							 </div>
+							 <div class="mid-2">
+								 <p>
+									 <label>$100.00</label><em class="item_price">$70.00</em>
+								 </p>
+								 <div class="block">
+									 <div class="starbox small ghosting"></div>
+								 </div>
 
+								 <div class="clearfix"></div>
+							 </div>
 
+						 </div>
+					 </div>
+				 </div>
+				 <div class="col-md-3 item-grid simpleCart_shelfItem">
+					 <div class=" mid-pop">
+						 <div class="pro-img">
+							 <img src="images/pc2.jpg" class="img-responsive" alt="">
+							 <div class="zoom-icon ">
+								 <a class="picture" href="images/pc2.jpg" rel="title"
+									 class="b-link-stripe b-animate-go  thickbox"><i
+									 class="glyphicon glyphicon-search icon "></i></a> <a
+									 href="single.html"><i
+									 class="glyphicon glyphicon-menu-right icon"></i></a>
+							 </div>
+						 </div>
+						 <div class="mid-1">
+							 <div class="women">
+								 <div class="women-top">
+									 <span>Men</span>
+									 <h6>
+										 <a href="single.html">Sed ut perspiciati</a>
+									 </h6>
+								 </div>
+								 <div class="img item_add">
+									 <a href="#"><img src="images/ca.png" alt=""></a>
+								 </div>
+								 <div class="clearfix"></div>
+							 </div>
+							 <div class="mid-2">
+								 <p>
+									 <label>$100.00</label><em class="item_price">$70.00</em>
+								 </p>
+								 <div class="block">
+									 <div class="starbox small ghosting"></div>
+								 </div>
 
-	<div class="container">
-		<div class="box">
-			<div class="box-sup">
-				<div class="box-semi text-center">
-					<h1>The 5 Step</h1>
-					<h6>---- easy to pawn ----</h6>
-					<br>
-				</div>
-				<div class="box-semi">
-					<span class="time-line"></span>
-					<ul>
-						<li><span class="cycle">1</span> Enter item information</li>
-						<li><span class="cycle">2</span> Upload picture and post item</li>
-						<li><span class="cycle">3</span> Get offers from pawner shop</li>
-						<li><span class="cycle">4</span> Walk in pawn shop</li>
-						<li><span class="cycle">5</span> Deal rice again with pawn
-							shop</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
+								 <div class="clearfix"></div>
+							 </div>
 
+						 </div>
+					 </div>
+				 </div>
+				 <div class="col-md-3 item-grid simpleCart_shelfItem">
+					 <div class=" mid-pop">
+						 <div class="pro-img">
+							 <img src="images/pc3.jpg" class="img-responsive" alt="">
+							 <div class="zoom-icon ">
+								 <a class="picture" href="images/pc3.jpg" rel="title"
+									 class="b-link-stripe b-animate-go  thickbox"><i
+									 class="glyphicon glyphicon-search icon "></i></a> <a
+									 href="single.html"><i
+									 class="glyphicon glyphicon-menu-right icon"></i></a>
+							 </div>
+						 </div>
+						 <div class="mid-1">
+							 <div class="women">
+								 <div class="women-top">
+									 <span>Women</span>
+									 <h6>
+										 <a href="single.html">On the other</a>
+									 </h6>
+								 </div>
+								 <div class="img item_add">
+									 <a href="#"><img src="images/ca.png" alt=""></a>
+								 </div>
+								 <div class="clearfix"></div>
+							 </div>
+							 <div class="mid-2">
+								 <p>
+									 <label>$100.00</label><em class="item_price">$70.00</em>
+								 </p>
+								 <div class="block">
+									 <div class="starbox small ghosting"></div>
+								 </div>
 
-	<!--  -->
-	<div class="container">
-		<div class="dev-title">
-			<h1>Welcome to Team deverlop</h1>
-			<h7>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</h7>
-		</div>
-	</div>
-	<div class="container">
-		<div class="dev">
-			<div id="teamdev" class="carousel slide" data-ride="carousel"
-				data-interval="5000">
-				<ol class="carousel-indicators">
-					<li data-target="#teamdev" data-slide-to="0" class="active"></li>
-					<li data-target="#teamdev" data-slide-to="1"></li>
-					<li data-target="#teamdev" data-slide-to="2"></li>
-				</ol>
-				<div class="carousel-inner margin-lr-20">
-					<div class="carousel-item active">
-						<div class="inline-block">
-							<span class="dev-img-circle"> <img src="img/profile.jpg">
-							</span> <span class="dev-detail">12345679879647964</span>
-						</div>
-					</div>
-					<div class="carousel-item">
-						<div class="inline-block">
-							<span class="dev-img-circle"> <img class="dev-img-circle"
-								src="img/profile(Dream).jpg">
-							</span> <span class="dev-detail">794464113</span>
-						</div>
-					</div>
-					<div class="carousel-item">
-						<div class="inline-block">
-							<span class="dev-img-circle"> <img class="dev-img-circle"
-								src="img/profile(Ter).jpg">
-							</span> <span class="dev-detail">232569821</span>
-						</div>
-					</div>
-				</div>
-				<a class="carousel-control-prev" href="#teamdev" role="button"
-					data-slide="prev"> <span class="fa fa-chevron-left"
-					aria-hidden="true"></span> <span class="sr-only">Previous</span>
-				</a> <a class="carousel-control-next" href="#teamdev" role="button"
-					data-slide="next"> <span class="fa fa-chevron-right"
-					aria-hidden="true"></span> <span class="sr-only">Next</span>
-				</a>
-			</div>
-		</div>
-	</div>
-	<jsp:include page="footer.jsp"></jsp:include>
+								 <div class="clearfix"></div>
+							 </div>
+
+						 </div>
+					 </div>
+				 </div>
+				 <div class="clearfix"></div>
+			 </div>
+			 <div class="mid-popular">
+				 <div class="col-md-3 item-grid simpleCart_shelfItem">
+					 <div class=" mid-pop">
+						 <div class="pro-img">
+							 <img src="images/pc4.jpg" class="img-responsive" alt="">
+							 <div class="zoom-icon ">
+								 <a class="picture" href="images/pc4.jpg" rel="title"
+									 class="b-link-stripe b-animate-go  thickbox"><i
+									 class="glyphicon glyphicon-search icon "></i></a> <a
+									 href="single.html"><i
+									 class="glyphicon glyphicon-menu-right icon"></i></a>
+							 </div>
+						 </div>
+						 <div class="mid-1">
+							 <div class="women">
+								 <div class="women-top">
+									 <span>Men</span>
+									 <h6>
+										 <a href="single.html">On the other</a>
+									 </h6>
+								 </div>
+								 <div class="img item_add">
+									 <a href="#"><img src="images/ca.png" alt=""></a>
+								 </div>
+								 <div class="clearfix"></div>
+							 </div>
+							 <div class="mid-2">
+								 <p>
+									 <label>$100.00</label><em class="item_price">$70.00</em>
+								 </p>
+								 <div class="block">
+									 <div class="starbox small ghosting"></div>
+								 </div>
+
+								 <div class="clearfix"></div>
+							 </div>
+
+						 </div>
+					 </div>
+				 </div>
+				 <div class="col-md-3 item-grid simpleCart_shelfItem">
+					 <div class=" mid-pop">
+						 <div class="pro-img">
+							 <img src="images/pc5.jpg" class="img-responsive" alt="">
+							 <div class="zoom-icon ">
+								 <a class="picture" href="images/pc5.jpg" rel="title"
+									 class="b-link-stripe b-animate-go  thickbox"><i
+									 class="glyphicon glyphicon-search icon "></i></a> <a
+									 href="single.html"><i
+									 class="glyphicon glyphicon-menu-right icon"></i></a>
+							 </div>
+						 </div>
+						 <div class="mid-1">
+							 <div class="women">
+								 <div class="women-top">
+									 <span>Men</span>
+									 <h6>
+										 <a href="single.html">Sed ut perspiciati</a>
+									 </h6>
+								 </div>
+								 <div class="img item_add">
+									 <a href="#"><img src="images/ca.png" alt=""></a>
+								 </div>
+								 <div class="clearfix"></div>
+							 </div>
+							 <div class="mid-2">
+								 <p>
+									 <label>$100.00</label><em class="item_price">$70.00</em>
+								 </p>
+								 <div class="block">
+									 <div class="starbox small ghosting"></div>
+								 </div>
+
+								 <div class="clearfix"></div>
+							 </div>
+
+						 </div>
+					 </div>
+				 </div>
+				 <div class="col-md-3 item-grid simpleCart_shelfItem">
+					 <div class=" mid-pop">
+						 <div class="pro-img">
+							 <img src="images/pc6.jpg" class="img-responsive" alt="">
+							 <div class="zoom-icon ">
+								 <a class="picture" href="images/pc6.jpg" rel="title"
+									 class="b-link-stripe b-animate-go  thickbox"><i
+									 class="glyphicon glyphicon-search icon "></i></a> <a
+									 href="single.html"><i
+									 class="glyphicon glyphicon-menu-right icon"></i></a>
+							 </div>
+						 </div>
+						 <div class="mid-1">
+							 <div class="women">
+								 <div class="women-top">
+									 <span>Women</span>
+									 <h6>
+										 <a href="single.html">At vero eos</a>
+									 </h6>
+								 </div>
+								 <div class="img item_add">
+									 <a href="#"><img src="images/ca.png" alt=""></a>
+								 </div>
+								 <div class="clearfix"></div>
+							 </div>
+							 <div class="mid-2">
+								 <p>
+									 <label>$100.00</label><em class="item_price">$70.00</em>
+								 </p>
+								 <div class="block">
+									 <div class="starbox small ghosting"></div>
+								 </div>
+
+								 <div class="clearfix"></div>
+							 </div>
+
+						 </div>
+					 </div>
+				 </div>
+				 <div class="col-md-3 item-grid simpleCart_shelfItem">
+					 <div class=" mid-pop">
+						 <div class="pro-img">
+							 <img src="images/pc7.jpg" class="img-responsive" alt="">
+							 <div class="zoom-icon ">
+								 <a class="picture" href="images/pc7.jpg" rel="title"
+									 class="b-link-stripe b-animate-go  thickbox"><i
+									 class="glyphicon glyphicon-search icon "></i></a> <a
+									 href="single.html"><i
+									 class="glyphicon glyphicon-menu-right icon"></i></a>
+							 </div>
+						 </div>
+						 <div class="mid-1">
+							 <div class="women">
+								 <div class="women-top">
+									 <span>Men</span>
+									 <h6>
+										 <a href="single.html">Sed ut perspiciati</a>
+									 </h6>
+								 </div>
+								 <div class="img item_add">
+									 <a href="#"><img src="images/ca.png" alt=""></a>
+								 </div>
+								 <div class="clearfix"></div>
+							 </div>
+							 <div class="mid-2">
+								 <p>
+									 <label>$100.00</label><em class="item_price">$70.00</em>
+								 </p>
+								 <div class="block">
+									 <div class="starbox small ghosting"></div>
+								 </div>
+
+								 <div class="clearfix"></div>
+							 </div>
+
+						 </div>
+					 </div>
+				 </div>
+				 <div class="clearfix"></div>
+			 </div>
+		 </div>
+		 <!--//products-->
+		 <!--brand-->
+		 <div class="brand">
+			 <div class="col-md-3 brand-grid">
+				 <img src="images/ic.png" class="img-responsive" alt="">
+			 </div>
+			 <div class="col-md-3 brand-grid">
+				 <img src="images/ic1.png" class="img-responsive" alt="">
+			 </div>
+			 <div class="col-md-3 brand-grid">
+				 <img src="images/ic2.png" class="img-responsive" alt="">
+			 </div>
+			 <div class="col-md-3 brand-grid">
+				 <img src="images/ic3.png" class="img-responsive" alt="">
+			 </div>
+			 <div class="clearfix"></div>
+		 </div>
+		 <!--//brand-->
+	 </div>
+
+ </div>
+ <jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>
