@@ -24,6 +24,8 @@
 		</head>
 	
 		<body style="overflow: hidden">
+			<!-- Navigation -->
+			<jsp:include page="navbar.jsp" />
 			<form:form method="post" action="savePawnshop.html" commandName="pawnshop">
 				<div class="bg">
 					<div style="height:500px;">
@@ -68,6 +70,7 @@
 						</div>
 					</div>
 				</div>
+
 			</form:form>
 		</body>
 

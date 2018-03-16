@@ -873,7 +873,7 @@ footer {
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	margin: auto;
+	margin: auto;	
 }
 
 .re-con {
@@ -929,8 +929,10 @@ footer {
 	font-weight: 700;
 }
 .modal-dialog{
+    position: absolute;
     margin: 100px auto;
-	margin-top:17%;
+	width: 60%;
+	margin-top:6%;
 	width:60%;
 	height:60%;
 	max-width: 900px;
