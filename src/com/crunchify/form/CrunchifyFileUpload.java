@@ -10,13 +10,13 @@ import org.springframework.web.multipart.MultipartFile;
 @Entity
 public class CrunchifyFileUpload implements Serializable {
  
-    private List<MultipartFile> crunchifyFiles;
+    private List<MultipartFile> pawnerPostPicture;
  
     public List<MultipartFile> getFiles() {
-        return crunchifyFiles;
+        return pawnerPostPicture;
     }
  
     public void setFiles(List<MultipartFile> files) {
-        this.crunchifyFiles = files;
+        this.pawnerPostPicture = files;
     }
 }

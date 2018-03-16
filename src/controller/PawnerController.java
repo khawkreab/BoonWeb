@@ -38,8 +38,6 @@ public class PawnerController {
 		return mv;
 	}
 	
-	
-	
 	@RequestMapping("/savePawner")
 	public String savePawner(@ModelAttribute("pawner") Pawner pawner, BindingResult result, HttpServletRequest request){
 		try {
@@ -51,7 +49,7 @@ public class PawnerController {
 			}
 		}catch (Exception e){
 			return "redirect:pawner-register-form.html";
-		}return "redirect:login.html";
+		}return "redirect:index.jsp";
 	}
 	
 	@RequestMapping("/editPawner")

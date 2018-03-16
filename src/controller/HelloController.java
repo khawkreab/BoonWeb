@@ -44,6 +44,7 @@ public class HelloController {
 		stream.write(bytes);
 		stream.flush();
 		stream.close();
+		
 
 		return new ModelAndView("uploadform.html", "filesuccess", "File successfully saved!"+uploadPath + file.getOriginalFilename());
 	}
