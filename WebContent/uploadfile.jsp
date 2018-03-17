@@ -54,6 +54,8 @@ body {
 				</tr>
 			</table>
 			<br />
+			<input name="postname" type="text" />
+			<br>
 			<input type="submit" value="Upload" />
 			<input id="addFile" type="button" value="Add File" />
 		</form:form>
