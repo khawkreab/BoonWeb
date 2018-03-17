@@ -51,7 +51,7 @@ public class PawnshopController {
 		} catch (Exception e) {
 			return "redirect:pawnshop-register-form.html";
 		}
-		return "redirect:index.jsp";
+		return "redirect:editPawnshop.html";
 	}
 
 	// ********* ยังไม่มีหน้า ***********//

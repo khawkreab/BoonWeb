@@ -98,7 +98,7 @@ public class LoginCotroller {
 		}
 
 		request.getSession().setAttribute("error", "yes");
-		return "redirect:index.jsp?";
+		return "redirect:login.html?";
 	}
 	
 	
