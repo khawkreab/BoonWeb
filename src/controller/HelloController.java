@@ -24,7 +24,7 @@ public class HelloController {
 	private static final String UPLOAD_DIRECTORY = "/images";
 	private static final int THRESHOLD_SIZE = 1024 * 1024 * 3; // 3MB
 
-	
+//	Food food = new Food();
 
 	@RequestMapping(value = "savefile", method = RequestMethod.POST)
 	public ModelAndView saveimage(@RequestParam CommonsMultipartFile file, HttpSession session) throws Exception {
@@ -45,6 +45,9 @@ public class HelloController {
 		stream.flush();
 		stream.close();
 
+//		food.setPicture(uploadPath + file.getOriginalFilename());
+//		foodService.insert(food);
+		
 		return new ModelAndView("uploadform.html", "filesuccess", "File successfully saved!"+uploadPath + file.getOriginalFilename());
 	}
 }

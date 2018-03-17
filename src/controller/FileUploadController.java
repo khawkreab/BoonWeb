@@ -1,6 +1,5 @@
 package controller;
 
-import com.crunchify.form.CrunchifyFileUpload;
 
 import java.io.File;
 import java.io.IOException;
@@ -15,8 +14,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import fileupload.FileUpload;
+
 @Controller
-public class CrunchifyFileUploadController {
+public class FileUploadController {
 
 	@RequestMapping("/upload")
 	public String crunchifyDisplayForm() {
@@ -29,12 +30,12 @@ public class CrunchifyFileUploadController {
 	}
 
 	@RequestMapping("/savefiles")
-	public ModelAndView crunchifySave(@ModelAttribute("uploadForm") CrunchifyFileUpload uploadForm, Model map)
+	public ModelAndView crunchifySave(@ModelAttribute("uploadForm") FileUpload fileUpload, Model map)
 			throws IllegalStateException, IOException {
 		String saveDirectory = "d:/12/";
 		String fileName ="";
 
-		List<MultipartFile> crunchifyFiles = uploadForm.getFiles();
+		List<MultipartFile> crunchifyFiles = fileUpload.getFiles();
 
 		List<String> fileNames = new ArrayList<String>();
 
@@ -44,7 +45,7 @@ public class CrunchifyFileUploadController {
 				fileName = multipartFile.getOriginalFilename();
 				if (!"".equalsIgnoreCase(fileName)) {
 					// Handle file content - multipartFile.getInputStream()
-					multipartFile.transferTo(new File(saveDirectory + fileName));
+//					multipartFile.transferTo(new File(saveDirectory + fileName));
 					fileNames.add(saveDirectory +fileName);
 				}
 			}
