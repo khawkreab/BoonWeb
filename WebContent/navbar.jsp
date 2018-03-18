@@ -36,6 +36,9 @@
 <!--theme-style-->
 <link href="css/style4.css" rel="stylesheet" type="text/css" media="all" />
 
+<!-- font icon for this template -->
+<link href="css/font-awesome.min.css" rel="stylesheet">
+
 <!--- start-rate---->
 <script src="js/jstarbox.js"></script>
 <link rel="stylesheet" href="css/jstarbox.css" type="text/css"
@@ -49,7 +52,7 @@
 	 <div class="container">
 		 <div class="head">
 			 <div class="logo">
-				 <a href="index.html"> <img src="img/logos/bg.png" alt="" style="height: 110;">
+				 <a href="index.html"> <img src="img/logos/bg.png" alt="" style="height: 99px;">
 				 </a>
 			 </div>
 		 </div>

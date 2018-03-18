@@ -62,7 +62,7 @@ h1,h2,h3,h4,h5,h6,label,p{
 	margin: 0 0.5em;
 }
 .header-login ul li a:hover {
-    color: #F67777;
+    color: #ff7f00;
 }
 .header-top {
     background-color: #2E2E2E;
@@ -125,11 +125,11 @@ div#bs-megadropdown-tabs {
     margin-left: 13.6%;
 }
 .nav > li > a:hover, .nav > li > a:focus {
-    background-color: #f67777;
+    background-color: #ff7f00;
     color: #fff;
 }
 .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
-  background-color: #f67777;
+  background-color: #ff7f00;
     color: #fff;
 }
 .col1 {
@@ -233,11 +233,8 @@ a.item_add {
 /*--banner--*/
 .banner{
 	width: 100%;
-    height: 700px;
+    height: auto;
     display: block;
-    background-image: url(../images/index.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
     background-size: cover;
 	overflow-x:hidden;
 }
@@ -256,7 +253,7 @@ a.item_add {
 }
 .col-2 span{
 	font-size: 1.4em;
-    color: #F67777;
+    color: #ff7f00;
     line-height: 1.8em;
     text-transform: uppercase;
     letter-spacing: 5px;
@@ -272,7 +269,7 @@ a.item_add {
     color: #000000;
 }
 .col-2 h2 a:hover{
-    color: #f67777;
+    color: #ff7f00;
 }
 .col-2 p{
 	font-size: 0.9em;
@@ -282,9 +279,9 @@ a.item_add {
 }
  a.buy-now{
 	    font-size: 0.9em;
-    color: #F67777;
+    color: #ff7f00;
     text-decoration: none;
-    border-bottom: 2px solid #F67777;
+    border-bottom: 2px solid #ff7f00;
     padding: 0 0 0.5em;
     display: inline-block;
 }
@@ -315,7 +312,7 @@ a.buy-now:hover{
 	font-family: 'Oxygen-Bold';
 }
 .col-pic h5{
-	color:#F67777;
+	color:#ff7f00;
 	font-size:2em;
 	text-transform:uppercase;
 	font-family: 'Ubuntu-Bold';
@@ -341,7 +338,7 @@ a.buy-now:hover{
 	width:200px;
 	height:2px;
 	display:block;
-	background:#F67777;
+	background:#ff7f00;
 	border-radius:10px;
 	margin: 0.2em auto;
 }
@@ -350,7 +347,7 @@ a.buy-now:hover{
 }
  .mid-1 span{
 	font-size: 0.9em;
-    color: #F67777;
+    color: #ff7f00;
     line-height: 1.8em;
     font-family: 'Ubuntu-Bold';
 }
@@ -456,7 +453,7 @@ a.buy-now:hover{
 .b-from-left{
 	position:relative;
 	left:-100%;
-	    color: #F67777;
+	    color: #ff7f00;
     font-size: 2em;
     text-transform: uppercase;
     font-family: 'Ubuntu-Bold';
@@ -516,7 +513,7 @@ a.buy-now:hover{
     text-decoration:none;
 }
 .mid-1 h6 a:hover {
-    color: #F67777;
+    color: #ff7f00;
 }
 .mid-2 p{
 	float:left;
@@ -563,7 +560,7 @@ a.buy-now:hover{
 	width: 50px;
     height: 50px;
     display: inline-block;
-    background: #f67777;
+    background: #ff7f00;
 	color:#fff;
 	font-size:1.3em;
     margin: 0 0.3em;
@@ -571,7 +568,7 @@ a.buy-now:hover{
 }
 .zoom-icon .glyphicon-menu-right{
     background:#fff;
-	color: #f67777;
+	color: #ff7f00;
 }
 .mid-pop .zoom-icon {
 	top: 0px;
@@ -609,7 +606,7 @@ a.buy-now:hover{
 	margin-top:1em;
 }
 .banner-top h2 a{
-	color:#f67777;
+	color:#ff7f00;
 }
 .banner-top h2 label{
 	margin:0 0.4em;
@@ -716,7 +713,7 @@ a.cart:hover{
 h4.cate {
     font-family: 'Ubuntu-Regular';
     font-size: 1.7em;
-    color:#F67777;
+    color:#ff7f00;
 }
 
 ul.kid-menu{
@@ -740,7 +737,7 @@ ul.kid-menu{
 	    font-family: 'Oxygen-Bold';
 }
 .menu-drop > li > a:hover{
-	color:#f67777;
+	color:#ff7f00;
 }
 .menu-drop ul li a {	
 	width: 100%;
@@ -788,7 +785,7 @@ color: #B3B3B3;
     padding-bottom: 1em;
 }
 span.reducedfrom {
-	    color: #F67777;
+	    color: #ff7f00;
     font-size: 1.5em;
     font-family: 'Ubuntu-Bold';
     float: left;
@@ -813,7 +810,7 @@ p.quick_desc {
 	margin: 1em 0 2em;
 }
 span.actual {
-	color:#F67777;
+	color:#ff7f00;
 	font-size: 1em;
 	margin-right: 5%;
 }
@@ -903,7 +900,7 @@ span.actual {
   transition-property: transform;
   -webkit-transform-origin: 0 100%;
   transform-origin: 0 100%;
-  background-color: #F67777;
+  background-color: #ff7f00;
    color: #fff;
    padding: 0.5em 1em;
    font-size:1em;
@@ -952,7 +949,7 @@ ul.product-qty {
 }
 
 .wish-list li a {
-	color:#F67777;
+	color:#ff7f00;
 	font-size: 0.85em;
 	text-decoration: underline;
 }
@@ -980,7 +977,7 @@ ul.product-qty {
     border-bottom: 1px solid #EDEDED;
 }
 .tabs  li a:hover,.tabs  li.active a{
-	background:#F67777 !important;
+	background:#ff7f00 !important;
 	color:#fff;
 }
 .tab-content {
@@ -1031,7 +1028,7 @@ nav.nav-sidebar {
 	padding: 0.5em 1em;
 }
 .login-mail i{
-	color: #F67777;
+	color: #ff7f00;
     font-size: 1em;
 }
 .login-mail input[type="text"],.login-mail input[type="password"]{
@@ -1193,7 +1190,7 @@ nav.nav-sidebar {
     margin:1em 0 0;
 }
 .address-grid i{
-	color:#F67777;
+	color:#ff7f00;
 	font-size:1em;
 	float: left;
 	margin: 0 5% 0 0;
@@ -1220,7 +1217,7 @@ nav.nav-sidebar {
 	color: #7c7c7c;
 }
 .address1 p a:hover{
-	color:#F67777;
+	color:#ff7f00;
 }
 .address-more h4{
 	color:#000;
@@ -1237,7 +1234,7 @@ nav.nav-sidebar {
 }
 .four h3{
 	font-size: 7em;
-    color: #F67777;
+    color: #ff7f00;
     font-family: 'Ubuntu-Regular';
 }
 .four p{
@@ -1280,7 +1277,7 @@ a.at-in {
 	font-family: 'Ubuntu-Regular';
 }
 .sed h5 a{
-    color: #F67777;
+    color: #ff7f00;
   	text-decoration:none;
 }
 .sed h5 a:hover{
@@ -1337,7 +1334,7 @@ a.at-in {
 }
 .wishlist p{
 	font-size:1.1em;
-	color:#F67777;
+	color:#ff7f00;
 	padding:0.8em 0 ;
 }
 /*--footer--*/
@@ -1380,7 +1377,7 @@ ul.in li a{
 	display:block;	 
 }
 ul.in li a:hover{
-	color:#F67777;
+	color:#ff7f00;
 }
 ul.tag-in li{
 	display:inline-block;
@@ -1396,8 +1393,8 @@ ul.tag-in li a{
     border-radius: 15px;	
 }
 ul.tag-in li a:hover{
-	color:#F67777;
-    border: 1px solid #F67777;	
+	color:#ff7f00;
+    border: 1px solid #ff7f00;	
 }
 .footer-class a:hover{
 	color:#fff;
@@ -1416,7 +1413,7 @@ ul.tag-in li a:hover{
 .footer-middle-in input[type="submit"] {
     width: 100%;
     font-size: 1em;
-    background: #F67777;
+    background: #ff7f00;
     padding: 0.5em 1em;
     text-align: center;
     color: #fff;
@@ -1430,7 +1427,7 @@ ul.tag-in li a:hover{
 	-ms-transition: 0.5s all;
 }
 .footer-middle-in input[type="submit"]:hover {
-   color: #F67777;
+   color: #ff7f00;
     background: #fff;
 }
 .footer-bottom{
@@ -1443,7 +1440,7 @@ ul.tag-in li a:hover{
 	float:right;
 }
 .footer-class a{
-	color:#F67777;
+	color:#ff7f00;
 	text-decoration:none;
 }
 .footer-bottom-top{

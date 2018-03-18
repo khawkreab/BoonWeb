@@ -379,6 +379,14 @@ form{
 }
 
 /*!
+* nav-link override
+*/
+.nav-link {
+    display: block;
+    padding: 0 1rem;
+}
+
+/*!
 * box in pawner index
 */
 .box-main {
