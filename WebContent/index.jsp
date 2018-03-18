@@ -251,9 +251,7 @@
 								<div class="zoom-icon ">
 									<a class="picture" href="images/pc4.jpg" rel="title"
 										class="b-link-stripe b-animate-go  thickbox"><i
-										class="glyphicon glyphicon-search icon "></i></a> <a
-										href="single.html"><i
-										class="glyphicon glyphicon-menu-right icon"></i></a>
+										class="glyphicon glyphicon-search icon "></i></a> 
 								</div>
 							</div>
 							<div class="mid-1">

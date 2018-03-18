@@ -893,6 +893,12 @@ footer {
 	margin: auto;	
 }
 
+@media (max-width: 360px) {
+	.bg3 {
+	display: none;
+	}
+}
+
 .re-con {
 	background-color: #fff;
 	background-repeat: no-repeat;
@@ -909,7 +915,7 @@ footer {
 .form-login {
 	margin: 18.22px;
 	display: block;
-	width: 500px;;
+	width: 95%;
 }
 .input-regis {
 	width: 300;
@@ -922,7 +928,7 @@ footer {
 	border-radius: 3px;
 }
 .post-login {
-	width: 350px;
+	width: 90%;
 	background-color: #fafbfc;
 	min-height: 34;
 	padding: 6px 8px;
@@ -947,6 +953,5 @@ footer {
 }
 .modal-dialog{
     margin: 100px auto;
-	margin-top:17%;
 	max-width: 900px;
 }

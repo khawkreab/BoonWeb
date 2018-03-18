@@ -52,7 +52,7 @@
 	 <div class="container">
 		 <div class="head">
 			 <div class="logo">
-				 <a href="index.html"> <img src="img/logos/bg.png" alt="" style="height: 99px;">
+				 <a href="index.html"> <img src="img/logos/bg.png" alt="" >
 				 </a>
 			 </div>
 		 </div>
@@ -226,26 +226,26 @@
 			 <div class="re-con">
 				 <div class="row">
 					 <div class="col-md-6 ">
-						 <div class="form-login float-left" style="margin-top: 50px;margin-bottom: 40px;">
-							 <h1 style="font-size: 35px; font-weight: 500;">Welcome to
+						 <div class="form-login" style="margin-top: 50px;margin-bottom: 40px;">
+							 <h1 style="font-size: 32px; font-weight: 500;">Welcome to
 								 BoonYoung</h1>
 							 <p class="Subhead-description"
-								 style="margin-bottom: 35px; width: 300px;">This used to
+								 style="margin-bottom: 35px;">This used to
 								 enter boonyoung. Any pawnshop will be able to see your
 								 information.</p>
 							 <form method="POST" action="loginProcess.html">
-								 <div class="form-group float-left ">
+								 <div class="form-group">
 									 <dt style="font-weight: 500; color: #555;">Email</dt>
 									 <input class="post-login" name="email" required="required" />
 									 <errors path="email" />
 								 </div>
-								 <div class="form-group float-left ">
+								 <div class="form-group">
 									 <dt style="font-weight: 500; color: #555;">Password</dt>
 									 <input type="password" class="post-login" name="password"
 										 required="required" />
 									 <errors path="password" />
 								 </div>
-								 <div class="form-group float-left ">
+								 <div class="form-group">
 									 <button type="submit" class="btn btn-sm btn-primary"
 										 style="margin-right: 10px; font-size: 15px;    background-color: #ff7f00;
 										 border-color: #9e9e9e00;">Continue</button>
