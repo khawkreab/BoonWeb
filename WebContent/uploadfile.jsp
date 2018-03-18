@@ -7,19 +7,8 @@
 <script
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 <script>
+	var i = 1;
 
-var i =1;
-function readURL(input) {
-	if (input.files && input.files[0]) {
-		var reader = new FileReader();
-
-		reader.onload = function(e) {
-			$('#blah'+i+'').attr('src', e.target.result);
-		};
-
-		reader.readAsDataURL(input.files[0]);
-	}
-}
 	$(document)
 			.ready(
 					function() {
@@ -32,16 +21,23 @@ function readURL(input) {
 											$('#fileTable')
 													.append(
 															'<tr><td>'
-																	+ '   <input type="file" name="files"  onchange="readURL(this);"/>'
-																	+'<img id="blah' + i + '" src="http://placehold.it/180" alt="your image" />'
+																	+ '<input type="file" id="upload_file" name="files" onchange="preview_image();" multiple />'
+																	
 																	+ '</td></tr>');
-											
+
 											i++;
 										});
 
 					});
 
-	
+	function preview_image() {
+		var total_file = document.getElementById("upload_file").files.length;
+		for (var i = 0; i < total_file; i++) {
+			$('#image_preview').append(
+					"<img src='" + URL.createObjectURL(event.target.files[i])
+							+ "'><br>");
+		}
+	}
 </script>
 <style type="text/css">
 body {
@@ -59,19 +55,64 @@ input[type=file] {
 }
 </style>
 
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="jquery.form.js"></script>
+
+<!-- <script>
+	$(document).ready(function() {
+		$('form').ajaxForm(function() {
+			alert("Uploaded SuccessFully");
+		});
+	});
+
+	function preview_image() {
+		var total_file = document.getElementById("upload_file").files.length;
+		for (var i = 0; i < total_file; i++) {
+			$('#image_preview').append(
+					"<img src='" + URL.createObjectURL(event.target.files[i])
+							+ "'><br>");
+		}
+	}
+</script> -->
+
 </head>
 <body>
+
+	<div id="wrapper">
+		<div id="image_preview"></div>
+
+		<form:form method="post" action="savefiles.html"
+			modelAttribute="uploadForm" enctype="multipart/form-data">
+			
+			<table id="fileTable">
+				<tr>
+					<td><input type="file" id="upload_file" name="files"
+				onchange="preview_image();"/>
+						</td>
+				</tr>
+
+			</table>
+			
+
+			<br />
+			<input name="pawnerPostName" type="text" />
+			<input type="submit" name='submit_image' value="Upload Image" />
+			
+			
+
+			<input id="addFile" type="button" value="Add File" />
+		</form:form>
+
+
+	</div>
 	<br>
 	<br>
-	<div align="center">
+	<%-- <div align="center">
 		<h1>Crunchify - Spring MVC Upload Multiple Files Example</h1>
 
 		<div id="fileIndex"></div>
 		<form:form method="post" action="savefiles.html"
-			modelAttribute="uploadForm" enctype="multipart/form-data" id="form1"
-			runat="server">
+			modelAttribute="uploadForm" enctype="multipart/form-data">
 
 			<p>Select files to upload. Press Add button to add more file
 				inputs.</p>
@@ -91,6 +132,6 @@ input[type=file] {
 		</form:form>
 
 		<br />
-	</div>
+	</div> --%>
 </body>
 </html>
