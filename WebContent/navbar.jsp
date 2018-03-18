@@ -65,14 +65,14 @@
 					 %>
 					 <li><a href="login.html"> <%=session.getAttribute("username")%>
 					 </a></li>
-					 <li><a href="register.html">Setting</a></li>
+					 <li><a href="logout.html">Logout</a></li>
 					 <!-- -------------------------------------------------------------------- -->
 					 <%
 						 } else if (session.getAttribute("userType") == "pawnShop") {
 					 %>
 					 <li><a href="login.html"> <%=session.getAttribute("username")%>
 					 </a></li>
-					 <li><a href="register.html">Setting</a></li>
+					  <li><a href="logout.html">Logout</a></li>
 					 <!-- -------------------------------------------------------------------- -->
 					 <%
 						 }
