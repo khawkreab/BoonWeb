@@ -8,6 +8,7 @@ import java.util.Date;
 import java.util.List;
 
 import javax.ejb.EJB;
+import javax.security.auth.message.callback.PrivateKeyCallback.Request;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
@@ -44,25 +45,29 @@ public class FileUploadController {
 	}
 
 	@RequestMapping("/savefiles")
-	public ModelAndView crunchifySave(@ModelAttribute("uploadForm") FileUpload fileUpload, Model map)
+	public ModelAndView crunchifySave(@ModelAttribute("uploadForm") FileUpload fileUpload, Model map, HttpServletRequest request)
 			throws IllegalStateException, IOException {
 		
 		PawnerPost pawnerPost = new PawnerPost();
-		pawnerPost.equals(fileUpload);
-//		Date date = new Date();
-//		String status = "waiting";
-//		try {
-//			System.out.println(pawnerPost.getClass());
-//			if (0 == pawnerPost.getPawnerPostId()) { 
-//				pawnerPost.setPawnerPostDate(date);
-//				pawnerPost.setPawnerPostStatus(status);
-//				pawnerPostService.insert(pawnerPost);
-//			} else {
-//				pawnerPostService.update(pawnerPost);
-//			}
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}
+//		pawnerPost.equals(fileUpload);
+		Date date = new Date();
+		String status = "uploadimage";
+		PawnerPost post = new PawnerPost();
+		try {
+			System.out.println(pawnerPost.getClass());
+			if (0 == pawnerPost.getPawnerPostId()) { 
+				pawnerPost.setPawnerPostDate(date);
+				pawnerPost.setPawnerPostStatus(status);
+				
+				pawnerPost.setPawnerPostName(request.getParameter("pawnerPostName"));
+				
+				post = pawnerPostService.insert(pawnerPost);
+			} else {
+				pawnerPostService.update(pawnerPost);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		
 		pawnerPost = pawnerPostService.findPawnerPostByStatus("uploadimage");
 		
@@ -85,7 +90,8 @@ public class FileUploadController {
 					fileNames.add(saveDirectory +fileName);
 					
 					//
-					pawnerPostPicture.setPawnerPostId(pawnerPost);
+					pawnerPostPicture.setPawnerPostPicture(fileName);
+					pawnerPostPicture.setPawnerPostId(post);
 					pawnerPostPictureService.insert(pawnerPostPicture);
 					
 				}
