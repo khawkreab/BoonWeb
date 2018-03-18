@@ -95,7 +95,7 @@
 
 		 <div class="head-top">
 
-			 <div class="col-sm-8 col-md-offset-2 h_menu4">
+			 <div class="col-sm-8 col-md-offset-2">
 				 <nav class="navbar nav_bottom" role="navigation">
 
 					 <!-- Brand and toggle get grouped for better mobile display -->

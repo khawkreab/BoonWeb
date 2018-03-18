@@ -112,6 +112,15 @@ form{
 	margin-left: 0;
 }
 
+
+/*!
+* header navber
+*/
+.header{
+	border-bottom: 1px solid #ccc;
+	box-shadow: 1px 1px 1px solid #000;
+}
+
 /*!
 * li navber
 */
