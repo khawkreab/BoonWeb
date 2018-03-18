@@ -5825,6 +5825,14 @@ button.close {
   height: 50px;
   overflow: scroll;
 }
+@media (min-width: 1000px) {
+	.modal-dialog {
+		width: 900px;
+		height: 500px;
+		margin: 30px auto;
+	}
+}
+
 @media (min-width: 768px) {
   .modal-dialog {
     width: 600px;

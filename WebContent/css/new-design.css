@@ -948,7 +948,5 @@ footer {
 .modal-dialog{
     margin: 100px auto;
 	margin-top:17%;
-	width:60%;
-	height:60%;
 	max-width: 900px;
 }
