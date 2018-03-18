@@ -49,7 +49,7 @@
 	 <div class="container">
 		 <div class="head">
 			 <div class="logo">
-				 <a href="index.html"> <img src="images/logo.png" alt="">
+				 <a href="index.html"> <img src="img/logos/bg.png" alt="" style="height: 110;">
 				 </a>
 			 </div>
 		 </div>
