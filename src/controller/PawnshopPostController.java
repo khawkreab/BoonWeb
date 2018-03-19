@@ -68,7 +68,7 @@ public class PawnshopPostController {
 		try {
 			long userId = (long) request.getSession().getAttribute("id");
 			
-			long postId = Long.parseLong(request.getParameter("postId"));
+			long postId = Long.parseLong(request.getParameter("item"));
 			pawnshopPost = pawnshopPostService.findPawnshopPostById(postId);
 			
 			mv.addObject("pawnshopPost", pawnshopPost);
