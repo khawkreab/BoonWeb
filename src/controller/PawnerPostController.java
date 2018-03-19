@@ -26,13 +26,13 @@ import org.springframework.web.servlet.ModelAndView;
 import entity.Estimate;
 import entity.Pawner;
 import entity.PawnerPost;
-import entity.PawnerPostPicture;
+import entity.Picture;
 import fileupload.FileUpload;
 import service.EstimateService;
-import service.PawnerPostPictureService;
 import service.PawnerPostService;
 import service.PawnerService;
 import service.PawnshopService;
+import service.PictureService;
 
 @Controller
 public class PawnerPostController {
@@ -49,8 +49,8 @@ public class PawnerPostController {
 	@EJB(mappedName = "ejb:/BoonWeb//PawnshopServiceBean!service.PawnshopService")
 	PawnshopService pawnshopServ;
 	
-	@EJB(mappedName = "ejb:/BoonWeb/PawnerPostPictureServiceBean!service.PawnerPostPictureService")
-	PawnerPostPictureService pawnerPostPictureService;
+	@EJB(mappedName = "ejb:/BoonWeb/PictureServiceBean!service.PictureService")
+	PictureService pictureService;
 	
 	@RequestMapping("/pawner-post-form-gold")
 	public ModelAndView newGold(HttpServletRequest request) {
@@ -124,8 +124,8 @@ public class PawnerPostController {
 		String saveDirectory = "Q:/testPic/";
 		String fileName ="";
 		
-		PawnerPostPicture pawnerPostPicture = new PawnerPostPicture();
-
+		Picture picture = new Picture();
+		
 		List<MultipartFile> Files = fileUpload.getFiles();
 
 		List<String> fileNames = new ArrayList<String>();
@@ -140,9 +140,10 @@ public class PawnerPostController {
 					fileNames.add(saveDirectory +fileName);
 					
 					//
-					pawnerPostPicture.setPawnerPostPicture(fileName);
-					pawnerPostPicture.setPawnerPostId(post);
-					pawnerPostPictureService.insert(pawnerPostPicture);
+					picture.setPicture(fileName);
+					picture.setPawnerId(pm);
+					picture.setPawnerPostId(post);
+					pictureService.insert(picture);
 					
 				}
 			}

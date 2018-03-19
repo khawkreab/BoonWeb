@@ -351,10 +351,11 @@ a.buy-now:hover{
     float: right;
 }
  .mid-1 span{
-	font-size: 0.9em;
+	font-size: 1.3em;
+    font-weight: 100;
     color: #ff7f00;
     line-height: 1.8em;
-    font-family: 'Ubuntu-Bold';
+    font-family: 'Ubuntu-Regular';
 }
 /*----*/
 /*-----------------------------------------------------------------------------------*/
@@ -509,15 +510,14 @@ a.buy-now:hover{
     float: right;
 }
 /*----*/
-.mid-1 h6 {
-    font-size: 1.2em;
+.mid-1 h4 {
     font-family: 'Ubuntu-Regular';
 }
-.mid-1 h6 a {
+.mid-1 h4 a {
     color: #000000;
     text-decoration:none;
 }
-.mid-1 h6 a:hover {
+.mid-1 h4 a:hover {
     color: #ff7f00;
 }
 .mid-2 p{
