@@ -53,6 +53,11 @@ h1,h2,h3,h4,h5,h6,label,p{
 }
 .header-login ul li,.header-social ul li{
 	display:inline-block;
+	border-left: 1px solid #ccc;
+}
+
+.header-login ul li:first-child {
+	border-left: none;
 }
 .header-login ul li a{
 	display:inline-block;
@@ -2036,6 +2041,9 @@ h4.grid2 {
 .header-login ul li a {
     font-size: 0.78em;
     margin: 0 0.1em;
+}
+.header-login ul li{
+   border-left: 1px solid #ccc;
 }
 .header-social {
     margin-top: 0.15em;
