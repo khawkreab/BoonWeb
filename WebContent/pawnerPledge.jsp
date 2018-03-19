@@ -5,7 +5,7 @@
 // edit by : ter
  -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+ pageEncoding="UTF-8"%>
 
     <html lang="en">
 
@@ -36,11 +36,9 @@
             }
 
             .card-icon {
-                border: 1px solid #999999;
-                border-radius: 4px;
                 margin: 16px;
                 text-align: center;
-                width: 168px;
+                width: 158px;
             }
 
             .card-icon:hover {
@@ -59,7 +57,7 @@
                 padding: 8px;
                 margin-top: .5rem;
                 color: white;
-                background-color: #4CAF50;
+                background-color: #ff7f00;
                 text-align: center;
                 cursor: pointer;
                 width: 100%;
@@ -74,69 +72,70 @@
         <!-- Navigation -->
         <jsp:include page="navbar.jsp" />
 
-        <section>
+        <!--content-->
+        <div class="content">
             <div class="container">
-                <div class="re-contain" style="width:85%;">
-                    <div class="Subhead ">
-                        <h2 class="Subhead-heading">Select Pledge Item...</h2>
-                        <p class="Subhead-description">We have 7 items</p>
-                    </div>
-                    <div class="scrollbar-auto">
-                        <div class="d-flex flex-row flex-wrap text-center backgroup-icon">
-                            <div class="card-icon">
-                                <a href="pawner-post-form-gold.html">
-                                    <dt>
-                                        <img class="icon" src="img/icon/gold-ingots.png">
-                                    </dt>
-                                    <p class="card-font">GOLD</p>
-                                </a>
-                            </div>
-                            <div class=" card-icon">
-                                <a href="pawner-post-form-watch.html">
-                                    <dt>
-                                        <img class="icon" src="img/icon/wristwatch.png">
-                                    </dt>
-                                    <p class="card-font">WATCH</p>
-                                </a>
-                            </div>
-                            <div class="card-icon">
-                                <a href="pawner-post-form-smartphone.html">
-                                    <dt>
-                                        <img class="icon" src="img/icon/smartphone.png">
-                                    </dt>
-                                    <p class="card-font">SMARTPHONE</p>
-                                </a>
-                            </div>
-                            <div class="card-icon">
-                                <a href="pawner-post-form-laptop.html">
-                                    <dt>
-                                        <img class="icon" src="img/icon/laptop.png">
-                                    </dt>
-                                    <p class="card-font">LAPTOP</p>
-                                </a>
-                            </div>
-                            <div class="card-icon">
-                                <a href="pawner-post-form-camera.html">
-                                    <dt>
-                                        <img class="icon" src="img/icon/photo-camera.png">
-                                    </dt>
-                                    <p class="card-font">CAMERA</p>
-                                </a>
-                            </div>
-                            <div class="card-icon">
-                                <a href="pawner-post-form-tv.html">
-                                    <dt>
-                                        <img class="icon" src="img/icon/tv.png">
-                                    </dt>
-                                    <p class="card-font">TV</p>
-                                </a>
+                <!--products-->
+                <div class="content-mid">
+                    <h3>Pledge Item</h3>
+                    <label class="line"></label>
+                    <div class="mid-popular">
+                        <div class="scrollbar-auto">
+                            <div class="d-flex flex-row flex-wrap text-center backgroup-icon">
+                                <div class="card-icon">
+                                    <a href="pawner-post-form-gold.html">
+                                        <dt>
+                                            <img class="icon" src="img/icon/gold-ingots.png">
+                                        </dt>
+                                        <p class="card-font">GOLD</p>
+                                    </a>
+                                </div>
+                                <div class=" card-icon">
+                                    <a href="pawner-post-form-watch.html">
+                                        <dt>
+                                            <img class="icon" src="img/icon/wristwatch.png">
+                                        </dt>
+                                        <p class="card-font">WATCH</p>
+                                    </a>
+                                </div>
+                                <div class="card-icon">
+                                    <a href="pawner-post-form-smartphone.html">
+                                        <dt>
+                                            <img class="icon" src="img/icon/smartphone.png">
+                                        </dt>
+                                        <p class="card-font">SMARTPHONE</p>
+                                    </a>
+                                </div>
+                                <div class="card-icon">
+                                    <a href="pawner-post-form-laptop.html">
+                                        <dt>
+                                            <img class="icon" src="img/icon/laptop.png">
+                                        </dt>
+                                        <p class="card-font">LAPTOP</p>
+                                    </a>
+                                </div>
+                                <div class="card-icon">
+                                    <a href="pawner-post-form-camera.html">
+                                        <dt>
+                                            <img class="icon" src="img/icon/photo-camera.png">
+                                        </dt>
+                                        <p class="card-font">CAMERA</p>
+                                    </a>
+                                </div>
+                                <div class="card-icon">
+                                    <a href="pawner-post-form-tv.html">
+                                        <dt>
+                                            <img class="icon" src="img/icon/tv.png">
+                                        </dt>
+                                        <p class="card-font">TV</p>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-
+        </div>
     </body>
 
     </html>

@@ -1,12 +1,13 @@
 <!-- 
 // page : index
-// version : 2.0
-// task : team dev
+// version : 1.0
+// task : new
 // edit by : khawkreab
  -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <html lang="en">
 
@@ -20,29 +21,6 @@
 
 <title>Boonyong</title>
 
-<!-- Bootstrap core CSS -->
-<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-
-<!-- Custom styles for this template -->
-<!-- <link href="css/custom-style.min.css" rel="stylesheet"> -->
-<link href="css/new-design.css" rel="stylesheet">
-<link href="vendor/font-awesome/css/font-awesome.min.css"
-	rel="stylesheet" type="text/css">
-
-
-
-<script>
-	$(document).ready(function() {
-		//Set the carousel options
-		$('#quote-carousel').carousel({
-			pause : true,
-			interval : 4000,
-		});
-	});
-</script>
-
-
 </head>
 
 <body id="page-top">
@@ -50,87 +28,112 @@
 	<!-- Navigation -->
 	<jsp:include page="navbar.jsp" />
 
-	<!-- Header -->
-	<header class="masthead" id="#">
-		<div class="container">
-			<!--  -->
-			<div id="carouselExampleIndicators" class="carousel slide"
-				data-ride="carousel" data-interval="5000">
-				<ol class="carousel-indicators">
-					<li data-target="#carouselExampleIndicators" data-slide-to="0"
-						class="active"></li>
-					<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-					<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-				</ol>
-				<div class="carousel-inner" role="listbox">
-					<div class="carousel-item active">
-						<img class="d-block img-fluid" src="img/header-bg.jpg"
-							alt="First slide">
-						<div class="carousel-caption d-none d-md-block">
-							<h3>Pledge online</h3>
-							<p>Updated every day</p>
-						</div>
-					</div>
-					<div class="carousel-item">
-						<img class="d-block img-fluid" src="img/header-gold.jpg"
-							alt="Second slide">
-						<div class="carousel-caption d-none d-md-block">
-							<h3>How to pledge</h3>
-							<p>Easy Convenient Fast</p>
-						</div>
-					</div>
-					<div class="carousel-item">
-						<img class="d-block img-fluid" src="img/header-bank.jpg"
-							alt="Third slide">
-						<div class="carousel-caption d-none d-md-block">
-							<h3>BoonYong</h3>
-							<p>Support your dream</p>
-						</div>
+	<!--banner-->
+	<div class="banner">
+		<div id="carouselExampleIndicators" class="carousel slide"
+			data-ride="carousel" data-interval="5000">
+			<ol class="carousel-indicators">
+				<li data-target="#carouselExampleIndicators" data-slide-to="0"
+					class="active"></li>
+				<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+				<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+			</ol>
+			<div class="carousel-inner" role="listbox">
+				<div class="carousel-item active">
+					<img class="d-block img-fluid" src="img/header-bg.jpg"
+						alt="First slide">
+					<div class="carousel-caption d-none d-md-block">
+						<h3>Pledge online</h3>
+						<p>Updated every day</p>
 					</div>
 				</div>
-				<a class="carousel-control-prev" href="#carouselExampleIndicators"
-					role="button" data-slide="prev"> <span
-					class="fa fa-chevron-left" aria-hidden="true"></span> <span
-					class="sr-only">Previous</span>
-				</a> <a class="carousel-control-next" href="#carouselExampleIndicators"
-					role="button" data-slide="next"> <span
-					class="fa fa-chevron-right" aria-hidden="true"></span> <span
-					class="sr-only">Next</span>
-				</a>
-			</div>
-		</div>
-	</header>
-
-	<!-- Services -->
-
-
-
-
-	<div class="container">
-		<div class="box">
-			<div class="box-sup">
-				<div class="box-semi text-center">
-					<h1>The 5 Step</h1>
-					<h6>---- easy to pawn ----</h6>
-					<br>
+				<div class="carousel-item">
+					<img class="d-block img-fluid" src="img/bgIndex.jpg"
+						alt="Second slide">
+					<div class="carousel-caption d-none d-md-block">
+						<h3></h3>
+						<p></p>
+					</div>
 				</div>
-				<div class="box-semi">
-					<span class="time-line"></span>
-					<ul>
-						<li><span class="cycle">1</span> Enter item information</li>
-						<li><span class="cycle">2</span> Upload picture and post item</li>
-						<li><span class="cycle">3</span> Get offers from pawner shop</li>
-						<li><span class="cycle">4</span> Walk in pawn shop</li>
-						<li><span class="cycle">5</span> Deal rice again with pawn
-							shop</li>
-					</ul>
+				<div class="carousel-item">
+					<img class="d-block img-fluid" src="img/header-bank.jpg"
+						alt="Third slide">
+					<div class="carousel-caption d-none d-md-block">
+						<h3>BoonYong</h3>
+						<p>Support your dream</p>
+					</div>
 				</div>
 			</div>
+			<a class="carousel-control-prev" href="#carouselExampleIndicators"
+				role="button" data-slide="prev">
+				<h1>
+					<i class="	glyphicon glyphicon-circle-arrow-left"
+						aria-hidden="true"></i>
+				</h1> <span class="sr-only">Previous</span>
+			</a> <a class="carousel-control-next" href="#carouselExampleIndicators"
+				role="button" data-slide="next"><h1>
+					<i class="	glyphicon glyphicon-circle-arrow-right"
+						aria-hidden="true"></i>
+				</h1> <span class="sr-only">Next</span> </a>
 		</div>
 	</div>
 
+	<!--content-->
+	<div class="content">
+		<div class="container">
+			<!--products-->
+			<div class="content-mid">
+				<h3>Trending Items</h3>
+				<label class="line"></label>
+				<div class="mid-popular">
+					<c:forEach items="${post}" var="post">
+						<div class="col-md-3 item-grid simpleCart_shelfItem">
+							<div class=" mid-pop">
+								<div class="pro-img">
+									<img src="images/pc4.jpg" class="img-responsive" alt="">
+									<div class="zoom-icon ">
+										<a class="picture" href="images/pc4.jpg" rel="title"
+											class="b-link-stripe b-animate-go  thickbox"><i
+											class="glyphicon glyphicon-search icon "></i></a>
+									</div>
+								</div>
+								<div class="mid-1">
+									<div class="women">
+										<div class="women-top">
+											<span>#</span>
+											<h6>
+												<a href="single.html">${pawnshopPosts.pawnshopPostName}
+													- ${pawnshopPosts.pawnshopPostBrand}</a>
+											</h6>
+										</div>
+										<div class="img item_add">
+											<a href="#"><img src="images/ca.png" alt=""></a>
+										</div>
+										<div class="clearfix"></div>
+									</div>
+									<div class="mid-2">
+										<p>
+											<em class="item_price">${pawnshopPosts.pawnshopId.pawnshopProvince }</em>
+										</p>
+										<div class="block">
+											<div class="starbox small ghosting"></div>
+										</div>
 
-	<!--  -->
+										<div class="clearfix"></div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</c:forEach>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+			<!--//products-->
+
+		</div>
+
+	</div>
 	<div class="container">
 		<div class="dev-title">
 			<h1>Welcome to Team deverlop</h1>
@@ -169,15 +172,18 @@
 					</div>
 				</div>
 				<a class="carousel-control-prev" href="#teamdev" role="button"
-					data-slide="prev"> <span class="fa fa-chevron-left"
-					aria-hidden="true"></span> <span class="sr-only">Previous</span>
+					data-slide="prev"> <span
+					class="glyphicon glyphicon-chevron-left color-black" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
 				</a> <a class="carousel-control-next" href="#teamdev" role="button"
-					data-slide="next"> <span class="fa fa-chevron-right"
-					aria-hidden="true"></span> <span class="sr-only">Next</span>
+					data-slide="next"> <span
+					class="glyphicon glyphicon-chevron-right color-black" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
 				</a>
 			</div>
 		</div>
 	</div>
+
 	<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

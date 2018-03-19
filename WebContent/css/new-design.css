@@ -15,45 +15,13 @@
 // task : nav bar design
 // edit by : khawkreab
 */
-body {
-	overflow-x: hidden;
-	font-family: 'Roboto Slab', 'Helvetica Neue', Helvetica, Arial,
-		sans-serif;
-	background-color: #fff;
-}
-
 a {
 	cursor: pointer;
 }
 
-h1, h2, h3, h4, h5, h6 h7{
+h1, h2, h3, h4, h5, h6 h7 {
 	font-weight: 700;
 	font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif
-}
-
-section {
-	padding: 100px 0;
-}
-
-section h2.section-heading {
-	font-size: 40px;
-	margin-top: 0;
-	margin-bottom: 15px
-}
-
-section h3.section-subheading {
-	font-size: 16px;
-	font-weight: 400;
-	font-style: italic;
-	margin-bottom: 80px;
-	text-transform: none;
-	font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, Arial,
-		sans-serif
-}
-
-::selection {
-	background: #007bff;
-	text-shadow: none
 }
 
 dl, ol, ul {
@@ -96,16 +64,20 @@ li {
 	margin: 0 1%
 }
 
-.border-left-1{
+.border-left-1 {
 	boder-left: 1px solid #ccc;
 }
 
-.text-center{
+.text-center {
 	text-align: center;
 }
 
-form{
+form {
 	margin: 0px;
+}
+
+.color-black{
+	color: #000;
 }
 /*!
 * override carousel-control-next, .carousel-control-prev
@@ -121,7 +93,7 @@ form{
 	-ms-flex-pack: center;
 	justify-content: center;
 	width: 15%;
-	color: #000;
+	/* color: #000; */
 	text-align: center;
 	opacity: .5;
 }
@@ -139,16 +111,16 @@ form{
 }
 
 /*!
-* li navber
+* header navber
 */
-.navbar-nav li {
-	list-style: none;
-	padding: 0px;
+.header {
+	border-bottom: 1px solid #ccc;
+	box-shadow: 1px 1px 1px solid #000;
 }
 
-.navbar-nav li:hover {
-	background-color: #ccc
-}
+/*!
+* li navber
+*/
 
 /*!
 * override dropdown menu
@@ -193,8 +165,6 @@ form{
 /*!
 * card override
 */
-
-
 .card {
 	position: relative;
 	border: none;
@@ -212,10 +182,6 @@ form{
 	margin: 0 15px 15px 0;
 	box-shadow: 0 0 1px 1px rgba(20, 23, 28, .1), 0 3px 1px 0
 		rgba(20, 23, 28, .1);
-}
-
-.card-h {
-	height: 308px;
 }
 
 .card-deck .card {
@@ -407,6 +373,14 @@ form{
 }
 
 /*!
+* nav-link override
+*/
+.nav-link {
+	display: block;
+	padding: 0 1rem;
+}
+
+/*!
 * box in pawner index
 */
 .box-main {
@@ -432,7 +406,6 @@ form{
 	width: 100%;
 	height: auto;
 	margin: 20px;
-	
 }
 
 .text-center {
@@ -468,20 +441,6 @@ form{
 /*!
 * container override
 */
-.container {
-	align-items: center;
-	position: relative;
-}
-
-.container {
-	width: 100%;
-	padding-right: 0px;
-	padding-left: 0px;
-	margin-right: auto;
-	margin-left: auto;
-	display: flex;
-	justify-content: center;
-}
 
 /*!
 * list post
@@ -717,7 +676,7 @@ strong {
 */
 .dev {
 	display: block;
-	width: 900px;
+	width: auto;
 	height: 100px;
 }
 
@@ -739,12 +698,13 @@ strong {
 
 .dev-title {
 	display: block;
+	text-align: center;
 }
 
 /*!
 * history
 */
-.history-main, .history-filter{
+.history-main, .history-filter {
 	width: 1000px;
 	background-color: #fff;
 	box-shadow: 0 1px 1px #ccc6;
@@ -758,11 +718,11 @@ strong {
 	border-bottom: 1px solid #ccc6;
 }
 
-.history-body{
+.history-body {
 	padding: 10px;
 }
 
-.history-show-estimate{
+.history-show-estimate {
 	padding: 10px;
 }
 /*!
@@ -878,10 +838,11 @@ footer {
 	background-position: right 8px center;
 	border: 1px solid #d1d5da;
 	border-radius: 3px;
+	width: 90%;
 }
 
 .account-submit {
-	width: 84%;
+	width: 90%;
 	background-color: #ff7f00;
 	margin-top: 12px;
 	padding: 6px 8px;
@@ -891,6 +852,7 @@ footer {
 	border-radius: 3px;
 	font-weight: 700;
 }
+
 .bg {
 	background-image: url("../img/body/body.jpg");
 	height: 100%;
@@ -902,7 +864,6 @@ footer {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-
 }
 
 .bg2 {
@@ -915,6 +876,22 @@ footer {
 	margin: auto;
 	border-top-left-radius: 10px;
 	border-bottom-left-radius: 10px;
+}
+
+.bg3 {
+	background-image: url("../img/body/body2.jpg");
+	height: 100%;
+	width: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin: auto;
+}
+
+@media ( max-width : 360px) {
+	.bg3 {
+		display: none;
+	}
 }
 
 .re-con {
@@ -931,6 +908,12 @@ footer {
 	width: 650px;
 }
 
+.form-login {
+	margin: 18.22px;
+	display: block;
+	width: 95%;
+}
+
 .input-regis {
 	width: 300;
 	background-color: #fafbfc;
@@ -940,6 +923,20 @@ footer {
 	background-position: right 8px center;
 	border: 1px solid #d1d5da;
 	border-radius: 3px;
+}
+
+.post-login {
+	width: 90%;
+	background-color: #fafbfc;
+	min-height: 34;
+	padding: 6px 8px;
+	color: black;
+	vertical-align: middle;
+	background-repeat: repeat;
+	background-position: right 8px center;
+	border: 1px solid #d1d5da;
+	border-radius: 3px;
+	margin-bottom: 10px;
 }
 
 .input-submit {
@@ -952,4 +949,9 @@ footer {
 	border: 1px solid #d1d5da;
 	border-radius: 3px;
 	font-weight: 700;
+}
+
+.modal-dialog {
+	margin: 100px auto;
+	max-width: 900px;
 }

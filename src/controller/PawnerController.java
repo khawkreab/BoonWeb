@@ -51,7 +51,7 @@ public class PawnerController {
 			}
 		}catch (Exception e){
 			return "redirect:pawner-register-form.html";
-		}return "redirect:login.html";
+		}return "redirect:index.jsp";
 	}
 	
 	@RequestMapping("/editPawner")
@@ -75,7 +75,7 @@ public class PawnerController {
 		try {
 			long userId = (long) request.getSession().getAttribute("id");
 			
-			pawnshopPosts = psService.getAllPawnshopPost();
+			pawnshopPosts = psService.listPawnshopPostByPawnerId(userId);
 			mv.addObject("pawnshopPosts", pawnshopPosts);
 		} catch (Exception e) {
 			e.printStackTrace();

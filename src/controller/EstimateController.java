@@ -57,7 +57,7 @@ public class EstimateController {
 			long userId = (long) request.getSession().getAttribute("id");
 			Pawnshop ps = pawnshopServ.findPawnshopById(userId);
 
-			long postId = Long.parseLong(request.getParameter("postId"));
+			long postId = Long.parseLong(request.getParameter("item"));
 			pawnerPost = postService.findPostById(postId);
 
 			estimate.setPawnshopId(ps);

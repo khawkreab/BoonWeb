@@ -66,13 +66,16 @@
 
 										<!-- Watch,Electronic -->
 										<c:if test="${order.pawnshopPostId.pawnshopPostModel != null}">
-											<li>Production : ${order.pawnshopPostId.pawnshopPostProduction}</li>
 											<li>Model : ${order.pawnshopPostId.pawnshopPostModel}</li>
 											<li>Serial : ${order.pawnshopPostId.pawnshopPostSerial}</li>
 										</c:if>
+										
+											<c:if test="${order.pawnshopPostId.pawnshopPostProduction != null}">
+											<li>Production : ${order.pawnshopPostId.pawnshopPostProduction}</li>
+										</c:if>
 
 										<c:if test="${order.pawnshopPostId.pawnshopPostWarranty != null}">
-											<li>Warranty : ${poorderst.pawnshopPostId.pawnshopPostWarranty}</li>
+											<li>Warranty : ${order.pawnshopPostId.pawnshopPostWarranty}</li>
 										</c:if>
 										<c:if test="${order.pawnshopPostId.pawnshopPostPurchase != null}">
 											<li>Purchase : ${order.pawnshopPostId.pawnshopPostPurchase }</li>

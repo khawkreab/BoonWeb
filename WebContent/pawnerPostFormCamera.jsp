@@ -36,10 +36,10 @@
 							<h2 class="Subhead-heading">Camera</h2>
 							<p class="Subhead-description">This post will show on pawnshop's page for them estimate your post.</p>
 						</div>
-						<form:form method="post" action="savePost.html" commandName="pawnerPost">
-							<form:hidden path="pawnerPostId" />
-							<form:hidden path="pawnerId.pawnerId" />
-							<form:hidden path="pawnerPostItemType" value="Electronic" />
+						<form:form method="post" action="savePost.html" modelAttribute="pawnerPost" enctype="multipart/form-data">
+							<input type="hidden" name="pawnerPostId" />
+							<input type="hidden" name="pawnerId.pawnerId" />
+							<input type="hidden" name="pawnerPostItemType" value="Electronic" />
 							<div style="margin-bottom: 20px;">
 								<div class="form-group float-left">
 									<dt>
@@ -50,7 +50,7 @@
 								<div class="form-group-post float-left" style="margin-bottom: 30px;">
 									<span>Post name</span>
 									<span>
-										<form:input path="pawnerPostName" class="post-name" pattern="[A-Za-z0-9]{3,45}" required="required" />
+										<input name="pawnerPostName" class="post-name" pattern="[A-Za-z0-9]{3,45}" required="required" />
 									</span>
 									<p class="Subhead-description">plass enter data about your item for pawnshop to understand.</p>
 								</div>
@@ -64,7 +64,7 @@
 									<div class="form-group  ">
 										<span>Brand</span>
 										<div class="form-group" style="margin-top: 11.5px;">
-											<form:select path="pawnerPostBrand">
+											<select name="pawnerPostBrand">
 												<option>Canon</option>
 												<option>Fuji Film</option>
 												<option>Nikon</option>
@@ -72,58 +72,58 @@
 												<option>Samsung</option>
 												<option>Sony</option>
 												<option>Others</option>
-											</form:select>
+											</select>
 										</div>
 									</div>
 									<div class="form-group-post float-left ">
 										<dt>Type of camera</dt>
 										<dt>
-											<form:input path="pawnerPostTypeCamera" class="post-name" placeholder=" Mirrorless / DSLR " pattern="[0-9A-Za-z]{1,15}" required="required"
+											<input name="pawnerPostTypeCamera" class="post-name" placeholder=" Mirrorless / DSLR " pattern="[0-9A-Za-z]{1,15}" required="required"
 											/>
 										</dt>
 									</div>
 									<div class="form-group-post float-left ">
 										<dt>Model</dt>
 										<dt>
-											<form:input path="pawnerPostModel" class="post-name" placeholder="" pattern="[0-9A-Za-z]{1,15}" required="required" />
+											<input name="pawnerPostModel" class="post-name" placeholder="" pattern="[0-9A-Za-z]{1,15}" required="required" />
 										</dt>
 									</div>
 									<div class="form-group-post float-left ">
 										<dt>Display size(inch)</dt>
 										<dt>
-											<form:input path="pawnerPostSize" class="post-name" placeholder="" pattern="[0-9A-Za-z]{1,15}" required="required" />
+											<input name="pawnerPostSize" class="post-name" placeholder="" pattern="[0-9A-Za-z]{1,15}" required="required" />
 										</dt>
 									</div>
 									<div class="form-group-post float-left ">
 										<dt>Serial Number</dt>
 										<dt>
-											<form:input path="pawnerPostSerial" class="post-name" placeholder="" pattern="[0-9A-Za-z]{1,15}" required="required" />
+											<input name="pawnerPostSerial" class="post-name" placeholder="" pattern="[0-9A-Za-z]{1,15}" required="required" />
 										</dt>
 									</div>
 									<div class="form-group-post float-left ">
 										<dt>Type of len</dt>
 										<dt>
-											<form:input path="pawnerPostCameraLen" class="post-name" placeholder="" pattern="[0-9A-Za-z]{1,15}" required="required" />
+											<input name="pawnerPostCameraLen" class="post-name" placeholder="" pattern="[0-9A-Za-z]{1,15}" required="required" />
 										</dt>
 									</div>
 									<div class="form-group-post float-left ">
 										<dt>Capacity</dt>
 										<dt>
-											<input path="pawnerPostCapacity" class="post-name" placeholder="" pattern="[0-9A-Za-z]{1,}" required="required" />
+											<input name="pawnerPostCapacity" class="post-name" placeholder="" pattern="[0-9A-Za-z]{1,}" required="required" />
 										</dt>
 									</div>
 									<div class="form-group-post float-left ">
 										<dt>Year of purchase</dt>
 										<dt>
-											<input path="pawnerPostPurchase" type="date" class="post-name" required="required" />
+											<input name="pawnerPostPurchase" type="date" class="post-name" required="required" />
 										</dt>
 									</div>
 									<div class="form-group-post float-left">
 										<dt style="line-height: 45px;">
-											<form:checkbox path="pawnerPostBattery" value="yes" /> Battery charger
+											<input type="checkbox" name="pawnerPostBattery" value="yes" /> Battery charger
 										</dt>
 										<dt style="line-height: 5px;">
-											<form:checkbox path="pawnerPostWarranty" value="yes" /> Warranty Certificate
+											<input type="checkbox" name="pawnerPostWarranty" value="yes" /> Warranty Certificate
 											<strong>(If you have)</strong>
 										</dt>
 									</div>
@@ -134,7 +134,7 @@
 							</div>
 							<div class="form-group-post">
 								<dt>
-									<form:textarea path="pawnerPostDescription" class="post-description" style="max-width: 100%" pattern="[0-9A-Za-z]{0,}"></form:textarea>
+									<textarea name="pawnerPostDescription" class="post-description" style="max-width: 100%" pattern="[0-9A-Za-z]{0,}"></textarea>
 								</dt>
 								<p class="Subhead-description">(optional) If you have more data input here!</p>
 							</div>
