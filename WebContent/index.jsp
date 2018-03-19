@@ -173,9 +173,9 @@
 				</div>
 				<a class="carousel-control-prev" href="#teamdev" role="button"
 					data-slide="prev"> <span
-					class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+					class="glyphicon glyphicon-chevron-left color-black" aria-hidden="true"></span>
 					<span class="sr-only">Previous</span>
-				</a> <a class="carousel-control-next color-black" href="#teamdev" role="button"
+				</a> <a class="carousel-control-next" href="#teamdev" role="button"
 					data-slide="next"> <span
 					class="glyphicon glyphicon-chevron-right color-black" aria-hidden="true"></span>
 					<span class="sr-only">Next</span>
