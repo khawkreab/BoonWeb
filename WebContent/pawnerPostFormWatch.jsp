@@ -37,10 +37,10 @@
 							<h2 class="Subhead-heading">Create Post Watch</h2>
 							<p class="Subhead-description">This post will show on pawnshop's page for them estimate your post.</p>
 						</div>
-						<form:form method="post" action="savePost.html" commandName="pawnerPost">
-							<form:hidden path="pawnerPostId" />
-							<form:hidden path="pawnerId.pawnerId" />
-							<form:hidden path="pawnerPostItemType" value="watch" />
+						<form:form method="post" action="savePost.html" modelAttribute="pawnerPost" enctype="multipart/form-data">
+							<input type="hidden" name="pawnerPostId" />
+							<input type="hidden" name="pawnerId.pawnerId" />
+							<input type="hidden" name="pawnerPostItemType" value="watch" />
 							<div style="margin-bottom: 20px;">
 								<div class="form-group float-left">
 									<dt>
@@ -51,7 +51,7 @@
 								<div class="form-group-post float-left" style="margin-bottom: 30px;">
 									<dt>Post name</dt>
 									<dt>
-										<form:input path="pawnerPostName" class="post-name" pattern="[A-Za-z0-9]{3,45}" required="required" />
+										<input name="pawnerPostName" class="post-name" pattern="[A-Za-z0-9]{3,45}" required="required" />
 									</dt>
 									<p class="Subhead-description">plass enter data about your item for pawnshop to understand.</p>
 								</div>
@@ -63,7 +63,7 @@
 								<div class="form-group-post float-left ">
 									<dt>Brand</dt>
 									<div class="float-left" style="margin-top: 11.5px;">
-										<form:select path="pawnerPostBrand">
+										<select name="pawnerPostBrand">
 											<option>Rolex</option>
 											<option>Patek Philippe</option>
 											<option>Audemars Piguet</option>
@@ -72,31 +72,31 @@
 											<option>Tag Heuer</option>
 											<option>Omega</option>
 											<option>Casio</option>
-										</form:select>
+										</select>
 									</div>
 								</div>
 								<div class="form-group-post float-left ">
 									<dt>Production year</dt>
 									<dt>
-										<form:input path="pawnerPostProduction" type="date" class="post-name" required="required" style="width:auto;" />
+										<input name="pawnerPostProduction" type="date" class="post-name" required="required" style="width:auto;" />
 									</dt>
 								</div>
 								<div class="form-group-post float-left ">
 									<dt>Model</dt>
 									<dt>
-										<form:input path="pawnerPostModel" class="post-name" placeholder="" pattern="[0-9A-Za-z]{1,15}" required="required" />
+										<input name="pawnerPostModel" class="post-name" placeholder="" pattern="[0-9A-Za-z]{1,15}" required="required" />
 									</dt>
 								</div>
 								<div class="form-group-post float-left ">
 									<dt>Serial Number</dt>
 									<dt>
-										<form:input path="pawnerPostSerial" class="post-name" placeholder="" pattern="[0-9A-Za-z]{1,15}" required="required" />
+										<input name="pawnerPostSerial" class="post-name" placeholder="" pattern="[0-9A-Za-z]{1,15}" required="required" />
 									</dt>
 								</div>
 								<div class="form-group-post float-left ">
 									<dt>Type of case</dt>
 									<div class="float-left" style="margin-top: 11.5px;">
-										<form:select path="pawnerPostCase">
+										<select name="pawnerPostCase">
 											<option>Stainless Steel</option>
 											<option>White Gold</option>
 											<option>Yellow Gold</option>
@@ -104,13 +104,13 @@
 											<option>Pink Gold</option>
 											<option>Others (Please specify)</option>
 											<option>Unknown</option>
-										</form:select>
+										</select>
 									</div>
 								</div>
 								<div class="form-group-post float-left ">
 									<dt>Type of bracelet</dt>
 									<div class="float-left" style="margin-top: 11.5px;">
-										<form:select path="pawnerPostBracelet">
+										<select name="pawnerPostBracelet">
 											<option>Stainless Steel</option>
 											<option>Gold and Silver</option>
 											<option>Gold</option>
@@ -120,26 +120,26 @@
 											<option>Rubber</option>
 											<option>Others (Please specify)</option>
 											<option>Unknown</option>
-										</form:select>
+										</select>
 									</div>
 								</div>
 								<div class="form-group-post float-left ">
 									<dt>Is there any diamonds on your timepiece?</dt>
 									<div class="float-left" style="margin-top: 11.5px;">
-										<form:select path="pawnerPostDiamond">
+										<select name="pawnerPostDiamond">
 											<option value="1">No</option>
 											<option value="2">Dial</option>
 											<option value="3">Bezel</option>
 											<option value="4">On the digits</option>
-										</form:select>
+										</select>
 									</div>
 								</div>
 								<div class="form-group-post float-left">
 									<dt style="line-height:45px;">
-										<form:checkbox path="pawnerPostPackage" value="yes" /> Packaging
+										<input type="checkbox" name="pawnerPostPackage" value="yes" /> Packaging
 									</dt>
 									<dt style="line-height:5px;">
-										<form:checkbox path="pawnerPostWarranty" value="yes" /> Warranty Certificate
+										<input type="checkbox" name="pawnerPostWarranty" value="yes" /> Warranty Certificate
 									</dt>
 								</div>
 							</div>
@@ -148,7 +148,7 @@
 							</div>
 							<div class="form-group-post">
 								<dt>
-									<form:textarea path="pawnerPostDescription" class="post-description" style="max-width:100%" pattern="[0-9A-Za-z]{0,}"></form:textarea>
+									<textarea name="pawnerPostDescription" class="post-description" style="max-width:100%" pattern="[0-9A-Za-z]{0,}"></textarea>
 								</dt>
 								<p class="Subhead-description">(optional) If you have more data input here!</p>
 							</div>
