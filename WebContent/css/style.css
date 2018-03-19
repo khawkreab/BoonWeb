@@ -2007,19 +2007,28 @@ h4.grid2 {
 }
 
 }
+
+.logo img {
+    width: auto;
+    height: 99px;
+}
 @media(max-width:480px){
 .banner {
     height: 340px;
     background-position-x: -238px;
     background-size: 704px;
 }
-}
-@media(max-width:390px){
-.logo {
-    left: -11%;
-}
 .logo img {
-    width: 66%;
+    width: auto;
+    height: 44px;
+}
+}
+
+@media(max-width:390px){
+
+.logo img {
+    width: auto;
+    height: 39px;
 }
 .header-top {
     padding: 0.53em 0;

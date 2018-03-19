@@ -5825,17 +5825,19 @@ button.close {
   height: 50px;
   overflow: scroll;
 }
-@media (min-width: 1000px) {
+@media (max-width: 1366px) {
 	.modal-dialog {
 		width: 900px;
 		height: 500px;
 		margin: 30px auto;
+		margin-top:17%;
 	}
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .modal-dialog {
     width: 600px;
+    margin-top:17%;
     margin: 30px auto;
   }
   .modal-content {
@@ -5845,6 +5847,14 @@ button.close {
   .modal-sm {
     width: 300px;
   }
+}
+
+@media (max-width: 360px) {
+	.modal-dialog {
+		width: 300px;
+		height: 300px;
+		margin: 30px auto;
+	}
 }
 @media (min-width: 992px) {
   .modal-lg {
