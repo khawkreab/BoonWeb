@@ -1,40 +1,63 @@
-<!-- 
+<!--
 // page : admin-dashboard
 // version : 1.0
 // task : --
-// edit by : 
+// edit by : K'win
  -->
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<html>
+<html lang="en">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="">
-<meta name="author" content="">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- Tell the browser to be responsive to screen width -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<!-- Favicon icon -->
+	<link rel="icon" type="image/png" sizes="16x16" href="BoonAdmin-images/favicon.png">
 
-<title>Admin Page</title>
+	<title>Admin Board</title>
 
-<meta name="description" content="chart created using amCharts live editor" />
-		
+	<!-- Bootstrap Core CSS -->
+  <link href="BoonAdmin-css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+
+	<link href="BoonAdmin-css/lib/calendar2/semantic.ui.min.css" rel="stylesheet">
+  <link href="BoonAdmin-css/lib/calendar2/pignose.calendar.min.css" rel="stylesheet">
+  <link href="BoonAdmin-css/lib/owl.carousel.min.css" rel="stylesheet" />
+  <link href="BoonAdmin-css/lib/owl.theme.default.min.css" rel="stylesheet" />
+  <link href="BoonAdmin-css/helper.css" rel="stylesheet">
+  <link href="BoonAdmin-css/style.css" rel="stylesheet">
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:** -->
+  <!--[if lt IE 9]>
+  <script src="https:**oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https:**oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<meta name="description"
+	content="Pawner VS Pawnshop" />
 <!-- amCharts javascript sources -->
-<script type="text/javascript" src="https://www.amcharts.com/lib/3/amcharts.js"></script>
-<script type="text/javascript" src="https://www.amcharts.com/lib/3/pie.js"></script>
+<script type="text/javascript"
+	src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+<script type="text/javascript"
+	src="https://www.amcharts.com/lib/3/pie.js"></script>
 
 
 <!-- amCharts javascript code -->
-		<script  type="text/javascript" language="javascript">
+<script type="text/javascript" language="javascript">
 			var sumuser = [];
-			
+
 			sumuser.push(
 						 {"category": "Pawner","column-1": parseInt(${pawner})}
 						,{"category": "Pawn Shop","column-1": parseInt(${pawnshop})});
-						
-			
+
+
 			AmCharts.makeChart("chartdiv",
 				{
 					"type": "pie",
@@ -59,117 +82,178 @@
 </script>
 
 
-
-<!-- Bootstrap core CSS -->
-<link href="css/bootstrap.min.css" rel="stylesheet">
-
-<!-- MetisMenu CSS -->
-<link href="css/metisMenu.min.css" rel="stylesheet">
-
-<!-- Custom styles for this template -->
-<link href="vendor/font-awesome/css/font-awesome.min.css"
-	rel="stylesheet" type="text/css">
-
-<!-- Custom CSS -->
-<link href="css/startmin.css" rel="stylesheet">
-
-<!-- Custom Fonts -->
-<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
 </head>
-<body>
+
+<body class="fix-header fix-sidebar">
 	<div id="">
-
-		<!-- Navigation -->
-		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-			<div class="navbar-header">
-			</div>
-
-			<button type="button" class="navbar-toggle" data-toggle="collapse"
-				data-target=".navbar-collapse">
-				<span class="sr-only">Toggle navigation</span> <span
-					class="icon-bar"></span> <span class="icon-bar"></span> <span
-					class="icon-bar"></span>
-			</button>
-
-			<ul class="nav navbar-nav navbar-left navbar-top-links">
-			</ul>
-
-			<ul class="nav navbar-right navbar-top-links">
-				<li class="dropdown"><a class="dropdown-toggle"
-					data-toggle="dropdown" href="#"> <i class="fa fa-user fa-fw"></i>
-						Admin <b class="caret"></b>
-				</a>
-					<ul class="dropdown-menu dropdown-user">
-						<li class="divider"></li>
-						<li><a href="signOut.do"><i class="fa fa-sign-out fa-fw"></i>
-								Logout</a></li>
-					</ul></li>
-			</ul>
-			<!-- /.navbar-top-links -->
-
-			<div class="navbar-default sidebar" role="navigation">
-				<div class="sidebar-nav navbar-collapse">
-					<ul class="nav" id="side-menu">
-						<li class="sidebar-search">
-							<div class="input-group custom-search-form">
-								<span class="input-group-btn">
-								</span>
-							</div> <!-- /input-group -->
-						</li>
-
-						<li><a href="board.do"><i class="fa fa-table fa-fw"></i>
-								Dashboard</a></li>
-						<li><a href="pawnshopList.do"><i
-								class="fa fa-table fa-fw"></i> List PawnShop</a></li>
-						<li><a href="pawnerList.do"><i
-								class="fa fa-table fa-fw"></i> List Pawner</a></li>
-
-					</ul>
-				</div>
-				<!-- /.sidebar-collapse -->
-			</div>
-			<!-- /.navbar-static-side -->
-		</nav>
-
-		<div id="page-wrapper">
-			<div class="row">
-				<div class="col-lg-12">
-					<h1 class="page-header">Chart</h1>
-				
-				<div id="chartdiv" style="width: 100%; height: 400px; background-color: #FFFFFF;" ></div>
-				
-				</div>
-				<!-- /.col-lg-12 -->
-			</div>
-	
-
+		<!-- Preloader - style you can find in spinners.css -->
+		<div class="preloader">
+			<svg class="circular" viewBox="25 25 50 50">
+			<circle class="path" cx="50" cy="50" r="20" fill="none"
+					stroke-width="2" stroke-miterlimit="10" /> </svg>
 		</div>
-		<!-- /#page-wrapper -->
+		<!-- Main wrapper  -->
+		<div id="main-wrapper">
+			<!-- header header  -->
+			<div class="header">
 
+				<nav class="navbar top-navbar navbar-expand-md navbar-light">
+					<!-- Logo -->
+					<div class="navbar-header">
+						<a class="navbar-brand" href="admin-index.html"> <!-- Logo icon -->
+							<b><img src="BoonAdmin-images/Boon-logo1.png" alt="homepage"
+								class="dark-logo" /></b> <!--End Logo icon -->
+						</a>
+					</div>
+					<!-- End Logo -->
+					<div class="navbar-collapse">
+						<!-- toggle and nav items -->
+						<ul class="navbar-nav mr-auto mt-md-0">
+							<!-- This is  -->
+							<li class="nav-item"><a
+								class="nav-link nav-toggler hidden-md-up text-muted  "
+								href="javascript:void(0)"><i class="mdi mdi-menu"></i></a></li>
+							<li class="nav-item m-l-10"><a
+								class="nav-link sidebartoggler hidden-sm-down text-muted  "
+								href="javascript:void(0)"><i class="ti-menu"></i></a></li>
+
+						</ul>
+						<!-- User profile and search -->
+						<ul class="navbar-nav my-lg-0">
+
+							<!-- Search -->
+							<li class="nav-item hidden-sm-down search-box"><a
+								class="nav-link hidden-sm-down text-muted  "
+								href="javascript:void(0)"><i class="ti-search"></i></a>
+								<form class="app-search">
+									<input type="text" class="form-control"
+										placeholder="Search here"> <a class="srh-btn"><i
+										class="ti-close"></i></a>
+								</form></li>
+
+
+
+							<!-- Profile -->
+							<li class="nav-item dropdown"><a
+								class="nav-link dropdown-toggle text-muted  " href="#"
+								data-toggle="dropdown" aria-haspopup="true"
+								aria-expanded="false"><img
+									src="BoonAdmin-images/users/5.jpg" alt="user"
+									class="profile-pic" /></a>
+								<div class="dropdown-menu dropdown-menu-right animated zoomIn">
+									<ul class="dropdown-user">
+										<li><a href="logout.html"><i class="fa fa-power-off"></i>
+												Logout</a></li>
+									</ul>
+								</div></li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+			<!-- End header header -->
+			<!-- Left Sidebar  -->
+			<div class="left-sidebar">
+				<!-- Sidebar scroll-->
+				<div class="scroll-sidebar">
+					<!-- Sidebar navigation-->
+					<nav class="sidebar-nav">
+						<ul id="sidebarnav">
+							<li class="nav-devider"></li>
+
+							<li class="nav-label">Apps</li>
+							<li><a class="has-arrow  " href="#" aria-expanded="false"><i
+									class="fa fa-envelope"></i><span class="hide-menu">Contact Mail Box</span></a>
+								<ul aria-expanded="false" class="collapse">
+									<li><a href="email-compose.html">Contact</a></li>
+								</ul></li>
+							<li><a class="has-arrow  " href="#" aria-expanded="false"><i
+									class="fa fa-bar-chart"></i><span class="hide-menu">Charts</span></a>
+								<ul aria-expanded="false" class="collapse">
+
+								<li><a href="admin-dashboard.html">Board</a></li>
+
+								</ul></li>
+							<li class="nav-label">Features</li>
+
+							<li><a class="has-arrow  " href="#" aria-expanded="false"><i
+									class="fa fa-table"></i><span class="hide-menu">Tables</span></a>
+								<ul aria-expanded="false" class="collapse">
+									<li><a href="admin-list-pawner.html">List Pawner</a></li>
+									<li><a href="admin-list-pawnshop.html">List Pawnshop</a></li>
+									<li><a href="table-datatable.html">List Estimate</a></li>
+								</ul></li>
+
+
+						</ul>
+						</li>
+						</ul>
+					</nav>
+					<!-- End Sidebar navigation -->
+				</div>
+				<!-- End Sidebar scroll-->
+			</div>
+
+			<!-- End Left Sidebar  -->
+			<!-- Page wrapper  -->
+			<div class="page-wrapper">
+				<!-- Bread crumb -->
+				<div id="">
+					<div id="page-wrapper">
+						<div class="row">
+							<div class="col-lg-12">
+								<h1 class="page-header">DashBoard Pawner VS PawnShop</h1>
+								<div id="chartdiv"
+									style="width: 100%; height: 400px; background-color: #FFFFFF;"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- End Container fluid  -->
+				<!-- footer -->
+
+				<!-- End footer -->
+			</div>
+			<!-- End Page wrapper  -->
+		</div>
 	</div>
-	<!-- /#wrapper -->
 
-	<!-- jQuery -->
-	<script src="js/jquery.min.js"></script>
 
-	<!-- Bootstrap Core JavaScript -->
-	<script src="js/bootstrap.min.js"></script>
+	<!-- End Wrapper -->
+	<!-- All Jquery -->
+	<script src="BoonAdmin-js/lib/jquery/jquery.min.js"></script>
+	<!-- Bootstrap tether Core JavaScript -->
+	<script src="BoonAdmin-js/lib/bootstrap/js/popper.min.js"></script>
+	<script src="BoonAdmin-js/lib/bootstrap/js/bootstrap.min.js"></script>
+	<!-- slimscrollbar scrollbar JavaScript -->
+	<script src="BoonAdmin-js/jquery.slimscroll.js"></script>
+	<!--Menu sidebar -->
+	<script src="BoonAdmin-js/sidebarmenu.js"></script>
+	<!--stickey kit -->
+	<script src="BoonAdmin-js/lib/sticky-kit-master/dist/sticky-kit.min.js"></script>
+	<!--Custom JavaScript -->
 
-	<!-- Metis Menu Plugin JavaScript -->
-	<script src="js/metisMenu.min.js"></script>
 
-	<!-- DataTables JavaScript -->
-	<script src="js/dataTables/jquery.dataTables.min.js"></script>
-	<script src="js/dataTables/dataTables.bootstrap.min.js"></script>
 
-	<script>
-		$(document).ready(function() {
-			$('#dataTables-example').DataTable({
-				responsive : true
-			});
-		});
-	</script>
+
+	<script src="BoonAdmin-js/lib/calendar-2/moment.latest.min.js"></script>
+	<!-- scripit init-->
+	<script src="BoonAdmin-js/lib/calendar-2/semantic.ui.min.js"></script>
+	<!-- scripit init-->
+	<script src="BoonAdmin-js/lib/calendar-2/prism.min.js"></script>
+	<!-- scripit init-->
+	<script src="BoonAdmin-js/lib/calendar-2/pignose.calendar.min.js"></script>
+	<!-- scripit init-->
+	<script src="BoonAdmin-js/lib/calendar-2/pignose.init.js"></script>
+
+	<script src="BoonAdmin-js/lib/owl-carousel/owl.carousel.min.js"></script>
+	<script src="BoonAdmin-js/lib/owl-carousel/owl.carousel-init.js"></script>
+	<script src="BoonAdmin-js/scripts.js"></script>
+	<!-- scripit init-->
+
+	<script src="BoonAdmin-js/custom.min.js"></script>
+
+ 
 
 </body>
 </html>

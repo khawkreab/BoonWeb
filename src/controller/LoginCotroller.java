@@ -91,7 +91,7 @@ public class LoginCotroller {
 				request.getSession().setAttribute("isLogin", "yes");
 				request.getSession().setAttribute("userType", "admin");
 				request.getSession().setAttribute("username", "Admin");
-				return "redirect:admin-dashboard.html";
+				return "redirect:admin-index.html";
 			} 
 		} catch (Exception e) {
 			e.printStackTrace();

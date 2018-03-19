@@ -40,6 +40,7 @@ public class AdminContorller {
 		}
 		return mv;
 	}
+
 	// Control About Pawnshop
 	@RequestMapping("/admin-list-pawnshop")
 	public ModelAndView adminListPawnshop(HttpServletRequest request) {
@@ -58,11 +59,11 @@ public class AdminContorller {
 	@RequestMapping("/deletePawnshop")
 	public String deletePawnshop(HttpServletRequest request) {
 		pawnshopServ.delete(Long.valueOf(request.getParameter("id")));
-		return "redirect:pawnshopList.do";
+		return "redirect:pawnshopList.html";
 	}
 
 	// Control About Pawner
-	@RequestMapping("/admin-listpawner")
+	@RequestMapping("/admin-list-pawner")
 	public ModelAndView adminListPawner(HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView("adminListPawner.jsp");
 		List<Pawner> pawnerList;
@@ -79,7 +80,14 @@ public class AdminContorller {
 	@RequestMapping("/deletePawner")
 	public String deletePawner(HttpServletRequest request) {
 		pmService.delete(Long.valueOf(request.getParameter("id")));
-		return "redirect:admin_listpawner.do";
+		return "redirect:admin_listpawner.html";
+
+	}
+
+	@RequestMapping("/admin-index")
+	public ModelAndView adminIndex() {
+		ModelAndView mv = new ModelAndView("adminIndex.jsp");
+		return mv;
 
 	}
 }
