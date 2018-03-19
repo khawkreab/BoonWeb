@@ -26,7 +26,14 @@
 	<!-- Navigation -->
 	<jsp:include page="navbar.jsp" />
 
-
+<!--banner-->
+<div class="banner-top">
+	<div class="container">
+		<h1>Single</h1>
+		<em></em>
+		<h2><a href="index.html">Home</a><label>/</label>Single</h2>
+	</div>
+</div>
 	<!--content-->
 	<div class="content">
 		<div class="container">
