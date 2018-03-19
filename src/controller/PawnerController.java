@@ -17,6 +17,7 @@ import entity.PawnshopPost;
 import service.OrderItemService;
 import service.PawnerService;
 import service.PawnshopPostService;
+import service.PictureService;
 
 @Controller
 public class PawnerController {
@@ -29,6 +30,9 @@ public class PawnerController {
 	
 	@EJB(mappedName = "ejb:/BoonWeb/PawnshopPostServiceBean!service.PawnshopPostService")
 	PawnshopPostService psService;
+	
+	@EJB(mappedName = "ejb:/BoonWeb/PictureServiceBean!service.PictureService")
+	PictureService pictureService;
 	
 	@RequestMapping("/pawner-register-form")
 	public ModelAndView newGold(){
@@ -76,6 +80,7 @@ public class PawnerController {
 			long userId = (long) request.getSession().getAttribute("id");
 			
 			pawnshopPosts = psService.listPawnshopPostByPawnerId(userId);
+			
 			mv.addObject("pawnshopPosts", pawnshopPosts);
 		} catch (Exception e) {
 			e.printStackTrace();

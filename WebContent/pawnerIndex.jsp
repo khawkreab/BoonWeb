@@ -57,11 +57,13 @@
 								<div class="mid-1">
 									<div class="women">
 										<div class="women-top">
-											<span>#</span>
-											<h6>
+											
+											<h4>
 													<a href="post-detail.html?item=${pawnshopPosts.pawnshopPostId}"> ${pawnshopPosts.pawnshopPostName}
 													- ${pawnshopPosts.pawnshopPostBrand}</a>
-											</h6>
+													
+											</h4>
+											<span>฿${pawnshopPosts.pawnshopPostPrice}</span>
 										</div>
 										<div class="img item_add">
 											<a href="#"><img src="images/ca.png" alt=""></a>
