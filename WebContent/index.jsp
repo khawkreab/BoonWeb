@@ -48,11 +48,11 @@
 					</div>
 				</div>
 				<div class="carousel-item">
-					<img class="d-block img-fluid" src="img/header-gold.jpg"
+					<img class="d-block img-fluid" src="img/bgIndex.jpg"
 						alt="Second slide">
 					<div class="carousel-caption d-none d-md-block">
-						<h3>How to pledge</h3>
-						<p>Easy Convenient Fast</p>
+						<h3></h3>
+						<p></p>
 					</div>
 				</div>
 				<div class="carousel-item">
