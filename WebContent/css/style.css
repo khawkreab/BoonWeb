@@ -777,20 +777,26 @@ ul.kid-menu li,ul.cute li{
     font-family: 'Ubuntu-Bold';
 }
 p.in-para{
-color: #B3B3B3;
-    font-size: 0.9em;
-    line-height: 2em;
+    color: #111111;
+    font-size: 1.1em;
+    font-family: 'Ubuntu-Regular';
+    line-height: 0.5em;
     margin: 1em 0 ;
-	border-bottom: 1px solid #f0f0f0;
-    border-top: 3px double #f0f0f0;
-	padding:1em 0;
+	/*border-bottom: 1px solid #f0f0f0;*/
+    border-top: 3px double #ff7700;
+    padding: 1em 0 0 0;
 }
 .price_single {
-	border-bottom: 1px solid #f0f0f0;
+	border-bottom: 1px solid #e0e0e0;
     padding-bottom: 1em;
 }
+
+.price_single ul li{
+	 font-size: 0.9em;
+	 color: #555555;
+}
 span.reducedfrom {
-	    color: #ff7f00;
+	color: #ff7f00;
     font-size: 1.5em;
     font-family: 'Ubuntu-Bold';
     float: left;
@@ -802,17 +808,18 @@ span.reducedfrom {
 	margin-top: 0.7em;
 }
 h4.quick {
-	color: #000;
-	font-size:1.2em;
-	text-transform: uppercase;
+	color: #111111;
+	font-size: 0.9em;
 	font-family: 'Ubuntu-Regular';
+	font-weight: 100;
 	margin-top: 1em;
 }
 p.quick_desc {
-	color:#B3B3B3;
+	color:#555555;
 	font-size:0.9em;
 	line-height: 2em;
 	margin: 1em 0 2em;
+	padding: 0 15px;
 }
 span.actual {
 	color:#ff7f00;
@@ -868,6 +875,10 @@ span.actual {
     margin-top: -6.2px;
 	position: absolute;
 }
+
+.quantity-select input{
+	width: 100%;
+}
 .value  {
     cursor: default;
     width: 40px;
@@ -907,14 +918,14 @@ span.actual {
   transform-origin: 0 100%;
   background-color: #ff7f00;
    color: #fff;
-   padding: 0.5em 1em;
-   font-size:1em;
+   padding: 0.3em;
+   font-size:0.9em;
+   border-radius: 3px;
 }
 .hvr-skew-backward:hover, .hvr-skew-backward:focus, .hvr-skew-backward:active {
-	-webkit-transform: skew(10deg);
-	transform: skew(10deg);
+	border:3px double #ff7700;
 	color:#fff;
-	background:#FF6C6C;
+	background:#FF7711;
     text-decoration:none;
 }
 
@@ -941,8 +952,10 @@ ul.product-qty {
 }
 .wish-list {
 	padding: 15px 0;
-	border-bottom: 1px solid #f0f0f0;
-	border-top: 1px solid #f0f0f0;
+	border-bottom: 1px solid #e0e0e0;
+	border-top: 3px double #ff7700;
+	font-size: 0.9em;
+	font-family: 'Ubuntu-Regular';
 }
 .wish-list ul{
 	padding:0;
