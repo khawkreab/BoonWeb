@@ -23,10 +23,12 @@ import entity.Estimate;
 import entity.Pawner;
 import entity.PawnerPost;
 import entity.Pawnshop;
+import entity.Picture;
 import service.EstimateService;
 import service.PawnerPostService;
 import service.PawnerService;
 import service.PawnshopService;
+import service.PictureService;
 
 @Controller
 public class EstimateController {
@@ -46,12 +48,15 @@ public class EstimateController {
 	@EJB(mappedName = "ejb:/BoonWeb//PawnerPostServiceBean!service.PawnerPostService")
 	PawnerPostService pawnerPostService;
 	
+	@EJB(mappedName = "ejb:/BoonWeb/PictureServiceBean!service.PictureService")
+	PictureService pictureService;
+	
 	@RequestMapping("/pawnshop-estimate-form")
-	public ModelAndView newestimate(@ModelAttribute("postid") Estimate postid, BindingResult result,
+	public ModelAndView newestimate(@ModelAttribute("estimate") Estimate estimate, BindingResult result,
 			HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView("pawnshopEstimateForm.jsp");
-		Estimate estimate = new Estimate();
 		PawnerPost pawnerPost = new PawnerPost();
+		List <Picture> pictures;
 
 		try {
 			long userId = (long) request.getSession().getAttribute("id");
@@ -59,10 +64,12 @@ public class EstimateController {
 
 			long postId = Long.parseLong(request.getParameter("item"));
 			pawnerPost = postService.findPostById(postId);
+			pictures = pictureService.findPictureByPawnerPostId(postId);
 
 			estimate.setPawnshopId(ps);
 
 			mv.addObject("pawnerPost", pawnerPost);
+			mv.addObject("pictures", pictures);
 			mv.addObject("estimate", estimate);
 		} catch (Exception e) {
 			e.printStackTrace();
