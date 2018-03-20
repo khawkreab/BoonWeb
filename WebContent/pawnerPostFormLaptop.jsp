@@ -46,7 +46,7 @@
 									<dt>
 										<img alt="user" src="img/gold.png" height="100" width="100" style="margin-bottom: 12px; border: 1px solid #c8cbcf">
 									</dt>
-									<input type="file" id="file" multiple style="width: 70px;">
+										<input name="files" type="file" onchange="readURL(this);" />
 								</div>
 								<div class="form-group-post float-left" style="margin-bottom: 30px;">
 									<span>Post name</span>
