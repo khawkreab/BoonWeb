@@ -1,5 +1,5 @@
 <!--
-// page : admin-index
+// page : admin- list order
 // version : 1.0
 // task : --
 // edit by : K'win
@@ -7,6 +7,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page import="java.util.Date"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 <html lang="en">
 <head>
@@ -18,7 +20,7 @@
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="BoonAdmin-images/Boon-logo.png">
-    <title>Admin Index</title>
+    <title>Admin List Order</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="BoonAdmin-css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
@@ -37,6 +39,7 @@
     <script src="https:**oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 </head>
+
 
 <body class="fix-header fix-sidebar">
     <!-- Preloader - style you can find in spinners.css -->
@@ -110,7 +113,7 @@
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-envelope"></i><span class="hide-menu">Contact Mail Box</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="email-compose.html">Contact</a></li>
-                                
+
                             </ul>
                         </li>
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-bar-chart"></i><span class="hide-menu">Charts</span></a>
@@ -141,66 +144,172 @@
             <!-- End Sidebar scroll-->
         </div>
 
-        <!-- End Left Sidebar  -->
-        <!-- Page wrapper  -->
-        <div class="page-wrapper">
-            <!-- Bread crumb -->
-            <div class="row page-titles">
-                <div class="col-md-5 align-self-center">
-                    <h3 class="text-primary">Calendar</h3> </div>
-            </div>
+<!-- ---------------------------------------------------------------------------------------------------- -->
+	<section>
+		<div class="container">
+			<div class="history-filter">
+				<div class="d-flex">
+					<div class="mr-auto p-2">history</div>
+					<div class="ml-auto p-2">
+						Show: <select>
+							<option>finish</option>
+							<option>process</option>
+						</select>
+					</div>
+				</div>
+			</div>
+		</div>
+		<c:forEach items="${adminOList}" var="adOrder">
+			<div class="container">
+				<div class="history-main">
+					<div class="d-flex history-title">
+					
+					<div class="mr-auto p-2">
+						<fmt:formatDate
+										type="both" dateStyle="long" timeStyle="short"
+										value="${adminOList.orderItemDateIn }" />
+						</div>
+					
+						<div class="ml-auto p-2">
+							<span>${adOrder.pawnshopPostId.pawnshopId.pawnshopName } shop</span>
+						</div>
+					</div>
+					<div class="history-body">
+						<div class="row">
+							<div class="col-sm-5">
 
-						<div class="col-lg-12">
-							<div class="card">
-								<div class="card-body">
-									<div class="year-calendar"></div>
+
+
+								<span class="history-img"><img class=""
+									src="img/gold.png" width="300" /></span>
+							</div>
+							<div class="col-sm-7">
+
+								<span class="history-name">${adOrder.pawnshopPostId.pawnshopPostName }
+									${adOrder.pawnshopPostId.pawnshopPostBrand } ${adOrder.pawnshopPostId.pawnshopPostTypeCamera }
+									${adOrder.pawnshopPostId.pawnshopPostCameraLen } </span>
+								<div class="history-detail">
+									<ul>
+
+										<!-- Watch,Electronic -->
+										<c:if test="${adOrder.pawnshopPostId.pawnshopPostModel != null}">
+											<li>Model : ${adOrder.pawnshopPostId.pawnshopPostModel}</li>
+											<li>Serial : ${adOrder.pawnshopPostId.pawnshopPostSerial}</li>
+										</c:if>
+										
+											<c:if test="${adOrder.pawnshopPostId.pawnshopPostProduction != null}">
+											<li>Production : ${adOrder.pawnshopPostId.pawnshopPostProduction}</li>
+										</c:if>
+
+										<c:if test="${adOrder.pawnshopPostId.pawnshopPostWarranty != null}">
+											<li>Warranty : ${adOrder.pawnshopPostId.pawnshopPostWarranty}</li>
+										</c:if>
+										<c:if test="${adOrder.pawnshopPostId.pawnshopPostPurchase != null}">
+											<li>Purchase : ${adOrder.pawnshopPostId.pawnshopPostPurchase }</li>
+										</c:if>
+
+										<!-- Gold -->
+										<c:if test="${adOrder.pawnshopPostId.pawnshopPostPure != null}">
+											<li>Pure : ${adOrder.pawnshopPostId.pawnshopPostPure  }</li>
+											<li>Weigh : ${adOrder.pawnshopPostId.pawnshopPostWeigh }</li>
+											<li>Category : ${adOrder.pawnshopPostId.pawnshopPostCategory }</li>
+										</c:if>
+
+										<!-- Watch -->
+										<c:if test="${adOrder.pawnshopPostId.pawnshopPostCase != null}">
+											<li>Case : ${adOrder.pawnshopPostId.pawnshopPostCase }</li>
+											<li>Bracelet : ${adOrder.pawnshopPostId.pawnshopPostBracelet }</li>
+											<c:if test="${adOrder.pawnshopPostId.pawnshopPostDiamond != null}">
+												<li>Diamond : ${adOrder.pawnshopPostId.pawnshopPostDiamond }</li>
+											</c:if>
+											<c:if test="${adOrder.pawnshopPostId.pawnshopPostPackage != null}">
+												<li>Package : ${adOrder.pawnshopPostId.pawnshopPostPackage }</li>
+											</c:if>
+										</c:if>
+
+										<!-- Electronic tv com telephone -->
+										<c:if test="${adOrder.pawnshopPostId.pawnshopPostSize != null}">
+											<li>Size : ${adOrder.pawnshopPostId.pawnshopPostSize }</li>
+										</c:if>
+
+										<!-- Electronic camera com telephone -->
+										<c:if test="${adOrder.pawnshopPostId.pawnshopPostBattery != null}">
+											<li>Battery : ${adOrder.pawnshopPostId.pawnshopPostBattery }</li>
+										</c:if>
+
+										<!-- Electronic com telephone -->
+										<c:if test="${adOrder.pawnshopPostId.pawnshopPostHarddisk != null}">
+											<li>Harddisk : ${adOrder.pawnshopPostId.pawnshopPostHarddisk }</li>
+										</c:if>
+
+										<!-- Electronic tv -->
+										<c:if test="${adOrder.pawnshopPostId.pawnshopPostRemote != null}">
+											<li>Remote : ${adOrder.pawnshopPostId.pawnshopPostRemote }</li>
+										</c:if>
+
+										<!-- Electronic com-->
+										<c:if test="${adOrder.pawnshopPostId.pawnshopPostRam != null}">
+											<li>Ram : ${adOrder.pawnshopPostId.pawnshopPostRam }</li>
+										</c:if>
+
+
+										<!-- Electronic telephone-->
+										<li>Description : ${adOrder.pawnshopPostId.pawnshopPostDescription }</li>
+										
+										<li>Price : ${adOrder.pawnshopPostId.pawnshopPostPrice }</li>
+									</ul>
 								</div>
 							</div>
 						</div>
 
-            <!-- End Container fluid  -->
-
-        </div>
-        <!-- End Page wrapper  -->
-    </div>
-    <!-- End Wrapper -->
-    <!-- All Jquery -->
-    <script src="BoonAdmin-js/lib/jquery/jquery.min.js"></script>
-    <!-- Bootstrap tether Core JavaScript -->
-    <script src="BoonAdmin-js/lib/bootstrap/js/popper.min.js"></script>
-    <script src="BoonAdmin-js/lib/bootstrap/js/bootstrap.min.js"></script>
-    <!-- slimscrollbar scrollbar JavaScript -->
-    <script src="BoonAdmin-js/jquery.slimscroll.js"></script>
-    <!--Menu sidebar -->
-    <script src="BoonAdmin-js/sidebarmenu.js"></script>
-    <!--stickey kit -->
-    <script src="BoonAdmin-js/lib/sticky-kit-master/dist/sticky-kit.min.js"></script>
-    <!--Custom JavaScript -->
+					</div>
+				</div>
+			</div>
+		</c:forEach>
+	</section>
 
 
-    <!-- Amchart -->
-    <script src="BoonAdmin-js/lib/morris-chart/raphael-min.js"></script>
-    <script src="BoonAdmin-js/lib/morris-chart/morris.js"></script>
-    <script src="BoonAdmin-js/lib/morris-chart/dashboard1-init.js"></script>
+
+<!-- End Page wrapper  -->
+</div>
+<!-- End Wrapper -->
+<!-- All Jquery -->
+<script src="BoonAdmin-js/lib/jquery/jquery.min.js"></script>
+<!-- Bootstrap tether Core JavaScript -->
+<script src="BoonAdmin-js/lib/bootstrap/js/popper.min.js"></script>
+<script src="BoonAdmin-js/lib/bootstrap/js/bootstrap.min.js"></script>
+<!-- slimscrollbar scrollbar JavaScript -->
+<script src="BoonAdmin-js/jquery.slimscroll.js"></script>
+<!--Menu sidebar -->
+<script src="BoonAdmin-js/sidebarmenu.js"></script>
+<!--stickey kit -->
+<script src="BoonAdmin-js/lib/sticky-kit-master/dist/sticky-kit.min.js"></script>
+<!--Custom JavaScript -->
 
 
-	<script src="BoonAdmin-js/lib/calendar-2/moment.latest.min.js"></script>
-    <!-- scripit init-->
-    <script src="BoonAdmin-js/lib/calendar-2/semantic.ui.min.js"></script>
-    <!-- scripit init-->
-    <script src="BoonAdmin-js/lib/calendar-2/prism.min.js"></script>
-    <!-- scripit init-->
-    <script src="BoonAdmin-js/lib/calendar-2/pignose.calendar.min.js"></script>
-    <!-- scripit init-->
-    <script src="BoonAdmin-js/lib/calendar-2/pignose.init.js"></script>
+<!-- Amchart -->
+<script src="BoonAdmin-js/lib/morris-chart/raphael-min.js"></script>
+<script src="BoonAdmin-js/lib/morris-chart/morris.js"></script>
+<script src="BoonAdmin-js/lib/morris-chart/dashboard1-init.js"></script>
 
-    <script src="BoonAdmin-js/lib/owl-carousel/owl.carousel.min.js"></script>
-    <script src="BoonAdmin-js/lib/owl-carousel/owl.carousel-init.js"></script>
-    <script src="BoonAdmin-js/scripts.js"></script>
-    <!-- scripit init-->
 
-    <script src="BoonAdmin-js/custom.min.js"></script>
+<script src="BoonAdmin-js/lib/calendar-2/moment.latest.min.js"></script>
+<!-- scripit init-->
+<script src="BoonAdmin-js/lib/calendar-2/semantic.ui.min.js"></script>
+<!-- scripit init-->
+<script src="BoonAdmin-js/lib/calendar-2/prism.min.js"></script>
+<!-- scripit init-->
+<script src="BoonAdmin-js/lib/calendar-2/pignose.calendar.min.js"></script>
+<!-- scripit init-->
+<script src="BoonAdmin-js/lib/calendar-2/pignose.init.js"></script>
+
+<script src="BoonAdmin-js/lib/owl-carousel/owl.carousel.min.js"></script>
+<script src="BoonAdmin-js/lib/owl-carousel/owl.carousel-init.js"></script>
+<script src="BoonAdmin-js/scripts.js"></script>
+<!-- scripit init-->
+
+<script src="BoonAdmin-js/custom.min.js"></script>
+
 
 </body>
-
 </html>

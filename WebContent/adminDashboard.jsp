@@ -180,7 +180,8 @@
 								<ul aria-expanded="false" class="collapse">
 									<li><a href="admin-list-pawner.html">List Pawner</a></li>
 									<li><a href="admin-list-pawnshop.html">List Pawnshop</a></li>
-									<li><a href="table-datatable.html">List Estimate</a></li>
+									<li><a href="admin-list-estimate.html">List Estimate</a></li>
+									<li><a href="admin-list-order.html">List Order</a></li>
 								</ul></li>
 
 

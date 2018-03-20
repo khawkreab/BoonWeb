@@ -20,7 +20,7 @@
 	    <meta name="author" content="">
 	    <!-- Favicon icon -->
 	    <link rel="icon" type="image/png" sizes="16x16" href="BoonAdmin-images/Boon-logo.png">
-	    <title>Admin Index</title>
+	    <title>Admin List Pawnshop</title>
 
 	    <!-- Bootstrap Core CSS -->
 	    <link href="BoonAdmin-css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
@@ -128,7 +128,8 @@
 	                            <ul aria-expanded="false" class="collapse">
 	                                <li><a href="admin-list-pawner.html">List Pawner</a></li>
 	                                <li><a href="admin-list-pawnshop.html">List Pawnshop</a></li>
-	                                <li><a href="table-datatable.html">List Estimate</a></li>
+	                                <li><a href="admin-list-estimate.html">List Estimate</a></li>
+	                                <li><a href="admin-list-order.html">List Order</a></li>
 	                            </ul>
 	                        </li>
 

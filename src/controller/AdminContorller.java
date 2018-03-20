@@ -9,9 +9,18 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import entity.Estimate;
+import entity.OrderItem;
+import entity.PawnerPost;
+import service.EstimateService;
+import service.OrderItemService;
+import service.PawnerPostService;
+
 import entity.Pawner;
 import entity.Pawnshop;
+import entity.PawnshopPost;
 import service.PawnerService;
+import service.PawnshopPostService;
 import service.PawnshopService;
 
 @Controller
@@ -21,6 +30,18 @@ public class AdminContorller {
 
 	@EJB(mappedName = "ejb:/BoonWeb//PawnshopServiceBean!service.PawnshopService")
 	PawnshopService pawnshopServ;
+
+	@EJB(mappedName = "ejb:/BoonWeb//PawnerPostServiceBean!service.PawnerPostService")
+	PawnerPostService pawnerPostService;
+	
+	@EJB(mappedName = "ejb:/BoonWeb//PawnshopPostServiceBean!service.PawnshopPostService")
+	PawnshopPostService pawnshopPostService;
+	
+	@EJB(mappedName = "ejb:/BoonWeb//EstimateServiceBean!service.EstimateService")
+	EstimateService estimateService;
+	
+	@EJB(mappedName = "ejb:/BoonWeb//OrderItemServiceBean!service.OrderItemService")
+	OrderItemService orderItemService;
 
 	@RequestMapping("/admin-dashboard")
 	public ModelAndView adminDashboard(HttpServletRequest request) {
@@ -90,4 +111,47 @@ public class AdminContorller {
 		return mv;
 
 	}
+	
+	// Admin List Estimate
+		@RequestMapping("/admin-list-estimate")
+		public ModelAndView listProposeByPawnshop(HttpServletRequest request) {
+			ModelAndView mv = new ModelAndView("adminListEstimate.jsp");
+			List<Pawnshop> pawnshop;
+			List<Estimate> adminEList;
+			List<PawnerPost> pawnerPosts;
+			try {
+				
+				pawnshop = pawnshopServ.getAllPawnshop();
+				pawnerPosts = pawnerPostService.getAllPawnerPost();
+				adminEList = estimateService.getAllEstimate();
+
+				mv.addObject("pawnshop", pawnshop);
+				mv.addObject("pawnerPosts", pawnerPosts);
+				mv.addObject("adminEList", adminEList);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			return mv;
+		}
+		// Admin List Order
+		@RequestMapping("/admin-list-order")
+		public ModelAndView listOrderByPawner(HttpServletRequest request) {
+			ModelAndView mv = new ModelAndView("adminListOrder.jsp");
+			List<Pawner> pawner;
+			List<OrderItem> adminOList;
+			List<PawnshopPost> pawnshopPosts;
+			try {
+				
+				pawner = pmService.getAllPawner();
+				pawnshopPosts = pawnshopPostService.getAllPawnshopPost();
+				adminOList = orderItemService.getAllorderItem();
+
+				mv.addObject("pawner", pawner);
+				mv.addObject("pawnshopPosts", pawnshopPosts);
+				mv.addObject("adminOList", adminOList);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			return mv;
+		}
 }
