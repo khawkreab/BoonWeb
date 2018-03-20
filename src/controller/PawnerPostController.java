@@ -121,7 +121,8 @@ public class PawnerPostController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		String saveDirectory = "Q:/testPic/";
+//		String saveDirectory = "Q:/testPic/";
+		String saveDirectory ="C:/Users/sitti/OneDrive/Works/Project 3 1-2560/project v.1.0.1-beta.4/BoonWeb/WebContent/images/";
 		String fileName ="";
 		
 		Picture picture = new Picture();
