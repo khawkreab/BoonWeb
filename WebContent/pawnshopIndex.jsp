@@ -13,70 +13,139 @@
 
 <!DOCTYPE html>
 <html>
-
 <head>
 
-<meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="">
-<meta name="author" content="">
 
-<title>Bounyong</title>
-
-<!-- Bootstrap core CSS -->
-<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-<!-- Custom styles for this template -->
-<link href="css/new-design.css" rel="stylesheet">
-<link href="vendor/font-awesome/css/font-awesome.min.css"
-	rel="stylesheet" type="text/css">
-
+<title>Shop</title>
 </head>
 
-<body id="page-top">
+<body>
 	<!-- Navigation -->
 	<jsp:include page="navbar.jsp" />
 
 
-	<section>
+	<!-- 	<section> -->
+	<!-- 		<div class="container"> -->
+	<!-- 			<div class="list-body"> -->
+	<!-- 				<div class="list-filter"></div> -->
+	<!-- 				<div class="list-main"> -->
+	<%-- 					<c:forEach items="${pawnerPosts}" var="post"> --%>
+	<%-- 						<form method="post" action="pawnshop-estimate-form.html" --%>
+	<%-- 							class="card"> --%>
+
+	<%-- 							<input type="hidden" name="postId" value="${post.pawnerPostId}" /> --%>
+	<!-- 							<input type="hidden" name="postType" -->
+	<%-- 								value="${post.pawnerPostItemType}" /> --%>
+	<!-- 							<button type="submit" class="btn-card"> -->
+	<!-- 								<span class="card-img-top"> <img src="img/profile.jpg" -->
+	<!-- 									alt="Card image cap"></span> -->
+	<!-- 								<div class="card-body"> -->
+	<%-- 									<span class="card-title"><p>${post.pawnerPostName}- --%>
+	<%-- 											${post.pawnerPostItemType}</p> </span> --%>
+	<!-- 								</div> -->
+	<!-- 								<small class="text-muted"> Province : -->
+	<%-- 									${post.pawnerId.pawnerProvince } <br> <fmt:setLocale --%>
+	<%-- 										value="en_US" /> <fmt:formatDate type="both" dateStyle="long" --%>
+	<%-- 										timeStyle="short" value="${post.pawnerPostDate }" /> --%>
+	<!-- 								</small> -->
+
+
+	<!-- 							</button> -->
+
+	<%-- 						</form> --%>
+	<%-- 					</c:forEach> --%>
+	<!-- 				</div> -->
+	<!-- 			</div> -->
+	<!-- 		</div> -->
+	<!-- 	</section> -->
+
+	<!--content-->
+	<div class="content">
 		<div class="container">
-			<div class="list-body">
-				<div class="list-filter"></div>
-				<div class="list-main">
+			<!--products-->
+			<div class="content-mid">
+				<h3>Items sell</h3>
+				<label class="line"></label>
+				<div class="mid-popular">
+					<!-- ------------------------------------------------------------------------------- -->
 					<c:forEach items="${pawnerPosts}" var="post">
-						<form method="post" action="pawnshop-estimate-form.html"
-							class="card">
-
-							<input type="hidden" name="postId" value="${post.pawnerPostId}" />
-							<input type="hidden" name="postType"
-								value="${post.pawnerPostItemType}" />
-							<button type="submit" class="btn-card">
-								<span class="card-img-top"> <img src="img/profile.jpg"
-									alt="Card image cap"></span>
-								<div class="card-body">
-									<span class="card-title"><p>${post.pawnerPostName}-
-											${post.pawnerPostItemType}</p> </span>
+						<div class="col-md-3 item-grid simpleCart_shelfItem">
+							<div class=" mid-pop">
+								<div class="pro-img">
+									<a href="pawnshop-estimate-form.html?item=${post.pawnerPostId}"> <img
+										src="images/pc.jpg" class="img-responsive" alt=""></a>
+									<div class="zoom-icon ">
+										<a href="pawnshop-estimate-form.html?item=${post.pawnerPostId}"> <i
+											class="glyphicon glyphicon-search icon"></i></a>
+									</div>
 								</div>
-								<small class="text-muted"> Province :
-									${post.pawnerId.pawnerProvince } <br>
-									<fmt:setLocale value="en_US" /> <fmt:formatDate
-										type="both" dateStyle="long" timeStyle="short"
-										value="${post.pawnerPostDate }" />
-								</small>
+								<div class="mid-1">
+									<div class="women">
+										<div class="women-top">
 
+											<h4>
+												<a href="pawnshop-estimate-form.html?item=${post.pawnerPostId}">
+													${post.pawnerPostName}- ${post.pawnerPostItemType}</a>
 
-							</button>
+											</h4>
+											<span><a href="pawnshop-estimate-form.html?item=${post.pawnerPostId}">ประเมินเลย </a></span>
+										</div>
 
-						</form>
+										<div class="clearfix"></div>
+									</div>
+									<div class="mid-2">
+										<p>
+											<em class="item_price"><fmt:setLocale value="en_US" />
+												<fmt:formatDate type="both" dateStyle="long"
+													timeStyle="short" value="${post.pawnerPostDate }" /> <br />Province
+												${post.pawnerId.pawnerProvince }</em>
+										</p>
+										<div class="block">
+											<div class="starbox small ghosting"></div>
+										</div>
+
+										<div class="clearfix"></div>
+									</div>
+
+								</div>
+							</div>
+						</div>
 					</c:forEach>
+					<div class="clearfix"></div>
 				</div>
-			</div>
-		</div>
-	</section>
-	<!-- ----------------------------------------------------------------------------  -->
-	<jsp:include page="footer.jsp" />
 
+			</div>
+			<!--//products-->
+		</div>
+
+	</div>
+	<!-- ----------------------------------------------------------------------------  -->
+	<%-- 	<jsp:include page="footer.jsp" /> --%>
+
+	<script src="js/imagezoom.js"></script>
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script defer src="js/jquery.flexslider.js"></script>
+	<link rel="stylesheet" href="css/flexslider.css" type="text/css"
+		media="screen" />
+
+	<script>
+		// Can also be used with $(document).ready()
+		$(window).load(function() {
+			$('.flexslider').flexslider({
+				animation : "slide",
+				controlNav : "thumbnails"
+			});
+		});
+	</script>
+
+	<script src="js/simpleCart.min.js">
+		
+	</script>
+	<!-- slide -->
+	<script src="js/bootstrap.min.js"></script>
 
 </body>
 </html>
