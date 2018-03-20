@@ -1,53 +1,356 @@
+<!-- 
+// page : pawner-post-form
+// version : 5.0
+// task : แก้ ข้อมูลการบันทึก
+// edit by : ter
+ -->
+
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
 
-    <title>Registration</title>
+	<title>pawner-post-form</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<!-- Bootstrap core CSS -->
+	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
-    <link href="css/new-design.css" rel="stylesheet">
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<!-- Custom styles for this template -->
+	<link href="css/new-design.css" rel="stylesheet">
+	<link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<style>
+		.wrap-contact100 {
+			width: 1120px;
+			background: #fff;
+			overflow: hidden;
+			display: -webkit-box;
+			display: -webkit-flex;
+			display: -moz-box;
+			display: -ms-flexbox;
+			display: flex;
+			flex-wrap: wrap;
+			align-items: stretch;
+			/* flex-direction: row-reverse; */
+		}
 
+		.contact100-form {
+			width: 50%;
+			display: -webkit-box;
+			display: -webkit-flex;
+			display: -moz-box;
+			display: -ms-flexbox;
+			display: flex;
+			flex-wrap: wrap;
+			padding: 56px 55px 63px 55px;
+		}
+
+		.contact100-form-title {
+			width: 100%;
+			display: block;
+			font-family: Poppins-Regular;
+			font-size: 30px;
+			color: #333333;
+			line-height: 1.2;
+			text-align: center;
+			padding-bottom: 33px;
+		}
+
+		.label-input100 {
+			font-family: Poppins-Regular;
+			font-size: 12px;
+			color: #555555;
+			line-height: 1.5;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			display: -webkit-box;
+			display: -webkit-flex;
+			display: -moz-box;
+			display: -ms-flexbox;
+			display: flex;
+			align-items: center;
+			width: 100%;
+			min-height: 55px;
+			border: 1px solid #e6e6e6;
+			border-bottom: none;
+			padding: 10px 25px;
+			margin-top: 15px;
+			margin-bottom: 0;
+		}
+
+		.wrap-input100 {
+			width: 100%;
+			position: relative;
+			border: 1px solid #e6e6e6;
+		}
+
+		.input100 {
+			display: block;
+			width: 100%;
+			background: transparent;
+			font-family: Poppins-Regular;
+			font-size: 18px;
+			color: #666666;
+			line-height: 1.2;
+			padding: 0 25px;
+			outline: none;
+			border: none;
+			height: 55px;
+		}
+
+		.rs1-wrap-input100,
+		.rs2-wrap-input100 {
+			width: 50%;
+		}
+
+		textarea.input100 {
+			min-height: 139px;
+			padding-top: 19px;
+			padding-bottom: 15px;
+		}
+
+		.input100:focus {
+			display: block;
+			width: 100%;
+			background: transparent;
+			font-family: Poppins-Regular;
+			font-size: 18px;
+			color: #666666;
+			line-height: 1.2;
+			padding: 0 25px;
+			outline: none;
+			border: none;
+			height: 55px;
+			border-bottom: 1px solid #ff7f00;
+		}
+
+		.container-contact100-form-btn {
+			width: 100%;
+			display: -webkit-box;
+			display: -webkit-flex;
+			display: -moz-box;
+			display: -ms-flexbox;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			padding-top: 23px;
+		}
+
+		.contact100-form-btn {
+			display: -webkit-box;
+			display: -webkit-flex;
+			display: -moz-box;
+			display: -ms-flexbox;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding: 0 20px;
+			min-width: 200px;
+			height: 50px;
+			border-radius: 2px;
+			background: #ff7f00;
+			;
+			font-family: Montserrat-Bold;
+			font-size: 12px;
+			color: #fff;
+			line-height: 1.2;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			-webkit-transition: all 0.4s;
+			-o-transition: all 0.4s;
+			-moz-transition: all 0.4s;
+			transition: all 0.4s;
+			outline: none !important;
+			border: none;
+		}
+
+		.contact100-form-btn:hover {
+			display: -webkit-box;
+			display: -webkit-flex;
+			display: -moz-box;
+			display: -ms-flexbox;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding: 0 20px;
+			min-width: 200px;
+			height: 50px;
+			border-radius: 2px;
+			background: #555;
+			font-family: Montserrat-Bold;
+			font-size: 12px;
+			color: #fff;
+			line-height: 1.2;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			-webkit-transition: all 0.4s;
+			-o-transition: all 0.4s;
+			-moz-transition: all 0.4s;
+			transition: all 0.4s;
+			outline: none !important;
+			border: none;
+		}
+
+		.contact100-more {
+			width: 50%;
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center;
+			position: relative;
+			z-index: 1;
+			padding: 30px 15px 0px 15px;
+		}
+
+		.flex-col-c-m {
+			display: -webkit-box;
+			display: -webkit-flex;
+			display: -moz-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-flex-direction: column;
+			-moz-flex-direction: column;
+			-ms-flex-direction: column;
+			-o-flex-direction: column;
+			flex-direction: column;
+			-ms-align-items: center;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.container-contact100 {
+			width: 100%;
+			min-height: 100vh;
+			display: -webkit-box;
+			display: -webkit-flex;
+			display: -moz-box;
+			display: -ms-flexbox;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+			padding: 15px;
+		}
+	</style>
 </head>
 
 <body>
-    <!-- Navigation -->
-    <section>
-        
-            <ul style="padding-left:7px;">
-                <li>
-                    <input type="text" class="input-regis" placeholder="pawnshop name" path="pawnshopName" />
-                </li>
-                <li>
-                    <input type="text" class="input-regis" placeholder="email" path="pawnshopEmail" />
-                </li>
-                <li>
-                    <input type="text" class="input-regis" placeholder="password" path="pawnshopPassword" />
-                </li>
-                <li>
-                    <input type="text" class="input-regis" placeholder="tell" path="pawnshopTel" />
-                </li>
-                <li>
-                    <select class="input-regis" path="pawnshopProvince">
-                        <option>province</option>
-                        <option>Bangkok</option>
-                        <option>Chiang rai</option>
-                    </select>
-                </li>
-                <li>
-                    <button type="submit" class="input-submit">Create Account</button>
-                </li>
-            </ul>
-     
 
-    </section>
+
+
+	<!--content-->
+	<div class="content">
+		<div class="container">
+			<!--products-->
+			<div class="content-mid">
+				<div class="mid-popular">
+					<div class="container-contact100 ">
+						<div class="wrap-contact100">
+							<div class="contact100-form">
+								<span class="contact100-form-title">
+									Create Post
+								</span>
+								<label class="label-input100">Post Name</label>
+								<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+									<input id="email" class="input100" type="text" name="email" placeholder="Eg. example@email.com">
+								</div>
+								<label class="label-input100">Brand or trademark</label>
+								<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+									<input id="email" class="input100" type="text" name="email" placeholder="Eg. example@email.com">
+									<span class="focus-input100"></span>
+								</div>
+								<label class="label-input100">Purity and Weight</label>
+								<div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Type first name">
+									<input id="first-name" class="input100" type="text" name="first-name" placeholder="Purity">
+									<span class="focus-input100"></span>
+								</div>
+								<div class="wrap-input100 rs2-wrap-input100 validate-input" data-validate="Type last name">
+									<input class="input100" type="text" name="last-name" placeholder="Weight">
+									<span class="focus-input100"></span>
+								</div>
+								<label class="label-input100">Category</label>
+								<div class="wrap-input100 validate-input">
+									<select class="input100" type="text" name="pawnerPostCategory" required="required">
+										<option>Gold ornament</option>
+										<option>Fine Gold such as 18k, 14k</option>
+										<option>Gold 96.5 %</option>
+										<option>Gold bars 96.5 %</option>
+										<option>Gold bars 99.99 %</option>
+										<option>Prima Gold, Gold Master</option>
+										<option>Silver</option>
+										<option>Amulet frame</option>
+										<option>Platinum</option>
+										<option>Others</option>
+									</select>
+								</div>
+								<label class="label-input100">Description</label>
+								<div class="wrap-input100 validate-input" data-validate="Message is required">
+									<textarea id="message" class="input100" name="message" placeholder="Write us a message(optional) "></textarea>
+									<span class="focus-input100"></span>
+								</div>
+								<div class="container-contact100-form-btn">
+									<button class="contact100-form-btn">
+										Send Message
+									</button>
+								</div>
+							</div>
+							<!-- Picture -->
+							<div class="contact100-more flex-col-c-m" style="background-image: url('img/bgIndex.jpg');">
+								<div class="flex-w size1 p-b-47">
+									<div class="txt1 p-r-25">
+										<span class="lnr lnr-map-marker"></span>
+									</div>
+
+									<div class="flex-col size2">
+										<span class="txt1 p-b-20">
+											Address
+										</span>
+
+										<span class="txt2">
+											Mada Center 8th floor, 379 Hudson St, New York, NY 10018 US
+										</span>
+									</div>
+								</div>
+
+								<div class="dis-flex size1 p-b-47">
+									<div class="txt1 p-r-25">
+										<span class="lnr lnr-phone-handset"></span>
+									</div>
+
+									<div class="flex-col size2">
+										<span class="txt1 p-b-20">
+											Lets Talk
+										</span>
+
+										<span class="txt3">
+											+1 800 1236879
+										</span>
+									</div>
+								</div>
+
+								<div class="dis-flex size1 p-b-47">
+									<div class="txt1 p-r-25">
+										<span class="lnr lnr-envelope"></span>
+									</div>
+
+									<div class="flex-col size2">
+										<span class="txt1 p-b-20">
+											General Support
+										</span>
+
+										<span class="txt3">
+											contact@example.com
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 
 </html>

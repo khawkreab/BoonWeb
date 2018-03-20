@@ -18,12 +18,6 @@
 <title>Page Title</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- What ???? -->
-<!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
-
-<!-- What ???? -->
-<script src="main.js"></script>
-
 <!-- Bootstrap core CSS -->
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="css/bootstrap.css" rel="stylesheet">
