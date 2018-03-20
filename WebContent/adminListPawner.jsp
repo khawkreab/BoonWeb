@@ -109,30 +109,24 @@
                       <ul id="sidebarnav">
                           <li class="nav-devider"></li>
 
-                          <li class="nav-label">Apps</li>
-                          <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-envelope"></i><span class="hide-menu">Contact Mail Box</span></a>
-                              <ul aria-expanded="false" class="collapse">
-                                  <li><a href="email-compose.html">Contact</a></li>
+                         <li class="nav-label">DashBoard</li>                     
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-bar-chart"></i><span class="hide-menu">Charts</span></a>
+                            <ul aria-expanded="false" class="collapse">
 
-                              </ul>
-                          </li>
-                          <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-bar-chart"></i><span class="hide-menu">Charts</span></a>
-                              <ul aria-expanded="false" class="collapse">
+                                <li><a href="admin-dashboard.html">Board</a></li>
 
-                                  <li><a href="admin-dashboard.html">Board</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-label">List All</li>
 
-                              </ul>
-                          </li>
-                          <li class="nav-label">Features</li>
-
-                          <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-table"></i><span class="hide-menu">Tables</span></a>
-                              <ul aria-expanded="false" class="collapse">
-                                  <li><a href="admin-list-pawner.html">List Pawner</a></li>
-                                  <li><a href="admin-list-pawnshop.html">List Pawnshop</a></li>
-                                  <li><a href="admin-list-estimate.html">List Estimate</a></li>
-                                  <li><a href="admin-list-order.html">List Order</a></li>
-                              </ul>
-                          </li>
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-table"></i><span class="hide-menu">Tables</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="admin-list-pawner.html">List Pawner</a></li>
+                                <li><a href="admin-list-pawnshop.html">List Pawnshop</a></li>
+                                <li><a href="admin-list-estimate.html">List Estimate</a></li>
+                                <li><a href="admin-list-order.html">List Order</a></li>
+                            </ul>
+                        </li>
 
 
                               </ul>

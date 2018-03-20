@@ -107,13 +107,7 @@
                     <ul id="sidebarnav">
                         <li class="nav-devider"></li>
 
-                        <li class="nav-label">Apps</li>
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-envelope"></i><span class="hide-menu">Contact Mail Box</span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="email-compose.html">Contact</a></li>
-
-                            </ul>
-                        </li>
+                         <li class="nav-label">DashBoard</li>                     
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-bar-chart"></i><span class="hide-menu">Charts</span></a>
                             <ul aria-expanded="false" class="collapse">
 
@@ -121,7 +115,7 @@
 
                             </ul>
                         </li>
-                        <li class="nav-label">Features</li>
+                        <li class="nav-label">List All</li>
 
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-table"></i><span class="hide-menu">Tables</span></a>
                             <ul aria-expanded="false" class="collapse">
