@@ -967,6 +967,7 @@ footer {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: stretch;
+	border: 1px solid #555555;
 	/* flex-direction: row-reverse; */
 }
 

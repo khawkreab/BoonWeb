@@ -45,7 +45,7 @@
 										<form:form method="post" action="savePost.html" modelAttribute="pawnerPost" enctype="multipart/form-data">
 											<input type="hidden" name="pawnerPostId" />
 											<input type="hidden" name="pawnerId.pawnerId" />
-											<input type="hidden" name="pawnerPostItemType" value="gold" />
+											<input type="hidden" name="pawnerPostItemType" value="Electronic" />
 											<div class="form-group float-left">
 												<input name="files" type="file" onchange="readURL(this);" />
 											</div>
@@ -74,7 +74,7 @@
 												<input class="input100" type="text" name="pawnerPostModel" placeholder="Model">
 												<span class="focus-input100"></span>
 											</div>
-											<label class="label-input100">Display size and Capacity</label>
+											<!-- <label class="label-input100">Display size and Capacity</label>
 											<div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Type first name">
 												<input class="input100" type="text" name="pawnerPostSize" placeholder="Display size">
 												<span class="focus-input100"></span>
@@ -82,7 +82,7 @@
 											<div class="wrap-input100 rs2-wrap-input100 validate-input" data-validate="Type last name">
 												<input class="input100" type="text" name="pawnerPostCapacity" placeholder="Capacity">
 												<span class="focus-input100"></span>
-											</div>
+											</div> -->
 											<label class="label-input100">Type of camera</label>
 											<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
 												<input class="input100" type="text" name="pawnerPostTypeCamera" placeholder="">
@@ -109,9 +109,8 @@
 												</dt>
 												<dt style="line-height: 5px;">
 													<input type="checkbox" name="pawnerPostWarranty" value="yes" /> Warranty Certificate
-													<strong>(If you have)</strong>
 												</dt>
-												<dt style="line-height: 5px;">
+												<dt style="line-height: 55px;">
 													<input type="checkbox" required="required"> I agree to the
 													<strong>trem of service</strong>
 												</dt>
