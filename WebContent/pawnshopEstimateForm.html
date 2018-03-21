@@ -1,139 +1,117 @@
-<!-- 
-// page : pawnshop-estimate-form
-// version : 1.0
-// task : --
-// edit by : 
- -->
+
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<head>
-    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
-    <link href="css/w3.css" rel="stylesheet">
-    <title>PawnShop Estimate Form</title>
-    <script>
-        function openType(type) {
-            var i;
-            var x = document.getElementsByClassName("type");
-            for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";
-            }
-            document.getElementById(type).style.display = "block";
-        }
+    <title>eCommerce Product Detail</title>
 
-        function openCity(evt, cityName) {
-            var i, x, tablinks;
-            x = document.getElementsByClassName("city");
-            for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";
-            }
-            tablinks = document.getElementsByClassName("tablink");
-            for (i = 0; i < x.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" w3-border-red", "");
-            }
-            document.getElementById(cityName).style.display = "block";
-            evt.currentTarget.firstElementChild.className += " w3-border-red";
-        }
-    </script>
+<!------ Include the above in your HEAD tag ---------->
+<!-- Bootstrap core CSS -->
+<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<style>
 
-</head>
+/*****************globals*************/
 
-<body>
+img {
+  max-width: 100%; }
 
-    <!-- Navigation  <jsp:include page="navbar.jsp" /> -->
+.preview {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+  @media screen and (max-width: 996px) {
+    .preview {
+      margin-bottom: 20px; } }
 
-    <div class="re-contain">
-        <div class="Subhead">
-            <h2 class="Subhead-heading">Pawn Information</h2>
-            <p class="Subhead-description">This is a information of pawn</p>
-        </div>
-        <div class="form-group float-lef">
+.preview-pic {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1; }
 
-            <select>
-                <option onclick="openType('Photo')">Photo</option>
-                <option onclick="openType('All')">360 ํ</option>
+.preview-thumbnail.nav-tabs {
+  border: none;
+  margin-top: 15px; }
+  .preview-thumbnail.nav-tabs li {
+    width: 18%;
+    margin-right: 2.5%; }
+    .preview-thumbnail.nav-tabs li img {
+      max-width: 100%;
+      display: block; }
+    .preview-thumbnail.nav-tabs li a {
+      padding: 0;
+      margin: 0; }
+    .preview-thumbnail.nav-tabs li:last-of-type {
+      margin-right: 0; }
 
-            </select>
-        </div>
-        <div id="Photo" class="type" style="display:none">
-            <div style="margin-bottom:20px;">
-                <div class="form-group float-left">
-                    <dt>
-                        <img alt="user" src="img/gold.png" height="100" width="100" style=" margin-bottom:12px;border:1px solid#c8cbcf">
-                    </dt>
-
-                </div>
-            </div>
-        </div>
-
-        <div id="All" class="w3-container type" style="display:none">
-            <div style="margin-bottom:20px;">
-                <div class="form-group float-left">
-                    <dt>
-                        <img alt="user" src="img/gold.png" height="100" width="100" style=" margin-bottom:12px;border:1px solid#c8cbcf">
-                    </dt>
-
-                </div>
-            </div>
-        </div>
+.tab-content {
+  overflow: hidden; }
+  .tab-content img {
+    width: 100%;
+    -webkit-animation-name: opacity;
+            animation-name: opacity;
+    -webkit-animation-duration: .3s;
+            animation-duration: .3s; }
 
 
+@-webkit-keyframes opacity {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(3);
+            transform: scale(3); }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
 
+@keyframes opacity {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(3);
+            transform: scale(3); }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
 
+/*# sourceMappingURL=style.css.map */
+</style>
+  </head>
 
+  <body>
+	
 
+					<div class="preview col-md-6">
+						
+						<div class="preview-pic tab-content">
+						  <div class="tab-pane active" id="pic-1"><img src="http://placekitten.com/400/252" /></div>
+						  <div class="tab-pane " id="pic-o"><img src="http://placekitten.com/200/126" /></div>
+						  <div class="tab-pane" id="2.png"><img src="http://placekitten.com/400/252" /></div>
+						  <div class="tab-pane" id="pic-4"><img src="http://placekitten.com/400/252" /></div>
+						  <div class="tab-pane" id="pic-5"><img src="http://placekitten.com/400/252" /></div>
+						</div>
+						<ul class="preview-thumbnail nav nav-tabs">
+						  <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
+						  <li><a data-target="#pic-o" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
+						  <li><a data-target="#2.png" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
+						  <li><a data-target="#pic-4" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
+						  <li><a data-target="#pic-5" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
+						</ul>
+						
+					</div>
+					<!-- Bootstrap core JavaScript -->
+	<script src="vendor/jquery/jquery.min.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>	
 
-
-        <div class="w3-container">
-            <h2>Price 20,000.00 baht</h2>
-
-            <div class="w3-row">
-                <a href="javascript:void(0)" onclick="openCity(event, 'Description');">
-                    <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Description</div>
-                </a>
-                <a href="javascript:void(0)" onclick="openCity(event, 'Specifications');">
-                    <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Specifications</div>
-                </a>
-
-            </div>
-
-            <div id="Description" class="w3-container city" style="display:none">
-                <div class="form-group float-left Subhead" style="margin-top:10px; ">
-                    <div class="form-group enter-data">
-                        <p>Description
-                        </p>
-                    </div>
-
-                    <p>Yellow Gold Diamond Ring</p>
-                    <p>Weight :11.4 g</p>
-                    <p>Diamond 0.20 carat (1diamond)</p>
-                    <p>Diamond 0.015 carat (20diamonds),M Color</p>
-                    <p>Gold Purity : 90 %</p>
-                    <p>Size : 58 mm.</p>
-
-
-
-                </div>
-                <div class="form-group float-left">
-                    <button class="summit-data">Estimation</button>
-                </div>
-
-            </div>
-
-
-
-
-            <div id="Specifications" class="w3-container city" style="display:none">
-                <h2>Specifications</h2>
-                <p>Pawn code :881702-3014-01</p>
-            </div>
-
-
-        </div>
-
-
-</body>
-
+  </body>
 </html>
 
-</html>
+

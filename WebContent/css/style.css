@@ -544,6 +544,11 @@ a.buy-now:hover{
 	border: 1px solid #EFECEC;
     padding: 10px;
 }
+
+.pro-img{
+	height: 322px;
+	border-bottom: 3px double #ff7700;
+}
 .zoom-icon {
 	    position: absolute;
     opacity: 0;
@@ -553,7 +558,7 @@ a.buy-now:hover{
     left: 0;
     top: -152px;
     width: 290px;
-    height: 219px;
+    /* height: 219px; */
 	text-align:center;
     cursor: pointer;
     transition: all .2s ease-in-out;
@@ -563,7 +568,7 @@ a.buy-now:hover{
 }
 .zoom-icon .icon{
 	width: 50px;
-    height: 50px;
+    /* height: 50px; */
     display: inline-block;
     background: #ff7f00;
 	color:#fff;
@@ -578,7 +583,7 @@ a.buy-now:hover{
 .mid-pop .zoom-icon {
 	top: 0px;
 	width: 100%;
-	height: 182px;
+	/* height: 182px; */
 }
 .mid-pop .pro-img:hover .zoom-icon {
     top: 33%;
