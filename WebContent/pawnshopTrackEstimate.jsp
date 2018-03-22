@@ -29,133 +29,175 @@
 <body>
 	<!-- Navigation -->
 	<jsp:include page="navbar.jsp" />
+	
+	
 	<section>
 		<div class="container">
-			<table border="1">
+			
 				<c:forEach items="${trackMyEstimate}" var="track">
+					<div class="container">
+						<div class="card">
+							<div class="history-main">
+								<div class="d-flex history-title">
 
-					<ul>
-
-						<c:if test="${track.estimateStatus != 'complete'}">
-
-
-
-							<!-- Watch,Electronic -->
-							<c:if test="${track.pawnerPostId.pawnerPostProduction != null}">
-								<li>Production : ${track.pawnerPostId.pawnerPostProduction}</li>
-								<li>Model : ${track.pawnerPostId.pawnerPostModel}</li>
-								<li>Serial : ${track.pawnerPostId.pawnerPostSerial}</li>
-								<li>Warranty : ${track.pawnerPostId.pawnerPostWarranty}</li>
-								<li>Purchase : ${track.pawnerPostId.pawnerPostPurchase }</li>
-							</c:if>
-
-							<!-- Gold -->
-							<c:if test="${track.pawnerPostId.pawnerPostProduction != null}">
-								<li>Pure : ${track.pawnerPostId.pawnerPostPure  }</li>
-								<li>Weigh : ${track.pawnerPostId.pawnerPostWeigh }</li>
-								<li>Category : ${track.pawnerPostId.pawnerPostCategory }</li>
-							</c:if>
-
-							<!-- Watch -->
-							<c:if test="${track.pawnerPostId.pawnerPostCase != null}">
-								<li>Case : ${track.pawnerPostId.pawnerPostCase }</li>
-								<li>Bracelet : ${track.pawnerPostId.pawnerPostBracelet }</li>
-								<c:if test="${track.pawnerPostId.pawnerPostDiamond != null}">
-									<li>Diamond : ${track.pawnerPostId.pawnerPostDiamond }</li>
-								</c:if>
-								<c:if test="${track.pawnerPostId.pawnerPostPackage != null}">
-									<li>Package : ${track.pawnerPostId.pawnerPostPackage }</li>
-								</c:if>
-							</c:if>
-
-							<!-- Electronic tv com telephone -->
-							<c:if test="${track.pawnerPostId.pawnerPostSize != null}">
-								<li>Size : ${track.pawnerPostId.pawnerPostSize }</li>
-							</c:if>
-
-							<!-- Electronic camera com telephone -->
-							<c:if test="${track.pawnerPostId.pawnerPostBattery != null}">
-								<li>Battery : ${track.pawnerPostId.pawnerPostBattery }</li>
-							</c:if>
-
-							<!-- Electronic com telephone -->
-							<c:if test="${track.pawnerPostId.pawnerPostHarddisk != null}">
-								<li>Harddisk : ${track.pawnerPostId.pawnerPostHarddisk }</li>
-							</c:if>
-
-							<!-- Electronic tv -->
-							<c:if test="${track.pawnerPostId.panwePostRemote != null}">
-								<li>Remote : ${track.pawnerPostId.panwePostRemote }</li>
-							</c:if>
-
-							<!-- Electronic com-->
-							<c:if test="${track.pawnerPostId.pawnerPostRam != null}">
-								<li>Ram : ${track.pawnerPostId.pawnerPostRam }</li>
-							</c:if>
-
-
-							<!-- Electronic telephone-->
-							<li>Description : ${track.pawnerPostId.pawnerPostDescription }</li>
-
-
-							<li>${track.pawnerPostId.pawnerPostItemType}</li>
-							<li>${track.pawnerPostId.pawnerPostName}</li>
-							<li>${track.pawnerPostId.pawnerPostDescription}</li>
-							<li>${track.pawnerPostId.pawnerPostBrand}</li>
-							<li>${track.pawnerPostId.pawnerPostPure}</li>
-							<li>${track.pawnerPostId.pawnerPostWeigh}</li>
-							<li>${track.pawnerPostId.pawnerPostCategory}</li>
-							<li>${track.pawnerPostId.pawnerPostProduction}</li>
-							<li>${track.pawnerPostId.pawnerPostModel}</li>
-							<li>${track.pawnerPostId.pawnerPostSerial}</li>
-							<li>${track.pawnerPostId.pawnerPostCase}</li>
-							<li>${track.pawnerPostId.pawnerPostBracelet}</li>
-							<li>${track.pawnerPostId.pawnerPostDiamond}</li>
-							<li>${track.pawnerPostId.pawnerPostPackage}</li>
-							<li>${track.pawnerPostId.pawnerPostWarranty}</li>
-
-							<li>${track.pawnerPostId.pawnerPostSize}</li>
-							<li>${track.pawnerPostId.panwePostRemote}</li>
-							<li>${track.pawnerPostId.pawnerPostCapacity}</li>
-							<li>${track.pawnerPostId.pawnerPostPurchase}</li>
-							<li>${track.pawnerPostId.pawnerPostBattery}</li>
-							<li>${track.pawnerPostId.pawnerPostTypeCamera}</li>
-							<li>${track.pawnerPostId.pawnerPostCameraLen}</li>
-							<li>${track.pawnerPostId.pawnerPostHarddisk}</li>
-							<li>${track.pawnerPostId.pawnerPostRam}</li>
-							<li>${track.pawnerPostId.pawnerPostDevice}</li>
-
-
-							<li>${track.estimatePriceMin}</li>
-							<li>${track.estimatePriceMax}</li>
-							<li>${track.estimateDate}</li>
-							<li>${track.estimateAccessDate}</li>
-							
-							
-							
-							
-							<li>${track.pawnerPostId.pawnerId.pawnerFirstname}</li>
-							<li>${track.pawnerPostId.pawnerId.pawnerLastname}</li>
-							<li>${track.pawnerPostId.pawnerId.pawnerEmail}</li>
-							<li>${track.pawnerPostId.pawnerId.pawnerSex}</li>
-							
-							<li>${track.estimateStatus}</li>
+									<div class="ml-auto p-2">
+										<span>${track.pawnerPostId.pawnerPostItemType}</span>
+									</div>
+								</div>
+								<div class="history-body">
+									<div class="row">
+										<div class="col-sm-5">
 
 
 
-							<c:if test="${track.estimateStatus == 'Approve'}">
-								<form action="pawnshop-estimate-approve.html" method="post">
-									<input type="hidden" name="estimateId"
-										value="${track.estimateId}"> <input type="hidden"
-										name="pawnerPostId" value="${track.pawnerPostId.pawnerPostId}">
-									<button type="submit">Approve</button>
-								</form>
-							</c:if>
+											<span class="history-img"><img class=""
+												src="img/gold.png" width="300" /></span>
+										</div>
+										<div class="col-sm-7">
 
-						</c:if>
+											<span class="history-name">${track.pawnerPostId.pawnerPostName}
+												${track.pawnerPostId.pawnerPostBrand}
+												${track.pawnerPostId.pawnerPostTypeCamera}
+												${track.pawnerPostId.pawnerPostCameraLen} </span>
+											<div class="history-detail">
+												<ul>
 
-					</ul>
+													<!-- Watch,Electronic -->
+													<c:if
+														test="${track.pawnerPostId.pawnerPostModel != null}">
+														<li>Model : ${track.pawnerPostId.pawnerPostModel}</li>
+														<li>Serial :${track.pawnerPostId.pawnerPostSerial}</li>
+													</c:if>
 
+													<c:if
+														test="${track.pawnerPostId.pawnerPostProduction != null}">
+														<li>Production :
+															${track.pawnerPostId.pawnerPostProduction}</li>
+													</c:if>
+
+													<c:if
+														test="${track.pawnerPostId.pawnerPostWarranty != null}">
+														<li>Warranty :
+															${track.pawnerPostId.pawnerPostWarranty}</li>
+													</c:if>
+													<c:if
+														test="${track.pawnerPostId.pawnerPostPurchase != null}">
+														<li>Purchase :
+															${track.pawnerPostId.pawnerPostPurchase}</li>
+													</c:if>
+
+													<!-- Gold -->
+													<c:if
+														test="${track.pawnerPostId.pawnerPostPure != null}">
+														<li>Pure : ${track.pawnerPostId.pawnerPostPure  }</li>
+														<li>Weigh : ${track.pawnerPostId.pawnerPostWeigh }</li>
+														<li>Category :${track.pawnerPostId.pawnerPostCategory }</li>
+													</c:if>
+
+													<!-- Watch -->
+													<c:if
+														test="${track.pawnerPostId.pawnerPostCase != null}">
+														<li>Case : ${track.pawnerPostId.pawnerPostCase }</li>
+														<li>Bracelet :
+															${track.pawnerPostId.pawnerPostBracelet }</li>
+														<c:if
+															test="${track.pawnerPostId.pawnerPostDiamond != null}">
+															<li>Diamond :
+																${track.pawnerPostId.pawnerPostDiamond }</li>
+														</c:if>
+														<c:if
+															test="${track.pawnerPostId.pawnerPostPackage != null}">
+															<li>Package :
+																${track.pawnerPostId.pawnerPostPackage}</li>
+														</c:if>
+													</c:if>
+
+													<!-- Electronic tv com telephone -->
+													<c:if
+														test="${track.pawnerPostId.pawnerPostSize != null}">
+														<li>Size : ${track.pawnerPostId.pawnerPostSize }</li>
+													</c:if>
+
+													<!-- Electronic camera com telephone -->
+													<c:if
+														test="${track.pawnerPostId.pawnerPostBattery != null}">
+														<li>Battery :
+															${track.pawnerPostId.pawnerPostBattery}</li>
+													</c:if>
+
+													<!-- Electronic com telephone -->
+													<c:if
+														test="${track.pawnerPostId.pawnerPostHarddisk != null}">
+														<li>Harddisk :
+															${track.pawnerPostId.pawnerPostHarddisk }</li>
+													</c:if>
+
+													<!-- Electronic tv -->
+													<c:if
+														test="${track.pawnerPostId.panwePostRemote != null}">
+														<li>Remote : ${track.pawnerPostId.panwePostRemote }</li>
+													</c:if>
+
+													<!-- Electronic com-->
+													<c:if test="${track.pawnerPostId.pawnerPostRam!= null}">
+														<li>Ram : ${track.pawnerPostId.pawnerPostRam }</li>
+													</c:if>
+
+
+													<!-- Electronic telephone-->
+													<li>Description :
+														${track.pawnerPostId.pawnerPostDescription }</li>
+
+													<li>Price Min: ${track.estimatePriceMin }</li>
+													<li>Price Max: ${track.estimatePriceMax }</li>
+													<li>Estimate Date: ${track.estimateDate}</li>
+													<li>Access Date: ${track.estimateAccessDate}</li>
+													<%-- <li>Status   : ${track.estimateStatus }</li>   --%>
+
+													<!-- Status -->
+													<c:if test="${track.estimateStatus == 'complete'}">
+														<li>Status : <span class="badge badge-success">Complete</span>
+														</li>
+													</c:if>
+
+													<c:if test="${track.estimateStatus == 'waiting'}">
+														<li>Status : <span class="badge badge-danger">Waiting</span>
+														</li>
+													</c:if>
+
+													<c:if test="${track.estimateStatus == 'process'}">
+														<li>Status : <span class="badge badge-warning">Process</span>
+														</li>
+													</c:if>
+													<c:if test="${track.estimateStatus == 'proceed'}">
+														<li>Status : <span class="badge badge-warning">Process</span>
+														</li>
+													</c:if>
+
+													<c:if test="${track.estimateStatus == 'approve'}">
+														<li>Status : <span class="badge badge-primary">Approve</span>
+														</li>
+													</c:if>
+
+
+
+
+
+
+													<c:if test="${track.estimateStatus == 'Approve'}">
+														<form action="pawnshop-estimate-approve.html"
+															method="post">
+															<input type="hidden" name="estimateId"
+																value="${track.estimateId}"> <input
+																type="hidden" name="pawnerPostId"
+																value="${track.pawnerPostId.pawnerPostId}">
+															<button type="submit">Approve</button>
+														</form>
+													</c:if>
+
+													
+
+												</ul>
 				</c:forEach>
 			</table>
 		</div>

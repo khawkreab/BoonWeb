@@ -143,26 +143,17 @@
 		<div class="container">
 			<div class="history-filter">
 				<div class="d-flex">
-					<div class="mr-auto p-2">history</div>
-					<div class="ml-auto p-2">
-						Show: <select>
-							<option>finish</option>
-							<option>process</option>
-						</select>
-					</div>
+					<div class="mr-auto p-2">List Order</div>
+					 
 				</div>
 			</div>
 		</div>
 		<c:forEach items="${adminOList}" var="adOrder">
-			<div class="container">
+			<div class="container"><div class="card">
 				<div class="history-main">
 					<div class="d-flex history-title">
 					
-					<div class="mr-auto p-2">
-						<fmt:formatDate
-										type="both" dateStyle="long" timeStyle="short"
-										value="${adminOList.orderItemDateIn }" />
-						</div>
+				 
 					
 						<div class="ml-auto p-2">
 							<span>${adOrder.pawnshopPostId.pawnshopId.pawnshopName } shop</span>
@@ -251,6 +242,30 @@
 										<li>Description : ${adOrder.pawnshopPostId.pawnshopPostDescription }</li>
 										
 										<li>Price : ${adOrder.pawnshopPostId.pawnshopPostPrice }</li>
+										
+										
+										<p>
+										
+										
+										</p>
+											
+										<li> <h3><span class="badge badge-info">Post By</span></h3></li>
+												<li> Pawnshop ID :<span class="badge badge-default"> ${adOrder.pawnshopPostId.pawnshopId.pawnshopId} </span></li>	
+												<li> Pawnshop Name :<span class="badge badge-default"> ${adOrder.pawnshopPostId.pawnshopId.pawnshopName} </span></li>
+												<li> Pawnshop Address :<span class="badge badge-default"> ${adOrder.pawnshopPostId.pawnshopId.pawnshopAddress} </span></li>
+												<li> Pawnshop Mail :<span class="badge badge-default"> ${adOrder.pawnshopPostId.pawnshopId.pawnshopEmail} </span></li>
+										<p>
+										
+										
+										</p>
+										
+										<li> <h3><span class="badge badge-info">Order By</span></h3>	</li>	
+												<li> Pawner ID :<span class="badge badge-default"> ${adOrder.pawnerId.pawnerId} </span></li>								 
+												<li> Pawner Name :<span class="badge badge-default"> ${adOrder.pawnerId.pawnerFirstname}  ${adOrder.pawnerId.pawnerLastname}</span></li>
+												<li> Pawner Mail :<span class="badge badge-default"> ${adOrder.pawnerId.pawnerEmail} </span></li>
+												
+												
+										
 									</ul>
 								</div>
 							</div>
@@ -258,7 +273,7 @@
 
 					</div>
 				</div>
-			</div>
+			</div></div>
 		</c:forEach>
 	</section>
 

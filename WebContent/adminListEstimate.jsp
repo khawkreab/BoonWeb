@@ -151,109 +151,170 @@
 			</div>
 			<!-- End Sidebar scroll-->
 		</div>
-
-		<section>
-			<div class="container-fluid">
-				<div class="col-lg-12">
-					<div class="card">
-						<div class="card-title">
-							<h4>Admin List Estimate</h4>
-						</div>
-							<div class="card-body">
-								<div class="table-responsive">
-								
-							<table class="table table-hover">
+		
+		
+		 <section>
+		<div class="container">
+			<div class="history-filter">
+				<div class="d-flex">
+					<div class="mr-auto p-2">List Estimate</div>
+					 
+				</div>
+			</div>
+		</div>
+		<c:forEach items="${adminEList}" var="adEstimate">
+			<div class="container"><div class="card">
+				<div class="history-main">
+					<div class="d-flex history-title">
 									
-										<thead>
-											<tr>
-												<th>ItemType</th>
-												<th>Name</th>
-												<th>Description</th>
-												<th>Brand</th>
-												<th>Pure</th>
-												<th>Weigh</th>									
-												<th>Category</th>
-												<th>Production</th>
-												<th>Model</th>
-												<th>Serial</th>
-												<th>Case</th>
-												<th>Bracelet</th>
-												<th>Diamond</th>
-												<th>Package</th>
-												<th>Warranty</th>
-												
-												<th>Size</th>
-												<th>Remote</th>
-												<th>Capacity</th>
-												<th>Purchase</th>
-												<th>Battery</th>
-												<th>TypeCamera</th>									
-												<th>CameraLen</th>
-												<th>HardDisk</th>
-												<th>Ram</th>
-												<th>Device</th>
-												
-												<th>PriceMin</th>
-												<th>PriceMax</th>
-												<th>AccessDate</th>
-												<th>Status</th>
-											</tr>
-										</thead>
-										<tbody>
-								<c:forEach items="${adminEList}" var="adEstimate">
+						<div class="ml-auto p-2">
+							<span>${adEstimate.pawnerPostId.pawnerPostItemType}</span>
+						</div>
+					</div>
+					<div class="history-body">
+						<div class="row">
+							<div class="col-sm-5">
+
+
+
+								<span class="history-img"><img class=""
+									src="img/gold.png" width="300" /></span>
+							</div>
+							<div class="col-sm-7">
+
+								<span class="history-name">${adEstimate.pawnerPostId.pawnerPostName}
+									${adEstimate.pawnerPostId.pawnerPostBrand} ${adEstimate.pawnerPostId.pawnerPostTypeCamera}
+									${adEstimate.pawnerPostId.pawnerPostCameraLen} </span>
+								<div class="history-detail">
 									<ul>
 
+										<!-- Watch,Electronic -->
+										<c:if test="${adEstimate.pawnerPostId.pawnerPostModel != null}">
+											<li>Model : ${adEstimate.pawnerPostId.pawnerPostModel}</li>
+											<li>Serial : ${adEstimate.pawnerPostId.pawnerPostSerial}</li>
+										</c:if>
+										
+											<c:if test="${adEstimate.pawnerPostId.pawnerPostProduction != null}">
+											<li>Production : ${adEstimate.pawnerPostId.pawnerPostProduction}</li>
+										</c:if>
 
-										<li>${adEstimate.pawnerPostId.pawnerPostItemType}</li>
-										<li>${adEstimate.pawnerPostId.pawnerPostName}</li>
-										<li>${adEstimate.pawnerPostId.pawnerPostDescription}</li>
-										<li>${adEstimate.pawnerPostId.pawnerPostBrand}</li>
-										<li>${adEstimate.pawnerPostId.pawnerPostPure}</li>
-										<li>${adEstimate.pawnerPostId.pawnerPostWeigh}</li>
-										<li>${adEstimate.pawnerPostId.pawnerPostCategory}</li>
-										<li>${adEstimate.pawnerPostId.pawnerPostProduction}</li>
-										<li>${adEstimate.pawnerPostId.pawnerPostModel}</li>
-										<li>${adEstimate.pawnerPostId.pawnerPostSerial}</li>
-										<li>${adEstimate.pawnerPostId.pawnerPostCase}</li>
-										<li>${adEstimate.pawnerPostId.pawnerPostBracelet}</li>
-										<li>${adEstimate.pawnerPostId.pawnerPostDiamond}</li>
-										<li>${adEstimate.pawnerPostId.pawnerPostPackage}</li>
-										<li>${adEstimate.pawnerPostId.pawnerPostWarranty}</li>
+										<c:if test="${adEstimate.pawnerPostId.pawnerPostWarranty != null}">
+											<li>Warranty : ${adEstimate.pawnerPostId.pawnerPostWarranty}</li>
+										</c:if>
+										<c:if test="${adEstimate.pawnerPostId.pawnerPostPurchase != null}">
+											<li>Purchase : ${adEstimate.pawnerPostId.pawnerPostPurchase}</li>
+										</c:if>
 
-										<li>${adEstimate.pawnerPostId.pawnerPostSize}</li>
-										<li>${adEstimate.pawnerPostId.panwePostRemote}</li>
-										<li>${adEstimate.pawnerPostId.pawnerPostCapacity}</li>
-										<li>${adEstimate.pawnerPostId.pawnerPostPurchase}</li>
-										<li>${adEstimate.pawnerPostId.pawnerPostBattery}</li>
-										<li>${adEstimate.pawnerPostId.pawnerPostTypeCamera}</li>
-										<li>${adEstimate.pawnerPostId.pawnerPostCameraLen}</li>
-										<li>${adEstimate.pawnerPostId.pawnerPostHarddisk}</li>
-										<li>${adEstimate.pawnerPostId.pawnerPostRam}</li>
-										<li>${adEstimate.pawnerPostId.pawnerPostDevice}</li>
+										<!-- Gold -->
+										<c:if test="${adEstimate.pawnerPostId.pawnerPostPure != null}">
+											<li>Pure : ${adEstimate.pawnerPostId.pawnerPostPure  }</li>
+											<li>Weigh : ${adEstimate.pawnerPostId.pawnerPostWeigh }</li>
+											<li>Category : ${adEstimate.pawnerPostId.pawnerPostCategory }</li>
+										</c:if>
 
-										<li>${adEstimate.estimatePriceMin}</li>
-										<li>${adEstimate.estimatePriceMax}</li>
-										<li>${adEstimate.estimateDate}</li>
-										<li>${adEstimate.estimateAccessDate}</li>
-										<li>${adEstimate.estimateStatus}</li>
+										<!-- Watch -->
+										<c:if test="${adEstimate.pawnerPostId.pawnerPostCase != null}">
+											<li>Case : ${adEstimate.pawnerPostId.pawnerPostCase }</li>
+											<li>Bracelet : ${adEstimate.pawnerPostId.pawnerPostBracelet }</li>
+											<c:if test="${adEstimate.pawnerPostId.pawnerPostDiamond != null}">
+												<li>Diamond : ${adEstimate.pawnerPostId.pawnerPostDiamond }</li>
+											</c:if>
+											<c:if test="${adEstimate.pawnerPostId.pawnerPostPackage != null}">
+												<li>Package : ${adEstimate.pawnerPostId.pawnerPostPackage}</li>
+											</c:if>
+										</c:if>
+
+										<!-- Electronic tv com telephone -->
+										<c:if test="${adEstimate.pawnerPostId.pawnerPostSize != null}">
+											<li>Size : ${adEstimate.pawnerPostId.pawnerPostSize }</li>
+										</c:if>
+
+										<!-- Electronic camera com telephone -->
+										<c:if test="${adEstimate.pawnerPostId.pawnerPostBattery != null}">
+											<li>Battery : ${adEstimate.pawnerPostId.pawnerPostBattery}</li>
+										</c:if>
+
+										<!-- Electronic com telephone -->
+										<c:if test="${adEstimate.pawnerPostId.pawnerPostHarddisk != null}">
+											<li>Harddisk : ${adEstimate.pawnerPostId.pawnerPostHarddisk }</li>
+										</c:if>
+
+										<!-- Electronic tv -->
+										<c:if test="${adEstimate.pawnerPostId.panwePostRemote != null}">
+											<li>Remote : ${adEstimate.pawnerPostId.panwePostRemote }</li>
+										</c:if>
+
+										<!-- Electronic com-->
+										<c:if test="${adEstimate.pawnerPostId.pawnerPostRam!= null}">
+											<li>Ram : ${adEstimate.pawnerPostId.pawnerPostRam }</li>
+										</c:if>
 
 
-
-									</ul>
-
-								</c:forEach>
-								</tbody>
-							</table>
+										<!-- Electronic telephone-->
+										<li>Description : ${adEstimate.pawnerPostId.pawnerPostDescription }</li>
+										
+										<li>Price Min: ${adEstimate.estimatePriceMin }</li>
+										<li>Price Max: ${adEstimate.estimatePriceMax }</li>
+										<li>Estimate Date: ${adEstimate.estimateDate}</li>
+										<li>Access Date:   ${adEstimate.estimateAccessDate}</li>
+									 <%-- <li>Status   : ${adEstimate.estimateStatus }</li>   --%>
+									 
+										<!-- Status -->
+										<c:if test="${adEstimate.estimateStatus == 'complete'}">
+											<li>Status :  <span class="badge badge-success">Complete</span> </li>
+										</c:if>
+										
+										<c:if test="${adEstimate.estimateStatus == 'waiting'}">
+											<li>Status :  <span class="badge badge-danger">Waiting</span> </li>
+										</c:if>
+										
+										<c:if test="${adEstimate.estimateStatus == 'process'}">
+											<li>Status :  <span class="badge badge-warning">Process</span> </li>
+										</c:if>
+										<c:if test="${adEstimate.estimateStatus == 'proceed'}">
+											<li>Status : <span class="badge badge-warning">Process</span> </li>
+										</c:if>
+										
+										<c:if test="${adEstimate.estimateStatus == 'approve'}">
+											<li>Status :  <span class="badge badge-primary">Approve</span> </li>
+										</c:if>
+										
+										
+										<p>
+										
+										
+										</p>
+										
+										<li> <h3><span class="badge badge-info">Post By</span></h3>	</li>	
+												<li> Pawner ID :<span class="badge badge-default"> ${adEstimate.pawnerPostId.pawnerId.pawnerId} </span></li>								 
+												<li> Pawner Name :<span class="badge badge-default"> ${adEstimate.pawnerPostId.pawnerId.pawnerFirstname}  ${adEstimate.pawnerPostId.pawnerId.pawnerLastname}</span></li>
+												<li> Pawner Mail :<span class="badge badge-default"> ${adEstimate.pawnerPostId.pawnerId.pawnerEmail} </span></li>
+												
+												
+										<p>
+										
+										
+										</p>
+											
+										<li> <h3><span class="badge badge-info">Estimate By</span></h3></li>
+												<li> Pawnshop ID :<span class="badge badge-default"> ${adEstimate.pawnshopId.pawnshopId} </span></li>	
+												<li> Pawnshop Name :<span class="badge badge-default"> ${adEstimate.pawnshopId.pawnshopName} </span></li>
+												<li> Pawnshop Address :<span class="badge badge-default"> ${adEstimate.pawnshopId.pawnshopAddress} </span></li>
+												<li> Pawnshop Mail :<span class="badge badge-default"> ${adEstimate.pawnshopId.pawnshopEmail} </span></li>
+											
 							
+										
+									</ul>
+								</div>
+							</div>
 						</div>
-					 </div>
-					 
-					</div>
-					<!-- /# card -->
-				</div> 
-			</div>
-		</section>
 
+					</div>
+				</div>
+			</div></div>
+		</c:forEach>
+	</section>
+		 
 
 
 		<!-- End Page wrapper  -->

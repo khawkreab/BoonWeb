@@ -35,7 +35,7 @@
 			</div>
 		</div>
 		<c:forEach items="${order}" var="order">
-			<div class="container">
+			<div class="container"><div class="card">
 				<div class="history-main">
 					<div class="d-flex history-title">
 						<div class="mr-auto p-2">
@@ -130,6 +130,18 @@
 										<li>Description : ${order.pawnshopPostId.pawnshopPostDescription }</li>
 										
 										<li>Price : ${order.pawnshopPostId.pawnshopPostPrice }</li>
+										
+										
+										<p>
+										
+										
+										</p>
+											
+										<li> <h3><span class="badge badge-info">Post By</span></h3></li>
+												<li> Pawnshop Name :<span class="badge badge-default"> ${order.pawnshopPostId.pawnshopId.pawnshopName} </span></li>
+												<li> Pawnshop Address :<span class="badge badge-default"> ${order.pawnshopPostId.pawnshopId.pawnshopAddress} </span></li>
+												<li> Pawnshop Mail :<span class="badge badge-default"> ${order.pawnshopPostId.pawnshopId.pawnshopEmail} </span></li>
+										
 									</ul>
 								</div>
 							</div>
@@ -137,7 +149,7 @@
 
 					</div>
 				</div>
-			</div>
+			</div></div>
 		</c:forEach>
 	</section>
 

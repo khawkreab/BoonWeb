@@ -152,6 +152,7 @@
 											<th>ID</th>
 											<th>Pawnshop Name</th>
 											<th>Credential</th>
+											<th>Address</th>
 											<th>E-mail</th>
 											<th>Password</th>
 											<th>Remove</th>
@@ -163,6 +164,7 @@
 												<td>${pawnshop.pawnshopId}</td>
 												<td>${pawnshop.pawnshopName}</td>
 												<td>${pawnshop.pawnshopCredential}</td>
+												<td>${pawnshop.pawnshopAddress}</td>
 												<td>${pawnshop.pawnshopEmail}</td>
 												<td>${pawnshop.pawnshopPassword}</td>
 												<td><a

@@ -29,53 +29,151 @@
 <body>
 	<!-- Navigation -->
 	<jsp:include page="navbar.jsp" />
-	<section>
-	<div class="container">
-		<table border="1">
-			<c:forEach items="${eList}" var="estimate">
-				<ul>
-				<c:if test = "${estimate.estimateStatus == 'Complete'}">
-				
-				<li>${estimate.pawnerPostId.pawnerPostItemType}</li>
-				<li>${estimate.pawnerPostId.pawnerPostName}</li>
-				<li>${estimate.pawnerPostId.pawnerPostDescription}</li>
-				<li>${estimate.pawnerPostId.pawnerPostBrand}</li>
-				<li>${estimate.pawnerPostId.pawnerPostPure}</li>
-				<li>${estimate.pawnerPostId.pawnerPostWeigh}</li>
-				<li>${estimate.pawnerPostId.pawnerPostCategory}</li>
-				<li>${estimate.pawnerPostId.pawnerPostProduction}</li>
-				<li>${estimate.pawnerPostId.pawnerPostModel}</li>
-				<li>${estimate.pawnerPostId.pawnerPostSerial}</li>
-				<li>${estimate.pawnerPostId.pawnerPostCase}</li>
-				<li>${estimate.pawnerPostId.pawnerPostBracelet}</li>
-				<li>${estimate.pawnerPostId.pawnerPostDiamond}</li>
-				<li>${estimate.pawnerPostId.pawnerPostPackage}</li>
-				<li>${estimate.pawnerPostId.pawnerPostWarranty}</li>
-				
-				<li>${estimate.pawnerPostId.pawnerPostSize}</li>
-				<li>${estimate.pawnerPostId.panwePostRemote}</li>
-				<li>${estimate.pawnerPostId.pawnerPostCapacity}</li>
-				<li>${estimate.pawnerPostId.pawnerPostPurchase}</li>
-				<li>${estimate.pawnerPostId.pawnerPostBattery}</li>
-				<li>${estimate.pawnerPostId.pawnerPostTypeCamera}</li>
-				<li>${estimate.pawnerPostId.pawnerPostCameraLen}</li>
-				<li>${estimate.pawnerPostId.pawnerPostHarddisk}</li>
-				<li>${estimate.pawnerPostId.pawnerPostRam}</li>
-				<li>${estimate.pawnerPostId.pawnerPostDevice}</li>
-					
-					<li>${estimate.estimatePriceMin}</li>
-					<li>${estimate.estimatePriceMax}</li>
-					<li>${estimate.estimateDate}</li>
-					<li>${estimate.estimateAccessDate}</li>
-					<li>${estimate.estimateStatus}</li>
-					
-				</c:if>
-				
-				</ul>
-				
-			</c:forEach>
-		</table>
-	</div>
+  
+		 <section>
+		<div class="container">
+			<div class="history-filter">
+				<div class="d-flex">
+					<div class="mr-auto p-2"> Estimate History</div>
+					 
+				</div>
+			</div>
+		</div>
+		<c:forEach items="${eList}" var="estimate">
+			<div class="container"><div class="card">
+				<div class="history-main">
+					<div class="d-flex history-title">
+									
+						<div class="ml-auto p-2">
+							<span>${estimate.pawnerPostId.pawnerPostItemType}</span>
+						</div>
+					</div>
+					<div class="history-body">
+						<div class="row">
+							<div class="col-sm-5">
+
+
+
+								<span class="history-img"><img class=""
+									src="img/gold.png" width="300" /></span>
+							</div>
+							<div class="col-sm-7">
+
+								<span class="history-name">${estimate.pawnerPostId.pawnerPostName}
+									${estimate.pawnerPostId.pawnerPostBrand} ${estimate.pawnerPostId.pawnerPostTypeCamera}
+									${estimate.pawnerPostId.pawnerPostCameraLen} </span>
+								<div class="history-detail">
+									<ul>
+
+										<!-- Watch,Electronic -->
+										<c:if test="${estimate.pawnerPostId.pawnerPostModel != null}">
+											<li>Model : ${estimate.pawnerPostId.pawnerPostModel}</li>
+											<li>Serial : ${estimate.pawnerPostId.pawnerPostSerial}</li>
+										</c:if>
+										
+											<c:if test="${estimate.pawnerPostId.pawnerPostProduction != null}">
+											<li>Production : ${estimate.pawnerPostId.pawnerPostProduction}</li>
+										</c:if>
+
+										<c:if test="${estimate.pawnerPostId.pawnerPostWarranty != null}">
+											<li>Warranty : ${estimate.pawnerPostId.pawnerPostWarranty}</li>
+										</c:if>
+										<c:if test="${estimate.pawnerPostId.pawnerPostPurchase != null}">
+											<li>Purchase : ${estimate.pawnerPostId.pawnerPostPurchase}</li>
+										</c:if>
+
+										<!-- Gold -->
+										<c:if test="${estimate.pawnerPostId.pawnerPostPure != null}">
+											<li>Pure : ${estimate.pawnerPostId.pawnerPostPure  }</li>
+											<li>Weigh : ${estimate.pawnerPostId.pawnerPostWeigh }</li>
+											<li>Category : ${estimate.pawnerPostId.pawnerPostCategory }</li>
+										</c:if>
+
+										<!-- Watch -->
+										<c:if test="${estimate.pawnerPostId.pawnerPostCase != null}">
+											<li>Case : ${estimate.pawnerPostId.pawnerPostCase }</li>
+											<li>Bracelet : ${estimate.pawnerPostId.pawnerPostBracelet }</li>
+											<c:if test="${estimate.pawnerPostId.pawnerPostDiamond != null}">
+												<li>Diamond : ${estimate.pawnerPostId.pawnerPostDiamond }</li>
+											</c:if>
+											<c:if test="${estimate.pawnerPostId.pawnerPostPackage != null}">
+												<li>Package : ${estimate.pawnerPostId.pawnerPostPackage}</li>
+											</c:if>
+										</c:if>
+
+										<!-- Electronic tv com telephone -->
+										<c:if test="${estimate.pawnerPostId.pawnerPostSize != null}">
+											<li>Size : ${estimate.pawnerPostId.pawnerPostSize }</li>
+										</c:if>
+
+										<!-- Electronic camera com telephone -->
+										<c:if test="${estimate.pawnerPostId.pawnerPostBattery != null}">
+											<li>Battery : ${estimate.pawnerPostId.pawnerPostBattery}</li>
+										</c:if>
+
+										<!-- Electronic com telephone -->
+										<c:if test="${estimate.pawnerPostId.pawnerPostHarddisk != null}">
+											<li>Harddisk : ${estimate.pawnerPostId.pawnerPostHarddisk }</li>
+										</c:if>
+
+										<!-- Electronic tv -->
+										<c:if test="${estimate.pawnerPostId.panwePostRemote != null}">
+											<li>Remote : ${estimate.pawnerPostId.panwePostRemote }</li>
+										</c:if>
+
+										<!-- Electronic com-->
+										<c:if test="${estimate.pawnerPostId.pawnerPostRam!= null}">
+											<li>Ram : ${estimate.pawnerPostId.pawnerPostRam }</li>
+										</c:if>
+
+
+										<!-- Electronic telephone-->
+										<li>Description : ${estimate.pawnerPostId.pawnerPostDescription }</li>
+										
+										<li>Price Min: ${estimate.estimatePriceMin }</li>
+										<li>Price Max: ${estimate.estimatePriceMax }</li>
+										<li>Estimate Date: ${estimate.estimateDate}</li>
+										<li>Access Date:   ${estimate.estimateAccessDate}</li>
+									 <%-- <li>Status   : ${estimate.estimateStatus }</li>   --%>
+									 
+										<!-- Status -->
+										<c:if test="${estimate.estimateStatus == 'complete'}">
+											<li>Status :  <span class="badge badge-success">Complete</span> </li>
+										</c:if>
+										
+										<c:if test="${estimate.estimateStatus == 'waiting'}">
+											<li>Status :  <span class="badge badge-danger">Waiting</span> </li>
+										</c:if>
+										
+										<c:if test="${estimate.estimateStatus == 'process'}">
+											<li>Status :  <span class="badge badge-warning">Process</span> </li>
+										</c:if>
+										<c:if test="${estimate.estimateStatus == 'proceed'}">
+											<li>Status : <span class="badge badge-warning">Process</span> </li>
+										</c:if>
+										
+										<c:if test="${estimate.estimateStatus == 'approve'}">
+											<li>Status :  <span class="badge badge-primary">Approve</span> </li>
+										</c:if>
+										
+									
+										<li> <h3>Estimate By</h3></li>
+												<li> Pawnshop ID :<span class="badge badge-default"> ${estimate.pawnshopId.pawnshopId} </span></li>	
+												<li> Pawnshop Name :<span class="badge badge-default"> ${estimate.pawnshopId.pawnshopName} </span></li>
+												<li> Pawnshop Address :<span class="badge badge-default"> ${estimate.pawnshopId.pawnshopAddress} </span></li>
+												<li> Pawnshop Mail :<span class="badge badge-default"> ${estimate.pawnshopId.pawnshopEmail} </span></li>
+											
+							
+										
+									</ul>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div></div>
+		</c:forEach>
 	</section>
 </body>
 </html>
