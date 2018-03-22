@@ -38,7 +38,7 @@
 <!--- start-rate---->
 <script src="js/jstarbox.js"></script>
 <link rel="stylesheet" href="css/jstarbox.css" type="text/css"
-	media="screen" charset="utf-8" />
+	media="screen" />
 </head>
 
 <body>
@@ -243,7 +243,7 @@
 									</div>
 									<div class="form-group">
 										<button type="submit" class="btn btn-sm btn-primary"
-											style="margin-right: 10px; font-size: 15px; background-color: #ff7f00; border-color: #9e9e9e00;">Continue</button>
+											style="margin-right: 10px; font-size: 15px; background-color: #ff7f00; border-color: #9e9e9e00;">Login</button>
 										<button type="button" data-dismiss="modal"
 											class="btn btn-sm btn-default" style="font-size: 15px;">Cancel</button>
 									</div>
