@@ -23,21 +23,26 @@
 			<!-- Custom styles for this template -->
 			<link href="css/new-design.css" rel="stylesheet">
 			<link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-			
+
 		</head>
 
 		<body>
 
 			<!-- Navigation   -->
 			<jsp:include page="navbar.jsp" />
+
+			<!--banner-->
+			<div class="banner-top">
+				<div class="container">
+					<h1>Pledge Gold</h1>
+					<em></em>
+				</div>
+			</div>
 			<!--content-->
 			<div class="content">
 				<div class="container">
 					<!--products-->
 					<div class="content-mid">
-						<h3>Pledge Gold</h3>
-						<label class="line">
-						</label>
 						<div class="mid-popular">
 							<div class="container-contact100 ">
 								<div class="wrap-contact100">

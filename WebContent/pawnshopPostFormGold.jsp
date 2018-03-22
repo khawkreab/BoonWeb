@@ -30,6 +30,13 @@
 
 		 <!-- Navigation   -->
 		 <jsp:include page="navbar.jsp" />
+		 	<!--banner-->
+			 <div class="banner-top">
+				<div class="container">
+					<h1>Sell Gold</h1>
+					<em></em>
+				</div>
+			</div>
 		 <!--content-->
 		 <div class="content">
 			 <div class="container">

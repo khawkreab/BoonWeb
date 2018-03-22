@@ -36,7 +36,7 @@
             }
 
             .card-icon {
-                margin: 16px;
+                /* margin: 16px; */
                 text-align: center;
                 width: 201px;
                 height: 201px;
@@ -66,51 +66,56 @@
         </style>
     </head>
 
-    <body id="page-top" style="overflow-y: hidden">
+    <body id="page-top" style="overflow-y:hidden;">
 
 
         <!-- Navigation -->
         <jsp:include page="navbar.jsp" />
 
+        <!--banner-->
+        <div class="banner-top">
+            <div class="container">
+                <h1>Pledge Item</h1>
+                <em></em>
+            </div>
+        </div>
         <!--content-->
         <div class="content">
             <div class="container">
                 <!--products-->
                 <div class="content-mid">
-                    <h3>Pledge Item</h3>
-                    <label class="line"></label>
-                    <div class="mid-popular">
+                      <div class="mid-popular">
                         <div class="scrollbar-auto">
                             <!-- <div class="d-flex flex-row flex-wrap text-center backgroup-icon"> -->
-                             <div class="row">
+                            <div class="row">
                                 <div class="card-icon col-md-2">
                                     <a href="pawner-post-form-gold.html">
-                                            <img class="icon" src="img/icon/gold-ingots.png">
+                                        <img class="icon" src="img/icon/gold-ingots.png">
                                     </a>
                                 </div>
-                              <div class="card-icon col-md-2">
+                                <div class="card-icon col-md-2">
                                     <a href="pawner-post-form-watch.html">
-                                            <img class="icon" src="img/icon/wristwatch.png">
+                                        <img class="icon" src="img/icon/watch.png">
                                     </a>
                                 </div>
                                 <div class="card-icon col-md-2">
                                     <a href="pawner-post-form-smartphone.html">
-                                            <img class="icon" src="img/icon/smartphone.png">
+                                        <img class="icon" src="img/icon/mobile.png">
                                     </a>
                                 </div>
                                 <div class="card-icon col-md-2">
                                     <a href="pawner-post-form-laptop.html">
-                                            <img class="icon" src="img/icon/laptop.png">
+                                        <img class="icon" src="img/icon/computer.jpg">
                                     </a>
                                 </div>
                                 <div class="card-icon col-md-2">
                                     <a href="pawner-post-form-camera.html">
-                                            <img class="icon" src="img/icon/photo-camera.png">
+                                        <img class="icon" src="img/icon/camera.png">
                                     </a>
                                 </div>
                                 <div class="card-icon col-md-2">
                                     <a href="pawner-post-form-tv.html">
-                                            <img class="icon" src="img/icon/tv.png">
+                                        <img class="icon" src="img/icon/tvs.png">
                                     </a>
                                 </div>
                             </div>

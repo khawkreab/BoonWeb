@@ -30,6 +30,12 @@
 		<body>
 			<!-- Navigation   -->
 			<jsp:include page="navbar.jsp" />
+			<div class="banner-top">
+				<div class="container">
+					<h1>Sell Camera</h1>
+					<em></em>
+				</div>
+			</div>
 			<!--content-->
 			<div class="content">
 				<div class="container">
@@ -74,15 +80,6 @@
 												<input class="input100" type="text" name="pawnshopPostModel" placeholder="Model">
 												<span class="focus-input100"></span>
 											</div>
-											<!-- <label class="label-input100">Display size and Capacity</label>
-											<div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Type first name">
-												<input class="input100" type="text" name="pawnshopPostSize" placeholder="Display size">
-												<span class="focus-input100"></span>
-											</div>
-											<div class="wrap-input100 rs2-wrap-input100 validate-input" data-validate="Type last name">
-												<input class="input100" type="text" name="pawnshopPostCapacity" placeholder="Capacity">
-												<span class="focus-input100"></span>
-											</div> -->
 											<label class="label-input100">Type of camera</label>
 											<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
 												<input class="input100" type="text" name="pawnshopPostTypeCamera" placeholder="">
@@ -95,7 +92,7 @@
 											</div>
 											<label class="label-input100">Year of purchase</label>
 											<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
-												<input class="input100" type="date" name="pawnshopPostCameraLen" placeholder="">
+												<input class="input100" type="date" name="pawnshopPostPurchase" placeholder="">
 												<span class="focus-input100"></span>
 											</div>
 											<label class="label-input100">Description</label>

@@ -34,7 +34,7 @@
 				<div class="container">
 					<!--products-->
 					<div class="content-mid">
-						<h3>Pledge SmartPhone</h3>
+						<h3>Sell Mobile&Tablet</h3>
 						<label class="line">
 						</label>
 						<div class="mid-popular">
@@ -80,7 +80,12 @@
 											</div>
 											<label class="label-input100">Year of purchase</label>
 											<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
-												<input class="input100" type="date" name="pawnshopPostCameraLen" placeholder="">
+												<input class="input100" type="date" name="pawnshopPostPurchase" placeholder="">
+												<span class="focus-input100"></span>
+											</div>
+											<label class="label-input100">Year of production </label>
+											<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+												<input class="input100" type="date" name="pawnerPostProduction" placeholder="">
 												<span class="focus-input100"></span>
 											</div>
 											<label class="label-input100">Description</label>

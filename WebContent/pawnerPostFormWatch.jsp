@@ -30,14 +30,18 @@
 
 			<!-- Navigation   -->
 			<jsp:include page="navbar.jsp" />
+			<!--banner-->
+			<div class="banner-top">
+				<div class="container">
+					<h1>Pledge Wearables</h1>
+					<em></em>
+				</div>
+			</div>
 			<!--content-->
 			<div class="content">
 				<div class="container">
 					<!--products-->
 					<div class="content-mid">
-						<h3>Pledge Watch</h3>
-						<label class="line">
-						</label>
 						<div class="mid-popular">
 							<div class="container-contact100 ">
 								<div class="wrap-contact100">
@@ -80,21 +84,7 @@
 											</div>
 											<label class="label-input100">Type of bracelet</label>
 											<div class="wrap-input100 validate-input">
-												<select class="input100" type="text" name="pawnerPostCase" required="required">
-													<option>Stainless Steel</option>
-													<option>Gold and Silver</option>
-													<option>Gold</option>
-													<option>Platinum</option>
-													<option>Leather</option>
-													<option>Plastic</option>
-													<option>Rubber</option>
-													<option>Others (Please specify)</option>
-													<option>Unknown</option>
-												</select>
-											</div>
-											<label class="label-input100">Type of bracelet</label>
-											<div class="wrap-input100 validate-input">
-												<select class="input100" type="text" name="pawnerPostCase" required="required">
+												<select class="input100" type="text" name="pawnerPostBracelet" required="required">
 													<option>Stainless Steel</option>
 													<option>Gold and Silver</option>
 													<option>Gold</option>
@@ -109,10 +99,10 @@
 											<label class="label-input100">Is there any diamonds on your timepiece?</label>
 											<div class="wrap-input100 validate-input">
 												<select class="input100" type="text" name="pawnerPostDiamond" required="required">
-													<option value="1">No</option>
-													<option value="2">Dial</option>
-													<option value="3">Bezel</option>
-													<option value="4">On the digits</option>
+													<option>No</option>
+													<option>Dial</option>
+													<option>Bezel</option>
+													<option>On the digits</option>
 												</select>
 											</div>
 											<label class="label-input100">Production year</label>

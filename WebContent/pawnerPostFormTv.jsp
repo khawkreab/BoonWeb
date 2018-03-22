@@ -31,14 +31,18 @@
 		<body>
 			<!-- Navigation   -->
 			<jsp:include page="navbar.jsp" />
+			 <!--banner-->
+			 <div class="banner-top">
+				<div class="container">
+					<h1>Pledge TV</h1>
+					<em></em>
+				</div>
+			</div>
 			<!--content-->
 			<div class="content">
 				<div class="container">
 					<!--products-->
 					<div class="content-mid">
-						<h3>Pledge TV</h3>
-						<label class="line">
-						</label>
 						<div class="mid-popular">
 							<div class="container-contact100 ">
 								<div class="wrap-contact100">
@@ -84,7 +88,7 @@
 											</div>
 											<label class="label-input100">Year of purchase</label>
 											<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
-												<input class="input100" type="date" name="pawnerPostCameraLen" placeholder="">
+												<input class="input100" type="date" name="pawnerPostPurchase" placeholder="">
 												<span class="focus-input100"></span>
 											</div>
 											<label class="label-input100">Description</label>

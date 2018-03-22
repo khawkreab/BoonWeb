@@ -30,6 +30,13 @@
 
 			<!-- Navigation   -->
 			<jsp:include page="navbar.jsp" />
+				<!--banner-->
+				<div class="banner-top">
+					<div class="container">
+						<h1>Sell Wearables</h1>
+						<em></em>
+					</div>
+				</div>
 			<!--content-->
 			<div class="content">
 				<div class="container">
@@ -80,21 +87,7 @@
 											</div>
 											<label class="label-input100">Type of bracelet</label>
 											<div class="wrap-input100 validate-input">
-												<select class="input100" type="text" name="pawnshopPostCase" required="required">
-													<option>Stainless Steel</option>
-													<option>Gold and Silver</option>
-													<option>Gold</option>
-													<option>Platinum</option>
-													<option>Leather</option>
-													<option>Plastic</option>
-													<option>Rubber</option>
-													<option>Others (Please specify)</option>
-													<option>Unknown</option>
-												</select>
-											</div>
-											<label class="label-input100">Type of bracelet</label>
-											<div class="wrap-input100 validate-input">
-												<select class="input100" type="text" name="pawnshopPostCase" required="required">
+												<select class="input100" type="text" name="pawnshopPostBracelet" required="required">
 													<option>Stainless Steel</option>
 													<option>Gold and Silver</option>
 													<option>Gold</option>
@@ -109,10 +102,10 @@
 											<label class="label-input100">Is there any diamonds on your timepiece?</label>
 											<div class="wrap-input100 validate-input">
 												<select class="input100" type="text" name="pawnshopPostDiamond" required="required">
-													<option value="1">No</option>
-													<option value="2">Dial</option>
-													<option value="3">Bezel</option>
-													<option value="4">On the digits</option>
+													<option>No</option>
+													<option>Dial</option>
+													<option>Bezel</option>
+													<option>On the digits</option>
 												</select>
 											</div>
 											<label class="label-input100">Production year</label>
@@ -125,9 +118,9 @@
 												<textarea class="input100" name="pawnshopPostDescription" placeholder="Write us a message(optional) "></textarea>
 												<span class="focus-input100"></span>
 											</div>
-											 <label class="label-input100">Price</label>
+											<label class="label-input100">Price</label>
 											<div class="wrap-input100 validate-input" data-validate="Message is required">
-												<input class="input100" name="pawnshopPostPrice" placeholder=" "/>
+												<input class="input100" name="pawnshopPostPrice" placeholder=" " />
 												<span class="focus-input100"></span>
 											</div>
 											<div class="form-group-post float-left">

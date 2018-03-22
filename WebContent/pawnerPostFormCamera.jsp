@@ -30,14 +30,18 @@
 		<body>
 			<!-- Navigation   -->
 			<jsp:include page="navbar.jsp" />
+			<!--banner-->
+			<div class="banner-top">
+				<div class="container">
+					<h1>Pledge Camera</h1>
+					<em></em>
+				</div>
+			</div>
 			<!--content-->
 			<div class="content">
 				<div class="container">
 					<!--products-->
 					<div class="content-mid">
-						<h3>Pledge Camera</h3>
-						<label class="line">
-						</label>
 						<div class="mid-popular">
 							<div class="container-contact100 ">
 								<div class="wrap-contact100">
@@ -74,15 +78,6 @@
 												<input class="input100" type="text" name="pawnerPostModel" placeholder="Model">
 												<span class="focus-input100"></span>
 											</div>
-											<!-- <label class="label-input100">Display size and Capacity</label>
-											<div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Type first name">
-												<input class="input100" type="text" name="pawnerPostSize" placeholder="Display size">
-												<span class="focus-input100"></span>
-											</div>
-											<div class="wrap-input100 rs2-wrap-input100 validate-input" data-validate="Type last name">
-												<input class="input100" type="text" name="pawnerPostCapacity" placeholder="Capacity">
-												<span class="focus-input100"></span>
-											</div> -->
 											<label class="label-input100">Type of camera</label>
 											<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
 												<input class="input100" type="text" name="pawnerPostTypeCamera" placeholder="">
@@ -95,7 +90,7 @@
 											</div>
 											<label class="label-input100">Year of purchase</label>
 											<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
-												<input class="input100" type="date" name="pawnerPostCameraLen" placeholder="">
+												<input class="input100" type="date" name="pawnerPostPurchase" placeholder="">
 												<span class="focus-input100"></span>
 											</div>
 											<label class="label-input100">Description</label>
