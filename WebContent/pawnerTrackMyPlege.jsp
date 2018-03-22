@@ -49,9 +49,8 @@
 				<div class="history-main">
 					<div class="d-flex history-title">
 						<div class="mr-auto p-2">
-							<fmt:formatDate
-										type="both" dateStyle="long" timeStyle="short"
-										value="${post.pawnerPostDate }" />
+							<fmt:formatDate type="both" dateStyle="long" timeStyle="short"
+								value="${post.pawnerPostDate }" />
 						</div>
 						<div class="ml-auto p-2">
 							<span>Delete</span>
@@ -60,84 +59,98 @@
 					<div class="history-body">
 						<div class="row">
 							<div class="col-sm-5">
-
-
-
-								<span class="history-img">
-								
-								<img class=""
-									src="images/${post.pawnerPostPicture }" width="200" /></span>
+								<div class="pro-img">
+									<img class="img-responsive"
+										src="images/uploadImage/${post.pawnerPostPicture }" />
+								</div>
 							</div>
-							<div class="col-sm-7">
+							<div class="col-md-7 single-top-in">
+								<div class="span_2_of_a1 simpleCart_shelfItem">
+									<h3>${post.pawnerPostName } -${post.pawnerPostBrand }
+										${post.pawnerPostTypeCamera } ${post.pawnerPostCameraLen }</h3>
+									<p class="in-para">Information</p>
+									<div class="price_single">
+										<div class="preview">
+											<ul class="row">
 
-								<span class="history-name">${post.pawnerPostName }
-									${post.pawnerPostBrand } ${post.pawnerPostTypeCamera }
-									${post.pawnerPostCameraLen } </span>
-								<div class="history-detail">
-									<ul class="row">
+												<!-- Watch,Electronic -->
+												<c:if test="${post.pawnerPostModel != null}">
+													<li class="col-md-6">Production :
+														${post.pawnerPostProduction}</li>
+													<li class="col-md-6">Model : ${post.pawnerPostModel}</li>
+													<li class="col-md-6">Serial : ${post.pawnerPostSerial}</li>
+													<li class="col-md-6">Purchase :
+														${post.pawnerPostPurchase }</li>
+												</c:if>
 
-										<!-- Watch,Electronic -->
-										<c:if test="${post.pawnerPostModel != null}">
-											<li>Production : ${post.pawnerPostProduction}</li>
-											<li>Model : ${post.pawnerPostModel}</li>
-											<li>Serial : ${post.pawnerPostSerial}</li>
-										</c:if>
-
-										<c:if test="${post.pawnerPostWarranty != null}">
-											<li>Warranty : ${post.pawnerPostWarranty}</li>
-										</c:if>
-										<c:if test="${post.pawnerPostPurchase != null}">
-											<li>Purchase : ${post.pawnerPostPurchase }</li>
-										</c:if>
-
-										<!-- Gold -->
-										<c:if test="${post.pawnerPostPure != null}">
-											<li>Pure : ${post.pawnerPostPure  }</li>
-											<li>Weigh : ${post.pawnerPostWeigh }</li>
-											<li>Category : ${post.pawnerPostCategory }</li>
-										</c:if>
-
-										<!-- Watch -->
-										<c:if test="${post.pawnerPostCase != null}">
-											<li>Case : ${post.pawnerPostCase }</li>
-											<li>Bracelet : ${post.pawnerPostBracelet }</li>
-											<c:if test="${post.pawnerPostDiamond != null}">
-												<li>Diamond : ${post.pawnerPostDiamond }</li>
-											</c:if>
-											<c:if test="${post.pawnerPostPackage != null}">
-												<li>Package : ${post.pawnerPostPackage }</li>
-											</c:if>
-										</c:if>
-
-										<!-- Electronic tv com telephone -->
-										<c:if test="${post.pawnerPostSize != null}">
-											<li>Size : ${post.pawnerPostSize }</li>
-										</c:if>
-
-										<!-- Electronic camera com telephone -->
-										<c:if test="${post.pawnerPostBattery != null}">
-											<li>Battery : ${post.pawnerPostBattery }</li>
-										</c:if>
-
-										<!-- Electronic com telephone -->
-										<c:if test="${post.pawnerPostHarddisk != null}">
-											<li>Harddisk : ${post.pawnerPostHarddisk }</li>
-										</c:if>
-
-										<!-- Electronic tv -->
-										<c:if test="${post.panwePostRemote != null}">
-											<li>Remote : ${post.panwePostRemote }</li>
-										</c:if>
-
-										<!-- Electronic com-->
-										<c:if test="${post.pawnerPostRam != null}">
-											<li>Ram : ${post.pawnerPostRam }</li>
-										</c:if>
+												<!-- Gold -->
+												<c:if test="${post.pawnerPostPure != null}">
+													<li class="col-md-6">Pure : ${post.pawnerPostPure  }</li>
+													<li class="col-md-6">Weigh : ${post.pawnerPostWeigh }</li>
+													<li class="col-md-6">Category :
+														${post.pawnerPostCategory }</li>
+												</c:if>
 
 
-										<!-- Electronic telephone-->
-										<li>Description : ${post.pawnerPostDescription }</li>
-									</ul>
+
+												<!-- Electronic tv com telephone -->
+												<c:if test="${post.pawnerPostSize != null}">
+													<li class="col-md-6">Size : ${post.pawnerPostSize }</li>
+												</c:if>
+
+												<!-- Electronic camera com telephone -->
+												<c:if test="${post.pawnerPostBattery != null}">
+													<li class="col-md-6">Battery :
+														${post.pawnerPostBattery }</li>
+												</c:if>
+
+												<!-- Electronic com telephone -->
+												<c:if test="${post.pawnerPostHarddisk != null}">
+													<li class="col-md-6">Harddisk :
+														${post.pawnerPostHarddisk }</li>
+												</c:if>
+
+												<!-- Electronic com-->
+												<c:if test="${post.pawnerPostRam != null}">
+													<li class="col-md-6">Ram : ${post.pawnerPostRam }</li>
+												</c:if>
+
+												<!-- Watch -->
+												<c:if test="${post.pawnerPostCase != null}">
+													<li class="col-md-6">Case : ${post.pawnerPostCase }</li>
+													<li class="col-md-6">Bracelet :
+														${post.pawnerPostBracelet }</li>
+													<c:if test="${post.pawnerPostDiamond != null}">
+														<li class="col-md-6">Diamond :
+															${post.pawnerPostDiamond }</li>
+													</c:if>
+													<c:if test="${post.pawnerPostPackage != null}">
+														<li class="col-md-6"><span
+															class="glyphicon glyphicon-check" aria-hidden="true">
+														</span> Package</li>
+													</c:if>
+												</c:if>
+
+												<!-- Electronic tv -->
+												<c:if test="${post.panwePostRemote != null}">
+													<li class="col-md-6"><span
+														class="glyphicon glyphicon-check" aria-hidden="true">
+													</span> Remote</li>
+												</c:if>
+
+
+												<!-- Watch,Electronic -->
+												<c:if test="${post.pawnerPostModel != null}">
+													<li class="col-md-6"><span
+														class="glyphicon glyphicon-check" aria-hidden="true">
+													</span> Warranty</li>
+												</c:if>
+
+											</ul>
+										</div>
+									</div>
+									<h4 class="quick">Other Detail </h4>
+									<p class="quick_desc">${post.pawnerPostDescription }</p>
 								</div>
 							</div>
 						</div>
@@ -202,8 +215,8 @@
 	</section>
 
 	<!-- Bootstrap core JavaScript -->
-						<script src="vendor/jquery/jquery.min.js"></script>
-						<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="vendor/jquery/jquery.min.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 	<script type="text/javascript">
 		$('div span a').click(function() {
 			$(this).text(function(i, old) {

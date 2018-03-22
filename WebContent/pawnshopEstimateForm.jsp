@@ -92,9 +92,9 @@
 					<div class="flexslider">
 						<ul class="slides">
 							<c:forEach var="pic" items="${pictures}">
-								<li data-thumb="images/${pic.picture}">
+								<li data-thumb="images/uploadImage/${pic.picture}">
 									<div class="thumb-image">
-										<img src="images/${pic.picture}" data-imagezoom="true"
+										<img src="images/uploadImage/${pic.picture}" data-imagezoom="true"
 											class="img-responsive">
 									</div>
 								</li>

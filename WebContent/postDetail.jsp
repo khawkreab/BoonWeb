@@ -20,7 +20,9 @@
 	
 	
 	
+	
 	 addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
+
 
 
 
@@ -83,22 +85,21 @@
 	<!--banner-->
 	<div class="banner-top">
 		<div class="container">
-			<h1>Estimate</h1>
+			<h1>Information</h1>
 			<em></em>
 		</div>
 	</div>
 	<div class="single">
-
 		<div class="container">
 			<div class="col-md-11">
 				<div class="col-md-4 grid">
 					<div class="flexslider">
 						<ul class="slides">
 							<c:forEach var="pic" items="${pictures}">
-								<li data-thumb="images/${pic.picture}">
+								<li data-thumb="images/uploadImage/${pic.picture}">
 									<div class="thumb-image">
-										<img src="images/${pic.picture}" data-imagezoom="true"
-											class="img-responsive">
+										<img src="images/uploadImage/${pic.picture}"
+											data-imagezoom="true" class="img-responsive">
 									</div>
 								</li>
 							</c:forEach>
@@ -193,7 +194,7 @@
 											</span> Package</li>
 										</c:if>
 									</c:if>
-									
+
 									<!-- Watch,Electronic -->
 									<c:if test="${pawnshopPost.pawnshopPostModel != null}">
 										<li class="col-md-6"><span
@@ -212,9 +213,7 @@
 						<div class="quantity">
 
 							<div class="quantity-select row">
-							<div class="col-md-6">
-							Amount 1
-							</div>
+								<div class="col-md-6">Amount 1</div>
 								<div class="col-md-4">
 									<form method="post" action="saveOrder.html">
 										<input type="hidden" name="pawnshopPostId"
@@ -236,25 +235,26 @@
 				<!--//content-->
 			</div>
 		</div>
+	</div>
 
-		<script src="js/imagezoom.js"></script>
+	<script src="js/imagezoom.js"></script>
 
-		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-		<script defer src="js/jquery.flexslider.js"></script>
-		<script>
-			// Can also be used with $(document).ready()
-			$(window).load(function() {
-				$('.flexslider').flexslider({
-					animation : "slide",
-					controlNav : "thumbnails"
-				});
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script defer src="js/jquery.flexslider.js"></script>
+	<script>
+		// Can also be used with $(document).ready()
+		$(window).load(function() {
+			$('.flexslider').flexslider({
+				animation : "slide",
+				controlNav : "thumbnails"
 			});
-		</script>
+		});
+	</script>
 
-		<script src="js/simpleCart.min.js">
-			
-		</script>
-		<!-- slide -->
-		<script src="js/bootstrap.min.js"></script>
+	<script src="js/simpleCart.min.js">
+		
+	</script>
+	<!-- slide -->
+	<script src="js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -122,7 +122,7 @@ public class PawnerPostController {
 			e.printStackTrace();
 		}
 //		String saveDirectory = "Q:/testPic/";
-		String saveDirectory ="C:/Users/sitti/OneDrive/Works/Project 3 1-2560/project v.1.0.1-beta.4/BoonWeb/WebContent/images/";
+		String saveDirectory ="C:/Users/sitti/OneDrive/Works/Project 3 1-2560/project v.1.0.1-beta.4/BoonWeb/WebContent/images/uploadImage/";
 		String fileName ="";
 		
 		Picture picture = new Picture();

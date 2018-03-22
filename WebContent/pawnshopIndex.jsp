@@ -128,7 +128,7 @@
 							<div class="container">
 								<!--products-->
 								<div class="content-mid">
-									<h3>Items sell</h3>
+									<h3>Items</h3>
 									<label class="line"></label>
 
 									<div class="mid-popular">
@@ -138,7 +138,7 @@
 												<div class=" mid-pop">
 													<a class="pro-img" href="pawnshop-estimate-form.html?item=${post.pawnerPostId}">
 														<!-- <div class="pro-img"> -->
-														<img src="images/${post.pawnerPostPicture }" class="img-responsive" alt="">
+														<img src="images/uploadImage/${post.pawnerPostPicture }" class="img-responsive" alt="">
 														<span class="zoom-icon ">
 															<i class="glyphicon glyphicon-search icon"></i>
 														</span>
@@ -151,7 +151,7 @@
 
 																<h4>
 																	<a href="pawnshop-estimate-form.html?item=${post.pawnerPostId}">
-																		${post.pawnerPostName}- ${post.pawnerPostItemType} </a>
+																		${post.pawnerPostName} - ${post.pawnerPostBrand} </a>
 
 																</h4>
 																<span>
