@@ -114,7 +114,6 @@ public class PawnerPostController {
 				pawnerPost.setPawnerPostTypeCamera(request.getParameter("pawnerPostTypeCamera"));
 				pawnerPost.setPawnerPostWarranty(request.getParameter("pawnerPostTypeCamera"));
 				pawnerPost.setPawnerPostWeigh(request.getParameter("pawnerPostWeigh"));
-//				pawnerPost.setPawnerPicture(Files.get(0));
 				post = pawnerPostService.insert(pawnerPost);
 			} else {
 				pawnerPostService.update(pawnerPost);

@@ -27,39 +27,37 @@ import service.PictureService;
 
 @Controller
 public class PawnshopPostController {
-	
 
-	
 	@EJB(mappedName = "ejb:/BoonWeb//PawnshopPostServiceBean!service.PawnshopPostService")
 	PawnshopPostService pawnshopPostService;
-	
+
 	@EJB(mappedName = "ejb:/BoonWeb//PawnshopServiceBean!service.PawnshopService")
 	PawnshopService pawnshopServ;
 
 	@EJB(mappedName = "ejb:/BoonWeb/PictureServiceBean!service.PictureService")
 	PictureService pictureService;
-	
+
 	@RequestMapping("/saveShopPost")
 	public String savePost(@ModelAttribute("pawnshopPost") FileUpload fileUpload, BindingResult result,
-			HttpServletRequest request)throws IllegalStateException, IOException {
-		
+			HttpServletRequest request) throws IllegalStateException, IOException {
+
 		PawnshopPost pawnshopPost = new PawnshopPost();
 		PawnshopPost post = new PawnshopPost();
-		
+
 		Date date = new Date();
 		String status = "waiting";
-		
+
 		long userId = (long) request.getSession().getAttribute("id");
 		Pawnshop pm = pawnshopServ.findPawnshopById(userId);
-		
+
 		try {
 			System.out.println(pawnshopPost.getClass());
-			if (pawnshopPost.getPawnshopPostId() == 0) { 
-				
+			if (pawnshopPost.getPawnshopPostId() == 0) {
+
 				pawnshopPost.setPawnshopPostDate(date);
 				pawnshopPost.setPawnshopPostStatus(status);
 				pawnshopPost.setPawnshopId(pm);
-				
+
 				pawnshopPost.setPawnshopPostName(request.getParameter("pawnshopPostName"));
 				pawnshopPost.setPawnshopPostBracelet(request.getParameter("pawnshopPostBracelet"));
 				pawnshopPost.setPawnshopPostBattery(request.getParameter("pawnshopPostBattery"));
@@ -85,7 +83,7 @@ public class PawnshopPostController {
 				pawnshopPost.setPawnshopPostWarranty(request.getParameter("pawnshopPostTypeCamera"));
 				pawnshopPost.setPawnshopPostWeigh(request.getParameter("pawnshopPostWeigh"));
 				pawnshopPost.setPawnshopPostPrice(request.getParameter("pawnshopPostPrice"));
-				
+
 				post = pawnshopPostService.insert(pawnshopPost);
 			} else {
 				pawnshopPostService.update(pawnshopPost);
@@ -93,10 +91,10 @@ public class PawnshopPostController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-//		String saveDirectory = "Q:/testPic/";
-		String saveDirectory ="C:/Users/sitti/OneDrive/Works/Project 3 1-2560/project v.1.0.1-beta.4/BoonWeb/WebContent/images/";
-		String fileName ="";
-		
+		// String saveDirectory = "Q:/testPic/";
+		String saveDirectory = "C:/Users/sitti/OneDrive/Works/Project 3 1-2560/project v.1.0.1-beta.4/BoonWeb/WebContent/images/";
+		String fileName = "";
+
 		Picture picture = new Picture();
 
 		List<MultipartFile> Files = fileUpload.getFiles();
@@ -105,19 +103,19 @@ public class PawnshopPostController {
 
 		if (null != Files && Files.size() > 0) {
 			for (MultipartFile multipartFile : Files) {
-				fileName = multipartFile.getBytes().hashCode()+ "." + multipartFile.getContentType().split("/")[1];
-//				fileName = multipartFile.getOriginalFilename();
+				fileName = multipartFile.getBytes().hashCode() + "." + multipartFile.getContentType().split("/")[1];
+				// fileName = multipartFile.getOriginalFilename();
 				if (!"".equalsIgnoreCase(fileName)) {
 					// Handle file content - multipartFile.getInputStream()
 					multipartFile.transferTo(new File(saveDirectory + fileName));
 					fileNames.add(fileName);
-					
+
 					//
 					picture.setPicture(fileName);
 					picture.setPawnshopId(pm);
 					picture.setPawnshopPostId(post);
 					pictureService.insert(picture);
-					
+
 				}
 			}
 		}
@@ -125,7 +123,7 @@ public class PawnshopPostController {
 		System.out.println("test update picture => " + fileNames.get(0));
 		return "redirect:pawnshop-list-post.html";
 	}
-	
+
 	@RequestMapping("/pawnshop-list-post")
 	public ModelAndView list(HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView("pawnshopListPost.jsp");
@@ -133,30 +131,33 @@ public class PawnshopPostController {
 		try {
 			long userId = (long) request.getSession().getAttribute("id");
 			pawnshopPosts = pawnshopPostService.findPawnshopPostByPawnshopId(userId);
-			
+
 			mv.addObject("pawnshopPosts", pawnshopPosts);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return mv;
 	}
-	
+
 	@RequestMapping("/post-detail")
 	public ModelAndView detail(HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView("postDetail.jsp");
 		PawnshopPost pawnshopPost;
-		
+		List<Picture> pictures;
+
 		try {
 			long userId = (long) request.getSession().getAttribute("id");
-			
+
 			long postId = Long.parseLong(request.getParameter("item"));
 			pawnshopPost = pawnshopPostService.findPawnshopPostById(postId);
-			
+			pictures = pictureService.findPictureByPawnshopPostId(postId);
+
 			mv.addObject("pawnshopPost", pawnshopPost);
+			mv.addObject("pictures", pictures);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return mv;
 	}
-	
+
 }
