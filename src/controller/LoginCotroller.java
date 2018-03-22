@@ -17,24 +17,25 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import entity.Pawner;
-import entity.PawnerPost;
 import entity.Pawnshop;
 import service.PawnerPostService;
 import service.PawnerService;
 import service.PawnshopService;
 
+
+
 @Controller
 public class LoginCotroller {
-
+	
 	@EJB(mappedName = "ejb:/BoonWeb//PawnerServiceBean!service.PawnerService")
 	PawnerService pmService;
-
+	
 	@EJB(mappedName = "ejb:/BoonWeb//PawnshopServiceBean!service.PawnshopService")
 	PawnshopService pawnshopServ;
 
 	@EJB(mappedName = "ejb:/BoonWeb//PawnerPostServiceBean!service.PawnerPostService")
 	PawnerPostService pawnerPostService;
-
+	
 	@RequestMapping("/login")
 	public ModelAndView signIn() {
 		ModelAndView mv = new ModelAndView("navbar.jsp");
@@ -42,29 +43,16 @@ public class LoginCotroller {
 		mv.addObject("pawner", pawner);
 		return mv;
 	}
-
-	@RequestMapping("/index")
-	public ModelAndView index() {
-		ModelAndView mv = new ModelAndView("index.jsp");
-		List<PawnerPost> pawnerPosts;
-		try {
-			pawnerPosts = pawnerPostService.getAllPawnerPost();
-			mv.addObject("post", pawnerPosts);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return mv;
-	}
-
+	
 	@RequestMapping("/loginProcess")
 	public String login(HttpServletRequest request) {
-
+		
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
-
+		
 		Pawner pawner;
 		Pawnshop pawnshop;
-
+		
 		String adminName = "admin";
 		String adminPassword = "admin";
 		try {
@@ -75,7 +63,7 @@ public class LoginCotroller {
 				request.getSession().setAttribute("id", pawner.getPawnerId());
 				request.getSession().setAttribute("isLogin", "yes");
 				request.getSession().setAttribute("userType", "pawner");
-				request.getSession().setAttribute("username", pawner.getPawnerFirstname() +" " + pawner.getPawnerLastname());
+				request.getSession().setAttribute("username", pawner.getPawnerFirstname());
 				return "redirect:pawner-index.html";
 			}
 		} catch (Exception e) {
@@ -96,22 +84,25 @@ public class LoginCotroller {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
 
 		try {
-			if (adminName.equals(email) && adminPassword.equals(password)) {
+			if (adminName.equals(email)&&adminPassword.equals(password)) {
 				request.getSession().setAttribute("isLogin", "yes");
 				request.getSession().setAttribute("userType", "admin");
 				request.getSession().setAttribute("username", "Admin");
-				return "redirect:admin-dashboard.html";
-			}
+				return "redirect:admin-index.html";
+			} 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
 		request.getSession().setAttribute("error", "yes");
-		return "redirect:index.jsp?";
+		return "redirect:login.html?";
 	}
-
+	
+	
+	
 	@SuppressWarnings("deprecation")
 	@RequestMapping("/logout")
 	public String signOut(HttpServletRequest request) {

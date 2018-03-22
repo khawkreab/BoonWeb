@@ -46,6 +46,10 @@
 						<form:hidden path="proposePriceId" value="${pp.proposePriceId}" />
 						<form:hidden path="price" value="${pp.price}" />
 						<form:hidden path="status" value="Approved" />
+						
+						
+						
+						
 						<td><button type="submit">Approved</button></td>
 					</form:form>
 				</tr>

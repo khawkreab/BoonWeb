@@ -118,12 +118,10 @@
 										if (session.getAttribute("userType") == "pawner") {
 								%>
 								<li><a class="color" href="pawner-index.html">Home</a></li>
-								<li><a class="color3" href="pawner-pledge.html">pledge</a>
-								</li>
-								<li><a class="color4" href="pawner-track-pledge.html">track
-										my pledge</a></li>
-								<li><a class="color5" href="pawner-order.html">my order</a>
-								</li>
+								<li><a class="color3" href="pawner-pledge.html">pledge</a></li>
+								<li><a class="color4" href="pawner-track-pledge.html">track my pledge</a></li>
+								
+								<li><a class="color5" href="pawner-order.html">my order</a></li>
 								<!-- -------------------------------------------------------------------- -->
 								<%
 									} else if (session.getAttribute("userType") == "pawnShop") {
@@ -131,10 +129,9 @@
 								<li><a class="color" href="pawnshop-index.html">Home</a></li>
 								<li><a class="color3" href="pawnshop-pledge-sell.html">pledge
 										sell </a></li>
-								<li><a class="color4" href="pawnshop-track-estimate.html">track
-										my estimate</a></li>
-								<li><a class="color5" href="pawnshop-list-post.html">my
-										post </a></li>
+								<li><a class="color4" href="pawnshop-track-estimate.html">track my estimate</a></li>
+								<li><a class="color4" href="pawnshop-estimate-history.html">history</a></li>
+								<li><a class="color5" href="pawnshop-list-post.html">my post </a></li>
 
 								<%
 									}
