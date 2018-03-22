@@ -85,32 +85,32 @@
                              <div class="row">
                                 <div class="card-icon col-md-2">
                                     <a href="pawner-post-form-gold.html">
-                                            <img class="icon" src="img/icon/gold-ingots.png">
+                                            <img class="icon" src="images/icon/gold.png">
                                     </a>
                                 </div>
                               <div class="card-icon col-md-2">
                                     <a href="pawner-post-form-watch.html">
-                                            <img class="icon" src="img/icon/wristwatch.png">
+                                            <img class="icon" src="images/icon/watch.png">
                                     </a>
                                 </div>
                                 <div class="card-icon col-md-2">
                                     <a href="pawner-post-form-smartphone.html">
-                                            <img class="icon" src="img/icon/smartphone.png">
+                                            <img class="icon" src="images/icon/mobile.png">
                                     </a>
                                 </div>
                                 <div class="card-icon col-md-2">
                                     <a href="pawner-post-form-laptop.html">
-                                            <img class="icon" src="img/icon/laptop.png">
+                                            <img class="icon" src="images/icon/com.png">
                                     </a>
                                 </div>
                                 <div class="card-icon col-md-2">
                                     <a href="pawner-post-form-camera.html">
-                                            <img class="icon" src="img/icon/photo-camera.png">
+                                            <img class="icon" src="images/icon/camera.png">
                                     </a>
                                 </div>
                                 <div class="card-icon col-md-2">
                                     <a href="pawner-post-form-tv.html">
-                                            <img class="icon" src="img/icon/tv.png">
+                                            <img class="icon" src="images/icon/tv.png">
                                     </a>
                                 </div>
                             </div>
