@@ -33,7 +33,7 @@
 				<!--banner-->
 				<div class="banner-top">
 					<div class="container">
-						<h1>Sell Computer & Laptop</h1>
+						<h1>Sell Computer&Laptop</h1>
 						<em></em>
 					</div>
 				</div>
