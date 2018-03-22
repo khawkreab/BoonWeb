@@ -102,10 +102,14 @@ opacity
 
 
 
+
+
 :
 
 
+
  
+
 
 
 1;
@@ -114,13 +118,19 @@ opacity
 
 
 
+
+
 :
+
 
 
  
 
 
+
 scale
+
+
 
 
 
@@ -131,13 +141,19 @@ transform
 
 
 
+
+
 :
+
 
 
  
 
 
+
 scale
+
+
 
 
 
@@ -158,10 +174,14 @@ opacity
 
 
 
+
+
 :
 
 
+
  
+
 
 
 1;
@@ -170,13 +190,19 @@ opacity
 
 
 
+
+
 :
+
 
 
  
 
 
+
 scale
+
+
 
 
 
@@ -187,13 +213,19 @@ transform
 
 
 
+
+
 :
+
 
 
  
 
 
+
 scale
+
+
 
 
 
@@ -204,6 +236,9 @@ scale
 
 /*# sourceMappingURL=style.css.map */
 </style>
+<%
+	int i = 0;
+%>
 </head>
 <body>
 	<!-- Navigation -->
@@ -221,40 +256,16 @@ scale
 					<c:forEach items="${pawnerPosts}" var="post">
 						<div class="col-md-3 item-grid simpleCart_shelfItem">
 							<div class=" mid-pop">
+							<a href="pawnshop-estimate-form.html?item=${post.pawnerPostId}">
 								<div class="pro-img">
-
-									<div class="preview col-md-12">
-
-										<div class="preview-pic tab-content">
-											<c:forEach var="pic" items="${picture}">
-												<c:if
-													test="${pic.pawnerPostId.pawnerPostId == post.pawnerPostId }">
-													<div class="tab-pane" id="${pic.pictureId }">
-														<img src="images/${pic.picture }" />
-													</div>
-												</c:if>
-											</c:forEach>
-										</div>
-										<ul class="preview-thumbnail nav nav-tabs">
-											<c:forEach var="pic" items="${picture}">
-												<c:if
-													test="${pic.pawnerPostId.pawnerPostId == post.pawnerPostId }">
-													<li ><a data-target="#${pic.pictureId }"
-														data-toggle="tab"><img src="images/${pic.picture }" /></a></li>
-												</c:if>
-											</c:forEach>
-										</ul>
-										<div class="zoom-icon ">
-										<a
-											href="pawnshop-estimate-form.html?item=${post.pawnerPostId}">
+									<img src="images/${post.pawnerPostPicture }" class="img-responsive" alt="">
+									<div class="zoom-icon ">
+									
 											<i class="glyphicon glyphicon-search icon"></i>
-										</a>
 									</div>
 
-									</div>
-
-														
 								</div>
+								</a>
 								<div class="mid-1">
 									<div class="women">
 										<div class="women-top">
@@ -262,7 +273,7 @@ scale
 											<h4>
 												<a
 													href="pawnshop-estimate-form.html?item=${post.pawnerPostId}">
-													${post.pawnerPostName}- ${post.pawnerPostItemType}</a>
+													${post.pawnerPostName}- ${post.pawnerPostItemType} </a>
 
 											</h4>
 											<span><a

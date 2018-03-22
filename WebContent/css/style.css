@@ -541,10 +541,20 @@ a.buy-now:hover{
 }
 .mid-pop{
 	position:relative;
-	border: 1px solid #EFECEC;
     padding: 10px;
 }
 
+.item-grid {
+    padding: 0px;
+}
+
+.item-grid:hover {
+        box-shadow: 0 2px 4px 0 rgba(0,0,0,.25);
+    -webkit-transform: all .3s ease-in-out;
+    -ms-transform: all .3s ease-in-out;
+    transform: all .3s ease-in-out;
+    position: relative
+}
 .pro-img{
 	height: 322px;
 	border-bottom: 3px double #ff7700;

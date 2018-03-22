@@ -40,7 +40,7 @@ public class HelloController {
 
 		byte[] bytes = file.getBytes();
 		BufferedOutputStream stream = new BufferedOutputStream(
-				new FileOutputStream(new File(uploadPath + File.separator + file.getOriginalFilename())));
+				new FileOutputStream(new File(uploadPath + File.separator + file.hashCode())));
 		stream.write(bytes);
 		stream.flush();
 		stream.close();

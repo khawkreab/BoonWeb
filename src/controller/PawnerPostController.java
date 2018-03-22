@@ -79,6 +79,7 @@ public class PawnerPostController {
 			HttpServletRequest request)throws IllegalStateException, IOException {
 		PawnerPost pawnerPost = new PawnerPost();
 		PawnerPost post = new PawnerPost();
+		List<MultipartFile> Files = fileUpload.getFiles();
 		Date date = new Date();
 		String status = "waiting";
 		long userId = (long) request.getSession().getAttribute("id");
@@ -113,7 +114,7 @@ public class PawnerPostController {
 				pawnerPost.setPawnerPostTypeCamera(request.getParameter("pawnerPostTypeCamera"));
 				pawnerPost.setPawnerPostWarranty(request.getParameter("pawnerPostTypeCamera"));
 				pawnerPost.setPawnerPostWeigh(request.getParameter("pawnerPostWeigh"));
-				
+//				pawnerPost.setPawnerPicture(Files.get(0));
 				post = pawnerPostService.insert(pawnerPost);
 			} else {
 				pawnerPostService.update(pawnerPost);
@@ -126,29 +127,31 @@ public class PawnerPostController {
 		String fileName ="";
 		
 		Picture picture = new Picture();
-		
-		List<MultipartFile> Files = fileUpload.getFiles();
 
 		List<String> fileNames = new ArrayList<String>();
 
 		if (null != Files && Files.size() > 0) {
 			for (MultipartFile multipartFile : Files) {
-
-				fileName = multipartFile.getOriginalFilename();
+//				fileName = multipartFile.getOriginalFilename();
+				fileName = multipartFile.getBytes().hashCode()+ "." + multipartFile.getContentType().split("/")[1];
 				if (!"".equalsIgnoreCase(fileName)) {
 					// Handle file content - multipartFile.getInputStream()
-					multipartFile.transferTo(new File(saveDirectory + fileName));
-					fileNames.add(saveDirectory +fileName);
+//					System.out.println(multipartFile.getContentType().split("/")[1] +"\n"+multipartFile.getOriginalFilename());
+					multipartFile.transferTo(new File(saveDirectory + fileName ));
+//					fileNames.add(saveDirectory +fileName);
 					
 					//
 					picture.setPicture(fileName);
 					picture.setPawnerId(pm);
 					picture.setPawnerPostId(post);
 					pictureService.insert(picture);
+					fileNames.add(fileName);
 					
 				}
 			}
 		}
+		pawnerPostService.updatePicture(post.getPawnerPostId(), fileNames.get(0));
+		System.out.println("test update picture => " + fileNames.get(0));
 		return "redirect:pawner-track-pledge.html";
 	}
 	

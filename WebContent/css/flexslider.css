@@ -191,7 +191,7 @@ html[xmlns] .flexslider .slides {
   overflow: hidden;
 }
 .flex-control-thumbs li {
-  width: 32.2%;
+/*   width: 32.2%; */
   float: left;
   margin: 0 1% 0 0;
 }
