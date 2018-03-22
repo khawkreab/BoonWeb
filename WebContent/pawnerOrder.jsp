@@ -35,7 +35,7 @@
 			</div>
 		</div>
 		<c:forEach items="${order}" var="order">
-			<div class="container"><div class="card">
+			<div class="container"> 
 				<div class="history-main">
 					<div class="d-flex history-title">
 						<div class="mr-auto p-2">
@@ -149,7 +149,7 @@
 
 					</div>
 				</div>
-			</div></div>
+			</div> 
 		</c:forEach>
 	</section>
 
