@@ -20,10 +20,10 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import entity.PawnerPost;
-import entity.PawnerPostPicture;
+import entity.Picture;
 import fileupload.FileUpload;
-import service.PawnerPostPictureService;
 import service.PawnerPostService;
+import service.PictureService;
 
 @Controller
 public class FileUploadController {
@@ -31,8 +31,8 @@ public class FileUploadController {
 	@EJB(mappedName = "ejb:/BoonWeb//PawnerPostServiceBean!service.PawnerPostService")
 	PawnerPostService pawnerPostService;
 	
-	@EJB(mappedName = "ejb:/BoonWeb/PawnerPostPictureServiceBean!service.PawnerPostPictureService")
-	PawnerPostPictureService pawnerPostPictureService;
+	@EJB(mappedName = "ejb:/BoonWeb/PictureServiceBean!service.PictureService")
+	PictureService pictureService;
 
 	@RequestMapping("/upload")
 	public String crunchifyDisplayForm() {
@@ -74,7 +74,7 @@ public class FileUploadController {
 		String saveDirectory = "d:/12/";
 		String fileName ="";
 		
-		PawnerPostPicture pawnerPostPicture = new PawnerPostPicture();
+		Picture picture = new Picture();
 
 		List<MultipartFile> Files = fileUpload.getFiles();
 
@@ -90,9 +90,9 @@ public class FileUploadController {
 					fileNames.add(saveDirectory +fileName);
 					
 					//
-					pawnerPostPicture.setPawnerPostPicture(fileName);
-					pawnerPostPicture.setPawnerPostId(post);
-					pawnerPostPictureService.insert(pawnerPostPicture);
+					picture.setPicture(fileName);
+					picture.setPawnerPostId(post);
+					pictureService.insert(picture);
 					
 				}
 			}

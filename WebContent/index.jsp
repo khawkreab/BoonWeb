@@ -29,7 +29,7 @@
 	<jsp:include page="navbar.jsp" />
 
 	<!--banner-->
-	<div class="banner">
+<div class="">
 		<div id="carouselExampleIndicators" class="carousel slide"
 			data-ride="carousel" data-interval="5000">
 			<ol class="carousel-indicators">
@@ -67,16 +67,16 @@
 			<a class="carousel-control-prev" href="#carouselExampleIndicators"
 				role="button" data-slide="prev">
 				<h1>
-					<i class="	glyphicon glyphicon-circle-arrow-left"
+					<i class="glyphicon glyphicon-circle-arrow-left"
 						aria-hidden="true"></i>
 				</h1> <span class="sr-only">Previous</span>
 			</a> <a class="carousel-control-next" href="#carouselExampleIndicators"
 				role="button" data-slide="next"><h1>
-					<i class="	glyphicon glyphicon-circle-arrow-right"
+					<i class="glyphicon glyphicon-circle-arrow-right"
 						aria-hidden="true"></i>
 				</h1> <span class="sr-only">Next</span> </a>
 		</div>
-	</div>
+</div>
 
 	<!--content-->
 	<div class="content">
@@ -185,5 +185,9 @@
 	</div>
 
 	<jsp:include page="footer.jsp"></jsp:include>
+	
+		<!-- Bootstrap core JavaScript -->
+	<script src="vendor/jquery/jquery.min.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>	
 </body>
 </html>
