@@ -38,7 +38,8 @@
             .card-icon {
                 margin: 16px;
                 text-align: center;
-                width: 158px;
+                width: 201px;
+                height: 201px;
             }
 
             .card-icon:hover {
@@ -46,7 +47,6 @@
                 transition: 0.3s;
                 box-shadow: 0 0 2px 2px rgba(20, 23, 28, .1), 0 4px 1px 0 rgba(20, 23, 28, .1);
                 border: 1px solid #999999;
-                border-radius: 4px;
                 transform: scale3d(1.006, 1.006, 1);
             }
 
@@ -81,53 +81,36 @@
                     <label class="line"></label>
                     <div class="mid-popular">
                         <div class="scrollbar-auto">
-                            <div class="d-flex flex-row flex-wrap text-center backgroup-icon">
-                                <div class="card-icon">
+                            <!-- <div class="d-flex flex-row flex-wrap text-center backgroup-icon"> -->
+                             <div class="row">
+                                <div class="card-icon col-md-2">
                                     <a href="pawner-post-form-gold.html">
-                                        <dt>
                                             <img class="icon" src="img/icon/gold-ingots.png">
-                                        </dt>
-                                        <p class="card-font">GOLD</p>
                                     </a>
                                 </div>
-                                <div class=" card-icon">
+                              <div class="card-icon col-md-2">
                                     <a href="pawner-post-form-watch.html">
-                                        <dt>
                                             <img class="icon" src="img/icon/wristwatch.png">
-                                        </dt>
-                                        <p class="card-font">WATCH</p>
                                     </a>
                                 </div>
-                                <div class="card-icon">
+                                <div class="card-icon col-md-2">
                                     <a href="pawner-post-form-smartphone.html">
-                                        <dt>
                                             <img class="icon" src="img/icon/smartphone.png">
-                                        </dt>
-                                        <p class="card-font">SMARTPHONE</p>
                                     </a>
                                 </div>
-                                <div class="card-icon">
+                                <div class="card-icon col-md-2">
                                     <a href="pawner-post-form-laptop.html">
-                                        <dt>
                                             <img class="icon" src="img/icon/laptop.png">
-                                        </dt>
-                                        <p class="card-font">LAPTOP</p>
                                     </a>
                                 </div>
-                                <div class="card-icon">
+                                <div class="card-icon col-md-2">
                                     <a href="pawner-post-form-camera.html">
-                                        <dt>
                                             <img class="icon" src="img/icon/photo-camera.png">
-                                        </dt>
-                                        <p class="card-font">CAMERA</p>
                                     </a>
                                 </div>
-                                <div class="card-icon">
+                                <div class="card-icon col-md-2">
                                     <a href="pawner-post-form-tv.html">
-                                        <dt>
                                             <img class="icon" src="img/icon/tv.png">
-                                        </dt>
-                                        <p class="card-font">TV</p>
                                     </a>
                                 </div>
                             </div>
