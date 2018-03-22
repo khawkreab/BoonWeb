@@ -30,145 +30,181 @@
 
 			<!-- Navigation   -->
 			<jsp:include page="navbar.jsp" />
-			<section>
+			<!--content-->
+			<div class="content">
 				<div class="container">
-					<div class="re-contain">
-						<div class="Subhead">
-							<h2 class="Subhead-heading">Create Post Watch</h2>
-							<p class="Subhead-description">This post will show on pawnshop's page for them estimate your post.</p>
+					<!--products-->
+					<div class="content-mid">
+						<h3>Pledge Watch</h3>
+						<label class="line">
+						</label>
+						<div class="mid-popular">
+							<div class="container-contact100 ">
+								<div class="wrap-contact100">
+									<div class="contact100-form">
+										<form:form method="post" action="saveShopPost.html" modelAttribute="pawnshopPost" enctype="multipart/form-data">
+											<input type="hidden" name="pawnshopPostId" />
+											<input type="hidden" name="pawnshopId.pawnshopId" />
+											<input type="hidden" name="pawnshopPostItemType" value="Electronic" />
+											<div class="form-group float-left">
+												<input name="files" type="file" onchange="readURL(this);" />
+											</div>
+											<label class="label-input100">Post Name</label>
+											<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+												<input class="input100" type="text" name="pawnshopPostName">
+											</div>
+											<label class="label-input100">Brand</label>
+											<div class="wrap-input100 validate-input">
+												<select class="input100" type="text" name="pawnshopPostBrand" required="required">
+													<option>Rolex</option>
+													<option>Patek Philippe</option>
+													<option>Audemars Piguet</option>
+													<option>Cartier</option>
+													<option>Franck Muller</option>
+													<option>Tag Heuer</option>
+													<option>Omega</option>
+													<option>Casio</option>
+												</select>
+											</div>
+											<label class="label-input100">Type of case</label>
+											<div class="wrap-input100 validate-input">
+												<select class="input100" type="text" name="pawnshopPostCase" required="required">
+													<option>Stainless Steel</option>
+													<option>White Gold</option>
+													<option>Yellow Gold</option>
+													<option>Ceramic</option>
+													<option>Pink Gold</option>
+													<option>Others (Please specify)</option>
+													<option>Unknown</option>
+												</select>
+											</div>
+											<label class="label-input100">Type of bracelet</label>
+											<div class="wrap-input100 validate-input">
+												<select class="input100" type="text" name="pawnshopPostCase" required="required">
+													<option>Stainless Steel</option>
+													<option>Gold and Silver</option>
+													<option>Gold</option>
+													<option>Platinum</option>
+													<option>Leather</option>
+													<option>Plastic</option>
+													<option>Rubber</option>
+													<option>Others (Please specify)</option>
+													<option>Unknown</option>
+												</select>
+											</div>
+											<label class="label-input100">Type of bracelet</label>
+											<div class="wrap-input100 validate-input">
+												<select class="input100" type="text" name="pawnshopPostCase" required="required">
+													<option>Stainless Steel</option>
+													<option>Gold and Silver</option>
+													<option>Gold</option>
+													<option>Platinum</option>
+													<option>Leather</option>
+													<option>Plastic</option>
+													<option>Rubber</option>
+													<option>Others (Please specify)</option>
+													<option>Unknown</option>
+												</select>
+											</div>
+											<label class="label-input100">Is there any diamonds on your timepiece?</label>
+											<div class="wrap-input100 validate-input">
+												<select class="input100" type="text" name="pawnshopPostDiamond" required="required">
+													<option value="1">No</option>
+													<option value="2">Dial</option>
+													<option value="3">Bezel</option>
+													<option value="4">On the digits</option>
+												</select>
+											</div>
+											<label class="label-input100">Production year</label>
+											<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+												<input class="input100" type="date" name="pawnshopPostProduction" placeholder="">
+												<span class="focus-input100"></span>
+											</div>
+											<label class="label-input100">Description</label>
+											<div class="wrap-input100 validate-input" data-validate="Message is required">
+												<textarea class="input100" name="pawnshopPostDescription" placeholder="Write us a message(optional) "></textarea>
+												<span class="focus-input100"></span>
+											</div>
+											 <label class="label-input100">Price</label>
+											<div class="wrap-input100 validate-input" data-validate="Message is required">
+												<input class="input100" name="pawnshopPostPrice" placeholder=" "/>
+												<span class="focus-input100"></span>
+											</div>
+											<div class="form-group-post float-left">
+												<dt style="line-height: 45px;">
+													<input type="checkbox" name="pawnshopPostPackage" value="yes" /> Packaging
+												</dt>
+												<dt style="line-height: 5px;">
+													<input type="checkbox" name="pawnshopPostWarranty" value="yes" /> Warranty Certificate
+												</dt>
+												<dt style="line-height: 55px;">
+													<input type="checkbox" required="required"> I agree to the
+													<strong>trem of service</strong>
+												</dt>
+											</div>
+											<div class="container-contact100-form-btn">
+												<button type="summot" class="contact100-form-btn">
+													Create Post
+												</button>
+											</div>
+										</form:form>
+									</div>
+									<!-- Picture -->
+									<div class="contact100-more flex-col-c-m" style="background-image: url('img/bgIndex.jpg');">
+										<div class="flex-w size1 p-b-47">
+											<div class="txt1 p-r-25">
+												<span class="lnr lnr-map-marker"></span>
+											</div>
+
+											<div class="flex-col size2">
+												<span class="txt1 p-b-20">
+													Address
+												</span>
+
+												<span class="txt2">
+													Mada Center 8th floor, 379 Hudson St, New York, NY 10018 US
+												</span>
+											</div>
+										</div>
+
+										<div class="dis-flex size1 p-b-47">
+											<div class="txt1 p-r-25">
+												<span class="lnr lnr-phone-handset"></span>
+											</div>
+
+											<div class="flex-col size2">
+												<span class="txt1 p-b-20">
+													Lets Talk
+												</span>
+
+												<span class="txt3">
+													+1 800 1236879
+												</span>
+											</div>
+										</div>
+
+										<div class="dis-flex size1 p-b-47">
+											<div class="txt1 p-r-25">
+												<span class="lnr lnr-envelope"></span>
+											</div>
+
+											<div class="flex-col size2">
+												<span class="txt1 p-b-20">
+													General Support
+												</span>
+
+												<span class="txt3">
+													contact@example.com
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
-						<form:form method="post" action="saveShopPost.html" commandName="pawnshopPost">
-							<input type="hidden" name="pawnshopPostId" />
-							<input type="hidden" name="pawnshopId.pawnshopId" />
-							<input type="hidden" name="pawnshopPostItemType" value="watch" />
-							<div style="margin-bottom: 20px;">
-								<div class="form-group float-left">
-									<dt>
-										<img alt="user" src="img/gold.png" height="100" width="100" style="margin-bottom: 12px; border: 1px solid #c8cbcf">
-									</dt>
-										<input name="files" type="file" onchange="readURL(this);" />
-								</div>
-								<div class="form-group-post float-left" style="margin-bottom: 30px;">
-									<dt>Post name</dt>
-									<dt>
-										<input name="pawnshopPostName" class="post-name" pattern="[A-Za-z0-9]{3,45}" required="required" />
-									</dt>
-									<p class="Subhead-description">plass enter data about your item for pawnshop to understand.</p>
-								</div>
-							</div>
-							<div class="form-group-post float-left Subhead" style="margin-top: 10px;">
-								<div class="form-group enter-data">
-									<p>Enter the correct data for your post.Thsi data will show to pawnshop.</p>
-								</div>
-								<div class="form-group-post float-left ">
-									<dt>Brand</dt>
-									<div class="float-left" style="margin-top: 11.5px;">
-										<select name="pawnshopPostBrand">
-											<option>Rolex</option>
-											<option>Patek Philippe</option>
-											<option>Audemars Piguet</option>
-											<option>Cartier</option>
-											<option>Franck Muller</option>
-											<option>Tag Heuer</option>
-											<option>Omega</option>
-											<option>Casio</option>
-										</select>
-									</div>
-								</div>
-								<div class="form-group-post float-left ">
-									<dt>Production year</dt>
-									<dt>
-										<input name="pawnshopPostProduction" type="date" class="post-name" required="required" style="width:auto;" />
-									</dt>
-								</div>
-								<div class="form-group-post float-left ">
-									<dt>Model</dt>
-									<dt>
-										<input name="pawnshopPostModel" class="post-name" placeholder="" pattern="[0-9A-Za-z]{1,15}" required="required" />
-									</dt>
-								</div>
-								<div class="form-group-post float-left ">
-									<dt>Serial Number</dt>
-									<dt>
-										<input name="pawnshopPostSerial" class="post-name" placeholder="" pattern="[0-9A-Za-z]{1,15}" required="required" />
-									</dt>
-								</div>
-								<div class="form-group-post float-left ">
-									<dt>Type of case</dt>
-									<div class="float-left" style="margin-top: 11.5px;">
-										<select name="pawnshopPostCase">
-											<option>Stainless Steel</option>
-											<option>White Gold</option>
-											<option>Yellow Gold</option>
-											<option>Ceramic</option>
-											<option>Pink Gold</option>
-											<option>Others (Please specify)</option>
-											<option>Unknown</option>
-										</select>
-									</div>
-								</div>
-								<div class="form-group-post float-left ">
-									<dt>Type of bracelet</dt>
-									<div class="float-left" style="margin-top: 11.5px;">
-										<select name="pawnshopPostBracelet">
-											<option>Stainless Steel</option>
-											<option>Gold and Silver</option>
-											<option>Gold</option>
-											<option>Platinum</option>
-											<option>Leather</option>
-											<option>Plastic</option>
-											<option>Rubber</option>
-											<option>Others (Please specify)</option>
-											<option>Unknown</option>
-										</select>
-									</div>
-								</div>
-								<div class="form-group-post float-left ">
-									<dt>Is there any diamonds on your timepiece?</dt>
-									<div class="float-left" style="margin-top: 11.5px;">
-										<select name="pawnshopPostDiamond">
-											<option value="1">No</option>
-											<option value="2">Dial</option>
-											<option value="3">Bezel</option>
-											<option value="4">On the digits</option>
-										</select>
-									</div>
-								</div>
-								<div class="form-group-post float-left">
-									<dt style="line-height:45px;">
-										<input type="checkbox" name="pawnshopPostPackage" value="yes" /> Packaging
-									</dt>
-									<dt style="line-height:5px;">
-										<input type="checkbox" name="pawnshopPostWarranty" value="yes" /> Warranty Certificate
-									</dt>
-								</div>
-							</div>
-							<div class="form-group-post  float-left">
-								<dt>Description</dt>
-							</div>
-							<div class="form-group-post">
-								<dt>
-									<textarea name="pawnshopPostDescription" class="post-description" style="max-width:100%" pattern="[0-9A-Za-z]{0,}"></textarea>
-								</dt>
-								<p class="Subhead-description">(optional) If you have more data input here!</p>
-							</div>
-							<div class="form-group-post">
-								<dt>
-									Price
-								</dt>
-								<input name="pawnshopPostPrice" class="post-name" pattern="[0-9]{1,15}" required="required"/>
-							</div>
-							<div class="form-group-post ">
-								<input type="checkbox" required="required">I agree to the
-								<strong>trem of service</strong>
-							</div>
-							<div class="form-group-post ">
-								<button type="submit" class="summit-data">Create post</button>
-							</div>
-						</form:form>
 					</div>
 				</div>
-			</section>
+			</div>
 		</body>
 
 		</html>

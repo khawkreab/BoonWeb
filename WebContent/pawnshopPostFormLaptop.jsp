@@ -30,142 +30,181 @@
 		<body>
 			<!-- Navigation   -->
 			<jsp:include page="navbar.jsp" />
-			<section>
+			<!--content-->
+			<div class="content">
 				<div class="container">
-					<div class="re-contain">
-						<div class="Subhead">
-							<h2 class="Subhead-heading">Laptop</h2>
-							<p class="Subhead-description">This post will show on pawnshop's page for them estimate your post.</p>
+					<!--products-->
+					<div class="content-mid">
+						<h3>Pledge Laptop</h3>
+						<label class="line">
+						</label>
+						<div class="mid-popular">
+							<div class="container-contact100 ">
+								<div class="wrap-contact100">
+									<div class="contact100-form">
+										<form:form method="post" action="saveShopPost.html" modelAttribute="pawnshopPost" enctype="multipart/form-data">
+											<input type="hidden" name="pawnshopPostId" />
+											<input type="hidden" name="pawnshopId.pawnshopId" />
+											<input type="hidden" name="pawnshopPostItemType" value="Electronic" />
+											<div class="form-group float-left">
+												<input name="files" type="file" onchange="readURL(this);" />
+											</div>
+											<label class="label-input100">Post Name</label>
+											<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+												<input class="input100" type="text" name="pawnshopPostName">
+											</div>
+											<label class="label-input100">Brand</label>
+											<div class="wrap-input100 validate-input">
+												<select class="input100" type="text" name="pawnshopPostBrand" required="required">
+													<option>Acer</option>
+													<option>Apple</option>
+													<option>Asus</option>
+													<option>Canon</option>
+													<option>Dell</option>
+													<option>Fuji Film</option>
+													<option>HP</option>
+													<option>Lenovo</option>
+													<option>LG</option>
+													<option>MSI</option>
+													<option>Nikon</option>
+													<option>Olympus</option>
+													<option>Panasonic</option>
+													<option>Philips</option>
+													<option>Samsung</option>
+													<option>Sony</option>
+													<option>Sharp</option>
+													<option>TCL</option>
+													<option>Toshiba</option>
+													<option>Others</option>
+												</select>
+											</div>
+											<label class="label-input100">Serial Number and Model</label>
+											<div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Type first name">
+												<input class="input100" type="text" name="pawnshopPostSerial" placeholder="Serial Number">
+												<span class="focus-input100"></span>
+											</div>
+											<div class="wrap-input100 rs2-wrap-input100 validate-input" data-validate="Type last name">
+												<input class="input100" type="text" name="pawnshopPostModel" placeholder="Model">
+												<span class="focus-input100"></span>
+											</div>
+											<label class="label-input100">Display size</label>
+											<div class="wrap-input100 validate-input" data-validate="Type first name">
+												<input class="input100" type="text" name="pawnshopPostSize" placeholder="Display size">
+												<span class="focus-input100"></span>
+											</div>
+											<label class="label-input100">Harddisk size and Ram</label>
+											<div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Type first name">
+												<select class="input100" name="pawnshopPostHarddisk">
+													<option>250 GB</option>
+													<option>500 GB</option>
+													<option>1 TB</option>
+													<option>2 TB</option>
+													<option>3 TB</option>
+													<option>Others</option>
+												</select>
+												<span class="focus-input100"></span>
+											</div>
+											<div class="wrap-input100 rs2-wrap-input100 validate-input" data-validate="Type last name">
+												<select class="input100" name="pawnshopPostRam">
+													<option>4 Gb</option>
+													<option>8 Gb</option>
+													<option>16 Gb</option>
+													<option>32 Gb</option>
+													<option>64 Gb</option>
+												</select>
+												<span class="focus-input100"></span>
+											</div>
+											<label class="label-input100">Year of purchase</label>
+											<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+												<input class="input100" type="date" name="pawnshopPostCameraLen" placeholder="">
+												<span class="focus-input100"></span>
+											</div>
+											<label class="label-input100">Description</label>
+											<div class="wrap-input100 validate-input" data-validate="Message is required">
+												<textarea class="input100" name="pawnshopPostDescription" placeholder="Write us a message(optional) "></textarea>
+												<span class="focus-input100"></span>
+											</div>
+											 <label class="label-input100">Price</label>
+											<div class="wrap-input100 validate-input" data-validate="Message is required">
+												<input class="input100" name="pawnshopPostPrice" placeholder=" "/>
+												<span class="focus-input100"></span>
+											</div>
+											<div class="form-group-post float-left">
+												<dt style="line-height: 45px;">
+													<input type="checkbox" name="pawnshopPostBattery" value="yes" /> Battery charger
+												</dt>
+												<dt style="line-height: 5px;">
+													<input type="checkbox" name="pawnshopPostWarranty" value="yes" /> Warranty Certificate
+													<strong>(If you have)</strong>
+												</dt>
+												<dt style="line-height: 55px;">
+													<input type="checkbox" required="required"> I agree to the
+													<strong>trem of service</strong>
+												</dt>
+											</div>
+											<div class="container-contact100-form-btn">
+												<button type="summot" class="contact100-form-btn">
+													Create Post
+												</button>
+											</div>
+										</form:form>
+									</div>
+									<!-- Picture -->
+									<div class="contact100-more flex-col-c-m" style="background-image: url('img/bgIndex.jpg');">
+										<div class="flex-w size1 p-b-47">
+											<div class="txt1 p-r-25">
+												<span class="lnr lnr-map-marker"></span>
+											</div>
+
+											<div class="flex-col size2">
+												<span class="txt1 p-b-20">
+													Address
+												</span>
+
+												<span class="txt2">
+													Mada Center 8th floor, 379 Hudson St, New York, NY 10018 US
+												</span>
+											</div>
+										</div>
+
+										<div class="dis-flex size1 p-b-47">
+											<div class="txt1 p-r-25">
+												<span class="lnr lnr-phone-handset"></span>
+											</div>
+
+											<div class="flex-col size2">
+												<span class="txt1 p-b-20">
+													Lets Talk
+												</span>
+
+												<span class="txt3">
+													+1 800 1236879
+												</span>
+											</div>
+										</div>
+
+										<div class="dis-flex size1 p-b-47">
+											<div class="txt1 p-r-25">
+												<span class="lnr lnr-envelope"></span>
+											</div>
+
+											<div class="flex-col size2">
+												<span class="txt1 p-b-20">
+													General Support
+												</span>
+
+												<span class="txt3">
+													contact@example.com
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
-						<form:form method="post" action="saveShopPost.html" commandName="pawnshopPost">
-							<input type="hidden" name="pawnshopPostId" />
-							<input type="hidden" name="pawnshopId.pawnshopId" />
-							<input type="hidden" name="pawnshopPostItemType" value="Electronic" />
-							<div style="margin-bottom: 20px;">
-								<div class="form-group float-left">
-									<dt>
-										<img alt="user" src="img/gold.png" height="100" width="100" style="margin-bottom: 12px; border: 1px solid #c8cbcf">
-									</dt>
-										<input name="files" type="file" onchange="readURL(this);" />
-								</div>
-								<div class="form-group-post float-left" style="margin-bottom: 30px;">
-									<span>Post name</span>
-									<span>
-										<input name="pawnshopPostName" class="post-name" pattern="[A-Za-z0-9]{3,45}" required="required" />
-									</span>
-									<p class="Subhead-description">plass enter data about your item for pawnshop to understand.</p>
-								</div>
-							</div>
-							<div class="form-group float-left Subhead" style="margin-top: 10px;">
-								<div class="form-group enter-data">
-									<p>Enter the correct data for your post.Thsi data will show to pawnshop.</p>
-								</div>
-								<div class=" form-group">
-
-									<span>Brand</span>
-									<div class="form-group" style="margin-top: 11.5px;">
-										<select name="pawnshopPostBrand">
-											<option>Acer</option>
-											<option>Apple</option>
-											<option>Asus</option>
-											<option>Canon</option>
-											<option>Dell</option>
-											<option>Fuji Film</option>
-											<option>HP</option>
-											<option>Lenovo</option>
-											<option>LG</option>
-											<option>MSI</option>
-											<option>Nikon</option>
-											<option>Olympus</option>
-											<option>Panasonic</option>
-											<option>Philips</option>
-											<option>Samsung</option>
-											<option>Sony</option>
-											<option>Sharp</option>
-											<option>TCL</option>
-											<option>Toshiba</option>
-											<option>Others</option>
-										</select>
-									</div>
-
-								</div>
-
-								<!-- laptop -->
-								<div id="laptop" class="w3-container">
-									<div class="form-group-post float-left ">
-										<dt>Model</dt>
-										<dt>
-											<input name="pawnshopPostModel" class="post-name" placeholder="" pattern="[0-9A-Za-z]{1,15}" required="required" />
-										</dt>
-									</div>
-									<div class="form-group-post float-left ">
-										<dt>Display size(inch)</dt>
-										<dt>
-											<input name="pawnshopPostSize" class="post-name" placeholder="" pattern="[0-9A-Za-z]{1,15}" required="required" />
-										</dt>
-									</div>
-									<div class="form-group-post float-left ">
-										<dt>Harddisk</dt>
-										<div class="float-left" style="margin-top: 11.5px;">
-											<select name="pawnshopPostHarddisk">
-												<option>250 GB</option>
-												<option>500 GB</option>
-												<option>1 TB</option>
-												<option>2 TB</option>
-												<option>3 TB</option>
-												<option>Others</option>
-											</select>
-										</div>
-									</div>
-									<div class="form-group-post float-left ">
-										<dt>Ram</dt>
-										<div class="float-left" style="margin-top: 11.5px;">
-											<select name="pawnshopPostRam">
-												<option>4 Gb</option>
-												<option>8 Gb</option>
-												<option>16 Gb</option>
-												<option>32 Gb</option>
-												<option>64 Gb</option>
-											</select>
-										</div>
-									</div>
-									<div class="form-group-post float-left">
-										<dt style="line-height: 45px;">
-											<input type="checkbox" name="pawnshopPostBattery" value="yes" /> Battery charger
-										</dt>
-										<dt style="line-height: 5px;">
-											<input type="checkbox" name="pawnshopPostWarranty" value="yes" /> Warranty Certificate
-											<strong>(If you have)</strong>
-										</dt>
-									</div>
-								</div>
-							</div>
-							<div class="form-group-post  float-left">
-								<dt>Description</dt>
-							</div>
-							<div class="form-group-post">
-								<dt>
-									<textarea name="pawnshopPostDescription" class="post-description" style="max-width: 100%" pattern="[0-9A-Za-z]{0,}"></textarea>
-								</dt>
-								<p class="Subhead-description">(optional) If you have more data input here!</p>
-							</div>
-							<div class="form-group-post">
-								<dt>
-									Price
-								</dt>
-								<input name="pawnshopPostPrice" class="post-name" pattern="[0-9]{1,15}" required="required"/>
-							</div>
-							<div class="form-group-post ">
-								<input type="checkbox" required="required">I agree to the
-								<strong>trem of service</strong>
-							</div>
-							<div class="form-group-post ">
-								<button type="submit" class="summit-data">Create post</button>
-							</div>
-						</form:form>
 					</div>
 				</div>
-			</section>
+			</div>
 		</body>
 
 		</html>
