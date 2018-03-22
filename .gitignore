@@ -10,15 +10,3 @@ target/
 build/classes/controller/PawnerPostController.class
 build/classes/controller/LinkController.class
 build/classes/controller/EstimateController.class
-build/classes/controller/HelloController.class
-*.class
-*.class
-.classpath
-*.class
-build/classes/controller/PawnshopController.class
-build/classes/controller/PawnerController.class
-build/classes/controller/PawnerController.class
-WebContent/WEB-INF/lib/BoonEJB-v.12.jar
-*.jar
-WebContent/WEB-INF/lib/BoonEJB-v.12.jar
-WebContent/navbar.jsp

@@ -556,9 +556,16 @@ a.buy-now:hover{
     position: relative
 }
 .pro-img{
+	 display: block;
 	height: 322px;
 	overflow-y: hidden;
 	border-bottom: 3px double #ff7700;
+}
+
+.img-responsive {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 .zoom-icon {
 	    position: absolute;
@@ -603,7 +610,7 @@ a.buy-now:hover{
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=99)";
 }
 .mid-popular {
-    padding-top: 2em;
+    padding: 2em 0;
 }
 .brand {
     padding: 5em 0;
@@ -848,6 +855,7 @@ span.actual {
 }
 /*--quantity-starts--*/
 .quantity{
+	width: 100%;
 	margin: 1.5em 0;
 	float:left;
 }
@@ -920,6 +928,7 @@ span.actual {
 /* Skew Backward */
 .hvr-skew-backward {
   display: inline-block;
+  width:100%;
   vertical-align: middle;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
@@ -939,7 +948,6 @@ span.actual {
    border-radius: 3px;
 }
 .hvr-skew-backward:hover, .hvr-skew-backward:focus, .hvr-skew-backward:active {
-	border:3px double #ff7700;
 	color:#fff;
 	background:#FF7711;
     text-decoration:none;

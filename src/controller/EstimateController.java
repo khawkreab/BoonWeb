@@ -93,7 +93,7 @@ public class EstimateController {
 		try {
 			postService.updateStatus(postId , "process");
 			estimate.setEstimateDate(date);
-			estimate.setEstimateStatus("proceed");
+			estimate.setEstimateStatus("process");
 			estimateService.insert(estimate);
 
 		} catch (Exception e) {
@@ -173,11 +173,11 @@ public class EstimateController {
 		long pawnerPostId = Long.parseLong(request.getParameter("pawnerPostId"));
 		try {
 
-			estimateService.updateStatus(pawnerPostId , "disconnect");
+			estimateService.updateStatus(pawnerPostId , "denei");
 			postService.updateStatus(pawnerPostId , "approve");
 
 			estimate = estimateService.findEstimateById(estimateId);
-			estimate.setEstimateStatus("Approve");
+			estimate.setEstimateStatus("approve");
 			estimateService.update(estimate);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -192,11 +192,11 @@ public class EstimateController {
 		long pawnerPostId = Long.parseLong(request.getParameter("pawnerPostId"));
 		try {
 
-			estimateService.updateStatus(pawnerPostId , "complete");
+			pawnerPostService.updateStatus(pawnerPostId , "complete");
 		
 
 			estimate = estimateService.findEstimateById(estimateId);
-			estimate.setEstimateStatus("Complete");
+			estimate.setEstimateStatus("complete");
 			estimateService.update(estimate);
 		} catch (Exception e) {
 			e.printStackTrace();

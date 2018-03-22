@@ -200,7 +200,7 @@ html[xmlns] .flexslider .slides {
 }
 .flex-control-thumbs img {
    width: auto;
-   height: 12%;
+   height: 60px;
   display: block;
   opacity: .7;
   cursor: pointer;

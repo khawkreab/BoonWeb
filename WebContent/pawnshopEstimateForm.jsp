@@ -11,9 +11,9 @@
 <%@ page import="java.util.Date"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>pawnshop-estimate-form</title>
 
 <!-- slide picture -->
@@ -99,20 +99,13 @@
 									</div>
 								</li>
 							</c:forEach>
-							<li data-thumb="images/si1.jpg">
-								<div class="thumb-image">
-									<img src="images/si1.jpg" data-imagezoom="true"
-										class="img-responsive">
-								</div>
-							</li>
-
 						</ul>
 					</div>
 				</div>
 				<div class="col-md-7 single-top-in">
 					<div class="span_2_of_a1 simpleCart_shelfItem">
 						<h3>${pawnerPost.pawnerPostName }${post.pawnerPostBrand }</h3>
-						<p class="in-para">Infoation</p>
+						<p class="in-para">Information</p>
 						<div class="price_single">
 							<div class="preview">
 								<ul class="row">
