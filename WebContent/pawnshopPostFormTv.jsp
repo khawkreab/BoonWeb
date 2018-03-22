@@ -31,6 +31,13 @@
 		<body>
 			<!-- Navigation   -->
 			<jsp:include page="navbar.jsp" />
+				<!--banner-->
+				<div class="banner-top">
+					<div class="container">
+						<h1>Sell TV</h1>
+						<em></em>
+					</div>
+				</div>
 			<!--content-->
 			<div class="content">
 				<div class="container">
@@ -84,7 +91,7 @@
 											</div>
 											<label class="label-input100">Year of purchase</label>
 											<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
-												<input class="input100" type="date" name="pawnshopPostCameraLen" placeholder="">
+												<input class="input100" type="date" name="pawnshopPostPurchase" placeholder="">
 												<span class="focus-input100"></span>
 											</div>
 											<label class="label-input100">Description</label>
