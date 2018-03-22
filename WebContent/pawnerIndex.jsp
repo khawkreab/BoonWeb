@@ -29,9 +29,8 @@
 <!--banner-->
 <div class="banner-top">
 	<div class="container">
-		<h1>Single</h1>
+		<h1>Items sell</h1>
 		<em></em>
-		<h2><a href="index.html">Home</a><label>/</label>Single</h2>
 	</div>
 </div>
 	<!--content-->
@@ -39,8 +38,6 @@
 		<div class="container">
 			<!--products-->
 			<div class="content-mid">
-				<h3>Items sell</h3>
-				<label class="line"></label>
 				<div class="mid-popular">
 					<!-- ------------------------------------------------------------------------------- -->
 					<c:forEach items="${pawnshopPosts}" var="pawnshopPosts">
@@ -48,7 +45,7 @@
 							<div class=" mid-pop">
 								<div class="pro-img">
 									<a href="post-detail.html?item=${pawnshopPosts.pawnshopPostId}"> <img
-										src="images/pc.jpg" class="img-responsive" alt=""></a>
+										src="images/${pawnshopPosts.pawnshopPostPicture}" class="img-responsive" alt=""></a>
 									<div class="zoom-icon ">
 											<a href="post-detail.html?item=${pawnshopPosts.pawnshopPostId}"> <i
 											class="glyphicon glyphicon-search icon"></i></a>

@@ -557,6 +557,7 @@ a.buy-now:hover{
 }
 .pro-img{
 	height: 322px;
+	overflow-y: hidden;
 	border-bottom: 3px double #ff7700;
 }
 .zoom-icon {

@@ -84,6 +84,7 @@ public class PawnshopPostController {
 				pawnshopPost.setPawnshopPostTypeCamera(request.getParameter("pawnshopPostTypeCamera"));
 				pawnshopPost.setPawnshopPostWarranty(request.getParameter("pawnshopPostTypeCamera"));
 				pawnshopPost.setPawnshopPostWeigh(request.getParameter("pawnshopPostWeigh"));
+				pawnshopPost.setPawnshopPostPrice(request.getParameter("pawnshopPostPrice"));
 				
 				post = pawnshopPostService.insert(pawnshopPost);
 			} else {
@@ -92,7 +93,8 @@ public class PawnshopPostController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		String saveDirectory = "Q:/testPic/";
+//		String saveDirectory = "Q:/testPic/";
+		String saveDirectory ="C:/Users/sitti/OneDrive/Works/Project 3 1-2560/project v.1.0.1-beta.4/BoonWeb/WebContent/images/";
 		String fileName ="";
 		
 		Picture picture = new Picture();
@@ -103,12 +105,12 @@ public class PawnshopPostController {
 
 		if (null != Files && Files.size() > 0) {
 			for (MultipartFile multipartFile : Files) {
-
-				fileName = multipartFile.getOriginalFilename();
+				fileName = multipartFile.getBytes().hashCode()+ "." + multipartFile.getContentType().split("/")[1];
+//				fileName = multipartFile.getOriginalFilename();
 				if (!"".equalsIgnoreCase(fileName)) {
 					// Handle file content - multipartFile.getInputStream()
 					multipartFile.transferTo(new File(saveDirectory + fileName));
-					fileNames.add(saveDirectory +fileName);
+					fileNames.add(fileName);
 					
 					//
 					picture.setPicture(fileName);
@@ -119,6 +121,8 @@ public class PawnshopPostController {
 				}
 			}
 		}
+		pawnshopPostService.updatePicture(post.getPawnshopPostId(), fileNames.get(0));
+		System.out.println("test update picture => " + fileNames.get(0));
 		return "redirect:pawnshop-list-post.html";
 	}
 	
