@@ -63,8 +63,10 @@
 
 
 
-								<span class="history-img"><img class=""
-									src="img/gold.png" width="300" /></span>
+								<span class="history-img">
+								
+								<img class=""
+									src="images/${post.pawnerPostPicture }" width="200" /></span>
 							</div>
 							<div class="col-sm-7">
 
@@ -72,7 +74,7 @@
 									${post.pawnerPostBrand } ${post.pawnerPostTypeCamera }
 									${post.pawnerPostCameraLen } </span>
 								<div class="history-detail">
-									<ul>
+									<ul class="row">
 
 										<!-- Watch,Electronic -->
 										<c:if test="${post.pawnerPostModel != null}">
@@ -199,7 +201,9 @@
 		</c:forEach>
 	</section>
 
-
+	<!-- Bootstrap core JavaScript -->
+						<script src="vendor/jquery/jquery.min.js"></script>
+						<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 	<script type="text/javascript">
 		$('div span a').click(function() {
 			$(this).text(function(i, old) {
