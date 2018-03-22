@@ -19,8 +19,10 @@ import org.springframework.web.servlet.ModelAndView;
 
 import entity.PawnerPost;
 import entity.Pawnshop;
+import entity.Picture;
 import service.PawnerPostService;
 import service.PawnshopService;
+import service.PictureService;
 
 @Controller
 public class PawnshopController {
@@ -30,6 +32,9 @@ public class PawnshopController {
 
 	@EJB(mappedName = "ejb:/BoonWeb//PawnerPostServiceBean!service.PawnerPostService")
 	PawnerPostService pawnerPostService;
+	
+	@EJB(mappedName = "ejb:/BoonWeb/PictureServiceBean!service.PictureService")
+	PictureService pictureService;
 
 	@RequestMapping("/pawnshop-register-form")
 	public ModelAndView newPawner() {
@@ -73,11 +78,13 @@ public class PawnshopController {
 	public ModelAndView pawnshopIndex(HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView("pawnshopIndex.jsp");
 
-
+List<Picture> pictures;
 		List<PawnerPost> pawnerPosts;
 		try {
 			long userId = (long) request.getSession().getAttribute("id");
 			pawnerPosts = pawnerPostService.findPawnerPostByPawnshopId(userId);
+			pictures = pictureService.getAllPicture();
+			mv.addObject("picture", pictures);
 			mv.addObject("pawnerPosts", pawnerPosts);
 		} catch (Exception e) {
 			e.printStackTrace();
