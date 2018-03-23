@@ -65,6 +65,7 @@
 						<li><a href="#" class="nav-link js-scroll-trigger"> <%=session.getAttribute("username")%>
 						</a></li>
 						<li><a href="logout.html" class="nav-link js-scroll-trigger">Logout</a></li>
+						<li><a class="nav-link js-scroll-trigger" href="mailto:blueboy9yin@gmail.com?Subject=Contact%20again" target="_top">Contact</a></li>
 						<!-- -------------------------------------------------------------------- -->
 						<%
 							} else if (session.getAttribute("userType") == "pawnShop") {
@@ -138,8 +139,8 @@
 									} else {
 								%>
 								<!-- -------------------------------------------------------------------- -->
-								<li><a class="color" href="index.html">Home</a></li>
-								<li><a class="color6" href="contact.html">Contact</a></li>
+								<li><a class="color" href="index.jsp">Home</a></li>
+								<li><a class="color6" href="mailto:blueboy9yin@gmail.com?Subject=Contact" target="_top">Send Mail>Contact</a></li>
 								<%
 									}
 								%>
