@@ -168,7 +168,7 @@
 												<td>${pawnshop.pawnshopEmail}</td>
 												<td>${pawnshop.pawnshopPassword}</td>
 												<td><a
-													href="deletePawnshop.do?id=${pawnshop.pawnshopId}">Remove</a></td>
+													href="deletePawnshop.html?id=${pawnshop.pawnshopId}">Remove</a></td>
 											</tr>
 										</tbody>
 									</c:forEach>
