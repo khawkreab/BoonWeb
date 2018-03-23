@@ -164,9 +164,7 @@
 												</li>
 											</c:if>
 
-
-
-											<c:if test="${track.estimateStatus == 'Approve'}">
+											<c:if test="${track.estimateStatus == 'approve'}">
 												<form action="pawnshop-estimate-approve.html" method="post">
 													<input type="hidden" name="estimateId"
 														value="${track.estimateId}"> <input type="hidden"
