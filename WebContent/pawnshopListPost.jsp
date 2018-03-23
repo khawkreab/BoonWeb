@@ -7,7 +7,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-	<%@ page import="java.util.Date"%>
+<%@ page import="java.util.Date"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
@@ -49,84 +49,129 @@
 				<div class="history-main">
 					<div class="d-flex history-title">
 						<div class="mr-auto p-2">
-							<fmt:formatDate
-										type="both" dateStyle="long" timeStyle="short"
-										value="${post.pawnshopPostDate }" />
+							<fmt:formatDate type="both" dateStyle="long" timeStyle="short"
+								value="${post.pawnshopPostDate }" />
 						</div>
 						<div class="ml-auto p-2">
 							<span>Delete</span>
 						</div>
 					</div>
 					<div class="history-body">
-						<span class="history-img"><img class="" src="" /></span> <span
-							class="history-name">${post.pawnshopPostName }
-							${post.pawnshopPostBrand } ${post.pawnshopPostTypeCamera }
-							${post.pawnshopPostCameraLen } </span>
-						<div class="history-detail">
-							<ul>
+						<div class="row">
+							<div class="col-sm-5">
+								<div class="pro-img">
+									<img class="img-responsive"
+										src="images/uploadImage/${post.pawnshopPostPicture }" />
+								</div>
+							</div>
 
-								<!-- Watch,Electronic -->
-								<c:if test="${post.pawnshopPostModel != null}">
-									<li>Production : ${post.pawnshopPostProduction}</li>
-									<li>Model : ${post.pawnshopPostModel}</li>
-									<li>Serial : ${post.pawnshopPostSerial}</li>
-									<li>Warranty : ${post.pawnshopPostWarranty}</li>
-									<li>Purchase : ${post.pawnshopPostPurchase }</li>
-								</c:if>
+							<div class="col-md-7 single-top-in">
+								<div class="span_2_of_a1 simpleCart_shelfItem">
+									<h3>${post.pawnshopPostName } ${post.pawnshopPostBrand }
+										${post.pawnshopPostTypeCamera } ${post.pawnshopPostCameraLen }
+									</h3>
+									<p class="in-para">Information</p>
+									<div class="price_single">
+										<div class="preview">
+											<ul class="row">
 
-								<!-- Gold -->
-								<c:if test="${post.pawnshopPostPure != null}">
-									<li>Pure : ${post.pawnshopPostPure  }</li>
-									<li>Weigh : ${post.pawnshopPostWeigh }</li>
-									<li>Category : ${post.pawnshopPostCategory }</li>
-								</c:if>
+												<!-- Electronic camera-->
+												<c:if test="${post.pawnshopPostTypeCamera != null}">
+													<li class="col-md-6">${post.pawnshopPostTypeCamera }</li>
+													<li class="col-md-6">${post.pawnshopPostCameraLen }</li>
+												</c:if>
+												<!-- Watch,Electronic -->
+												<c:if test="${post.pawnshopPostModel != null}">
+													<li class="col-md-6">Production :
+														${post.pawnshopPostProduction}</li>
+													<li class="col-md-6">Model :
+														${post.pawnshopPostModel}</li>
+													<li class="col-md-6">Serial :
+														${post.pawnshopPostSerial}</li>
+													<li class="col-md-6">Purchase :
+														${post.pawnshopPostPurchase }</li>
+												</c:if>
 
-								<!-- Watch -->
-								<c:if test="${post.pawnshopPostCase != null}">
-									<li>Case : ${post.pawnshopPostCase }</li>
-									<li>Bracelet : ${post.pawnshopPostBracelet }</li>
-									<c:if test="${post.pawnshopPostDiamond != null}">
-										<li>Diamond : ${post.pawnshopPostDiamond }</li>
-									</c:if>
-									<c:if test="${post.pawnshopPostPackage != null}">
-										<li>Package : ${post.pawnshopPostPackage }</li>
-									</c:if>
-								</c:if>
+												<!-- Gold -->
+												<c:if test="${post.pawnshopPostPure != null}">
+													<li class="col-md-6">Pure :
+														${post.pawnshopPostPure  }</li>
+													<li class="col-md-6">Weigh :
+														${post.pawnshopPostWeigh }</li>
+													<li class="col-md-6">Category :
+														${post.pawnshopPostCategory }</li>
+												</c:if>
 
-								<!-- Electronic tv com telephone -->
-								<c:if test="${post.pawnshopPostSize != null}">
-									<li>Size : ${post.pawnshopPostSize }</li>
-								</c:if>
+												<!-- Watch -->
+												<c:if test="${post.pawnshopPostCase != null}">
+													<li class="col-md-6">Case :
+														${post.pawnshopPostCase }</li>
+													<li class="col-md-6">Bracelet :
+														${post.pawnshopPostBracelet }</li>
+													<c:if test="${post.pawnshopPostDiamond != null}">
+														<li class="col-md-6">Diamond :
+															${post.pawnshopPostDiamond }</li>
+													</c:if>
+												</c:if>
 
-								<!-- Electronic camera com telephone -->
-								<c:if test="${post.pawnshopPostBattery != null}">
-									<li>Battery : ${post.pawnshopPostBattery }</li>
-								</c:if>
-
-								<!-- Electronic com telephone -->
-								<c:if test="${post.pawnshopPostHarddisk != null}">
-									<li>Harddisk : ${post.pawnshopPostHarddisk }</li>
-								</c:if>
-
-								<!-- Electronic tv -->
-								<c:if test="${post.pawnshopPostRemote != null}">
-									<li>Remote : ${post.pawnshopPostRemote }</li>
-								</c:if>
-
-								<!-- Electronic com-->
-								<c:if test="${post.pawnshopPostRam != null}">
-									<li>Ram : ${post.pawnshopPostRam }</li>
-								</c:if>
+												<!-- Electronic tv com telephone -->
+												<c:if test="${post.pawnshopPostSize != null}">
+													<li class="col-md-6">Size :
+														${post.pawnshopPostSize }</li>
+												</c:if>
 
 
-								<!-- Electronic telephone-->
-								<li>Description : ${post.pawnshopPostDescription }</li>
-							</ul>
+												<!-- Electronic com telephone -->
+												<c:if test="${post.pawnshopPostHarddisk != null}">
+													<li class="col-md-6">Harddisk :
+														${post.pawnshopPostHarddisk }</li>
+												</c:if>
+
+												<!-- Electronic com-->
+												<c:if test="${post.pawnshopPostRam != null}">
+													<li class="col-md-6">Ram :
+														${post.pawnshopPostRam }</li>
+												</c:if>
+
+												<!-- Electronic camera com telephone -->
+												<c:if test="${post.pawnshopPostBattery != null}">
+													<li class="col-md-6"><span
+														class="glyphicon glyphicon-check" aria-hidden="true">
+													</span> Battery</li>
+												</c:if>
+
+												<!-- Electronic tv -->
+												<c:if test="${post.pawnshopPostRemote != null}">
+													<li class="col-md-6"><span
+														class="glyphicon glyphicon-check" aria-hidden="true">
+													</span> Remote</li>
+												</c:if>
+
+												<!-- Watch -->
+												<c:if test="${post.pawnshopPostCase != null}">
+													<c:if test="${post.pawnshopPostPackage != null}">
+														<li class="col-md-6"><span
+															class="glyphicon glyphicon-check" aria-hidden="true">
+														</span> Package</li>
+													</c:if>
+												</c:if>
+
+												<!-- Watch,Electronic -->
+												<c:if test="${post.pawnshopPostModel != null}">
+													<li class="col-md-6"><span
+														class="glyphicon glyphicon-check" aria-hidden="true">
+													</span> Warranty</li>
+												</c:if>
+											</ul>
+										</div>
+										<div class="clearfix"></div>
+									</div>
+									<h4 class="quick">Other Detail :</h4>
+									<p class="quick_desc">${post.pawnshopPostDescription }</p>
+								</div>
+							</div>
 						</div>
-
 					</div>
-
-				
 				</div>
 			</div>
 		</c:forEach>

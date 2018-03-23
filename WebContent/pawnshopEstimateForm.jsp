@@ -104,7 +104,7 @@
 				</div>
 				<div class="col-md-7 single-top-in">
 					<div class="span_2_of_a1 simpleCart_shelfItem">
-						<h3>${pawnerPost.pawnerPostName }${post.pawnerPostBrand }</h3>
+						<h3>${pawnerPost.pawnerPostName }${pawnerPost.pawnerPostBrand }</h3>
 						<p class="in-para">Information</p>
 						<div class="price_single">
 							<div class="preview">
