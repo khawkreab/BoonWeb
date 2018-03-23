@@ -50,19 +50,6 @@
                 transform: scale3d(1.006, 1.006, 1);
             }
 
-            .card-font {
-                border: none;
-                outline: 0;
-                display: inline-block;
-                padding: 8px;
-                margin-top: .5rem;
-                color: white;
-                background-color: #ff7f00;
-                text-align: center;
-                cursor: pointer;
-                width: 100%;
-                font-size: 18px;
-            }
         </style>
     </head>
 
@@ -86,36 +73,35 @@
                 <div class="content-mid">
                       <div class="mid-popular">
                         <div class="scrollbar-auto">
-                            <!-- <div class="d-flex flex-row flex-wrap text-center backgroup-icon"> -->
                             <div class="row">
                                 <div class="card-icon col-md-2">
                                     <a href="pawner-post-form-gold.html">
-                                        <img class="icon" src="img/icon/gold-ingots.png">
+                                            <img class="icon" src="images/icon/gold.png">
                                     </a>
                                 </div>
                                 <div class="card-icon col-md-2">
                                     <a href="pawner-post-form-watch.html">
-                                        <img class="icon" src="img/icon/watch.png">
+                                            <img class="icon" src="images/icon/watch.png">
                                     </a>
                                 </div>
                                 <div class="card-icon col-md-2">
                                     <a href="pawner-post-form-smartphone.html">
-                                        <img class="icon" src="img/icon/mobile.png">
+                                            <img class="icon" src="images/icon/mobile.png">
                                     </a>
                                 </div>
                                 <div class="card-icon col-md-2">
                                     <a href="pawner-post-form-laptop.html">
-                                        <img class="icon" src="img/icon/computer.jpg">
+                                            <img class="icon" src="images/icon/com.png">
                                     </a>
                                 </div>
                                 <div class="card-icon col-md-2">
                                     <a href="pawner-post-form-camera.html">
-                                        <img class="icon" src="img/icon/camera.png">
+                                            <img class="icon" src="images/icon/camera.png">
                                     </a>
                                 </div>
                                 <div class="card-icon col-md-2">
                                     <a href="pawner-post-form-tv.html">
-                                        <img class="icon" src="img/icon/tvs.png">
+                                            <img class="icon" src="images/icon/tv.png">
                                     </a>
                                 </div>
                             </div>

@@ -5,138 +5,114 @@
 // edit by : ter
  -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 
-    <html lang="en">
+<html lang="en">
 
-    <head>
+<head>
 
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="">
-        <meta name="author" content="">
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
 
-        <title>pawnshop</title>
+<title>pawnshop</title>
 
-        <!-- Bootstrap core CSS -->
-        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap core CSS -->
+<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-        <!-- Custom styles for this template -->
-        <link href="css/new-design.css" rel="stylesheet">
-        <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <style>
-            .icon {
-                width: 150px;
-                margin: auto;
-            }
+<!-- Custom styles for this template -->
+<link href="css/new-design.css" rel="stylesheet">
+<link href="vendor/font-awesome/css/font-awesome.min.css"
+	rel="stylesheet" type="text/css">
+<style>
+.icon {
+	width: 150px;
+	margin: auto;
+}
 
-            .scrollbar-auto {
-                overflow-y: auto;
-                height: 75%;
-            }
+.scrollbar-auto {
+	overflow-y: auto;
+	height: 75%;
+}
 
-            .card-icon {
-                border: 1px solid #999999;
-                border-radius: 4px;
-                margin: 16px;
-                text-align: center;
-                width: 168px;
-            }
+.card-icon {
+	/* margin: 16px; */
+	text-align: center;
+	width: 201px;
+	height: 201px;
+}
 
-            .card-icon:hover {
-                text-align: center;
-                transition: 0.3s;
-                box-shadow: 0 0 2px 2px rgba(20, 23, 28, .1), 0 4px 1px 0 rgba(20, 23, 28, .1);
-                border: 1px solid #999999;
-                border-radius: 4px;
-                transform: scale3d(1.006, 1.006, 1);
-            }
+.card-icon:hover {
+	text-align: center;
+	transition: 0.3s;
+	box-shadow: 0 0 2px 2px rgba(20, 23, 28, .1), 0 4px 1px 0
+		rgba(20, 23, 28, .1);
+	border: 1px solid #999999;
+	transform: scale3d(1.006, 1.006, 1);
+}
+</style>
+</head>
 
-            .card-font {
-                border: none;
-                outline: 0;
-                display: inline-block;
-                padding: 8px;
-                margin-top: .5rem;
-                color: white;
-                background-color: #4CAF50;
-                text-align: center;
-                cursor: pointer;
-                width: 100%;
-                font-size: 18px;
-            }
-        </style>
-    </head>
-
-    <body id="page-top" style="overflow-y: hidden">
+<body id="page-top" style="overflow-y: hidden">
 
 
-        <!-- Navigation -->
-        <jsp:include page="navbar.jsp" />
+	<!-- Navigation -->
+	<jsp:include page="navbar.jsp" />
 
-        <section>
-            <div class="container">
-                <div class="re-contain" style="width:85%;">
-                    <div class="Subhead ">
-                        <h2 class="Subhead-heading">Select Pledge Sell Item...</h2>
-                        <p class="Subhead-description">We have 7 items</p>
-                    </div>
-                    <div class="scrollbar-auto">
-                        <div class="d-flex flex-row flex-wrap text-center backgroup-icon">
-                            <div class="card-icon">
-                                <a href="pawnshop-post-form-gold.html">
-                                    <dt>
-                                        <img class="icon" src="img/icon/gold-ingots.png">
-                                    </dt>
-                                    <p class="card-font">GOLD</p>
-                                </a>
-                            </div>
-                            <div class=" card-icon">
-                                <a href="pawnshop-post-form-watch.html">
-                                    <dt>
-                                        <img class="icon" src="img/icon/wristwatch.png">
-                                    </dt>
-                                    <p class="card-font">WATCH</p>
-                                </a>
-                            </div>
-                            <div class="card-icon">
-                                <a href="pawnshop-post-form-smartphone.html">
-                                    <dt>
-                                        <img class="icon" src="img/icon/smartphone.png">
-                                    </dt>
-                                    <p class="card-font">SMARTPHONE</p>
-                                </a>
-                            </div>
-                            <div class="card-icon">
-                                <a href="pawnshop-post-form-laptop.html">
-                                    <dt>
-                                        <img class="icon" src="img/icon/laptop.png">
-                                    </dt>
-                                    <p class="card-font">LAPTOP</p>
-                                </a>
-                            </div>
-                            <div class="card-icon">
-                                <a href="pawnshop-post-form-camera.html">
-                                    <dt>
-                                        <img class="icon" src="img/icon/photo-camera.png">
-                                    </dt>
-                                    <p class="card-font">CAMERA</p>
-                                </a>
-                            </div>
-                            <div class="card-icon">
-                                <a href="pawnshop-post-form-tv.html">
-                                    <dt>
-                                        <img class="icon" src="img/icon/tv.png">
-                                    </dt>
-                                    <p class="card-font">TV</p>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+	<!--banner-->
+	<div class="banner-top">
+		<div class="container">
+			<h1>Select Pledge Sell Item</h1>
+			<em></em>
+			<h2>We have 7 items</h2>
+		</div>
+	</div>
+	<!--content-->
+	<div class="content">
+		<div class="container">
+			<!--products-->
+			<div class="content-mid">
+				<div class="mid-popular">
+					<div class="scrollbar-auto">
+						<div class="row">
+							<div class="card-icon col-md-2">
+								<a href="pawnshop-post-form-gold.html"> <img class="icon"
+									src="images/icon/gold.png">
+								</a>
+							</div>
+							<div class="card-icon col-md-2">
+								<a href="pawnshop-post-form-watch.html"> <img class="icon"
+									src="images/icon/watch.png">
+								</a>
+							</div>
+							<div class="card-icon col-md-2">
+								<a href="pawnshop-post-form-smartphone.html"> <img
+									class="icon" src="images/icon/mobile.png">
+								</a>
+							</div>
+							<div class="card-icon col-md-2">
+								<a href="pawnshop-post-form-laptop.html"> <img class="icon"
+									src="images/icon/com.png">
+								</a>
+							</div>
+							<div class="card-icon col-md-2">
+								<a href="pawnshop-post-form-camera.html"> <img class="icon"
+									src="images/icon/camera.png">
+								</a>
+							</div>
+							<div class="card-icon col-md-2">
+								<a href="pawnshop-post-form-tv.html"> <img class="icon"
+									src="images/icon/tv.png">
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
 
-    </body>
-
-    </html>
+</html>

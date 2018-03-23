@@ -79,7 +79,7 @@
 </div>
 
 	<!--content-->
-	<div class="content">
+	<%-- <div class="content">
 		<div class="container">
 			<!--products-->
 			<div class="content-mid">
@@ -128,14 +128,13 @@
 				</div>
 			</div>
 			<!--//products-->
-
 		</div>
-
-	</div>
+	</div> --%>
+	<!-- ----------------------------------------------------------------------------------------------- -->
 	<div class="container">
 		<div class="dev-title">
-			<h1>Welcome to Team deverlop</h1>
-			<h7>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</h7>
+			<h1>Welcome to Team Develop</h1>
+			<h6>We are UBfor </h6>
 		</div>
 	</div>
 	<div class="container">
@@ -150,22 +149,22 @@
 				<div class="carousel-inner margin-lr-20">
 					<div class="carousel-item active">
 						<div class="inline-block">
-							<span class="dev-img-circle"> <img src="img/profile.jpg">
-							</span> <span class="dev-detail">12345679879647964</span>
+							<span class="dev-img-circle"> <img src="img/team/profile(khawkreab).jpg">
+							</span> <span class="dev-detail">I'm a developer </span>
 						</div>
 					</div>
 					<div class="carousel-item">
 						<div class="inline-block">
 							<span class="dev-img-circle"> <img class="dev-img-circle"
-								src="img/profile(Dream).jpg">
-							</span> <span class="dev-detail">794464113</span>
+								src="img/team/profile(Dream).jpg">
+							</span> <span class="dev-detail">I'm a developer</span>
 						</div>
 					</div>
 					<div class="carousel-item">
 						<div class="inline-block">
 							<span class="dev-img-circle"> <img class="dev-img-circle"
-								src="img/profile(Ter).jpg">
-							</span> <span class="dev-detail">232569821</span>
+								src="img/team/profile(Ter).jpg">
+							</span> <span class="dev-detail">I'm a developer</span>
 						</div>
 					</div>
 				</div>

@@ -53,8 +53,8 @@
 							<div class="row">
 								<div class="col-sm-5">
 
-									<span class="history-img"><img class=""
-										src="img/gold.png" width="300" /></span>
+									<span class="history-img"><img class="img-responsive"
+										src="images/uploadImage/${track.pawnerPostId.pawnerPostPicture}" width="300" /></span>
 								</div>
 								<div class="col-sm-7">
 
