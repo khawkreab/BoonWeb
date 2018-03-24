@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="icon" href="img/logos/Artboard.png">
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>order</title>
 

@@ -8,27 +8,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="icon" href="img/logos/Artboard.png">
 <title>Detail</title>
 <!-- slide picture -->
 <link rel="stylesheet" href="css/flexslider.css" type="text/css"
 	media="screen" />
 
 <script type="application/x-javascript">
-	
-	
-	
-	
-	
-	
-	
 	 addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
-
-
-
-
-
-
-
 </script>
 
 <script src="js/jquery.min.js"></script>

@@ -14,6 +14,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="icon" href="img/logos/Artboard.png">
 <title>pawnshop-estimate-form</title>
 
 <!-- slide picture -->

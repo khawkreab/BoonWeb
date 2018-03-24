@@ -13,6 +13,7 @@
 		<html>
 
 		<head>
+		<link rel="icon" href="img/logos/Artboard.png">
 			<title>Pawnshop Registation</title>
 
 			<!-- Bootstrap core CSS -->

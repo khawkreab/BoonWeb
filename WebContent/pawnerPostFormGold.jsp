@@ -10,6 +10,7 @@
 		<html lang="en">
 
 		<head>
+		<link rel="icon" href="img/logos/Artboard.png">
 			<meta charset="utf-8">
 			<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 			<meta name="description" content="">
@@ -104,7 +105,7 @@
 										</form:form>
 									</div>
 									<!-- Picture -->
-									<div class="contact100-more flex-col-c-m" style="background-image: url('img/bgIndex.jpg');">
+									<div class="contact100-more flex-col-c-m" style="background-image: url('img/header-bg.jpg');">
 										<div class="flex-w size1 p-b-47">
 											<div class="txt1 p-r-25">
 												<span class="lnr lnr-map-marker"></span>
