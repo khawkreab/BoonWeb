@@ -83,8 +83,6 @@
 		<div class="container">
 			<!--products-->
 			<div class="content-mid">
-				<h3>Trending Items</h3>
-				<label class="line"></label>
 				<div class="mid-popular">
 					<c:forEach items="${post}" var="post">
 						<div class="col-md-3 item-grid simpleCart_shelfItem">

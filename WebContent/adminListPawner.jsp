@@ -166,7 +166,7 @@
 												<td>${pm.pawnerLastname}</td>
 												<td>${pm.pawnerEmail}</td>
 												<td>${pm.pawnerPassword}</td>
-												<td><a href="deletePawner.do?id=${pm.pawnerId}">Remove</a></td>
+												<td><a href="deletePawner.html?id=${pm.pawnerId}">Remove</a></td>
 
 											</tr>
 										</tbody>

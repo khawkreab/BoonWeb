@@ -66,21 +66,86 @@
 							</div>
 							<div class="col-md-7 single-top-in">
 								<div class="span_2_of_a1 simpleCart_shelfItem">
-									<h3>${post.pawnerPostName }${post.pawnerPostBrand }</h3>
+									<h3>${post.pawnerPostName } -${post.pawnerPostBrand }</h3>
 									<p class="in-para">Information</p>
 									<div class="price_single">
 										<div class="preview">
 											<ul class="row">
-												<li>${post.pawnerPostBrand }</li>
-												<li>${post.pawnerPostPure  }</li>
-												<li>${post.pawnerPostWeigh }</li>
-												<li>${post.pawnerPostCategory }</li>
-												<li>${post.pawnerPostDescription }</li>
+												<!-- Watch,Electronic -->
+												<c:if test="${post.pawnerPostModel != null}">
+													<li class="col-md-6">Production :
+														${post.pawnerPostProduction}</li>
+													<li class="col-md-6">Model : ${post.pawnerPostModel}</li>
+													<li class="col-md-6">Serial : ${post.pawnerPostSerial}</li>
+													<li class="col-md-6">Purchase :
+														${post.pawnerPostPurchase }</li>
+												</c:if>
+
+												<!-- Gold -->
+												<c:if test="${post.pawnerPostPure != null}">
+													<li class="col-md-6">Pure : ${post.pawnerPostPure  }</li>
+													<li class="col-md-6">Weigh : ${post.pawnerPostWeigh }</li>
+													<li class="col-md-6">Category :
+														${post.pawnerPostCategory }</li>
+												</c:if>
+
+
+
+												<!-- Electronic tv com telephone -->
+												<c:if test="${post.pawnerPostSize != null}">
+													<li class="col-md-6">Size : ${post.pawnerPostSize }</li>
+												</c:if>
+
+												<!-- Electronic camera com telephone -->
+												<c:if test="${post.pawnerPostBattery != null}">
+													<li class="col-md-6">Battery :
+														${post.pawnerPostBattery }</li>
+												</c:if>
+
+												<!-- Electronic com telephone -->
+												<c:if test="${post.pawnerPostHarddisk != null}">
+													<li class="col-md-6">Harddisk :
+														${post.pawnerPostHarddisk }</li>
+												</c:if>
+
+												<!-- Electronic com-->
+												<c:if test="${post.pawnerPostRam != null}">
+													<li class="col-md-6">Ram : ${post.pawnerPostRam }</li>
+												</c:if>
+
+												<!-- Watch -->
+												<c:if test="${post.pawnerPostCase != null}">
+													<li class="col-md-6">Case : ${post.pawnerPostCase }</li>
+													<li class="col-md-6">Bracelet :
+														${post.pawnerPostBracelet }</li>
+													<c:if test="${post.pawnerPostDiamond != null}">
+														<li class="col-md-6">Diamond :
+															${post.pawnerPostDiamond }</li>
+													</c:if>
+													<c:if test="${post.pawnerPostPackage != null}">
+														<li class="col-md-6"><span
+															class="glyphicon glyphicon-check" aria-hidden="true">
+														</span> Package</li>
+													</c:if>
+												</c:if>
+
+												<!-- Electronic tv -->
+												<c:if test="${post.panwePostRemote != null}">
+													<li class="col-md-6"><span
+														class="glyphicon glyphicon-check" aria-hidden="true">
+													</span> Remote</li>
+												</c:if>
+
+
+												<!-- Watch,Electronic -->
+												<c:if test="${post.pawnerPostModel != null}">
+													<li class="col-md-6"><span
+														class="glyphicon glyphicon-check" aria-hidden="true">
+													</span> Warranty</li>
+												</c:if>
 											</ul>
 										</div>
-
 									</div>
-
 									<c:if test="${post.pawnerPostStatus == 'Complete'}">
 										<div class="line margin-lr-1"></div>
 										<div class="history-show-estimate">

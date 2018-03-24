@@ -58,6 +58,12 @@
 	<div class="footer-bottom">
 		<div class="container">
 			<ul class="footer-bottom-top">
+				<li><a href="#"><img src="images/f1.png"
+						class="" alt=""></a></li>
+				<li><a href="#"><img src="images/f2.png"
+						class="" alt=""></a></li>
+				<li><a href="#"><img src="images/f3.png"
+						class="" alt=""></a></li>
 			</ul>
 			<p class="footer-class">
 				&copy; 2018 Bounyong. All Rights Reserved | Design by <a
