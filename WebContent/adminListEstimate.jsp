@@ -174,11 +174,10 @@
 					<div class="history-body">
 						<div class="row">
 							<div class="col-sm-5">
-
-
-
-								<span class="history-img"><img class=""
-									src="img/gold.png" width="300" /></span>
+ 									<div class="pro-img">
+									<img class="img-responsive"
+										src="images/uploadImage/${adEstimate.pawnerPostPicture }" />
+								</div>
 							</div>
 							<div class="col-sm-7">
 
@@ -278,7 +277,10 @@
 										<c:if test="${adEstimate.estimateStatus == 'approve'}">
 											<li>Status :  <span class="badge badge-primary">Approve</span> </li>
 										</c:if>
-										
+										<c:if test="${adEstimate.estimateStatus == 'denei'}">
+												<li>Status : <span class="badge badge-danger">Denei</span>
+												</li>
+										</c:if>
 										
 										<p>
 										
