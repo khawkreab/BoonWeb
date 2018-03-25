@@ -121,9 +121,9 @@ public class PawnerPostController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-//		String saveDirectory = "Q:/testPic/";
-		String saveDirectory ="C:/Users/sitti/OneDrive/Works/Project 3 1-2560/project v.1.0.1-beta.4/BoonWeb/WebContent/images/uploadImage/";
 		String fileName ="";
+		
+		String dir = request.getServletContext().getRealPath("/")+"images\\imageUpload\\";
 		
 		Picture picture = new Picture();
 
@@ -131,26 +131,23 @@ public class PawnerPostController {
 
 		if (null != Files && Files.size() > 0) {
 			for (MultipartFile multipartFile : Files) {
-//				fileName = multipartFile.getOriginalFilename();
 				fileName = multipartFile.getBytes().hashCode()+ "." + multipartFile.getContentType().split("/")[1];
 				if (!"".equalsIgnoreCase(fileName)) {
-					// Handle file content - multipartFile.getInputStream()
-//					System.out.println(multipartFile.getContentType().split("/")[1] +"\n"+multipartFile.getOriginalFilename());
-					multipartFile.transferTo(new File(saveDirectory + fileName ));
-//					fileNames.add(saveDirectory +fileName);
+					multipartFile.transferTo(new File(dir+ fileName ));
+					System.out.println("multipartFile.transferTo => " +dir+fileName);
 					
-					//
 					picture.setPicture(fileName);
 					picture.setPawnerId(pm);
 					picture.setPawnerPostId(post);
 					pictureService.insert(picture);
+					
 					fileNames.add(fileName);
 					
 				}
 			}
 		}
 		pawnerPostService.updatePicture(post.getPawnerPostId(), fileNames.get(0));
-		System.out.println("test update picture => " + fileNames.get(0));
+		System.out.println("test update picture => " +fileNames.get(0));
 		return "redirect:pawner-track-pledge.html";
 	}
 	

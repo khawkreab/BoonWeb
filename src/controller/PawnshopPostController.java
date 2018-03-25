@@ -91,9 +91,9 @@ public class PawnshopPostController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		// String saveDirectory = "Q:/testPic/";
-		String saveDirectory = "C:/Users/sitti/OneDrive/Works/Project 3 1-2560/project v.1.0.1-beta.4/BoonWeb/WebContent/images/uploadImage/";
 		String fileName = "";
+		
+		String dir = request.getServletContext().getRealPath("/")+"images\\imageUpload\\";
 
 		Picture picture = new Picture();
 
@@ -104,13 +104,11 @@ public class PawnshopPostController {
 		if (null != Files && Files.size() > 0) {
 			for (MultipartFile multipartFile : Files) {
 				fileName = multipartFile.getBytes().hashCode() + "." + multipartFile.getContentType().split("/")[1];
-				// fileName = multipartFile.getOriginalFilename();
 				if (!"".equalsIgnoreCase(fileName)) {
-					// Handle file content - multipartFile.getInputStream()
-					multipartFile.transferTo(new File(saveDirectory + fileName));
+					multipartFile.transferTo(new File(dir + fileName));
+					System.out.println("multipartFile.transferTo => " +dir+fileName);
 					fileNames.add(fileName);
 
-					//
 					picture.setPicture(fileName);
 					picture.setPawnshopId(pm);
 					picture.setPawnshopPostId(post);
@@ -120,7 +118,7 @@ public class PawnshopPostController {
 			}
 		}
 		pawnshopPostService.updatePicture(post.getPawnshopPostId(), fileNames.get(0));
-		System.out.println("test update picture => " + fileNames.get(0));
+		System.out.println("update picture => " + fileNames.get(0));
 		return "redirect:pawnshop-list-post.html";
 	}
 
