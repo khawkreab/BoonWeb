@@ -164,7 +164,11 @@
 												<li>Status : <span class="badge badge-primary">Approve</span>
 												</li>
 											</c:if>
-
+									
+											<c:if test="${track.estimateStatus == 'denei'}">
+												<li>Status : <span class="badge badge-danger">Denei</span>
+												</li>
+											</c:if>
 											<c:if test="${track.estimateStatus == 'approve'}">
 												<form action="pawnshop-estimate-approve.html" method="post">
 													<input type="hidden" name="estimateId"

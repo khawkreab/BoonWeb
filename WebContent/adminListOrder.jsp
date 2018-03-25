@@ -163,11 +163,10 @@
 					<div class="history-body">
 						<div class="row">
 							<div class="col-sm-5">
-
-
-
-								<span class="history-img"><img class=""
-									src="img/gold.png" width="300" /></span>
+ 								<div class="pro-img">
+									<img class="img-responsive"
+										src="images/uploadImage/${adOrder.pawnshopPostPicture }" />
+								</div>
 							</div>
 							<div class="col-sm-7">
 
@@ -236,8 +235,8 @@
 										<!-- Electronic com-->
 										<c:if test="${adOrder.pawnshopPostId.pawnshopPostRam != null}">
 											<li>Ram : ${adOrder.pawnshopPostId.pawnshopPostRam }</li>
-										</c:if>
-
+										</c:if> 
+										
 
 										<!-- Electronic telephone-->
 										<li>Description : ${adOrder.pawnshopPostId.pawnshopPostDescription }</li>
