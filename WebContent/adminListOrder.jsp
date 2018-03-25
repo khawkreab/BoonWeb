@@ -165,7 +165,7 @@
 							<div class="col-sm-5">
  								<div class="pro-img">
 									<img class="img-responsive"
-										src="images/uploadImage/${adOrder.pawnshopPostPicture }" />
+										src="images/imageUpload/${adOrder.pawnshopPostPicture }" />
 								</div>
 							</div>
 							<div class="col-sm-7">

@@ -138,7 +138,7 @@
 												<div class=" mid-pop">
 													<a class="pro-img" href="pawnshop-estimate-form.html?item=${post.pawnerPostId}">
 														<!-- <div class="pro-img"> -->
-														<img src="images/uploadImage/${post.pawnerPostPicture }" class="img-responsive" alt="">
+														<img src="images/imageUpload/${post.pawnerPostPicture }" class="img-responsive" alt="">
 														<span class="zoom-icon ">
 															<i class="glyphicon glyphicon-search icon"></i>
 														</span>

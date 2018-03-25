@@ -62,7 +62,7 @@
 							<div class="col-sm-5">
 								<div class="pro-img">
 									<img class="img-responsive"
-										src="images/uploadImage/${post.pawnerPostPicture }" />
+										src="images/imageUpload/${post.pawnerPostPicture }" />
 								</div>
 							</div>
 							<div class="col-md-7 single-top-in">
@@ -164,7 +164,7 @@
 					</c:if>
 					<c:if test="${post.pawnerPostStatus == 'approve'}">
 						<div class="line margin-lr-1"></div>
-					Print
+						Bangkok
 					</c:if>
 					<c:if test="${post.pawnerPostStatus == 'process'}">
 						<div class="line margin-lr-1"></div>

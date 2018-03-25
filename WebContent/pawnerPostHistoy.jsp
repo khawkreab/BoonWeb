@@ -61,7 +61,7 @@
 							<div class="col-sm-5">
 								<div class="pro-img">
 									<img class="img-responsive"
-										src="images/uploadImage/${post.pawnerPostPicture }" />
+										src="images/imageUpload/${post.pawnerPostPicture }" />
 								</div>
 							</div>
 							<div class="col-md-7 single-top-in">

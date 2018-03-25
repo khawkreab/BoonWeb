@@ -55,7 +55,7 @@
 
 								<div class="pro-img">
 									<img class="img-responsive"
-										src="images/uploadImage/${estimate.pawnerPostId.pawnerPostPicture}"
+										src="images/imageUpload/${estimate.pawnerPostId.pawnerPostPicture}"
 										width="300" />
 								</div>
 							</div>

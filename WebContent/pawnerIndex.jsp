@@ -45,7 +45,7 @@
 							<div class=" mid-pop">
 								<div class="pro-img">
 									<a href="post-detail.html?item=${pawnshopPosts.pawnshopPostId}"> <img
-										src="images/uploadImage/${pawnshopPosts.pawnshopPostPicture}" class="img-responsive" alt=""></a>
+										src="images/imageUpload/${pawnshopPosts.pawnshopPostPicture}" class="img-responsive" alt=""></a>
 									<div class="zoom-icon ">
 											<a href="post-detail.html?item=${pawnshopPosts.pawnshopPostId}"> <i
 											class="glyphicon glyphicon-search icon"></i></a>

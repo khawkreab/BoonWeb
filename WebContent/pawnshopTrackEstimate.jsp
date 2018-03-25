@@ -55,7 +55,7 @@
 								<div class="col-sm-5">
 
 									<span class="history-img"><img class="img-responsive"
-										src="images/uploadImage/${track.pawnerPostId.pawnerPostPicture}" width="300" /></span>
+										src="images/imageUpload/${track.pawnerPostId.pawnerPostPicture}" width="300" /></span>
 								</div>
 								<div class="col-sm-7">
 

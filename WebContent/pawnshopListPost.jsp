@@ -62,7 +62,7 @@
 							<div class="col-sm-5">
 								<div class="pro-img">
 									<img class="img-responsive"
-										src="images/uploadImage/${post.pawnshopPostPicture }" />
+										src="images/imageUpload/${post.pawnshopPostPicture }" />
 								</div>
 							</div>
 
