@@ -117,7 +117,13 @@
 
 							/*# sourceMappingURL=style.css.map */
 						</style>
-
+						<script type="text/javascript">
+	var checkLogin = <%= session.getAttribute("isLogin") %>;
+	if(checkLogin != null){
+		sessionStorage.setItem("login", "yes");
+	}
+	</script>
+<script src="js/checkLogin.js"></script>
 					</head>
 
 					<body>

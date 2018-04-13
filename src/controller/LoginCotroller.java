@@ -7,6 +7,7 @@
 
 package controller;
 
+import java.awt.Window;
 import java.util.List;
 
 import javax.ejb.EJB;

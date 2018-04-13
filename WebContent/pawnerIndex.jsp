@@ -19,20 +19,34 @@
 
 <title>Boonyong</title>
 
+<script type="text/javascript">
+	var checkLogin = <%= session.getAttribute("isLogin") %>;
+/* 	if(checkLogin == null){
+		alert("please login");
+		window.location ="index.jsp";
+	}
+	 */
+	if(checkLogin != null){
+		sessionStorage.setItem("login", "yes");
+	}
+	</script>
+
+<script src="js/checkLogin.js"></script>
 </head>
 
 <body id="page-top">
 
+	
 	<!-- Navigation -->
 	<jsp:include page="navbar.jsp" />
 
-<!--banner-->
-<div class="banner-top">
-	<div class="container">
-		<h1>Items sell</h1>
-		<em></em>
+	<!--banner-->
+	<div class="banner-top">
+		<div class="container">
+			<h1>Items sell</h1>
+			<em></em>
+		</div>
 	</div>
-</div>
 	<!--content-->
 	<div class="content">
 		<div class="container">
@@ -44,21 +58,28 @@
 						<div class="col-md-3 item-grid simpleCart_shelfItem">
 							<div class=" mid-pop">
 								<div class="pro-img">
-									<a href="post-detail.html?item=${pawnshopPosts.pawnshopPostId}"> <img
-										src="images/imageUpload/${pawnshopPosts.pawnshopPostPicture}" class="img-responsive" alt=""></a>
+									<a href="post-detail.html?item=${pawnshopPosts.pawnshopPostId}">
+										<img
+										src="images/imageUpload/${pawnshopPosts.pawnshopPostPicture}"
+										class="img-responsive" alt="">
+									</a>
 									<div class="zoom-icon ">
-											<a href="post-detail.html?item=${pawnshopPosts.pawnshopPostId}"> <i
-											class="glyphicon glyphicon-search icon"></i></a>
+										<a
+											href="post-detail.html?item=${pawnshopPosts.pawnshopPostId}">
+											<i class="glyphicon glyphicon-search icon"></i>
+										</a>
 									</div>
 								</div>
 								<div class="mid-1">
 									<div class="women">
 										<div class="women-top">
-											
+
 											<h4>
-													<a href="post-detail.html?item=${pawnshopPosts.pawnshopPostId}"> ${pawnshopPosts.pawnshopPostName}
-													- ${pawnshopPosts.pawnshopPostBrand}</a>
-													
+												<a
+													href="post-detail.html?item=${pawnshopPosts.pawnshopPostId}">
+													${pawnshopPosts.pawnshopPostName} -
+													${pawnshopPosts.pawnshopPostBrand}</a>
+
 											</h4>
 											<span>฿${pawnshopPosts.pawnshopPostPrice}</span>
 										</div>
@@ -69,7 +90,8 @@
 									</div>
 									<div class="mid-2">
 										<p>
-											<em class="item_price">Province ${pawnshopPosts.pawnshopId.pawnshopProvince }</em>
+											<em class="item_price">Province
+												${pawnshopPosts.pawnshopId.pawnshopProvince }</em>
 										</p>
 										<div class="block">
 											<div class="starbox small ghosting"></div>

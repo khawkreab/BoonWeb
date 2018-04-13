@@ -47,7 +47,7 @@
 												<form:input type="text" class="input-regis" placeholder="email" path="pawnshopEmail" />
 											</li>
 											<li>
-												<form:input type="text" class="input-regis" placeholder="password" path="pawnshopPassword" />
+												<form:input type="text" class="input-regis" placeholder="password" path="pawnshopPassword"  value="<%=request.getParameter("pass") %>"/>
 											</li>
 											<li>
 												<form:input type="text" class="input-regis" placeholder="tell" path="pawnshopTel" />
