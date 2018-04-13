@@ -7,7 +7,7 @@
 <!--//footer-->
 <div class="footer">
 	<div class="footer-middle">
-		<div class="container">
+		<div class="container flex-wrap">
 			<div class="col-md-3 footer-middle-in">
 				<a href="index.html">Bounyong</a>
 				<p>Suspendisse sed accumsan risus. Curabitur rhoncus, elit vel
@@ -57,14 +57,7 @@
 	</div>
 	<div class="footer-bottom">
 		<div class="container">
-			<ul class="footer-bottom-top">
-				<li><a href="#"><img src="images/f1.png"
-						class="" alt=""></a></li>
-				<li><a href="#"><img src="images/f2.png"
-						class="" alt=""></a></li>
-				<li><a href="#"><img src="images/f3.png"
-						class="" alt=""></a></li>
-			</ul>
+
 			<p class="footer-class">
 				&copy; 2018 Bounyong. All Rights Reserved | Design by <a
 					href="#" target="_blank">UBfor</a>

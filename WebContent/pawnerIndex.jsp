@@ -13,25 +13,17 @@
 <html>
 <head>
 <link rel="icon" href="img/logos/Artboard.png">
-<meta charset="utf-8">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 <title>Boonyong</title>
 
 <script type="text/javascript">
 	var checkLogin = <%= session.getAttribute("isLogin") %>;
-/* 	if(checkLogin == null){
-		alert("please login");
-		window.location ="index.jsp";
-	}
-	 */
 	if(checkLogin != null){
 		sessionStorage.setItem("login", "yes");
 	}
 	</script>
 
-<script src="js/checkLogin.js"></script>
+<!-- <script src="js/checkLogin.js"></script> -->
 </head>
 
 <body id="page-top">

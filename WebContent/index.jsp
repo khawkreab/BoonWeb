@@ -67,12 +67,12 @@
 			<a class="carousel-control-prev" href="#carouselExampleIndicators"
 				role="button" data-slide="prev">
 				<h1>
-					<i class="glyphicon glyphicon-circle-arrow-left"
+					<i class="fas fa-arrow-alt-circle-left"
 						aria-hidden="true"></i>
 				</h1> <span class="sr-only">Previous</span>
 			</a> <a class="carousel-control-next" href="#carouselExampleIndicators"
 				role="button" data-slide="next"><h1>
-					<i class="glyphicon glyphicon-circle-arrow-right"
+					<i class="fas fa-arrow-alt-circle-right"
 						aria-hidden="true"></i>
 				</h1> <span class="sr-only">Next</span> </a>
 		</div>
@@ -169,12 +169,12 @@
 					</div>
 				</div>
 				<a class="carousel-control-prev" href="#teamdev" role="button"
-					data-slide="prev"> <span
-					class="glyphicon glyphicon-chevron-left color-black" aria-hidden="true"></span>
+					data-slide="prev"> <i
+					class="fas fa-chevron-square-left color-black" aria-hidden="true"></i>
 					<span class="sr-only">Previous</span>
 				</a> <a class="carousel-control-next" href="#teamdev" role="button"
-					data-slide="next"> <span
-					class="glyphicon glyphicon-chevron-right color-black" aria-hidden="true"></span>
+					data-slide="next"> <i
+					class="fas fa-chevron-square-right color-black" aria-hidden="true"></i>
 					<span class="sr-only">Next</span>
 				</a>
 			</div>

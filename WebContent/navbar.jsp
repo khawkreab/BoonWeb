@@ -20,7 +20,7 @@
 
 <!-- Bootstrap core CSS -->
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="css/bootstrap.css" rel="stylesheet">
+<!-- <link href="css/bootstrap.css" rel="stylesheet"> -->
 
 <!-- Custom styles for this template -->
 <link href="css/new-design.css" rel="stylesheet">
@@ -32,7 +32,7 @@
 <link href="css/style4.css" rel="stylesheet" type="text/css" media="all" />
 
 <!-- font icon for this template -->
-<link href="vendor/font-awesome/css/font-awesome.min.css"
+<link href="vendor/font-awesome/css/fontawesome-all.min.css"
 	rel="stylesheet" type="text/css">
 
 <!--- start-rate---->
@@ -43,10 +43,164 @@
 
 <body>
 
+	<nav class="navbar navbar-expand-lg navbar-black bg-glay navbar-height">
+		<div class="container">
+			<!-- ----------------------------pawner login---------------------------------------- -->
+			<%
+				if (session.getAttribute("isLogin") == "yes") {
+					if (session.getAttribute("userType") == "pawner") {
+			%>
+			<a class="navbar-brand" href="pawner-index.html"> <img
+				src="img/logos/logo-white.png" alt=""> BOONYONG
+			</a>
+			<!-- -----------------------------pawnShop login--------------------------------------- -->
+			<%
+				} else if (session.getAttribute("userType") == "pawnShop") {
+			%><a class="navbar-brand" href="pawnshop-index.html"> <img
+				src="img/logos/logo-white.png" alt=""> BOONYONG
+			</a>
+			<%
+				}
+				} else {
+			%><a class="navbar-brand" href="#"> <img
+				src="img/logos/logo-white.png" alt=""> BOONYONG
+			</a>
+			<%
+				}
+			%>
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<i class="fas fa-bars"></i>
+			</button>
+
+			<ul class="navbar-nav ml-auto navbar-hidden">
+				<!-- ----------------------------pawner login---------------------------------------- -->
+				<%
+					if (session.getAttribute("isLogin") == "yes") {
+						if (session.getAttribute("userType") == "pawner") {
+				%>
+				<li><a class="nav-link" href="pawner-pledge.html">pledge</a></li>
+				<li><a class="nav-link" href="pawner-track-pledge.html">track
+						my pledge</a></li>
+				<li><a class="nav-link" href="pawner-order.html">my order</a></li>
+				<li class="dropdown show"><a href="#" class="dropdown-toggle"
+					data-toggle="dropdown" role="button" aria-expanded="false"> <%=session.getAttribute("username")%></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><p>My accounts</p>
+							<div class="navbar-account">
+								<span class="navbar-account-photo">photo</span><span
+									class="navbar-account-info"><span
+									class="navbar-account-naem"><%=session.getAttribute("username")%></span><span
+									class="navbar-account-email">email</span></span>
+							</div></li>
+							<li><a href="logout.html" class="nav-link ">Edit account</a></li>
+						<li><a href="logout.html" class="nav-link ">Logout</a></li>
+					</ul></li>
+				<!-- -----------------------------pawnShop login--------------------------------------- -->
+				<%
+					} else if (session.getAttribute("userType") == "pawnShop") {
+				%>
+
+				<li><a class="nav-link" href="pawnshop-pledge-sell.html">pledge
+						sell </a></li>
+				<li><a class="nav-link" href="pawnshop-track-estimate.html">track
+						my estimate</a></li>
+				<li><a class="nav-link" href="pawnshop-estimate-history.html">history</a></li>
+				<li><a class="nav-link" href="pawnshop-list-post.html">my
+						post </a></li>
+				<li class="dropdown show"><a href="#" class="dropdown-toggle"
+					data-toggle="dropdown" role="button" aria-expanded="false"> <%=session.getAttribute("username")%></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><p>My accounts</p>
+							<div class="navbar-account">
+								<span class="navbar-account-photo">photo</span><span
+									class="navbar-account-info"><span
+									class="navbar-account-naem"><%=session.getAttribute("username")%></span><span
+									class="navbar-account-email">email</span></span>
+							</div></li>
+						<li><a href="logout.html" class="nav-link ">Edit account</a></li>
+						<li><a href="logout.html" class="nav-link ">Logout</a></li>
+					</ul></li>
+				<!-- ------------------------------not login-------------------------------------- -->
+				<%
+					}
+					} else {
+				%>
+				<li><a data-toggle="modal" data-target="#modalLogin"
+					class="nav-link js-scroll-trigger" href="#">Login</a></li>
+				<li><a href="pawner-register-form.html"
+					class="nav-link js-scroll-trigger">Register</a></li>
+				<%
+					}
+				%>
+
+			</ul>
+		</div>
+	</nav>
+	<!-- ----------------------------navbar-collapse---------------------------------------- -->
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="ml-auto">
+			<!-- ----------------------------pawner login---------------------------------------- -->
+			<%
+				if (session.getAttribute("isLogin") == "yes") {
+					if (session.getAttribute("userType") == "pawner") {
+			%>
+			<li>
+				<div class="navbar-account">
+					<span class="navbar-account-photo">photo</span><span
+						class="navbar-account-info"><span
+						class="navbar-account-naem"><%=session.getAttribute("username")%></span><span
+						class="navbar-account-email">email</span></span>
+				</div>
+			</li>
+			<li><a class="nav-link" href="pawner-pledge.html">pledge</a></li>
+			<li><a class="nav-link" href="pawner-track-pledge.html">track
+					my pledge</a></li>
+			<li><a class="nav-link" href="pawner-post-history.html">history</a></li>
+			<li><a class="nav-link" href="pawner-order.html">my order</a></li>
+			<li><a href="logout.html" class="nav-link ">Logout</a></li>
+
+			<!-- -----------------------------pawnShop login--------------------------------------- -->
+			<%
+				} else if (session.getAttribute("userType") == "pawnShop") {
+			%>
+			<li><li>
+				<div class="navbar-account">
+					<span class="navbar-account-photo">photo</span><span
+						class="navbar-account-info"><span
+						class="navbar-account-naem"><%=session.getAttribute("username")%></span><span
+						class="navbar-account-email">email</span></span>
+				</div>
+			</li></li>
 
 
+			<li><a class="nav-link" href="pawnshop-pledge-sell.html">pledge
+					sell </a></li>
+			<li><a class="nav-link" href="pawnshop-track-estimate.html">track
+					my estimate</a></li>
+			<li><a class="nav-link" href="pawnshop-estimate-history.html">history</a></li>
+			<li><a class="nav-link" href="pawnshop-list-post.html">my
+					post </a></li>
+
+			<li><a href="logout.html" class="nav-link ">Logout</a></li>
+			<!-- ------------------------------not login-------------------------------------- -->
+			<%
+				}
+				} else {
+			%>
+			<li><a data-toggle="modal" data-target="#modalLogin"
+				class="nav-link js-scroll-trigger" href="#">Login</a></li>
+			<li><a href="pawner-register-form.html"
+				class="nav-link js-scroll-trigger">Register</a></li>
+			<%
+				}
+			%>
+		</ul>
+	</div>
 	<!--header-->
-	<div class="header">
+	<%-- <div class="header">
 		<div class="container">
 			<div class="head">
 				<div class="logo">
@@ -214,7 +368,7 @@
 			</div>
 		</div>
 	</div>
-
+--%>
 	<!------------------------------------------------ popup -------------------------------------------------->
 	<div class="modal fade" id="modalLogin" role="dialog">
 		<div class="modal-dialog">
@@ -266,6 +420,10 @@
 
 	<!-- Plugin JavaScript -->
 	<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+	<!-- Bootstrap core JavaScript -->
+	<script src="vendor/jquery/jquery.min.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
