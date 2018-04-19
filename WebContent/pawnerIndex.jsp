@@ -16,31 +16,56 @@
 
 <title>Boonyong</title>
 
-<script type="text/javascript">
+<%-- <script type="text/javascript">
 	var checkLogin = <%= session.getAttribute("isLogin") %>;
-	if(checkLogin != null){
+	if(checkLogin !== null){
 		sessionStorage.setItem("login", "yes");
 	}
 	</script>
 
-<!-- <script src="js/checkLogin.js"></script> -->
+<script src="js/checkLogin.js"></script> --%>
 </head>
 
 <body id="page-top">
 
-	
+
 	<!-- Navigation -->
 	<jsp:include page="navbar.jsp" />
 
 	<!--banner-->
 	<div class="banner-top">
-		<div class="container">
-			<h1>Items sell</h1>
-			<em></em>
-		</div>
+		<h1>Items sell</h1>
+		<em></em>
 	</div>
 	<!--content-->
-	<div class="content">
+	<div class="container">
+		<c:forEach items="${pawnshopPosts}" var="pawnshopPosts">
+
+			<div class="card">
+
+				<img class="card-img-top"
+					src="images/imageUpload/${pawnshopPosts.pawnshopPostPicture}"
+					alt="Card image cap"> <a
+					href="post-detail.html?item=${pawnshopPosts.pawnshopPostId}"> <span
+					class="zoom-icon "> <i class="fas fa-search icon "></i>
+				</span>
+				</a>
+				<div class="card-body">
+					<span class="card-body-title"><a
+						href="post-detail.html?item=${pawnshopPosts.pawnshopPostId}">
+							${pawnshopPosts.pawnshopPostName}
+							${pawnshopPosts.pawnshopPostBrand}</a></span> <span
+						class="card-body-location"><i class="fas fa-map-marker-alt"></i>
+						${pawnshopPosts.pawnshopId.pawnshopProvince }</span> <span
+						class="card-body-price">฿
+						${pawnshopPosts.pawnshopPostPrice}</span>
+				</div>
+			</div>
+
+		</c:forEach>
+	</div>
+
+	<%-- <div class="content">
 		<div class="container">
 			<!--products-->
 			<div class="content-mid">
@@ -101,7 +126,7 @@
 
 			</div>
 			<!--//products-->
-		</div>
+		</div> --%>
 
 	</div>
 	<jsp:include page="footer.jsp"></jsp:include>

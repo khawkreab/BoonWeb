@@ -139,7 +139,7 @@ public class PawnshopPostController {
 
 	@RequestMapping("/post-detail")
 	public ModelAndView detail(HttpServletRequest request) {
-		ModelAndView mv = new ModelAndView("postDetail.jsp");
+		ModelAndView mv = new ModelAndView("pawnerPostDetail.jsp");
 		PawnshopPost pawnshopPost;
 		List<Picture> pictures;
 

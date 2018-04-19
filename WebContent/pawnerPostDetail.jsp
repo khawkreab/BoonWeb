@@ -10,93 +10,86 @@
 <head>
 <link rel="icon" href="img/logos/Artboard.png">
 <title>Detail</title>
-<!-- slide picture -->
-<link rel="stylesheet" href="css/flexslider.css" type="text/css"
-	media="screen" />
 
-<script type="application/x-javascript">
-	 addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
-</script>
-
-<script src="js/jquery.min.js"></script>
-<!--- start-rate---->
-<script src="js/jstarbox.js"></script>
-<link rel="stylesheet" href="css/jstarbox.css" type="text/css"
-	media="screen" />
-<script type="text/javascript">
-	jQuery(function() {
-		jQuery('.starbox')
-				.each(
-						function() {
-							var starbox = jQuery(this);
-							starbox
-									.starbox(
-											{
-												average : starbox
-														.attr('data-start-value'),
-												changeable : starbox
-														.hasClass('unchangeable') ? false
-														: starbox
-																.hasClass('clickonce') ? 'once'
-																: true,
-												ghosting : starbox
-														.hasClass('ghosting'),
-												autoUpdateAverage : starbox
-														.hasClass('autoupdate'),
-												buttons : starbox
-														.hasClass('smooth') ? false
-														: starbox
-																.attr('data-button-count') || 5,
-												stars : starbox
-														.attr('data-star-count') || 5
-											})
-									.bind(
-											'starbox-value-changed',
-											function(event, value) {
-												if (starbox.hasClass('random')) {
-													var val = Math.random();
-													starbox.next().text(
-															' ' + val);
-													return val;
-												}
-											})
-						});
-	});
-</script>
-<!---//End-rate---->
-<link href="css/form.css" rel="stylesheet" type="text/css" media="all" />
+<%
+	int dataslideto = 0;
+	int dataslideto2 = 0;
+	String active = "active";
+	String active2 = "active";
+%>
 </head>
 <body>
 	<jsp:include page="navbar.jsp" />
 
 	<!--banner-->
 	<div class="banner-top">
-		<div class="container">
-			<h1>Information</h1>
-			<em></em>
-		</div>
+		<h1>Information</h1>
+		<em></em>
 	</div>
+
+
 	<div class="single">
 		<div class="container">
-			<div class="col-md-11">
-				<div class="col-md-4 grid">
-					<div class="flexslider">
-						<ul class="slides">
-							<c:forEach var="pic" items="${pictures}">
-								<li data-thumb="images/imageUpload/${pic.picture}">
-									<div class="thumb-image">
-										<img src="images/imageUpload/${pic.picture}"
-											data-imagezoom="true" class="img-responsive">
-									</div>
-								</li>
-							</c:forEach>
-						</ul>
+				<div class="col-md-5">
+
+					<div class="row">
+						<div class="col-md-12">
+							<div id="carouselExampleIndicators" class="carousel slide"
+								data-ride="carousel" data-interval="0">
+
+								<div class="carousel-inner" role="listbox">
+									<c:forEach var="pic" items="${pictures}">
+
+										<div class="carousel-item <%=active2%>">
+											<img class="d-block img-fluid"
+												src="images/imageUpload/${pic.picture}" alt="First slide">
+											<div class="carousel-caption d-none d-md-block">
+												<h3>Pledge online</h3>
+												<p>Updated every day</p>
+											</div>
+										</div>
+										<div class="carousel-item">
+											<img class="d-block img-fluid"
+												src="images/imageUpload/${pic.picture}" alt="Second slide">
+											<div class="carousel-caption d-none d-md-block">
+												<h3></h3>
+												<p></p>
+											</div>
+										</div>
+										<%
+											dataslideto2++;
+												if (dataslideto2 > 0) {
+													active2 = "";
+												}
+										%>
+									</c:forEach>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-12">
+
+							<ol class="item-info-thumbs">
+								<c:forEach var="pic" items="${pictures}">
+
+									<li data-target="#carouselExampleIndicators"
+										data-slide-to="<%=dataslideto%>" class="<%=active%>"><img
+										class="" src="images/imageUpload/${pic.picture}" alt=""></li>
+									<li data-target="#carouselExampleIndicators" data-slide-to="1"><img
+										class="" src="images/imageUpload/${pic.picture}" alt=""></li>
+									<%
+										dataslideto++;
+											if (dataslideto > 0) {
+												active = "";
+											}
+									%>
+								</c:forEach>
+							</ol>
+						</div>
 					</div>
 				</div>
-				<div class="col-md-7 single-top-in">
+				<div class="col-md-6 single-top-in">
 					<div class="span_2_of_a1 simpleCart_shelfItem">
-						<h3>${pawnshopPost.pawnshopPostName }
-							${post.pawnshopPostBrand }</h3>
+						<h3>${pawnshopPost.pawnshopPostName }${post.pawnshopPostBrand }</h3>
 						<p class="in-para">Information</p>
 						<div class="price_single">
 							<div class="preview">
@@ -220,7 +213,6 @@
 					<div class="clearfix"></div>
 				</div>
 				<!--//content-->
-			</div>
 		</div>
 	</div>
 
