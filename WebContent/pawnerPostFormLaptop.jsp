@@ -50,7 +50,7 @@
 										<form:form method="post" action="savePost.html" modelAttribute="pawnerPost" enctype="multipart/form-data">
 											<input type="hidden" name="pawnerPostId" />
 											<input type="hidden" name="pawnerId.pawnerId" />
-											<input type="hidden" name="pawnerPostItemType" value="Electronic" />
+											<input type="hidden" name="pawnerPostItemType" value="Laptop" />
 											<div class="form-group float-left">
 												<input name="files" type="file" onchange="readURL(this);" />
 											</div>
