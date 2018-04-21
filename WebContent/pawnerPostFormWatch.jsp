@@ -28,170 +28,7 @@
 	rel="stylesheet" type="text/css">
 
 <style class="cp-pen-styles">
-.box-img-list {
-	border: 2px dashed #e6e6e6;
-	border-radius: 5px;
-	width: 100%;
-	display: flex;
-	max-width: 1000px;
-	align-items: flex-start;
-	justify-content: flex-start;
-	flex-direction: row;
-	flex-wrap: wrap;
-}
 
-.box-img-thumb {
-	background-image: url(images/icon/pic-ico.png);
-	background-repeat: no-repeat;
-	background-position: center;
-}
-
-.box {
-	display: none;
-	float: left;
-	min-width: 134px;
-	height: 102px;
-	margin: 10px;
-	background-color: white;
-	border-radius: 0px;
-	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-	-webkit-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-	transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-	overflow: hidden;
-}
-
-.upload-options {
-	position: relative;
-	height: 75px;
-	/* background-color: cadetblue; */
-	cursor: pointer;
-	overflow: hidden;
-	text-align: center;
-	-webkit-transition: background-color ease-in-out 150ms;
-	transition: background-color ease-in-out 150ms;
-}
-
-.upload-options:hover {
-	/* background-color: #7fb1b3; */
-	
-}
-
-.upload-options input {
-	width: 0.1px;
-	height: 0.1px;
-	opacity: 0;
-	overflow: hidden;
-	position: absolute;
-	z-index: -1;
-}
-
-.upload-options label {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	align-items: center;
-	width: 100%;
-	height: 100%;
-	font-weight: 400;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-	cursor: pointer;
-	overflow: hidden;
-}
-
-.upload-options label::after {
-	/*content: 'photo_size_select_actual';*/
-	font-family: 'Material Icons';
-	position: absolute;
-	font-size: 2.5rem;
-	color: #e6e6e6;
-	top: calc(50% - 2.5rem);
-	left: calc(50% - 1.25rem);
-	z-index: 0;
-}
-
-.upload-options label span {
-	display: inline-block;
-	width: 50%;
-	height: 100%;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-	overflow: hidden;
-	vertical-align: middle;
-	text-align: center;
-}
-
-.upload-options label span:hover i.material-icons {
-	color: lightgray;
-}
-
-.js--image-preview {
-	height: 100%;
-	width: 100%;
-	position: relative;
-	overflow: hidden;
-	background-image: url("");
-	/* background-color: white; */
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-
-.js--image-preview::after {
-	/*content: "photo_size_select_actual";*/
-	font-family: 'Material Icons';
-	position: absolute;
-	font-size: 4.5em;
-	color: #e6e6e6;
-	top: calc(50% - 3rem);
-	left: calc(50% - 2.25rem);
-	z-index: 0;
-}
-
-.js--image-preview.js--no-default::after {
-	display: none;
-}
-
-i.material-icons {
-	-webkit-transition: color 100ms ease-in-out;
-	transition: color 100ms ease-in-out;
-	font-size: 2.25em;
-	line-height: 55px;
-	color: white;
-	display: block;
-}
-
-.drop {
-	display: block;
-	position: absolute;
-	background: rgba(95, 158, 160, 0.2);
-	border-radius: 100%;
-	-webkit-transform: scale(0);
-	transform: scale(0);
-}
-
-.animate {
-	-webkit-animation: ripple 0.4s linear;
-	animation: ripple 0.4s linear;
-}
-
-@
--webkit-keyframes ripple { 100% {
-	opacity: 0;
-	-webkit-transform: scale(2.5);
-	transform: scale(2.5);
-}
-
-}
-@
-keyframes ripple { 100% {
-	opacity: 0;
-	-webkit-transform: scale(2.5);
-	transform: scale(2.5);
-}
-}
 </style>
 </head>
 
@@ -201,10 +38,8 @@ keyframes ripple { 100% {
 	<jsp:include page="navbar.jsp" />
 	<!--banner-->
 	<div class="banner-top">
-		<div class="container">
 			<h1>Pledge Wearables</h1>
 			<em></em>
-		</div>
 	</div>
 	<!--content-->
 	<div class="content">
@@ -221,8 +56,77 @@ keyframes ripple { 100% {
 									<input type="hidden" name="pawnerId.pawnerId" />
 									<input type="hidden" name="pawnerPostItemType"
 										value="Electronic" />
+									
+									<label class="label-input100">Post Name</label>
+									<div class="wrap-input100 validate-input"
+										data-validate="Valid email is required: ex@abc.xyz">
+										<input class="input100" type="text" name="pawnerPostName">
+									</div>
+									<label class="label-input100">Brand</label>
+									<div class="wrap-input100 validate-input">
+										<select class="input100" name="pawnerPostBrand"
+											required="required">
+											<option>Rolex</option>
+											<option>Patek Philippe</option>
+											<option>Audemars Piguet</option>
+											<option>Cartier</option>
+											<option>Franck Muller</option>
+											<option>Tag Heuer</option>
+											<option>Omega</option>
+											<option>Casio</option>
+										</select>
+									</div>
+									<label class="label-input100">Type of case</label>
+									<div class="wrap-input100 validate-input">
+										<select class="input100" name="pawnerPostCase"
+											required="required">
+											<option>Stainless Steel</option>
+											<option>White Gold</option>
+											<option>Yellow Gold</option>
+											<option>Ceramic</option>
+											<option>Pink Gold</option>
+											<option>Others (Please specify)</option>
+											<option>Unknown</option>
+										</select>
+									</div>
+									<label class="label-input100">Type of bracelet</label>
+									<div class="wrap-input100 validate-input">
+										<select class="input100" name="pawnerPostBracelet"
+											required="required">
+											<option>Stainless Steel</option>
+											<option>Gold and Silver</option>
+											<option>Gold</option>
+											<option>Platinum</option>
+											<option>Leather</option>
+											<option>Plastic</option>
+											<option>Rubber</option>
+											<option>Others (Please specify)</option>
+											<option>Unknown</option>
+										</select>
+									</div>
+									<label class="label-input100">Is there any diamonds on
+										your timepiece?</label>
+									<div class="wrap-input100 validate-input">
+										<select class="input100" name="pawnerPostDiamond"
+											required="required">
+											<option>No</option>
+											<option>Dial</option>
+											<option>Bezel</option>
+											<option>On the digits</option>
+										</select>
+									</div>
+									
+									<!-- ------------------------Production year----------------------------  -->
+									<label class="label-input100">Production year</label>
+									<div class="wrap-input100 validate-input"
+										data-validate="Valid email is required: ex@abc.xyz">
+										<input class="input100" type="date"
+											name="pawnerPostProduction" placeholder=""> <span
+											class="focus-input100"></span>
+									</div>
+									
+									<!-- ------------------------upload image----------------------------  -->
 									<div class="wrap-input100 float-left" style="border: none;">
-										<!-- <input name="files" type="file" onchange="readURL(this);" /> -->
 										<div class="box-img-list">
 											<div class="box box-img-1" style="display: block">
 												<div class="box-img-thumb">
@@ -284,73 +188,13 @@ keyframes ripple { 100% {
 													</div>
 												</div>
 											</div>
+											<span class="clear-trash d-flex"> <i class="mr-auto">ใส่รูปได้สูงสุด
+													6 รูป</i><i class="clear-img fas fa-trash-alt"> ลบรูป</i>
+											</span>
 										</div>
 									</div>
-									<label class="label-input100">Post Name</label>
-									<div class="wrap-input100 validate-input"
-										data-validate="Valid email is required: ex@abc.xyz">
-										<input class="input100" type="text" name="pawnerPostName">
-									</div>
-									<label class="label-input100">Brand</label>
-									<div class="wrap-input100 validate-input">
-										<select class="input100" name="pawnerPostBrand"
-											required="required">
-											<option>Rolex</option>
-											<option>Patek Philippe</option>
-											<option>Audemars Piguet</option>
-											<option>Cartier</option>
-											<option>Franck Muller</option>
-											<option>Tag Heuer</option>
-											<option>Omega</option>
-											<option>Casio</option>
-										</select>
-									</div>
-									<label class="label-input100">Type of case</label>
-									<div class="wrap-input100 validate-input">
-										<select class="input100" name="pawnerPostCase"
-											required="required">
-											<option>Stainless Steel</option>
-											<option>White Gold</option>
-											<option>Yellow Gold</option>
-											<option>Ceramic</option>
-											<option>Pink Gold</option>
-											<option>Others (Please specify)</option>
-											<option>Unknown</option>
-										</select>
-									</div>
-									<label class="label-input100">Type of bracelet</label>
-									<div class="wrap-input100 validate-input">
-										<select class="input100" name="pawnerPostBracelet"
-											required="required">
-											<option>Stainless Steel</option>
-											<option>Gold and Silver</option>
-											<option>Gold</option>
-											<option>Platinum</option>
-											<option>Leather</option>
-											<option>Plastic</option>
-											<option>Rubber</option>
-											<option>Others (Please specify)</option>
-											<option>Unknown</option>
-										</select>
-									</div>
-									<label class="label-input100">Is there any diamonds on
-										your timepiece?</label>
-									<div class="wrap-input100 validate-input">
-										<select class="input100" name="pawnerPostDiamond"
-											required="required">
-											<option>No</option>
-											<option>Dial</option>
-											<option>Bezel</option>
-											<option>On the digits</option>
-										</select>
-									</div>
-									<label class="label-input100">Production year</label>
-									<div class="wrap-input100 validate-input"
-										data-validate="Valid email is required: ex@abc.xyz">
-										<input class="input100" type="date"
-											name="pawnerPostProduction" placeholder=""> <span
-											class="focus-input100"></span>
-									</div>
+									
+									<!-- ------------------------Description----------------------------  -->
 									<label class="label-input100">Description</label>
 									<div class="wrap-input100 validate-input"
 										data-validate="Message is required">
@@ -359,18 +203,16 @@ keyframes ripple { 100% {
 										<span class="focus-input100"></span>
 									</div>
 									<div class="form-group-post float-left">
-										<span style="line-height: 45px;">
-											<input type="checkbox" name="pawnerPostPackage" value="yes" />
-											Packaging
-										</span>
-										<span style="line-height: 5px;">
-											<input type="checkbox" name="pawnerPostWarranty" value="yes" />
-											Warranty Certificate
-										</span>
-										<span style="line-height: 55px;">
-											<input type="checkbox" required="required"> I agree
-											to the <strong>trem of service</strong>
-										</span>
+										<ul>
+											<li style="line-height: 45px;"><input type="checkbox"
+												name="pawnerPostPackage" value="yes" /> Packaging</li>
+											<li style="line-height: 5px;"><input type="checkbox"
+												name="pawnerPostWarranty" value="yes" /> Warranty
+												Certificate</li>
+											<li style="line-height: 55px;"><input type="checkbox"
+												required="required"> I agree to the <strong>trem
+													of service</strong></li>
+										</ul>
 									</div>
 									<div class="container-contact100-form-btn">
 										<button type="submit" class="contact100-form-btn">
@@ -440,6 +282,14 @@ keyframes ripple { 100% {
 			});
 			$('#img-pic-5').click(function() {
 				$('.box-img-6').css("display", "block");
+			});
+
+			$('.clear-img').click(function() {
+				for (let i = 6; i > 1; i--) {
+					$('.box-img-' + i).css("display", "none");
+				}
+				$('.js--image-preview').css("background-image", "")
+				$('.image-upload').val('');
 			});
 		});
 		function initImageUpload(box) {
