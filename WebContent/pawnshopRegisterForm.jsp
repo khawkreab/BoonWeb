@@ -25,6 +25,7 @@
 		</head>
 
 		<body style="overflow: hidden">
+		<%String email = request.getParameter("emailto") , pass = request.getParameter("passto") , tel = request.getParameter("telto"); %>
 			<form:form method="post" action="savePawnshop.html" commandName="pawnshop">
 				<div class="bg">
 					<div style="height:500px;">
@@ -44,13 +45,13 @@
 												<form:input type="text" class="input-regis" placeholder="pawnshop name" path="pawnshopName" />
 											</li>
 											<li>
-												<form:input type="text" class="input-regis" placeholder="email" path="pawnshopEmail" />
+												<form:input type="text" class="input-regis" placeholder="email" path="pawnshopEmail" value="<%=email %>"/>
 											</li>
 											<li>
-												<form:input type="text" class="input-regis" placeholder="password" path="pawnshopPassword"  value="<%=request.getParameter("pass") %>"/>
+												<form:input type="text" class="input-regis" placeholder="password" path="pawnshopPassword" value="<%=pass %>"/>
 											</li>
 											<li>
-												<form:input type="text" class="input-regis" placeholder="tell" path="pawnshopTel" />
+												<form:input type="text" class="input-regis" placeholder="tell" path="pawnshopTel" value="<%=tel %>"/>
 											</li>
 											<li>
 												<form:select class="input-regis" path="pawnshopProvince">
