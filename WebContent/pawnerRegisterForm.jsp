@@ -45,14 +45,14 @@
 			//the user that they have entered the correct password 
 			pass2.style.backgroundColor = goodColor;
 			message.style.color = goodColor;
-			message.innerHTML = "Passwords Match!"
+			message.innerHTML = "รหัสผ่านตรงกัน"
 		} else {
 			//The passwords do not match.
 			//Set the color to the bad color and
 			//notify the user.
 			pass2.style.backgroundColor = badColor;
 			message.style.color = badColor;
-			message.innerHTML = "Passwords Do Not Match!"
+			message.innerHTML = "รหัสผ่านไม่ตรงกัน!"
 		}
 	}
 
@@ -76,9 +76,10 @@
 			<div style="max-width: 900px;">
 				<div class="modal-content"
 					style="width: 400px; border-radius: .5rem;">
-					<form:form method="post" action="savePawner.html"
-						commandName="pawner">
-						<div class="icon-header" style="width: 80%; margin: auto;">
+
+					<div class="icon-header" style="width: 80%; margin: auto;">
+						<form:form method="post" action="savePawner.html"
+							commandName="pawner">
 							<img src="img/logos/Artboard.png"
 								style="height: 50px; margin-bottom: 10px; margin-top: 20px;" />
 							<h1 style="font-size: 30px; letter-spacing: -1px; color: #555;">ยินดีตอนรับ</h1>
@@ -91,45 +92,42 @@
 										placeholder="นามสกุล" required="required" /></li>
 								<!-- ----------not set path ----------- -->
 								<li><input type="text" id="telto" class="account-regis"
-									placeholder="tel" required="required" onkeyup="continueto();" /></li>
+									placeholder="เบอร์โทรศัพท์" required="required" onkeyup="continueto();" /></li>
 								<li><form:input path="pawnerEmail" type="text" id="mail"
-										class="account-regis" placeholder="email" required="required"
+										class="account-regis" placeholder="อีเมล" required="required"
 										onkeyup="continueto();" /></li>
 								<li><form:input path="pawnerPassword" type="password"
-										id="pass1" class="account-regis" placeholder="password"
+										id="pass1" class="account-regis" placeholder="รหัสผ่าน"
 										required="required" /></li>
 								<li><input type="password" id="pass2" class="account-regis"
-									placeholder="confirm password" required="required"
+									placeholder="ยืนยันรหัสผ่าน" required="required"
 									onkeyup="checkPass(); return false;" /> <span
 									id="confirmMessage" class="confirmMessage"></span></li>
 								<li>
-									<button type="submit" class="account-submit">Create
-										Account</button>
+									<button type="submit" class="account-submit">สร้างบัญชี</button>
 								</li>
 								<li>
-									<p class="Subhead-description" style="margin-top: 10px;">or</p>
+									<p class="Subhead-description" style="margin-top: 5px;">หรือ</p>
 								</li>
 
 							</ul>
-						</div>
-						<div class="modal-footer">
-							<a href="" onclick="continueTo()" style="color: #555;">สร้างบัญชีสำหรับโรงรับจำนำ</a>
-						</div>
-					</form:form>
+						</form:form>
+					</div>
+
+					<div class="modal-footer">
+						<form action="pawnshop-register-form.html" method="post">
+							<input type="hidden" value="" id="email-continue" name="emailto">
+							<input type="hidden" value="" id="pass-continue" name="passto">
+							<input type="hidden" value="" id="tel-continue" name="telto">
+							<button type="submit" id="continueto">สร้างบัญชีสำหรับโรงรับจำนำ</button>
+						</form>
+					</div>
+
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<div class="modal-footer">
-		<form action="pawnshop-register-form.html" method="post">
-			<input type="hidden" value="" id="email-continue" name="emailto">
-			<input type="hidden" value="" id="pass-continue" name="passto">
-			<input type="hidden" value="" id="tel-continue" name="telto">
-			<button type="submit" class="account-submit" id="continueto">continue
-				to pawnshop account</button>
-		</form>
-	</div>
 
 
 	<!-- Bootstrap core JavaScript -->

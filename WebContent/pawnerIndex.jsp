@@ -40,7 +40,7 @@
 		</div>
 	</div>
 	<!--content-->
-	<div class="container">
+	<div class="container flex-wrap">
 		<c:forEach items="${pawnshopPosts}" var="pawnshopPosts">
 
 			<div class="card">
@@ -130,7 +130,6 @@
 			<!--//products-->
 		</div> --%>
 
-	</div>
 	<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>
