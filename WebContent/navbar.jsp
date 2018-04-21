@@ -81,46 +81,46 @@
 					if (session.getAttribute("isLogin") == "yes") {
 						if (session.getAttribute("userType") == "pawner") {
 				%>
-				<li><a class="nav-link" href="pawner-pledge.html">pledge</a></li>
-				<li><a class="nav-link" href="pawner-track-pledge.html">track
-						my pledge</a></li>
-				<li><a class="nav-link" href="pawner-order.html">my order</a></li>
+				<li><a class="nav-link" href="pawner-pledge.html">จำนำ</a></li>
+				<li><a class="nav-link" href="pawner-track-pledge.html">สถานะการจำนำ</a></li>
+				<li><a class="nav-link" href="pawner-order.html">ตะกร้าสินค้า</a></li>
 				<li class="dropdown show"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown" role="button" aria-expanded="false"> <%=session.getAttribute("username")%></a>
 					<ul class="dropdown-menu" role="menu">
-						<li><p>My accounts</p>
+						<li><p>บัญชีผู้ใช้งาน</p>
 							<div class="navbar-account">
-								<span class="navbar-account-photo">photo</span><span
+								<span class="navbar-account-photo">รูป</span><span
 									class="navbar-account-info"><span
 									class="navbar-account-naem"><%=session.getAttribute("username")%></span><span
 									class="navbar-account-email">email</span></span>
 							</div></li>
-							<li><a href="logout.html" class="nav-link ">Edit account</a></li>
-						<li><a href="logout.html" class="nav-link ">Logout</a></li>
+							<li><a href="logout.html" class="nav-link ">แก้ไขบัญชี</a></li>
+							<li><a href="" class="nav-link ">ประวัติการจำนำ</a></li>
+							<li><a href="" class="nav-link ">ประวัติการสังซื้อ</a></li>
+						<li><a href="logout.html" class="nav-link ">ออกจากระบบ</a></li>
 					</ul></li>
 				<!-- -----------------------------pawnShop login--------------------------------------- -->
 				<%
 					} else if (session.getAttribute("userType") == "pawnShop") {
 				%>
 
-				<li><a class="nav-link" href="pawnshop-pledge-sell.html">pledge
-						sell </a></li>
-				<li><a class="nav-link" href="pawnshop-track-estimate.html">track
-						my estimate</a></li>
-				<li><a class="nav-link" href="pawnshop-estimate-history.html">history</a></li>
-				<li><a class="nav-link" href="pawnshop-list-post.html">my
-						post </a></li>
+				<li><a class="nav-link" href="pawnshop-pledge-sell.html">ปล่อยของหลุดจำนำ</a></li>
+				<li><a class="nav-link" href="pawnshop-track-estimate.html">สถานะของหลุดจำนำ</a></li>
+				<li><a class="nav-link" href="pawnshop-estimate-history.html">ติดตามการประเมิณของจำนำ</a></li>
+				<!--  <li><a class="nav-link" href="pawnshop-list-post.html">รายการของฉัน</a></li> -->
 				<li class="dropdown show"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown" role="button" aria-expanded="false"> <%=session.getAttribute("username")%></a>
 					<ul class="dropdown-menu" role="menu">
-						<li><p>My accounts</p>
+						<li><p>บัญชีผู้ใช้งาน</p>
 							<div class="navbar-account">
 								<span class="navbar-account-photo">photo</span><span
 									class="navbar-account-info"><span
 									class="navbar-account-naem"><%=session.getAttribute("username")%></span><span
 									class="navbar-account-email">email</span></span>
 							</div></li>
-						<li><a href="logout.html" class="nav-link ">Edit account</a></li>
+						<li><a href="logout.html" class="nav-link ">แก้ไขบัญชี</a></li>
+						<li><a href="" class="nav-link ">ประวัติการประเมิณของจำนำ</a></li>
+						<li><a href="" class="nav-link ">ประวัติการปล่อยของหลุดจำนำ</a></li>
 						<li><a href="logout.html" class="nav-link ">Logout</a></li>
 					</ul></li>
 				<!-- ------------------------------not login-------------------------------------- -->
@@ -129,9 +129,9 @@
 					} else {
 				%>
 				<li><a data-toggle="modal" data-target="#modalLogin"
-					class="nav-link js-scroll-trigger" href="#">Login</a></li>
+					class="nav-link js-scroll-trigger" href="#">ลงชื่อเข้าใช้</a></li>
 				<li><a href="pawner-register-form.html"
-					class="nav-link js-scroll-trigger">Register</a></li>
+					class="nav-link js-scroll-trigger">สมัครสมาชิก</a></li>
 				<%
 					}
 				%>
@@ -139,236 +139,7 @@
 			</ul>
 		</div>
 	</nav>
-	<!-- ----------------------------navbar-collapse---------------------------------------- -->
-	<div class="collapse navbar-collapse" id="navbarSupportedContent">
-		<ul class="ml-auto">
-			<!-- ----------------------------pawner login---------------------------------------- -->
-			<%
-				if (session.getAttribute("isLogin") == "yes") {
-					if (session.getAttribute("userType") == "pawner") {
-			%>
-			<li>
-				<div class="navbar-account">
-					<span class="navbar-account-photo">photo</span><span
-						class="navbar-account-info"><span
-						class="navbar-account-naem"><%=session.getAttribute("username")%></span><span
-						class="navbar-account-email">email</span></span>
-				</div>
-			</li>
-			<li><a class="nav-link" href="pawner-pledge.html">pledge</a></li>
-			<li><a class="nav-link" href="pawner-track-pledge.html">track
-					my pledge</a></li>
-			<li><a class="nav-link" href="pawner-post-history.html">history</a></li>
-			<li><a class="nav-link" href="pawner-order.html">my order</a></li>
-			<li><a href="logout.html" class="nav-link ">Logout</a></li>
-
-			<!-- -----------------------------pawnShop login--------------------------------------- -->
-			<%
-				} else if (session.getAttribute("userType") == "pawnShop") {
-			%>
-			<li><li>
-				<div class="navbar-account">
-					<span class="navbar-account-photo">photo</span><span
-						class="navbar-account-info"><span
-						class="navbar-account-naem"><%=session.getAttribute("username")%></span><span
-						class="navbar-account-email">email</span></span>
-				</div>
-			</li></li>
-
-
-			<li><a class="nav-link" href="pawnshop-pledge-sell.html">pledge
-					sell </a></li>
-			<li><a class="nav-link" href="pawnshop-track-estimate.html">track
-					my estimate</a></li>
-			<li><a class="nav-link" href="pawnshop-estimate-history.html">history</a></li>
-			<li><a class="nav-link" href="pawnshop-list-post.html">my
-					post </a></li>
-
-			<li><a href="logout.html" class="nav-link ">Logout</a></li>
-			<!-- ------------------------------not login-------------------------------------- -->
-			<%
-				}
-				} else {
-			%>
-			<li><a data-toggle="modal" data-target="#modalLogin"
-				class="nav-link js-scroll-trigger" href="#">Login</a></li>
-			<li><a href="pawner-register-form.html"
-				class="nav-link js-scroll-trigger">Register</a></li>
-			<%
-				}
-			%>
-		</ul>
-	</div>
-	<!--header-->
-	<%-- <div class="header">
-		<div class="container">
-			<div class="head">
-				<div class="logo">
-					<a href="index.html"> <img src="img/logos/bg.png" alt="">
-					</a>
-				</div>
-			</div>
-		</div>
-		<div class="header-top">
-			<div class="container">
-				<div class="col-sm-5 col-md-offset-2  header-login">
-					<ul>
-						<!-- -------------------------------------------------------------------- -->
-						<%
-							if (session.getAttribute("isLogin") == "yes") {
-								if (session.getAttribute("userType") == "pawner") {
-						%>
-						<li><a href="#" class="nav-link js-scroll-trigger"> <%=session.getAttribute("username")%>
-						</a></li>
-						<li><a href="logout.html" class="nav-link js-scroll-trigger">Logout</a></li>
-						<li><a class="nav-link js-scroll-trigger" href="mailto:blueboy9yin@gmail.com?Subject=Contact%20again" target="_top">Contact</a></li>
-						<!-- -------------------------------------------------------------------- -->
-						<%
-							} else if (session.getAttribute("userType") == "pawnShop") {
-						%>
-						<li><a href="#" class="nav-link js-scroll-trigger"> <%=session.getAttribute("username")%>
-						</a></li>
-						<li><a href="logout.html" class="nav-link js-scroll-trigger">Logout</a></li>
-						<!-- -------------------------------------------------------------------- -->
-						<%
-							}
-							} else {
-						%>
-						<li><a data-toggle="modal" data-target="#modalLogin"
-							class="nav-link js-scroll-trigger" href="#">Login</a></li>
-						<li><a href="pawner-register-form.html" class="nav-link js-scroll-trigger">Register</a></li>
-						<%
-							}
-						%>
-
-					</ul>
-				</div>
-
-				<div class="clearfix"></div>
-			</div>
-		</div>
-		<div class="container">
-
-			<div class="head-top">
-
-				<div class="col-sm-7 col-md-offset-2">
-					<nav class="navbar nav_bottom" role="navigation">
-
-						<!-- Brand and toggle get grouped for better mobile display -->
-						<div class="navbar-header nav_2">
-							<button type="button"
-								class="navbar-toggle collapsed navbar-toggle1"
-								data-toggle="collapse" data-target="#bs-megadropdown-tabs">
-								<span class="sr-only">Toggle navigation</span> <span
-									class="icon-bar"></span> <span class="icon-bar"></span> <span
-									class="icon-bar"></span>
-							</button>
-
-						</div>
-						<!-- Collect the nav links, forms, and other content for toggling -->
-						<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
-							<ul class="nav navbar-nav nav_1">
-								<!-- -------------------------------------------------------------------- -->
-
-								<%
-									if (session.getAttribute("isLogin") == "yes") {
-										if (session.getAttribute("userType") == "pawner") {
-								%>
-								<li><a class="color" href="pawner-index.html">Home</a></li>
-								<li><a class="color3" href="pawner-pledge.html">pledge</a></li>
-								<li><a class="color4" href="pawner-track-pledge.html">track my pledge</a></li>
-								<li><a class="color4" href="pawner-post-history.html">my post</a></li>
-								<li><a class="color5" href="pawner-order.html">my order</a></li>
-								<!-- -------------------------------------------------------------------- -->
-								<%
-									} else if (session.getAttribute("userType") == "pawnShop") {
-								%>
-								<li><a class="color" href="pawnshop-index.html">Home</a></li>
-								<li><a class="color3" href="pawnshop-pledge-sell.html">pledge sell </a></li>
-								<li><a class="color4" href="pawnshop-track-estimate.html">track my estimate</a></li>
-								<li><a class="color4" href="pawnshop-estimate-history.html">history</a></li>
-								<li><a class="color5" href="pawnshop-list-post.html">my post </a></li>
-								
-
-								<%
-									}
-									} else {
-								%>
-								<!-- -------------------------------------------------------------------- -->
-								<li><a class="color" href="index.jsp">Home</a></li>
-								<li><a class="color6" href="mailto:blueboy9yin@gmail.com?Subject=Contact" target="_top">Send Mail>Contact</a></li>
-								<%
-									}
-								%>
-							</ul>
-						</div>
-						<!-- /.navbar-collapse -->
-
-					</nav>
-				</div>
-				<!-- -------------------------------------------------------------------- -->
-				<%
-					if ((session.getAttribute("isLogin")) == "yes" && (session.getAttribute("userType") == "pawner")) {
-				%>
-				<div class="col-sm-2 search-right">
-					<div class="cart box_1">
-						<a href="checkout.html">
-							<h3>
-								<div class="total">
-									<span class="simpleCart_total"></span>
-								</div>
-								<img src="images/cart.png" alt="" />
-							</h3>
-						</a>
-						<p>
-							<a href="javascript:;" class="simpleCart_empty">Empty Cart</a>
-						</p>
-
-					</div>
-					<div class="clearfix"></div>
-
-					<!-- -------------------------------------------------------------------- -->
-
-					<!--pop-up-box-->
-					<link href="css/popuo-box.css" rel="stylesheet" type="text/css"
-						media="all" />
-					<script src="js/jquery.magnific-popup.js" type="text/javascript"></script>
-					<!--//pop-up-box-->
-					<div id="small-dialog" class="mfp-hide">
-						<div class="search-top">
-							<div class="login-search">
-								<input type="submit" value=""> <input type="text"
-									value="Search.." onfocus="this.value = '';"
-									onblur="if (this.value == '') {this.value = 'Search..';}">
-							</div>
-							<p>Shopin</p>
-						</div>
-					</div>
-					<script>
-						$(document).ready(function() {
-							$('.popup-with-zoom-anim').magnificPopup({
-								type : 'inline',
-								fixedContentPos : false,
-								fixedBgPos : true,
-								overflowY : 'auto',
-								closeBtnInside : true,
-								preloader : false,
-								midClick : true,
-								removalDelay : 300,
-								mainClass : 'my-mfp-zoom-in'
-							});
-						});
-					</script>
-					<!-- -------------------------------------------------------------------- -->
-				</div>
-				<%
-					}
-				%>
-				<div class="clearfix"></div>
-			</div>
-		</div>
-	</div>
---%>
+	
 	<!------------------------------------------------ popup -------------------------------------------------->
 	<div class="modal fade" id="modalLogin" role="dialog">
 		<div class="modal-dialog">
@@ -377,35 +148,32 @@
 					<div class="row">
 						<div class="col-md-6 ">
 							<div class="form-login"
-								style="margin-top: 50px; margin-bottom: 40px;">
-								<h1 style="font-size: 32px; font-weight: 500;">Welcome to
-									BoonYoung</h1>
-								<p class="Subhead-description" style="margin-bottom: 35px;">This
-									used to enter boonyoung. Any pawnshop will be able to see your
-									information.</p>
+								style="margin-top: 50px; margin-bottom: 60px;">
+								<h1 style="font-size: 32px; font-weight: 500;">ยินดีตอนรับ</h1>
+								<p class="Subhead-description" style="margin-bottom: 35px;">ระบบจำนำทางออนไลน์ จำนำง่ายจ่ายคล่องต้องบุญยง (เดวมาเพิ่ม)</p>
 								<form method="POST" action="loginProcess.html">
 									<div class="form-group">
-										<dt style="font-weight: 500; color: #555;">Email</dt>
+										<span style="font-weight: 500; color: #555;">อีเมลของคุณ</span>
 										<input class="post-login" name="email" required="required" />
 										<errors path="email" />
 									</div>
 									<div class="form-group">
-										<dt style="font-weight: 500; color: #555;">Password</dt>
+										<span style="font-weight: 500; color: #555;">รหัสผ่าน</span>
 										<input type="password" class="post-login" name="password"
 											required="required" />
 										<errors path="password" />
 									</div>
 									<div class="form-group">
 										<button type="submit" class="btn btn-sm btn-primary"
-											style="margin-right: 10px; font-size: 15px; background-color: #ff7f00; border-color: #9e9e9e00;">Login</button>
+											style="margin-right: 10px; font-size: 15px; background-color: #ff7f00; border-color: #9e9e9e00;">เข้าสู้ระบบ</button>
 										<button type="button" data-dismiss="modal"
-											class="btn btn-sm btn-default" style="font-size: 15px;">Cancel</button>
+											class="btn btn-sm btn-default" style="font-size: 15px;">ยกเลิก</button>
 									</div>
 								</form>
 							</div>
 							<div class="modal-footer">
 								<a href="pawner-register-form.html" style="color: #555;">
-									Createas a pawner account </a>
+									สร้างบัญชีผู้ใช้งาน</a>
 							</div>
 						</div>
 						<div class="col-md-6 bg3"></div>
@@ -415,8 +183,6 @@
 		</div>
 	</div>
 	<!-- -------------------------------------------------------------------------------------------------- -->
-
-
 
 	<!-- Plugin JavaScript -->
 	<script src="vendor/jquery-easing/jquery.easing.min.js"></script>

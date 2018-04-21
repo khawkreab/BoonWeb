@@ -61,8 +61,7 @@
 		var telto = document.getElementById("telto").value;
 		document.getElementById("email-continue").value = emailto;
 		document.getElementById("tel-continue").value = telto;
-		
-		
+
 	}
 </script>
 
@@ -82,18 +81,17 @@
 						<div class="icon-header" style="width: 80%; margin: auto;">
 							<img src="img/logos/Artboard.png"
 								style="height: 50px; margin-bottom: 10px; margin-top: 20px;" />
-							<h1 style="font-size: 30px; letter-spacing: -1px; color: #555;">Welcome</h1>
+							<h1 style="font-size: 30px; letter-spacing: -1px; color: #555;">ยินดีตอนรับ</h1>
 							<p class="Subhead-description">Register for get new exper</p>
 							<ul style="padding-left: 7px;">
 								<li><form:input path="pawnerFirstname" type="text"
-										class="account-regis" style="width:50%"
-										placeholder="firstname" required="required" /> <form:input
-										path="pawnerLastname" type="text" class="account-regis"
-										style="width:50%" placeholder="lastname" required="required" /></li>
-										<!-- ----------not set path ----------- -->
-								<li><input type="text" id="telto"
-										class="account-regis" placeholder="tel" required="required"
-										onkeyup="continueto();" /></li>
+										class="account-regis" style="width:50%" placeholder="ชื่อ"
+										required="required" /> <form:input path="pawnerLastname"
+										type="text" class="account-regis" style="width:50%"
+										placeholder="นามสกุล" required="required" /></li>
+								<!-- ----------not set path ----------- -->
+								<li><input type="text" id="telto" class="account-regis"
+									placeholder="tel" required="required" onkeyup="continueto();" /></li>
 								<li><form:input path="pawnerEmail" type="text" id="mail"
 										class="account-regis" placeholder="email" required="required"
 										onkeyup="continueto();" /></li>
@@ -111,26 +109,26 @@
 								<li>
 									<p class="Subhead-description" style="margin-top: 10px;">or</p>
 								</li>
-								<!--	<li>
-												<a class="btn btn-block btn-social btn-facebook">
-													<span class="fa fa-facebook"></span> Sign in with facebook
-												</a>
-											</li> -->
+
 							</ul>
 						</div>
+						<div class="modal-footer">
+							<a href="" onclick="continueTo()" style="color: #555;">สร้างบัญชีสำหรับโรงรับจำนำ</a>
+						</div>
 					</form:form>
-					<div class="modal-footer">
-						<form action="pawnshop-register-form.html" method="post">
-							<input type="hidden" value="" id="email-continue" name="emailto">
-							<input type="hidden" value="" id="pass-continue" name="passto">
-							<input type="hidden" value="" id="tel-continue" name="telto">
-							<button type="submit" class="account-submit" id="continueto">continue
-								to pawnshop account</button>
-						</form>
-					</div>
 				</div>
 			</div>
 		</div>
+	</div>
+
+	<div class="modal-footer">
+		<form action="pawnshop-register-form.html" method="post">
+			<input type="hidden" value="" id="email-continue" name="emailto">
+			<input type="hidden" value="" id="pass-continue" name="passto">
+			<input type="hidden" value="" id="tel-continue" name="telto">
+			<button type="submit" class="account-submit" id="continueto">continue
+				to pawnshop account</button>
+		</form>
 	</div>
 
 

@@ -34,8 +34,10 @@
 
 	<!--banner-->
 	<div class="banner-top">
-		<h1>Items sell</h1>
-		<em></em>
+		<div>
+			<h1>รายการของหลุดจำนำ</h1>
+			<em></em>
+		</div>
 	</div>
 	<!--content-->
 	<div class="container">

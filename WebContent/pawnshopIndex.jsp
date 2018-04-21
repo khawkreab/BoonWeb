@@ -39,7 +39,7 @@
 
 	<!--banner-->
 	<div class="banner-top">
-		<h1>Items sell</h1>
+		<h1>รายการของจำนำ</h1>
 		<em></em>
 	</div>
 

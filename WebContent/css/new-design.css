@@ -385,10 +385,12 @@ form {
 
 .navbar-nav li a:hover {
 	background-color: #ff7700;
+	color:#fff;
 }
 
 .navbar-nav>li a:focus {
 	background-color: #E6E6E6;
+	color:#fff;
 }
 
 /*!
@@ -1174,7 +1176,7 @@ footer {
 
 .bg3 {
 	background-image: url("../img/body/body2.jpg");
-	height: 100%;
+	height: 470px;
 	width: 100%;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -1251,7 +1253,6 @@ footer {
 }
 
 .wrap-contact100 {
-	width: 1120px;
 	background: #fff;
 	overflow: hidden;
 	display: -webkit-box;
@@ -1266,7 +1267,6 @@ footer {
 }
 
 .contact100-form {
-	width: 50%;
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -moz-box;
@@ -1289,10 +1289,9 @@ footer {
 
 .label-input100 {
 	font-family: Poppins-Regular;
-	font-size: 12px;
+	font-size: 14.5px;
 	color: #555555;
 	line-height: 1.5;
-	text-transform: uppercase;
 	letter-spacing: 1px;
 	display: -webkit-box;
 	display: -webkit-flex;
@@ -1320,7 +1319,7 @@ footer {
 	width: 100%;
 	background: transparent;
 	font-family: Poppins-Regular;
-	font-size: 18px;
+	font-size: 14.5px;
 	color: #666666;
 	line-height: 1.2;
 	padding: 0 25px;
@@ -1382,7 +1381,7 @@ textarea.input100 {
 	border-radius: 2px;
 	background: #ff7f00;;
 	font-family: Montserrat-Bold;
-	font-size: 12px;
+	font-size: 18px;
 	color: #fff;
 	line-height: 1.2;
 	text-transform: uppercase;
@@ -1409,7 +1408,7 @@ textarea.input100 {
 	border-radius: 2px;
 	background: #555;
 	font-family: Montserrat-Bold;
-	font-size: 12px;
+	font-size: 18px;
 	color: #fff;
 	line-height: 1.2;
 	text-transform: uppercase;
@@ -1449,7 +1448,7 @@ textarea.input100 {
 }
 
 .container-contact100 {
-	width: 100%;
+	width: 650px;
 	min-height: 100vh;
 	display: -webkit-box;
 	display: -webkit-flex;

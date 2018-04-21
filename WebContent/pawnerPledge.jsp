@@ -61,8 +61,8 @@
 
         <!--banner-->
         <div class="banner-top">
-            <div class="container">
-                <h1>Pledge Item</h1>
+            <div>
+                <h1>เลือกประเภคของจำนำ</h1>
                 <em></em>
             </div>
         </div>
