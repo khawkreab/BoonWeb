@@ -7,11 +7,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 	<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<!DOCTYPE html>
+		<!DOCTYPE html>
 		<html lang="en">
 
 		<head>
-		<link rel="icon" href="img/logos/Artboard.png">
+			<link rel="icon" href="img/logos/Artboard.png">
 			<meta charset="utf-8">
 			<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 			<meta name="description" content="">
@@ -28,143 +28,102 @@
 
 		</head>
 
-		<body>
+		<body style="background-color:#f4f4f4;">
 			<!-- Navigation   -->
 			<jsp:include page="navbar.jsp" />
 			<!--banner-->
 			<div class="banner-top">
-				<div class="container">
-					<h1>Pledge Camera</h1>
+				<div>
+					<h1>กล้องถ่ายรูป</h1>
 					<em></em>
 				</div>
 			</div>
 			<!--content-->
-			<div class="content">
-				<div class="container">
-					<!--products-->
-					<div class="content-mid">
-						<div class="mid-popular">
-							<div class="container-contact100 ">
-								<div class="wrap-contact100">
-									<div class="contact100-form">
-										<form:form method="post" action="savePost.html" modelAttribute="pawnerPost" enctype="multipart/form-data">
+			<form:form method="post" action="savePost.html" modelAttribute="pawnerPost" enctype="multipart/form-data">
+				<div class="content">
+					<div class="container">
+						<!--products-->
+						<div class="content-mid">
+							<div class="mid-popular">
+								<div class="container-contact100 ">
+									<div class="wrap-contact100">
+										<div class="contact100-form">
 											<input type="hidden" name="pawnerPostId" />
 											<input type="hidden" name="pawnerId.pawnerId" />
 											<input type="hidden" name="pawnerPostItemType" value="Camera" />
 											<div class="form-group float-left">
 												<input name="files" type="file" onchange="readURL(this);" />
 											</div>
-											<label class="label-input100">Post Name</label>
 											<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
-												<input class="input100" type="text" name="pawnerPostName">
+												<input class="input100" type="text" name="pawnerPostName" placeholder="ชื่อสินค้าที่ต้องการจำนำ">
 											</div>
-											<label class="label-input100">Brand</label>
+											<div class="form-group float-left" style="margin-top:15px;width:100%">
+												<div class="wrap-input100 validate-input">
+													<select class="input100" name="pawnerPostBrand" required="required">
+														<option>ยี่ห้อสินค้า</option>
+														<option>Canon</option>
+														<option>Canon</option>
+														<option>Fuji Film</option>
+														<option>Nikon</option>
+														<option>Olympus</option>
+														<option>Samsung</option>
+														<option>Sony</option>
+														<option>Others</option>
+													</select>
+												</div>
+											</div>
+											<div class="wrap-input100 rs1-wrap-input100 validate-input">
+												<input class="input100" type="text" name="pawnerPostSerial" placeholder="หมายเลขประจำเครื่อง">
+												<span class="focus-input100"></span>
+											</div>
+											<div class="wrap-input100 rs2-wrap-input100 validate-input">
+												<input class="input100" type="text" name="pawnerPostModel" placeholder="รุ่น">
+												<span class="focus-input100"></span>
+											</div>
 											<div class="wrap-input100 validate-input">
-												<select class="input100" type="text" name="pawnerPostBrand" required="required">
-													<option>Canon</option>
-													<option>Fuji Film</option>
-													<option>Nikon</option>
-													<option>Olympus</option>
-													<option>Samsung</option>
-													<option>Sony</option>
-													<option>Others</option>
-												</select>
-											</div>
-											<label class="label-input100">Serial Number and Model</label>
-											<div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Type first name">
-												<input class="input100" type="text" name="pawnerPostSerial" placeholder="Serial Number">
+												<input class="input100" type="text" name="pawnerPostTypeCamera" placeholder="ชนิดของกล้อง">
 												<span class="focus-input100"></span>
 											</div>
-											<div class="wrap-input100 rs2-wrap-input100 validate-input" data-validate="Type last name">
-												<input class="input100" type="text" name="pawnerPostModel" placeholder="Model">
+											<div class="wrap-input100 validate-input" style="margin-top:15px;">
+												<input class="input100" type="text" name="pawnerPostCameraLen" placeholder="ชนิดของเลนส์">
 												<span class="focus-input100"></span>
 											</div>
-											<label class="label-input100">Type of camera</label>
-											<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
-												<input class="input100" type="text" name="pawnerPostTypeCamera" placeholder="">
-												<span class="focus-input100"></span>
+											<div style="margin-top:15px;width:100%">
+												<span style="font-size:14px;margin-top:15px">ปีที่ซื้อสินค้า</span>
+												<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+													<input class="input100" type="date" name="pawnerPostPurchase" placeholder="ปีที่ซื้อ">
+													<span class="focus-input100"></span>
+												</div>
 											</div>
-											<label class="label-input100">Type of len</label>
-											<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
-												<input class="input100" type="text" name="pawnerPostCameraLen" placeholder="">
-												<span class="focus-input100"></span>
-											</div>
-											<label class="label-input100">Year of purchase</label>
-											<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
-												<input class="input100" type="date" name="pawnerPostPurchase" placeholder="">
-												<span class="focus-input100"></span>
-											</div>
-											<label class="label-input100">Description</label>
-											<div class="wrap-input100 validate-input" data-validate="Message is required">
-												<textarea class="input100" name="pawnerPostDescription" placeholder="Write us a message(optional) "></textarea>
+											<div class="wrap-input100 validate-input" style="margin-top:15px;" data-validate="Message is required">
+												<textarea class="input100" name="pawnerPostDescription" placeholder="รายละเอียดสินค้าเพิ่มเติม"></textarea>
 												<span class="focus-input100"></span>
 											</div>
 											<div class="form-group-post float-left">
-												<dt style="line-height: 45px;">
-													<input type="checkbox" name="pawnerPostBattery" value="yes" /> Battery charger
-												</dt>
-												<dt style="line-height: 5px;">
-													<input type="checkbox" name="pawnerPostWarranty" value="yes" /> Warranty Certificate
-												</dt>
-												<dt style="line-height: 55px;">
-													<input type="checkbox" required="required"> I agree to the
-													<strong>trem of service</strong>
-												</dt>
+												<ul>
+													<li>
+														<span style="line-height: 45px;font-size: 14.5px;font-weight: inherit;">
+															<input type="checkbox" name="pawnerPostBattery" value="yes" /> Battery charger
+														</span>
+													</li>
+													<li>
+														<span style="line-height: 5px;font-size: 14.5px;font-weight: inherit;">
+															<input type="checkbox" name="pawnerPostWarranty" value="yes" /> ประกันสินค้า
+														</span>
+													</li>
+													<li>
+														<span style="line-height: 55px;font-size: 14.5px;font-weight: inherit;">
+															<input type="checkbox" required="required"> ฉันยอมรับและตกลง
+															<strong>เงือนไขการใช้งาน</strong> ของระบบบุญยง
+														</span>
+													</li>
+												</ul>
 											</div>
+
 											<div class="container-contact100-form-btn">
-												<button type="summot" class="contact100-form-btn">
-													Create Post
+												<button type="submit" class="contact100-form-btn">
+													ยืนยัน
 												</button>
-											</div>
-										</form:form>
-									</div>
-									<!-- Picture -->
-									<div class="contact100-more flex-col-c-m" style="background-image: url('img/header-bg.jpg');">
-										<div class="flex-w size1 p-b-47">
-											<div class="txt1 p-r-25">
-												<span class="lnr lnr-map-marker"></span>
-											</div>
-
-											<div class="flex-col size2">
-												<span class="txt1 p-b-20">
-													Address
-												</span>
-
-												<span class="txt2">
-													Mada Center 8th floor, 379 Hudson St, New York, NY 10018 US
-												</span>
-											</div>
-										</div>
-
-										<div class="dis-flex size1 p-b-47">
-											<div class="txt1 p-r-25">
-												<span class="lnr lnr-phone-handset"></span>
-											</div>
-
-											<div class="flex-col size2">
-												<span class="txt1 p-b-20">
-													Lets Talk
-												</span>
-
-												<span class="txt3">
-													+1 800 1236879
-												</span>
-											</div>
-										</div>
-
-										<div class="dis-flex size1 p-b-47">
-											<div class="txt1 p-r-25">
-												<span class="lnr lnr-envelope"></span>
-											</div>
-
-											<div class="flex-col size2">
-												<span class="txt1 p-b-20">
-													General Support
-												</span>
-
-												<span class="txt3">
-													contact@example.com
-												</span>
 											</div>
 										</div>
 									</div>
@@ -173,7 +132,7 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</form:form>
 		</body>
 
 		</html>

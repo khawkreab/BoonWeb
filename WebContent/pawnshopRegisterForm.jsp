@@ -36,31 +36,29 @@
 									<div class="form-regis">
 										<div style="text-align: center;width:45%;">
 											<img src="img/logos/Artboard.png" style="height:80px;" />
-											<h1 style="font-size:24px;letter-spacing: -1px;color: #555;">Expand your business.</h1>
-											<p class="Subhead-description">Connext to pawner</p>
+											<h1 style="font-size:24px;letter-spacing: -1px;color: #555;">ขยายขอบเขตธุรกิจของคุณกับการจำนำออนไลน์</h1>
 										</div>
 										<ul style="padding-left:7px;">
 											<li>
-												<form:input type="text" class="input-regis" placeholder="pawnshop name" path="pawnshopName" />
+												<form:input type="text" class="input-regis" placeholder="ชื่อโรงรับจำนำ" path="pawnshopName" />
 											</li>
 											<li>
-												<form:input type="text" class="input-regis" placeholder="email" path="pawnshopEmail" />
+												<form:input type="text" class="input-regis" placeholder="อีเมล" path="pawnshopEmail" />
 											</li>
 											<li>
-												<form:input type="text" class="input-regis" placeholder="password" path="pawnshopPassword"  value="<%=request.getParameter("pass") %>"/>
+												<form:input type="text" class="input-regis" placeholder="รหัสผ่าน" path="pawnshopPassword"  value="<%=request.getParameter("pass") %>"/>
 											</li>
 											<li>
-												<form:input type="text" class="input-regis" placeholder="tell" path="pawnshopTel" />
+												<form:input type="text" class="input-regis" placeholder="เบอร์โทร" path="pawnshopTel" />
 											</li>
 											<li>
 												<form:select class="input-regis" path="pawnshopProvince">
-													<option>province</option>
-													<option>Bangkok</option>
-													<option>Chiang rai</option>
+													<option>จังหวัด</option>
+													<option>กรุงเทพ</option>
 												</form:select>
 											</li>
 											<li>
-												<button type="submit" class="input-submit">Create Account</button>
+												<button type="submit" class="input-submit">ยืนยันการสร้างบัญ</button>
 											</li>
 										</ul>
 									</div>

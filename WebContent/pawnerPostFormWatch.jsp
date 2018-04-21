@@ -27,14 +27,14 @@
 
 		</head>
 
-		<body>
+		<body style="background-color:#f4f4f4;"> 
 
 			<!-- Navigation   -->
 			<jsp:include page="navbar.jsp" />
 			<!--banner-->
 			<div class="banner-top">
-				<div class="container">
-					<h1>Pledge Wearables</h1>
+				<div class="">
+					<h1>นาฬิกาข้อมือ</h1>
 					<em></em>
 				</div>
 			</div>
@@ -54,11 +54,11 @@
 											<div class="form-group float-left">
 												<input name="files" type="file" onchange="readURL(this);" />
 											</div>
-											<label class="label-input100">Post Name</label>
+											<label class="label-input100">ชื่อสินค้าที่ต้องการจำนำ</label>
 											<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
 												<input class="input100" type="text" name="pawnerPostName">
 											</div>
-											<label class="label-input100">Brand</label>
+											<label class="label-input100">ยี่ห้อ</label>
 											<div class="wrap-input100 validate-input">
 												<select class="input100" type="text" name="pawnerPostBrand" required="required">
 													<option>Rolex</option>
@@ -71,119 +71,69 @@
 													<option>Casio</option>
 												</select>
 											</div>
-											<label class="label-input100">Type of case</label>
+											<label class="label-input100">ชนิดของหน้าปัด</label>
 											<div class="wrap-input100 validate-input">
 												<select class="input100" type="text" name="pawnerPostCase" required="required">
-													<option>Stainless Steel</option>
-													<option>White Gold</option>
-													<option>Yellow Gold</option>
-													<option>Ceramic</option>
-													<option>Pink Gold</option>
-													<option>Others (Please specify)</option>
-													<option>Unknown</option>
-												</select>
+													<option>สแสนเลส</option>													
+													<option>ทองคำขาว</option>													
+													<option>ทองคำเหลือง</option>													
+													<option>ทองคำชมพู</option>
+													<option>เซรามิค</option>
+													<option>อื่นๆ (โปรดระบุ)</option>
+													<option>ไม่ทราบ</option>
+													</select>
 											</div>
-											<label class="label-input100">Type of bracelet</label>
+											<label class="label-input100">ชนิดของสายรัดข้อมือ</label>
 											<div class="wrap-input100 validate-input">
 												<select class="input100" type="text" name="pawnerPostBracelet" required="required">
-													<option>Stainless Steel</option>
-													<option>Gold and Silver</option>
-													<option>Gold</option>
-													<option>Platinum</option>
-													<option>Leather</option>
-													<option>Plastic</option>
-													<option>Rubber</option>
-													<option>Others (Please specify)</option>
-													<option>Unknown</option>
-												</select>
+													<option>สแตนเลส</option>													
+													<option>สองกษัตริย์</option>													
+													<option>ทอง</option>													
+													<option>แพลตตินั่ม</option>													
+													<option>หนัง</option>
+													<option>พลาสติก</option>
+													<option>ยาง</option>
+													<option>อื่นๆ (โปรดระบุ)</option>
+													<option>ไม่ทราบ</option>
+													</select>
 											</div>
-											<label class="label-input100">Is there any diamonds on your timepiece?</label>
+											<label class="label-input100">มีเพรชหรือไม่ ถ้ามีประดับอยู๋ส่วนไหน</label>
 											<div class="wrap-input100 validate-input">
 												<select class="input100" type="text" name="pawnerPostDiamond" required="required">
-													<option>No</option>
-													<option>Dial</option>
-													<option>Bezel</option>
-													<option>On the digits</option>
+													<option>ไม่มี</option>
+													<option>มี,ขอบหน้าปัด</option>
+													<option>มี,หน้าปัด</option>
+													<option>มี,บนตัวเลข</option>
 												</select>
 											</div>
-											<label class="label-input100">Production year</label>
+											<label class="label-input100">ปีที่ผลิตสินค้า</label>
 											<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
 												<input class="input100" type="date" name="pawnerPostProduction" placeholder="">
 												<span class="focus-input100"></span>
 											</div>
-											<label class="label-input100">Description</label>
+											<label class="label-input100">เพิ่มเติม</label>
 											<div class="wrap-input100 validate-input" data-validate="Message is required">
-												<textarea class="input100" name="pawnerPostDescription" placeholder="Write us a message(optional) "></textarea>
+												<textarea class="input100" name="pawnerPostDescription" placeholder="รายละเอียดสินค้าเพิ่มเติม"></textarea>
 												<span class="focus-input100"></span>
 											</div>
 											<div class="form-group-post float-left">
-												<dt style="line-height: 45px;">
-													<input type="checkbox" name="pawnerPostPackage" value="yes" /> Packaging
+												<dt style="line-height: 45px;font-size: 14.5px;font-weight: inherit;">
+													<input type="checkbox" name="pawnerPostPackage" value="yes" /> กล่องบรรจุสินค้า
 												</dt>
-												<dt style="line-height: 5px;">
-													<input type="checkbox" name="pawnerPostWarranty" value="yes" /> Warranty Certificate
+												<dt style="line-height: 5px;font-size: 14.5px;font-weight: inherit;">
+													<input type="checkbox" name="pawnerPostWarranty" value="yes" /> ประกันสินค้า
 												</dt>
-												<dt style="line-height: 55px;">
-													<input type="checkbox" required="required"> I agree to the
-													<strong>trem of service</strong>
+												<dt style="line-height: 55px;font-size: 14.5px;font-weight: inherit;">
+													<input type="checkbox" required="required"> ฉันยอมรับและตกลง
+													<strong>เงือนไขการใช้งาน</strong> ของระบบบุญยง
 												</dt>
 											</div>
 											<div class="container-contact100-form-btn">
 												<button type="summot" class="contact100-form-btn">
-													Create Post
+													ยืนยัน
 												</button>
 											</div>
 										</form:form>
-									</div>
-									<!-- Picture -->
-									<div class="contact100-more flex-col-c-m" style="background-image: url('img/header-bg.jpg');">
-										<div class="flex-w size1 p-b-47">
-											<div class="txt1 p-r-25">
-												<span class="lnr lnr-map-marker"></span>
-											</div>
-
-											<div class="flex-col size2">
-												<span class="txt1 p-b-20">
-													Address
-												</span>
-
-												<span class="txt2">
-													Mada Center 8th floor, 379 Hudson St, New York, NY 10018 US
-												</span>
-											</div>
-										</div>
-
-										<div class="dis-flex size1 p-b-47">
-											<div class="txt1 p-r-25">
-												<span class="lnr lnr-phone-handset"></span>
-											</div>
-
-											<div class="flex-col size2">
-												<span class="txt1 p-b-20">
-													Lets Talk
-												</span>
-
-												<span class="txt3">
-													+1 800 1236879
-												</span>
-											</div>
-										</div>
-
-										<div class="dis-flex size1 p-b-47">
-											<div class="txt1 p-r-25">
-												<span class="lnr lnr-envelope"></span>
-											</div>
-
-											<div class="flex-col size2">
-												<span class="txt1 p-b-20">
-													General Support
-												</span>
-
-												<span class="txt3">
-													contact@example.com
-												</span>
-											</div>
-										</div>
 									</div>
 								</div>
 							</div>

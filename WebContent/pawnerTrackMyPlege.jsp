@@ -35,11 +35,11 @@
 		<div class="container">
 			<div class="history-filter">
 				<div class="d-flex">
-					<div class="mr-auto p-2">history</div>
+					<div class="mr-auto p-2">สถานะการจำนำ</div>
 					<div class="ml-auto p-2">
-						Show: <select>
-							<option>finish</option>
-							<option>process</option>
+						แสดง: <select>
+							<option>การจำนำเสร็จสิ้น</option>
+							<option>รอการประเมิณ</option>
 						</select>
 					</div>
 				</div>
@@ -54,7 +54,7 @@
 								value="${post.pawnerPostDate }" />
 						</div>
 						<div class="ml-auto p-2">
-							<span>Delete</span>
+							<span>ลบ</span>
 						</div>
 					</div>
 					<div class="history-body">
@@ -76,27 +76,26 @@
 
 												<!-- Watch,Electronic -->
 												<c:if test="${post.pawnerPostModel != null}">
-													<li class="col-md-6">Production :
-														${post.pawnerPostProduction}</li>
-													<li class="col-md-6">Model : ${post.pawnerPostModel}</li>
-													<li class="col-md-6">Serial : ${post.pawnerPostSerial}</li>
-													<li class="col-md-6">Purchase :
+													<li class="col-md-6">รุ่น : ${post.pawnerPostModel}</li>
+													<li class="col-md-6">หมายเลขประจำเครื่อง : ${post.pawnerPostSerial}</li>
+													<li class="col-md-6">ปีที่ซื้อสินค้า :
 														${post.pawnerPostPurchase }</li>
+													<li class="col-md-6">ปีที่ผลิตสินค้า :
+														${post.pawnerPostProduction}</li>
 												</c:if>
 
 												<!-- Gold -->
 												<c:if test="${post.pawnerPostPure != null}">
-													<li class="col-md-6">Pure : ${post.pawnerPostPure  }</li>
-													<li class="col-md-6">Weigh : ${post.pawnerPostWeigh }</li>
-													<li class="col-md-6">Category :
-														${post.pawnerPostCategory }</li>
+													<li class="col-md-6">ยี่ห้อ : ${post.pawnerPostBrand }</li>
+													<li class="col-md-6">ความบริสุทธ์ : ${post.pawnerPostPure  }</li>
+													<li class="col-md-6">น้ำหนัก : ${post.pawnerPostWeigh }</li>
+													<li class="col-md-6">ชนิดหรือรูปแบบของทองคำ : ${post.pawnerPostCategory }</li>
 												</c:if>
-
 
 
 												<!-- Electronic tv com telephone -->
 												<c:if test="${post.pawnerPostSize != null}">
-													<li class="col-md-6">Size : ${post.pawnerPostSize }</li>
+													<li class="col-md-6">ขนาดหน้าจอ : ${post.pawnerPostSize }</li>
 												</c:if>
 
 												<!-- Electronic camera com telephone -->
@@ -118,17 +117,17 @@
 
 												<!-- Watch -->
 												<c:if test="${post.pawnerPostCase != null}">
-													<li class="col-md-6">Case : ${post.pawnerPostCase }</li>
-													<li class="col-md-6">Bracelet :
+													<li class="col-md-6">ชนิดของหน้าปัด : ${post.pawnerPostCase }</li>
+													<li class="col-md-6">ชนิดของสายรัดข้อมือ :
 														${post.pawnerPostBracelet }</li>
 													<c:if test="${post.pawnerPostDiamond != null}">
-														<li class="col-md-6">Diamond :
+														<li class="col-md-6">เพรช :
 															${post.pawnerPostDiamond }</li>
 													</c:if>
 													<c:if test="${post.pawnerPostPackage != null}">
 														<li class="col-md-6"><span
 															class="glyphicon glyphicon-check" aria-hidden="true">
-														</span> Package</li>
+														</span> กล้องบรรจุสินค้า</li>
 													</c:if>
 												</c:if>
 
@@ -144,13 +143,13 @@
 												<c:if test="${post.pawnerPostModel != null}">
 													<li class="col-md-6"><span
 														class="glyphicon glyphicon-check" aria-hidden="true">
-													</span> Warranty</li>
+													</span> การประกันสินค้า</li>
 												</c:if>
 
 											</ul>
 										</div>
 									</div>
-									<h4 class="quick">Other Detail </h4>
+									<h4 class="quick">รายละเอียดเพิ่มเติม</h4>
 									<p class="quick_desc">${post.pawnerPostDescription }</p>
 								</div>
 							</div>
@@ -171,10 +170,10 @@
 						<div class="history-show-estimate">
 							<div id="showlist${post.pawnerPostId}" class="collapse">
 								<div class="row">
-									<div class="col-md-6">Pawn Shop</div>
-									<div class="col-md-2">min</div>
-									<div class="col-md-2">max</div>
-									<div class="col-md-2">*****</div>
+									<div class="col-md-6">โรงรับจำนำที่มาเสนอราคา</div>
+									<div class="col-md-2">ราคาน้อยสุดที่ได้รับ</div>
+									<div class="col-md-2">ราคามากสุดที่ได้รับ</div>
+									<div class="col-md-2"></div>
 								</div>
 								<ul>
 									<c:forEach items="${estimatesList}" var="estimate">
@@ -193,7 +192,7 @@
 																value="${estimate.estimateId}"> <input
 																type="hidden" name="pawnerPostId"
 																value="${post.pawnerPostId}">
-															<button type="submit">Approve</button>
+															<button type="submit">ยืนยันราคาสินค้า</button>
 														</form>
 													</div>
 												</div>
@@ -206,7 +205,7 @@
 							<div class="d-flex justify-content-center">
 								<span> <a id="more" class="show" href="#"
 									data-toggle="collapse"
-									data-target="#showlist${post.pawnerPostId}">more</a></span>
+									data-target="#showlist${post.pawnerPostId}">แสดงราคาที่ได้รับ</a></span>
 							</div>
 						</div>
 					</c:if>
