@@ -40,37 +40,37 @@
 				</div>
 			</div>
 			<!--content-->
-			<form:form method="post" action="savePost.html" modelAttribute="pawnerPost" enctype="multipart/form-data">
-				<div class="content">
-					<div class="container">
-						<!--products-->
-						<div class="content-mid">
-							<div class="mid-popular">
-								<div class="container-contact100 ">
-									<div class="wrap-contact100">
-										<div class="contact100-form">
+			<div class="content">
+				<div class="container">
+					<!--products-->
+					<div class="content-mid">
+						<div class="mid-popular">
+							<div class="container-contact100 ">
+								<div class="wrap-contact100">
+									<div class="contact100-form">
+										<form:form method="post" action="savePost.html" modelAttribute="pawnerPost" enctype="multipart/form-data">
 											<input type="hidden" name="pawnerPostId" />
 											<input type="hidden" name="pawnerId.pawnerId" />
 											<input type="hidden" name="pawnerPostItemType" value="Gold" />
 											<div class="form-group float-left">
 												<input name="files" type="file" onchange="readURL(this);" />
 											</div>
-											<div class="wrap-input100 validate-input" >
+											<div class="wrap-input100 validate-input">
 												<input class="input100" type="text" name="pawnerPostName" placeholder="ชื่อสินค้าที่ต้องการจำนำ">
 											</div>
-											<div class="wrap-input100 validate-input"style="margin-top:15px;" >
+											<div class="wrap-input100 validate-input" style="margin-top:15px;">
 												<input class="input100" type="text" name="pawnerPostBrand" placeholder="ยี่ห้อ">
 												<span class="focus-input100"></span>
 											</div>
-											<div class="wrap-input100 rs1-wrap-input100 validate-input" style="margin-top:15px;" >
+											<div class="wrap-input100 rs1-wrap-input100 validate-input" style="margin-top:15px;">
 												<input class="input100" type="text" name="pawnerPostPure" placeholder="ความบริสุทธิ์">
 												<span class="focus-input100"></span>
 											</div>
-											<div class="wrap-input100 rs2-wrap-input100 validate-input" style="margin-top:15px;" >
+											<div class="wrap-input100 rs2-wrap-input100 validate-input" style="margin-top:15px;">
 												<input class="input100" type="text" name="pawnerPostWeigh" placeholder="น้ำหนัก(ใช้หน่วยเป็นกรัม)">
 												<span class="focus-input100"></span>
 											</div>
-											<div class="wrap-input100 validate-input" >
+											<div class="wrap-input100 validate-input">
 												<select class="input100" name="pawnerPostCategory" required="required">
 													<option>ชนิดหรือรูปแบบของทองคำ</option>
 													<option>ทองรูปพรรณ</option>
@@ -100,14 +100,14 @@
 													ยืนยัน
 												</button>
 											</div>
-										</div>
+										</form:form>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</form:form>
+			</div>
 		</body>
 
 		</html>

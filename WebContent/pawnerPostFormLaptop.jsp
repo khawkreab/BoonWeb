@@ -39,21 +39,18 @@
 				</div>
 			</div>
 			<!--content-->
-			<form:form method="post" action="savePost.html" modelAttribute="pawnerPost" enctype="multipart/form-data">
-				<div class="content">
-					<div class="container">
-						<!--products-->
-						<div class="content-mid">
-							<div class="mid-popular">
-								<div class="container-contact100 ">
-									<div class="wrap-contact100">
-										<div class="contact100-form">
+			<div class="content">
+				<div class="container">
+					<!--products-->
+					<div class="content-mid">
+						<div class="mid-popular">
+							<div class="container-contact100 ">
+								<div class="wrap-contact100">
+									<div class="contact100-form">
+										<form:form method="post" action="savePost.html" modelAttribute="pawnerPost" enctype="multipart/form-data">
 											<input type="hidden" name="pawnerPostId" />
 											<input type="hidden" name="pawnerId.pawnerId" />
 											<input type="hidden" name="pawnerPostItemType" value="Laptop" />
-											<div class="form-group float-left">
-												<input name="files" type="file" onchange="readURL(this);" />
-											</div>
 											<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
 												<input class="input100" type="text" name="pawnerPostName" placeholder="ชื่อสินค้าที่ต้องการจำนำ">
 											</div>
@@ -126,17 +123,17 @@
 											<div class="form-group-post float-left">
 												<ul>
 													<li>
-														<div style="line-height: 45px;font-size: 14.5px;font-weight: inherit;">
+														<div style="font-size: 14.5px;font-weight: inherit;">
 															<input type="checkbox" name="pawnerPostBattery" value="yes" /> Battery charger
 														</div>
 													</li>
 													<li>
-														<div style="line-height: 5px;font-size: 14.5px;font-weight: inherit;">
+														<div style="font-size: 14.5px;font-weight: inherit;">
 															<input type="checkbox" name="pawnerPostWarranty" value="yes" /> ประกันสินค้า
 														</div>
 													</li>
 													<li>
-														<div style="line-height: 55px;font-size: 14.5px;font-weight: inherit;">
+														<div style="font-size: 14.5px;font-weight: inherit;">
 															<input type="checkbox" required="required"> ฉันยอมรับและตกลง
 															<strong>เงือนไขการใช้งาน</strong> ของระบบบุญยง
 														</div>
@@ -148,14 +145,14 @@
 													ยืนยัน
 												</button>
 											</div>
-										</div>
+										</form:form>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</form:form>
+			</div>
 		</body>
 
 		</html>

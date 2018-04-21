@@ -40,15 +40,15 @@
 				</div>
 			</div>
 			<!--content-->
-			<form:form method="post" action="savePost.html" modelAttribute="pawnerPost" enctype="multipart/form-data">
-				<div class="content">
-					<div class="container">
-						<!--products-->
-						<div class="content-mid">
-							<div class="mid-popular">
-								<div class="container-contact100 ">
-									<div class="wrap-contact100">
-										<div class="contact100-form">
+			<div class="content">
+				<div class="container">
+					<!--products-->
+					<div class="content-mid">
+						<div class="mid-popular">
+							<div class="container-contact100 ">
+								<div class="wrap-contact100">
+									<div class="contact100-form">
+										<form:form method="post" action="savePost.html" modelAttribute="pawnerPost" enctype="multipart/form-data">
 											<input type="hidden" name="pawnerPostId" />
 											<input type="hidden" name="pawnerId.pawnerId" />
 											<input type="hidden" name="pawnerPostItemType" value="Tv" />
@@ -72,11 +72,11 @@
 													<option>Others</option>
 												</select>
 											</div>
-											<div class="wrap-input100 rs1-wrap-input100 validate-input"style="margin-top:15px;" data-validate="Type first name">
+											<div class="wrap-input100 rs1-wrap-input100 validate-input" style="margin-top:15px;" data-validate="Type first name">
 												<input class="input100" type="text" name="pawnerPostSerial" placeholder="หมายเลขประจำเครื่อง">
 												<span class="focus-input100"></span>
 											</div>
-											<div class="wrap-input100 rs2-wrap-input100 validate-input"style="margin-top:15px;" data-validate="Type last name">
+											<div class="wrap-input100 rs2-wrap-input100 validate-input" style="margin-top:15px;" data-validate="Type last name">
 												<input class="input100" type="text" name="pawnerPostModel" placeholder="รุ่น">
 												<span class="focus-input100"></span>
 											</div>
@@ -98,17 +98,17 @@
 											<div class="form-group-post float-left">
 												<ul>
 													<li>
-														<span style="line-height: 45px;font-size: 14.5px;font-weight: inherit;">
+														<span style="font-size: 14.5px;font-weight: inherit;">
 															<input type="checkbox" name="panwePostRemote" value="yes" /> Remote control
 														</span>
 													</li>
 													<li>
-														<span style="line-height: 5px;font-size: 14.5px;font-weight: inherit;">
+														<span style="font-size: 14.5px;font-weight: inherit;">
 															<input type="checkbox" name="pawnerPostWarranty" value="yes" /> ประกันสินค้า
 														</span>
 													</li>
 													<li>
-														<span style="line-height: 55px;font-size: 14.5px;font-weight: inherit;">
+														<span style="font-size: 14.5px;font-weight: inherit;">
 															<input type="checkbox" required="required"> ฉันยอมรับและตกลง
 															<strong>เงือนไขการใช้งาน</strong> ของระบบบุญยง
 														</span>
@@ -120,14 +120,14 @@
 													ยืนยัน
 												</button>
 											</div>
-										</div>
+										</form:form>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</form:form>
+			</div>
 		</body>
 
 		</html>

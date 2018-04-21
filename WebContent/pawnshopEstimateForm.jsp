@@ -50,14 +50,6 @@
 									<p>Updated every day</p>
 								</div>
 							</div>
-							<div class="carousel-item">
-								<img class="d-block img-fluid"
-									src="images/imageUpload/${pic.picture}" alt="Second slide">
-								<div class="carousel-caption d-none d-md-block">
-									<h3></h3>
-									<p></p>
-								</div>
-							</div>
 							<%
 								dataslideto2++;
 									if (dataslideto2 > 0) {
@@ -75,8 +67,6 @@
 
 						<li data-target="#carouselExampleIndicators"
 							data-slide-to="<%=dataslideto%>" class="<%=active%>"><img
-							class="" src="images/imageUpload/${pic.picture}" alt=""></li>
-						<li data-target="#carouselExampleIndicators" data-slide-to="1"><img
 							class="" src="images/imageUpload/${pic.picture}" alt=""></li>
 						<%
 							dataslideto++;
