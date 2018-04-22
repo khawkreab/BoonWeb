@@ -246,12 +246,14 @@
 		function check() {
 			if (sessionStorage.getItem('carts')) {
 				list = JSON.parse(sessionStorage.getItem('carts'))
-				data = {
-					'list' : list
-				}
+				
+				
 				console.log(list.length)
+				sessionStorage.setItem('pawnercartNumber', list.length)
+				document.getElementById("cartNumber").innerHTML = list.length
+
 			}
-		};
+		}
 	</script>
 
 </body>

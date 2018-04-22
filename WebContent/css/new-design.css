@@ -384,6 +384,27 @@ form {
 	}
 }
 
+
+/*!
+* cart number 
+*/
+
+.cart-num {
+    position: absolute;
+    background: #f36e36;
+    color: #fff;
+    top: 4px;
+    font-weight: 700;
+    right: -2px;
+    text-align: center;
+    border: 3px solid #f36e36;
+    font-size: .8em;
+    min-width: 14px;
+    line-height: 10px;
+    border-radius: 50%;
+    display: block;
+}
+
 .navbar-nav li a {
 	height: 100%;
 	display: flex;
@@ -392,6 +413,7 @@ form {
 	padding: 0px 10px;
 	font-size: .9em;
 	color: #000;
+	position: relative;
 }
 
 .navbar-nav li a:hover {
