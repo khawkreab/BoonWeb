@@ -105,9 +105,8 @@
 				%>
 
 				<li><a class="nav-link" href="pawnshop-pledge-sell.html">ปล่อยของหลุดจำนำ</a></li>
-				<li><a class="nav-link" href="pawnshop-track-estimate.html">สถานะของหลุดจำนำ</a></li>
-				<li><a class="nav-link" href="pawnshop-estimate-history.html">ติดตามการประเมิณของจำนำ</a></li>
-				<!--  <li><a class="nav-link" href="pawnshop-list-post.html">รายการของฉัน</a></li> -->
+				<li><a class="nav-link" href="pawnshop-track-estimate.html">สถานะของการประเมิณ</a></li>
+				<li><a class="nav-link" href="">รายการของหลุดจำนำ</a></li>
 				<li class="dropdown show"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown" role="button" aria-expanded="false"> <%=session.getAttribute("username")%></a>
 					<ul class="dropdown-menu" role="menu">
@@ -119,7 +118,7 @@
 									class="navbar-account-email"><%=session.getAttribute("email")%></span></span>
 							</div></li>
 						<li><a href="logout.html" class="nav-link ">แก้ไขบัญชี</a></li>
-						<li><a href="" class="nav-link ">ประวัติการประเมิณของจำนำ</a></li>
+						<li><a href="pawnshop-estimate-history.html" class="nav-link ">ประวัติการประเมิณของจำนำ</a></li>
 						<li><a href="" class="nav-link ">ประวัติการปล่อยของหลุดจำนำ</a></li>
 						<li><a href="logout.html" class="nav-link ">Logout</a></li>
 					</ul></li>

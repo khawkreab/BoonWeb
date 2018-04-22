@@ -184,6 +184,11 @@
 											placeholder="รายละเอียดสินค้าเพิ่มเติม"></textarea>
 										<span class="focus-input100"></span>
 									</div>
+									<div class="wrap-input100 validate-input"
+										data-validate="Valid email is required: ex@abc.xyz">
+										<input class="input100" type="text" name="pawnshopPostPrice"
+											placeholder="ราคาที่ต้องการขายสินค้า">
+									</div>
 									<div class="form-group-post float-left">
 										<ul>
 											<li>
