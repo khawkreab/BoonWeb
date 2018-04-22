@@ -30,189 +30,189 @@
 
 	<div class="single">
 		<div class="container">
-				<div class="col-md-5">
+			<div class="col-md-5">
 
-					<div class="row">
-						<div class="col-md-12">
-							<div id="carouselExampleIndicators" class="carousel slide"
-								data-ride="carousel" data-interval="0">
+				<div class="row">
+					<div class="col-md-12">
+						<div id="carouselExampleIndicators" class="carousel slide"
+							data-ride="carousel" data-interval="0">
 
-								<div class="carousel-inner" role="listbox">
-									<c:forEach var="pic" items="${pictures}">
-
-										<div class="carousel-item <%=active2%>">
-											<img class="d-block img-fluid"
-												src="images/imageUpload/${pic.picture}" alt="First slide">
-											<div class="carousel-caption d-none d-md-block">
-												<h3>Pledge online</h3>
-												<p>Updated every day</p>
-											</div>
-										</div>
-										<div class="carousel-item">
-											<img class="d-block img-fluid"
-												src="images/imageUpload/${pic.picture}" alt="Second slide">
-											<div class="carousel-caption d-none d-md-block">
-												<h3></h3>
-												<p></p>
-											</div>
-										</div>
-										<%
-											dataslideto2++;
-												if (dataslideto2 > 0) {
-													active2 = "";
-												}
-										%>
-									</c:forEach>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-12">
-
-							<ol class="item-info-thumbs">
+							<div class="carousel-inner" role="listbox">
 								<c:forEach var="pic" items="${pictures}">
 
-									<li data-target="#carouselExampleIndicators"
-										data-slide-to="<%=dataslideto%>" class="<%=active%>"><img
-										class="" src="images/imageUpload/${pic.picture}" alt=""></li>
-									<li data-target="#carouselExampleIndicators" data-slide-to="1"><img
-										class="" src="images/imageUpload/${pic.picture}" alt=""></li>
+									<div class="carousel-item <%=active2%>">
+										<img class="d-block img-fluid"
+											src="images/imageUpload/${pic.picture}" alt="First slide">
+										<div class="carousel-caption d-none d-md-block">
+											<h3>Pledge online</h3>
+											<p>Updated every day</p>
+										</div>
+									</div>
+									<div class="carousel-item">
+										<img class="d-block img-fluid"
+											src="images/imageUpload/${pic.picture}" alt="Second slide">
+										<div class="carousel-caption d-none d-md-block">
+											<h3></h3>
+											<p></p>
+										</div>
+									</div>
 									<%
-										dataslideto++;
-											if (dataslideto > 0) {
-												active = "";
+										dataslideto2++;
+											if (dataslideto2 > 0) {
+												active2 = "";
 											}
 									%>
 								</c:forEach>
-							</ol>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="col-md-6 single-top-in">
-					<div class="span_2_of_a1 simpleCart_shelfItem">
-						<h3>${pawnshopPost.pawnshopPostName }${post.pawnshopPostBrand }</h3>
-						<p class="in-para">Information</p>
-						<div class="price_single">
-							<div class="preview">
-								<ul class="row">
+					<div class="col-md-12">
 
-									<!-- Electronic camera-->
-									<c:if test="${pawnshopPost.pawnshopPostTypeCamera != null}">
-										<li class="col-md-6">${pawnshopPost.pawnshopPostTypeCamera }</li>
-										<li class="col-md-6">${pawnshopPost.pawnshopPostCameraLen }</li>
-									</c:if>
-									<!-- Watch,Electronic -->
-									<c:if test="${pawnshopPost.pawnshopPostModel != null}">
-										<li class="col-md-6">Production :
-											${pawnshopPost.pawnshopPostProduction}</li>
-										<li class="col-md-6">Model :
-											${pawnshopPost.pawnshopPostModel}</li>
-										<li class="col-md-6">Serial :
-											${pawnshopPost.pawnshopPostSerial}</li>
-										<li class="col-md-6">Purchase :
-											${pawnshopPost.pawnshopPostPurchase }</li>
-									</c:if>
+						<ol class="item-info-thumbs">
+							<c:forEach var="pic" items="${pictures}">
 
-									<!-- Gold -->
-									<c:if test="${pawnshopPost.pawnshopPostPure != null}">
-										<li class="col-md-6">Pure :
-											${pawnshopPost.pawnshopPostPure  }</li>
-										<li class="col-md-6">Weigh :
-											${pawnshopPost.pawnshopPostWeigh }</li>
-										<li class="col-md-6">Category :
-											${pawnshopPost.pawnshopPostCategory }</li>
-									</c:if>
-
-									<!-- Watch -->
-									<c:if test="${pawnshopPost.pawnshopPostCase != null}">
-										<li class="col-md-6">Case :
-											${pawnshopPost.pawnshopPostCase }</li>
-										<li class="col-md-6">Bracelet :
-											${pawnshopPost.pawnshopPostBracelet }</li>
-										<c:if test="${pawnshopPost.pawnshopPostDiamond != null}">
-											<li class="col-md-6">Diamond :
-												${pawnshopPost.pawnshopPostDiamond }</li>
-										</c:if>
-									</c:if>
-
-									<!-- Electronic tv com telephone -->
-									<c:if test="${pawnshopPost.pawnshopPostSize != null}">
-										<li class="col-md-6">Size :
-											${pawnshopPost.pawnshopPostSize }</li>
-									</c:if>
-
-
-									<!-- Electronic com telephone -->
-									<c:if test="${pawnshopPost.pawnshopPostHarddisk != null}">
-										<li class="col-md-6">Harddisk :
-											${pawnshopPost.pawnshopPostHarddisk }</li>
-									</c:if>
-
-									<!-- Electronic com-->
-									<c:if test="${pawnshopPost.pawnshopPostRam != null}">
-										<li class="col-md-6">Ram : ${pawnshopPost.pawnshopPostRam }</li>
-									</c:if>
-
-									<!-- Electronic camera com telephone -->
-									<c:if test="${pawnshopPost.pawnshopPostBattery != null}">
-										<li class="col-md-6"><span
-											class="glyphicon glyphicon-check" aria-hidden="true">
-										</span> Battery</li>
-									</c:if>
-
-									<!-- Electronic tv -->
-									<c:if test="${pawnshopPost.pawnshopPostRemote != null}">
-										<li class="col-md-6"><span
-											class="glyphicon glyphicon-check" aria-hidden="true">
-										</span> Remote</li>
-									</c:if>
-
-									<!-- Watch -->
-									<c:if test="${pawnshopPost.pawnshopPostCase != null}">
-										<c:if test="${pawnshopPost.pawnshopPostPackage != null}">
-											<li class="col-md-6"><span
-												class="glyphicon glyphicon-check" aria-hidden="true">
-											</span> Package</li>
-										</c:if>
-									</c:if>
-
-									<!-- Watch,Electronic -->
-									<c:if test="${pawnshopPost.pawnshopPostModel != null}">
-										<li class="col-md-6"><span
-											class="glyphicon glyphicon-check" aria-hidden="true">
-										</span> Warranty</li>
-									</c:if>
-								</ul>
-							</div>
-							<div class="clearfix"></div>
-						</div>
-						<h4 class="quick">Other Detail :</h4>
-						<p class="quick_desc">${pawnshopPost.pawnshopPostDescription }</p>
-						<div class="wish-list">By
-							${pawnshopPost.pawnshopId.pawnshopName} from
-							${pawnshopPost.pawnshopId.pawnshopProvince}</div>
-						<div class="quantity">
-
-							<div class="quantity-select row">
-								<div class="col-md-6">Amount 1</div>
-								<div class="col-md-4">
-									<form method="post" action="saveOrder.html">
-										<input type="hidden" name="pawnshopPostId"
-											value="${pawnshopPost.pawnshopPostId}" />
-										<button type="submit" class="item_add hvr-skew-backward">Buy</button>
-									</form>
-								</div>
-
-
-							</div>
-
-
-							<div class="clearfix"></div>
-						</div>
-
+								<li data-target="#carouselExampleIndicators"
+									data-slide-to="<%=dataslideto%>" class="<%=active%>"><img
+									class="" src="images/imageUpload/${pic.picture}" alt=""></li>
+								<li data-target="#carouselExampleIndicators" data-slide-to="1"><img
+									class="" src="images/imageUpload/${pic.picture}" alt=""></li>
+								<%
+									dataslideto++;
+										if (dataslideto > 0) {
+											active = "";
+										}
+								%>
+							</c:forEach>
+						</ol>
 					</div>
-					<div class="clearfix"></div>
 				</div>
-				<!--//content-->
+			</div>
+			<div class="col-md-6 single-top-in">
+				<div class="span_2_of_a1 simpleCart_shelfItem">
+					<h3>${pawnshopPost.pawnshopPostName }${post.pawnshopPostBrand }</h3>
+					<p class="in-para">Information</p>
+					<div class="price_single">
+						<div class="preview">
+							<ul class="row">
+
+								<!-- Electronic camera-->
+								<c:if test="${pawnshopPost.pawnshopPostTypeCamera != null}">
+									<li class="col-md-6">${pawnshopPost.pawnshopPostTypeCamera }</li>
+									<li class="col-md-6">${pawnshopPost.pawnshopPostCameraLen }</li>
+								</c:if>
+								<!-- Watch,Electronic -->
+								<c:if test="${pawnshopPost.pawnshopPostModel != null}">
+									<li class="col-md-6">Production :
+										${pawnshopPost.pawnshopPostProduction}</li>
+									<li class="col-md-6">Model :
+										${pawnshopPost.pawnshopPostModel}</li>
+									<li class="col-md-6">Serial :
+										${pawnshopPost.pawnshopPostSerial}</li>
+									<li class="col-md-6">Purchase :
+										${pawnshopPost.pawnshopPostPurchase }</li>
+								</c:if>
+
+								<!-- Gold -->
+								<c:if test="${pawnshopPost.pawnshopPostPure != null}">
+									<li class="col-md-6">Pure :
+										${pawnshopPost.pawnshopPostPure  }</li>
+									<li class="col-md-6">Weigh :
+										${pawnshopPost.pawnshopPostWeigh }</li>
+									<li class="col-md-6">Category :
+										${pawnshopPost.pawnshopPostCategory }</li>
+								</c:if>
+
+								<!-- Watch -->
+								<c:if test="${pawnshopPost.pawnshopPostCase != null}">
+									<li class="col-md-6">Case :
+										${pawnshopPost.pawnshopPostCase }</li>
+									<li class="col-md-6">Bracelet :
+										${pawnshopPost.pawnshopPostBracelet }</li>
+									<c:if test="${pawnshopPost.pawnshopPostDiamond != null}">
+										<li class="col-md-6">Diamond :
+											${pawnshopPost.pawnshopPostDiamond }</li>
+									</c:if>
+								</c:if>
+
+								<!-- Electronic tv com telephone -->
+								<c:if test="${pawnshopPost.pawnshopPostSize != null}">
+									<li class="col-md-6">Size :
+										${pawnshopPost.pawnshopPostSize }</li>
+								</c:if>
+
+
+								<!-- Electronic com telephone -->
+								<c:if test="${pawnshopPost.pawnshopPostHarddisk != null}">
+									<li class="col-md-6">Harddisk :
+										${pawnshopPost.pawnshopPostHarddisk }</li>
+								</c:if>
+
+								<!-- Electronic com-->
+								<c:if test="${pawnshopPost.pawnshopPostRam != null}">
+									<li class="col-md-6">Ram : ${pawnshopPost.pawnshopPostRam }</li>
+								</c:if>
+
+								<!-- Electronic camera com telephone -->
+								<c:if test="${pawnshopPost.pawnshopPostBattery != null}">
+									<li class="col-md-6"><span
+										class="glyphicon glyphicon-check" aria-hidden="true"> </span>
+										Battery</li>
+								</c:if>
+
+								<!-- Electronic tv -->
+								<c:if test="${pawnshopPost.pawnshopPostRemote != null}">
+									<li class="col-md-6"><span
+										class="glyphicon glyphicon-check" aria-hidden="true"> </span>
+										Remote</li>
+								</c:if>
+
+								<!-- Watch -->
+								<c:if test="${pawnshopPost.pawnshopPostCase != null}">
+									<c:if test="${pawnshopPost.pawnshopPostPackage != null}">
+										<li class="col-md-6"><span
+											class="glyphicon glyphicon-check" aria-hidden="true">
+										</span> Package</li>
+									</c:if>
+								</c:if>
+
+								<!-- Watch,Electronic -->
+								<c:if test="${pawnshopPost.pawnshopPostModel != null}">
+									<li class="col-md-6"><span
+										class="glyphicon glyphicon-check" aria-hidden="true"> </span>
+										Warranty</li>
+								</c:if>
+							</ul>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<h4 class="quick">Other Detail :</h4>
+					<p class="quick_desc">${pawnshopPost.pawnshopPostDescription }</p>
+					<div class="wish-list">By
+						${pawnshopPost.pawnshopId.pawnshopName} from
+						${pawnshopPost.pawnshopId.pawnshopProvince}</div>
+					<div class="quantity">
+
+						<div class="quantity-select row">
+							<div>฿ ${pawnshopPost.pawnshopPostPrice}</div>
+							<div class="ml-auto">
+
+								<a href="#" id="${pawnshopPost.pawnshopPostId}"
+									onClick="select(this); return false;"
+									data-cart='{"pawnshopPostId":"${pawnshopPost.pawnshopPostId}","pawnshopPostName":"${pawnshopPost.pawnshopPostName } ${post.pawnshopPostBrand }","pawnshopPostPrice":" ${pawnshopPost.pawnshopPostPrice}"}'
+									class="item_add hvr-skew-backward">เพิ่มลงตะกร้า</a>
+							</div>
+
+
+						</div>
+
+
+						<div class="clearfix"></div>
+					</div>
+
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<!--//content-->
 		</div>
 	</div>
 
@@ -230,10 +230,29 @@
 		});
 	</script>
 
-	<script src="js/simpleCart.min.js">
-		
+	<script type="text/javascript">
+		var cart = {}
+		var list = []
+
+		window.onLoad(this.check())
+		function select(e) {
+			console.log(e.getAttribute('data-cart'))
+			cart = JSON.parse(e.getAttribute('data-cart'))
+			this.list.push(this.cart)
+			sessionStorage.setItem('carts', JSON.stringify(this.list))
+			this.check()
+		}
+
+		function check() {
+			if (sessionStorage.getItem('carts')) {
+				list = JSON.parse(sessionStorage.getItem('carts'))
+				data = {
+					'list' : list
+				}
+				console.log(list.length)
+			}
+		};
 	</script>
-	<!-- slide -->
-	<script src="js/bootstrap.min.js"></script>
+
 </body>
 </html>
