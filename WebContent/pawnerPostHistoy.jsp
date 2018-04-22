@@ -34,13 +34,7 @@
 		<div class="container">
 			<div class="history-filter">
 				<div class="d-flex">
-					<div class="mr-auto p-2">history</div>
-					<div class="ml-auto p-2">
-						Show: <select>
-							<option>finish</option>
-							<option>process</option>
-						</select>
-					</div>
+					<div class="mr-auto p-2">ประวัติการจำนำ</div>
 				</div>
 			</div>
 		</div>
@@ -53,7 +47,7 @@
 								value="${post.pawnerPostDate }" />
 						</div>
 						<div class="ml-auto p-2">
-							<span>Delete</span>
+							<span></span>
 						</div>
 					</div>
 					<div class="history-body">
@@ -67,33 +61,32 @@
 							<div class="col-md-7 single-top-in">
 								<div class="span_2_of_a1 simpleCart_shelfItem">
 									<h3>${post.pawnerPostName } -${post.pawnerPostBrand }</h3>
-									<p class="in-para">Information</p>
+									<p class="in-para">รายละเอียด</p>
 									<div class="price_single">
 										<div class="preview">
 											<ul class="row">
 												<!-- Watch,Electronic -->
 												<c:if test="${post.pawnerPostModel != null}">
-													<li class="col-md-6">Production :
-														${post.pawnerPostProduction}</li>
-													<li class="col-md-6">Model : ${post.pawnerPostModel}</li>
-													<li class="col-md-6">Serial : ${post.pawnerPostSerial}</li>
-													<li class="col-md-6">Purchase :
+													<li class="col-md-6">รุ่น : ${post.pawnerPostModel}</li>
+													<li class="col-md-6">หมายเลขประจำเครื่อง : ${post.pawnerPostSerial}</li>
+													<li class="col-md-6">ปีที่ซื้อสินค้า :
 														${post.pawnerPostPurchase }</li>
+													<li class="col-md-6">ปีที่ผลิตสินค้า :
+														${post.pawnerPostProduction}</li>
 												</c:if>
 
 												<!-- Gold -->
 												<c:if test="${post.pawnerPostPure != null}">
-													<li class="col-md-6">Pure : ${post.pawnerPostPure  }</li>
-													<li class="col-md-6">Weigh : ${post.pawnerPostWeigh }</li>
-													<li class="col-md-6">Category :
-														${post.pawnerPostCategory }</li>
+													<li class="col-md-6">ยี่ห้อ : ${post.pawnerPostBrand }</li>
+													<li class="col-md-6">ความบริสุทธ์ : ${post.pawnerPostPure  }</li>
+													<li class="col-md-6">น้ำหนัก : ${post.pawnerPostWeigh }</li>
+													<li class="col-md-6">ชนิดหรือรูปแบบของทองคำ : ${post.pawnerPostCategory }</li>
 												</c:if>
-
 
 
 												<!-- Electronic tv com telephone -->
 												<c:if test="${post.pawnerPostSize != null}">
-													<li class="col-md-6">Size : ${post.pawnerPostSize }</li>
+													<li class="col-md-6">ขนาดหน้าจอ : ${post.pawnerPostSize }</li>
 												</c:if>
 
 												<!-- Electronic camera com telephone -->
@@ -115,17 +108,17 @@
 
 												<!-- Watch -->
 												<c:if test="${post.pawnerPostCase != null}">
-													<li class="col-md-6">Case : ${post.pawnerPostCase }</li>
-													<li class="col-md-6">Bracelet :
+													<li class="col-md-6">ชนิดของหน้าปัด : ${post.pawnerPostCase }</li>
+													<li class="col-md-6">ชนิดของสายรัดข้อมือ :
 														${post.pawnerPostBracelet }</li>
 													<c:if test="${post.pawnerPostDiamond != null}">
-														<li class="col-md-6">Diamond :
+														<li class="col-md-6">เพรช :
 															${post.pawnerPostDiamond }</li>
 													</c:if>
 													<c:if test="${post.pawnerPostPackage != null}">
 														<li class="col-md-6"><span
 															class="glyphicon glyphicon-check" aria-hidden="true">
-														</span> Package</li>
+														</span> กล้องบรรจุสินค้า:${post.pawnerPostPackage}</li>
 													</c:if>
 												</c:if>
 
@@ -138,10 +131,10 @@
 
 
 												<!-- Watch,Electronic -->
-												<c:if test="${post.pawnerPostModel != null}">
+												<c:if test="${post.pawnerPostWarranty != null}">
 													<li class="col-md-6"><span
 														class="glyphicon glyphicon-check" aria-hidden="true">
-													</span> Warranty</li>
+													</span> การประกันสินค้า</li>
 												</c:if>
 											</ul>
 										</div>

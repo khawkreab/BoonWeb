@@ -92,10 +92,10 @@
 								<span class="navbar-account-photo">รูป</span><span
 									class="navbar-account-info"><span
 									class="navbar-account-naem"><%=session.getAttribute("username")%></span><span
-									class="navbar-account-email">email</span></span>
+									class="navbar-account-email"><%=session.getAttribute("email")%></span></span>
 							</div></li>
 							<li><a href="logout.html" class="nav-link ">แก้ไขบัญชี</a></li>
-							<li><a href="" class="nav-link ">ประวัติการจำนำ</a></li>
+							<li><a href="pawner-post-history.html" class="nav-link ">ประวัติการจำนำ</a></li>
 							<li><a href="" class="nav-link ">ประวัติการสังซื้อ</a></li>
 						<li><a href="logout.html" class="nav-link ">ออกจากระบบ</a></li>
 					</ul></li>
@@ -116,7 +116,7 @@
 								<span class="navbar-account-photo">photo</span><span
 									class="navbar-account-info"><span
 									class="navbar-account-naem"><%=session.getAttribute("username")%></span><span
-									class="navbar-account-email">email</span></span>
+									class="navbar-account-email"><%=session.getAttribute("email")%></span></span>
 							</div></li>
 						<li><a href="logout.html" class="nav-link ">แก้ไขบัญชี</a></li>
 						<li><a href="" class="nav-link ">ประวัติการประเมิณของจำนำ</a></li>
