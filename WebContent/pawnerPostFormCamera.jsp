@@ -7,7 +7,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -25,6 +25,8 @@
 
 <!-- Custom styles for this template -->
 <link href="css/new-design.css" rel="stylesheet">
+<link href="vendor/font-awesome/css/font-awesome.min.css"
+	rel="stylesheet" type="text/css">
 
 </head>
 
@@ -33,8 +35,8 @@
 	<jsp:include page="navbar.jsp" />
 	<!--banner-->
 	<div class="banner-top">
-		<div>
-			<h1>กล้องถ่ายรูป</h1>
+		<div class="">
+			<h1>กล้อง</h1>
 			<em></em>
 		</div>
 	</div>
@@ -51,13 +53,12 @@
 									modelAttribute="pawnerPost" enctype="multipart/form-data">
 									<input type="hidden" name="pawnerPostId" />
 									<input type="hidden" name="pawnerId.pawnerId" />
-									<input type="hidden" name="pawnerPostItemType" value="Camera" />
+									<input type="hidden" name="pawnerPostItemType" value="Laptop" />
 									<div class="wrap-input100 validate-input"
 										data-validate="Valid email is required: ex@abc.xyz">
 										<input class="input100" type="text" name="pawnerPostName"
 											placeholder="ชื่อสินค้าที่ต้องการจำนำ">
 									</div>
-
 									<div class="wrap-input100 validate-input"
 										style="margin-top: 15px;">
 										<select class="input100" name="pawnerPostBrand"
@@ -73,15 +74,14 @@
 											<option>Others</option>
 										</select>
 									</div>
-
-									<div class="wrap-input100 rs1-wrap-input100 validate-input"
-										style="margin-top: 15px;">
+									<div class="wrap-input100 validate-input"
+										style="margin-top: 15px;" data-validate="Type first name">
 										<input class="input100" type="text" name="pawnerPostSerial"
 											placeholder="หมายเลขประจำเครื่อง"> <span
 											class="focus-input100"></span>
 									</div>
-									<div class="wrap-input100 rs2-wrap-input100 validate-input"
-										style="margin-top: 15px;">
+									<div class="wrap-input100  validate-input"
+										style="margin-top: 15px;" data-validate="Type last name">
 										<input class="input100" type="text" name="pawnerPostModel"
 											placeholder="รุ่น"> <span class="focus-input100"></span>
 									</div>
@@ -106,8 +106,6 @@
 												class="focus-input100"></span>
 										</div>
 									</div>
-
-
 									<!-- ------------------------upload image----------------------------  -->
 									<div style="margin-top: 15px; width: 100%">
 										<span style="font-size: 14px;">ลงรูปภาพประกอบการจำนำ</span>
@@ -179,34 +177,36 @@
 											</div>
 										</div>
 									</div>
-									<!-- ------------------------Description----------------------------  -->
+
 									<div class="wrap-input100 validate-input"
-										style="margin-top: 15px;" data-validate="Message is required">
+										data-validate="Message is required">
 										<textarea class="input100" name="pawnerPostDescription"
 											placeholder="รายละเอียดสินค้าเพิ่มเติม"></textarea>
 										<span class="focus-input100"></span>
 									</div>
 									<div class="form-group-post float-left">
 										<ul>
-											<li><span
-												style="font-size: 14.5px; font-weight: inherit;"> <input
-													type="checkbox" name="pawnerPostBattery" value="yes" />
+											<li>
+												<div style="font-size: 14.5px; font-weight: inherit;">
+													<input type="checkbox" name="pawnerPostBattery" value="yes" />
 													Battery charger
-											</span></li>
-											<li><span
-												style="font-size: 14.5px; font-weight: inherit;"> <input
-													type="checkbox" name="pawnerPostWarranty" value="yes" />
-													ประกันสินค้า
-											</span></li>
-											<li><span
-												style="font-size: 14.5px; font-weight: inherit;"> <input
-													type="checkbox" required="required">
+												</div>
+											</li>
+											<li>
+												<div style="font-size: 14.5px; font-weight: inherit;">
+													<input type="checkbox" name="pawnerPostWarranty"
+														value="yes" /> ประกันสินค้า
+												</div>
+											</li>
+											<li>
+												<div style="font-size: 14.5px; font-weight: inherit;">
+													<input type="checkbox" required="required">
 													ฉันยอมรับและตกลง <strong>เงือนไขการใช้งาน</strong>
 													ของระบบบุญยง
-											</span></li>
+												</div>
+											</li>
 										</ul>
 									</div>
-
 									<div class="container-contact100-form-btn">
 										<button type="submit" class="contact100-form-btn">
 											ยืนยัน</button>
@@ -219,6 +219,7 @@
 			</div>
 		</div>
 	</div>
+
 	<script src="js/upimages.js"></script>
 	<script>
 		$(document).ready(function() {

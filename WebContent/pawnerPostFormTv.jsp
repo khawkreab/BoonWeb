@@ -69,15 +69,15 @@
 													<option>Others</option>
 												</select>
 											</div>
-											<div class="wrap-input100 rs1-wrap-input100 validate-input" style="margin-top:15px;" data-validate="Type first name">
+											<div class="wrap-input100 validate-input" style="margin-top:15px;" data-validate="Type first name">
 												<input class="input100" type="text" name="pawnerPostSerial" placeholder="หมายเลขประจำเครื่อง">
 												<span class="focus-input100"></span>
 											</div>
-											<div class="wrap-input100 rs2-wrap-input100 validate-input" style="margin-top:15px;" data-validate="Type last name">
+											<div class="wrap-input100  validate-input" style="margin-top:15px;" data-validate="Type last name">
 												<input class="input100" type="text" name="pawnerPostModel" placeholder="รุ่น">
 												<span class="focus-input100"></span>
 											</div>
-											<div class="wrap-input100  validate-input" data-validate="Type first name">
+											<div class="wrap-input100  validate-input" data-validate="Type first name" style="margin-top:15px;">
 												<input class="input100" type="text" name="pawnerPostSize" placeholder="ขนาดหน้าจอ">
 												<span class="focus-input100"></span>
 											</div>

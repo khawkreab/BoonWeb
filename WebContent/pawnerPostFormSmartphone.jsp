@@ -65,15 +65,15 @@
 													<option>Others</option>
 												</select>
 											</div>
-											<div class="wrap-input100 rs1-wrap-input100 validate-input" style="margin-top:15px;" data-validate="Type first name">
+											<div class="wrap-input100  validate-input" style="margin-top:15px;" data-validate="Type first name">
 												<input class="input100" type="text" name="pawnerPostSerial" placeholder="หมายเลขประจำเครื่อง">
 												<span class="focus-input100"></span>
 											</div>
-											<div class="wrap-input100 rs2-wrap-input100 validate-input" style="margin-top:15px;" data-validate="Type last name">
+											<div class="wrap-input100 validate-input" style="margin-top:15px;" data-validate="Type last name">
 												<input class="input100" type="text" name="pawnerPostModel" placeholder="รุ่น">
 												<span class="focus-input100"></span>
 											</div>
-											<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+											<div class="wrap-input100 validate-input" style="margin-top:15px;" data-validate="Valid email is required: ex@abc.xyz">
 												<input class="input100" type="text" name="pawnerPostCapacity" placeholder="หน่วยความจำ">
 												<span class="focus-input100"></span>
 											</div>

@@ -59,15 +59,15 @@
 												<input class="input100" type="text" name="pawnerPostBrand" placeholder="ยี่ห้อ">
 												<span class="focus-input100"></span>
 											</div>
-											<div class="wrap-input100 rs1-wrap-input100 validate-input" style="margin-top:15px;">
+											<div class="wrap-input100  validate-input" style="margin-top:15px;">
 												<input class="input100" type="text" name="pawnerPostPure" placeholder="ความบริสุทธิ์">
 												<span class="focus-input100"></span>
 											</div>
-											<div class="wrap-input100 rs2-wrap-input100 validate-input" style="margin-top:15px;">
+											<div class="wrap-input100  validate-input" style="margin-top:15px;">
 												<input class="input100" type="text" name="pawnerPostWeigh" placeholder="น้ำหนัก(ใช้หน่วยเป็นกรัม)">
 												<span class="focus-input100"></span>
 											</div>
-											<div class="wrap-input100 validate-input">
+											<div class="wrap-input100 validate-input" style="margin-top:15px;">
 												<select class="input100" name="pawnerPostCategory" required="required">
 													<option>ชนิดหรือรูปแบบของทองคำ</option>
 													<option>ทองรูปพรรณ</option>
