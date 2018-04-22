@@ -92,10 +92,10 @@
 								<span class="navbar-account-photo">รูป</span><span
 									class="navbar-account-info"><span
 									class="navbar-account-naem"><%=session.getAttribute("username")%></span><span
-									class="navbar-account-email">email</span></span>
+									class="navbar-account-email"><%=session.getAttribute("email")%></span></span>
 							</div></li>
 							<li><a href="logout.html" class="nav-link ">แก้ไขบัญชี</a></li>
-							<li><a href="" class="nav-link ">ประวัติการจำนำ</a></li>
+							<li><a href="pawner-post-history.html" class="nav-link ">ประวัติการจำนำ</a></li>
 							<li><a href="" class="nav-link ">ประวัติการสังซื้อ</a></li>
 						<li><a href="logout.html" class="nav-link ">ออกจากระบบ</a></li>
 					</ul></li>
@@ -105,9 +105,8 @@
 				%>
 
 				<li><a class="nav-link" href="pawnshop-pledge-sell.html">ปล่อยของหลุดจำนำ</a></li>
-				<li><a class="nav-link" href="pawnshop-track-estimate.html">สถานะของหลุดจำนำ</a></li>
-				<li><a class="nav-link" href="pawnshop-estimate-history.html">ติดตามการประเมิณของจำนำ</a></li>
-				<!--  <li><a class="nav-link" href="pawnshop-list-post.html">รายการของฉัน</a></li> -->
+				<li><a class="nav-link" href="pawnshop-track-estimate.html">สถานะของการประเมิณ</a></li>
+				<li><a class="nav-link" href="">รายการของหลุดจำนำ</a></li>
 				<li class="dropdown show"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown" role="button" aria-expanded="false"> <%=session.getAttribute("username")%></a>
 					<ul class="dropdown-menu" role="menu">
@@ -116,10 +115,10 @@
 								<span class="navbar-account-photo">photo</span><span
 									class="navbar-account-info"><span
 									class="navbar-account-naem"><%=session.getAttribute("username")%></span><span
-									class="navbar-account-email">email</span></span>
+									class="navbar-account-email"><%=session.getAttribute("email")%></span></span>
 							</div></li>
 						<li><a href="logout.html" class="nav-link ">แก้ไขบัญชี</a></li>
-						<li><a href="" class="nav-link ">ประวัติการประเมิณของจำนำ</a></li>
+						<li><a href="pawnshop-estimate-history.html" class="nav-link ">ประวัติการประเมิณของจำนำ</a></li>
 						<li><a href="" class="nav-link ">ประวัติการปล่อยของหลุดจำนำ</a></li>
 						<li><a href="logout.html" class="nav-link ">Logout</a></li>
 					</ul></li>
@@ -150,7 +149,7 @@
 							<div class="form-login"
 								style="margin-top: 50px; margin-bottom: 60px;">
 								<h1 style="font-size: 32px; font-weight: 500;">ยินดีตอนรับ</h1>
-								<p class="Subhead-description" style="margin-bottom: 35px;">ระบบจำนำทางออนไลน์ จำนำง่ายจ่ายคล่องต้องบุญยง (เดวมาเพิ่ม)</p>
+								<p class="Subhead-description" style="margin-bottom: 35px;">ระบบจำนำทางออนไลน์ จำนำง่ายจ่ายคล่องต้องบุญยง </p>
 								<form method="POST" action="loginProcess.html">
 									<div class="form-group">
 										<span style="font-weight: 500; color: #555;">อีเมลของคุณ</span>
@@ -170,10 +169,6 @@
 											class="btn btn-sm btn-default" style="font-size: 15px;">ยกเลิก</button>
 									</div>
 								</form>
-							</div>
-							<div class="modal-footer">
-								<a href="pawner-register-form.html" style="color: #555;">
-									สร้างบัญชีผู้ใช้งาน</a>
 							</div>
 						</div>
 						<div class="col-md-6 bg3"></div>

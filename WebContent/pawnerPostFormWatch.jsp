@@ -208,7 +208,7 @@
 											<li style="font-size: 14.5px;font-weight: inherit;"><input type="checkbox"
 												name="pawnerPostPackage" value="yes" /> กล้องบรรจุสินค้า</li>
 											<li style="font-size: 14.5px;font-weight: inherit;"><input type="checkbox"
-												name="pawnerPostWarranty" value="yes" /> การประกันสินค้า
+												name="pawnerPostWarranty" value="yes" /> ประกันสินค้า
 												Certificate</li>
 											<li style="font-size: 14.5px;font-weight: inherit;">
 												<input type="checkbox" required="required"> ฉันยอมรับและตกลง

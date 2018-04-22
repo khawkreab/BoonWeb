@@ -83,12 +83,11 @@
 							<img src="img/logos/Artboard.png"
 								style="height: 50px; margin-bottom: 10px; margin-top: 20px;" />
 							<h1 style="font-size: 30px; letter-spacing: -1px; color: #555;">ยินดีตอนรับ</h1>
-							<p class="Subhead-description">Register for get new exper</p>
 							<ul style="padding-left: 7px;">
 								<li><form:input path="pawnerFirstname" type="text"
-										class="account-regis" style="width:50%" placeholder="ชื่อ"
+										class="account-regis"  placeholder="ชื่อ"
 										required="required" /> <form:input path="pawnerLastname"
-										type="text" class="account-regis" style="width:50%"
+										type="text" class="account-regis" 
 										placeholder="นามสกุล" required="required" /></li>
 								<!-- ----------not set path ----------- -->
 								<li><input type="text" id="telto" class="account-regis"
