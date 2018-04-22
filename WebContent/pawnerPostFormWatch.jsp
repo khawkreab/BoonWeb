@@ -38,7 +38,7 @@
 	<jsp:include page="navbar.jsp" />
 	<!--banner-->
 	<div class="banner-top">
-			<h1>Pledge Wearables</h1>
+			<h1>นาฬิกาข้อมือ</h1>
 			<em></em>
 	</div>
 	<!--content-->

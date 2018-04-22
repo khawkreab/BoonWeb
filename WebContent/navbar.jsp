@@ -124,9 +124,8 @@
 									class="navbar-account-email"><%=session.getAttribute("email")%></span></span>
 							</div></li>
 						<li><a href="logout.html" class="nav-link ">แก้ไขบัญชี</a></li>
-						<li><a href="pawnshop-estimate-history.html"
-							class="nav-link ">ประวัติการประเมิณของจำนำ</a></li>
-						<li><a href="" class="nav-link ">ประวัติการปล่อยของหลุดจำนำ</a></li>
+						<li><a href="pawnshop-estimate-history.html" class="nav-link ">ประวัติการประเมิณของจำนำ</a></li>
+						<li><a href="pawnshop-list-post.html" class="nav-link ">ประวัติการปล่อยของหลุดจำนำ</a></li>
 						<li><a href="logout.html" class="nav-link ">Logout</a></li>
 					</ul></li>
 				<!-- ------------------------------not login-------------------------------------- -->

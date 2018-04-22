@@ -43,7 +43,7 @@
 					<div class="container-contact100 ">
 						<div class="wrap-contact100">
 							<div class="contact100-form">
-								<form:form method="post" action="savePost.html"
+								<form:form method="post" action="saveShopPost.html"
 									modelAttribute="pawnshopPost" enctype="multipart/form-data">
 									<input type="hidden" name="pawnshopPostId" />
 									<input type="hidden" name="pawnshopId.pawnshopId" />
