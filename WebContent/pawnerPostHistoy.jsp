@@ -91,8 +91,9 @@
 
 												<!-- Electronic camera com telephone -->
 												<c:if test="${post.pawnerPostBattery != null}">
-													<li class="col-md-6">Battery :
-														${post.pawnerPostBattery }</li>
+													<li class="col-md-6"><span
+														class="fas fa-check" aria-hidden="true">
+													</span>Battery</li>
 												</c:if>
 
 												<!-- Electronic com telephone -->
@@ -117,15 +118,15 @@
 													</c:if>
 													<c:if test="${post.pawnerPostPackage != null}">
 														<li class="col-md-6"><span
-															class="glyphicon glyphicon-check" aria-hidden="true">
-														</span> กล้องบรรจุสินค้า:${post.pawnerPostPackage}</li>
+															class="fas fa-check" aria-hidden="true">
+														</span> กล้องบรรจุสินค้า</li>
 													</c:if>
 												</c:if>
 
 												<!-- Electronic tv -->
 												<c:if test="${post.panwePostRemote != null}">
 													<li class="col-md-6"><span
-														class="glyphicon glyphicon-check" aria-hidden="true">
+														class="fas fa-check" aria-hidden="true">
 													</span> Remote</li>
 												</c:if>
 
@@ -133,7 +134,7 @@
 												<!-- Watch,Electronic -->
 												<c:if test="${post.pawnerPostWarranty != null}">
 													<li class="col-md-6"><span
-														class="glyphicon glyphicon-check" aria-hidden="true">
+														class="fas fa-check" aria-hidden="true">
 													</span> การประกันสินค้า</li>
 												</c:if>
 											</ul>
