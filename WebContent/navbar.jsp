@@ -150,7 +150,7 @@
 							<div class="form-login"
 								style="margin-top: 50px; margin-bottom: 60px;">
 								<h1 style="font-size: 32px; font-weight: 500;">ยินดีตอนรับ</h1>
-								<p class="Subhead-description" style="margin-bottom: 35px;">ระบบจำนำทางออนไลน์ จำนำง่ายจ่ายคล่องต้องบุญยง (เดวมาเพิ่ม)</p>
+								<p class="Subhead-description" style="margin-bottom: 35px;">ระบบจำนำทางออนไลน์ จำนำง่ายจ่ายคล่องต้องบุญยง </p>
 								<form method="POST" action="loginProcess.html">
 									<div class="form-group">
 										<span style="font-weight: 500; color: #555;">อีเมลของคุณ</span>
@@ -170,10 +170,6 @@
 											class="btn btn-sm btn-default" style="font-size: 15px;">ยกเลิก</button>
 									</div>
 								</form>
-							</div>
-							<div class="modal-footer">
-								<a href="pawner-register-form.html" style="color: #555;">
-									สร้างบัญชีผู้ใช้งาน</a>
 							</div>
 						</div>
 						<div class="col-md-6 bg3"></div>

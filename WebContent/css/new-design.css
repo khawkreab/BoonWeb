@@ -172,6 +172,7 @@ form {
 	border: none;
 	background-color: #fff;
 	cursor: pointer;
+	color:#555555;
 }
 
 .modal-footer button:hover {
@@ -1147,7 +1148,7 @@ footer {
 }
 
 .account-submit {
-	width: 90%;
+	width: 100%;
 	background-color: #ff7f00;
 	margin-top: 12px;
 	padding: 6px 8px;
@@ -1173,14 +1174,12 @@ footer {
 
 .bg2 {
 	background-image: url("../img/body/body2.jpg");
-	height: 100%;
+	height: 105%;
 	width: 100%;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
 	margin: auto;
-	border-top-left-radius: 10px;
-	border-bottom-left-radius: 10px;
 }
 
 .bg3 {
