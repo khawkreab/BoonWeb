@@ -183,7 +183,8 @@
 								<a href="#" id="${pawnshopPost.pawnshopPostId}"
 									onClick="select(this); return false;"
 									data-cart='{"pawnshopPostId":"${pawnshopPost.pawnshopPostId}","pawnshopPostName":"${pawnshopPost.pawnshopPostName } ${post.pawnshopPostBrand }","pawnshopPostPrice":" ${pawnshopPost.pawnshopPostPrice}"}'
-									class="item_add hvr-skew-backward" data-toggle="modal" data-target="#modalCart" >เพิ่มลงตะกร้า</a>
+									class="item_add hvr-skew-backward" data-toggle="modal"
+									data-target="#modalCart">เพิ่มลงตะกร้า</a>
 							</div>
 
 
@@ -205,11 +206,42 @@
 			<div class="modal-content">
 				<div class="re-con">
 					<div class="row">
-						<div class="col-md-6 ">
-							<h1>Hi Mr.SAKARIN</h1>
+						<div class="col-md-8 ">
+							<div class="col-md-12 text-success h5">
+								<i class="fas fa-check-circle"></i> สินค้าจำนวน 1
+								รายการได้ถูกเพิ่มลงในรถเข็นของท่าน
+							</div>
+							<div class="d-flex flex-row">
+								<div class="col-md-3">
+									<img style="width: 100%"
+										src="images/imageUpload/${pawnshopPost.pawnshopPostPicture}">
+								</div>
+								<div class="col-md-8">
+									<span class="h6">${pawnshopPost.pawnshopPostName }${post.pawnshopPostBrand }</span>
+									<div class="clear-fix"></div>
+									<span class="small">By
+										${pawnshopPost.pawnshopId.pawnshopName} from
+										${pawnshopPost.pawnshopId.pawnshopProvince}</span>
+									<div class="clear-fix"></div>
+									<span class="h6 text-orange">฿
+										${pawnshopPost.pawnshopPostPrice}</span>
+								</div>
+							</div>
 						</div>
-						<div class="col-md-6">
-							<h1>Hi Mr.SAKARIN</h1>
+						<div class="col-md-4">
+							<span class="h5">ตะกร้า <span class="small text-secondary">(จำนวน
+									<i id="cartNumberi"></i> ชิ้น)
+							</span></span>
+							<div class="d-flex">
+								<span class="mr-auto">ยอดรวม</span> <span>฿ ....</span>
+							</div>
+							<div class="d-flex">
+								<span class="mr-auto">ยอดรวมทั้งสิ้น</span> <span>฿ ...3</span>
+							</div>
+							<div class="d-flex">
+								<span class="mr-auto"><a href="pawner-cart.html">ไปยังตะกร้า</a></span>
+								<span class=""><a href="pawner-index.html">เลือกสิ้นค้าต่อ</a></span>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -224,7 +256,7 @@
 		var cart = {}
 		var list = []
 
-		window.onLoad(this.check())
+		window.onload = this.check();
 		function select(e) {
 			console.log(e.getAttribute('data-cart'))
 			cart = JSON.parse(e.getAttribute('data-cart'))
@@ -237,13 +269,14 @@
 			if (sessionStorage.getItem('carts')) {
 				list = JSON.parse(sessionStorage.getItem('carts'))
 
-				console.log(list.length)
-				if (0 != list.length) {
+				console.log("list legth => " + list.length)
+				if (list.length == null || list.length == 0) {
+					document.getElementById("cartNumber").style.display = "none";
+				} else {
 					document.getElementById("cartNumber").style.display = "block";
 					sessionStorage.setItem('pawnercartNumber', list.length)
 					document.getElementById("cartNumber").innerHTML = list.length
-				} else {
-					document.getElementById("cartNumber").style.display = "none";
+					document.getElementById("cartNumberi").innerHTML = list.length
 				}
 
 			}

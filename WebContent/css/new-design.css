@@ -30,6 +30,7 @@ a:focus {
 	border-radius: 0px;
 }
 
+
 h1, h2, h3, h4, h5, h6 h7 {
 	font-weight: 700;
 	font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif
@@ -65,14 +66,12 @@ li {
 	justify-content: center;
 }
 
-.color-orange {
-	color: #FF6B45;
-	font-weight: 900;
+.text-orange {
+	color: #FF7700;
 }
 
-.color-black {
+.text-black {
 	color: #505459;
-	font-weight: 900;
 }
 
 .margin-auto {
@@ -154,6 +153,26 @@ form {
 }
 
 /*!
+* override modal
+*/
+
+.modal-open .modal {
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.modal-dialog {
+    overflow: hidden;
+    min-width: 900px;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    margin: auto;
+}
+
+/*!
 * modal footer override
 */
 .modal-footer {
@@ -177,6 +196,10 @@ form {
 
 .modal-footer button:hover {
 	color: #ff7700
+}
+
+.modal-login{
+	min-width: 800px;
 }
 
 /*!
@@ -298,14 +321,14 @@ form {
 	box-orient: vertical;
 	overflow: hidden;
 	text-overflow: ellipsis;
-	white-space: normal;
-	font-weight: 700;
-	font-size: 1em;
-	color: #29303b;
-	margin: 0 0 5px 0;
-	max-height: 40px;
-	word-wrap: break-word;
-	line-height: 1.8em;
+    white-space: nowrap;
+    font-weight: 500;
+    font-size: .9em;
+    color: #ff7700;
+    margin: 0 0 5px 0;
+    max-height: 40px;
+    word-wrap: break-word;
+    line-height: 1.8em;
 }
 
 .card-body-price {
@@ -1256,6 +1279,7 @@ footer {
 	background-repeat: no-repeat;
 	position: relative;
 	border: 1px;
+	min-width: 800px;
 	/* 	border-radius: 10px; */
 }
 
@@ -1308,10 +1332,6 @@ footer {
 	font-weight: 700;
 }
 
-.modal-dialog {
-	/* margin: 100px auto; */
-	max-width: 900px;
-}
 
 .wrap-contact100 {
 	background: #fff;
