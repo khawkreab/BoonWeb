@@ -51,6 +51,7 @@ public class PawnerController {
 				pmService.insert(pawner);
 			}else{
 				pmService.update(pawner);
+				
 				return "redirect:pawner-index.html";
 			}
 		}catch (Exception e){
@@ -58,11 +59,11 @@ public class PawnerController {
 		}return "redirect:index.jsp";
 	}
 	
-	@RequestMapping("/editPawner")
+	@RequestMapping("/pawner-edit")
 	public ModelAndView editPawner(HttpServletRequest request) {
 		long paramId = (long) request.getSession().getAttribute("id");
 		Pawner foundPawner;
-		ModelAndView mv = new ModelAndView("pawnerRegisterForm.jsp");
+		ModelAndView mv = new ModelAndView("pawnerEdit.jsp");
 		try {
 			foundPawner = pmService.findPawnerById(paramId);
 			mv.addObject("pawner", foundPawner);

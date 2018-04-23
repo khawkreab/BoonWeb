@@ -54,7 +54,7 @@
 				</a>
 				<div class="card-body">
 					<span class="card-body-title"><a
-						href="post-detail.html?item=${pawnshopPosts.pawnshopPostId}">
+						href="post-item-detail.html?item=${pawnshopPosts.pawnshopPostId}">
 							${pawnshopPosts.pawnshopPostName}
 							${pawnshopPosts.pawnshopPostBrand}</a></span> <span
 						class="card-body-location"><i class="fas fa-map-marker-alt"></i>

@@ -54,7 +54,7 @@
 								value="${post.pawnerPostDate }" />
 						</div>
 						<div class="ml-auto p-2">
-							<span>ลบ</span>
+							<span></span>
 						</div>
 					</div>
 					<div class="history-body">
@@ -67,7 +67,7 @@
 							</div>
 							<div class="col-md-7 single-top-in">
 								<div class="span_2_of_a1 simpleCart_shelfItem">
-									<h3>${post.pawnerPostName } -${post.pawnerPostBrand }
+									<h3>${post.pawnerPostName }-${post.pawnerPostBrand }
 										${post.pawnerPostTypeCamera } ${post.pawnerPostCameraLen }</h3>
 									<p class="in-para">Information</p>
 									<div class="price_single">
@@ -77,7 +77,8 @@
 												<!-- Watch,Electronic -->
 												<c:if test="${post.pawnerPostModel != null}">
 													<li class="col-md-6">รุ่น : ${post.pawnerPostModel}</li>
-													<li class="col-md-6">หมายเลขประจำเครื่อง : ${post.pawnerPostSerial}</li>
+													<li class="col-md-6">หมายเลขประจำเครื่อง :
+														${post.pawnerPostSerial}</li>
 													<li class="col-md-6">ปีที่ซื้อสินค้า :
 														${post.pawnerPostPurchase }</li>
 													<li class="col-md-6">ปีที่ผลิตสินค้า :
@@ -87,22 +88,24 @@
 												<!-- Gold -->
 												<c:if test="${post.pawnerPostPure != null}">
 													<li class="col-md-6">ยี่ห้อ : ${post.pawnerPostBrand }</li>
-													<li class="col-md-6">ความบริสุทธ์ : ${post.pawnerPostPure  }</li>
+													<li class="col-md-6">ความบริสุทธ์ :
+														${post.pawnerPostPure  }</li>
 													<li class="col-md-6">น้ำหนัก : ${post.pawnerPostWeigh }</li>
-													<li class="col-md-6">ชนิดหรือรูปแบบของทองคำ : ${post.pawnerPostCategory }</li>
+													<li class="col-md-6">ชนิดหรือรูปแบบของทองคำ :
+														${post.pawnerPostCategory }</li>
 												</c:if>
 
 
 												<!-- Electronic tv com telephone -->
 												<c:if test="${post.pawnerPostSize != null}">
-													<li class="col-md-6">ขนาดหน้าจอ : ${post.pawnerPostSize }</li>
+													<li class="col-md-6">ขนาดหน้าจอ :
+														${post.pawnerPostSize }</li>
 												</c:if>
 
 												<!-- Electronic camera com telephone -->
 												<c:if test="${post.pawnerPostBattery != null}">
-													<li class="col-md-6"><span
-														class="fas fa-check" aria-hidden="true">
-													</span>Battery</li>
+													<li class="col-md-6"><span class="fas fa-check"
+														aria-hidden="true"> </span>Battery</li>
 												</c:if>
 
 												<!-- Electronic com telephone -->
@@ -118,33 +121,30 @@
 
 												<!-- Watch -->
 												<c:if test="${post.pawnerPostCase != null}">
-													<li class="col-md-6">ชนิดของหน้าปัด : ${post.pawnerPostCase }</li>
+													<li class="col-md-6">ชนิดของหน้าปัด :
+														${post.pawnerPostCase }</li>
 													<li class="col-md-6">ชนิดของสายรัดข้อมือ :
 														${post.pawnerPostBracelet }</li>
 													<c:if test="${post.pawnerPostDiamond != null}">
-														<li class="col-md-6">เพรช :
-															${post.pawnerPostDiamond }</li>
+														<li class="col-md-6">เพรช : ${post.pawnerPostDiamond }</li>
 													</c:if>
 													<c:if test="${post.pawnerPostPackage != null}">
-														<li class="col-md-6"><span
-															class="fas fa-check" aria-hidden="true">
-														</span> กล้องบรรจุสินค้า</li>
+														<li class="col-md-6"><span class="fas fa-check"
+															aria-hidden="true"> </span> กล้องบรรจุสินค้า</li>
 													</c:if>
 												</c:if>
 
 												<!-- Electronic tv -->
 												<c:if test="${post.panwePostRemote != null}">
-													<li class="col-md-6"><span
-														class="fas fa-check" aria-hidden="true">
-													</span> Remote</li>
+													<li class="col-md-6"><span class="fas fa-check"
+														aria-hidden="true"> </span> Remote</li>
 												</c:if>
 
 
 												<!-- Watch,Electronic -->
 												<c:if test="${post.pawnerPostModel != null}">
-													<li class="col-md-6"><span
-														class="fas fa-check" aria-hidden="true">
-													</span> การประกันสินค้า</li>
+													<li class="col-md-6"><span class="fas fa-check"
+														aria-hidden="true"> </span> การประกันสินค้า</li>
 												</c:if>
 
 											</ul>
@@ -193,7 +193,8 @@
 																value="${estimate.estimateId}"> <input
 																type="hidden" name="pawnerPostId"
 																value="${post.pawnerPostId}">
-															<button type="submit">ยืนยันราคาสินค้า</button>
+															<button style="border-radius: 2px; background: #ff7f00;font-size: 13px; color: #fff;padding: 5px; border:none"
+																type="submit">ยืนยันราคาสินค้า</button>
 														</form>
 													</div>
 												</div>
