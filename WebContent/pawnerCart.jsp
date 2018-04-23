@@ -27,10 +27,14 @@
 		<div id="list" style="height: 435px; overflow: auto;">
 			<!-- List Order Here!!!! -->
 		</div>
+
+		<button class="btn btn-primary btn-block btn-lg" onClick="clearCart()">ลบทั้งหมด]</button>
 		<button class="btn btn-primary btn-block btn-lg"
 			onClick="comfirmOrder()">Confirm Orders</button>
 	</section>
 
+
+	<!-- cart script  -->
 	<script>
 		var cart = {}
 		var list = []
@@ -54,7 +58,7 @@
 					document.getElementById("cartNumber").style.display = "block";
 					sessionStorage.setItem('pawnercartNumber', list.length)
 					document.getElementById("cartNumber").innerHTML = list.length
-				}else{
+				} else {
 					document.getElementById("cartNumber").style.display = "none";
 				}
 
@@ -65,10 +69,10 @@
 							+ "</td>"
 					html += "<td>" + this.list[index].pawnshopPostPrice
 							+ "</td>"
-					html += "</tr>"
 					html += "<td><button onClick='deleteSelf("
 							+ index
 							+ ")'><i class='fas fa-trash' style='font-size:20px;color:red'></i></button></td>"
+					html += "</tr>"
 
 				}
 			} else {
