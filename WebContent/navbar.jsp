@@ -59,10 +59,12 @@
 			%><a class="navbar-brand" href="pawnshop-index.html"> <img
 				src="img/logos/logo-white.png" alt=""> BOONYONG
 			</a>
+
+			<!-- -----------------------------not login--------------------------------------- -->
 			<%
 				}
 				} else {
-			%><a class="navbar-brand" href="#"> <img
+			%><a class="navbar-brand" href="index.jsp"> <img
 				src="img/logos/logo-white.png" alt=""> BOONYONG
 			</a>
 			<%
@@ -83,9 +85,12 @@
 				%>
 				<li><a class="nav-link" href="pawner-pledge.html">จำนำ</a></li>
 				<li><a class="nav-link" href="pawner-track-pledge.html">สถานะการจำนำ</a></li>
-				<li><a class="nav-link" href="pawner-order.html">ตะกร้าสินค้า</a></li>
+				<li><a class="nav-link" href="pawner-cart.html"><i class="fas fa-shopping-cart"></i><span class="cart-num"
+						id="cartNumber"></span></a></li>
 				<li class="dropdown show"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown" role="button" aria-expanded="false"> <%=session.getAttribute("username")%></a>
+
+					<!-- -----------pawner login drop down menu---------------------- -->
 					<ul class="dropdown-menu" role="menu">
 						<li><p>บัญชีผู้ใช้งาน</p>
 							<div class="navbar-account">
@@ -94,9 +99,9 @@
 									class="navbar-account-naem"><%=session.getAttribute("username")%></span><span
 									class="navbar-account-email"><%=session.getAttribute("email")%></span></span>
 							</div></li>
-							<li><a href="logout.html" class="nav-link ">แก้ไขบัญชี</a></li>
-							<li><a href="pawner-post-history.html" class="nav-link ">ประวัติการจำนำ</a></li>
-							<li><a href="" class="nav-link ">ประวัติการสังซื้อ</a></li>
+						<li><a href="logout.html" class="nav-link ">แก้ไขบัญชี</a></li>
+						<li><a href="pawner-post-history.html" class="nav-link ">ประวัติการจำนำ</a></li>
+						<li><a href="" class="nav-link ">ประวัติการสังซื้อ</a></li>
 						<li><a href="logout.html" class="nav-link ">ออกจากระบบ</a></li>
 					</ul></li>
 				<!-- -----------------------------pawnShop login--------------------------------------- -->
@@ -109,6 +114,7 @@
 				<li><a class="nav-link" href="">รายการของหลุดจำนำ</a></li>
 				<li class="dropdown show"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown" role="button" aria-expanded="false"> <%=session.getAttribute("username")%></a>
+					<!-- -----------pawnShop login drop down menu---------------------- -->
 					<ul class="dropdown-menu" role="menu">
 						<li><p>บัญชีผู้ใช้งาน</p>
 							<div class="navbar-account">
@@ -138,7 +144,7 @@
 			</ul>
 		</div>
 	</nav>
-	
+
 	<!------------------------------------------------ popup -------------------------------------------------->
 	<div class="modal fade" id="modalLogin" role="dialog">
 		<div class="modal-dialog">
@@ -149,18 +155,17 @@
 							<div class="form-login"
 								style="margin-top: 50px; margin-bottom: 60px;">
 								<h1 style="font-size: 32px; font-weight: 500;">ยินดีตอนรับ</h1>
-								<p class="Subhead-description" style="margin-bottom: 35px;">ระบบจำนำทางออนไลน์ จำนำง่ายจ่ายคล่องต้องบุญยง </p>
+								<p class="Subhead-description" style="margin-bottom: 35px;">ระบบจำนำทางออนไลน์
+									จำนำง่ายจ่ายคล่องต้องบุญยง</p>
 								<form method="POST" action="loginProcess.html">
 									<div class="form-group">
 										<span style="font-weight: 500; color: #555;">อีเมลของคุณ</span>
 										<input class="post-login" name="email" required="required" />
-										<errors path="email" />
 									</div>
 									<div class="form-group">
-										<span style="font-weight: 500; color: #555;">รหัสผ่าน</span>
-										<input type="password" class="post-login" name="password"
+										<span style="font-weight: 500; color: #555;">รหัสผ่าน</span> <input
+											type="password" class="post-login" name="password"
 											required="required" />
-										<errors path="password" />
 									</div>
 									<div class="form-group">
 										<button type="submit" class="btn btn-sm btn-primary"
@@ -185,6 +190,13 @@
 	<!-- Bootstrap core JavaScript -->
 	<script src="vendor/jquery/jquery.min.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+	<script type="text/javascript">
+		window.onload = function checkcart() {
+			cartnum = sessionStorage.getItem('pawnercartNumber');
+			document.getElementById("cartNumber").innerHTML = cartnum
+		}
+	</script>
 </body>
 
 </html>
