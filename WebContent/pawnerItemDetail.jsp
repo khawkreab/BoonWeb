@@ -183,7 +183,7 @@
 								<a href="#" id="${pawnshopPost.pawnshopPostId}"
 									onClick="select(this); return false;"
 									data-cart='{"pawnshopPostId":"${pawnshopPost.pawnshopPostId}","pawnshopPostName":"${pawnshopPost.pawnshopPostName } ${post.pawnshopPostBrand }","pawnshopPostPrice":" ${pawnshopPost.pawnshopPostPrice}"}'
-									class="item_add hvr-skew-backward">เพิ่มลงตะกร้า</a>
+									class="item_add hvr-skew-backward" data-toggle="modal" data-target="#modalCart" >เพิ่มลงตะกร้า</a>
 							</div>
 
 
@@ -199,7 +199,24 @@
 	</div>
 
 
-	<!-- pop up -->
+	<!------------------------------------------------ popup -------------------------------------------------->
+	<div class="modal fade" id="modalCart" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="re-con">
+					<div class="row">
+						<div class="col-md-6 ">
+							<h1>Hi Mr.SAKARIN</h1>
+						</div>
+						<div class="col-md-6">
+							<h1>Hi Mr.SAKARIN</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- -------------------------------------------------------------------------------------------------- -->
 
 
 	<!-- cart script -->

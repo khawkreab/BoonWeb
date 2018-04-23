@@ -48,7 +48,7 @@
 				<img class="card-img-top"
 					src="images/imageUpload/${pawnshopPosts.pawnshopPostPicture}"
 					alt="Card image cap"> <a
-					href="post-detail.html?item=${pawnshopPosts.pawnshopPostId}"> <span
+					href="post-item-detail.html?item=${pawnshopPosts.pawnshopPostId}"> <span
 					class="zoom-icon "> <i class="fas fa-search icon "></i>
 				</span>
 				</a>
