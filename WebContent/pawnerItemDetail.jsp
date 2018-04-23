@@ -23,7 +23,7 @@
 
 	<!--banner-->
 	<div class="banner-top">
-		<h1>Information</h1>
+		<h1>รายละเอียดสินค้า</h1>
 		<em></em>
 	</div>
 
@@ -43,19 +43,8 @@
 									<div class="carousel-item <%=active2%>">
 										<img class="d-block img-fluid"
 											src="images/imageUpload/${pic.picture}" alt="First slide">
-										<div class="carousel-caption d-none d-md-block">
-											<h3>Pledge online</h3>
-											<p>Updated every day</p>
-										</div>
 									</div>
-									<div class="carousel-item">
-										<img class="d-block img-fluid"
-											src="images/imageUpload/${pic.picture}" alt="Second slide">
-										<div class="carousel-caption d-none d-md-block">
-											<h3></h3>
-											<p></p>
-										</div>
-									</div>
+
 									<%
 										dataslideto2++;
 											if (dataslideto2 > 0) {
@@ -74,8 +63,7 @@
 								<li data-target="#carouselExampleIndicators"
 									data-slide-to="<%=dataslideto%>" class="<%=active%>"><img
 									class="" src="images/imageUpload/${pic.picture}" alt=""></li>
-								<li data-target="#carouselExampleIndicators" data-slide-to="1"><img
-									class="" src="images/imageUpload/${pic.picture}" alt=""></li>
+
 								<%
 									dataslideto++;
 										if (dataslideto > 0) {
@@ -154,32 +142,28 @@
 
 								<!-- Electronic camera com telephone -->
 								<c:if test="${pawnshopPost.pawnshopPostBattery != null}">
-									<li class="col-md-6"><span
-										class="glyphicon glyphicon-check" aria-hidden="true"> </span>
-										Battery</li>
+									<li class="col-md-6"><span class="fas fa-check"
+										aria-hidden="true"> </span> Battery</li>
 								</c:if>
 
 								<!-- Electronic tv -->
 								<c:if test="${pawnshopPost.pawnshopPostRemote != null}">
-									<li class="col-md-6"><span
-										class="glyphicon glyphicon-check" aria-hidden="true"> </span>
-										Remote</li>
+									<li class="col-md-6"><span class="fas fa-check"
+										aria-hidden="true"> </span> Remote</li>
 								</c:if>
 
 								<!-- Watch -->
 								<c:if test="${pawnshopPost.pawnshopPostCase != null}">
 									<c:if test="${pawnshopPost.pawnshopPostPackage != null}">
-										<li class="col-md-6"><span
-											class="glyphicon glyphicon-check" aria-hidden="true">
-										</span> Package</li>
+										<li class="col-md-6"><span class="fas fa-check"
+											aria-hidden="true"> </span> Package</li>
 									</c:if>
 								</c:if>
 
 								<!-- Watch,Electronic -->
 								<c:if test="${pawnshopPost.pawnshopPostModel != null}">
-									<li class="col-md-6"><span
-										class="glyphicon glyphicon-check" aria-hidden="true"> </span>
-										Warranty</li>
+									<li class="col-md-6"><span class="fas fa-check"
+										aria-hidden="true"> </span> Warranty</li>
 								</c:if>
 							</ul>
 						</div>
@@ -214,20 +198,11 @@
 		</div>
 	</div>
 
-	<script src="js/imagezoom.js"></script>
 
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-	<script defer src="js/jquery.flexslider.js"></script>
-	<script>
-		// Can also be used with $(document).ready()
-		$(window).load(function() {
-			$('.flexslider').flexslider({
-				animation : "slide",
-				controlNav : "thumbnails"
-			});
-		});
-	</script>
+	<!-- pop up -->
 
+
+	<!-- cart script -->
 	<script type="text/javascript">
 		var cart = {}
 		var list = []
@@ -244,15 +219,20 @@
 		function check() {
 			if (sessionStorage.getItem('carts')) {
 				list = JSON.parse(sessionStorage.getItem('carts'))
-				
-				
+
 				console.log(list.length)
-				sessionStorage.setItem('pawnercartNumber', list.length)
-				document.getElementById("cartNumber").innerHTML = list.length
+				if (0 != list.length) {
+					document.getElementById("cartNumber").style.display = "block";
+					sessionStorage.setItem('pawnercartNumber', list.length)
+					document.getElementById("cartNumber").innerHTML = list.length
+				} else {
+					document.getElementById("cartNumber").style.display = "none";
+				}
 
 			}
 		}
 	</script>
+
 
 </body>
 </html>

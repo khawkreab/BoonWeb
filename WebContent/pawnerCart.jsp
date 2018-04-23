@@ -27,10 +27,14 @@
 		<div id="list" style="height: 435px; overflow: auto;">
 			<!-- List Order Here!!!! -->
 		</div>
+
+		<button class="btn btn-primary btn-block btn-lg" onClick="clearCart()">ลบทั้งหมด]</button>
 		<button class="btn btn-primary btn-block btn-lg"
 			onClick="comfirmOrder()">Confirm Orders</button>
 	</section>
 
+
+	<!-- cart script  -->
 	<script>
 		var cart = {}
 		var list = []
@@ -50,8 +54,13 @@
 				list = JSON.parse(sessionStorage.getItem('carts'))
 
 				console.log(list.length)
-				sessionStorage.setItem('pawnercartNumber', list.length)
-				document.getElementById("cartNumber").innerHTML = list.length
+				if (0 != list.length) {
+					document.getElementById("cartNumber").style.display = "block";
+					sessionStorage.setItem('pawnercartNumber', list.length)
+					document.getElementById("cartNumber").innerHTML = list.length
+				} else {
+					document.getElementById("cartNumber").style.display = "none";
+				}
 
 				html += "<tr><th>Name</th><th>Price</th><th></th></tr>"
 				for ( var index in this.list) {
@@ -60,10 +69,10 @@
 							+ "</td>"
 					html += "<td>" + this.list[index].pawnshopPostPrice
 							+ "</td>"
-					html += "</tr>"
 					html += "<td><button onClick='deleteSelf("
 							+ index
 							+ ")'><i class='fas fa-trash' style='font-size:20px;color:red'></i></button></td>"
+					html += "</tr>"
 
 				}
 			} else {
@@ -76,7 +85,7 @@
 		}
 
 		function deleteSelf(index) {
-			console.log("delete " + this.list.splice(index, 1))
+			/* console.log("delete " + this.list.splice(index, 1)) */
 			this.list.splice(index, 1)
 			sessionStorage.setItem('carts', JSON.stringify(this.list))
 			this.check()
