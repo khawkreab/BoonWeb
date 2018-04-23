@@ -246,11 +246,15 @@
 		function check() {
 			if (sessionStorage.getItem('carts')) {
 				list = JSON.parse(sessionStorage.getItem('carts'))
-				
-				
+
 				console.log(list.length)
-				sessionStorage.setItem('pawnercartNumber', list.length)
-				document.getElementById("cartNumber").innerHTML = list.length
+				if (0 != list.length) {
+					document.getElementById("cartNumber").style.display = "block";
+					sessionStorage.setItem('pawnercartNumber', list.length)
+					document.getElementById("cartNumber").innerHTML = list.length
+				} else {
+					document.getElementById("cartNumber").style.display = "none";
+				}
 
 			}
 		}

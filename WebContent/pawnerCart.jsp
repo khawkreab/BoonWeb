@@ -50,8 +50,13 @@
 				list = JSON.parse(sessionStorage.getItem('carts'))
 
 				console.log(list.length)
-				sessionStorage.setItem('pawnercartNumber', list.length)
-				document.getElementById("cartNumber").innerHTML = list.length
+				if (0 != list.length) {
+					document.getElementById("cartNumber").style.display = "block";
+					sessionStorage.setItem('pawnercartNumber', list.length)
+					document.getElementById("cartNumber").innerHTML = list.length
+				}else{
+					document.getElementById("cartNumber").style.display = "none";
+				}
 
 				html += "<tr><th>Name</th><th>Price</th><th></th></tr>"
 				for ( var index in this.list) {
@@ -76,7 +81,7 @@
 		}
 
 		function deleteSelf(index) {
-			console.log("delete " + this.list.splice(index, 1))
+			/* console.log("delete " + this.list.splice(index, 1)) */
 			this.list.splice(index, 1)
 			sessionStorage.setItem('carts', JSON.stringify(this.list))
 			this.check()
