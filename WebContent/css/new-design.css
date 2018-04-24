@@ -1304,7 +1304,7 @@ footer {
 
 .bg2 {
 	background-image: url("../img/body/body2.jpg");
-	height: 105%;
+	height: 590px;
 	width: 100%;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -1350,7 +1350,7 @@ footer {
 }
 
 .input-regis {
-	width: 300;
+	width: 300px;
 	background-color: #fafbfc;
 	margin-top: 12px;
 	padding: 6px 8px;
@@ -1375,7 +1375,7 @@ footer {
 }
 
 .input-submit {
-	width: 300;
+	width: 300px;
 	background-color: #ff7f00;
 	margin-top: 12px;
 	padding: 6px 8px;
