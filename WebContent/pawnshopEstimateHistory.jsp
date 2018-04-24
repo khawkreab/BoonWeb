@@ -46,6 +46,7 @@
 									<thead>
 										<tr>
 											<th>รูปภาพ</th>
+											<th>ประเภท</th>
 											<th>หมวดหมู่</th>
 											<th>ชื่อโพส</th>
 											<th>ความบริสุทธิ์</th>
@@ -63,6 +64,7 @@
 												<td><img class="img-responsive"
 													src="images/imageUpload/${estimate.pawnerPostId.pawnerPostPicture}"
 													width="300" /></td>
+												<td><c:if test="${estimate.pawnerPostId.pawnerPostItemType == 'Gold'}"> <span class="badge default">ทองคำ</span></c:if></td>
 												<td>${estimate.pawnerPostId.pawnerPostCategory}</td>
 												<td>${estimate.pawnerPostId.pawnerPostName}</td>
 												<td>${estimate.pawnerPostId.pawnerPostPure}</td>
@@ -106,6 +108,7 @@
 									<thead>
 										<tr>
 											<th>รูปภาพ</th>
+											<th>ประเภท</th>
 											<th>แบรนด์</th>
 											<th>ชื่อโพส</th>
 											<th>หมายเลขผลิตภัณฑ์</th>
@@ -128,6 +131,7 @@
 												<td><img class="img-responsive"
 													src="images/imageUpload/${estimate.pawnerPostId.pawnerPostPicture}"
 													width="300" /></td>
+												<td><c:if test="${estimate.pawnerPostId.pawnerPostItemType == 'Camera'}"> <span class="badge default">กล้อง</span></c:if></td>
 												<td>${estimate.pawnerPostId.pawnerPostBrand}</td>
 												<td>${estimate.pawnerPostId.pawnerPostName}</td>
 												<td>${estimate.pawnerPostId.pawnerPostSerial}</td>
@@ -179,6 +183,7 @@
 									<thead>
 										<tr>
 											<th>รูปภาพ</th>
+											<th>ประเภท</th>
 											<th>แบรนด์</th>
 											<th>ชื่อโพส</th>
 											<th>หมายเลขผลิตภัณฑ์</th>
@@ -203,6 +208,7 @@
 												<td><img class="img-responsive"
 													src="images/imageUpload/${estimate.pawnerPostId.pawnerPostPicture}"
 													width="300" /></td>
+												<td><c:if test="${estimate.pawnerPostId.pawnerPostItemType == 'Laptop'}"> <span class="badge default">แลปท็อป และ คอมพิวเตอร์</span></c:if></td>
 												<td>${estimate.pawnerPostId.pawnerPostBrand}</td>
 												<td>${estimate.pawnerPostId.pawnerPostName}</td>
 												<td>${estimate.pawnerPostId.pawnerPostSerial}</td>
@@ -255,6 +261,7 @@
 									<thead>
 										<tr>
 											<th>รูปภาพ</th>
+											<th>ประเภท</th>
 											<th>แบรนด์</th>
 											<th>ชื่อโพส</th>
 											<th>หมายเลขผลิตภัณฑ์</th>
@@ -277,6 +284,7 @@
 												<td><img class="img-responsive"
 													src="images/imageUpload/${estimate.pawnerPostId.pawnerPostPicture}"
 													width="300" /></td>
+												<td><c:if test="${estimate.pawnerPostId.pawnerPostItemType == 'Smartphone'}"> <span class="badge default">โทรศัพท์มือถือ</span></c:if></td>
 												<td>${estimate.pawnerPostId.pawnerPostBrand}</td>
 												<td>${estimate.pawnerPostId.pawnerPostName}</td>
 												<td>${estimate.pawnerPostId.pawnerPostSerial}</td>
@@ -327,6 +335,7 @@
 									<thead>
 										<tr>
 											<th>รูปภาพ</th>
+											<th>ประเภท</th>
 											<th>แบรนด์</th>
 											<th>ชื่อโพส</th>
 											<th>หมายเลขผลิตภัณฑ์</th>
@@ -348,6 +357,7 @@
 												<td><img class="img-responsive"
 													src="images/imageUpload/${estimate.pawnerPostId.pawnerPostPicture}"
 													width="300" /></td>
+												<td><c:if test="${estimate.pawnerPostId.pawnerPostItemType == 'Tv'}"> <span class="badge default">ทีวี</span></c:if></td>
 												<td>${estimate.pawnerPostId.pawnerPostBrand}</td>
 												<td>${estimate.pawnerPostId.pawnerPostName}</td>
 												<td>${estimate.pawnerPostId.pawnerPostSerial}</td>
@@ -397,6 +407,7 @@
 									<thead>
 										<tr>
 											<th>รูปภาพ</th>
+											<th>ประเภท</th>
 											<th>แบรนด์</th>
 											<th>ชื่อโพส</th>
 											<th>หน้าปัดนาฬิกา</th>
@@ -418,6 +429,7 @@
 												<td><img class="img-responsive"
 													src="images/imageUpload/${estimate.pawnerPostId.pawnerPostPicture}"
 													width="300" /></td>
+												<td><c:if test="${estimate.pawnerPostId.pawnerPostItemType == 'Watch'}"> <span class="badge default">นาฬิกา</span></c:if></td>
 												<td>${estimate.pawnerPostId.pawnerPostBrand}</td>
 												<td>${estimate.pawnerPostId.pawnerPostName}</td>
 												<td>${estimate.pawnerPostId.pawnerPostCase}</td>
