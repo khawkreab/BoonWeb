@@ -163,16 +163,15 @@ public class PawnerPostController {
 	@RequestMapping("/pawner-post-history")
 	public ModelAndView history(HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView("pawnerPostHistoy.jsp");
-		List<PawnerPost> pawnerPosts;
-		List<Estimate> estimatesList;
+		List<Estimate> estimatesListApprove , estimatesListComplete;
 		try {
 			long userId = (long) request.getSession().getAttribute("id");
-			pawnerPosts = pawnerPostService.findPawnerPostByPawnerId(userId);
-			estimatesList =estimateService.findEstimateByPawnerId(userId);
+			estimatesListApprove =estimateService.findEstimateByPawnerIdAndStatus(userId, "approve");
+			estimatesListComplete =estimateService.findEstimateByPawnerIdAndStatus(userId, "complete");
 			
 			
-			mv.addObject("estimatesList", estimatesList);
-			mv.addObject("pawnerPosts", pawnerPosts);
+			mv.addObject("estimatesListApprove", estimatesListApprove);
+			mv.addObject("estimatesListComplete", estimatesListComplete);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -182,16 +181,18 @@ public class PawnerPostController {
 	@RequestMapping("/pawner-track-pledge")
 	public ModelAndView pledge(HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView("pawnerTrackMyPlege.jsp");
-		List<PawnerPost> pawnerPosts;
+		List<PawnerPost> pawnerPostsWaiting , pawnerPostsProcess;
 		List<Estimate> estimatesList;
 		try {
 			long userId = (long) request.getSession().getAttribute("id");
-			pawnerPosts = pawnerPostService.findPawnerPostByPawnerId(userId);
-			estimatesList =estimateService.findEstimateByPawnerId(userId);
+			pawnerPostsWaiting = pawnerPostService.findPawnerPostByPawnerIdAndStatus(userId , "waiting");
+			pawnerPostsProcess = pawnerPostService.findPawnerPostByPawnerIdAndStatus(userId , "process");
+			estimatesList =estimateService.findEstimateByPawnerIdAndStatus(userId , "process");
 			
 			
 			mv.addObject("estimatesList", estimatesList);
-			mv.addObject("pawnerPosts", pawnerPosts);
+			mv.addObject("pawnerPosts", pawnerPostsWaiting);
+			mv.addObject("pawnerPostsProcess", pawnerPostsProcess);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

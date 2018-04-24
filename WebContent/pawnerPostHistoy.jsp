@@ -182,7 +182,6 @@
 											<div class="col-md-3">ราคาน้อยสุด</div>
 											<div class="col-md-3">ราคามากสุด</div>
 										</div>
-<<<<<<< HEAD
 										<ul>
 											<li>
 												<div class="row small">
@@ -194,11 +193,6 @@
 											</li>
 										</ul>
 									</div>
-									<a href="#" id="${pawnshopPost.pawnshopPostId}"
-										onClick="select(this); return false;"
-										data-cart='{"pawnshopPostId":"${post.pawnerPostId.pawnerPostId}","pawnshopPostName":"${post.pawnerPostId.pawnerPostName }"}'
-										class="hvr-skew-backward">พิมใบแสดงการจำนำ</a>
-=======
 										<a href="#" id="${post.pawnerPostId.pawnerPostId}"
 										onClick="select(this); return false;"
 										data-cart='{"pawnerPostId":"${post.pawnerPostId.pawnerId.pawnerEmail}",
@@ -219,20 +213,13 @@
 										"pawnerPostPicture":"${post.pawnerPostId.pawnerPostPicture}"
 										}'
 										class="hvr-skew-backward">พิมใบแสดงการจำนำ</a>
-									</c:if>
->>>>>>> doing
 								</div>
 							</div>
 						</div>
 					</div>
-<<<<<<< HEAD
 				</div>
 			</div>
 		</c:forEach>
-=======
-					
-					<c:if test="${post.pawnerPostId.pawnerPostStatus == 'complete'}">
->>>>>>> doing
 
 		<!-- ---------------- status complete ----------------- -->
 		<c:forEach items="${estimatesListApprove}" var="post">
