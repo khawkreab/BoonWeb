@@ -57,9 +57,6 @@
 	float: right;
 }
 
-.bill {
-	border: 1px solid;
-}
 </style>
 </head>
 
@@ -185,6 +182,7 @@
 											<div class="col-md-3">ราคาน้อยสุด</div>
 											<div class="col-md-3">ราคามากสุด</div>
 										</div>
+<<<<<<< HEAD
 										<ul>
 											<li>
 												<div class="row small">
@@ -200,13 +198,41 @@
 										onClick="select(this); return false;"
 										data-cart='{"pawnshopPostId":"${post.pawnerPostId.pawnerPostId}","pawnshopPostName":"${post.pawnerPostId.pawnerPostName }"}'
 										class="hvr-skew-backward">พิมใบแสดงการจำนำ</a>
+=======
+										<a href="#" id="${post.pawnerPostId.pawnerPostId}"
+										onClick="select(this); return false;"
+										data-cart='{"pawnerPostId":"${post.pawnerPostId.pawnerId.pawnerEmail}",
+										"pawnerPostName":"${post.pawnerPostId.pawnerPostName }","pawnerPostDate":"${post.pawnerPostId.pawnerPostDate}",
+										"pawnerPostItemType":"${post.pawnerPostId.pawnerPostItemType}","pawnerPostBrand":"${post.pawnerPostId.pawnerPostBrand}",
+										"panwePostRemote":"${post.pawnerPostId.panwePostRemote}","pawnerPostBattery":"${post.pawnerPostId.pawnerPostBattery}",
+										"pawnerPostBracelet":"${post.pawnerPostId.pawnerPostBracelet}","pawnerPostCameraLen":"${post.pawnerPostId.pawnerPostCameraLen}",
+										"pawnerPostCapacity":"${post.pawnerPostId.pawnerPostCapacity}","pawnerPostCase":"${post.pawnerPostId.pawnerPostCase}",
+										"pawnerPostDescription":"${post.pawnerPostId.pawnerPostDescription}","pawnerPostDevice":"${post.pawnerPostId.pawnerPostDevice}",
+										"pawnerPostDiamond":"${post.pawnerPostId.pawnerPostDiamond}","pawnerPostHarddisk":"${post.pawnerPostId.pawnerPostHarddisk}",
+										"pawnerPostModel":"${post.pawnerPostId.pawnerPostModel}","pawnerPostPackage":"${post.pawnerPostId.pawnerPostPackage}",
+										"pawnerPostProduction":"${post.pawnerPostId.pawnerPostProduction}","pawnerPostPurchase":"${post.pawnerPostId.pawnerPostPurchase}",
+										"pawnerPostSerial":"${post.pawnerPostId.pawnerPostSerial}","pawnerPostStatus":"${post.pawnerPostId.pawnerPostStatus}",
+										"pawnerPostTypeCamera":"${post.pawnerPostId.pawnerPostTypeCamera}","pawnerPostWarranty":"${post.pawnerPostId.pawnerPostWarranty}",
+										"pawnerPostWeigh":"${post.pawnerPostId.pawnerPostWeigh}","pawnerPostRam":"${post.pawnerPostId.pawnerPostRam}",
+										"pawnerPostPure":"${post.pawnerPostId.pawnerPostPure}","estimatePriceMin":"${post.estimatePriceMin}",
+										"estimatePriceMax":"${post.estimatePriceMax}","estimateDate":"${post.estimateDate}",
+										"pawnerPostPicture":"${post.pawnerPostId.pawnerPostPicture}"
+										}'
+										class="hvr-skew-backward">พิมใบแสดงการจำนำ</a>
+									</c:if>
+>>>>>>> doing
 								</div>
 							</div>
 						</div>
 					</div>
+<<<<<<< HEAD
 				</div>
 			</div>
 		</c:forEach>
+=======
+					
+					<c:if test="${post.pawnerPostId.pawnerPostStatus == 'complete'}">
+>>>>>>> doing
 
 		<!-- ---------------- status complete ----------------- -->
 		<c:forEach items="${estimatesListApprove}" var="post">
@@ -353,7 +379,38 @@
 			var cart = {}
 			cart = JSON.parse(e.getAttribute('data-cart'))
 
-			document.getElementById("nan").innerHTML = cart.pawnshopPostName
+			$("#pawnerPostName").text(cart.pawnerPostName)
+			$("#pawnerPostId").text(cart.pawnerPostId)
+			$("#pawnerPostItemType").text(cart.pawnerPostItemType)
+			$("#panwePostRemote").text(cart.panwePostRemote)
+			$("#pawnerPostBattery").text(cart.pawnerPostBattery)
+			$("#pawnerPostBracelet").text(cart.pawnerPostBracelet)
+			$("#pawnerPostBrand").text(cart.pawnerPostBrand)
+			$("#pawnerPostCameraLen").text(cart.pawnerPostCameraLen)
+			$("#pawnerPostCapacity").text('r'+cart.pawnerPostCapacity)
+			$("#pawnerPostCase").text(cart.pawnerPostCase)
+			$("#pawnerPostCategory").text(cart.pawnerPostCategory)
+			$("#pawnerPostDate").text(cart.pawnerPostDate)
+			$("#pawnerPostDescription").text(cart.pawnerPostDescription)
+			$("#pawnerPostDevice").text(cart.pawnerPostDevice)
+			$("#pawnerPostDiamond").text(cart.pawnerPostDiamond)
+			$("#pawnerPostHarddisk").text(cart.pawnerPostHarddisk)
+			$("#pawnerPostModel").text(cart.pawnerPostModel)
+			$("#pawnerPostPackage").text(cart.pawnerPostPackage)
+			$("#pawnerPostProduction").text(cart.pawnerPostProduction)
+			$("#pawnerPostPure").text(cart.pawnerPostPure)
+			$("#pawnerPostSerial").text(cart.pawnerPostSerial)
+			$("#pawnerPostRam").text(cart.pawnerPostRam)
+			$("#pawnerPostSize").text(cart.pawnerPostSize)
+			$("#pawnerPostStatus").text(cart.pawnerPostStatus)
+			$("#pawnerPostTypeCamera").text(cart.pawnerPostTypeCamera)
+			$("#pawnerPostWarranty").text(cart.pawnerPostWarranty)
+			$("#pawnerPostWeigh").text(cart.pawnerPostWeigh)
+			$("#estimatePriceMin").text(cart.estimatePriceMin)
+			$("#estimatePriceMax").text(cart.estimatePriceMax)
+			$("#estimateDate").text(cart.estimateDate)
+			$("#pawnerPostPicture").append('<img style="width:200px;height:200px;" src="images/imageUpload/'+cart.pawnerPostPicture+'">')
+
 			console.log("this show pawnshopPostName => "
 					+ cart.pawnshopPostName)
 			window.print();
@@ -367,26 +424,29 @@
 		<div class="popup" data-popup="popup">
 			<div>
 				<p style="font-size: 32px; border-bottom: 1px solid;">ใบยืนยันการจำนำ</p>
-				<div class="row">
-					<div class="col-sm-6">
+				<div>
+					<div>
 						<p>ที่อยู๋โรงรับจำนำ</p>
 						<p>ในนี้ใสที่อยู๋โรงรับจำนำที่ get from database</p>
 					</div>
-					<div class="col-sm-6">
+					<div>
 						<table id="meta">
 							<tr>
-								<td id="nan">รหัสโพส</td>
+								<td>ชื่อเจ้าของโพส</td>
 								<td>
-									<div>xxx</div>
+									<div id="pawnerPostId"></div>
 								</td>
 							</tr>
 							<tr>
 								<td>ชื่อโพส</td>
+								<td>
+									<div id="pawnerPostName"></div>
+								</td>
 							</tr>
 							<tr>
-								<td>วันที่ยืนยันราคา</td>
+								<td>วันที่โพส</td>
 								<td>
-									<div>xxx</div>
+									<div id="pawnerPostDate"></div>
 								</td>
 							</tr>
 						</table>
@@ -402,24 +462,48 @@
 					</tr>
 					<tr class="item-row">
 						<td class="item-name">
-							<div class="delete-wpr">
-								<p>pawnerPostItemType</p>
-							</div>
+							<p id="pawnerPostItemType">pawnerPostItemType</p>
 						</td>
 						<td class="description">
-							<p>เอารายละเอียดทั้งหมดมาใส</p>
+							<ul>
+								<li id="panwePostRemote"></li>
+								<li id="pawnerPostBattery"></li>
+								<li id="pawnerPostBracelet"></li>
+								<li id="pawnerPostCategory"></li>
+								<li id="pawnerPostBrand"></li>
+								<li id="pawnerPostCameraLen"></li>
+								<li id="pawnerPostCapacity"></li>
+								<li id="pawnerPostCase"></li>
+								<li id="pawnerPostCategory"></li>
+								<li id="pawnerPostDescription"></li>
+								<li id="pawnerPostDevice"></li>
+								<li id="pawnerPostDiamond"></li>
+								<li id="pawnerPostHarddisk"></li>
+								<li id="pawnerPostModel"></li>
+								<li id="pawnerPostPackage"></li>
+								<li id="pawnerPostProduction"></li>
+								<li id="pawnerPostPure"></li>
+								<li id="pawnerPostSerial"></li>
+								<li id="pawnerPostRam"></li>
+								<li id="pawnerPostSize"></li>
+								<li id="pawnerPostStatus"></li>
+								<li id="pawnerPostTypeCamera"></li>
+								<li id="pawnerPostWarranty"></li>
+								<li id="pawnerPostWeigh"></li>
+							</ul>
 						</td>
 						<td>
-							<p>xxx</p>
+							<p id="estimateDate"></p>
 						</td>
 						<td>
-							<p>$650.00</p>
+							<p id="estimatePriceMin"></p>
 						</td>
-						<td><span>$650.00</span></td>
+						<td><p id="estimatePriceMax"></p></td>
 					</tr>
 					<tr>
 						<td colspan="5">
 							<p>รูปสินค้า</p>
+							<span id="pawnerPostPicture"></span>
 						</td>
 					</tr>
 				</table>
