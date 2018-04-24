@@ -77,7 +77,7 @@
 										<h1 style="font-size: 30px; letter-spacing: -1px; color: #555;">ยินดีตอนรับ</h1>
 										<ul style="padding-left: 7px;">
 											<li>
-												<form:input path="pawnerFirstname" type="text" class="account-regis" placeholder="ชื่อ" required="required" pattern="[ก-ฮ]{3}"/>
+												<form:input path="pawnerFirstname" type="text" class="account-regis" placeholder="ชื่อ" required="required" pattern=""/>
 												<form:input path="pawnerLastname" type="text" class="account-regis" placeholder="นามสกุล" required="required" />
 											</li>
 											<li>
