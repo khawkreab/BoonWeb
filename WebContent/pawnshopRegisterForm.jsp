@@ -50,7 +50,7 @@
 													<form:input type="password" class="input-regis" placeholder="รหัสผ่าน" path="pawnshopPassword" value="<%=pass%>" />
 												</li>
 												<li>
-													<form:input type="password" class="input-regis" placeholder="ยืนยันรหัสผ่าน" path="pawnshopPassword" value="<%=pass%>" />
+													<form:input type="password" class="input-regis" placeholder="ยืนยันรหัสผ่าน" value="<%=pass%>" />
 												</li>
 												<li>
 													<form:input type="text" class="input-regis" placeholder="เบอร์โทร" path="pawnshopTel" value="<%=tel%>" />
