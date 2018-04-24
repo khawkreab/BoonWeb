@@ -213,11 +213,24 @@
 						</div>
 					</div>
 					<c:if test="${post.pawnerPostStatus == 'approve'}">
-					
-					<a href="#" id="${pawnshopPost.pawnshopPostId}"
-									onClick="select(this); return false;"
-									data-cart='{"pawnshopPostId":"${post.pawnerPostId}","pawnshopPostName":"${post.pawnerPostName }"}'
-									class="hvr-skew-backward" 	>พิมใบแสดงการจำนำ</a>
+						<a href="#" id="${pawnshopPost.pawnshopPostId}"
+							onClick="select(this); return false;"
+							data-cart='{"pawnerPostId":"${post.pawnerId.pawnerEmail}",
+							"pawnerPostName":"${post.pawnerPostName }","pawnerPostDate":"${post.pawnerPostDate}",
+							"pawnerPostItemType":"${post.pawnerPostItemType}","pawnerPostBrand":"${post.pawnerPostBrand}",
+							"panwePostRemote":"${post.panwePostRemote}","pawnerPostBattery":"${post.pawnerPostBattery}",
+							"pawnerPostBracelet":"${post.pawnerPostBracelet}","pawnerPostCameraLen":"${post.pawnerPostCameraLen}",
+							"pawnerPostCapacity":"${post.pawnerPostCapacity}","pawnerPostCase":"${post.pawnerPostCase}",
+							"pawnerPostDescription":"${post.pawnerPostDescription}","pawnerPostDevice":"${post.pawnerPostDevice}",
+							"pawnerPostDiamond":"${post.pawnerPostDiamond}","pawnerPostHarddisk":"${post.pawnerPostHarddisk}",
+							"pawnerPostModel":"${post.pawnerPostModel}","pawnerPostPackage":"${post.pawnerPostPackage}",
+							"pawnerPostProduction":"${post.pawnerPostProduction}","pawnerPostPurchase":"${post.pawnerPostPurchase}",
+							"pawnerPostSerial":"${post.pawnerPostSerial}","pawnerPostStatus":"${post.pawnerPostStatus}",
+							"pawnerPostTypeCamera":"${post.pawnerPostTypeCamera}","pawnerPostWarranty":"${post.pawnerPostWarranty}",
+							"pawnerPostWeigh":"${post.pawnerPostWeigh}","pawnerPostRam":"${post.pawnerPostRam}",
+							"pawnerPostPure":"${post.pawnerPostPure}"
+							}'
+							class="hvr-skew-backward">พิมใบแสดงการจำนำ</a>
 					</c:if>
 				</div>
 			</div>
@@ -225,17 +238,45 @@
 
 	</section>
 
-<script>
-function select(e) {
-    
-    var cart = {}
-    cart = JSON.parse(e.getAttribute('data-cart'))
-    
-    document.getElementById("nan").innerHTML = cart.pawnshopPostName
-    console.log("this show pawnshopPostName => "+cart.pawnshopPostName)
-    window.print();
-}
-</script>
+	<script>
+		function select(e) {
+
+			var cart = {}
+			cart = JSON.parse(e.getAttribute('data-cart'))
+
+			$("#pawnerPostName").text(cart.pawnerPostName)
+			$("#pawnerPostId").text(cart.pawnerPostId)
+			$("#pawnerPostItemType").text(cart.pawnerPostItemType)
+			$("#panwePostRemote").text(cart.panwePostRemote)
+			$("#pawnerPostBattery").text(cart.pawnerPostBattery)
+			$("#pawnerPostBracelet").text(cart.pawnerPostBracelet)
+			$("#pawnerPostBrand").text(cart.pawnerPostBrand)
+			$("#pawnerPostCameraLen").text(cart.pawnerPostCameraLen)
+			$("#pawnerPostCapacity").text('r'+cart.pawnerPostCapacity)
+			$("#pawnerPostCase").text(cart.pawnerPostCase)
+			$("#pawnerPostCategory").text(cart.pawnerPostCategory)
+			$("#pawnerPostDate").text(cart.pawnerPostDate)
+			$("#pawnerPostDescription").text(cart.pawnerPostDescription)
+			$("#pawnerPostDevice").text(cart.pawnerPostDevice)
+			$("#pawnerPostDiamond").text(cart.pawnerPostDiamond)
+			$("#pawnerPostHarddisk").text(cart.pawnerPostHarddisk)
+			$("#pawnerPostModel").text(cart.pawnerPostModel)
+			$("#pawnerPostPackage").text(cart.pawnerPostPackage)
+			$("#pawnerPostProduction").text(cart.pawnerPostProduction)
+			$("#pawnerPostPure").text(cart.pawnerPostPure)
+			$("#pawnerPostSerial").text(cart.pawnerPostSerial)
+			$("#pawnerPostRam").text(cart.pawnerPostRam)
+			$("#pawnerPostSize").text(cart.pawnerPostSize)
+			$("#pawnerPostStatus").text(cart.pawnerPostStatus)
+			$("#pawnerPostTypeCamera").text(cart.pawnerPostTypeCamera)
+			$("#pawnerPostWarranty").text(cart.pawnerPostWarranty)
+			$("#pawnerPostWeigh").text(cart.pawnerPostWeigh)
+
+			console.log("this show pawnshopPostName => "
+					+ cart.pawnshopPostName)
+			window.print();
+		}
+	</script>
 
 	<div class="line margin-lr-1"></div>
 	<div class="printable">
@@ -250,18 +291,21 @@ function select(e) {
 					<div class="col-sm-6">
 						<table id="meta">
 							<tr>
-								<td id="nan">รหัสโพส</td>
+								<td>ชื่อเจ้าของโพส</td>
 								<td>
-									<div>xxx</div>
+									<div id="pawnerPostId"></div>
 								</td>
 							</tr>
 							<tr>
 								<td>ชื่อโพส</td>
+								<td>
+									<div id="pawnerPostName"></div>
+								</td>
 							</tr>
 							<tr>
-								<td>วันที่ยืนยันราคา</td>
+								<td>วันที่โพส</td>
 								<td>
-									<div>xxx</div>
+									<div id="pawnerPostDate"></div>
 								</td>
 							</tr>
 						</table>
@@ -277,12 +321,35 @@ function select(e) {
 					</tr>
 					<tr class="item-row">
 						<td class="item-name">
-							<div class="delete-wpr">
-								<p>pawnerPostItemType</p>
-							</div>
+							<p id="pawnerPostItemType">pawnerPostItemType</p>
 						</td>
 						<td class="description">
-							<p>เอารายละเอียดทั้งหมดมาใส</p>
+							<ul>
+								<li id="panwePostRemote"></li>
+								<li id="pawnerPostBattery"></li>
+								<li id="pawnerPostBracelet"></li>
+								<li id="pawnerPostCategory"></li>
+								<li id="pawnerPostBrand"></li>
+								<li id="pawnerPostCameraLen"></li>
+								<li id="pawnerPostCapacity"></li>
+								<li id="pawnerPostCase"></li>
+								<li id="pawnerPostCategory"></li>
+								<li id="pawnerPostDescription"></li>
+								<li id="pawnerPostDevice"></li>
+								<li id="pawnerPostDiamond"></li>
+								<li id="pawnerPostHarddisk"></li>
+								<li id="pawnerPostModel"></li>
+								<li id="pawnerPostPackage"></li>
+								<li id="pawnerPostProduction"></li>
+								<li id="pawnerPostPure"></li>
+								<li id="pawnerPostSerial"></li>
+								<li id="pawnerPostRam"></li>
+								<li id="pawnerPostSize"></li>
+								<li id="pawnerPostStatus"></li>
+								<li id="pawnerPostTypeCamera"></li>
+								<li id="pawnerPostWarranty"></li>
+								<li id="pawnerPostWeigh"></li>
+							</ul>
 						</td>
 						<td>
 							<p>xxx</p>
