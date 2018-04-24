@@ -30,7 +30,6 @@ a:focus {
 	border-radius: 0px;
 }
 
-
 h1, h2, h3, h4, h5, h6 h7 {
 	font-weight: 700;
 	font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif
@@ -155,21 +154,20 @@ form {
 /*!
 * override modal
 */
-
 .modal-open .modal {
-    overflow-x: hidden;
-    overflow-y: hidden;
+	overflow-x: hidden;
+	overflow-y: hidden;
 }
 
 .modal-dialog {
-    overflow: hidden;
-    min-width: 900px;
-    width: 100%;
-    height: 100%;
-    justify-content: center;
-    display: flex;
-    align-items: center;
-    margin: auto;
+	overflow: hidden;
+	min-width: 900px;
+	width: 100%;
+	height: 100%;
+	justify-content: center;
+	display: flex;
+	align-items: center;
+	margin: auto;
 }
 
 /*!
@@ -198,7 +196,7 @@ form {
 	color: #ff7700
 }
 
-.modal-login{
+.modal-login {
 	min-width: 800px;
 }
 
@@ -321,14 +319,14 @@ form {
 	box-orient: vertical;
 	overflow: hidden;
 	text-overflow: ellipsis;
-    white-space: nowrap;
-    font-weight: 500;
-    font-size: .9em;
-    color: #ff7700;
-    margin: 0 0 5px 0;
-    max-height: 40px;
-    word-wrap: break-word;
-    line-height: 1.8em;
+	white-space: nowrap;
+	font-weight: 500;
+	font-size: .9em;
+	color: #ff7700;
+	margin: 0 0 5px 0;
+	max-height: 40px;
+	word-wrap: break-word;
+	line-height: 1.8em;
 }
 
 .card-body-price {
@@ -450,34 +448,90 @@ form {
 /*!
 * pawner detail item 
 */
-.overlay-popup {
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	width: 100%;
-	height: 100%;
-	opacity: .5;
-	background-color: #000;
+.item-detail-popup {
+	padding: 20px;
+	line-height: 2em;
 }
 
-.item-popup {
-	position: absolute;
-	width: 100%;
-	max-width: 1000px;
+.item-detail-checkcart {
+	border-left: 1px solid #e6e6e6;
 }
 
-.item-popup-close {
-	position: absolute;
-	color: #808080;
-	width: 18px;
-	height: 18px;
-	right: 16px;
-	top: 0px;
+.item-popup-continue{
+	background-color: #fff;
+	border: none;
+	color: #555;
+}
+
+.item-popup-tocart{
+	background-color: #ff7700;
+	color: #fff;
+}
+
+.item-popup-tocart , .item-popup-continue {
 	display: inline-block;
+	width: 100%;
+	padding: 0 1em;
+	font-size: 0.9em;
+	border: 1px solid #ff7700;
+	border-radius: 3px;
+	vertical-align: middle;
+	-webkit-transform: translateZ(0);
+	transform: translateZ(0);
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+	-webkit-transition-property: transform;
+	transition-property: transform;
+	-webkit-transform-origin: 0 100%;
+	transform-origin: 0 100%;
 }
 
-.item-popup-content {
-	margin-top: 20px;
+.item-popup-tocart:hover , .item-popup-continue:hover{
+	color: #fff;
+	background: #555;
+	text-decoration: none;
+	-webkit-transition: all 0.4s;
+	-o-transition: all 0.4s;
+	-moz-transition: all 0.4s;
+	transition: all 0.4s;
+}
+
+/* Skew Backward */
+.hvr-skew-backward {
+	display: inline-block;
+	width: 100%;
+	background-color: #ff7f00;
+	padding: 0.3em 1em;
+	color: #fff;
+	font-size: 0.9em;
+	border-radius: 3px;
+	font-weight: 700;
+	vertical-align: middle;
+	-webkit-transform: translateZ(0);
+	transform: translateZ(0);
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+	-webkit-transition-property: transform;
+	transition-property: transform;
+	-webkit-transform-origin: 0 100%;
+	transform-origin: 0 100%;
+}
+
+.hvr-skew-backward:hover, .hvr-skew-backward:focus, .hvr-skew-backward:active
+	{
+	color: #fff;
+	background: #555;
+	text-decoration: none;
+	-webkit-transition: all 0.4s;
+	-o-transition: all 0.4s;
+	-moz-transition: all 0.4s;
+	transition: all 0.4s;
 }
 
 /*!
@@ -1279,7 +1333,7 @@ footer {
 	background-repeat: no-repeat;
 	position: relative;
 	border: 1px;
-	min-width: 800px;
+	min-width: 900px;
 	/* 	border-radius: 10px; */
 }
 
@@ -1331,7 +1385,6 @@ footer {
 	border-radius: 3px;
 	font-weight: 700;
 }
-
 
 .wrap-contact100 {
 	background: #fff;

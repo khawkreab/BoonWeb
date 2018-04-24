@@ -890,38 +890,7 @@ span.actual {
     margin-left: 0;
 }
 /*--quantity-end--*/
-/* Skew Backward */
-.hvr-skew-backward {
-  display: inline-block;
-  width:100%;
-  vertical-align: middle;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-property: transform;
-  transition-property: transform;
-  -webkit-transform-origin: 0 100%;
-  transform-origin: 0 100%;
-  background-color: #ff7f00;
-   color: #fff;
-   padding: 0.3em;
-   font-size:0.9em;
-   border-radius: 3px;
-}
-.hvr-skew-backward:hover, .hvr-skew-backward:focus, .hvr-skew-backward:active {
-	color:#fff;
-	background: #555;
-    text-decoration:none;
-    letter-spacing: 1px;
-	-webkit-transition: all 0.4s;
-	-o-transition: all 0.4s;
-	-moz-transition: all 0.4s;
-	transition: all 0.4s;
-}
+
 
 ul.product-qty {
 	padding: 0;

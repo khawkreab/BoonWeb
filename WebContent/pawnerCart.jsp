@@ -28,8 +28,8 @@
 			<!-- List Order Here!!!! -->
 		</div>
 
-		<button class="btn btn-primary btn-block btn-lg" onClick="clearCart()">ลบทั้งหมด]</button>
-		<button class="btn btn-primary btn-block btn-lg"
+		<button id="clearCart" class="btn btn-primary btn-block btn-lg" onClick="clearCart()">ลบทั้งหมด]</button>
+		<button id="comfirmOrder" class="btn btn-primary btn-block btn-lg"
 			onClick="comfirmOrder()">Confirm Orders</button>
 	</section>
 
@@ -60,6 +60,9 @@
 
 				if (list.length == null || list.length == 0) {
 					document.getElementById("cartNumber").style.display = "none";
+					document.getElementById("comfirmOrder").style.display = "none";
+					document.getElementById("clearCart").style.display = "none";
+					
 					html += "<tr>"
 					html += "<td>No menus in your list orders</td>"
 					html += "</tr>"
@@ -85,6 +88,8 @@
 				html += "</tr>"
 
 				document.getElementById("cartNumber").style.display = "none";
+				document.getElementById("comfirmOrder").style.display = "none";
+				document.getElementById("clearCart").style.display = "none";
 			}
 			html += "</table>"
 			document.getElementById("list").innerHTML = html
