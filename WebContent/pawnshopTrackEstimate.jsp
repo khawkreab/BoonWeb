@@ -114,7 +114,7 @@
 
 														<!-- Electronic com-->
 														<c:if test="${track.pawnerPostId.pawnerPostRam != null}">
-															<li class="col-md-6">Ram : ${post.pawnerPostRam }</li>
+															<li class="col-md-6">Ram : ${track.pawnerPostId.pawnerPostRam }</li>
 														</c:if>
 
 														<!-- Watch -->
