@@ -102,7 +102,7 @@
 							</div></li>
 						<li><a href="pawner-edit.html" class="nav-link ">แก้ไขบัญชี</a></li>
 						<li><a href="pawner-post-history.html" class="nav-link ">ประวัติการจำนำ</a></li>
-						<li><a href="" class="nav-link ">ประวัติการสังซื้อ</a></li>
+						<li><a href="pawner-order.html" class="nav-link ">ประวัติการสังซื้อ</a></li>
 						<li><a href="logout.html" class="nav-link ">ออกจากระบบ</a></li>
 					</ul></li>
 				<!-- -----------------------------pawnShop login--------------------------------------- -->
@@ -128,7 +128,7 @@
 						<li><a href="pawnshop-estimate-history.html"
 							class="nav-link ">ประวัติการประเมิณของจำนำ</a></li>
 						<li><a href="pawnshop-list-post.html" class="nav-link ">ประวัติการปล่อยของหลุดจำนำ</a></li>
-						<li><a href="logout.html" class="nav-link ">Logout</a></li>
+						<li><a href="logout.html" class="nav-link ">ออกจากระบบ</a></li>
 					</ul></li>
 				<!-- ------------------------------not login-------------------------------------- -->
 				<%
@@ -231,7 +231,7 @@
 			<li><a class="nav-link" href="pawnshop-list-post.html">my
 					post </a></li>
 
-			<li><a href="logout.html" class="nav-link ">Logout</a></li>
+			<li><a href="logout.html" class="nav-link ">ออกจากระบบ</a></li>
 			<!-- ------------------------------not login-------------------------------------- -->
 			<%
 				}

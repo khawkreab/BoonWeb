@@ -57,9 +57,6 @@
 	float: right;
 }
 
-.bill {
-	border: 1px solid;
-}
 </style>
 </head>
 
@@ -196,7 +193,7 @@
 												</li>
 											</ul>
 										</div>
-										<a href="#" id="${post.pawnerPostId.pawnshopPostId}"
+										<a href="#" id="${post.pawnerPostId.pawnerPostId}"
 										onClick="select(this); return false;"
 										data-cart='{"pawnerPostId":"${post.pawnerPostId.pawnerId.pawnerEmail}",
 										"pawnerPostName":"${post.pawnerPostId.pawnerPostName }","pawnerPostDate":"${post.pawnerPostId.pawnerPostDate}",
@@ -211,7 +208,9 @@
 										"pawnerPostSerial":"${post.pawnerPostId.pawnerPostSerial}","pawnerPostStatus":"${post.pawnerPostId.pawnerPostStatus}",
 										"pawnerPostTypeCamera":"${post.pawnerPostId.pawnerPostTypeCamera}","pawnerPostWarranty":"${post.pawnerPostId.pawnerPostWarranty}",
 										"pawnerPostWeigh":"${post.pawnerPostId.pawnerPostWeigh}","pawnerPostRam":"${post.pawnerPostId.pawnerPostRam}",
-										"pawnerPostPure":"${post.pawnerPostId.pawnerPostPure}"
+										"pawnerPostPure":"${post.pawnerPostId.pawnerPostPure}","estimatePriceMin":"${post.estimatePriceMin}",
+										"estimatePriceMax":"${post.estimatePriceMax}","estimateDate":"${post.estimateDate}",
+										"pawnerPostPicture":"${post.pawnerPostId.pawnerPostPicture}"
 										}'
 										class="hvr-skew-backward">พิมใบแสดงการจำนำ</a>
 									</c:if>
@@ -263,6 +262,10 @@
 			$("#pawnerPostTypeCamera").text(cart.pawnerPostTypeCamera)
 			$("#pawnerPostWarranty").text(cart.pawnerPostWarranty)
 			$("#pawnerPostWeigh").text(cart.pawnerPostWeigh)
+			$("#estimatePriceMin").text(cart.estimatePriceMin)
+			$("#estimatePriceMax").text(cart.estimatePriceMax)
+			$("#estimateDate").text(cart.estimateDate)
+			$("#pawnerPostPicture").append('<img style="width:200px;height:200px;" src="images/imageUpload/'+cart.pawnerPostPicture+'">')
 
 			console.log("this show pawnshopPostName => "
 					+ cart.pawnshopPostName)
@@ -275,12 +278,12 @@
 		<div class="popup" data-popup="popup">
 			<div>
 				<p style="font-size: 32px; border-bottom: 1px solid;">ใบยืนยันการจำนำ</p>
-				<div class="row">
-					<div class="col-sm-6">
+				<div>
+					<div>
 						<p>ที่อยู๋โรงรับจำนำ</p>
 						<p>ในนี้ใสที่อยู๋โรงรับจำนำที่ get from database</p>
 					</div>
-					<div class="col-sm-6">
+					<div>
 						<table id="meta">
 							<tr>
 								<td>ชื่อเจ้าของโพส</td>
@@ -344,16 +347,17 @@
 							</ul>
 						</td>
 						<td>
-							<p>xxx</p>
+							<p id="estimateDate"></p>
 						</td>
 						<td>
-							<p>$650.00</p>
+							<p id="estimatePriceMin"></p>
 						</td>
-						<td><span>$650.00</span></td>
+						<td><p id="estimatePriceMax"></p></td>
 					</tr>
 					<tr>
 						<td colspan="5">
 							<p>รูปสินค้า</p>
+							<span id="pawnerPostPicture"></span>
 						</td>
 					</tr>
 				</table>
