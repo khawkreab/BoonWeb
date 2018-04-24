@@ -29,109 +29,63 @@
 	<jsp:include page="navbar.jsp" />
 
 	<!--banner-->
-<div class="">
-		<div id="carouselExampleIndicators" class="carousel slide"
-			data-ride="carousel" data-interval="5000">
-			<ol class="carousel-indicators">
-				<li data-target="#carouselExampleIndicators" data-slide-to="0"
-					class="active"></li>
-				<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-				<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-			</ol>
-			<div class="carousel-inner" role="listbox">
-				<div class="carousel-item active">
-					<img class="d-block img-fluid" src="img/header-bg.jpg"
-						alt="First slide">
-					<div class="carousel-caption d-none d-md-block">
-						<h3>Pledge online</h3>
-						<p>Updated every day</p>
-					</div>
-				</div>
-				<div class="carousel-item">
-					<img class="d-block img-fluid" src="img/bgIndex.jpg"
-						alt="Second slide">
-					<div class="carousel-caption d-none d-md-block">
-						<h3></h3>
-						<p></p>
-					</div>
-				</div>
-				<div class="carousel-item">
-					<img class="d-block img-fluid" src="img/header-bank.jpg"
-						alt="Third slide">
-					<div class="carousel-caption d-none d-md-block">
-						<h3>BoonYong</h3>
-						<p>Support your dream</p>
-					</div>
-				</div>
-			</div>
-			<a class="carousel-control-prev" href="#carouselExampleIndicators"
-				role="button" data-slide="prev">
-				<h1>
-					<i class="fas fa-arrow-alt-circle-left"
-						aria-hidden="true"></i>
-				</h1> <span class="sr-only">Previous</span>
-			</a> <a class="carousel-control-next" href="#carouselExampleIndicators"
-				role="button" data-slide="next"><h1>
-					<i class="fas fa-arrow-alt-circle-right"
-						aria-hidden="true"></i>
-				</h1> <span class="sr-only">Next</span> </a>
-		</div>
-</div>
-
-	<!--content-->
-	<%-- <div class="content">
-		<div class="container">
-			<!--products-->
-			<div class="content-mid">
-				<div class="mid-popular">
-					<c:forEach items="${post}" var="post">
-						<div class="col-md-3 item-grid simpleCart_shelfItem">
-							<div class=" mid-pop">
-								<div class="pro-img">
-									<img src="images/pc4.jpg" class="img-responsive" alt="">
-									<div class="zoom-icon ">
-										<a class="picture" href="images/pc4.jpg" rel="title"
-											class="b-link-stripe b-animate-go  thickbox"><i
-											class="glyphicon glyphicon-search icon "></i></a>
-									</div>
-								</div>
-								<div class="mid-1">
-									<div class="women">
-										<div class="women-top">
-											<span>#</span>
-											<h6>
-												<a href="single.html">${pawnshopPosts.pawnshopPostName}
-													- ${pawnshopPosts.pawnshopPostBrand}</a>
-											</h6>
-										</div>
-										<div class="img item_add">
-											<a href="#"><img src="images/ca.png" alt=""></a>
-										</div>
-										<div class="clearfix"></div>
-									</div>
-									<div class="mid-2">
-										<p>
-											<em class="item_price">${pawnshopPosts.pawnshopId.pawnshopProvince }</em>
-										</p>
-										<div class="block">
-											<div class="starbox small ghosting"></div>
-										</div>
-
-										<div class="clearfix"></div>
-									</div>
-
-								</div>
-							</div>
-						</div>
-					</c:forEach>
-					<div class="clearfix"></div>
-				</div>
-			</div>
-			<!--//products-->
-		</div>
-	</div> --%>
+<header class="masthead text-center text-white d-flex">
+      <div class="container my-auto">
+        <div class="row">
+          <div class="col-lg-10 mx-auto">
+            <h1 class="text-uppercase">
+              <strong class="text-white">จำนำง่าย จ่ายคล่อง ต้องบุญยง</strong>
+            </h1>
+            <hr>
+          </div>
+          <div class="col-lg-8 mx-auto">
+            <p class="text-faded mb-5">“บุญยง เป็นสื่อกลางในการจำนำ ที่มีการรับประเมินราคาสินทรัพย์และปล่อยของหลุดจำนำทางออนไลน์  เพื่ออำนวยความสะดวกให้ลูกค้าสามารถเข้าถึงบริการได้ตลอด 24 ชั่วโมง”</p>
+            <a class="btn btn-primary btn-xl js-scroll-trigger" href="#services">คลิกเพื่อดูรายละเอียด</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    
+    <section id="services">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading">บริการของเรา</h2>
+            <hr class="my-4">
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <i class="fas fa-4x fa-gem text-primary mb-3 sr-icons"></i>
+              <h3 class="mb-3">สะดวก ในการ จำนำ และประเมินราคา</h3> 
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <i class="fas fa-4x fa-newspaper text-primary mb-3 sr-icons"></i>
+              <h3 class="mb-3">ทรัพย์หลุดจำนำ ราคาพิเศษ Update ทุกวัน</h3> 
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <i class="fas fa-4x fa-heart text-primary mb-3 sr-icons"></i>
+              <h3 class="mb-3">พร้อมเคียงข้างทุกปัญหาการเงิน</h3> 
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <i class="fas fa-4x fa-paper-plane text-primary mb-3 sr-icons"></i>
+              <h3 class="mb-3">สานฝันธุรกิจของคุณ</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 	<!-- ----------------------------------------------------------------------------------------------- -->
-	<div class="container">
+<!-- 	<div class="container">
 		<div class="dev-title">
 			<h1>Welcome to Team Develop</h1>
 			<h6>We are UBfor </h6>
@@ -180,11 +134,13 @@
 			</div>
 		</div>
 	</div>
-
+ -->
 	<jsp:include page="footer.jsp"></jsp:include>
 	
-		<!-- Bootstrap core JavaScript -->
-	<script src="vendor/jquery/jquery.min.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>	
+    <!-- Plugin JavaScript -->
+    <script src="js/scollbardelay/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/scollbardelay/creative.min.js"></script>
 </body>
 </html>

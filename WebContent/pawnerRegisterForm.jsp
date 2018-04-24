@@ -12,7 +12,7 @@
 
 		<head>
 			<link rel="icon" href="img/logos/Artboard.png">
-			<meta charset="utf-8">
+			<meta charset="UTF-8">
 		
 			<title>Registration</title>
 
@@ -23,6 +23,8 @@
 			<link href="css/new-design.css" rel="stylesheet">
 
 			<script>
+			
+			
 				function checkPass() {
 					//Store the password field objects into variables ...
 					var pass1 = document.getElementById('pass1');

@@ -263,6 +263,8 @@
 			this.list.push(this.cart)
 			sessionStorage.setItem('carts', JSON.stringify(this.list))
 			this.check()
+			
+			console.log("this show => "+cart.pawnshopPostName)
 		}
 
 		function check() {

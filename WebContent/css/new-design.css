@@ -73,6 +73,10 @@ li {
 	color: #505459;
 }
 
+.text-white {
+	color: #fff;
+}
+
 .margin-auto {
 	display: block;
 	margin: 0 auto;
@@ -108,9 +112,97 @@ form {
 	margin: 0px;
 }
 
-.color-black {
-	color: #000;
+section {
+    padding: 4rem 0;
 }
+
+hr {
+    max-width: 50px;
+    border-width: 3px;
+    border-color: #f05f40
+}
+
+hr.light {
+    border-color: #fff
+}
+
+.btn-primary {
+    background-color: #f05f40;
+    border-color: #f05f40;
+}
+
+.btn-xl {
+    padding: 1rem 2rem
+}
+
+.btn-primary {
+    background-color: #f05f40;
+    border-color: #f05f40
+}
+
+.btn-primary:active,.btn-primary:focus,.btn-primary:hover {
+    color: #fff;
+    background-color: #ee4b28!important
+}
+
+.btn-primary:active,.btn-primary:focus {
+    box-shadow: 0 0 0 .2rem rgba(240,95,64,.5)!important
+}
+
+.service-box {
+    max-width: 400px
+}
+
+header.masthead {
+    padding-top: 10rem;
+    padding-bottom: calc(10rem - 56px);
+    background-image: url(../img/header.jpg);
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover
+}
+
+header.masthead hr {
+    margin-top: 30px;
+    margin-bottom: 30px
+}
+
+header.masthead h1 {
+    font-size: 2rem
+}
+
+header.masthead p {
+    font-weight: 300
+}
+
+@media (min-width: 768px) {
+    header.masthead p {
+        font-size:1.15rem
+    }
+}
+
+@media (min-width: 992px) {
+    header.masthead {
+        height:100vh;
+        min-height: 650px;
+        padding-top: 0;
+        padding-bottom: 0
+    }
+
+    header.masthead h1 {
+        font-size: 3rem
+    }
+}
+
+@media (min-width: 1200px) {
+    header.masthead h1 {
+        font-size:4rem
+    }
+}
+
+
 
 /* slide */
 .carousel-inner {
@@ -217,7 +309,7 @@ form {
 	width: 234px;
 	height: 250px;
 	border-radius: 0px;
-	margin: 0 15px 15px 0;
+	margin: 15px 15px 0 0;
 	border: 1px solid #fff;
 }
 

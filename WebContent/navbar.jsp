@@ -38,7 +38,7 @@
 <!--- start-rate---->
 <script src="js/jstarbox.js"></script>
 <link rel="stylesheet" href="css/jstarbox.css" type="text/css"
-	media="screen" />
+	media="screen" /> 
 </head>
 
 <body>
@@ -184,6 +184,70 @@
 			</div>
 		</div>
 	</div>
+	
+	
+		<!-- ----------------------------navbar-collapse---------------------------------------- -->
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="ml-auto">
+			<!-- ----------------------------pawner login---------------------------------------- -->
+			<%
+				if (session.getAttribute("isLogin") == "yes") {
+					if (session.getAttribute("userType") == "pawner") {
+			%>
+			<li>
+				<div class="navbar-account">
+					<span class="navbar-account-photo">photo</span><span
+						class="navbar-account-info"><span
+						class="navbar-account-naem"><%=session.getAttribute("username")%></span><span
+						class="navbar-account-email">email</span></span>
+				</div>
+			</li>
+			<li><a class="nav-link" href="pawner-pledge.html">pledge</a></li>
+			<li><a class="nav-link" href="pawner-track-pledge.html">track
+					my pledge</a></li>
+			<li><a class="nav-link" href="pawner-post-history.html">history</a></li>
+			<li><a class="nav-link" href="pawner-order.html">my order</a></li>
+			<li><a href="logout.html" class="nav-link ">Logout</a></li>
+
+			<!-- -----------------------------pawnShop login--------------------------------------- -->
+			<%
+				} else if (session.getAttribute("userType") == "pawnShop") {
+			%>
+			<li>
+				<div class="navbar-account">
+					<span class="navbar-account-photo">photo</span><span
+						class="navbar-account-info"><span
+						class="navbar-account-naem"><%=session.getAttribute("username")%></span><span
+						class="navbar-account-email">email</span></span>
+				</div>
+			</li>
+
+
+			<li><a class="nav-link" href="pawnshop-pledge-sell.html">pledge
+					sell </a></li>
+			<li><a class="nav-link" href="pawnshop-track-estimate.html">track
+					my estimate</a></li>
+			<li><a class="nav-link" href="pawnshop-estimate-history.html">history</a></li>
+			<li><a class="nav-link" href="pawnshop-list-post.html">my
+					post </a></li>
+
+			<li><a href="logout.html" class="nav-link ">Logout</a></li>
+			<!-- ------------------------------not login-------------------------------------- -->
+			<%
+				}
+				} else {
+			%>
+			<li><a data-toggle="modal" data-target="#modalLogin"
+				class="nav-link js-scroll-trigger" href="#">Login</a></li>
+			<li><a href="pawner-register-form.html"
+				class="nav-link js-scroll-trigger">Register</a></li>
+			<%
+				}
+			%>
+		</ul>
+	</div>
+
+	
 	<!-- -------------------------------------------------------------------------------------------------- -->
 
 	<!-- Plugin JavaScript -->
@@ -193,6 +257,9 @@
 	<script src="vendor/jquery/jquery.min.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
+	<%
+		if (session.getAttribute("userType") == "pawner") {
+	%>
 	<script type="text/javascript">
 		window.onload = function checkcart() {
 
@@ -206,6 +273,9 @@
 			}
 		}
 	</script>
+	<%
+		}
+	%>
 </body>
 
 </html>

@@ -20,19 +20,6 @@
 
     <title>B2Pawn</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="Index-css/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom fonts for this template -->
-    <link href="Index-css/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-
-    <!-- Plugin CSS -->
-    <link href="Index-css/vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="Index-css/css/creative.min.css" rel="stylesheet">
 
   </head>
 
@@ -40,13 +27,15 @@
 
     <!-- Navigation -->
 
+	<!-- Navigation -->
+	<jsp:include page="navbar.jsp" />
 
     <header class="masthead text-center text-white d-flex">
       <div class="container my-auto">
         <div class="row">
           <div class="col-lg-10 mx-auto">
             <h1 class="text-uppercase">
-              <strong>จำนำง่าย จ่ายคล่อง ต้องบุญยง</strong>
+              <strong class="text-white">จำนำง่าย จ่ายคล่อง ต้องบุญยง</strong>
             </h1>
             <hr>
           </div>
@@ -71,25 +60,25 @@
         <div class="row">
           <div class="col-lg-3 col-md-6 text-center">
             <div class="service-box mt-5 mx-auto">
-              <i class="fa fa-4x fa-diamond text-primary mb-3 sr-icons"></i>
+              <i class="fas fa-4x fa-gem text-primary mb-3 sr-icons"></i>
               <h3 class="mb-3">สะดวก ในการ จำนำ และประเมินราคา</h3> 
             </div>
           </div>
           <div class="col-lg-3 col-md-6 text-center">
             <div class="service-box mt-5 mx-auto">
-              <i class="fa fa-4x fa-newspaper-o text-primary mb-3 sr-icons"></i>
+              <i class="fas fa-4x fa-newspaper text-primary mb-3 sr-icons"></i>
               <h3 class="mb-3">ทรัพย์หลุดจำนำ ราคาพิเศษ Update ทุกวัน</h3> 
             </div>
           </div>
           <div class="col-lg-3 col-md-6 text-center">
             <div class="service-box mt-5 mx-auto">
-              <i class="fa fa-4x fa-heart text-primary mb-3 sr-icons"></i>
+              <i class="fas fa-4x fa-heart text-primary mb-3 sr-icons"></i>
               <h3 class="mb-3">พร้อมเคียงข้างทุกปัญหาการเงิน</h3> 
             </div>
           </div>
           <div class="col-lg-3 col-md-6 text-center">
             <div class="service-box mt-5 mx-auto">
-              <i class="fa fa-4x fa-paper-plane text-primary mb-3 sr-icons"></i>
+              <i class="fas fa-4x fa-paper-plane text-primary mb-3 sr-icons"></i>
               <h3 class="mb-3">สานฝันธุรกิจของคุณ</h3>
             </div>
           </div>
@@ -126,13 +115,9 @@
 
 
     <!-- Bootstrap core JavaScript -->
-    <script src="Index-css/vendor/jquery/jquery.min.js"></script>
-    <script src="Index-css/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Plugin JavaScript -->
     <script src="Index-css/vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script src="Index-css/vendor/scrollreveal/scrollreveal.min.js"></script>
-    <script src="Index-css/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
 
     <!-- Custom scripts for this template -->
     <script src="Index-css/js/creative.min.js"></script>

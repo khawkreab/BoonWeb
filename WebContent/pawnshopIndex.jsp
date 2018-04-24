@@ -31,6 +31,8 @@
 	}
 </script>
 <script src="js/checkLogin.js"></script> --%>
+
+
 </head>
 
 <body>
@@ -39,7 +41,7 @@
 
 	<!--banner-->
 	<div class="banner-top">
-		<h1>รายการของจำนำ</h1>
+		<h1 id="checkpost">รายการของจำนำ</h1>
 		<em></em>
 	</div>
 
@@ -80,73 +82,17 @@
 		</c:forEach>
 	</div>
 
-	<%-- 	<div class="content">
-							<div class="container">
-								<!--products-->
-								<div class="content-mid">
-									<h3>Items</h3>
-									<label class="line"></label>
+	<script>
+		$(document).ready(function() {
+			var featured = $('.featured').length;
 
-									<div class="mid-popular">
-										<!-- ------------------------------------------------------------------------------- -->
-										<c:forEach items="${pawnerPosts}" var="post">
-											<div class="col-md-3 item-grid simpleCart_shelfItem">
-												<div class=" mid-pop">
-													<a class="pro-img" href="pawnshop-estimate-form.html?item=${post.pawnerPostId}">
-														<!-- <div class="pro-img"> -->
-														<img src="images/imageUpload/${post.pawnerPostPicture }" class="img-responsive" alt="">
-														<span class="zoom-icon ">
-															<i class="glyphicon glyphicon-search icon"></i>
-														</span>
+			console.log("featured => " + featured)
+			if (featured == 0) {
+				$('#checkpost').text("ไม่มีรายการของจำนำ")
+			}
 
-														<!-- </div> -->
-													</a>
-													<div class="mid-1">
-														<div class="women">
-															<div class="women-top">
-
-																<h4>
-																	<a href="pawnshop-estimate-form.html?item=${post.pawnerPostId}">
-																		${post.pawnerPostName} - ${post.pawnerPostBrand} </a>
-
-																</h4>
-																<span>
-																	<a href="pawnshop-estimate-form.html?item=${post.pawnerPostId}">ประเมินเลย
-																	</a>
-																</span>
-															</div>
-
-															<div class="clearfix"></div>
-														</div>
-														<div class="mid-2">
-															<p>
-																<em class="item_price">
-																	<fmt:setLocale value="en_US" />
-																	<fmt:formatDate type="both" dateStyle="long" timeStyle="short" value="${post.pawnerPostDate }" />
-																	<br />Province ${post.pawnerId.pawnerProvince }</em>
-															</p>
-															<div class="block">
-																<div class="starbox small ghosting"></div>
-															</div>
-
-															<div class="clearfix"></div>
-														</div>
-
-													</div>
-												</div>
-											</div>
-										</c:forEach>
-										<div class="clearfix"></div>
-									</div>
-
-								</div>
-								<!--//products-->
-							</div>
-
-						</div> --%>
-
-
-
+		});
+	</script>
 
 </body>
 
