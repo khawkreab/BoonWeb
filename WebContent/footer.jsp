@@ -13,20 +13,21 @@
 				<p>Suspendisse sed accumsan risus. Curabitur rhoncus, elit vel
 					tincidunt elementum, nunc urna tristique nisi, in interdum libero
 					magna tristique ante. adipiscing varius. Vestibulum dolor lorem.</p>
+				<!-- <p>โปรเจคนี้ จัดทำขึ้นเพื่อหวังคะแนนให้ผ่านในรายวิชา Senior Project1 ทางนักศึกษาหวังว่า อาจารย์ ทิว หงษ์ทอง จะเมตตาปราณีในการให้คะแนน และให้ S กับกลุ่ม บุญยงด้วยเทอน</p> -->
 			</div>
 
 			<div class="col-md-3 footer-middle-in">
 				<h6>Information</h6>
 				<ul class=" in">
-					<li><a href="404.html">About</a></li>
-					<li><a href="contact.html">Contact Us</a></li>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Contact Us</a></li>
 					<li><a href="#">Returns</a></li>
-					<li><a href="contact.html">Site Map</a></li>
+					<li><a href="#">Site Map</a></li>
 				</ul>
 				<ul class="in in1">
 					<li><a href="#">Order History</a></li>
-					<li><a href="wishlist.html">Wish List</a></li>
-					<li><a href="login.html">Login</a></li>
+					<li><a href="#">Wish List</a></li>
+					<li><a href="#">Login</a></li>
 				</ul>
 				<div class="clearfix"></div>
 			</div>

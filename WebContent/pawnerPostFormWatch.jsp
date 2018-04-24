@@ -55,7 +55,7 @@
 									<input type="hidden" name="pawnerPostId" />
 									<input type="hidden" name="pawnerId.pawnerId" />
 									<input type="hidden" name="pawnerPostItemType"
-										value="Electronic" />
+										value="Watch" />
 									<div class="wrap-input100 validate-input"
 										data-validate="Valid email is required: ex@abc.xyz">
 										<input class="input100" type="text" name="pawnerPostName" placeholder="ชื่อสินค้าที่ต้องการจำนำ">

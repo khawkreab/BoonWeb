@@ -1686,3 +1686,12 @@ textarea.input100 {
 	align-items: center;
 	padding: 15px;
 }
+header.blackground-pawner-index {
+    padding-top: 55rem;
+    background-image: url(../img/Manual.jpg);
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover
+}
