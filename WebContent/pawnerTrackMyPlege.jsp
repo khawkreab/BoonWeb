@@ -155,7 +155,6 @@
 								</div>
 							</div>
 						</div>
-
 					</div>
 
 					<c:if test="${post.pawnerPostStatus == 'waiting'}">
