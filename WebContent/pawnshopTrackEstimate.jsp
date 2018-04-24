@@ -62,7 +62,7 @@
 								<div class="span_2_of_a1 simpleCart_shelfItem">
 									<h3>${track.pawnerPostId.pawnerPostName }-${track.pawnerPostId.pawnerPostBrand }</h3>
 									<p class="in-para">รายละเอียด</p>
-									<div class="col-md-7 single-top-in">
+									<div class="col-md-12 single-top-in">
 										<div class="span_2_of_a1 simpleCart_shelfItem">
 											<div class="price_single">
 												<div class="preview">
