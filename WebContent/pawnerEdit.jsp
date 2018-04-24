@@ -77,8 +77,7 @@
 												<form:input path="pawnerLastname" type="text" class="account-regis" placeholder="นามสกุล" required="required" />
 											</li>
 											<li>
-												<form:input type="text" id="telto" class="account-regis" placeholder="เบอร์โทรศัพท์" required="required" onkeyup="continueto();"
-												 path="pawnerPhone" />
+												<form:input path="pawnerPhone" type="text" class="account-regis" placeholder="เบอร์โทรศัพท์" required="required" onkeyup="continueto();"/>
 											</li>
 											<li>
 												<form:input path="pawnerEmail" type="text" id="mail" class="account-regis" placeholder="อีเมล" required="required"
