@@ -161,40 +161,40 @@
 
 												<!-- Status -->
 												<c:if test="${track.estimateStatus == 'complete'}">
-													<li class="col-md-6">Status : <span class="badge badge-success">Complete</span>
+													<li class="col-md-6">Status : <span class="badge badge-success">เสร็จสิ้น</span>
 													</li>
 												</c:if>
 
 												<c:if test="${track.estimateStatus == 'waiting'}">
-													<li class="col-md-6">Status : <span class="badge badge-danger">Waiting</span>
+													<li class="col-md-6">Status : <span class="badge badge-danger">รอดำเนินการ</span>
 													</li>
 												</c:if>
 
 												<c:if test="${track.estimateStatus == 'process'}">
-													<li class="col-md-6">Status : <span class="badge badge-warning">Process</span>
+													<li class="col-md-6">Status : <span class="badge badge-warning">กำลังดำเนินการ</span>
 													</li>
 												</c:if>
 												<c:if test="${track.estimateStatus == 'proceed'}">
-													<li class="col-md-6">Status : <span class="badge badge-warning">Process</span>
+													<li class="col-md-6">Status : <span class="badge badge-warning">กำลังดำเนินการ</span>
 													</li>
 												</c:if>
 
 												<c:if test="${track.estimateStatus == 'approve'}">
-													<li class="col-md-6">Status : <span class="badge badge-primary">Approve</span>
+													<li class="col-md-6">Status : <span class="badge badge-primary">ยอมรับ</span>
 													</li>
 												</c:if>
 
 												<c:if test="${track.estimateStatus == 'denei'}">
-													<li class="col-md-6">Status : <span class="badge badge-danger">Denei</span>
+													<li class="col-md-6">Status : <span class="badge badge-danger">ปฎิเสธ</span>
 													</li>
-												</c:if>
+												</c:if> 
 												<c:if test="${track.estimateStatus == 'approve'}">
 													<form action="pawnshop-estimate-approve.html" method="post">
 														<input type="hidden" name="estimateId"
 															value="${track.estimateId}"> <input type="hidden"
 															name="pawnerPostId"
 															value="${track.pawnerPostId.pawnerPostId}">
-														<button type="submit">Approve</button>
+														<button type="submit">สินค้าจำนำถึงโรงรับจำนำแล้ว</button>
 													</form>
 												</c:if>
 											</ul>

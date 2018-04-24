@@ -34,609 +34,427 @@
 	<!-- Navigation -->
 	<jsp:include page="navbar.jsp" />
 
-<section>
+	<section>
 
-<!-- Gold -->
-<c:if test="${estimate.pawnerPostId.pawnerPostItemType == 'Gold'}">
-		<div class="card">
-			<div class="card-title">
-				<h4>Gold</h4>
-			</div>
-			<div class="card-body">
-				<div class="table-responsive">
-					<table class="table table-hover ">
-						<thead>
-							<tr>
-								<th>Photo</th>
-								<th>Category</th>
-								<th>Post Name</th>
-								<th>Pure</th>
-								<th>Weigh</th>
-								<th>Description</th>
-								<th>Price Min</th>
-								<th>Price Max</th>
-								<th>Post By</th>
-								<th>Status</th>
-							</tr>
-						</thead>
-						<c:forEach items="${eList}" var="estimate">
-							<tbody>
-							<tr>
-								<td>
-									<img class="img-responsive"src="images/imageUpload/${estimate.pawnerPostId.pawnerPostPicture}" width="300" />
-								</td>
-								<td>
-									${estimate.pawnerPostId.pawnerPostCategory}
-								</td>
-								<td>
-									${estimate.pawnerPostId.pawnerPostName}
-								</td>
-								<td>
-									${estimate.pawnerPostId.pawnerPostPure}
-								</td>
-								<td>
-									${estimate.pawnerPostId.pawnerPostWeigh}
-								</td>
-								<td>
-									${estimate.pawnerPostId.pawnerPostDescription}
-								</td>
-								<td>
-									${estimate.estimatePriceMin }
-								</td>
-								<td>
-									${estimate.estimatePriceMax }
-								</td>
-								<td>
-									${estimate.pawnerPostId.pawnerId.pawnerFirstname} ${estimate.pawnerPostId.pawnerId.pawnerLastname}
-								</td>
-								<td>
-										<c:if test="${estimate.estimateStatus == 'complete'}">
-											<span class="badge badge-success">Complete</span>
-										</c:if>
-										<c:if test="${estimate.estimateStatus == 'waiting'}">
-											<span class="badge badge-danger">Waiting</span>
-										</c:if>
-										<c:if test="${estimate.estimateStatus == 'process'}">
-											<span class="badge badge-warning">Process</span>
-										</c:if>
-										<c:if test="${estimate.estimateStatus == 'proceed'}">
-											<span class="badge badge-warning">Process</span>
-										</c:if>
-										<c:if test="${estimate.estimateStatus == 'approve'}">
-											<span class="badge badge-primary">Approve</span>
-										</c:if>
-										<c:if test="${estimate.estimateStatus == 'denei'}">
-											<span class="badge badge-danger">Denei</span>
-										</c:if>
-								</td>
-							</tr>
-							</tbody>
-						</c:forEach>
-					</table>
+		<!-- Gold -->
+		<c:forEach items="${eList}" var="estimate">
+			<c:if test="${estimate.pawnerPostId.pawnerPostItemType == 'Gold'}">
+				<div class="container">
+					<div class="card-body">
+						<div class="table-responsive">
+							<table class="table table-hover ">
+								<thead>
+									<tr>
+										<th>รูปภาพ</th>
+										<th>หมวดหมู่</th>
+										<th>ชื่อโพส</th>
+										<th>ความบริสุทธิ์</th>
+										<th>น้ำหนัก</th>
+										<th>รายละเอียด</th>
+										<th>ราคาต่ำสุด</th>
+										<th>ราคาสูงสุด</th>
+										<th>จำนำโดย</th>
+										<th>สถานะ</th>
+									</tr>
+								</thead>
+								<c:forEach items="${eList}" var="estimate">
+									<tbody>
+										<tr>
+											<td><img class="img-responsive"
+												src="images/imageUpload/${estimate.pawnerPostId.pawnerPostPicture}"
+												width="300" /></td>
+											<td>${estimate.pawnerPostId.pawnerPostCategory}</td>
+											<td>${estimate.pawnerPostId.pawnerPostName}</td>
+											<td>${estimate.pawnerPostId.pawnerPostPure}</td>
+											<td>${estimate.pawnerPostId.pawnerPostWeigh}</td>
+											<td>${estimate.pawnerPostId.pawnerPostDescription}</td>
+											<td>${estimate.estimatePriceMin }</td>
+											<td>${estimate.estimatePriceMax }</td>
+											<td>${estimate.pawnerPostId.pawnerId.pawnerFirstname}
+												${estimate.pawnerPostId.pawnerId.pawnerLastname}</td>
+											<td><c:if
+													test="${estimate.estimateStatus == 'complete'}">
+													<span class="badge badge-success">เสร็จสิ้น</span>
+												</c:if> <c:if test="${estimate.estimateStatus == 'waiting'}">
+													<span class="badge badge-danger">รอดำเนินการ</span>
+												</c:if> <c:if test="${estimate.estimateStatus == 'process'}">
+													<span class="badge badge-warning">กำลังดำเนินการ</span>
+												</c:if> <c:if test="${estimate.estimateStatus == 'proceed'}">
+													<span class="badge badge-warning">กำลังดำเนินการ</span>
+												</c:if> <c:if test="${estimate.estimateStatus == 'approve'}">
+													<span class="badge badge-primary">ยอมรับ</span>
+												</c:if> <c:if test="${estimate.estimateStatus == 'denei'}">
+													<span class="badge badge-danger">ปฎิเสธ</span>
+												</c:if></td>
+										</tr>
+									</tbody>
+								</c:forEach>
+							</table>
+						</div>
+					</div>
 				</div>
-			</div>
-		</div>
-</c:if>
-<!-- End Gold -->
-
-
-<!-- Camera -->
-<c:if test="${estimate.pawnerPostId.pawnerPostItemType == 'Camera'}">
-		<div class="card">
-			<div class="card-title">
-				<h4>Camera</h4>
-			</div>
-			<div class="card-body">
-				<div class="table-responsive">
-					<table class="table table-hover ">
-						<thead>
-							<tr>
-								<th>Photo</th>
-								<th>Brand</th>
-								<th>Post Name</th>
-								<th>Serial Number</th>
-								<th>Model</th>
-								<th>Type of camera</th>
-								<th>Type of len</th>
-								<th>Year of purchase</th>
-								<th>Battery charger</th>
-								<th>Warranty Certificate</th>
-								<th>Description</th>
-								<th>Price Min</th>
-								<th>Price Max</th>
-								<th>Post By</th>
-								<th>Status</th>
-							</tr>
-						</thead>
-						<c:forEach items="${eList}" var="estimate">
-							<tbody>
-							<tr>
-								<td>
-									<img class="img-responsive"src="images/imageUpload/${estimate.pawnerPostId.pawnerPostPicture}" width="300" />
-								</td>
-								<td>
-									${estimate.pawnerPostId.pawnerPostBrand}
-								</td>
-								<td>
-									${estimate.pawnerPostId.pawnerPostName}
-								</td>
-								<td>
-									${estimate.pawnerPostId.pawnerPostSerial}
-								</td>
-								<td>
-									${estimate.pawnerPostId.pawnerPostModel}
-								</td>
-								<td>
-									${estimate.pawnerPostId.pawnerPostTypeCamera}
-								</td>
-								<td>
-									${estimate.pawnerPostId.pawnerPostCameraLen}
-								</td>
-								<td>
-									${estimate.pawnerPostId.pawnerPostPurchase}
-								</td>
-								<td>
-									${estimate.pawnerPostId.pawnerPostBattery}
-								</td>
-								<td>
-									${estimate.pawnerPostId.pawnerPostWarranty}
-								</td>
-								<td>
-									${estimate.pawnerPostId.pawnerPostDescription}
-								</td>
-								<td>
-									${estimate.estimatePriceMin }
-								</td>
-								<td>
-									${estimate.estimatePriceMax }
-								</td>
-								<td>
-									${estimate.pawnerPostId.pawnerId.pawnerFirstname} ${estimate.pawnerPostId.pawnerId.pawnerLastname}
-								</td>
-								<td>
-										<c:if test="${estimate.estimateStatus == 'complete'}">
-											<span class="badge badge-success">Complete</span>
-										</c:if>
-										<c:if test="${estimate.estimateStatus == 'waiting'}">
-											<span class="badge badge-danger">Waiting</span>
-										</c:if>
-										<c:if test="${estimate.estimateStatus == 'process'}">
-											<span class="badge badge-warning">Process</span>
-										</c:if>
-										<c:if test="${estimate.estimateStatus == 'proceed'}">
-											<span class="badge badge-warning">Process</span>
-										</c:if>
-										<c:if test="${estimate.estimateStatus == 'approve'}">
-											<span class="badge badge-primary">Approve</span>
-										</c:if>
-										<c:if test="${estimate.estimateStatus == 'denei'}">
-											<span class="badge badge-danger">Denei</span>
-										</c:if>
-								</td>
-							</tr>
-							</tbody>
-						</c:forEach>
-					</table>
+			</c:if>
+		</c:forEach>
+		<!-- End Gold -->
+		<!-- Camera -->
+		<c:forEach items="${eList}" var="estimate">
+			<c:if test="${estimate.pawnerPostId.pawnerPostItemType == 'Camera'}">
+				<div class="container">
+					<div class="card-body">
+						<div class="table-responsive">
+							<table class="table table-hover ">
+								<thead>
+									<tr>
+										<th>รูปภาพ</th>
+										<th>แบรนด์</th>
+										<th>ชื่อโพส</th>
+										<th>หมายเลขผลิตภัณฑ์</th>
+										<th>โมเดล</th>
+										<th>ชนิดของ กล้อง</th>
+										<th>ชนิดของ เลนส์</th>
+										<th>ปีที่ซื้อ</th>
+										<th>เครื่องชาร์จแบตเตอรี่</th>
+										<th>ใบรับประกัน</th>
+										<th>รายละเอียด</th>
+										<th>ราคาต่ำสุด</th>
+										<th>ราคาสูงสุด</th>
+										<th>จำนำโดย</th>
+										<th>สถานะ</th>
+									</tr>
+								</thead>
+								<c:forEach items="${eList}" var="estimate">
+									<tbody>
+										<tr>
+											<td><img class="img-responsive"
+												src="images/imageUpload/${estimate.pawnerPostId.pawnerPostPicture}"
+												width="300" /></td>
+											<td>${estimate.pawnerPostId.pawnerPostBrand}</td>
+											<td>${estimate.pawnerPostId.pawnerPostName}</td>
+											<td>${estimate.pawnerPostId.pawnerPostSerial}</td>
+											<td>${estimate.pawnerPostId.pawnerPostModel}</td>
+											<td>${estimate.pawnerPostId.pawnerPostTypeCamera}</td>
+											<td>${estimate.pawnerPostId.pawnerPostCameraLen}</td>
+											<td>${estimate.pawnerPostId.pawnerPostPurchase}</td>
+											<td>${estimate.pawnerPostId.pawnerPostBattery}</td>
+											<td>${estimate.pawnerPostId.pawnerPostWarranty}</td>
+											<td>${estimate.pawnerPostId.pawnerPostDescription}</td>
+											<td>${estimate.estimatePriceMin }</td>
+											<td>${estimate.estimatePriceMax }</td>
+											<td>${estimate.pawnerPostId.pawnerId.pawnerFirstname}
+												${estimate.pawnerPostId.pawnerId.pawnerLastname}</td>
+											<td><c:if
+													test="${estimate.estimateStatus == 'complete'}">
+													<span class="badge badge-success">เสร็จสิ้น</span>
+												</c:if> <c:if test="${estimate.estimateStatus == 'waiting'}">
+													<span class="badge badge-danger">รอดำเนินการ</span>
+												</c:if> <c:if test="${estimate.estimateStatus == 'process'}">
+													<span class="badge badge-warning">กำลังดำเนินการ</span>
+												</c:if> <c:if test="${estimate.estimateStatus == 'proceed'}">
+													<span class="badge badge-warning">กำลังดำเนินการ</span>
+												</c:if> <c:if test="${estimate.estimateStatus == 'approve'}">
+													<span class="badge badge-primary">ยอมรับ</span>
+												</c:if> <c:if test="${estimate.estimateStatus == 'denei'}">
+													<span class="badge badge-danger">ปฎิเสธ</span>
+												</c:if></td>
+										</tr>
+									</tbody>
+								</c:forEach>
+							</table>
+						</div>
+					</div>
 				</div>
-			</div>
-		</div>
-</c:if>
-<!-- End Camera -->
+			</c:if>
+		</c:forEach>
+		<!-- End Camera -->
 
 
-<!-- Computer&Laptop -->
-<c:if test="${estimate.pawnerPostId.pawnerPostItemType == 'Laptop'}">
-		<div class="card">
-			<div class="card-title">
-				<h4>Computer&Laptop</h4>
-			</div>
-			<div class="card-body">
-				<div class="table-responsive">
-					<table class="table table-hover ">
-						<thead>
-							<tr>
-								<th>Photo</th>
-								<th>Brand</th>
-								<th>Post Name</th>
-								<th>Serial Number</th>
-								<th>Model</th>
-								<th>Display size</th>
-								<th>Harddisk size</th>
-								<th>Ram size</th>
-								<th>Year of purchase</th>
-								<th>Year of production</th>
-								<th>Battery charger</th>
-								<th>Warranty Certificate</th>
-								<th>Description</th>
-								<th>Price Min</th>
-								<th>Price Max</th>
-								<th>Post By</th>
-								<th>Status</th>
-							</tr>
-						</thead>
-						<c:forEach items="${eList}" var="estimate">
-							<tbody>
-							<tr>
-								<td>
-									<img class="img-responsive"src="images/imageUpload/${estimate.pawnerPostId.pawnerPostPicture}" width="300" />
-								</td>
-								<td>
-									${estimate.pawnerPostId.pawnerPostBrand}
-								</td>
-								<td>
-									${estimate.pawnerPostId.pawnerPostName}
-								</td>
-								<td>
-									${estimate.pawnerPostId.pawnerPostSerial}
-								</td>
-								<td>
-									${estimate.pawnerPostId.pawnerPostModel}
-								</td>
-								<td>
-									${estimate.pawnerPostId.pawnerPostHarddisk}
-								</td>
-								<td>
-									${estimate.pawnerPostId.pawnerPostRam}
-								</td>
-								<td>
-									${estimate.pawnerPostId.pawnerPostPurchase}
-								</td>
-								<td>
-									${estimate.pawnerPostId.pawnerPostProduction}
-								</td>
-								<td>
-									${estimate.pawnerPostId.pawnerPostBattery}
-								</td>
-								<td>
-									${estimate.pawnerPostId.pawnerPostWarranty}
-								</td>
-								<td>
-									${estimate.pawnerPostId.pawnerPostDescription}
-								</td>
-								<td>
-									${estimate.estimatePriceMin }
-								</td>
-								<td>
-									${estimate.estimatePriceMax }
-								</td>
-								<td>
-									${estimate.pawnerPostId.pawnerId.pawnerFirstname} ${estimate.pawnerPostId.pawnerId.pawnerLastname}
-								</td>
-								<td>
-										<c:if test="${estimate.estimateStatus == 'complete'}">
-											<span class="badge badge-success">Complete</span>
-										</c:if>
-										<c:if test="${estimate.estimateStatus == 'waiting'}">
-											<span class="badge badge-danger">Waiting</span>
-										</c:if>
-										<c:if test="${estimate.estimateStatus == 'process'}">
-											<span class="badge badge-warning">Process</span>
-										</c:if>
-										<c:if test="${estimate.estimateStatus == 'proceed'}">
-											<span class="badge badge-warning">Process</span>
-										</c:if>
-										<c:if test="${estimate.estimateStatus == 'approve'}">
-											<span class="badge badge-primary">Approve</span>
-										</c:if>
-										<c:if test="${estimate.estimateStatus == 'denei'}">
-											<span class="badge badge-danger">Denei</span>
-										</c:if>
-								</td>
-							</tr>
-							</tbody>
-						</c:forEach>
-					</table>
+		<!-- Computer&Laptop -->
+		<c:forEach items="${eList}" var="estimate">
+			<c:if test="${estimate.pawnerPostId.pawnerPostItemType == 'Laptop'}">
+				<div class="container">
+					<div class="card-body">
+						<div class="table-responsive">
+							<table class="table table-hover ">
+								<thead>
+									<tr>
+										<th>รูปภาพ</th>
+										<th>แบรนด์</th>
+										<th>ชื่อโพส</th>
+										<th>หมายเลขผลิตภัณฑ์</th>
+										<th>โมเดล</th>
+										<th>ขนาด หน้าจอ</th>
+										<th>ขนาด ฮาร์ดดิสก์</th>
+										<th>ขนาด แรม</th>
+										<th>ปีที่ซื้อ</th>
+										<th>ปีที่ผลิต</th>
+										<th>เครื่องชาร์จแบตเตอรี่</th>
+										<th>ใบรับประกัน</th>
+										<th>รายละเอียด</th>
+										<th>ราคาต่ำสุด</th>
+										<th>ราคาสูงสุด</th>
+										<th>จำนำโดย</th>
+										<th>สถานะ</th>
+									</tr>
+								</thead>
+								<c:forEach items="${eList}" var="estimate">
+									<tbody>
+										<tr>
+											<td><img class="img-responsive"
+												src="images/imageUpload/${estimate.pawnerPostId.pawnerPostPicture}"
+												width="300" /></td>
+											<td>${estimate.pawnerPostId.pawnerPostBrand}</td>
+											<td>${estimate.pawnerPostId.pawnerPostName}</td>
+											<td>${estimate.pawnerPostId.pawnerPostSerial}</td>
+											<td>${estimate.pawnerPostId.pawnerPostModel}</td>
+											<td>${estimate.pawnerPostId.pawnerPostHarddisk}</td>
+											<td>${estimate.pawnerPostId.pawnerPostRam}</td>
+											<td>${estimate.pawnerPostId.pawnerPostPurchase}</td>
+											<td>${estimate.pawnerPostId.pawnerPostProduction}</td>
+											<td>${estimate.pawnerPostId.pawnerPostBattery}</td>
+											<td>${estimate.pawnerPostId.pawnerPostWarranty}</td>
+											<td>${estimate.pawnerPostId.pawnerPostDescription}</td>
+											<td>${estimate.estimatePriceMin }</td>
+											<td>${estimate.estimatePriceMax }</td>
+											<td>${estimate.pawnerPostId.pawnerId.pawnerFirstname}
+												${estimate.pawnerPostId.pawnerId.pawnerLastname}</td>
+											<td><c:if
+													test="${estimate.estimateStatus == 'complete'}">
+													<span class="badge badge-success">เสร็จสิ้น</span>
+												</c:if> <c:if test="${estimate.estimateStatus == 'waiting'}">
+													<span class="badge badge-danger">รอดำเนินการ</span>
+												</c:if> <c:if test="${estimate.estimateStatus == 'process'}">
+													<span class="badge badge-warning">กำลังดำเนินการ</span>
+												</c:if> <c:if test="${estimate.estimateStatus == 'proceed'}">
+													<span class="badge badge-warning">กำลังดำเนินการ</span>
+												</c:if> <c:if test="${estimate.estimateStatus == 'approve'}">
+													<span class="badge badge-primary">ยอมรับ</span>
+												</c:if> <c:if test="${estimate.estimateStatus == 'denei'}">
+													<span class="badge badge-danger">ปฎิเสธ</span>
+												</c:if></td>
+										</tr>
+									</tbody>
+								</c:forEach>
+							</table>
+						</div>
+					</div>
 				</div>
-			</div>
-		</div>
-</c:if>
-<!-- End Computer&Laptop -->
+			</c:if>
+		</c:forEach>
+		<!-- End Computer&Laptop -->
 
 
-<!-- Smartphone -->
-<c:if test="${estimate.pawnerPostId.pawnerPostItemType == 'Smartphone'}">
-		<div class="card">
-			<div class="card-title">
-				<h4>Smartphone</h4>
-			</div>
-			<div class="card-body">
-				<div class="table-responsive">
-					<table class="table table-hover ">
-						<thead>
-							<tr>
-								<th>Photo</th>
-								<th>Brand</th>
-								<th>Post Name</th>
-								<th>Serial Number</th>
-								<th>Model</th>
-								<th>Capacity</th>
-								<th>Year of purchase</th>
-								<th>Year of production</th>
-								<th>Battery charger</th>
-								<th>Warranty Certificate</th>
-								<th>Description</th>
-								<th>Price Min</th>
-								<th>Price Max</th>
-								<th>Post By</th>
-								<th>Status</th>
-							</tr>
-						</thead>
-						<c:forEach items="${eList}" var="estimate">
-							<tbody>
-							<tr>
-								<td>
-									<img class="img-responsive"src="images/imageUpload/${estimate.pawnerPostId.pawnerPostPicture}" width="300" />
-								</td>
-								<td>
-									${estimate.pawnerPostId.pawnerPostBrand}
-								</td>
-								<td>
-									${estimate.pawnerPostId.pawnerPostName}
-								</td>
-								<td>
-									${estimate.pawnerPostId.pawnerPostSerial}
-								</td>
-								<td>
-									${estimate.pawnerPostId.pawnerPostModel}
-								</td>
-								<td>
-									${estimate.pawnerPostId.pawnerPostCapacity}
-								</td>
-								<td>
-									${estimate.pawnerPostId.pawnerPostPurchase}
-								</td>
-								<td>
-									${estimate.pawnerPostId.pawnerPostProduction}
-								</td>
-								<td>
-									${estimate.pawnerPostId.pawnerPostBattery}
-								</td>
-								<td>
-									${estimate.pawnerPostId.pawnerPostWarranty}
-								</td>
-								<td>
-									${estimate.pawnerPostId.pawnerPostDescription}
-								</td>
-								<td>
-									${estimate.estimatePriceMin }
-								</td>
-								<td>
-									${estimate.estimatePriceMax }
-								</td>
-								<td>
-									${estimate.pawnerPostId.pawnerId.pawnerFirstname} ${estimate.pawnerPostId.pawnerId.pawnerLastname}
-								</td>
-								<td>
-										<c:if test="${estimate.estimateStatus == 'complete'}">
-											<span class="badge badge-success">Complete</span>
-										</c:if>
-										<c:if test="${estimate.estimateStatus == 'waiting'}">
-											<span class="badge badge-danger">Waiting</span>
-										</c:if>
-										<c:if test="${estimate.estimateStatus == 'process'}">
-											<span class="badge badge-warning">Process</span>
-										</c:if>
-										<c:if test="${estimate.estimateStatus == 'proceed'}">
-											<span class="badge badge-warning">Process</span>
-										</c:if>
-										<c:if test="${estimate.estimateStatus == 'approve'}">
-											<span class="badge badge-primary">Approve</span>
-										</c:if>
-										<c:if test="${estimate.estimateStatus == 'denei'}">
-											<span class="badge badge-danger">Denei</span>
-										</c:if>
-								</td>
-							</tr>
-							</tbody>
-						</c:forEach>
-					</table>
+		<!-- Smartphone -->
+		<c:forEach items="${eList}" var="estimate">
+			<c:if
+				test="${estimate.pawnerPostId.pawnerPostItemType == 'Smartphone'}">
+				<div class="container">
+					<div class="card-body">
+						<div class="table-responsive">
+							<table class="table table-hover ">
+								<thead>
+									<tr>
+										<th>รูปภาพ</th>
+										<th>แบรนด์</th>
+										<th>ชื่อโพส</th>
+										<th>หมายเลขผลิตภัณฑ์</th>
+										<th>โมเดล</th>
+										<th>หน่วยความจำ</th>
+										<th>ปีที่ซื้อ</th>
+										<th>ปีที่ผลิต</th>
+										<th>เครื่องชาร์จแบตเตอรี่</th>
+										<th>ใบรับประกัน</th>
+										<th>รายละเอียด</th>
+										<th>ราคาต่ำสุด</th>
+										<th>ราคาสูงสุด</th>
+										<th>จำนำโดย</th>
+										<th>สถานะ</th>
+									</tr>
+								</thead>
+								<c:forEach items="${eList}" var="estimate">
+									<tbody>
+										<tr>
+											<td><img class="img-responsive"
+												src="images/imageUpload/${estimate.pawnerPostId.pawnerPostPicture}"
+												width="300" /></td>
+											<td>${estimate.pawnerPostId.pawnerPostBrand}</td>
+											<td>${estimate.pawnerPostId.pawnerPostName}</td>
+											<td>${estimate.pawnerPostId.pawnerPostSerial}</td>
+											<td>${estimate.pawnerPostId.pawnerPostModel}</td>
+											<td>${estimate.pawnerPostId.pawnerPostCapacity}</td>
+											<td>${estimate.pawnerPostId.pawnerPostPurchase}</td>
+											<td>${estimate.pawnerPostId.pawnerPostProduction}</td>
+											<td>${estimate.pawnerPostId.pawnerPostBattery}</td>
+											<td>${estimate.pawnerPostId.pawnerPostWarranty}</td>
+											<td>${estimate.pawnerPostId.pawnerPostDescription}</td>
+											<td>${estimate.estimatePriceMin }</td>
+											<td>${estimate.estimatePriceMax }</td>
+											<td>${estimate.pawnerPostId.pawnerId.pawnerFirstname}
+												${estimate.pawnerPostId.pawnerId.pawnerLastname}</td>
+											<td><c:if
+													test="${estimate.estimateStatus == 'complete'}">
+													<span class="badge badge-success">เสร็จสิ้น</span>
+												</c:if> <c:if test="${estimate.estimateStatus == 'waiting'}">
+													<span class="badge badge-danger">รอดำเนินการ</span>
+												</c:if> <c:if test="${estimate.estimateStatus == 'process'}">
+													<span class="badge badge-warning">กำลังดำเนินการ</span>
+												</c:if> <c:if test="${estimate.estimateStatus == 'proceed'}">
+													<span class="badge badge-warning">กำลังดำเนินการ</span>
+												</c:if> <c:if test="${estimate.estimateStatus == 'approve'}">
+													<span class="badge badge-primary">ยอมรับ</span>
+												</c:if> <c:if test="${estimate.estimateStatus == 'denei'}">
+													<span class="badge badge-danger">ปฎิเสธ</span>
+												</c:if></td>
+										</tr>
+									</tbody>
+								</c:forEach>
+							</table>
+						</div>
+					</div>
 				</div>
-			</div>
-		</div>
-</c:if>
-<!-- End Smartphone -->
+			</c:if>
+		</c:forEach>
+		<!-- End Smartphone -->
 
 
-<!-- TV -->
-<c:if test="${estimate.pawnerPostId.pawnerPostItemType == 'Tv'}">
-		<div class="card">
-			<div class="card-title">
-				<h4>TV</h4>
-			</div>
-			<div class="card-body">
-				<div class="table-responsive">
-					<table class="table table-hover ">
-						<thead>
-							<tr>
-								<th>Photo</th>
-								<th>Brand</th>
-								<th>Post Name</th>
-								<th>Serial Number</th>
-								<th>Model</th>
-								<th>Display size</th>
-								<th>Year of purchase</th>
-								<th>Remote control</th>
-								<th>Warranty Certificate</th>
-								<th>Description</th>
-								<th>Price Min</th>
-								<th>Price Max</th>
-								<th>Post By</th>
-								<th>Status</th>
-							</tr>
-						</thead>
-						<c:forEach items="${eList}" var="estimate">
-							<tbody>
-							<tr>
-								<td>
-									<img class="img-responsive"src="images/imageUpload/${estimate.pawnerPostId.pawnerPostPicture}" width="300" />
-								</td>
-								<td>
-									${estimate.pawnerPostId.pawnerPostBrand}
-								</td>
-								<td>
-									${estimate.pawnerPostId.pawnerPostName}
-								</td>
-								<td>
-									${estimate.pawnerPostId.pawnerPostSerial}
-								</td>
-								<td>
-									${estimate.pawnerPostId.pawnerPostModel}
-								</td>
-								<td>
-									${estimate.pawnerPostId.pawnerPostSize}
-								</td>
-								<td>
-									${estimate.pawnerPostId.pawnerPostPurchase}
-								</td>
-								<td>
-									${estimate.pawnerPostId.panwePostRemote}
-								</td>
-								<td>
-									${estimate.pawnerPostId.pawnerPostWarranty}
-								</td>
-								<td>
-									${estimate.pawnerPostId.pawnerPostDescription}
-								</td>
-								<td>
-									${estimate.estimatePriceMin }
-								</td>
-								<td>
-									${estimate.estimatePriceMax }
-								</td>
-								<td>
-									${estimate.pawnerPostId.pawnerId.pawnerFirstname} ${estimate.pawnerPostId.pawnerId.pawnerLastname}
-								</td>
-								<td>
-										<c:if test="${estimate.estimateStatus == 'complete'}">
-											<span class="badge badge-success">Complete</span>
-										</c:if>
-										<c:if test="${estimate.estimateStatus == 'waiting'}">
-											<span class="badge badge-danger">Waiting</span>
-										</c:if>
-										<c:if test="${estimate.estimateStatus == 'process'}">
-											<span class="badge badge-warning">Process</span>
-										</c:if>
-										<c:if test="${estimate.estimateStatus == 'proceed'}">
-											<span class="badge badge-warning">Process</span>
-										</c:if>
-										<c:if test="${estimate.estimateStatus == 'approve'}">
-											<span class="badge badge-primary">Approve</span>
-										</c:if>
-										<c:if test="${estimate.estimateStatus == 'denei'}">
-											<span class="badge badge-danger">Denei</span>
-										</c:if>
-								</td>
-							</tr>
-							</tbody>
-						</c:forEach>
-					</table>
+		<!-- TV -->
+		<c:forEach items="${eList}" var="estimate">
+			<c:if test="${estimate.pawnerPostId.pawnerPostItemType == 'Tv'}">
+				<div class="container">
+					<div class="card-body">
+						<div class="table-responsive">
+							<table class="table table-hover ">
+								<thead>
+									<tr>
+										<th>รูปภาพ</th>
+										<th>แบรนด์</th>
+										<th>ชื่อโพส</th>
+										<th>หมายเลขผลิตภัณฑ์</th>
+										<th>โมเดล</th>
+										<th>ขนาด หน้าจอ</th>
+										<th>ปีที่ซื้อ</th>
+										<th>รีโมท</th>
+										<th>ใบรับประกัน</th>
+										<th>รายละเอียด</th>
+										<th>ราคาต่ำสุด</th>
+										<th>ราคาสูงสุด</th>
+										<th>จำนำโดย</th>
+										<th>สถานะ</th>
+									</tr>
+								</thead>
+								<c:forEach items="${eList}" var="estimate">
+									<tbody>
+										<tr>
+											<td><img class="img-responsive"
+												src="images/imageUpload/${estimate.pawnerPostId.pawnerPostPicture}"
+												width="300" /></td>
+											<td>${estimate.pawnerPostId.pawnerPostBrand}</td>
+											<td>${estimate.pawnerPostId.pawnerPostName}</td>
+											<td>${estimate.pawnerPostId.pawnerPostSerial}</td>
+											<td>${estimate.pawnerPostId.pawnerPostModel}</td>
+											<td>${estimate.pawnerPostId.pawnerPostSize}</td>
+											<td>${estimate.pawnerPostId.pawnerPostPurchase}</td>
+											<td>${estimate.pawnerPostId.panwePostRemote}</td>
+											<td>${estimate.pawnerPostId.pawnerPostWarranty}</td>
+											<td>${estimate.pawnerPostId.pawnerPostDescription}</td>
+											<td>${estimate.estimatePriceMin }</td>
+											<td>${estimate.estimatePriceMax }</td>
+											<td>${estimate.pawnerPostId.pawnerId.pawnerFirstname}
+												${estimate.pawnerPostId.pawnerId.pawnerLastname}</td>
+											<td><c:if
+													test="${estimate.estimateStatus == 'complete'}">
+													<span class="badge badge-success">เสร็จสิ้น</span>
+												</c:if> <c:if test="${estimate.estimateStatus == 'waiting'}">
+													<span class="badge badge-danger">รอดำเนินการ</span>
+												</c:if> <c:if test="${estimate.estimateStatus == 'process'}">
+													<span class="badge badge-warning">กำลังดำเนินการ</span>
+												</c:if> <c:if test="${estimate.estimateStatus == 'proceed'}">
+													<span class="badge badge-warning">กำลังดำเนินการ</span>
+												</c:if> <c:if test="${estimate.estimateStatus == 'approve'}">
+													<span class="badge badge-primary">ยอมรับ</span>
+												</c:if> <c:if test="${estimate.estimateStatus == 'denei'}">
+													<span class="badge badge-danger">ปฎิเสธ</span>
+												</c:if></td>
+										</tr>
+									</tbody>
+								</c:forEach>
+							</table>
+						</div>
+					</div>
 				</div>
-			</div>
-		</div>
-</c:if>
-<!-- End TV -->
+			</c:if>
+		</c:forEach>
+		<!-- End TV -->
 
 
-<!-- Watch -->
-<c:if test="${estimate.pawnerPostId.pawnerPostItemType == 'watch'}">
-		<div class="card">
-			<div class="card-title">
-				<h4>Wearables (Watch)</h4>
-			</div>
-			<div class="card-body">
-				<div class="table-responsive">
-					<table class="table table-hover ">
-						<thead>
-							<tr>
-								<th>Photo</th>
-								<th>Brand</th>
-								<th>Post Name</th>
-								<th>Type of case</th>
-								<th>Type of bracelet</th>
-								<th>Diamonds on your timepiece?</th>
-								<th>Production year</th>
-								<th>Packagingl</th>
-								<th>Warranty Certificate</th>
-								<th>Description</th>
-								<th>Price Min</th>
-								<th>Price Max</th>
-								<th>Post By</th>
-								<th>Status</th>
-							</tr>
-						</thead>
-						<c:forEach items="${eList}" var="estimate">
-							<tbody>
-							<tr>
-								<td>
-									<img class="img-responsive"src="images/imageUpload/${estimate.pawnerPostId.pawnerPostPicture}" width="300" />
-								</td>
-								<td>
-									${estimate.pawnerPostId.pawnerPostBrand}
-								</td>
-								<td>
-									${estimate.pawnerPostId.pawnerPostName}
-								</td>
-								<td>
-									${estimate.pawnerPostId.pawnerPostCase}
-								</td>
-								<td>
-									${estimate.pawnerPostId.pawnerPostBracelet}
-								</td>
-								<td>
-									${estimate.pawnerPostId.pawnerPostDiamond}
-								</td>
-								<td>
-									${estimate.pawnerPostId.pawnerPostProduction}
-								</td>
-								<td>
-									${estimate.pawnerPostId.pawnerPostPackage}
-								</td>
-								<td>
-									${estimate.pawnerPostId.pawnerPostWarranty}
-								</td>
-								<td>
-									${estimate.pawnerPostId.pawnerPostDescription}
-								</td>
-								<td>
-									${estimate.estimatePriceMin }
-								</td>
-								<td>
-									${estimate.estimatePriceMax }
-								</td>
-								<td>
-									${estimate.pawnerPostId.pawnerId.pawnerFirstname} ${estimate.pawnerPostId.pawnerId.pawnerLastname}
-								</td>
-								<td>
-										<c:if test="${estimate.estimateStatus == 'complete'}">
-											<span class="badge badge-success">Complete</span>
-										</c:if>
-										<c:if test="${estimate.estimateStatus == 'waiting'}">
-											<span class="badge badge-danger">Waiting</span>
-										</c:if>
-										<c:if test="${estimate.estimateStatus == 'process'}">
-											<span class="badge badge-warning">Process</span>
-										</c:if>
-										<c:if test="${estimate.estimateStatus == 'proceed'}">
-											<span class="badge badge-warning">Process</span>
-										</c:if>
-										<c:if test="${estimate.estimateStatus == 'approve'}">
-											<span class="badge badge-primary">Approve</span>
-										</c:if>
-										<c:if test="${estimate.estimateStatus == 'denei'}">
-											<span class="badge badge-danger">Denei</span>
-										</c:if>
-								</td>
-							</tr>
-							</tbody>
-						</c:forEach>
-					</table>
+		<!-- Watch -->
+		<c:forEach items="${eList}" var="estimate">
+			<c:if test="${estimate.pawnerPostId.pawnerPostItemType == 'Watch'}">
+				<div class="container">
+					<div class="card-body">
+						<div class="table-responsive">
+							<table class="table table-hover ">
+								<thead>
+									<tr>
+										<th>รูปภาพ</th>
+										<th>แบรนด์</th>
+										<th>ชื่อโพส</th>
+										<th>หน้าปัดนาฬิกา</th>
+										<th>ประเภทของสาย</th>
+										<th>เพชร บนนาฬิกา?</th>
+										<th>ปีที่ผลิต</th>
+										<th>กล่องบรรจุสินค้า</th>
+										<th>ใบรับประกัน</th>
+										<th>รายละเอียด</th>
+										<th>ราคาต่ำสุด</th>
+										<th>ราคาสูงสุด</th>
+										<th>จำนำโดย</th>
+										<th>สถานะ</th>
+									</tr>
+								</thead>
+								<c:forEach items="${eList}" var="estimate">
+									<tbody>
+										<tr>
+											<td><img class="img-responsive"
+												src="images/imageUpload/${estimate.pawnerPostId.pawnerPostPicture}"
+												width="300" /></td>
+											<td>${estimate.pawnerPostId.pawnerPostBrand}</td>
+											<td>${estimate.pawnerPostId.pawnerPostName}</td>
+											<td>${estimate.pawnerPostId.pawnerPostCase}</td>
+											<td>${estimate.pawnerPostId.pawnerPostBracelet}</td>
+											<td>${estimate.pawnerPostId.pawnerPostDiamond}</td>
+											<td>${estimate.pawnerPostId.pawnerPostProduction}</td>
+											<td>${estimate.pawnerPostId.pawnerPostPackage}</td>
+											<td>${estimate.pawnerPostId.pawnerPostWarranty}</td>
+											<td>${estimate.pawnerPostId.pawnerPostDescription}</td>
+											<td>${estimate.estimatePriceMin }</td>
+											<td>${estimate.estimatePriceMax }</td>
+											<td>${estimate.pawnerPostId.pawnerId.pawnerFirstname}
+												${estimate.pawnerPostId.pawnerId.pawnerLastname}</td>
+											<td><c:if
+													test="${estimate.estimateStatus == 'complete'}">
+													<span class="badge badge-success">เสร็จสิ้น</span>
+												</c:if> <c:if test="${estimate.estimateStatus == 'waiting'}">
+													<span class="badge badge-danger">รอดำเนินการ</span>
+												</c:if> <c:if test="${estimate.estimateStatus == 'process'}">
+													<span class="badge badge-warning">กำลังดำเนินการ</span>
+												</c:if> <c:if test="${estimate.estimateStatus == 'proceed'}">
+													<span class="badge badge-warning">กำลังดำเนินการ</span>
+												</c:if> <c:if test="${estimate.estimateStatus == 'approve'}">
+													<span class="badge badge-primary">ยอมรับ</span>
+												</c:if> <c:if test="${estimate.estimateStatus == 'denei'}">
+													<span class="badge badge-danger">ปฎิเสธ</span>
+												</c:if></td>
+										</tr>
+									</tbody>
+								</c:forEach>
+							</table>
+						</div>
+					</div>
 				</div>
-			</div>
-		</div>
-</c:if>
-<!-- End Watch -->
-
-</section>
+			</c:if>
+		</c:forEach>
+		<!-- End Watch -->
+	</section>
 
 
 </body>
