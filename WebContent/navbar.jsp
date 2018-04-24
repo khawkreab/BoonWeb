@@ -187,7 +187,7 @@
 	
 	
 		<!-- ----------------------------navbar-collapse---------------------------------------- -->
-	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+	<div class="collapse" id="navbarSupportedContent">
 		<ul class="ml-auto">
 			<!-- ----------------------------pawner login---------------------------------------- -->
 			<%
@@ -238,9 +238,9 @@
 				} else {
 			%>
 			<li><a data-toggle="modal" data-target="#modalLogin"
-				class="nav-link js-scroll-trigger" href="#">Login</a></li>
+				class="nav-link " href="#">Login</a></li>
 			<li><a href="pawner-register-form.html"
-				class="nav-link js-scroll-trigger">Register</a></li>
+				class="nav-link ">Register</a></li>
 			<%
 				}
 			%>
