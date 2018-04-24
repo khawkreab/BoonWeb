@@ -71,16 +71,16 @@
 												<select class="input100" name="pawnerPostCategory" required="required">
 													<option>ชนิดหรือรูปแบบของทองคำ</option>
 													<option>ทองรูปพรรณ</option>
-													<option value="1">ทองเค เช่น 18k, 14k</option>
+													<option>ทองเค เช่น 18k, 14k</option>
 													<option>ทองเค(18k,14k)</option>
-													<option value="2">ทอง 96.5 %</option>
+													<option>ทอง 96.5 %</option>
 													<option>เงิน</option>
-													<option value="3">ทองแท่ง 96.5 %</option>
-													<option value="4">ทองแท่ง 99.99 %</option>
-													<option value="5">พรีม่าโกลด์, โกลด์มาสเตอร์</option>
-													<option value="6">เงิน</option>
-													<option value="7">กรอบพระ</option>
-													<option value="8">แพลตตินั่ม</option>
+													<option>ทองแท่ง 96.5 %</option>
+													<option>ทองแท่ง 99.99 %</option>
+													<option>พรีม่าโกลด์, โกลด์มาสเตอร์</option>
+													<option>เงิน</option>
+													<option>กรอบพระ</option>
+													<option>แพลตตินั่ม</option>
 													<option>อื่นๆ</option>
 												</select>
 											</div>
