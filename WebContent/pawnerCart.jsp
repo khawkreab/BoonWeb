@@ -17,7 +17,7 @@
 <link href="css/new-design.css" rel="stylesheet">
 <link href="vendor/font-awesome/css/font-awesome.min.css"
 	rel="stylesheet" type="text/css">
-<script src="js/checkLogin.js"></script>
+
 
 </head>
 <body>
@@ -39,7 +39,7 @@
 		var cart = {}
 		var list = []
 
-		window.onLoad(this.check())
+		window.onLoad = this.check();
 		function select(e) {
 			console.log(e.getAttribute('data-cart'))
 			cart = JSON.parse(e.getAttribute('data-cart'))
@@ -53,39 +53,44 @@
 			if (sessionStorage.getItem('carts')) {
 				list = JSON.parse(sessionStorage.getItem('carts'))
 
-				console.log(list.length)
-				if (0 != list.length) {
-					document.getElementById("cartNumber").style.display = "block";
-					sessionStorage.setItem('pawnercartNumber', list.length)
-					document.getElementById("cartNumber").innerHTML = list.length
-				} else {
+				document.getElementById("cartNumber").style.display = "block";
+				sessionStorage.setItem('pawnercartNumber', list.length)
+				document.getElementById("cartNumber").innerHTML = sessionStorage
+						.getItem('pawnercartNumber')
+
+				if (list.length == null || list.length == 0) {
 					document.getElementById("cartNumber").style.display = "none";
-				}
-
-				html += "<tr><th>Name</th><th>Price</th><th></th></tr>"
-				for ( var index in this.list) {
 					html += "<tr>"
-					html += "<td>" + this.list[index].pawnshopPostName
-							+ "</td>"
-					html += "<td>" + this.list[index].pawnshopPostPrice
-							+ "</td>"
-					html += "<td><button onClick='deleteSelf("
-							+ index
-							+ ")'><i class='fas fa-trash' style='font-size:20px;color:red'></i></button></td>"
+					html += "<td>No menus in your list orders</td>"
 					html += "</tr>"
+				} else {
 
+					html += "<tr><th>Name</th><th>Price</th><th></th></tr>"
+					for ( var index in this.list) {
+						html += "<tr>"
+						html += "<td>" + this.list[index].pawnshopPostName
+								+ "</td>"
+						html += "<td>" + this.list[index].pawnshopPostPrice
+								+ "</td>"
+						html += "<td><button onClick='deleteSelf("
+								+ index
+								+ ")'><i class='fas fa-trash' style='font-size:20px;color:red'></i></button></td>"
+						html += "</tr>"
+
+					}
 				}
 			} else {
 				html += "<tr>"
 				html += "<td>No menus in your list orders</td>"
 				html += "</tr>"
+
+				document.getElementById("cartNumber").style.display = "none";
 			}
 			html += "</table>"
 			document.getElementById("list").innerHTML = html
 		}
 
 		function deleteSelf(index) {
-			/* console.log("delete " + this.list.splice(index, 1)) */
 			this.list.splice(index, 1)
 			sessionStorage.setItem('carts', JSON.stringify(this.list))
 			this.check()

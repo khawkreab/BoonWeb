@@ -85,7 +85,8 @@
 				%>
 				<li><a class="nav-link" href="pawner-pledge.html">จำนำ</a></li>
 				<li><a class="nav-link" href="pawner-track-pledge.html">สถานะการจำนำ</a></li>
-				<li><a class="nav-link" href="pawner-cart.html"><i class="fas fa-shopping-cart"></i><span class="cart-num"
+				<li><a class="nav-link" href="pawner-cart.html"><i
+						class="fas fa-shopping-cart"></i><span class="cart-num"
 						id="cartNumber"></span></a></li>
 				<li class="dropdown show"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown" role="button" aria-expanded="false"> <%=session.getAttribute("username")%></a>
@@ -124,7 +125,8 @@
 									class="navbar-account-email"><%=session.getAttribute("email")%></span></span>
 							</div></li>
 						<li><a href="logout.html" class="nav-link ">แก้ไขบัญชี</a></li>
-						<li><a href="pawnshop-estimate-history.html" class="nav-link ">ประวัติการประเมิณของจำนำ</a></li>
+						<li><a href="pawnshop-estimate-history.html"
+							class="nav-link ">ประวัติการประเมิณของจำนำ</a></li>
 						<li><a href="pawnshop-list-post.html" class="nav-link ">ประวัติการปล่อยของหลุดจำนำ</a></li>
 						<li><a href="logout.html" class="nav-link ">Logout</a></li>
 					</ul></li>
@@ -148,7 +150,7 @@
 	<!------------------------------------------------ popup -------------------------------------------------->
 	<div class="modal fade" id="modalLogin" role="dialog">
 		<div class="modal-dialog">
-			<div class="modal-content">
+			<div class="modal-content modal-login">
 				<div class="re-con">
 					<div class="row">
 						<div class="col-md-6 ">
@@ -193,8 +195,15 @@
 
 	<script type="text/javascript">
 		window.onload = function checkcart() {
-			cartnum = sessionStorage.getItem('pawnercartNumber');
-			document.getElementById("cartNumber").innerHTML = cartnum
+
+			var cartNum = sessionStorage.getItem('pawnercartNumber');
+
+			if (null == cartNum || 0 == cartNum || cartNum == undefined) {
+				document.getElementById("cartNumber").style.display = "none";
+			} else {
+				document.getElementById("cartNumber").style.display = "block";
+				document.getElementById("cartNumber").innerHTML = cartNum
+			}
 		}
 	</script>
 </body>
