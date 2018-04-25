@@ -30,7 +30,13 @@
 <body>
 	<!-- Navigation -->
 	<jsp:include page="navbar.jsp" />
-
+	<!--banner-->
+	<div class="banner-top">
+		<div class="">
+			<h1>ประวัติการประเมิณ</h1>
+			<em></em>
+		</div>
+	</div>
 	<!-- -------------------------------- status process ---------------------------------- -->
 	<section>
 		<c:forEach items="${eList}" var="track">

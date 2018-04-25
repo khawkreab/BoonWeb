@@ -46,7 +46,7 @@
 			<div class="col-md-3 footer-middle-in">
 				<h6>Newsletter</h6>
 				<span>Sign up for News Letter</span>
-				<form>
+				<form action="mailto:ter52285@hotmail.com" method="post" enctype="text/plain">
 					<input type="text" value="Enter your E-mail"
 						onfocus="this.value='';"
 						onblur="if (this.value == '') {this.value ='Enter your E-mail';}">

@@ -96,7 +96,7 @@
 					<ul class="dropdown-menu" role="menu">
 						<li><p>บัญชีผู้ใช้งาน</p>
 							<div class="navbar-account">
-								<span class="navbar-account-photo">รูป</span><span
+								<span class="navbar-account-photo"><i class="fas fa-user"></i></span><span
 									class="navbar-account-info"><span
 									class="navbar-account-naem"><%=session.getAttribute("username")%></span><span
 									class="navbar-account-email"><%=session.getAttribute("email")%></span></span>
