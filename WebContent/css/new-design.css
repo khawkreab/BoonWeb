@@ -15,6 +15,20 @@
 // task : nav bar design
 // edit by : khawkreab
 */
+html, body {
+	background: #fff;
+	font-size: 100%;
+	overflow-x: hidden;
+}
+
+body a{
+	transition: 0.5s all;
+	-webkit-transition: 0.5s all;
+	-o-transition: 0.5s all;
+	-moz-transition: 0.5s all;
+	-ms-transition: 0.5s all;
+}
+
 a {
 	cursor: pointer;
 }
@@ -59,6 +73,22 @@ li {
 .bg-black {
 	background-color: #000000;
 	color: #ffffff;
+}
+
+.border-info {
+	border: 1px solid #5bc0de;
+}
+
+.border-warning {
+	border: 1px solid #f0ad4e;
+}
+
+.border-success {
+	border: 1px solid #5cb85c;
+}
+
+.border-danger {
+	border: 1px solid #d9534f;
 }
 
 .justify-content-center {
@@ -113,96 +143,93 @@ form {
 }
 
 section {
-    padding: 4rem 0;
+	padding: 4rem 0;
 }
 
 hr {
-    max-width: 50px;
-    border-width: 3px;
-    border-color: #f05f40
+	max-width: 50px;
+	border-width: 3px;
+	border-color: #f05f40
 }
 
 hr.light {
-    border-color: #fff
+	border-color: #fff
 }
 
 .btn-primary {
-    background-color: #f05f40;
-    border-color: #f05f40;
+	background-color: #f05f40;
+	border-color: #f05f40;
 }
 
 .btn-xl {
-    padding: 1rem 2rem
+	padding: 1rem 2rem
 }
 
 .btn-primary {
-    background-color: #f05f40;
-    border-color: #f05f40
+	background-color: #f05f40;
+	border-color: #f05f40
 }
 
-.btn-primary:active,.btn-primary:focus,.btn-primary:hover {
-    color: #fff;
-    background-color: #ee4b28!important
+.btn-primary:active, .btn-primary:focus, .btn-primary:hover {
+	color: #fff;
+	background-color: #ee4b28 !important
 }
 
-.btn-primary:active,.btn-primary:focus {
-    box-shadow: 0 0 0 .2rem rgba(240,95,64,.5)!important
+.btn-primary:active, .btn-primary:focus {
+	box-shadow: 0 0 0 .2rem rgba(240, 95, 64, .5) !important
 }
 
 .service-box {
-    max-width: 400px
+	max-width: 400px
 }
 
 header.masthead {
-    padding-top: 10rem;
-    padding-bottom: calc(10rem - 56px);
-    background-image: url(../img/header.jpg);
-    background-position: center center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover
+	padding-top: 10rem;
+	padding-bottom: calc(10rem - 56px);
+	background-image: url(../img/header.jpg);
+	background-position: center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover
 }
 
 header.masthead hr {
-    margin-top: 30px;
-    margin-bottom: 30px
+	margin-top: 30px;
+	margin-bottom: 30px
 }
 
 header.masthead h1 {
-    font-size: 2rem
+	font-size: 2rem
 }
 
 header.masthead p {
-    font-weight: 300
+	font-weight: 300
 }
 
-@media (min-width: 768px) {
-    header.masthead p {
-        font-size:1.15rem
-    }
+@media ( min-width : 768px) {
+	header.masthead p {
+		font-size: 1.15rem
+	}
 }
 
-@media (min-width: 992px) {
-    header.masthead {
-        height:100vh;
-        min-height: 650px;
-        padding-top: 0;
-        padding-bottom: 0
-    }
-
-    header.masthead h1 {
-        font-size: 3rem
-    }
+@media ( min-width : 992px) {
+	header.masthead {
+		height: 100vh;
+		min-height: 650px;
+		padding-top: 0;
+		padding-bottom: 0
+	}
+	header.masthead h1 {
+		font-size: 3rem
+	}
 }
 
-@media (min-width: 1200px) {
-    header.masthead h1 {
-        font-size:4rem
-    }
+@media ( min-width : 1200px) {
+	header.masthead h1 {
+		font-size: 4rem
+	}
 }
-
-
 
 /* slide */
 .carousel-inner {
@@ -549,18 +576,18 @@ header.masthead p {
 	border-left: 1px solid #e6e6e6;
 }
 
-.item-popup-continue{
+.item-popup-continue {
 	background-color: #fff;
 	border: none;
 	color: #555;
 }
 
-.item-popup-tocart{
+.item-popup-tocart {
 	background-color: #ff7700;
 	color: #fff;
 }
 
-.item-popup-tocart , .item-popup-continue {
+.item-popup-tocart, .item-popup-continue {
 	display: inline-block;
 	width: 100%;
 	padding: 0 1em;
@@ -581,7 +608,7 @@ header.masthead p {
 	transform-origin: 0 100%;
 }
 
-.item-popup-tocart:hover , .item-popup-continue:hover{
+.item-popup-tocart:hover, .item-popup-continue:hover {
 	color: #fff;
 	background: #555;
 	text-decoration: none;
@@ -1290,8 +1317,61 @@ strong {
 .history-main, .history-filter {
 	width: 1000px;
 	background-color: #fff;
-	box-shadow: 0 1px 1px #ccc6;
 	margin-bottom: 14px;
+	position: relative;
+}
+
+.offer-success .shape {
+	border-color: transparent #5cb85c transparent transparent;
+	border-color: rgba(255, 255, 255, 0) #5cb85c rgba(255, 255, 255, 0)
+		rgba(255, 255, 255, 0);
+}
+
+.offer-warning .shape {
+	border-color: transparent #f0ad4e transparent transparent;
+	border-color: rgba(255, 255, 255, 0) #f0ad4e rgba(255, 255, 255, 0)
+		rgba(255, 255, 255, 0);
+}
+
+.offer-info .shape {
+	border-color: transparent #5bc0de transparent transparent;
+	border-color: rgba(255, 255, 255, 0) #5bc0de rgba(255, 255, 255, 0)
+		rgba(255, 255, 255, 0);
+}
+
+.offer-danger .shape {
+	border-color: transparent #d9534f transparent transparent;
+	border-color: rgba(255, 255, 255, 0) #d9534f rgba(255, 255, 255, 0)
+		rgba(255, 255, 255, 0);
+}
+
+.shape-text {
+	color: #fff;
+	font-size: 12px;
+	font-weight: bold;
+	position: relative;
+	right: -40px;
+	top: 2px;
+	white-space: nowrap;
+	-ms-transform: rotate(30deg);
+	-o-transform: rotate(360deg);
+	-webkit-transform: rotate(30deg);
+	transform: rotate(30deg);
+}
+
+.shape {
+	top: 0px;
+	right: 0px;
+	position: absolute;
+	border-style: solid;
+	border-width: 0 130px 75px 0;
+	float: right;
+	height: 0px;
+	width: 0px;
+	-ms-transform: rotate(360deg);
+	-o-transform: rotate(360deg);
+	-webkit-transform: rotate(360deg);
+	transform: rotate(360deg);
 }
 
 .history-title {
@@ -1686,12 +1766,13 @@ textarea.input100 {
 	align-items: center;
 	padding: 15px;
 }
+
 header.blackground-pawner-index {
-    padding-top: 55rem;
-    background-image: url(../img/Manual.jpg);
-    background-position: center center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover
+	padding-top: 55rem;
+	background-image: url(../img/Manual.jpg);
+	background-position: center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover
 }

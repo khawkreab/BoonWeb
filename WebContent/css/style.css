@@ -19,26 +19,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	font-family:'Oxygen-Regular';
 	src:url(../fonts/Oxygen-Regular.ttf) format('truetype');
 }
-html,body{
-	background:#fff;
-	font-size: 100%;
-	font-family:'Oxygen-Regular';
-	 
-}
-body a{
-	transition: 0.5s all;
-	-webkit-transition: 0.5s all;
-	-o-transition: 0.5s all;
-	-moz-transition: 0.5s all;
-	-ms-transition: 0.5s all;
-}
- ul{
-	padding: 0;
-	margin: 0;
-}
-h1,h2,h3,h4,h5,h6,label,p{
-	margin:0;	
-}
+
+
 /*--header--*/
 .head{
 	position:relative;

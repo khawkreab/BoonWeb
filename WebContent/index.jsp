@@ -29,63 +29,66 @@
 	<jsp:include page="navbar.jsp" />
 
 	<!--banner-->
-<header class="masthead text-center text-white d-flex">
-      <div class="container my-auto">
-        <div class="row">
-          <div class="col-lg-10 mx-auto">
-            <h1 class="text-uppercase">
-              <strong class="text-white">จำนำง่าย จ่ายคล่อง ต้องบุญยง</strong>
-            </h1>
-            <hr>
-          </div>
-          <div class="col-lg-8 mx-auto">
-            <p class="text-faded mb-5">“บุญยง เป็นสื่อกลางในการจำนำ ที่มีการรับประเมินราคาสินทรัพย์และปล่อยของหลุดจำนำทางออนไลน์  เพื่ออำนวยความสะดวกให้ลูกค้าสามารถเข้าถึงบริการได้ตลอด 24 ชั่วโมง”</p>
-            <a class="btn btn-primary btn-xl js-scroll-trigger" href="#services">คลิกเพื่อดูรายละเอียด</a>
-          </div>
-        </div>
-      </div>
-    </header>
-    
-    <section id="services">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <h2 class="section-heading">บริการของเรา</h2>
-            <hr class="my-4">
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="service-box mt-5 mx-auto">
-              <i class="fas fa-4x fa-gem text-primary mb-3 sr-icons"></i>
-              <h3 class="mb-3">สะดวก ในการ จำนำ และประเมินราคา</h3> 
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="service-box mt-5 mx-auto">
-              <i class="fas fa-4x fa-newspaper text-primary mb-3 sr-icons"></i>
-              <h3 class="mb-3">ทรัพย์หลุดจำนำ ราคาพิเศษ Update ทุกวัน</h3> 
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="service-box mt-5 mx-auto">
-              <i class="fas fa-4x fa-heart text-primary mb-3 sr-icons"></i>
-              <h3 class="mb-3">พร้อมเคียงข้างทุกปัญหาการเงิน</h3> 
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="service-box mt-5 mx-auto">
-              <i class="fas fa-4x fa-paper-plane text-primary mb-3 sr-icons"></i>
-              <h3 class="mb-3">สานฝันธุรกิจของคุณ</h3>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+	<header class="masthead text-center text-white d-flex">
+		<div class="container my-auto">
+			<div class="row">
+				<div class="col-lg-10 mx-auto">
+					<h1 class="text-uppercase">
+						<strong class="text-white">จำนำง่าย จ่ายคล่อง ต้องบุญยง</strong>
+					</h1>
+					<hr>
+				</div>
+				<div class="col-lg-8 mx-auto">
+					<p class="text-faded mb-5">“บุญยง เป็นสื่อกลางในการจำนำ
+						ที่มีการรับประเมินราคาสินทรัพย์และปล่อยของหลุดจำนำทางออนไลน์
+						เพื่ออำนวยความสะดวกให้ลูกค้าสามารถเข้าถึงบริการได้ตลอด 24 ชั่วโมง”</p>
+					<a class="btn btn-primary btn-xl js-scroll-trigger"
+						href="#services">คลิกเพื่อดูรายละเอียด</a>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<section id="services">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 text-center">
+					<h2 class="section-heading">บริการของเรา</h2>
+					<hr class="my-4">
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 col-md-6 text-center">
+					<div class="service-box mt-5 mx-auto">
+						<i class="fas fa-4x fa-gem text-primary mb-3 sr-icons"></i>
+						<h3 class="mb-3">สะดวก ในการ จำนำ และประเมินราคา</h3>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 text-center">
+					<div class="service-box mt-5 mx-auto">
+						<i class="fas fa-4x fa-newspaper text-primary mb-3 sr-icons"></i>
+						<h3 class="mb-3">ทรัพย์หลุดจำนำ ราคาพิเศษ Update ทุกวัน</h3>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 text-center">
+					<div class="service-box mt-5 mx-auto">
+						<i class="fas fa-4x fa-heart text-primary mb-3 sr-icons"></i>
+						<h3 class="mb-3">พร้อมเคียงข้างทุกปัญหาการเงิน</h3>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 text-center">
+					<div class="service-box mt-5 mx-auto">
+						<i class="fas fa-4x fa-paper-plane text-primary mb-3 sr-icons"></i>
+						<h3 class="mb-3">สานฝันธุรกิจของคุณ</h3>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 	<!-- ----------------------------------------------------------------------------------------------- -->
-<!-- 	<div class="container">
+	<!-- 	<div class="container">
 		<div class="dev-title">
 			<h1>Welcome to Team Develop</h1>
 			<h6>We are UBfor </h6>
@@ -136,11 +139,33 @@
 	</div>
  -->
 	<jsp:include page="footer.jsp"></jsp:include>
-	
-    <!-- Plugin JavaScript -->
-    <script src="js/scollbardelay/jquery.easing.min.js"></script>
 
-    <!-- Custom scripts for this template -->
-    <script src="js/scollbardelay/creative.min.js"></script>
+
+	<script>
+		$(document).ready(function() {
+			// Add smooth scrolling to all links
+			$("a").on('click', function(event) {
+
+				// Make sure this.hash has a value before overriding default behavior
+				if (this.hash !== "") {
+					// Prevent default anchor click behavior
+					event.preventDefault();
+
+					// Store hash
+					var hash = this.hash;
+
+					// Using jQuery's animate() method to add smooth page scroll
+					// The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+					$('html, body').animate({
+						scrollTop : $(hash).offset().top
+					}, 1000, function() {
+
+						// Add hash (#) to URL when done scrolling (default click behavior)
+						window.location.hash = hash;
+					});
+				} // End if
+			});
+		});
+	</script>
 </body>
 </html>
