@@ -160,6 +160,14 @@
 											</c:if>
 										</ul>
 									</div>
+									<c:if test="${post.pawnshopPostStatus == 'coming'}">
+										<form action="pawnshop-complete-post.html" method="post">
+											<input type="hidden" name="pawnshopPostId"
+												value="${post.pawnshopPostId}"><input
+												type="hidden" name="status" value="complete">
+											<button class="item-popup-tocart" type="submit">ขายแล้ว</button>
+										</form>
+									</c:if>
 								</div>
 							</div>
 						</div>
