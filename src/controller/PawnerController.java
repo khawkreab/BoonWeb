@@ -87,4 +87,19 @@ public class PawnerController {
 		}
 		return mv;
 	}
+	
+	@RequestMapping("/pawner-off-pledge")
+	public ModelAndView pawnerpledge(HttpServletRequest request) {
+		ModelAndView mv = new ModelAndView("pawnerOffPledge.jsp");
+		List<PawnshopPost> pawnshopPosts;
+		try {
+			long userId = (long) request.getSession().getAttribute("id");
+			pawnshopPosts = psService.listPawnshopPostByPawnerId(userId);
+			
+			mv.addObject("pawnshopPosts", pawnshopPosts);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return mv;
+	}
 }
