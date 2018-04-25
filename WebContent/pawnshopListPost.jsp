@@ -30,7 +30,13 @@
 </head>
 <body>
 	<jsp:include page="navbar.jsp" />
-
+	<!--banner-->
+	<div class="banner-top">
+		<div class="">
+			<h1>ประวัติการปล่อยของหลุดจำนำ</h1>
+			<em></em>
+		</div>
+	</div>
 	<section>
 		<!-- ---------------- status approve ----------------- -->
 		<c:forEach items="${pawnshopPosts}" var="post">
