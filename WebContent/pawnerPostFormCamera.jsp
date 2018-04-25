@@ -27,7 +27,6 @@
 <link href="css/new-design.css" rel="stylesheet">
 <link href="vendor/font-awesome/css/font-awesome.min.css"
 	rel="stylesheet" type="text/css">
-
 </head>
 
 <body style="background-color: #f4f4f4;">
@@ -57,7 +56,7 @@
 									<div class="wrap-input100 validate-input"
 										data-validate="Valid email is required: ex@abc.xyz">
 										<input class="input100" type="text" name="pawnerPostName"
-											placeholder="ชื่อสินค้าที่ต้องการจำนำ">
+											placeholder="ชื่อสินค้าที่ต้องการจำนำ" required="required" pattern="[^'@.,!#$?:^%&*+/=()\\_`{|}~-]{1,30}">
 									</div>
 									<div class="wrap-input100 validate-input"
 										style="margin-top: 15px;">
@@ -75,26 +74,26 @@
 										</select>
 									</div>
 									<div class="wrap-input100 validate-input"
-										style="margin-top: 15px;" data-validate="Type first name">
+										style="margin-top: 15px;">
 										<input class="input100" type="text" name="pawnerPostSerial"
-											placeholder="หมายเลขประจำเครื่อง"> <span
+											placeholder="หมายเลขประจำเครื่อง" required="required" pattern="[^'ก-ฮ@.,!#$?:^%&*+/=()\\_`{|}~-]{1,20}"> <span
 											class="focus-input100"></span>
 									</div>
 									<div class="wrap-input100  validate-input"
-										style="margin-top: 15px;" data-validate="Type last name">
+										style="margin-top: 15px;" >
 										<input class="input100" type="text" name="pawnerPostModel"
-											placeholder="รุ่น"> <span class="focus-input100"></span>
+											placeholder="รุ่น" required="required" pattern="[^'ก-ฮ@.,!#$?:^%&*+/=()\\_`{|}~-]{1,20}"> <span class="focus-input100"></span>
 									</div>
 									<div class="wrap-input100 validate-input"
 										style="margin-top: 15px;">
 										<input class="input100" type="text"
-											name="pawnerPostTypeCamera" placeholder="ชนิดของกล้อง">
+											name="pawnerPostTypeCamera" placeholder="ชนิดของกล้อง" required="required" pattern="[^'@.,!#$?:^%&*+/=()\\_`{|}~-]{1,20}">
 										<span class="focus-input100"></span>
 									</div>
 									<div class="wrap-input100 validate-input"
 										style="margin-top: 15px;">
 										<input class="input100" type="text" name="pawnerPostCameraLen"
-											placeholder="ชนิดของเลนส์"> <span
+											placeholder="ชนิดของเลนส์" required="required" pattern="[^'@.,!#$?:^%&*+/=()\\_`{|}~-]{1,20}"> <span
 											class="focus-input100"></span>
 									</div>
 									<div style="margin-top: 15px; width: 100%">
@@ -181,13 +180,8 @@
 									<div class="wrap-input100 validate-input"
 										data-validate="Message is required">
 										<textarea class="input100" name="pawnerPostDescription"
-											placeholder="รายละเอียดสินค้าเพิ่มเติม"></textarea>
+											placeholder="รายละเอียดสินค้าเพิ่มเติม"  ></textarea>
 										<span class="focus-input100"></span>
-									</div>
-									<div class="wrap-input100 validate-input"
-										data-validate="Valid email is required: ex@abc.xyz">
-										<input class="input100" type="text" name="pawnshopPostPrice"
-											placeholder="ราคาที่ต้องการขายสินค้า">
 									</div>
 									<div class="form-group-post float-left">
 										<ul>

@@ -53,18 +53,18 @@
 											<input type="hidden" name="pawnerId.pawnerId" />
 											<input type="hidden" name="pawnerPostItemType" value="Gold" />
 											<div class="wrap-input100 validate-input">
-												<input class="input100" type="text" name="pawnerPostName" placeholder="ชื่อสินค้าที่ต้องการจำนำ">
+												<input class="input100" type="text" name="pawnerPostName" placeholder="ชื่อสินค้าที่ต้องการจำนำ" required="required" pattern="[^'@.,!#$?:^%&*+/=()\\_`{|}~-]{1,30}">
 											</div>
 											<div class="wrap-input100 validate-input" style="margin-top:15px;">
-												<input class="input100" type="text" name="pawnerPostBrand" placeholder="ยี่ห้อ">
+												<input class="input100" type="text" name="pawnerPostBrand" placeholder="ยี่ห้อ" required="required" pattern="[^'@.,!#$?:^%&*+/=()\\_`{|}~-]{1,20}">
 												<span class="focus-input100"></span>
 											</div>
 											<div class="wrap-input100  validate-input" style="margin-top:15px;">
-												<input class="input100" type="text" name="pawnerPostPure" placeholder="ความบริสุทธิ์">
+												<input class="input100" type="text" name="pawnerPostPure" placeholder="ความบริสุทธิ์" required="required" pattern="[^'a-zA-Zก-ฮ@,!#$?:^%&*+/=()\\_`{|}~-]{1,5}">
 												<span class="focus-input100"></span>
 											</div>
 											<div class="wrap-input100  validate-input" style="margin-top:15px;">
-												<input class="input100" type="text" name="pawnerPostWeigh" placeholder="น้ำหนัก(ใช้หน่วยเป็นกรัม)">
+												<input class="input100" type="text" name="pawnerPostWeigh" placeholder="น้ำหนัก(ใช้หน่วยเป็นกรัม)" required="required" pattern="[^'a-zA-Zก-ฮ@,!#$?:^%&*+/=()\\_`{|}~-]{1,5}">
 												<span class="focus-input100"></span>
 											</div>
 											<div class="wrap-input100 validate-input" style="margin-top:15px;">
