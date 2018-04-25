@@ -58,7 +58,7 @@
 									<div class="wrap-input100 validate-input"
 										data-validate="Valid email is required: ex@abc.xyz">
 										<input class="input100" type="text" name="pawnshopPostName"
-											placeholder="ชื่อสินค้าที่ต้องการจำนำ">
+											placeholder="ชื่อสินค้าที่ต้องการจำนำ" required="required" pattern="[a-zA-Z0-9ก-์]{1,30}" >
 									</div>
 									<div class="wrap-input100 validate-input"
 										style="margin-top: 15px;">
@@ -79,18 +79,18 @@
 									<div class="wrap-input100 validate-input"
 										style="margin-top: 15px;" data-validate="Type first name">
 										<input class="input100" type="text" name="pawnshopPostSerial"
-											placeholder="หมายเลขประจำเครื่อง"> <span
+											placeholder="หมายเลขประจำเครื่อง" required="required" pattern="[a-zA-Z0-9]{1,30}" > <span
 											class="focus-input100"></span>
 									</div>
 									<div class="wrap-input100  validate-input"
 										style="margin-top: 15px;" data-validate="Type last name">
 										<input class="input100" type="text" name="pawnshopPostModel"
-											placeholder="รุ่น"> <span class="focus-input100"></span>
+											placeholder="รุ่น" required="required" pattern="[a-zA-Z0-9]{1,30}" > <span class="focus-input100"></span>
 									</div>
 									<div class="wrap-input100  validate-input"
 										data-validate="Type first name" style="margin-top: 15px;">
 										<input class="input100" type="text" name="pawnshopPostSize"
-											placeholder="ขนาดหน้าจอ"> <span
+											placeholder="ขนาดหน้าจอ" required="required" pattern="[^'a-zA-Zก-์@,!#$?:^%&*+/=()\\_`{|}~-]{1,5}"> <span
 											class="focus-input100"></span>
 									</div>
 									<div style="margin-top: 15px; width: 100%">
@@ -183,7 +183,7 @@
 									<div class="wrap-input100 validate-input"
 										style="margin-top: 15px;">
 										<input class="input100" type="text" name="pawnshopPostPrice"
-											placeholder="ราคาที่ต้องการขายสินค้า">
+											placeholder="ราคาที่ต้องการขายสินค้า" required="required" pattern="[^'a-zA-Zก-์@,!#$?:^%&*+/=()\\_`{|}~-]{1,5}"/>
 									</div>
 									<div class="form-group-post float-left">
 										<ul>
