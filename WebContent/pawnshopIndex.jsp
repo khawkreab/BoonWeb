@@ -63,14 +63,13 @@
 								${post.pawnerPostName} - ${post.pawnerPostBrand} </a>
 						</h2>
 						<div class="info-r">
-							A <span class="color-orange">${post.pawnerPostName}</span>
-							Created on <span class="color-black"><fmt:setLocale
+							ต้องการจำนำ <span class="color-orange">${post.pawnerPostName}</span>
+							โพสเมื่อ วันที่<span class="color-black"><fmt:setLocale
 									value="en_US" /> <fmt:formatDate type="date" dateStyle="long"
-									value="${post.pawnerPostDate }" /></span> by <span
+									value="${post.pawnerPostDate }" /></span> โดย <span
 								class="color-orange">${post.pawnerId.pawnerFirstname }
-								${post.pawnerId.pawnerLastname }</span> from Province <span
-								class="color-black"> ${post.pawnerId.pawnerProvince }</span>.
-							You estimate <a href="#">here</a> 
+								${post.pawnerId.pawnerLastname }</span> จากจังหวัด  Province <span
+								class="color-black"> ${post.pawnerId.pawnerProvince }</span>
 						</div>
 						<div>
 							<a href="pawnshop-estimate-form.html?item=${post.pawnerPostId}">ประเมินเลย
