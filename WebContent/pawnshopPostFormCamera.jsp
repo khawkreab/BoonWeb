@@ -180,7 +180,7 @@
 									<div class="wrap-input100 validate-input"
 										style="margin-top: 15px;">
 										<input class="input100" type="text" name="pawnshopPostPrice"
-										placeholder="ราคาสินค้าที่ต้องการขาย" required="required" pattern="[^'a-zA-Zก-์@,!#$?:^%&*+/=()\\_`{|}~-]{1,5}">
+										placeholder="ราคาสินค้าที่ต้องการขาย" required="required" pattern="[^'a-zA-Zก-์@,!#$?:^%&*+/=()\\_`{|}~-]{1,10}">
 									</div>
 									<div class="form-group-post float-left">
 										<ul>
