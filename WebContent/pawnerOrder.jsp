@@ -75,30 +75,31 @@ tr:hover {
 </head>
 <body>
 	<jsp:include page="navbar.jsp" />
-
+	<!--banner-->
+	<div class="banner-top">
+		<div>
+			<h1>ประวัตการสั่งซื้อ</h1>
+			<em></em>
+		</div>
+	</div>
 	<section>
 		<div class="container">
 			<div class="history-filter">
-				<div class="d-flex">
-					<div class="mr-auto p-2">ประวัตการสั่งซื้อ</div>
-				</div>
-			</div>
-		</div>
-		<div class="container">
-			<div class="history-filter">
-					<table>
-						<thead>
-							<tr>
-								<th class="tha">ลำดับ</th>
-								<th class="tha">รูป</th>
-								<th class="tha">ชื้อโพส</th>
-								<th class="tha">ชนิดสินค้า</th>
-								<th class="tha">โรงรับจำนำที่ซื้อ</th>
-								<th class="tha">ราคา</th>
-								<th class="tha">พิม</th>
-							</tr>
-						</thead>
-					<%int i = 1; %>	
+				<table>
+					<thead>
+						<tr>
+							<th class="tha">ลำดับ</th>
+							<th class="tha">รูป</th>
+							<th class="tha">ชื้อโพส</th>
+							<th class="tha">ชนิดสินค้า</th>
+							<th class="tha">โรงรับจำนำที่ซื้อ</th>
+							<th class="tha">ราคา</th>
+							<th class="tha">พิม</th>
+						</tr>
+					</thead>
+					<%
+						int i = 1;
+					%>
 					<c:forEach items="${order}" var="order">
 						<tbody>
 							<tr>
@@ -132,7 +133,9 @@ tr:hover {
 								</a></td>
 							</tr>
 						</tbody>
-						<%i++; %>
+						<%
+							i++;
+						%>
 					</c:forEach>
 				</table>
 			</div>
@@ -172,15 +175,16 @@ tr:hover {
 			$("#pawnshopPostWarranty").text(cart.pawnshopPostWarranty)
 			$("#pawnshopPostWeigh").text(cart.pawnshopPostWeigh)
 			$("#pawnshopPostPrice").text(cart.pawnshopPostPrice)
-			$("#pawnshopPostPicture").append('<img style="width:200px;height:200px;" src="images/imageUpload/'+cart.pawnshopPostPicture+'">')
+			$("#pawnshopPostPicture")
+					.append(
+							'<img style="width:200px;height:200px;" src="images/imageUpload/'+cart.pawnshopPostPicture+'">')
 
 			console.log("this show pawnshopPostName => "
 					+ cart.pawnshopPostName)
 			window.print();
 		}
-		
 	</script>
-	
+
 	<div class="printable">
 		<div class="popup" data-popup="popup">
 			<div>
@@ -256,13 +260,12 @@ tr:hover {
 							<p>1</p>
 						</td>
 						<td>
-							<p id="pawnshopPostPrice" ></p>
+							<p id="pawnshopPostPrice"></p>
 						</td>
 					</tr>
 					<tr>
 						<td colspan="5">
-							<p>รูปสินค้า</p>
-							<span id="pawnshopPostPicture"></span>
+							<p>รูปสินค้า</p> <span id="pawnshopPostPicture"></span>
 						</td>
 					</tr>
 				</table>

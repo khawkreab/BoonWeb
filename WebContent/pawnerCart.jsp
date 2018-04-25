@@ -22,13 +22,20 @@
 </head>
 <body>
 	<jsp:include page="navbar.jsp" />
-
+	<!--banner-->
+	<div class="banner-top">
+		<div>
+			<h1>ตะกร้าสินค้า</h1>
+			<em></em>
+		</div>
+	</div>
 	<section>
 		<div id="list" style="height: 435px; overflow: auto;">
 			<!-- List Order Here!!!! -->
 		</div>
 
-		<button id="clearCart" class="btn btn-primary btn-block btn-lg" onClick="clearCart()">ลบทั้งหมด]</button>
+		<button id="clearCart" class="btn btn-primary btn-block btn-lg"
+			onClick="clearCart()">ลบทั้งหมด]</button>
 		<button id="comfirmOrder" class="btn btn-primary btn-block btn-lg"
 			onClick="comfirmOrder()">Confirm Orders</button>
 	</section>
@@ -62,7 +69,7 @@
 					document.getElementById("cartNumber").style.display = "none";
 					document.getElementById("comfirmOrder").style.display = "none";
 					document.getElementById("clearCart").style.display = "none";
-					
+
 					html += "<tr>"
 					html += "<td>No menus in your list orders</td>"
 					html += "</tr>"

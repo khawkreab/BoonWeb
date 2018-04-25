@@ -30,11 +30,22 @@
 </head>
 <body>
 	<jsp:include page="navbar.jsp" />
+
+	<!--banner-->
+	<div class="banner-top">
+		<div>
+			<h1>สถานะการจำนำ</h1>
+			<em></em>
+		</div>
+	</div>
 	<!-- -------------------------------- status process ---------------------------------- -->
 	<section>
 		<c:forEach items="${pawnerPostsProcess}" var="postprocess">
 			<div class="container">
-				<div class="history-main">
+				<div class="history-main offer-warning border-warning">
+					<div class="shape">
+						<div class="shape-text">รอการยอมรับ</div>
+					</div>
 					<div class="d-flex history-title">
 						<div class="mr-auto p-2">
 							<fmt:formatDate type="both" dateStyle="long" timeStyle="short"
@@ -150,7 +161,6 @@
 						</div>
 					</div>
 
-					<%-- 	<c:if test="${postprocess.pawnerPostStatus == 'process'}">  --%>
 					<div class="line margin-lr-1"></div>
 					<div class="history-show-estimate">
 						<div class="row">
@@ -187,17 +197,17 @@
 							</c:forEach>
 						</ul>
 					</div>
-					<%-- 	</c:if>  --%>
 				</div>
 			</div>
 		</c:forEach>
-	</section>
 
-	<!-- -----------------status waiting ----------------------------- -->
-	<section>
+		<!-- -----------------status waiting ----------------------------- -->
 		<c:forEach items="${pawnerPosts}" var="post">
 			<div class="container">
-				<div class="history-main">
+				<div class="history-main offer-info border-info">
+					<div class="shape">
+						<div class="shape-text">ยังไม่การประเมิน</div>
+					</div>
 					<div class="d-flex history-title">
 						<div class="mr-auto p-2">
 							<fmt:formatDate type="both" dateStyle="long" timeStyle="short"
@@ -306,9 +316,6 @@
 							</div>
 						</div>
 					</div>
-
-					<div class="line margin-lr-1"></div>
-					<span class="text-center"> ยังไม่ประเมิน </span>
 				</div>
 			</div>
 		</c:forEach>

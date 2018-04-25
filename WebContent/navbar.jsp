@@ -38,7 +38,7 @@
 <!--- start-rate---->
 <script src="js/jstarbox.js"></script>
 <link rel="stylesheet" href="css/jstarbox.css" type="text/css"
-	media="screen" /> 
+	media="screen" />
 </head>
 
 <body>
@@ -84,7 +84,8 @@
 						if (session.getAttribute("userType") == "pawner") {
 				%>
 				<li><a class="nav-link" href="pawner-pledge.html">จำนำ</a></li>
-				<li><a class="nav-link" href="pawner-track-pledge.html">สถานะการจำนำ</a></li>
+				<li><a class="nav-link" href="">รายการของหลุดจำนำ</a></li>
+				<li><a class="nav-link" href="pawner-track-pledge.html">ติดตามการจำนำ</a></li>
 				<li><a class="nav-link" href="pawner-cart.html"><i
 						class="fas fa-shopping-cart"></i><span class="cart-num"
 						id="cartNumber"></span></a></li>
@@ -109,10 +110,9 @@
 				<%
 					} else if (session.getAttribute("userType") == "pawnShop") {
 				%>
-
+					<li><a class="nav-link" href="pawnshop-index.html">รายการของจำนำ</a></li>
 				<li><a class="nav-link" href="pawnshop-pledge-sell.html">ปล่อยของหลุดจำนำ</a></li>
-				<li><a class="nav-link" href="pawnshop-track-estimate.html">สถานะของการประเมิณ</a></li>
-				<li><a class="nav-link" href="">รายการของหลุดจำนำ</a></li>
+				<li><a class="nav-link" href="pawnshop-track-estimate.html">ติดตามการประเมิน</a></li>
 				<li class="dropdown show"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown" role="button" aria-expanded="false"> <%=session.getAttribute("username")%></a>
 					<!-- -----------pawnShop login drop down menu---------------------- -->
@@ -184,9 +184,9 @@
 			</div>
 		</div>
 	</div>
-	
-	
-		<!-- ----------------------------navbar-collapse---------------------------------------- -->
+
+
+	<!-- ----------------------------navbar-collapse---------------------------------------- -->
 	<div class="collapse" id="navbarSupportedContent">
 		<ul class="ml-auto">
 			<!-- ----------------------------pawner login---------------------------------------- -->
@@ -239,15 +239,14 @@
 			%>
 			<li><a data-toggle="modal" data-target="#modalLogin"
 				class="nav-link " href="#">Login</a></li>
-			<li><a href="pawner-register-form.html"
-				class="nav-link ">Register</a></li>
+			<li><a href="pawner-register-form.html" class="nav-link ">Register</a></li>
 			<%
 				}
 			%>
 		</ul>
 	</div>
 
-	
+
 	<!-- -------------------------------------------------------------------------------------------------- -->
 
 	<!-- Plugin JavaScript -->

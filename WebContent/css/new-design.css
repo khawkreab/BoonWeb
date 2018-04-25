@@ -15,6 +15,20 @@
 // task : nav bar design
 // edit by : khawkreab
 */
+html, body {
+	background: #fff;
+	font-size: 100%;
+	overflow-x: hidden;
+}
+
+body a{
+	transition: 0.5s all;
+	-webkit-transition: 0.5s all;
+	-o-transition: 0.5s all;
+	-moz-transition: 0.5s all;
+	-ms-transition: 0.5s all;
+}
+
 a {
 	cursor: pointer;
 }
@@ -61,12 +75,20 @@ li {
 	color: #ffffff;
 }
 
-.border-warning{
+.border-info {
+	border: 1px solid #5bc0de;
+}
+
+.border-warning {
 	border: 1px solid #f0ad4e;
 }
 
-.border-success{
+.border-success {
 	border: 1px solid #5cb85c;
+}
+
+.border-danger {
+	border: 1px solid #d9534f;
 }
 
 .justify-content-center {
@@ -1311,6 +1333,18 @@ strong {
 		rgba(255, 255, 255, 0);
 }
 
+.offer-info .shape {
+	border-color: transparent #5bc0de transparent transparent;
+	border-color: rgba(255, 255, 255, 0) #5bc0de rgba(255, 255, 255, 0)
+		rgba(255, 255, 255, 0);
+}
+
+.offer-danger .shape {
+	border-color: transparent #d9534f transparent transparent;
+	border-color: rgba(255, 255, 255, 0) #d9534f rgba(255, 255, 255, 0)
+		rgba(255, 255, 255, 0);
+}
+
 .shape-text {
 	color: #fff;
 	font-size: 12px;
@@ -1732,12 +1766,13 @@ textarea.input100 {
 	align-items: center;
 	padding: 15px;
 }
+
 header.blackground-pawner-index {
-    padding-top: 55rem;
-    background-image: url(../img/Manual.jpg);
-    background-position: center center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover
+	padding-top: 55rem;
+	background-image: url(../img/Manual.jpg);
+	background-position: center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover
 }

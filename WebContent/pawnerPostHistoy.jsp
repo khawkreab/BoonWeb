@@ -56,13 +56,18 @@
 	width: 300px;
 	float: right;
 }
-
 </style>
 </head>
 
 <body>
 	<jsp:include page="navbar.jsp" />
-
+	<!--banner-->
+	<div class="banner-top">
+		<div>
+			<h1>การดำเนินการและประวัติการจำนำ</h1>
+			<em></em>
+		</div>
+	</div>
 	<section>
 		<!-- ---------------- status approve ----------------- -->
 		<c:forEach items="${estimatesListApprove}" var="post">
@@ -193,7 +198,7 @@
 											</li>
 										</ul>
 									</div>
-										<a href="#" id="${post.pawnerPostId.pawnerPostId}"
+									<a href="#" id="${post.pawnerPostId.pawnerPostId}"
 										onClick="select(this); return false;"
 										data-cart='{"pawnerPostId":"${post.pawnerPostId.pawnerId.pawnerEmail}",
 										"pawnerPostName":"${post.pawnerPostId.pawnerPostName }","pawnerPostDate":"${post.pawnerPostId.pawnerPostDate}",
@@ -222,7 +227,7 @@
 		</c:forEach>
 
 		<!-- ---------------- status complete ----------------- -->
-		<c:forEach items="${estimatesListApprove}" var="post">
+		<c:forEach items="${estimatesListComplete}" var="post">
 			<div class="container">
 				<div class="history-main offer-success border-success">
 					<div class="shape">
@@ -335,14 +340,14 @@
 										</div>
 									</div>
 									<div class="history-show-estimate">
-										<div class="row">
+										<div class="row h6">
 											<div class="col-md-6">โรงรับจำนำ</div>
 											<div class="col-md-3">ราคาน้อยสุด</div>
 											<div class="col-md-3">ราคามากสุด</div>
 										</div>
 										<ul>
 											<li>
-												<div class="row">
+												<div class="row small">
 													<div class="col-md-6">
 														${post.pawnshopId.pawnshopName}</div>
 													<div class="col-md-3">${post.estimatePriceMin}</div>
@@ -362,6 +367,7 @@
 
 	<script>
 		function select(e) {
+			$("#pawnerPostPicture").attr('src', '')
 
 			var cart = {}
 			cart = JSON.parse(e.getAttribute('data-cart'))
@@ -374,7 +380,7 @@
 			$("#pawnerPostBracelet").text(cart.pawnerPostBracelet)
 			$("#pawnerPostBrand").text(cart.pawnerPostBrand)
 			$("#pawnerPostCameraLen").text(cart.pawnerPostCameraLen)
-			$("#pawnerPostCapacity").text('r'+cart.pawnerPostCapacity)
+			$("#pawnerPostCapacity").text(cart.pawnerPostCapacity)
 			$("#pawnerPostCase").text(cart.pawnerPostCase)
 			$("#pawnerPostCategory").text(cart.pawnerPostCategory)
 			$("#pawnerPostDate").text(cart.pawnerPostDate)
@@ -396,7 +402,8 @@
 			$("#estimatePriceMin").text(cart.estimatePriceMin)
 			$("#estimatePriceMax").text(cart.estimatePriceMax)
 			$("#estimateDate").text(cart.estimateDate)
-			$("#pawnerPostPicture").append('<img style="width:200px;height:200px;" src="images/imageUpload/'+cart.pawnerPostPicture+'">')
+			$("#pawnerPostPicture").attr('src',
+					'images/imageUpload/' + cart.pawnerPostPicture)
 
 			console.log("this show pawnshopPostName => "
 					+ cart.pawnshopPostName)
@@ -405,7 +412,7 @@
 	</script>
 
 
-<!-- -------------------- print page --------------------------- -->
+	<!-- -------------------- print page --------------------------- -->
 	<div class="line margin-lr-1"></div>
 	<div class="printable">
 		<div class="popup" data-popup="popup">
@@ -441,18 +448,18 @@
 				</div>
 				<table id="items">
 					<tr>
-						<th>ชนิดของสินค้า</th>
+						<th>#</th>
 						<th>รายละเอียด</th>
 						<th>วันที่เสนอราคา</th>
 						<th>ราคาน้อยสุด</th>
 						<th>ราคามากสุด</th>
 					</tr>
 					<tr class="item-row">
-						<td class="item-name">
-							<p id="pawnerPostItemType">pawnerPostItemType</p>
-						</td>
+						<td class="item-name"><img id="pawnerPostPicture"
+							style="width: 200px; height: 200px;" src=""></td>
 						<td class="description">
 							<ul>
+								<li id="pawnerPostItemType"></li>
 								<li id="panwePostRemote"></li>
 								<li id="pawnerPostBattery"></li>
 								<li id="pawnerPostBracelet"></li>
@@ -487,30 +494,18 @@
 						</td>
 						<td><p id="estimatePriceMax"></p></td>
 					</tr>
-					<tr>
-						<td colspan="5">
-							<p>รูปสินค้า</p>
-							<span id="pawnerPostPicture"></span>
-						</td>
-					</tr>
 				</table>
 				<div id="terms">
 					<h5></h5>
 					<p>
-						<img src="img/logos/Artboard.png" style="height: 25px;" />b2pawn.com
+						<img src="img/logos/Artboard.png" style="height: 25px;" />
+						b2pawn.com
 					</p>
 				</div>
 			</div>
 		</div>
 
 	</div>
-	<script type="text/javascript">
-		$('div span a').click(function() {
-			$(this).text(function(i, old) {
-				return old == 'more' ? 'less' : 'more';
-			});
-		});
-	</script>
 </body>
 
 </html>

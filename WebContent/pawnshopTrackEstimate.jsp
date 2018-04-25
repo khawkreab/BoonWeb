@@ -8,6 +8,7 @@
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,22 +32,42 @@
 	<!-- Navigation -->
 	<jsp:include page="navbar.jsp" />
 
-
-	<section>
-		<div class="container">
-			<div class="history-filter">
-				<div class="d-flex">
-					<div class="mr-auto p-2">สถานะของการปนะเมิณ</div>
-				</div>
-			</div>
+	<!--banner-->
+	<div class="banner-top">
+		<div>
+			<h1>สถานะของการประเมิน</h1>
+			<em></em>
 		</div>
+	</div>
+	<section>
 		<c:forEach items="${trackMyEstimate}" var="track">
-			<div class="container">
-				<div class="history-main">
+			<c:if test="${track.estimateStatus != 'complete'}">
+				<div class="container">
+					<c:if test="${track.estimateStatus == 'process'}">
+						<div class="history-main offer-warning border-warning">
+							<div class="shape">
+								<div class="shape-text">กำลังดำเนินการ</div>
+							</div>
+					</c:if>
+
+					<c:if test="${track.estimateStatus == 'denei'}">
+						<div class="history-main offer-danger border-danger">
+							<div class="shape">
+								<div class="shape-text">ถูกปฏิเสธ</div>
+							</div>
+					</c:if>
+
+					<c:if test="${track.estimateStatus == 'approve'}">
+						<div class="history-main offer-success border-success">
+							<div class="shape">
+								<div class="shape-text">มีการยอมรับแล้ว</div>
+							</div>
+					</c:if>
 					<div class="d-flex history-title">
 
-						<div class="ml-auto p-2">
-							<span>${track.pawnerPostId.pawnerPostItemType}</span>
+						<div class="mr-auto p-2">
+							<fmt:formatDate type="both" dateStyle="long" timeStyle="short"
+								value="${track.estimateDate}" />
 						</div>
 					</div>
 					<div class="history-body">
@@ -114,7 +135,8 @@
 
 														<!-- Electronic com-->
 														<c:if test="${track.pawnerPostId.pawnerPostRam != null}">
-															<li class="col-md-6">Ram : ${track.pawnerPostId.pawnerPostRam }</li>
+															<li class="col-md-6">Ram :
+																${track.pawnerPostId.pawnerPostRam }</li>
 														</c:if>
 
 														<!-- Watch -->
@@ -147,47 +169,42 @@
 															<li class="col-md-6"><span class="fas fa-check"
 																aria-hidden="true"> </span> การประกันสินค้า</li>
 														</c:if>
-														<li>Description
-															:${track.pawnerPostId.pawnerPostDescription }</li>
+														<%-- <li>Description
+															:${track.pawnerPostId.pawnerPostDescription }</li> --%>
 													</ul>
 												</div>
 											</div>
 											<ul class="row">
-												<li class="col-md-6">Price Min: ${track.estimatePriceMin }</li>
-												<li class="col-md-6">Price Max: ${track.estimatePriceMax }</li>
-												<li class="col-md-6">Estimate Date: ${track.estimateDate}</li>
-												<li class="col-md-6">Access Date: ${track.estimateAccessDate}</li>
+												<li class="col-md-6">ราคาน้อยสุด:
+													${track.estimatePriceMin }</li>
+												<li class="col-md-6">ราคาสุงสุด:
+													${track.estimatePriceMax }</li>
 												<%-- <li>Status   : ${track.estimateStatus }</li>   --%>
 
 												<!-- Status -->
 												<c:if test="${track.estimateStatus == 'complete'}">
-													<li class="col-md-6">Status : <span class="badge badge-success">เสร็จสิ้น</span>
-													</li>
-												</c:if>
-
-												<c:if test="${track.estimateStatus == 'waiting'}">
-													<li class="col-md-6">Status : <span class="badge badge-danger">รอดำเนินการ</span>
+													<li class="col-md-6">สถานะ : <span
+														class="badge badge-success">เสร็จสิ้น</span>
 													</li>
 												</c:if>
 
 												<c:if test="${track.estimateStatus == 'process'}">
-													<li class="col-md-6">Status : <span class="badge badge-warning">กำลังดำเนินการ</span>
-													</li>
-												</c:if>
-												<c:if test="${track.estimateStatus == 'proceed'}">
-													<li class="col-md-6">Status : <span class="badge badge-warning">กำลังดำเนินการ</span>
+													<li class="col-md-6">Status : <span
+														class="badge badge-warning">กำลังดำเนินการ</span>
 													</li>
 												</c:if>
 
 												<c:if test="${track.estimateStatus == 'approve'}">
-													<li class="col-md-6">Status : <span class="badge badge-primary">ยอมรับ</span>
+													<li class="col-md-6">สถานะ : <span
+														class="badge badge-success">ยอมรับ</span>
 													</li>
 												</c:if>
 
 												<c:if test="${track.estimateStatus == 'denei'}">
-													<li class="col-md-6">Status : <span class="badge badge-danger">ปฎิเสธ</span>
+													<li class="col-md-6">สถานะ : <span
+														class="badge badge-danger">ปฎิเสธ</span>
 													</li>
-												</c:if> 
+												</c:if>
 												<c:if test="${track.estimateStatus == 'approve'}">
 													<form action="pawnshop-estimate-approve.html" method="post">
 														<input type="hidden" name="estimateId"
@@ -205,7 +222,8 @@
 						</div>
 					</div>
 				</div>
-			</div>
+				</div>
+			</c:if>
 		</c:forEach>
 	</section>
 </body>
