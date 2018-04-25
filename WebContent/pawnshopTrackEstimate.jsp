@@ -210,8 +210,19 @@
 														<input type="hidden" name="estimateId"
 															value="${track.estimateId}"> <input type="hidden"
 															name="pawnerPostId"
-															value="${track.pawnerPostId.pawnerPostId}">
-														<button type="submit">สินค้าจำนำถึงโรงรับจำนำแล้ว</button>
+															value="${track.pawnerPostId.pawnerPostId}"> <input
+															type="hidden" name="status" value="complete">
+														<button class="item-popup-tocart" type="submit">สินค้าจำนำถึงโรงรับจำนำแล้ว</button>
+													</form>
+												</c:if>
+												<c:if test="${track.estimateStatus == 'denei'}">
+													<form action="pawnshop-estimate-approve.html" method="post">
+														<input type="hidden" name="estimateId"
+															value="${track.estimateId}"> <input type="hidden"
+															name="pawnerPostId"
+															value="${track.pawnerPostId.pawnerPostId}"> <input
+															type="hidden" name="status" value="approvedenei">
+														<button class="item-popup-tocart" type="submit">ฉันรู้แล้ว</button>
 													</form>
 												</c:if>
 											</ul>

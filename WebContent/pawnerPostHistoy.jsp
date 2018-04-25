@@ -198,7 +198,7 @@
 											</li>
 										</ul>
 									</div>
-									<a href="#" id="${post.pawnerPostId.pawnerPostId}"
+									<a id="${post.pawnerPostId.pawnerPostId}"
 										onClick="select(this); return false;"
 										data-cart='{"pawnerPostId":"${post.pawnerPostId.pawnerId.pawnerEmail}",
 										"pawnerPostName":"${post.pawnerPostId.pawnerPostName }","pawnerPostDate":"${post.pawnerPostId.pawnerPostDate}",
@@ -405,15 +405,12 @@
 			$("#pawnerPostPicture").attr('src',
 					'images/imageUpload/' + cart.pawnerPostPicture)
 
-			console.log("this show pawnshopPostName => "
-					+ cart.pawnshopPostName)
-			window.print();
+			window.print('.printable');
 		}
 	</script>
 
 
 	<!-- -------------------- print page --------------------------- -->
-	<div class="line margin-lr-1"></div>
 	<div class="printable">
 		<div class="popup" data-popup="popup">
 			<div>
