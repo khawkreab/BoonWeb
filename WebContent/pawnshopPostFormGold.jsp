@@ -57,23 +57,23 @@
 									<input type="hidden" name="pawnshopPostItemType" value="Gold" />
 									<div class="wrap-input100 validate-input">
 										<input class="input100" type="text" name="pawnshopPostName"
-											placeholder="ชื่อสินค้าที่ต้องการจำนำ">
+											placeholder="ชื่อสินค้าที่ต้องการจำนำ" required="required" pattern="[a-zA-Z0-9ก-์]{1,20}">
 									</div>
 									<div class="wrap-input100 validate-input"
 										style="margin-top: 15px;">
 										<input class="input100" type="text" name="pawnshopPostBrand"
-											placeholder="ยี่ห้อ"> <span class="focus-input100"></span>
+											placeholder="ยี่ห้อ" required="required" pattern="[a-zA-Z0-9ก-์]{1,20}"> <span class="focus-input100" ></span>
 									</div>
 									<div class="wrap-input100  validate-input"
 										style="margin-top: 15px;">
 										<input class="input100" type="text" name="pawnshopPostPure"
-											placeholder="ความบริสุทธิ์"> <span
+											placeholder="ความบริสุทธิ์" required="required" pattern="[^'a-zA-Zก-์@,!#$?:^%&*+/=()\\_`{|}~-]{1,5}"> <span
 											class="focus-input100"></span>
 									</div>
 									<div class="wrap-input100  validate-input"
 										style="margin-top: 15px;">
 										<input class="input100" type="text" name="pawnshopPostWeigh"
-											placeholder="น้ำหนัก(ใช้หน่วยเป็นกรัม)"> <span
+											placeholder="น้ำหนัก(ใช้หน่วยเป็นกรัม)" pattern="[^'a-zA-Zก-์@,!#$?:^%&*+/=()\\_`{|}~-]{1,5}"> <span
 											class="focus-input100"></span>
 									</div>
 									<div class="wrap-input100 validate-input"
@@ -177,7 +177,7 @@
 									<div class="wrap-input100 validate-input"
 										style="margin-top: 15px;">
 										<input class="input100" type="text" name="pawnshopPostPrice"
-											placeholder="ราคาที่ต้องการขายสินค้า">
+											placeholder="ราคาที่ต้องการขายสินค้า" required="required" pattern="[^'a-zA-Zก-์@,!#$?:^%&*+/=()\\_`{|}~-]{1,5}">
 									</div>
 									<div class="form-group-post float-left"
 										style="font-size: 14.5px; font-weight: inherit;">

@@ -51,8 +51,8 @@
 											<input type="hidden" name="pawnerPostId" />
 											<input type="hidden" name="pawnerId.pawnerId" />
 											<input type="hidden" name="pawnerPostItemType" value="Laptop" />
-											<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
-												<input class="input100" type="text" name="pawnerPostName" placeholder="ชื่อสินค้าที่ต้องการจำนำ">
+											<div class="wrap-input100 validate-input">
+												<input class="input100" type="text" name="pawnerPostName" placeholder="ชื่อสินค้าที่ต้องการจำนำ" required="required" pattern="[^'@.,!#$?:^%&*+/=()\\_`{|}~-]{1,30}">
 											</div>
 											<div class="wrap-input100 validate-input" style="margin-top:15px;">
 												<select class="input100" name="pawnerPostBrand" required="required">
@@ -68,15 +68,15 @@
 												</select>
 											</div>
 											<div class="wrap-input100 validate-input" style="margin-top:15px;" data-validate="Type first name">
-												<input class="input100" type="text" name="pawnerPostSerial" placeholder="หมายเลขประจำเครื่อง">
+												<input class="input100" type="text" name="pawnerPostSerial" placeholder="หมายเลขประจำเครื่อง" required="required" pattern="[^'ก-ฮ@.,!#$?:^%&*+/=()\\_`{|}~-]{1,20}">
 												<span class="focus-input100"></span>
 											</div>
 											<div class="wrap-input100  validate-input" style="margin-top:15px;" data-validate="Type last name">
-												<input class="input100" type="text" name="pawnerPostModel" placeholder="รุ่น">
+												<input class="input100" type="text" name="pawnerPostModel" placeholder="รุ่น" required="required" pattern="[^'ก-ฮ@.,!#$?:^%&*+/=()\\_`{|}~-]{1,20}">
 												<span class="focus-input100"></span>
 											</div>
 											<div class="wrap-input100 validate-input" data-validate="Type first name"style="margin-top:15px;">
-												<input class="input100" type="text" name="pawnerPostSize" placeholder="ขนาดหน้าจอ">
+												<input class="input100" type="text" name="pawnerPostSize" placeholder="ขนาดหน้าจอ" required="required" pattern="[^'a-zA-Zก-ฮ@,!#$?:^%&*+/=()\\_`{|}~-]{1,5}">
 												<span class="focus-input100"></span>
 											</div>
 											<div class="wrap-input100 rs1-wrap-input100 validate-input" style="margin-top:15px;" data-validate="Type first name">
