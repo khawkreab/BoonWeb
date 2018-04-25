@@ -19,6 +19,28 @@
 	rel="stylesheet" type="text/css">
 
 
+<style>
+table {
+	font-family: arial, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.tha {
+	text-align: left;
+	padding: 8px;
+	font-size: 14.5px;
+	background-color: #ff7f00;
+	color: #fff;
+}
+
+.tda {
+	text-align: left;
+	padding: 20px;
+	color: #000;
+}
+</style>
+
 </head>
 <body>
 	<jsp:include page="navbar.jsp" />
@@ -73,14 +95,14 @@
 
 				} else {
 
-					html += "<tr><th>Name</th><th>Price</th><th></th></tr>"
+					html += "<tr><th class='tha'>โรงรับจำนำ</th><th class='tha'>ราคา</th><th class='tha'> ลบ </th></tr>"
 					for ( var index in this.list) {
 						html += "<tr>"
-						html += "<td>" + this.list[index].pawnshopPostName
+						html += "<td class='tda'>" + this.list[index].pawnshopPostName
 								+ "</td>"
-						html += "<td>" + this.list[index].pawnshopPostPrice
+						html += "<td class='tda'>" + this.list[index].pawnshopPostPrice
 								+ "</td>"
-						html += "<td><button onClick='deleteSelf("
+						html += "<td class='tda'><button onClick='deleteSelf("
 								+ index
 								+ ")'><i class='fas fa-trash' style='font-size:20px;color:red'></i></button></td>"
 						html += "</tr>"
