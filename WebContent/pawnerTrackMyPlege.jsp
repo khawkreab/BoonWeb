@@ -184,8 +184,7 @@
 													<input type="hidden" name="estimateId"
 														value="${estimate.estimateId}"> <input
 														type="hidden" name="pawnerPostId"
-														value="${estimate.pawnerPostId.pawnerPostId}"> <input
-														type="hidden" name="status" value="approve">
+														value="${estimate.pawnerPostId.pawnerPostId}"> 
 													<button
 														style="border-radius: 2px; background: #ff7f00; font-size: 13px; color: #fff; padding: 5px; border: none"
 														type="submit">ยืนยันราคาสินค้า</button>
