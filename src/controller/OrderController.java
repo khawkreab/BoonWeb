@@ -59,6 +59,7 @@ public class OrderController {
 				pawnerOreder.setOrderItemDateIn(date);
 				pawnerOreder.setPawnerId(pawner);
 				orederService.insert(pawnerOreder);
+				pawnshopPostService.updateStatus(order.getPawnshopPostId(), "coming");
 			}
 			
 		} catch (Exception e) {
