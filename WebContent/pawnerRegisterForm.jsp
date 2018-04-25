@@ -59,9 +59,9 @@
 					}
 				</script>
 </head>
-<body class="bg">
-	<div style="padding-top: 80px;">
-		<div style="height: 500px;">
+<body>
+	<div class="container bg">
+		<div class="">
 			<div style="max-width: 900px;">
 				<div class="modal-content"
 					style="width: 400px; border-radius: .5rem;">

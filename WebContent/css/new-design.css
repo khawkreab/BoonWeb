@@ -1486,6 +1486,7 @@ footer {
 .bg {
 	background-image: url("../img/body/body.jpg");
 	height: 100%;
+	width: 100%;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -1494,6 +1495,9 @@ footer {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	position: absolute;
+	top: 0px;
+	left: 0px;
 }
 
 .bg2 {
