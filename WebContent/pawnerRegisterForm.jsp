@@ -77,20 +77,20 @@
 										<h1 style="font-size: 30px; letter-spacing: -1px; color: #555;">ยินดีตอนรับ</h1>
 										<ul style="padding-left: 7px;">
 											<li>
-												<form:input path="pawnerFirstname" type="text" class="account-regis" placeholder="ชื่อ" required="required" pattern=""/>
-												<form:input path="pawnerLastname" type="text" class="account-regis" placeholder="นามสกุล" required="required" />
+												<form:input path="pawnerFirstname" type="text" class="account-regis" placeholder="ชื่อ" required="required" pattern="[a-zA-Zก-์]{1,30}"/>
+												<form:input path="pawnerLastname" type="text" class="account-regis" placeholder="นามสกุล" required="required" pattern="[a-zA-Zก-์]{1,30}"/>
 											</li>
 											<li>
 												<form:input type="text" id="telto" class="account-regis" placeholder="เบอร์โทรศัพท์" required="required" onkeyup="continueto();"
-												 path="pawnerPhone" />
+												 path="pawnerPhone" required="required" pattern="[0-9]{1,10}" title="ตัวเลขเท่านั้น"/>
 											</li>
 											<li>
 												<form:input path="pawnerEmail" type="text" id="mail" class="account-regis" placeholder="อีเมล" required="required" onkeyup="continueto();"
-												/>
+												pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"/>
 											</li>
 											<li>
 												<form:input path="pawnerPassword" type="password" id="pass1" class="account-regis" placeholder="รหัสผ่าน" required="required"
-												/>
+												pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="ต้องมีเลขอย่างน้อย 1 ตัว และมีทั้ง อังษรพิมเล็กและใหญ่ ความยาวอย่างน้อย 8 ตัว"/>
 											</li>
 											<li>
 												<input type="password" id="pass2" class="account-regis" placeholder="ยืนยันรหัสผ่าน" required="required" onkeyup="checkPass(); return false;"
