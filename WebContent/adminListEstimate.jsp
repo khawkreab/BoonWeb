@@ -177,7 +177,7 @@
 							<div class="col-sm-5">
  									<div class="pro-img">
 									<img class="img-responsive"
-										src="images/uploadImage/${adEstimate.pawnerPostPicture }" />
+										src="images/uploadImage/${adEstimate.pawnerPostId.pawnerPostPicture }" />
 								</div>
 							</div>
 							<div class="col-sm-7">

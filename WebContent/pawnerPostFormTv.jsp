@@ -53,7 +53,7 @@
 											<input type="hidden" name="pawnerId.pawnerId" />
 											<input type="hidden" name="pawnerPostItemType" value="Tv" />
 											<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
-												<input class="input100" type="text" name="pawnerPostName" placeholder="ชื่อสินค้าที่ต้องการจำนำ" required="required" pattern="[^'ก-ฮ@.,!#$?:^%&*+/=()\\_`{|}~-]{1,30}">
+												<input class="input100" type="text" name="pawnerPostName" placeholder="ชื่อสินค้าที่ต้องการจำนำ" required="required" pattern="[^'@.,!#$?:^%&*+/=()\\_`{|}~-]{1,30}">
 											</div>
 											<div class="wrap-input100 validate-input" style="margin-top:15px;">
 												<select class="input100" name="pawnerPostBrand" required="required">
