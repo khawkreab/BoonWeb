@@ -86,7 +86,7 @@
 											</li>
 											<li>
 												<form:input path="pawnerEmail" type="text" id="mail" class="account-regis" placeholder="อีเมล" required="required" onkeyup="continueto();"
-												pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"/>
+												pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required="required"/>
 											</li>
 											<li>
 												<form:input path="pawnerPassword" type="password" id="pass1" class="account-regis" placeholder="รหัสผ่าน" required="required"
