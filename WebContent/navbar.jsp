@@ -84,7 +84,7 @@
 						if (session.getAttribute("userType") == "pawner") {
 				%>
 				<li><a class="nav-link" href="pawner-pledge.html">จำนำ</a></li>
-				<li><a class="nav-link" href="">รายการของหลุดจำนำ</a></li>
+				<li><a class="nav-link" href="pawner-off-pledge.html">รายการของหลุดจำนำ</a></li>
 				<li><a class="nav-link" href="pawner-track-pledge.html">ติดตามการจำนำ</a></li>
 				<li><a class="nav-link" href="pawner-cart.html"><i
 						class="fas fa-shopping-cart"></i><span class="cart-num"
