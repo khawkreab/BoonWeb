@@ -15,13 +15,13 @@
 // task : nav bar design
 // edit by : khawkreab
 */
-html, body {
-	background: #fff;
+body {
 	font-size: 100%;
 	overflow-x: hidden;
+	font-family: Oxygen-Regular;
 }
 
-body a{
+body a {
 	transition: 0.5s all;
 	-webkit-transition: 0.5s all;
 	-o-transition: 0.5s all;
@@ -51,6 +51,10 @@ h1, h2, h3, h4, h5, h6 h7 {
 
 dl, ol, ul {
 	padding: 0px;
+}
+
+input:focus {
+    outline:none;
 }
 
 li {
@@ -114,7 +118,7 @@ li {
 
 .line {
 	border-bottom: 1px solid #ccc6;
-	margin-top: 16px;
+	margin-top: 6px;
 	margin-bottom: 16px;
 }
 
@@ -806,7 +810,8 @@ h2.featured {
 	display: flex;
 	flex-direction: row;
 	background-color: #2f2f2f;
-	height: 500px;
+	border: 1px solid #e6e6e6;
+	margin: 2rem auto;
 }
 
 .item-info-pic-list {
@@ -817,13 +822,22 @@ h2.featured {
 .item-info-thumb {
 	overflow-y: auto;
 	height: 100%;
-	background-color: #e6e6e6;
+	background-color: #fff;
+	padding: 0px;
+}
+
+.item-info-detail {
+	height: 100%;
+	padding: 0px;
+	display: flex;
+	width: auto;
+	flex-direction: column;
 }
 
 .item-info-thumb img, .item-info-thumbs img {
 	width: 100%;
 	height: 100%;
-	padding: 10px;
+	padding: 3px 10px;
 	overflow-y: hidden;
 	object-fit: contain;
 }
@@ -848,6 +862,12 @@ h2.featured {
 
 .item-info-content {
 	padding: 10px;
+	height: 100%;
+}
+
+.item-info-content span{
+	display: block;
+	width: 100%
 }
 
 .item-info-list>li {
@@ -866,8 +886,8 @@ h2.featured {
 }
 
 .item-info-estimate {
-	width: 313px;
-	padding-left: 10px;
+	padding: 0 0 10px 10px;
+    border-bottom: 1px solid #e6e6e6;
 }
 
 .item-info-estimate li {
@@ -930,7 +950,7 @@ h2.featured {
 .item-info-estimate input[type="text"] {
 	border: none;
 	border-bottom: 1px solid #ff7700;
-	width: 80px;
+	width: 40%;
 	font-size: .9em;
 	padding: 5px;
 }
@@ -944,17 +964,19 @@ h2.featured {
 }
 
 .item-info-estimate button {
-	cursor: pointer;
-	display: inline-block;
-	background-color: #fff;
-	height: 26px;
-	line-height: 26px;
-	padding: 0 10px;
-	border: 1px solid #ff7700;
-	border-radius: 13px;
-	font-size: 90%;
-	margin-bottom: 4px;
-	display: inline-block;
+    cursor: pointer;
+    background-color: #fff;
+    width: 80%;
+    margin: 20px auto;
+    line-height: 26px;
+    padding: 0 10px;
+    border: 1px solid #ff7700;
+    border-radius: 13px;
+    font-size: 90%;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .item-info-estimate button:hover {

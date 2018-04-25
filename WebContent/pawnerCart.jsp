@@ -25,7 +25,7 @@
 	<!--banner-->
 	<div class="banner-top">
 		<div>
-			<h1>ตะกร้าสินค้า</h1>
+			<h1 id="chechcarts">ตะกร้าสินค้า</h1>
 			<em></em>
 		</div>
 	</div>
@@ -35,9 +35,9 @@
 		</div>
 
 		<button id="clearCart" class="btn btn-primary btn-block btn-lg"
-			onClick="clearCart()">ลบทั้งหมด]</button>
+			onClick="clearCart()">ลบทั้งหมด</button>
 		<button id="comfirmOrder" class="btn btn-primary btn-block btn-lg"
-			onClick="comfirmOrder()">Confirm Orders</button>
+			onClick="comfirmOrder()">ยืนยันการสั่งซื้อสินค้า</button>
 	</section>
 
 
@@ -69,10 +69,8 @@
 					document.getElementById("cartNumber").style.display = "none";
 					document.getElementById("comfirmOrder").style.display = "none";
 					document.getElementById("clearCart").style.display = "none";
+					document.getElementById("chechcarts").innerHTML = "ไม่มีรายการสินค้า"
 
-					html += "<tr>"
-					html += "<td>No menus in your list orders</td>"
-					html += "</tr>"
 				} else {
 
 					html += "<tr><th>Name</th><th>Price</th><th></th></tr>"
@@ -90,13 +88,10 @@
 					}
 				}
 			} else {
-				html += "<tr>"
-				html += "<td>No menus in your list orders</td>"
-				html += "</tr>"
-
 				document.getElementById("cartNumber").style.display = "none";
 				document.getElementById("comfirmOrder").style.display = "none";
 				document.getElementById("clearCart").style.display = "none";
+				document.getElementById("chechcarts").innerHTML = "ไม่มีรายการสินค้า"
 			}
 			html += "</table>"
 			document.getElementById("list").innerHTML = html

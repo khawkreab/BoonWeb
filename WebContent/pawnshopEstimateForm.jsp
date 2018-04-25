@@ -27,7 +27,6 @@
 <body style="background-color: #f9f9f9">
 	<jsp:include page="navbar.jsp" />
 
-	<section>
 		<div class="container">
 			<div class="item-info-pic row">
 				<div class="col-md-1 item-info-thumb">
@@ -183,7 +182,6 @@
 				</div>
 			</div>
 		</div>
-	</section>
 
 	<jsp:include page="footer.jsp"></jsp:include>
 </body>
