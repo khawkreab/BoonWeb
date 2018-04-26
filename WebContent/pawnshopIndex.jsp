@@ -53,7 +53,7 @@
 		<c:forEach items="${pawnerPosts}" var="post">
 
 			<div class="result">
-				<div class="row">
+				<div class="row offer-success">
 					<div class="col-md-4 float-left result-img">
 						<img src="images/imageUpload/${post.pawnerPostPicture }" class="img-responsive" alt="">
 					</div>

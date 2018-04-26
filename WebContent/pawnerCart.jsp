@@ -51,15 +51,20 @@ table {
 			<em></em>
 		</div>
 	</div>
-	<section>
-		<div id="list" style="height: 435px; overflow: auto;">
+	<section id="clearCart">
+		<div id="list" style="overflow: auto;">
 			<!-- List Order Here!!!! -->
 		</div>
-
-		<button id="clearCart" class="btn btn-primary btn-block btn-lg"
-			onClick="clearCart()">ลบทั้งหมด</button>
-		<button id="comfirmOrder" class="btn btn-primary btn-block btn-lg"
-			onClick="comfirmOrder()">ยืนยันการสั่งซื้อสินค้า</button>
+		<div class="row">
+			<div class="item-info-content col-md-4 ml-auto"
+				style="text-align: right; line-height: 30px;">
+				<span>จำนวนสินค้าทั้งหมด <i id="cartNumbera"> </i> ชิ้น
+				</span> <span>ราคารวมสินค้าทั้งหมด <i id="totalPriceFee"> </i> บาท
+				</span><span> </span> <span><a id="comfirmOrder"
+					style="width: auto;" class="item-popup-tocart"
+					onClick="comfirmOrder()">ยืนยันการสั่งซื้อสินค้า</a></span>
+			</div>
+		</div>
 	</section>
 
 
@@ -78,6 +83,7 @@ table {
 		}
 		function check() {
 			var html
+			var totalPrice = 0
 			html = "<table class='cartTable'>"
 			if (sessionStorage.getItem('carts')) {
 				list = JSON.parse(sessionStorage.getItem('carts'))
@@ -95,19 +101,28 @@ table {
 
 				} else {
 
-					html += "<tr><th class='tha'>โรงรับจำนำ</th><th class='tha'>ราคา</th><th class='tha'> ลบ </th></tr>"
+					html += "<tr><th class='tha'>ชื่อสินค้า</th><th class='tha'>จำนวน</th><th class='tha'>ราคา</th><th class='tha'>โรงรับจำนำ</th><th class='tha'> ลบ </th></tr>"
 					for ( var index in this.list) {
 						html += "<tr>"
-						html += "<td class='tda'>" + this.list[index].pawnshopPostName
-								+ "</td>"
-						html += "<td class='tda'>" + this.list[index].pawnshopPostPrice
-								+ "</td>"
-						html += "<td class='tda'><button onClick='deleteSelf("
+						html += "<td class='tda'>"
+								+ this.list[index].pawnshopPostName + "</td>"
+						html += "<td class='tda'>1</td>"
+						html += "<td class='tda'>"
+								+ this.list[index].pawnshopPostPrice + "</td>"
+						html += "<td class='tda'></td>"
+						html += "<td class='tda'><a onClick='deleteSelf("
 								+ index
-								+ ")'><i class='fas fa-trash' style='font-size:20px;color:red'></i></button></td>"
+								+ ")'><i class='fas fa-trash' style='font-size:20px;color:red'></i></a></td>"
 						html += "</tr>"
 
+						for ( var index in this.list) {
+							totalPrice += parseFloat(this.list[index].pawnshopPostPrice)
+						}
+						document.getElementById("totalPriceFee").innerHTML = totalPrice
+						document.getElementById("cartNumbera").innerHTML = list.length
+
 					}
+					html += "<tr><td></td><td></td><td></td><td></td><td><a class='item-popup-continue' style='width: auto' onClick='clearCart()'>ลบทั้งหมด</a></td></tr>"
 				}
 			} else {
 				document.getElementById("cartNumber").style.display = "none";
@@ -158,8 +173,7 @@ table {
 			//clear cart
 			this.clearCart()
 
-			window.location
-					.assign('http://localhost:8080/BoonWeb/pawner-order.html')
+			window.location.href = "http://localhost:8080/BoonWeb/pawner-order.html"
 
 		}
 	</script>

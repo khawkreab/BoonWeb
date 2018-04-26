@@ -135,21 +135,21 @@
 										<li class="">Diamond : ${pawnerPost.pawnerPostDiamond }</li>
 									</c:if>
 									<c:if test="${pawnerPost.pawnerPostPackage != null}">
-										<li class=""><span class="glyphicon glyphicon-check"
+										<li class=""><span class="fas fa-check"
 											aria-hidden="true"> </span> Package</li>
 									</c:if>
 								</c:if>
 
 								<!-- Electronic tv -->
 								<c:if test="${pawnerPost.panwePostRemote != null}">
-									<li class=""><span class="glyphicon glyphicon-check"
+									<li class=""><span class="fas fa-check"
 										aria-hidden="true"> </span> Remote</li>
 								</c:if>
 
 
 								<!-- Watch,Electronic -->
 								<c:if test="${pawnerPost.pawnerPostModel != null}">
-									<li class=""><span class="glyphicon glyphicon-check"
+									<li class=""><span class="fas fa-check"
 										aria-hidden="true"> </span> Warranty</li>
 								</c:if>
 							</ul>

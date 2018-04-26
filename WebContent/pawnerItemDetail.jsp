@@ -217,7 +217,7 @@
 										src="images/imageUpload/${pawnshopPost.pawnshopPostPicture}">
 								</div>
 								<div class="col-md-8">
-									<span class="h6">${pawnshopPost.pawnshopPostName }${post.pawnshopPostBrand }</span>
+									<span class="h6">${pawnshopPost.pawnshopPostName } ${post.pawnshopPostBrand }</span>
 									<div class="clear-fix"></div>
 									<span class="small">By
 										${pawnshopPost.pawnshopId.pawnshopName} from
@@ -239,7 +239,7 @@
 								<span class="mr-auto">ยอดรวมทั้งสิ้น</span> <span>฿ <i id="totalPriceFee"></i></span>
 							</div>
 							<div class="d-flex">
-								<span class="mr-auto"><a href="pawner-index.html" class="item-popup-continue">เลือกสินค้าต่อ</a></span>
+								<span class="mr-auto"><a href="pawner-off-pledge.html" class="item-popup-continue">เลือกสินค้าต่อ</a></span>
 								<span class=""><a href="pawner-cart.html" class="item-popup-tocart">ไปยังตะกร้า</a></span>
 							</div>
 						</div>
