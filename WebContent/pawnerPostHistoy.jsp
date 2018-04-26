@@ -200,7 +200,7 @@
 									</div>
 									<a id="${post.pawnerPostId.pawnerPostId}"
 										onClick="select(this); return false;"
-										data-cart='{"pawnerPostId":"${post.pawnerPostId.pawnerId.pawnerEmail}",
+										data-cart='{"pawnhopAddress":"${post.pawnshopId.pawnshopAddress}","pawnerPostId":"${post.pawnerPostId.pawnerId.pawnerEmail}",
 										"pawnerPostName":"${post.pawnerPostId.pawnerPostName }","pawnerPostDate":"${post.pawnerPostId.pawnerPostDate}",
 										"pawnerPostItemType":"${post.pawnerPostId.pawnerPostItemType}","pawnerPostBrand":"${post.pawnerPostId.pawnerPostBrand}",
 										"panwePostRemote":"${post.pawnerPostId.panwePostRemote}","pawnerPostBattery":"${post.pawnerPostId.pawnerPostBattery}",
@@ -402,6 +402,7 @@
 			$("#estimatePriceMin").text(cart.estimatePriceMin)
 			$("#estimatePriceMax").text(cart.estimatePriceMax)
 			$("#estimateDate").text(cart.estimateDate)
+			$("#pawnshopAddress").text(cart.pawnshopAddress)
 			$("#pawnerPostPicture").attr('src',
 					'images/imageUpload/' + cart.pawnerPostPicture)
 
@@ -418,7 +419,7 @@
 				<div>
 					<div>
 						<p>ที่อยู๋โรงรับจำนำ</p>
-						<p>ในนี้ใสที่อยู๋โรงรับจำนำที่ get from database</p>
+						<p id="pawnshopAddress"></p>
 					</div>
 					<div>
 						<table id="meta">

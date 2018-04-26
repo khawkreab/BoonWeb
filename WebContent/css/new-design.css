@@ -53,6 +53,10 @@ dl, ol, ul {
 	padding: 0px;
 }
 
+button{
+	cursor: pointer;
+}
+
 input:focus {
     outline:none;
 }

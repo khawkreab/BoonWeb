@@ -126,7 +126,7 @@
 							</div></li>
 						<li><a href="logout.html" class="nav-link ">แก้ไขบัญชี</a></li>
 						<li><a href="pawnshop-estimate-history.html"
-							class="nav-link ">ประวัติการประเมิณของจำนำ</a></li>
+							class="nav-link ">ประวัติการประเมินของจำนำ</a></li>
 						<li><a href="pawnshop-list-post.html" class="nav-link ">ประวัติการปล่อยของหลุดจำนำ</a></li>
 						<li><a href="logout.html" class="nav-link ">ออกจากระบบ</a></li>
 					</ul></li>
