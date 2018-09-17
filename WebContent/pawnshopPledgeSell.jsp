@@ -63,10 +63,9 @@
 
 	<!--banner-->
 	<div class="banner-top">
-		<div class="container">
-			<h1>Select Pledge Sell Item</h1>
+		<div class="">
+			<h1>ปล่อยของหลุดจำนำ</h1>
 			<em></em>
-			<h2>We have 7 items</h2>
 		</div>
 	</div>
 	<!--content-->

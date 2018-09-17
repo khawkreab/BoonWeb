@@ -51,6 +51,7 @@ public class PawnerController {
 				pmService.insert(pawner);
 			}else{
 				pmService.update(pawner);
+				
 				return "redirect:pawner-index.html";
 			}
 		}catch (Exception e){
@@ -58,11 +59,11 @@ public class PawnerController {
 		}return "redirect:index.jsp";
 	}
 	
-	@RequestMapping("/editPawner")
+	@RequestMapping("/pawner-edit")
 	public ModelAndView editPawner(HttpServletRequest request) {
 		long paramId = (long) request.getSession().getAttribute("id");
 		Pawner foundPawner;
-		ModelAndView mv = new ModelAndView("pawnerRegisterForm.jsp");
+		ModelAndView mv = new ModelAndView("pawnerEdit.jsp");
 		try {
 			foundPawner = pmService.findPawnerById(paramId);
 			mv.addObject("pawner", foundPawner);
@@ -75,6 +76,21 @@ public class PawnerController {
 	@RequestMapping("/pawner-index")
 	public ModelAndView pawnerIndex(HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView("pawnerIndex.jsp");
+		List<PawnshopPost> pawnshopPosts;
+		try {
+			long userId = (long) request.getSession().getAttribute("id");
+			pawnshopPosts = psService.listPawnshopPostByPawnerId(userId);
+			
+			mv.addObject("pawnshopPosts", pawnshopPosts);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return mv;
+	}
+	
+	@RequestMapping("/pawner-off-pledge")
+	public ModelAndView pawnerpledge(HttpServletRequest request) {
+		ModelAndView mv = new ModelAndView("pawnerOffPledge.jsp");
 		List<PawnshopPost> pawnshopPosts;
 		try {
 			long userId = (long) request.getSession().getAttribute("id");

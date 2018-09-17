@@ -190,13 +190,15 @@ public class EstimateController {
 		Estimate estimate;
 		long estimateId = Long.parseLong(request.getParameter("estimateId"));
 		long pawnerPostId = Long.parseLong(request.getParameter("pawnerPostId"));
+		String status = request.getParameter("status");
 		try {
 
-			pawnerPostService.updateStatus(pawnerPostId , "complete");
-		
+			if(status == "complate") {
+			pawnerPostService.updateStatus(pawnerPostId , status);
+			}
 
 			estimate = estimateService.findEstimateById(estimateId);
-			estimate.setEstimateStatus("complete");
+			estimate.setEstimateStatus(status);
 			estimateService.update(estimate);
 		} catch (Exception e) {
 			e.printStackTrace();

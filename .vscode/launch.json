@@ -1,0 +1,93 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+    
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Version<BoonWeb>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "org.apache.taglibs.standard.Version",
+            "projectName": "BoonWeb",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-SPathFilter<BoonWeb>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "org.apache.taglibs.standard.extra.spath.SPathFilter",
+            "projectName": "BoonWeb",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-SPathParser<BoonWeb>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "org.apache.taglibs.standard.extra.spath.SPathParser",
+            "projectName": "BoonWeb",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-ELParser<BoonWeb>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "org.apache.taglibs.standard.lang.jstl.parser.ELParser",
+            "projectName": "BoonWeb",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-EvaluationTest<BoonWeb>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "org.apache.taglibs.standard.lang.jstl.test.EvaluationTest",
+            "projectName": "BoonWeb",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-ParserTest<BoonWeb>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "org.apache.taglibs.standard.lang.jstl.test.ParserTest",
+            "projectName": "BoonWeb",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-StaticFunctionTests<BoonWeb>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "org.apache.taglibs.standard.lang.jstl.test.StaticFunctionTests",
+            "projectName": "BoonWeb",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Attach)",
+            "request": "attach",
+            "hostName": "localhost",
+            "port": 0
+        }
+    ]
+}

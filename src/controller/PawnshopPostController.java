@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import entity.Estimate;
 import entity.Pawner;
 import entity.Pawnshop;
 import entity.PawnshopPost;
@@ -137,9 +138,9 @@ public class PawnshopPostController {
 		return mv;
 	}
 
-	@RequestMapping("/post-detail")
+	@RequestMapping("/post-item-detail")
 	public ModelAndView detail(HttpServletRequest request) {
-		ModelAndView mv = new ModelAndView("postDetail.jsp");
+		ModelAndView mv = new ModelAndView("pawnerItemDetail.jsp");
 		PawnshopPost pawnshopPost;
 		List<Picture> pictures;
 
@@ -156,6 +157,21 @@ public class PawnshopPostController {
 			e.printStackTrace();
 		}
 		return mv;
+	}
+	
+	@RequestMapping("/pawnshop-complete-post")
+	public String shopcom(HttpServletRequest request) {
+		
+		long pawnshopPostId = Long.parseLong(request.getParameter("pawnshopPostId"));
+		String status = request.getParameter("status");
+		try {
+
+			pawnshopPostService.updateStatus(pawnshopPostId, status);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return "redirect:pawnshop-list-history.html";
 	}
 
 }

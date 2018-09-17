@@ -7,26 +7,27 @@
 <!--//footer-->
 <div class="footer">
 	<div class="footer-middle">
-		<div class="container">
+		<div class="container flex-wrap">
 			<div class="col-md-3 footer-middle-in">
 				<a href="index.html">Bounyong</a>
 				<p>Suspendisse sed accumsan risus. Curabitur rhoncus, elit vel
 					tincidunt elementum, nunc urna tristique nisi, in interdum libero
 					magna tristique ante. adipiscing varius. Vestibulum dolor lorem.</p>
+				<!-- <p>โปรเจคนี้ จัดทำขึ้นเพื่อหวังคะแนนให้ผ่านในรายวิชา Senior Project1 ทางนักศึกษาหวังว่า อาจารย์ ทิว หงษ์ทอง จะเมตตาปราณีในการให้คะแนน และให้ S กับกลุ่ม บุญยงด้วยเทอน</p> -->
 			</div>
 
 			<div class="col-md-3 footer-middle-in">
 				<h6>Information</h6>
 				<ul class=" in">
-					<li><a href="404.html">About</a></li>
-					<li><a href="contact.html">Contact Us</a></li>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Contact Us</a></li>
 					<li><a href="#">Returns</a></li>
-					<li><a href="contact.html">Site Map</a></li>
+					<li><a href="#">Site Map</a></li>
 				</ul>
 				<ul class="in in1">
 					<li><a href="#">Order History</a></li>
-					<li><a href="wishlist.html">Wish List</a></li>
-					<li><a href="login.html">Login</a></li>
+					<li><a href="#">Wish List</a></li>
+					<li><a href="#">Login</a></li>
 				</ul>
 				<div class="clearfix"></div>
 			</div>
@@ -45,7 +46,7 @@
 			<div class="col-md-3 footer-middle-in">
 				<h6>Newsletter</h6>
 				<span>Sign up for News Letter</span>
-				<form>
+				<form action="mailto:ter52285@hotmail.com" method="post" enctype="text/plain">
 					<input type="text" value="Enter your E-mail"
 						onfocus="this.value='';"
 						onblur="if (this.value == '') {this.value ='Enter your E-mail';}">
@@ -57,14 +58,7 @@
 	</div>
 	<div class="footer-bottom">
 		<div class="container">
-			<ul class="footer-bottom-top">
-				<li><a href="#"><img src="images/f1.png"
-						class="" alt=""></a></li>
-				<li><a href="#"><img src="images/f2.png"
-						class="" alt=""></a></li>
-				<li><a href="#"><img src="images/f3.png"
-						class="" alt=""></a></li>
-			</ul>
+
 			<p class="footer-class">
 				&copy; 2018 Bounyong. All Rights Reserved | Design by <a
 					href="#" target="_blank">UBfor</a>

@@ -10,7 +10,7 @@
 		<html lang="en">
 
 		<head>
-		<link rel="icon" href="img/logos/Artboard.png">
+			<link rel="icon" href="img/logos/Artboard.png">
 			<meta charset="utf-8">
 			<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 			<meta name="description" content="">
@@ -27,15 +27,15 @@
 
 		</head>
 
-		<body>
+		<body style="background-color:#f4f4f4;">
 
 			<!-- Navigation   -->
 			<jsp:include page="navbar.jsp" />
 
 			<!--banner-->
 			<div class="banner-top">
-				<div class="container">
-					<h1>Pledge Gold</h1>
+				<div class="">
+					<h1>ทองคำ</h1>
 					<em></em>
 				</div>
 			</div>
@@ -51,108 +51,126 @@
 										<form:form method="post" action="savePost.html" modelAttribute="pawnerPost" enctype="multipart/form-data">
 											<input type="hidden" name="pawnerPostId" />
 											<input type="hidden" name="pawnerId.pawnerId" />
-											<input type="hidden" name="pawnerPostItemType" value="gold" />
-											<div class="form-group float-left">
-												<input name="files" type="file" onchange="readURL(this);" />
-											</div>
-											<label class="label-input100">Post Name</label>
-											<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
-												<input class="input100" type="text" name="pawnerPostName">
-											</div>
-											<label class="label-input100">Brand or trademark</label>
-											<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
-												<input class="input100" type="text" name="pawnerPostBrand" placeholder="">
-												<span class="focus-input100"></span>
-											</div>
-											<label class="label-input100">Purity and Weight</label>
-											<div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Type first name">
-												<input class="input100" type="text" name="pawnerPostPure" placeholder="Purity">
-												<span class="focus-input100"></span>
-											</div>
-											<div class="wrap-input100 rs2-wrap-input100 validate-input" data-validate="Type last name">
-												<input class="input100" type="text" name="pawnerPostWeigh" placeholder="Weight">
-												<span class="focus-input100"></span>
-											</div>
-											<label class="label-input100">Category</label>
+											<input type="hidden" name="pawnerPostItemType" value="Gold" />
 											<div class="wrap-input100 validate-input">
-												<select class="input100" type="text" name="pawnerPostCategory" required="required">
-													<option>Gold ornament</option>
-													<option>Fine Gold such as 18k, 14k</option>
-													<option>Gold 96.5 %</option>
-													<option>Gold bars 96.5 %</option>
-													<option>Gold bars 99.99 %</option>
-													<option>Prima Gold, Gold Master</option>
-													<option>Silver</option>
-													<option>Amulet frame</option>
-													<option>Platinum</option>
-													<option>Others</option>
+												<input class="input100" type="text" name="pawnerPostName" placeholder="ชื่อสินค้าที่ต้องการจำนำ" required="required" pattern="[^'@.,!#$?:^%&*+/=()\\_`{|}~-]{1,30}">
+											</div>
+											<div class="wrap-input100 validate-input" style="margin-top:15px;">
+												<input class="input100" type="text" name="pawnerPostBrand" placeholder="ยี่ห้อ" required="required" pattern="[^'@.,!#$?:^%&*+/=()\\_`{|}~-]{1,20}">
+												<span class="focus-input100"></span>
+											</div>
+											<div class="wrap-input100  validate-input" style="margin-top:15px;">
+												<input class="input100" type="text" name="pawnerPostPure" placeholder="ความบริสุทธิ์" required="required" pattern="[^'a-zA-Zก-ฮ@,!#$?:^%&*+/=()\\_`{|}~-]{1,5}">
+												<span class="focus-input100"></span>
+											</div>
+											<div class="wrap-input100  validate-input" style="margin-top:15px;">
+												<input class="input100" type="text" name="pawnerPostWeigh" placeholder="น้ำหนัก(ใช้หน่วยเป็นกรัม)" required="required" pattern="[^'a-zA-Zก-ฮ@,!#$?:^%&*+/=()\\_`{|}~-]{1,5}">
+												<span class="focus-input100"></span>
+											</div>
+											<div class="wrap-input100 validate-input" style="margin-top:15px;">
+												<select class="input100" name="pawnerPostCategory" required="required">
+													<option>ชนิดหรือรูปแบบของทองคำ</option>
+													<option>ทองรูปพรรณ</option>
+													<option>ทองเค เช่น 18k, 14k</option>
+													<option>ทองเค(18k,14k)</option>
+													<option>ทอง 96.5 %</option>
+													<option>เงิน</option>
+													<option>ทองแท่ง 96.5 %</option>
+													<option>ทองแท่ง 99.99 %</option>
+													<option>พรีม่าโกลด์, โกลด์มาสเตอร์</option>
+													<option>เงิน</option>
+													<option>กรอบพระ</option>
+													<option>แพลตตินั่ม</option>
+													<option>อื่นๆ</option>
 												</select>
 											</div>
-											<label class="label-input100">Description</label>
-											<div class="wrap-input100 validate-input" data-validate="Message is required">
-												<textarea class="input100" name="pawnerPostDescription" placeholder="Write us a message(optional) "></textarea>
+											
+												<!-- ------------------------upload image----------------------------  -->
+									<div style="margin-top:15px;width:100%">
+										<span style="font-size:14px;">ลงรูปภาพประกอบการจำนำ</span>
+										<div class="wrap-input100 " style="border: none;">
+											<div class="box-img-list">
+												<div class="box box-img-1" style="display: block">
+													<div class="box-img-thumb">
+														<div class="upload-options js--image-preview"
+															id="img-pic-1">
+															<label> <input type="file" class="image-upload"
+																accept="image/*" name="files" />
+															</label>
+														</div>
+													</div>
+												</div>
+												<div class="box box-img-2">
+													<div class="box-img-thumb">
+														<div class="upload-options js--image-preview"
+															id="img-pic-2">
+															<label> <input type="file" class="image-upload"
+																accept="image/*" name="files" />
+															</label>
+														</div>
+													</div>
+												</div>
+												<div class="box box-img-3">
+													<div class="box-img-thumb">
+														<div class="upload-options js--image-preview"
+															id="img-pic-3">
+															<label> <input type="file" class="image-upload"
+																accept="image/*" name="files" />
+															</label>
+														</div>
+													</div>
+												</div>
+												<div class="box box-img-4">
+													<div class="box-img-thumb">
+														<div class="upload-options js--image-preview"
+															id="img-pic-4">
+															<label> <input type="file" class="image-upload"
+																accept="image/*" name="files" />
+															</label>
+														</div>
+													</div>
+												</div>
+												<div class="box box-img-5">
+													<div class="box-img-thumb">
+														<div class="upload-options js--image-preview"
+															id="img-pic-5">
+															<label> <input type="file" class="image-upload"
+																accept="image/*" name="files" />
+															</label>
+														</div>
+													</div>
+												</div>
+												<div class="box box-img-6">
+													<div class="box-img-thumb">
+														<div class="upload-options js--image-preview"
+															id="img-pic-6">
+															<label> <input type="file" class="image-upload"
+																accept="image/*" name="files" />
+															</label>
+														</div>
+													</div>
+												</div>
+												<span class="clear-trash d-flex"> <i class="mr-auto">ใส่รูปได้สูงสุด
+														6 รูป</i><i class="clear-img fas fa-trash-alt"> ลบรูป</i>
+												</span>
+											</div>
+										</div>
+									</div>
+											
+											<div class="wrap-input100 validate-input" style="margin-top:15px;" data-validate="Message is required">
+												<textarea class="input100" name="pawnerPostDescription" placeholder="รายละเอียดสินค้าเพิ่มเติม"></textarea>
 												<span class="focus-input100"></span>
 											</div>
-											<div class="form-group-post float-left">
-												<input type="checkbox" required="required"> I agree to the
-												<strong>trem of service</strong>
+											<div class="form-group-post float-left" style="font-size: 14.5px;font-weight: inherit;">
+												<input type="checkbox" required="required"> ฉันยอมรับและตกลง
+												<strong>เงือนไขการใช้งาน</strong> ของระบบบุญยง
 											</div>
 											<div class="container-contact100-form-btn">
-												<button type="summot" class="contact100-form-btn">
-													Create Post
+												<button type="submit" class="contact100-form-btn">
+													ยืนยัน
 												</button>
 											</div>
 										</form:form>
-									</div>
-									<!-- Picture -->
-									<div class="contact100-more flex-col-c-m" style="background-image: url('img/header-bg.jpg');">
-										<div class="flex-w size1 p-b-47">
-											<div class="txt1 p-r-25">
-												<span class="lnr lnr-map-marker"></span>
-											</div>
-
-											<div class="flex-col size2">
-												<span class="txt1 p-b-20">
-													Address
-												</span>
-
-												<span class="txt2">
-													Mada Center 8th floor, 379 Hudson St, New York, NY 10018 US
-												</span>
-											</div>
-										</div>
-
-										<div class="dis-flex size1 p-b-47">
-											<div class="txt1 p-r-25">
-												<span class="lnr lnr-phone-handset"></span>
-											</div>
-
-											<div class="flex-col size2">
-												<span class="txt1 p-b-20">
-													Lets Talk
-												</span>
-
-												<span class="txt3">
-													+1 800 1236879
-												</span>
-											</div>
-										</div>
-
-										<div class="dis-flex size1 p-b-47">
-											<div class="txt1 p-r-25">
-												<span class="lnr lnr-envelope"></span>
-											</div>
-
-											<div class="flex-col size2">
-												<span class="txt1 p-b-20">
-													General Support
-												</span>
-
-												<span class="txt3">
-													contact@example.com
-												</span>
-											</div>
-										</div>
 									</div>
 								</div>
 							</div>
@@ -160,6 +178,136 @@
 					</div>
 				</div>
 			</div>
+			
+				<script src="js/upimages.js"></script>
+	<script>
+		$(document).ready(function() {
+
+			$('#img-pic-1').click(function() {
+				$('.box-img-2').css("display", "block");
+			});
+
+			$('#img-pic-2').click(function() {
+				$('.box-img-3').css("display", "block");
+			});
+			$('#img-pic-3').click(function() {
+				$('.box-img-4').css("display", "block");
+			});
+			$('#img-pic-4').click(function() {
+				$('.box-img-5').css("display", "block");
+			});
+			$('#img-pic-5').click(function() {
+				$('.box-img-6').css("display", "block");
+			});
+
+			$('.clear-img').click(function() {
+				for (let i = 6; i > 1; i--) {
+					$('.box-img-' + i).css("display", "none");
+				}
+				$('.js--image-preview').css("background-image", "")
+				$('.image-upload').val('');
+			});
+		});
+		function initImageUpload(box) {
+			let uploadField = box.querySelector('.image-upload');
+
+			uploadField.addEventListener('change', getFile);
+
+			function getFile(e) {
+				let file = e.currentTarget.files[0];
+				checkType(file);
+			}
+
+			function previewImage(file) {
+				let thumb = box.querySelector('.js--image-preview'), reader = new FileReader();
+
+				reader.onload = function() {
+					thumb.style.backgroundImage = 'url(' + reader.result + ')';
+				}
+				reader.readAsDataURL(file);
+				thumb.className += ' js--no-default';
+			}
+
+			function checkType(file) {
+				let imageType = /image.*/;
+				if (!file.type.match(imageType)) {
+					throw 'Datei ist kein Bild';
+				} else if (!file) {
+					throw 'Kein Bild gewählt';
+				} else {
+					previewImage(file);
+				}
+			}
+
+		}
+
+		// initialize box-scope
+		var boxes = document.querySelectorAll('.box');
+
+		for (let i = 0; i < boxes.length; i++) {
+			if (window.CP.shouldStopExecution(1)) {
+				break;
+			}
+			let box = boxes[i];
+			initDropEffect(box);
+			initImageUpload(box);
+		}
+		window.CP.exitedLoop(1);
+
+		/// drop-effect
+		function initDropEffect(box) {
+			let area, drop, areaWidth, areaHeight, maxDistance, dropWidth, dropHeight, x, y;
+
+			// get clickable area for drop effect
+			area = box.querySelector('.js--image-preview');
+			area.addEventListener('click', fireRipple);
+
+			function fireRipple(e) {
+				area = e.currentTarget
+				// create drop
+				if (!drop) {
+					drop = document.createElement('span');
+					drop.className = 'drop';
+					this.appendChild(drop);
+				}
+				// reset animate class
+				drop.className = 'drop';
+
+				// calculate dimensions of area (longest side)
+				areaWidth = getComputedStyle(this, null).getPropertyValue(
+						"width");
+				areaHeight = getComputedStyle(this, null).getPropertyValue(
+						"height");
+				maxDistance = Math.max(parseInt(areaWidth, 10), parseInt(
+						areaHeight, 10));
+
+				// set drop dimensions to fill area
+				drop.style.width = maxDistance + 'px';
+				drop.style.height = maxDistance + 'px';
+
+				// calculate dimensions of drop
+				dropWidth = getComputedStyle(this, null).getPropertyValue(
+						"width");
+				dropHeight = getComputedStyle(this, null).getPropertyValue(
+						"height");
+
+				// calculate relative coordinates of click
+				// logic: click coordinates relative to page - parent's position relative to page - half of self height/width to make it controllable from the center
+				x = e.pageX - this.offsetLeft - (parseInt(dropWidth, 10) / 2);
+				y = e.pageY - this.offsetTop - (parseInt(dropHeight, 10) / 2)
+						- 30;
+
+				// position drop and animate
+				drop.style.top = y + 'px';
+				drop.style.left = x + 'px';
+				drop.className += ' animate';
+				e.stopPropagation();
+
+			}
+		}
+
+		//# sourceURL=pen.js
+	</script>
 		</body>
 
 		</html>
