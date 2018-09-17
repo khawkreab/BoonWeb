@@ -27,17 +27,41 @@
 			<link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
 			<script>
-				function checkmathpate() {
-					var pass1 = document.getElementById("pass").value;
-					var pass2 = document.getElementById("confirm").value;
-					if (pass1 != pass2) {
-						alert("Passwords Do not match");
-						document.getElementById("pass").style.borderColor = "#E34234";
-						document.getElementById("confirm").style.borderColor = "#E34234";
-					} else {
-						//alert("Passwords Match!!!");
-					}
-				}
+			function checkPass()
+			{
+			    //Store the password field objects into variables ...
+			    var pass1 = document.getElementById('pass1');
+			    var pass2 = document.getElementById('pass2');
+			    //Store the Confimation Message Object ...
+			    var message = document.getElementById('confirmMessage');
+			    //Set the colors we will be using ...
+			    var goodColor = "#66cc66";
+			    var badColor = "#ff6666";
+			    //Compare the values in the password field 
+			    //and the confirmation field
+			    if(pass1.value == pass2.value){
+			        //The passwords match. 
+			        //Set the color to the good color and inform
+			        //the user that they have entered the correct password 
+			        pass2.style.backgroundColor = goodColor;
+			        message.style.color = goodColor;
+			        message.innerHTML = "Passwords Match!"
+			    }else{
+			        //The passwords do not match.
+			        //Set the color to the bad color and
+			        //notify the user.
+			        pass2.style.backgroundColor = badColor;
+			        message.style.color = badColor;
+			        message.innerHTML = "Passwords Do Not Match!"
+			    }
+			}  
+			
+			function continueTo() {
+				  var mail = document.getElementById("mail").value;
+				  var pass = document.getElementById('pass1').value;
+				  window.location ="pawnshop-register-form.html?mail="+mail+"&pass="+pass;
+				
+			}
 			</script>
 
 
@@ -64,29 +88,35 @@
 												<form:input path="pawnerLastname" type="text" class="account-regis" placeholder="lastname" required="required" />
 											</li>
 											<li>
-												<form:input path="pawnerEmail" type="text" class="account-regis" placeholder="email" required="required" />
+												<form:input path="pawnerEmail" type="text" id="mail" class="account-regis" placeholder="email" required="required" />
 											</li>
 											<li>
-												<form:input path="pawnerPassword" type="text" class="account-regis" placeholder="password" required="required" />
+												<form:input path="pawnerPassword" type="password" id="pass1" class="account-regis" placeholder="password" required="required" />
 											</li>
+											<li>
+											<input type="password" id="pass2" class="account-regis" placeholder="confirm password" required="required" onkeyup="checkPass(); return false;"/>
+											
+            <span id="confirmMessage" class="confirmMessage"></span>
+     	</li>
 											<li>
 												<button type="submit" class="account-submit">Create Account</button>
 											</li>
-											<li>
+											 <li>
 												<p class="Subhead-description" style="margin-top: 10px;">or</p>
 											</li>
-											<li>
+										<!--	<li>
 												<a class="btn btn-block btn-social btn-facebook">
 													<span class="fa fa-facebook"></span> Sign in with facebook
 												</a>
-											</li>
+											</li> -->
 										</ul>
 									</div>
 									<div class="modal-footer">
-										<a href="pawnshop-register-form.html" style="color: #555;">Create as a pawnshop account</a>
+										<a href="#" onclick="continueTo()" style="color: #555;">continue to pawnshop account</a>
 									</div>
 								</div>
 							</div>
+						</div>
 						</div>
 				</form:form>
 			</body>
