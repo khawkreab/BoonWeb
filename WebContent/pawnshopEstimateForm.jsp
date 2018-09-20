@@ -169,12 +169,12 @@
 										โดยให้เป็นช่วงราคา </span></li>
 								<li class="fas fa-tags item-info-price"><span class=""><form:input
 											path="estimatePriceMin" class="#" pattern="[0-9]{2,45}"
-											required="required" placeholder="Min price" /> - <form:input
+											required="required" placeholder="Min price" title="กรุณาใสราคา" id="minNumber"  onkeyup="check()"/> - <form:input
 											path="estimatePriceMax" class="#" pattern="[0-9]{2,45}"
-											required="required" placeholder="Max price" /> </span></li>
-
+											required="required" placeholder="Max price"
+											title="กรุณาใสราคา"  id="maxNumber"  onkeyup="check()"/> </span></li>
 								<li>
-									<button type="submit" class="">Estimate</button>
+									<button type="submit" id="go" style="display: none">ให้ราคา</button>
 								</li>
 							</form:form>
 						</ul>
@@ -182,7 +182,18 @@
 				</div>
 			</div>
 		</div>
-
+<script type="text/javascript">
+function check () {
+	var a = document.getElementById("minNumber").value;
+    var b = document.getElementById("maxNumber").value;
+    
+    if (a<b){
+       document.getElementById("go").style.display = "block";
+    }else{
+       document.getElementById("go").style.display = "none";
+	}
+}
+</script>
 	<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>
