@@ -57,23 +57,25 @@
 									<input type="hidden" name="pawnshopPostItemType" value="Gold" />
 									<div class="wrap-input100 validate-input">
 										<input class="input100" type="text" name="pawnshopPostName"
-											placeholder="ชื่อสินค้าที่ต้องการจำนำ" required="required" pattern="[a-zA-Z0-9ก-์]{1,20}">
+											placeholder="ชื่อสินค้าที่ต้องการจำนำ" required="required" 
+											pattern="[^'@.,!#$?:^%&*+/=()\\_`{|}~-]{1,30}" title="ใช้เป็นตัวอักษร ภาษาไทย หรือ อังกฤษ เท่านั้น ความยาวไม่เกิน 30 ตัวอักษร และ ต้องไม่ใช้ อักษรพิเศษ">
 									</div>
 									<div class="wrap-input100 validate-input"
 										style="margin-top: 15px;">
 										<input class="input100" type="text" name="pawnshopPostBrand"
-											placeholder="ยี่ห้อ" required="required" pattern="[a-zA-Z0-9ก-์]{1,20}"> <span class="focus-input100" ></span>
+											placeholder="ยี่ห้อ" required="required" pattern="[^'@.,!#$?:^%&*+/=()\\_`{|}~-]{1,20}" title="ใช้เป็นตัวอักษร ภาษาไทย หรือ อังกฤษ เท่านั้น ความยาวไม่เกิน 30 ตัวอักษร และ ต้องไม่ใช้ อักษรพิเศษ"> <span class="focus-input100" ></span>
 									</div>
 									<div class="wrap-input100  validate-input"
 										style="margin-top: 15px;">
 										<input class="input100" type="text" name="pawnshopPostPure"
-											placeholder="ความบริสุทธิ์" required="required" pattern="[^'a-zA-Zก-์@,!#$?:^%&*+/=()\\_`{|}~-]{1,5}"> <span
+											placeholder="ความบริสุทธิ์" required="required" pattern="[^'a-zA-Zก-ฮ@,!#$?:^%&*+/=()\\_`{|}~-]{1,5}" title="ตัวเลขเท่านั้น 0-9 หรือใช้ จุดทศนิยม เช่น 99.99"> <span
 											class="focus-input100"></span>
 									</div>
 									<div class="wrap-input100  validate-input"
 										style="margin-top: 15px;">
 										<input class="input100" type="text" name="pawnshopPostWeigh"
-											placeholder="น้ำหนัก(ใช้หน่วยเป็นกรัม)" pattern="[^'a-zA-Zก-์@,!#$?:^%&*+/=()\\_`{|}~-]{1,5}"> <span
+											placeholder="น้ำหนัก(ใช้หน่วยเป็นกรัม)" 
+											pattern="[^'a-zA-Zก-ฮ@,!#$?:^%&*+/=()\\_`{|}~-]{1,5}" title="ตัวเลขเท่านั้น 0-9 หรือใช้ จุดทศนิยม เช่น 99.99"> <span
 											class="focus-input100"></span>
 									</div>
 									<div class="wrap-input100 validate-input"
@@ -106,7 +108,7 @@
 														<div class="upload-options js--image-preview"
 															id="img-pic-1">
 															<label> <input type="file" class="image-upload"
-																accept="image/*" name="files" />
+																accept="image/*" name="files" required="required"/>
 															</label>
 														</div>
 													</div>
@@ -177,7 +179,7 @@
 									<div class="wrap-input100 validate-input"
 										style="margin-top: 15px;">
 										<input class="input100" type="text" name="pawnshopPostPrice"
-											placeholder="ราคาที่ต้องการขายสินค้า" required="required" pattern="[^'a-zA-Zก-์@,!#$?:^%&*+/=()\\_`{|}~-]{1,10}">
+											placeholder="ราคาที่ต้องการขายสินค้า" required="required" title="ตัวเลข 0-9" pattern="[^'a-zA-Zก-์@,!#$?:^%&*+/=()\\_`{|}~-]{1,10}">
 									</div>
 									<div class="form-group-post float-left"
 										style="font-size: 14.5px; font-weight: inherit;">

@@ -101,7 +101,7 @@
 									class="navbar-account-naem"><%=session.getAttribute("username")%></span><span
 									class="navbar-account-email"><%=session.getAttribute("email")%></span></span>
 							</div></li>
-						<li><a href="pawner-edit.html" class="nav-link ">แก้ไขบัญชี</a></li>
+						<!--  <li><a href="logout.html" class="nav-link ">แก้ไขบัญชี</a></li> -->
 						<li><a href="pawner-post-history.html" class="nav-link ">ประวัติการจำนำ</a></li>
 						<li><a href="pawner-order.html" class="nav-link ">ประวัติการสังซื้อ</a></li>
 						<li><a href="logout.html" class="nav-link ">ออกจากระบบ</a></li>
@@ -124,7 +124,7 @@
 									class="navbar-account-naem"><%=session.getAttribute("username")%></span><span
 									class="navbar-account-email"><%=session.getAttribute("email")%></span></span>
 							</div></li>
-						<li><a href="logout.html" class="nav-link ">แก้ไขบัญชี</a></li>
+						<!--  <li><a href="logout.html" class="nav-link ">แก้ไขบัญชี</a></li> -->
 						<li><a href="pawnshop-estimate-history.html"
 							class="nav-link ">ประวัติการประเมิณของจำนำ</a></li>
 						<li><a href="pawnshop-list-post.html" class="nav-link ">ประวัติการปล่อยของหลุดจำนำ</a></li>

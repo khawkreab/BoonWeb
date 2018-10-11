@@ -93,6 +93,11 @@
 													${post.pawnshopPostSerial}</li>
 												<li class="col-md-6">ปีที่ซื้อสินค้า :
 													${post.pawnshopPostPurchase }</li>
+												
+											</c:if>
+											
+											<c:if test="${post.pawnshopPostProduction != null}">
+												
 												<li class="col-md-6">ปีที่ผลิตสินค้า :
 													${post.pawnshopPostProduction}</li>
 											</c:if>

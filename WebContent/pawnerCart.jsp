@@ -51,15 +51,34 @@ table {
 			<em></em>
 		</div>
 	</div>
-	<section>
-		<div id="list" style="height: 435px; overflow: auto;">
-			<!-- List Order Here!!!! -->
-		</div>
+	<section style="background-color: #f5f5f5;">
+		<div class="row">
+			<!-- left -->
+			<div id="list" class="col-md-8">
+				<!-- List Order Here!!!! -->
+			</div>
 
-		<button id="clearCart" class="btn btn-primary btn-block btn-lg"
-			onClick="clearCart()">ลบทั้งหมด</button>
-		<button id="comfirmOrder" class="btn btn-primary btn-block btn-lg"
-			onClick="comfirmOrder()">ยืนยันการสั่งซื้อสินค้า</button>
+			<!-- right -->
+			<div class="col-md-3" style="background-color: #fff;padding: 16px; display: inline-table;">
+				<div style="border-bottom: 1px solid #e1e1e1; padding-bottom: 5px; ">
+					สรุปรายการสั่งซื้อ
+				</div>
+				<div style="padding:8px">
+					<div class="d-flex">
+						<div class="mr-auto">จำนวน </div> 
+						<div class="ml-auto "><span><i id="num"></i> ชิ้น</span></div>
+					</div>
+					<div class="d-flex">
+						<div class="mr-auto">ยอมรวมทั้งสิ้น</div> 
+						<div class="ml-auto"> <span>฿ <i id="totalPrice"></i></span></div>
+					</div>
+				</div>
+				<!--  <button id="clearCart" class="btn btn-primary btn-block btn-lg"
+					onClick="clearCart()">ลบทั้งหมด</button> -->
+				<button id="comfirmOrder" class="btn btn-primary btn-block btn-sm"
+					onClick="comfirmOrder()">ยืนยันการสั่งซื้อสินค้า</button>
+			</div>
+		</div>
 	</section>
 
 
@@ -78,7 +97,9 @@ table {
 		}
 		function check() {
 			var html
-			html = "<table class='cartTable'>"
+			html = "<div class='row' style='background-color: #f1f1f1;border: 1px solid #fff;margin: 10px 0;padding: 5px 0;font-size: .8rem;'>"
+			html += "<div class='col-md-8'>สินค้า</div><div class='col-md-3'>ราคา</div><div class='col-md-1'>จำนวน</div></div>"
+
 			if (sessionStorage.getItem('carts')) {
 				list = JSON.parse(sessionStorage.getItem('carts'))
 
@@ -94,20 +115,23 @@ table {
 					document.getElementById("chechcarts").innerHTML = "ไม่มีรายการสินค้า"
 
 				} else {
-
-					html += "<tr><th class='tha'>โรงรับจำนำ</th><th class='tha'>ราคา</th><th class='tha'> ลบ </th></tr>"
+					var totalPrice = 0;
 					for ( var index in this.list) {
-						html += "<tr>"
-						html += "<td class='tda'>" + this.list[index].pawnshopPostName
-								+ "</td>"
-						html += "<td class='tda'>" + this.list[index].pawnshopPostPrice
-								+ "</td>"
-						html += "<td class='tda'><button onClick='deleteSelf("
-								+ index
-								+ ")'><i class='fas fa-trash' style='font-size:20px;color:red'></i></button></td>"
-						html += "</tr>"
-
+						html += "<div style='background-color: #fff;font-size:.9rem;padding-bottom: 10px;margin: 10px 0;'>"
+						html += "<div style='padding: 5px 16px;margin-bottom: 10px;border-bottom: 1px solid #e1e1e1;'>ชื่อโรงรับจำนำ</div>"
+						html += "<div class='row'><div class='col-md-8'><div class='row'> <div class='col-md-4'><img height='50px' src='images/imageUpload/"+this.list[index].pawnshopPostPicture+"'></div>"
+						html += " <div class='col-md-8'>"+this.list[index].pawnshopPostName 
+						html += "<br><button class='fas fa-trash' style='font-size:15px;color:red;border: 0;background-color: #fff;cursor: pointer;' onClick='deleteSelf("
+							+ index + ")'></button></div></div></div>"
+						html += "<div class='col-md-3 text-orange' style='font-size:1rem;'>"
+								+ this.list[index].pawnshopPostPrice + "</div>"
+						html += "<div class='col-md-1'>1</div>"
+						html += "</div></div>"
+						
+						totalPrice += parseFloat(this.list[index].pawnshopPostPrice)
 					}
+					document.getElementById("num").innerHTML = list.length
+					document.getElementById("totalPrice").innerHTML = totalPrice
 				}
 			} else {
 				document.getElementById("cartNumber").style.display = "none";

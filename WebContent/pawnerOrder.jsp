@@ -190,11 +190,11 @@ tr:hover {
 			<div>
 				<p style="font-size: 32px; border-bottom: 1px solid;">ใบชำระของหลุดจำนำ</p>
 				<div class="row">
-					<div class="col-sm-6">
+					<div class="">
 						<p>ที่อยู๋โรงรับจำนำ</p>
 						<p>ในนี้ใสที่อยู๋โรงรับจำนำที่ get from database</p>
 					</div>
-					<div class="col-sm-6">
+					<div class="">
 						<table id="meta">
 							<tr>
 								<td>ชื่อเจ้าของโพส</td>

@@ -14,7 +14,7 @@
 <head>
 <link rel="icon" href="img/logos/Artboard.png">
 
-<title>Boonyong</title>
+<title>รายการของหลุดจำนำ</title>
 
 <%-- <script type="text/javascript">
 	var checkLogin = <%= session.getAttribute("isLogin") %>;
@@ -68,7 +68,7 @@
 	</div>
 
 
-	<jsp:include page="footer.jsp"></jsp:include>
+	<jsp:include page="footer.jsp"></jsp:include> 
 	
 	
 	

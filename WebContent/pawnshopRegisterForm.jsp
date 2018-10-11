@@ -41,19 +41,18 @@
 								<ul style="padding-left: 7px;">
 									<li><form:input type="text" class="input-regis"
 											placeholder="ชื่อโรงรับจำนำ" path="pawnshopName"
-											required="required" pattern="[a-zA-Zก-์]{1,30}" /></li>
+											required="required" pattern="[a-zA-Zก-์]{1,30}" 
+											title="ใช้เป็นตัวอักษร ภาษาไทย หรือ อังกฤษ เท่านั้น ความยาวไม่เกิน 30 ตัวอักษร และ ต้องไม่ใช้ อักษรพิเศษ"/></li>
 									<li><form:input type="text" class="input-regis"
 											placeholder="อีเมล" path="pawnshopEmail" required="required"
 											pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
-											value="<%=email%>" /></li>
+											value="<%=email%>" title="เช่น boon@hotmail.com"/></li>
 									<li><form:input type="password" class="input-regis"
 											placeholder="รหัสผ่าน" path="pawnshopPassword"
 											required="required"
 											pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
 											title="ต้องมีเลขอย่างน้อย 1 ตัว และมีทั้ง อังษรพิมเล็กและใหญ่ ความยาวอย่างน้อย 8 ตัว"
 											value="<%=pass%>" /></li>
-									<li><input type="password" class="input-regis"
-										placeholder="ยืนยันรหัสผ่าน" value="<%=pass%>" /></li>
 									<li><form:input type="text" class="input-regis"
 											placeholder="เบอร์โทร" path="pawnshopTel" required="required"
 											pattern="[0-9]{1,10}" title="ตัวเลขเท่านั้น" value="<%=tel%>" />

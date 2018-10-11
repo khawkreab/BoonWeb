@@ -59,7 +59,7 @@ public class LoginCotroller {
 		try {
 			pawner = pmService.findPawnerByEmailAndPassword(email, password);
 			if (pawner.equals(null)) {
-				return "redirect:login.html?";
+				return "redirect:index.jsp";
 			} else {
 				request.getSession().setAttribute("id", pawner.getPawnerId());
 				request.getSession().setAttribute("isLogin", "yes");
@@ -75,7 +75,7 @@ public class LoginCotroller {
 		try {
 			pawnshop = pawnshopServ.findPawnShopByEmailAndPassword(email, password);
 			if (pawnshop.equals(null)) {
-				return "redirect:login.html?";
+				return "redirect:index.jsp";
 			} else {
 				request.getSession().setAttribute("id", pawnshop.getPawnshopId());
 				request.getSession().setAttribute("isLogin", "yes");
@@ -101,7 +101,7 @@ public class LoginCotroller {
 		}
 
 		request.getSession().setAttribute("error", "yes");
-		return "redirect:login.html?";
+		return "redirect:index.jsp";
 	}
 	
 	
