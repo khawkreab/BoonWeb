@@ -53,14 +53,15 @@
 				</span>
 				</a>
 				<div class="card-body">
+				<form:form method="post" id="form">
 					<span class="card-body-title"><a
 						href="post-item-detail.html?item=${pawnshopPosts.pawnshopPostId}">
 							${pawnshopPosts.pawnshopPostName}
 							${pawnshopPosts.pawnshopPostBrand}</a></span> <span
 						class="card-body-location"><i class="fas fa-map-marker-alt"></i>
-						${pawnshopPosts.pawnshopId.pawnshopProvince }</span> <span
-						class="card-body-price">฿
-						${pawnshopPosts.pawnshopPostPrice}</span>
+						${pawnshopPosts.pawnshopId.pawnshopProvince }</span> 
+						<span class="card-body-price" >${pawnshopPosts.pawnshopPostPrice} บาท</span>
+					</form:form>
 				</div>
 			</div>
 
@@ -72,8 +73,7 @@
 	
 	
 	
-		<script>
-
+	<script>
 		$(document).ready(function() {
 			var card = $('.card').length;
 
@@ -84,6 +84,5 @@
 
 		});
 	</script>
-	
 </body>
 </html>

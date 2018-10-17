@@ -289,7 +289,7 @@
 				}
 				
 				for ( var index in this.list) {
-					totalPrice += parseFloat(this.list[index].pawnshopPostPrice)
+					totalPrice += parseFloat(this.list[index].pawnshopPostPrice.replace(/\,/g,''), 10)
 				}
 				
 				document.getElementById("totalPrice").innerHTML = totalPrice

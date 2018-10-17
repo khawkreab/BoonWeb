@@ -160,7 +160,7 @@
 				<div class="">
 					<ul class="row item-info-estimate">
 						<form:form method="post" action="saveEstimate.html"
-							commandName="estimate">
+							commandName="estimate" id="form">
 							<form:hidden path="estimateId" />
 							<form:hidden path="pawnshopId.pawnshopId" />
 							<form:hidden path="pawnerPostId.pawnerPostId"
@@ -168,12 +168,16 @@
 							<li class="fas fa-info-circle item-info-tip"><span class="">ประเมินราคาสินค้า
 									โดยให้เป็นช่วงราคา </span></li>
 							<li class="fas fa-tags item-info-price"><span class=""><form:input
-										path="estimatePriceMin" class="#" pattern="[0-9]{3,45}"
+										 class="#" pattern="[^'a-zA-Zก-์@!#$?:^%&*+/=()\\_`{|}~-]{1,10}"
 										required="required" placeholder="Min price"
-										title="กรุณาใสราคา" id="minNumber" onkeyup="check()" /> - <form:input
-										path="estimatePriceMax" class="#" pattern="[0-9]{3,45}"
+										title="กรุณาใสราคา" id="minNumber" onkeyup="check()" path="estimatePriceMin"/>
+										<!--<form:input path="estimatePriceMin" type="hidden" id="oo"/>-->
+										 - <form:input path="estimatePriceMax"
+										 class="#" pattern="[^'a-zA-Zก-์@!#$?:^%&*+/=()\\_`{|}~-]{1,10}"
 										required="required" placeholder="Max price"
-										title="กรุณาใสราคา" id="maxNumber" onkeyup="check()" /> </span></li>
+										title="กรุณาใสราคา" id="maxNumber" onkeyup="check()" />
+										<!--<form:input path="estimatePriceMax" type="hidden" id="xx"/> -->
+										 </span></li>
 							<li>
 								<button type="submit" id="go" disabled>ให้ราคา</button>
 							</li>
@@ -203,5 +207,96 @@
 		}
 	</script>
 	<jsp:include page="footer.jsp"></jsp:include>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+(function($, undefined) {
+
+    "use strict";
+
+    // When ready.
+    $(function() {        
+        var $form = $( "#form" );
+        
+        var $minNumber = $form.find( "#minNumber" );
+        var $maxNumber = $form.find( "#maxNumber" );
+
+        $minNumber.on( "keyup", function( event ) {                       
+            // When user select text in the document, also abort.
+            var selection = window.getSelection().toString();
+            if ( selection !== '' ) {
+                return;
+            }
+            
+            // When the arrow keys are pressed, abort.
+            if ( $.inArray( event.keyCode, [38,40,37,39] ) !== -1 ) {
+                return;
+            }
+            
+            
+            var $this = $( this );
+            
+            // Get the value.
+            var minNumber = $this.val();
+            
+            var minNumber = minNumber.replace(/[\D\s\._\-]+/g, "");
+            minNumber = minNumber ? parseInt( minNumber, 10 ) : 0;
+
+                    $this.val( function() {
+                        return ( minNumber === 0 ) ? "" : minNumber.toLocaleString( "en-US" );
+                    } );
+                    
+                    document.getElementById("oo").value = minNumber;
+        } );
+        
+        $maxNumber.on( "keyup", function( event ) {                       
+            // When user select text in the document, also abort.
+            var selection = window.getSelection().toString();
+            if ( selection !== '' ) {
+                return;
+            }
+            
+            // When the arrow keys are pressed, abort.
+            if ( $.inArray( event.keyCode, [38,40,37,39] ) !== -1 ) {
+                return;
+            }
+            
+            
+            var $this = $( this );
+            
+            // Get the value.
+            var maxNumber = $this.val();
+            
+            var maxNumber = maxNumber.replace(/[\D\s\._\-]+/g, "");
+            maxNumber = maxNumber ? parseInt( maxNumber, 10 ) : 0;
+
+                    $this.val( function() {
+                        return ( maxNumber === 0 ) ? "" : maxNumber.toLocaleString( "en-US" );
+                    } );
+                    
+                    //document.getElementById("xx").value = maxNumber;
+        } );
+        
+        /**
+         * ==================================
+         * When Form Submitted
+         * ==================================
+         */
+       /* $form.on( "submit", function( event ) {
+            
+            var $this = $( this );
+            var arr = $this.serializeArray();
+        
+            for (var i = 0; i < arr.length; i++) {
+                    arr[i].value = arr[i].value.replace(/[($)\s\._\-]+/g, ''); // Sanitize the values.
+            };
+            
+            console.log("show this => " +arr );
+            
+            event.preventDefault();
+        });
+        */
+    });
+})(jQuery);
+</script>
 </body>
 </html>

@@ -83,7 +83,11 @@
 					if (session.getAttribute("isLogin") == "yes") {
 						if (session.getAttribute("userType") == "pawner") {
 				%>
+				<%if(session.getAttribute("pawnerState").equals("Banned")){  %>
+				<li><a class="nav-link" id="omn">จำนำ</a></li>
+				<%}else{ %>
 				<li><a class="nav-link" href="pawner-pledge.html">จำนำ</a></li>
+				<%} %>
 				<li><a class="nav-link" href="pawner-off-pledge.html">รายการของหลุดจำนำ</a></li>
 				<li><a class="nav-link" href="pawner-track-pledge.html">ติดตามการจำนำ</a></li>
 				<li><a class="nav-link" href="pawner-cart.html"><i
@@ -246,6 +250,45 @@
 		</ul>
 	</div>
 
+<!-- ----------------- popup ban -------------------------------  -->
+<!-- The Modal -->
+<div id="jj" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content" style="padding: 20px 0 0 50px;">
+    <span class="close" style="position: absolute; right: 0; padding-right: 30px;">&times;</span>
+    <p style="color : #ff0101;  text-align: center;">บัญชีของท่านถูกระงับชั่วคราว!!! เนื่องจากการกระทำผิดกฏของทางเว็บไซต์ ท่านสามาถใช้บัญชีตามปกติได้หลังจากการตรวจสอบเสร็จสิ้น</p>
+  </div>
+
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('jj');
+
+// Get the button that opens the modal
+var btn = document.getElementById("omn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
 
 	<!-- -------------------------------------------------------------------------------------------------- -->
 

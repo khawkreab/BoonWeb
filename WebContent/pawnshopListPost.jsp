@@ -87,6 +87,7 @@
 									<div class="preview">
 										<ul class="row">
 											<!-- Watch,Electronic -->
+											<li class="col-md-12">ราคา: ${post.pawnshopPostPrice} บาท</li>
 											<c:if test="${post.pawnshopPostModel != null}">
 												<li class="col-md-6">รุ่น : ${post.pawnshopPostModel}</li>
 												<li class="col-md-6">หมายเลขประจำเครื่อง :

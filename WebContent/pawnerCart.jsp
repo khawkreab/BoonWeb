@@ -127,7 +127,7 @@ table {
 						html += "<div class='col-md-1'>1</div>"
 						html += "</div></div>"
 						
-						totalPrice += parseFloat(this.list[index].pawnshopPostPrice)
+						totalPrice += parseFloat(this.list[index].pawnshopPostPrice.replace(/\,/g,''), 10)
 					}
 					document.getElementById("num").innerHTML = list.length
 					document.getElementById("totalPrice").innerHTML = totalPrice
