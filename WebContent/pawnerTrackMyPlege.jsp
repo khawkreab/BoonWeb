@@ -69,7 +69,7 @@
 										${postprocess.pawnerPostBrand }
 										${postprocess.pawnerPostTypeCamera }
 										${postprocess.pawnerPostCameraLen }</h3>
-									<p class="in-para">Information</p>
+									<p class="in-para">ข้อมูล</p>
 									<div class="price_single">
 										<div class="preview">
 											<ul class="row">

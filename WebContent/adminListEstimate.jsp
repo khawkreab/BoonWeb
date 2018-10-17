@@ -121,40 +121,31 @@
 			<div class="scroll-sidebar">
 				<!-- Sidebar navigation-->
 				<nav class="sidebar-nav">
-					<ul id="sidebarnav">
-						<li class="nav-devider"></li>
+                    <ul id="sidebarnav">
+                        
 
-						<li class="nav-label">DashBoard</li>
-						<li><a class="has-arrow  " href="#" aria-expanded="false"><i
-								class="fa fa-bar-chart"></i><span class="hide-menu">Charts</span></a>
-							<ul aria-expanded="false" class="collapse">
+                       
+                        <li class="nav-label">List All</li>
 
-								<li><a href="admin-dashboard.html">Board</a></li>
-
-							</ul></li>
-						<li class="nav-label">List All</li>
-
-						<li><a class="has-arrow  " href="#" aria-expanded="false"><i
-								class="fa fa-table"></i><span class="hide-menu">Tables</span></a>
-							<ul aria-expanded="false" class="collapse">
-								<li><a href="admin-list-pawner.html">List Pawner</a></li>
-								<li><a href="admin-list-pawnshop.html">List Pawnshop</a></li>
-								<li><a href="admin-list-estimate.html">List Estimate</a></li>
-								<li><a href="admin-list-order.html">List Order</a></li>
-							</ul></li>
+                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-table"></i><span class="hide-menu">Tables</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="admin-list-pawner.html">List Pawner</a></li>
+                                <li><a href="admin-list-pawnshop.html">List Pawnshop</a></li>
+                                <li><a href="admin-list-estimate.html">List Estimate</a></li>
+                                <li><a href="admin-list-order.html">List Order</a></li>
+                            </ul>
+                        </li>
 
 
-					</ul>
-					</li>
-					</ul>
-				</nav>
+                       </ul>
+                </nav>
 				<!-- End Sidebar navigation -->
 			</div>
 			<!-- End Sidebar scroll-->
 		</div>
 		
 		
-		 <section>
+		 <section style="margin-left: 240px">
 		<div class="container">
 			<div class="history-filter">
 				<div class="d-flex">
@@ -163,7 +154,7 @@
 				</div>
 			</div>
 		</div>
-		<c:forEach items="${adminEList}" var="adEstimate">
+		 <c:forEach items="${adminEList}" var="adEstimate">
 			<div class="container"><div class="card">
 				<div class="history-main">
 					<div class="d-flex history-title">
@@ -177,7 +168,7 @@
 							<div class="col-sm-5">
  									<div class="pro-img">
 									<img class="img-responsive"
-										src="images/uploadImage/${adEstimate.pawnerPostPicture }" />
+										src="images/uploadImage/${adEstimate.pawnerPostId.pawnerPostPicture }" />
 								</div>
 							</div>
 							<div class="col-sm-7">
@@ -257,7 +248,7 @@
 										<li>Price Max: ${adEstimate.estimatePriceMax }</li>
 										<li>Estimate Date: ${adEstimate.estimateDate}</li>
 										<li>Access Date:   ${adEstimate.estimateAccessDate}</li>
-									 <%-- <li>Status   : ${adEstimate.estimateStatus }</li>   --%>
+									 <li>Status   : ${adEstimate.estimateStatus }</li>  
 									 
 										<!-- Status -->
 										<c:if test="${adEstimate.estimateStatus == 'complete'}">
@@ -292,8 +283,6 @@
 												<li> Pawner ID :<span class="badge badge-default"> ${adEstimate.pawnerPostId.pawnerId.pawnerId} </span></li>								 
 												<li> Pawner Name :<span class="badge badge-default"> ${adEstimate.pawnerPostId.pawnerId.pawnerFirstname}  ${adEstimate.pawnerPostId.pawnerId.pawnerLastname}</span></li>
 												<li> Pawner Mail :<span class="badge badge-default"> ${adEstimate.pawnerPostId.pawnerId.pawnerEmail} </span></li>
-												
-												
 										<p>
 										
 										
@@ -302,20 +291,18 @@
 										<li> <h3><span class="badge badge-info">Estimate By</span></h3></li>
 												<li> Pawnshop ID :<span class="badge badge-default"> ${adEstimate.pawnshopId.pawnshopId} </span></li>	
 												<li> Pawnshop Name :<span class="badge badge-default"> ${adEstimate.pawnshopId.pawnshopName} </span></li>
-												<li> Pawnshop Address :<span class="badge badge-default"> ${adEstimate.pawnshopId.pawnshopAddress} </span></li>
+												<li> Pawnshop Address :<span class="badge badge-default">  ${adEstimate.pawnshopId.pawnshopParish} ${adEstimate.pawnshopId.pawnshopDistrict} ${adEstimate.pawnshopId.pawnshopProvince} ${adEstimate.pawnshopId.pawnshopPostcodes} </span></li>
 												<li> Pawnshop Mail :<span class="badge badge-default"> ${adEstimate.pawnshopId.pawnshopEmail} </span></li>
 											
-							
-										
 									</ul>
 								</div>
-							</div>
+							</div> 
 						</div>
 
 					</div>
 				</div>
 			</div></div>
-		</c:forEach>
+		</c:forEach> 
 	</section>
 		 
 

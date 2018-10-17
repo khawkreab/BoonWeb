@@ -111,14 +111,13 @@ table {
 				if (list.length == null || list.length == 0) {
 					document.getElementById("cartNumber").style.display = "none";
 					document.getElementById("comfirmOrder").style.display = "none";
-					document.getElementById("clearCart").style.display = "none";
 					document.getElementById("chechcarts").innerHTML = "ไม่มีรายการสินค้า"
 
 				} else {
 					var totalPrice = 0;
 					for ( var index in this.list) {
 						html += "<div style='background-color: #fff;font-size:.9rem;padding-bottom: 10px;margin: 10px 0;'>"
-						html += "<div style='padding: 5px 16px;margin-bottom: 10px;border-bottom: 1px solid #e1e1e1;'>ชื่อโรงรับจำนำ</div>"
+						html += "<div style='padding: 5px 16px;margin-bottom: 10px;border-bottom: 1px solid #e1e1e1;'>ชื่อโรงรับจำนำ: "+this.list[index].pawnshopName+"</div>"
 						html += "<div class='row'><div class='col-md-8'><div class='row'> <div class='col-md-4'><img height='50px' src='images/imageUpload/"+this.list[index].pawnshopPostPicture+"'></div>"
 						html += " <div class='col-md-8'>"+this.list[index].pawnshopPostName 
 						html += "<br><button class='fas fa-trash' style='font-size:15px;color:red;border: 0;background-color: #fff;cursor: pointer;' onClick='deleteSelf("
@@ -136,7 +135,6 @@ table {
 			} else {
 				document.getElementById("cartNumber").style.display = "none";
 				document.getElementById("comfirmOrder").style.display = "none";
-				document.getElementById("clearCart").style.display = "none";
 				document.getElementById("chechcarts").innerHTML = "ไม่มีรายการสินค้า"
 			}
 			html += "</table>"
@@ -182,8 +180,7 @@ table {
 			//clear cart
 			this.clearCart()
 
-			window.location
-					.assign('http://localhost:8080/BoonWeb/pawner-order.html')
+			window.location.href = 'http://localhost:8080/BoonWeb/pawner-order.html';
 
 		}
 	</script>

@@ -56,7 +56,7 @@
 										value="Smartphone" />
 									<div class="wrap-input100 validate-input"
 										data-validate="Valid email is required: ex@abc.xyz">
-										<input class="input100" type="text" name="pawnshopPostName"
+										<input class="input100" type="text" name="pawnshopPostName" placeholder="ชื่อสินค้าที่ต้องการจำนำ"
 											pattern="[^'@.,!#$?:^%&*+/=()\\_`{|}~-]{1,30}" title="ใช้เป็นตัวอักษร ภาษาไทย หรือ อังกฤษ เท่านั้น ความยาวไม่เกิน 30 ตัวอักษร และ ต้องไม่ใช้ อักษรพิเศษ">
 									</div>
 									<div class="wrap-input100 validate-input"

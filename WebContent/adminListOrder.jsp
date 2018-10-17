@@ -106,18 +106,11 @@
             <!-- Sidebar scroll-->
             <div class="scroll-sidebar">
                 <!-- Sidebar navigation-->
-                <nav class="sidebar-nav">
+               <nav class="sidebar-nav">
                     <ul id="sidebarnav">
-                        <li class="nav-devider"></li>
+                        
 
-                      <li class="nav-label">DashBoard</li>                     
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-bar-chart"></i><span class="hide-menu">Charts</span></a>
-                            <ul aria-expanded="false" class="collapse">
-
-                                <li><a href="admin-dashboard.html">Board</a></li>
-
-                            </ul>
-                        </li>
+                       
                         <li class="nav-label">List All</li>
 
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-table"></i><span class="hide-menu">Tables</span></a>
@@ -130,9 +123,7 @@
                         </li>
 
 
-                            </ul>
-                        </li>
-                    </ul>
+                       </ul>
                 </nav>
                 <!-- End Sidebar navigation -->
             </div>
@@ -140,7 +131,8 @@
         </div>
 
 <!-- ---------------------------------------------------------------------------------------------------- -->
-	<section>
+
+<section style="margin-left: 240px">
 		<div class="container">
 			<div class="history-filter">
 				<div class="d-flex">
@@ -252,7 +244,6 @@
 										<li> <h3><span class="badge badge-info">Post By</span></h3></li>
 												<li> Pawnshop ID :<span class="badge badge-default"> ${adOrder.pawnshopPostId.pawnshopId.pawnshopId} </span></li>	
 												<li> Pawnshop Name :<span class="badge badge-default"> ${adOrder.pawnshopPostId.pawnshopId.pawnshopName} </span></li>
-												<li> Pawnshop Address :<span class="badge badge-default"> ${adOrder.pawnshopPostId.pawnshopId.pawnshopAddress} </span></li>
 												<li> Pawnshop Mail :<span class="badge badge-default"> ${adOrder.pawnshopPostId.pawnshopId.pawnshopEmail} </span></li>
 										<p>
 										
