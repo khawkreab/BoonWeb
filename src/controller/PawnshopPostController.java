@@ -171,7 +171,7 @@ public class PawnshopPostController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return "redirect:pawnshopListPost.jsp";
+		return "redirect:pawnshop-list-post.html.jsp";
 	}
 
 }

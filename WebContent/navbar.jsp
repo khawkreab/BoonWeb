@@ -114,8 +114,12 @@
 				<%
 					} else if (session.getAttribute("userType") == "pawnShop") {
 				%>
-					<li><a class="nav-link" href="pawnshop-index.html">รายการของจำนำ</a></li>
+				<%if(session.getAttribute("pawnshopState").equals("Banned")){  %>
+				<li><a class="nav-link" id="omn">ปล่อยของหลุดจำนำ</a></li>
+				<%}else{ %>
 				<li><a class="nav-link" href="pawnshop-pledge-sell.html">ปล่อยของหลุดจำนำ</a></li>
+				<%}%>
+					<li><a class="nav-link" href="pawnshop-index.html">รายการของจำนำ</a></li>
 				<li><a class="nav-link" href="pawnshop-track-estimate.html">ติดตามการประเมิน</a></li>
 				<li class="dropdown show"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown" role="button" aria-expanded="false"> <%=session.getAttribute("username")%></a>
