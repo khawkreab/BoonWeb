@@ -49,7 +49,7 @@ body {
 					<h5>Welcome</h5>
 					<p></p>
 					<%
-						if (request.getAttribute("error") == "yes") {
+					if (request.getAttribute("error") == "yes") {
 					%>
 					<p style="color: red">Login Failed. Please try again.</p>
 					<%

@@ -171,7 +171,11 @@ public class PawnshopPostController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+<<<<<<< HEAD
 		return "redirect:pawnshop-list-history.html";
+=======
+		return "redirect:pawnshop-list-post.html.jsp";
+>>>>>>> doing
 	}
 
 }

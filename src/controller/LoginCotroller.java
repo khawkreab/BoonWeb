@@ -59,13 +59,14 @@ public class LoginCotroller {
 		try {
 			pawner = pmService.findPawnerByEmailAndPassword(email, password);
 			if (pawner.equals(null)) {
-				return "redirect:login.html?";
+				return "redirect:index.jsp";
 			} else {
 				request.getSession().setAttribute("id", pawner.getPawnerId());
 				request.getSession().setAttribute("isLogin", "yes");
 				request.getSession().setAttribute("userType", "pawner");
 				request.getSession().setAttribute("username", pawner.getPawnerFirstname() + " " + pawner.getPawnerLastname());
 				request.getSession().setAttribute("email",pawner.getPawnerEmail());
+				request.getSession().setAttribute("pawnerState",pawner.getPawnerState());
 				return "redirect:pawner-index.html";
 			}
 		} catch (Exception e) {
@@ -75,13 +76,14 @@ public class LoginCotroller {
 		try {
 			pawnshop = pawnshopServ.findPawnShopByEmailAndPassword(email, password);
 			if (pawnshop.equals(null)) {
-				return "redirect:login.html?";
+				return "redirect:index.jsp";
 			} else {
 				request.getSession().setAttribute("id", pawnshop.getPawnshopId());
 				request.getSession().setAttribute("isLogin", "yes");
 				request.getSession().setAttribute("userType", "pawnShop");
 				request.getSession().setAttribute("username", pawnshop.getPawnshopName());
 				request.getSession().setAttribute("email",pawnshop.getPawnshopEmail());
+				request.getSession().setAttribute("pawnshopState",pawnshop.getPawnshopState());
 				return "redirect:pawnshop-index.html";
 			}
 		} catch (Exception e) {
@@ -101,7 +103,7 @@ public class LoginCotroller {
 		}
 
 		request.getSession().setAttribute("error", "yes");
-		return "redirect:login.html?";
+		return "redirect:index.jsp";
 	}
 	
 	

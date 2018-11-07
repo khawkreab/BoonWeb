@@ -98,6 +98,12 @@
 																	${track.pawnerPostId.pawnerPostSerial}</li>
 																<li class="col-md-6">ปีที่ซื้อสินค้า :
 																	${track.pawnerPostId.pawnerPostPurchase }</li>
+												
+															</c:if>
+															
+															<c:if
+																test="${track.pawnerPostId.pawnerPostProduction != null}">
+											
 																<li class="col-md-6">ปีที่ผลิตสินค้า :
 																	${track.pawnerPostId.pawnerPostProduction}</li>
 															</c:if>

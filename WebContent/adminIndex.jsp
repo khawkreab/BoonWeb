@@ -105,16 +105,9 @@
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
-                        <li class="nav-devider"></li>
+                        
 
-                        <li class="nav-label">DashBoard</li>                     
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-bar-chart"></i><span class="hide-menu">Charts</span></a>
-                            <ul aria-expanded="false" class="collapse">
-
-                                <li><a href="admin-dashboard.html">Board</a></li>
-
-                            </ul>
-                        </li>
+                       
                         <li class="nav-label">List All</li>
 
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-table"></i><span class="hide-menu">Tables</span></a>
@@ -127,9 +120,7 @@
                         </li>
 
 
-                            </ul>
-                        </li>
-                    </ul>
+                       </ul>
                 </nav>
                 <!-- End Sidebar navigation -->
             </div>

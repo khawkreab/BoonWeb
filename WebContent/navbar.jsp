@@ -90,7 +90,11 @@
 					if (session.getAttribute("isLogin") == "yes") {
 						if (session.getAttribute("userType") == "pawner") {
 				%>
+				<%if(session.getAttribute("pawnerState").equals("Banned")){  %>
+				<li><a class="nav-link" id="omn">จำนำ</a></li>
+				<%}else{ %>
 				<li><a class="nav-link" href="pawner-pledge.html">จำนำ</a></li>
+				<%} %>
 				<li><a class="nav-link" href="pawner-off-pledge.html">รายการของหลุดจำนำ</a></li>
 				<li><a class="nav-link" href="pawner-track-pledge.html">ติดตามการจำนำ</a></li>
 				<li><a class="nav-link" href="pawner-cart.html"><i
@@ -108,7 +112,7 @@
 									class="navbar-account-naem"><%=session.getAttribute("username")%></span><span
 									class="navbar-account-email"><%=session.getAttribute("email")%></span></span>
 							</div></li>
-						<li><a href="pawner-edit.html" class="nav-link ">แก้ไขบัญชี</a></li>
+						<!--  <li><a href="logout.html" class="nav-link ">แก้ไขบัญชี</a></li> -->
 						<li><a href="pawner-post-history.html" class="nav-link ">ประวัติการจำนำ</a></li>
 						<li><a href="pawner-order.html" class="nav-link ">ประวัติการสังซื้อ</a></li>
 						<li><a href="logout.html" class="nav-link ">ออกจากระบบ</a></li>
@@ -117,8 +121,12 @@
 				<%
 					} else if (session.getAttribute("userType") == "pawnShop") {
 				%>
-					<li><a class="nav-link" href="pawnshop-index.html">รายการของจำนำ</a></li>
+				<%if(session.getAttribute("pawnshopState").equals("Banned")){  %>
+				<li><a class="nav-link" id="omn">ปล่อยของหลุดจำนำ</a></li>
+				<%}else{ %>
 				<li><a class="nav-link" href="pawnshop-pledge-sell.html">ปล่อยของหลุดจำนำ</a></li>
+				<%}%>
+					<li><a class="nav-link" href="pawnshop-index.html">รายการของจำนำ</a></li>
 				<li><a class="nav-link" href="pawnshop-track-estimate.html">ติดตามการประเมิน</a></li>
 				<li class="dropdown show"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown" role="button" aria-expanded="false"> <%=session.getAttribute("username")%></a>
@@ -131,7 +139,7 @@
 									class="navbar-account-naem"><%=session.getAttribute("username")%></span><span
 									class="navbar-account-email"><%=session.getAttribute("email")%></span></span>
 							</div></li>
-						<li><a href="logout.html" class="nav-link ">แก้ไขบัญชี</a></li>
+						<!--  <li><a href="logout.html" class="nav-link ">แก้ไขบัญชี</a></li> -->
 						<li><a href="pawnshop-estimate-history.html"
 							class="nav-link ">ประวัติการประเมินของจำนำ</a></li>
 						<li><a href="pawnshop-list-post.html" class="nav-link ">ประวัติการปล่อยของหลุดจำนำ</a></li>
@@ -253,6 +261,45 @@
 		</ul>
 	</div>
 
+<!-- ----------------- popup ban -------------------------------  -->
+<!-- The Modal -->
+<div id="jj" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content" style="padding: 20px 0 0 50px;">
+    <span class="close" style="position: absolute; right: 0; padding-right: 30px;">&times;</span>
+    <p style="color : #ff0101;  text-align: center;">บัญชีของท่านถูกระงับชั่วคราว!!! เนื่องจากการกระทำผิดกฏของทางเว็บไซต์ ท่านสามาถใช้บัญชีตามปกติได้หลังจากการตรวจสอบเสร็จสิ้น</p>
+  </div>
+
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('jj');
+
+// Get the button that opens the modal
+var btn = document.getElementById("omn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
 
 	<!-- -------------------------------------------------------------------------------------------------- -->
 

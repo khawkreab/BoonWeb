@@ -18,7 +18,7 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="">
 <meta name="author" content="">
-<title>pawner-track-pledge</title>
+<title>สถานะการจำนำ</title>
 
 <!-- Bootstrap core CSS -->
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -57,19 +57,19 @@
 					</div>
 					<div class="history-body">
 						<div class="row">
-							<div class="col-sm-5">
+							<div class="col-sm-3">
 								<div class="pro-img">
 									<img class="img-responsive"
 										src="images/imageUpload/${postprocess.pawnerPostPicture }" />
 								</div>
 							</div>
-							<div class="col-md-7 single-top-in">
+							<div class="col-md-9 single-top-in">
 								<div class="span_2_of_a1 simpleCart_shelfItem">
 									<h3>${postprocess.pawnerPostName }
 										${postprocess.pawnerPostBrand }
 										${postprocess.pawnerPostTypeCamera }
 										${postprocess.pawnerPostCameraLen }</h3>
-									<p class="in-para">Information</p>
+									<p class="in-para">ข้อมูล</p>
 									<div class="price_single">
 										<div class="preview">
 											<ul class="row">
@@ -82,9 +82,13 @@
 														${postprocess.pawnerPostSerial}</li>
 													<li class="col-md-6">ปีที่ซื้อสินค้า :
 														${postprocess.pawnerPostPurchase }</li>
+												</c:if>
+												
+												<c:if test="${postprocess.pawnerPostProduction != null}">
 													<li class="col-md-6">ปีที่ผลิตสินค้า :
 														${postprocess.pawnerPostProduction}</li>
 												</c:if>
+												
 
 												<!-- Gold -->
 												<c:if test="${postprocess.pawnerPostPure != null}">
@@ -113,8 +117,7 @@
 
 												<!-- Electronic com telephone -->
 												<c:if test="${postprocess.pawnerPostHarddisk != null}">
-													<li class="col-md-6">Harddisk :
-														${post.pawnerPostHarddisk }</li>
+													<li class="col-md-6">Harddisk : ${ postprocess.pawnerPostHarddisk }</li>
 												</c:if>
 
 												<!-- Electronic com-->
@@ -186,7 +189,7 @@
 														type="hidden" name="pawnerPostId"
 														value="${estimate.pawnerPostId.pawnerPostId}"> 
 													<button
-														style="border-radius: 2px; background: #ff7f00; font-size: 13px; color: #fff; padding: 5px; border: none"
+														style="border-radius: 2px; background: #ff7f00; font-size: 13px; color: #fff; padding: 5px; border: none; margin: 5px"
 														type="submit">ยืนยันราคาสินค้า</button>
 												</form>
 											</div>

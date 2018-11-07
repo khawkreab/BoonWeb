@@ -115,20 +115,20 @@
 							<ul style="padding-left: 7px;">
 								<li><form:input path="pawnerFirstname" type="text"
 										class="account-regis" placeholder="ชื่อ" required="required"
-										pattern="[a-zA-Zก-์]{1,30}" /> <form:input
+										pattern="[a-zA-Zก-์]{1,30}" title="ใช้เป็นตัวอักษร ภาษาไทย หรือ อังกฤษ เท่านั้น ความยาวไม่เกิน 30 ตัวอักษร และ ต้องไม่ใช้ อักษรพิเศษ"/> <form:input
 										path="pawnerLastname" type="text" class="account-regis"
 										placeholder="นามสกุล" required="required"
-										pattern="[a-zA-Zก-์]{1,30}" /></li>
+										pattern="[a-zA-Zก-์]{1,30}" title="ใช้เป็นตัวอักษร ภาษาไทย หรือ อังกฤษ เท่านั้น ความยาวไม่เกิน 30 ตัวอักษร และ ต้องไม่ใช้ อักษรพิเศษ"/></li>
 								<li><form:input type="text" id="telto"
 										class="account-regis" placeholder="เบอร์โทรศัพท์"
 										required="required" onkeyup="continueto();" path="pawnerPhone"
 										required="required" pattern="[0-9]{1,10}"
-										title="ตัวเลขเท่านั้น" /></li>
+										title="ตัวเลขเท่านั้น 0-9" /></li>
 								<li><form:input path="pawnerEmail" type="text" id="mail"
 										class="account-regis" placeholder="อีเมล" required="required"
 										onkeyup="continueto();"
-										pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
-										required="required" /></li>
+										pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,20}$"
+										required="required" title="เช่น boon@hotmail.com"/></li>
 								<li><form:input path="pawnerPassword" type="password"
 										id="pass1" class="account-regis" placeholder="รหัสผ่าน"
 										required="required"

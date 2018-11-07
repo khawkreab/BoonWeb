@@ -105,18 +105,11 @@
 	            <!-- Sidebar scroll-->
 	            <div class="scroll-sidebar">
 	                <!-- Sidebar navigation-->
-	                <nav class="sidebar-nav">
-	                    <ul id="sidebarnav">
-	                        <li class="nav-devider"></li>
+	             <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        
 
-	                      <li class="nav-label">DashBoard</li>                     
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-bar-chart"></i><span class="hide-menu">Charts</span></a>
-                            <ul aria-expanded="false" class="collapse">
-
-                                <li><a href="admin-dashboard.html">Board</a></li>
-
-                            </ul>
-                        </li>
+                       
                         <li class="nav-label">List All</li>
 
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-table"></i><span class="hide-menu">Tables</span></a>
@@ -129,10 +122,8 @@
                         </li>
 
 
-	                            </ul>
-	                        </li>
-	                    </ul>
-	                </nav>
+                       </ul>
+                </nav>
 	                <!-- End Sidebar navigation -->
 	            </div>
 	            <!-- End Sidebar scroll-->
@@ -153,9 +144,11 @@
 											<th>ID</th>
 											<th>Pawnshop Name</th>
 											<th>Credential</th>
-											<th>Address</th>
 											<th>E-mail</th>
 											<th>Password</th>
+											<th>Status</th>
+											<th>Ban</th>
+											<th>UnBan</th>
 											<th>Remove</th>
 										</tr>
 									</thead>
@@ -165,11 +158,12 @@
 												<td>${pawnshop.pawnshopId}</td>
 												<td>${pawnshop.pawnshopName}</td>
 												<td>${pawnshop.pawnshopCredential}</td>
-												<td>${pawnshop.pawnshopAddress}</td>
 												<td>${pawnshop.pawnshopEmail}</td>
 												<td>${pawnshop.pawnshopPassword}</td>
-												<td><a
-													href="deletePawnshop.html?id=${pawnshop.pawnshopId}">Remove</a></td>
+												<td>${pawnshop.pawnshopState}</td>
+												<td><a href="banPawnshopState.html?idPawnshop=${pawnshop.pawnshopId}" class="btn btn-sm btn-warning">Ban</a></td>
+												<td><a href="updatePawnshopState.html?idPawnshop=${pawnshop.pawnshopId}" class="btn btn-sm btn-primary">UnBan</a></td>
+												<td><a href="deletePawnshop.html?id=${pawnshop.pawnshopId}" class="btn btn-sm btn-red" >Remove</a></td>
 											</tr>
 										</tbody>
 									</c:forEach>

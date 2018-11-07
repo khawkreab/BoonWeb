@@ -1,244 +1,42 @@
 <!-- 
-// page : pawner-post-form
-// version : 5.0
-// task : แก้ ข้อมูลการบันทึก
+// page : pawner-post-form-Electronic
+// version : 1.0
+// task : create
 // edit by : ter
  -->
+p://www.springframework.org/tags/form" prefix="form"%>
 
 <html lang="en">
 
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="description" content="">
-	<meta name="author" content="">
+<link rel="icon" href="img/logos/Artboard.png">
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
 
-	<title>pawner-post-form</title>
+<title>pawner-post-form</title>
 
-	<!-- Bootstrap core CSS -->
-	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap core CSS -->
+<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-	<!-- Custom styles for this template -->
-	<link href="css/new-design.css" rel="stylesheet">
-	<link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-	<style>
-		.wrap-contact100 {
-			width: 1120px;
-			background: #fff;
-			overflow: hidden;
-			display: -webkit-box;
-			display: -webkit-flex;
-			display: -moz-box;
-			display: -ms-flexbox;
-			display: flex;
-			flex-wrap: wrap;
-			align-items: stretch;
-			/* flex-direction: row-reverse; */
-		}
+<!-- Custom styles for this template -->
+<link href="css/new-design.css" rel="stylesheet">
+<link href="vendor/font-awesome/css/font-awesome.min.css"
+	rel="stylesheet" type="text/css">
 
-		.contact100-form {
-			width: 50%;
-			display: -webkit-box;
-			display: -webkit-flex;
-			display: -moz-box;
-			display: -ms-flexbox;
-			display: flex;
-			flex-wrap: wrap;
-			padding: 56px 55px 63px 55px;
-		}
-
-		.contact100-form-title {
-			width: 100%;
-			display: block;
-			font-family: Poppins-Regular;
-			font-size: 30px;
-			color: #333333;
-			line-height: 1.2;
-			text-align: center;
-			padding-bottom: 33px;
-		}
-
-		.label-input100 {
-			font-family: Poppins-Regular;
-			font-size: 12px;
-			color: #555555;
-			line-height: 1.5;
-			text-transform: uppercase;
-			letter-spacing: 1px;
-			display: -webkit-box;
-			display: -webkit-flex;
-			display: -moz-box;
-			display: -ms-flexbox;
-			display: flex;
-			align-items: center;
-			width: 100%;
-			min-height: 55px;
-			border: 1px solid #e6e6e6;
-			border-bottom: none;
-			padding: 10px 25px;
-			margin-top: 15px;
-			margin-bottom: 0;
-		}
-
-		.wrap-input100 {
-			width: 100%;
-			position: relative;
-			border: 1px solid #e6e6e6;
-		}
-
-		.input100 {
-			display: block;
-			width: 100%;
-			background: transparent;
-			font-family: Poppins-Regular;
-			font-size: 18px;
-			color: #666666;
-			line-height: 1.2;
-			padding: 0 25px;
-			outline: none;
-			border: none;
-			height: 55px;
-		}
-
-		.rs1-wrap-input100,
-		.rs2-wrap-input100 {
-			width: 50%;
-		}
-
-		textarea.input100 {
-			min-height: 139px;
-			padding-top: 19px;
-			padding-bottom: 15px;
-		}
-
-		.input100:focus {
-			display: block;
-			width: 100%;
-			background: transparent;
-			font-family: Poppins-Regular;
-			font-size: 18px;
-			color: #666666;
-			line-height: 1.2;
-			padding: 0 25px;
-			outline: none;
-			border: none;
-			height: 55px;
-			border-bottom: 1px solid #ff7f00;
-		}
-
-		.container-contact100-form-btn {
-			width: 100%;
-			display: -webkit-box;
-			display: -webkit-flex;
-			display: -moz-box;
-			display: -ms-flexbox;
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: center;
-			padding-top: 23px;
-		}
-
-		.contact100-form-btn {
-			display: -webkit-box;
-			display: -webkit-flex;
-			display: -moz-box;
-			display: -ms-flexbox;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			padding: 0 20px;
-			min-width: 200px;
-			height: 50px;
-			border-radius: 2px;
-			background: #ff7f00;
-			;
-			font-family: Montserrat-Bold;
-			font-size: 12px;
-			color: #fff;
-			line-height: 1.2;
-			text-transform: uppercase;
-			letter-spacing: 1px;
-			-webkit-transition: all 0.4s;
-			-o-transition: all 0.4s;
-			-moz-transition: all 0.4s;
-			transition: all 0.4s;
-			outline: none !important;
-			border: none;
-		}
-
-		.contact100-form-btn:hover {
-			display: -webkit-box;
-			display: -webkit-flex;
-			display: -moz-box;
-			display: -ms-flexbox;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			padding: 0 20px;
-			min-width: 200px;
-			height: 50px;
-			border-radius: 2px;
-			background: #555;
-			font-family: Montserrat-Bold;
-			font-size: 12px;
-			color: #fff;
-			line-height: 1.2;
-			text-transform: uppercase;
-			letter-spacing: 1px;
-			-webkit-transition: all 0.4s;
-			-o-transition: all 0.4s;
-			-moz-transition: all 0.4s;
-			transition: all 0.4s;
-			outline: none !important;
-			border: none;
-		}
-
-		.contact100-more {
-			width: 50%;
-			background-repeat: no-repeat;
-			background-size: cover;
-			background-position: center;
-			position: relative;
-			z-index: 1;
-			padding: 30px 15px 0px 15px;
-		}
-
-		.flex-col-c-m {
-			display: -webkit-box;
-			display: -webkit-flex;
-			display: -moz-box;
-			display: -ms-flexbox;
-			display: flex;
-			-webkit-flex-direction: column;
-			-moz-flex-direction: column;
-			-ms-flex-direction: column;
-			-o-flex-direction: column;
-			flex-direction: column;
-			-ms-align-items: center;
-			align-items: center;
-			justify-content: center;
-		}
-
-		.container-contact100 {
-			width: 100%;
-			min-height: 100vh;
-			display: -webkit-box;
-			display: -webkit-flex;
-			display: -moz-box;
-			display: -ms-flexbox;
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: center;
-			align-items: center;
-			padding: 15px;
-		}
-	</style>
 </head>
 
-<body>
-
-
-
+<body style="background-color: #f4f4f4;">
+	<!-- Navigation   -->
+	<!--banner-->
+	<div class="banner-top">
+		<div class="">
+			<h1>กล้อง</h1>
+			<em></em>
+		</div>
+	</div>
 	<!--content-->
 	<div class="content">
 		<div class="container">
@@ -248,102 +46,172 @@
 					<div class="container-contact100 ">
 						<div class="wrap-contact100">
 							<div class="contact100-form">
-								<span class="contact100-form-title">
-									Create Post
-								</span>
-								<label class="label-input100">Post Name</label>
-								<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
-									<input id="email" class="input100" type="text" name="email" placeholder="Eg. example@email.com">
-								</div>
-								<label class="label-input100">Brand or trademark</label>
-								<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
-									<input id="email" class="input100" type="text" name="email" placeholder="Eg. example@email.com">
-									<span class="focus-input100"></span>
-								</div>
-								<label class="label-input100">Purity and Weight</label>
-								<div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Type first name">
-									<input id="first-name" class="input100" type="text" name="first-name" placeholder="Purity">
-									<span class="focus-input100"></span>
-								</div>
-								<div class="wrap-input100 rs2-wrap-input100 validate-input" data-validate="Type last name">
-									<input class="input100" type="text" name="last-name" placeholder="Weight">
-									<span class="focus-input100"></span>
-								</div>
-								<label class="label-input100">Category</label>
-								<div class="wrap-input100 validate-input">
-									<select class="input100" type="text" name="pawnerPostCategory" required="required">
-										<option>Gold ornament</option>
-										<option>Fine Gold such as 18k, 14k</option>
-										<option>Gold 96.5 %</option>
-										<option>Gold bars 96.5 %</option>
-										<option>Gold bars 99.99 %</option>
-										<option>Prima Gold, Gold Master</option>
-										<option>Silver</option>
-										<option>Amulet frame</option>
-										<option>Platinum</option>
-										<option>Others</option>
-									</select>
-								</div>
-								<label class="label-input100">Description</label>
-								<div class="wrap-input100 validate-input" data-validate="Message is required">
-									<textarea id="message" class="input100" name="message" placeholder="Write us a message(optional) "></textarea>
-									<span class="focus-input100"></span>
-								</div>
-								<div class="container-contact100-form-btn">
-									<button class="contact100-form-btn">
-										Send Message
-									</button>
-								</div>
-							</div>
-							<!-- Picture -->
-							<div class="contact100-more flex-col-c-m" style="background-image: url('img/bgIndex.jpg');">
-								<div class="flex-w size1 p-b-47">
-									<div class="txt1 p-r-25">
-										<span class="lnr lnr-map-marker"></span>
+								
+									<input type="hidden" name="pawnerPostId" />
+									<input type="hidden" name="pawnerId.pawnerId" />
+									<input type="hidden" name="pawnerPostItemType" value="Laptop" />
+									<div class="wrap-input100 validate-input"
+										data-validate="Valid email is required: ex@abc.xyz">
+										<input class="input100" type="text" name="pawnerPostName"
+											placeholder="ชื่อสินค้าที่ต้องการจำนำ" required="required" pattern="ก-ฮ">
+									</div>
+									<div class="wrap-input100 validate-input"
+										style="margin-top: 15px;">
+										<select class="input100" name="pawnerPostBrand"
+											required="required">
+											<option>ยี่ห้อสินค้า</option>
+											<option>Canon</option>
+											<option>Canon</option>
+											<option>Fuji Film</option>
+											<option>Nikon</option>
+											<option>Olympus</option>
+											<option>Samsung</option>
+											<option>Sony</option>
+											<option>Others</option>
+										</select>
+									</div>
+									<div class="wrap-input100 validate-input"
+										style="margin-top: 15px;" data-validate="Type first name">
+										<input class="input100" type="text" name="pawnerPostSerial"
+											placeholder="หมายเลขประจำเครื่อง"> <span
+											class="focus-input100"></span>
+									</div>
+									<div class="wrap-input100  validate-input"
+										style="margin-top: 15px;" data-validate="Type last name">
+										<input class="input100" type="text" name="pawnerPostModel"
+											placeholder="รุ่น"> <span class="focus-input100"></span>
+									</div>
+									<div class="wrap-input100 validate-input"
+										style="margin-top: 15px;">
+										<input class="input100" type="text"
+											name="pawnerPostTypeCamera" placeholder="ชนิดของกล้อง">
+										<span class="focus-input100"></span>
+									</div>
+									<div class="wrap-input100 validate-input"
+										style="margin-top: 15px;">
+										<input class="input100" type="text" name="pawnerPostCameraLen"
+											placeholder="ชนิดของเลนส์"> <span
+											class="focus-input100"></span>
+									</div>
+									<div style="margin-top: 15px; width: 100%">
+										<span style="font-size: 14px; margin-top: 15px">ปีที่ซื้อสินค้า</span>
+										<div class="wrap-input100 validate-input"
+											data-validate="Valid email is required: ex@abc.xyz">
+											<input class="input100" type="date" name="pawnerPostPurchase"
+												placeholder="ปีที่ซื้อ"> <span
+												class="focus-input100"></span>
+										</div>
+									</div>
+									<!-- ------------------------upload image----------------------------  -->
+									<div style="margin-top: 15px; width: 100%">
+										<span style="font-size: 14px;">ลงรูปภาพประกอบการจำนำ</span>
+										<div class="wrap-input100 " style="border: none;">
+											<div class="box-img-list">
+												<div class="box box-img-1" style="display: block">
+													<div class="box-img-thumb">
+														<div class="upload-options js--image-preview"
+															id="img-pic-1">
+															<label> <input type="file" class="image-upload"
+																accept="image/*" name="files" />
+															</label>
+														</div>
+													</div>
+												</div>
+												<div class="box box-img-2">
+													<div class="box-img-thumb">
+														<div class="upload-options js--image-preview"
+															id="img-pic-2">
+															<label> <input type="file" class="image-upload"
+																accept="image/*" name="files" />
+															</label>
+														</div>
+													</div>
+												</div>
+												<div class="box box-img-3">
+													<div class="box-img-thumb">
+														<div class="upload-options js--image-preview"
+															id="img-pic-3">
+															<label> <input type="file" class="image-upload"
+																accept="image/*" name="files" />
+															</label>
+														</div>
+													</div>
+												</div>
+												<div class="box box-img-4">
+													<div class="box-img-thumb">
+														<div class="upload-options js--image-preview"
+															id="img-pic-4">
+															<label> <input type="file" class="image-upload"
+																accept="image/*" name="files" />
+															</label>
+														</div>
+													</div>
+												</div>
+												<div class="box box-img-5">
+													<div class="box-img-thumb">
+														<div class="upload-options js--image-preview"
+															id="img-pic-5">
+															<label> <input type="file" class="image-upload"
+																accept="image/*" name="files" />
+															</label>
+														</div>
+													</div>
+												</div>
+												<div class="box box-img-6">
+													<div class="box-img-thumb">
+														<div class="upload-options js--image-preview"
+															id="img-pic-6">
+															<label> <input type="file" class="image-upload"
+																accept="image/*" name="files" />
+															</label>
+														</div>
+													</div>
+												</div>
+												<span class="clear-trash d-flex"> <i class="mr-auto">ใส่รูปได้สูงสุด
+														6 รูป</i><i class="clear-img fas fa-trash-alt"> ลบรูป</i>
+												</span>
+											</div>
+										</div>
 									</div>
 
-									<div class="flex-col size2">
-										<span class="txt1 p-b-20">
-											Address
-										</span>
-
-										<span class="txt2">
-											Mada Center 8th floor, 379 Hudson St, New York, NY 10018 US
-										</span>
+									<div class="wrap-input100 validate-input"
+										data-validate="Message is required">
+										<textarea class="input100" name="pawnerPostDescription"
+											placeholder="รายละเอียดสินค้าเพิ่มเติม"></textarea>
+										<span class="focus-input100"></span>
 									</div>
-								</div>
-
-								<div class="dis-flex size1 p-b-47">
-									<div class="txt1 p-r-25">
-										<span class="lnr lnr-phone-handset"></span>
+									<div class="wrap-input100 validate-input"
+										data-validate="Valid email is required: ex@abc.xyz">
+										<input class="input100" type="text" name="pawnshopPostPrice"
+											placeholder="ราคาที่ต้องการขายสินค้า">
 									</div>
-
-									<div class="flex-col size2">
-										<span class="txt1 p-b-20">
-											Lets Talk
-										</span>
-
-										<span class="txt3">
-											+1 800 1236879
-										</span>
+									<div class="form-group-post float-left">
+										<ul>
+											<li>
+												<div style="font-size: 14.5px; font-weight: inherit;">
+													<input type="checkbox" name="pawnerPostBattery" value="yes" />
+													Battery charger
+												</div>
+											</li>
+											<li>
+												<div style="font-size: 14.5px; font-weight: inherit;">
+													<input type="checkbox" name="pawnerPostWarranty"
+														value="yes" /> ประกันสินค้า
+												</div>
+											</li>
+											<li>
+												<div style="font-size: 14.5px; font-weight: inherit;">
+													<input type="checkbox" required="required">
+													ฉันยอมรับและตกลง <strong>เงือนไขการใช้งาน</strong>
+													ของระบบบุญยง
+												</div>
+											</li>
+										</ul>
 									</div>
-								</div>
-
-								<div class="dis-flex size1 p-b-47">
-									<div class="txt1 p-r-25">
-										<span class="lnr lnr-envelope"></span>
+									<div class="container-contact100-form-btn">
+										<button type="submit" class="contact100-form-btn">
+											ยืนยัน</button>
 									</div>
-
-									<div class="flex-col size2">
-										<span class="txt1 p-b-20">
-											General Support
-										</span>
-
-										<span class="txt3">
-											contact@example.com
-										</span>
-									</div>
-								</div>
 							</div>
 						</div>
 					</div>
@@ -351,6 +219,136 @@
 			</div>
 		</div>
 	</div>
+
+	<script src="js/upimages.js"></script>
+	<script>
+		$(document).ready(function() {
+
+			$('#img-pic-1').click(function() {
+				$('.box-img-2').css("display", "block");
+			});
+
+			$('#img-pic-2').click(function() {
+				$('.box-img-3').css("display", "block");
+			});
+			$('#img-pic-3').click(function() {
+				$('.box-img-4').css("display", "block");
+			});
+			$('#img-pic-4').click(function() {
+				$('.box-img-5').css("display", "block");
+			});
+			$('#img-pic-5').click(function() {
+				$('.box-img-6').css("display", "block");
+			});
+
+			$('.clear-img').click(function() {
+				for (let i = 6; i > 1; i--) {
+					$('.box-img-' + i).css("display", "none");
+				}
+				$('.js--image-preview').css("background-image", "")
+				$('.image-upload').val('');
+			});
+		});
+		function initImageUpload(box) {
+			let uploadField = box.querySelector('.image-upload');
+
+			uploadField.addEventListener('change', getFile);
+
+			function getFile(e) {
+				let file = e.currentTarget.files[0];
+				checkType(file);
+			}
+
+			function previewImage(file) {
+				let thumb = box.querySelector('.js--image-preview'), reader = new FileReader();
+
+				reader.onload = function() {
+					thumb.style.backgroundImage = 'url(' + reader.result + ')';
+				}
+				reader.readAsDataURL(file);
+				thumb.className += ' js--no-default';
+			}
+
+			function checkType(file) {
+				let imageType = /image.*/;
+				if (!file.type.match(imageType)) {
+					throw 'Datei ist kein Bild';
+				} else if (!file) {
+					throw 'Kein Bild gewählt';
+				} else {
+					previewImage(file);
+				}
+			}
+
+		}
+
+		// initialize box-scope
+		var boxes = document.querySelectorAll('.box');
+
+		for (let i = 0; i < boxes.length; i++) {
+			if (window.CP.shouldStopExecution(1)) {
+				break;
+			}
+			let box = boxes[i];
+			initDropEffect(box);
+			initImageUpload(box);
+		}
+		window.CP.exitedLoop(1);
+
+		/// drop-effect
+		function initDropEffect(box) {
+			let area, drop, areaWidth, areaHeight, maxDistance, dropWidth, dropHeight, x, y;
+
+			// get clickable area for drop effect
+			area = box.querySelector('.js--image-preview');
+			area.addEventListener('click', fireRipple);
+
+			function fireRipple(e) {
+				area = e.currentTarget
+				// create drop
+				if (!drop) {
+					drop = document.createElement('span');
+					drop.className = 'drop';
+					this.appendChild(drop);
+				}
+				// reset animate class
+				drop.className = 'drop';
+
+				// calculate dimensions of area (longest side)
+				areaWidth = getComputedStyle(this, null).getPropertyValue(
+						"width");
+				areaHeight = getComputedStyle(this, null).getPropertyValue(
+						"height");
+				maxDistance = Math.max(parseInt(areaWidth, 10), parseInt(
+						areaHeight, 10));
+
+				// set drop dimensions to fill area
+				drop.style.width = maxDistance + 'px';
+				drop.style.height = maxDistance + 'px';
+
+				// calculate dimensions of drop
+				dropWidth = getComputedStyle(this, null).getPropertyValue(
+						"width");
+				dropHeight = getComputedStyle(this, null).getPropertyValue(
+						"height");
+
+				// calculate relative coordinates of click
+				// logic: click coordinates relative to page - parent's position relative to page - half of self height/width to make it controllable from the center
+				x = e.pageX - this.offsetLeft - (parseInt(dropWidth, 10) / 2);
+				y = e.pageY - this.offsetTop - (parseInt(dropHeight, 10) / 2)
+						- 30;
+
+				// position drop and animate
+				drop.style.top = y + 'px';
+				drop.style.left = x + 'px';
+				drop.className += ' animate';
+				e.stopPropagation();
+
+			}
+		}
+
+		//# sourceURL=pen.js
+	</script>
 </body>
 
 </html>

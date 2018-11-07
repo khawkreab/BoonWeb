@@ -95,7 +95,7 @@ tr:hover {
 							<th class="tha">รูป</th>
 							<th class="tha">ชื้อโพส</th>
 							<th class="tha">ชนิดสินค้า</th>
-							<th class="tha">โรงรับจำนำที่ซื้อ</th>
+							<th class="tha">โรงรับจำนำ</th>
 							<th class="tha">ราคา</th>
 							<th class="tha">พิม</th>
 						</tr>
@@ -117,6 +117,8 @@ tr:hover {
 								<td><a href="#" id="${pawnshopPost.pawnshopPostId}"
 									onClick="select(this); return false;"
 									data-cart='{"pawnshopPostId":"${order.pawnshopPostId.pawnshopId.pawnshopName}",
+								"orderDateIn":"${ order.orderItemDateIn }",
+								"pawnerFirstname":"${order.pawnerId.pawnerFirstname}","pawnerLastname":"${order.pawnerId.pawnerLastname}",
 								"pawnshopPostName":"${order.pawnshopPostId.pawnshopPostName }","pawnshopPostDate":"${order.pawnshopPostId.pawnshopPostDate}",
 								"pawnshopPostItemType":"${order.pawnshopPostId.pawnshopPostItemType}","pawnshopPostBrand":"${order.pawnshopPostId.pawnshopPostBrand}",
 								"panwePostRemote":"${order.pawnshopPostId.pawnshopPostRemote}","pawnshopPostBattery":"${order.pawnshopPostId.pawnshopPostBattery}",
@@ -130,7 +132,12 @@ tr:hover {
 								"pawnshopPostTypeCamera":"${order.pawnshopPostId.pawnshopPostTypeCamera}","pawnshopPostWarranty":"${order.pawnshopPostId.pawnshopPostWarranty}",
 								"pawnshopPostWeigh":"${order.pawnshopPostId.pawnshopPostWeigh}","pawnshopPostRam":"${order.pawnshopPostId.pawnshopPostRam}",
 								"pawnshopPostPure":"${order.pawnshopPostId.pawnshopPostPure}","pawnshopPostPrice":"${order.pawnshopPostId.pawnshopPostPrice}",
-								"pawnshopPostPicture":"${order.pawnshopPostId.pawnshopPostPicture}"
+								"pawnshopPostPicture":"${order.pawnshopPostId.pawnshopPostPicture}",
+								"pawnShopname":"${order.pawnshopPostId.pawnshopId.pawnshopName}",
+								"pawnshopProvince":"${order.pawnshopPostId.pawnshopId.pawnshopProvince}",
+								"pawnshopPostcodes":"${order.pawnshopPostId.pawnshopId.pawnshopPostcodes}",
+								"pawnshopParish":"${order.pawnshopPostId.pawnshopId.pawnshopParish}",
+								"pawnshopTel":"${order.pawnshopPostId.pawnshopId.pawnshopTel}"
 								}'>
 										<i class="far fa-file-alt"></i>
 								</a></td>
@@ -149,7 +156,9 @@ tr:hover {
 
 			var cart = {}
 			cart = JSON.parse(e.getAttribute('data-cart'))
-
+			
+			$("#pawnerName").text(cart.pawnerFirstname +" "+ cart.pawnerLastname)
+			$("#orderDateIn").text(cart.orderDateIn)
 			$("#pawnshopPostName").text(cart.pawnshopPostName)
 			$("#pawnshopPostId").text(cart.pawnshopPostId)
 			$("#pawnshopPostItemType").text(cart.pawnshopPostItemType)
@@ -178,86 +187,81 @@ tr:hover {
 			$("#pawnshopPostWarranty").text(cart.pawnshopPostWarranty)
 			$("#pawnshopPostWeigh").text(cart.pawnshopPostWeigh)
 			$("#pawnshopPostPrice").text(cart.pawnshopPostPrice)
-			$("#pawnshopPostPicture")
-					.append(
-							'<img style="width:200px;height:200px;" src="images/imageUpload/'+cart.pawnshopPostPicture+'">')
+			
+			/* pawnshop */
+			$("#pawnShopname").text(cart.pawnShopname)
+			$("#pawnshopProvince").text(cart.pawnshopProvince)
+			$("#pawnshopPostcodes").text(cart.pawnshopPostcodes)
+			$("#pawnshopParish").text(cart.pawnshopParish)
+			$("#pawnshopTel").text(cart.pawnshopTel)
+			
+		/* 	var originalContents = document.documentElement.innerHTML; */
 
-			console.log("this show pawnshopPostName => "
-					+ cart.pawnshopPostName)
+			document.documentElement.innerHTML = document
+					.getElementById('printable').innerHTML;
 			window.print();
+			document.body.innerHTML = originalContents;
 		}
 	</script>
 
-	<div class="printable">
+	<div id="printable">
 		<div class="popup" data-popup="popup">
 			<div>
 				<p style="font-size: 32px; border-bottom: 1px solid;">ใบชำระของหลุดจำนำ</p>
-				<div class="row">
-					<div class="col-sm-6">
-						<p>ที่อยู๋โรงรับจำนำ</p>
-						<p>ในนี้ใสที่อยู๋โรงรับจำนำที่ get from database</p>
+					<div style="text-align: right;">
+						<h5>ที่อยู๋โรงรับจำนำ</h5>
+						<i id="pawnShopname"></i><br>
+						<i id="pawnshopParish"></i> <i id="pawnshopProvince"></i>  <i id="pawnshopPostcodes">  </i><br>
+						โทร. <i id="pawnshopTel"></i>
 					</div>
-					<div class="col-sm-6">
-						<table id="meta">
+					<div>
+						<table style="width: 100%; margin:30px 0;">							
 							<tr>
-								<td>ชื่อเจ้าของโพส</td>
-								<td>
-									<div id="pawnshopPostId"></div>
-								</td>
+								<td>ผู้ซื้อ <i id="pawnerName"></i></td>
 							</tr>
 							<tr>
-								<td>ชื่อโพส</td>
-								<td>
-									<div id="pawnshopPostName"></div>
-								</td>
-							</tr>
-							<tr>
-								<td>วันที่โพส</td>
-								<td>
-									<div id="pawnshopPostDate"></div>
-								</td>
+								<td>สั่งซื่อวันที่<i id="orderDateIn"></i></td>
 							</tr>
 						</table>
 					</div>
-				</div>
-				<table id="items">
+				<table
+				style="width: 100%; text-align: center; border-spacing: 0px; border-color: #f80000; border-width: 0; border-left: 0; border-right: 0; border-bottom: 0; border-top: 0;"
+				border="1">
 					<tr>
-						<th>ชนิดของสินค้า</th>
+						<th>รายการสินค้า</th>
 						<th>รายละเอียด</th>
 						<th>จำนวน</th>
-						<th>ราคาสินค้า</th>
+						<th>ราคา (บาท)</th>
 					</tr>
 					<tr class="item-row">
 						<td class="item-name">
-							<p id="pawnshopPostItemType">pawnshopPostItemType</p>
+							<p id="pawnshopPostName"></p>
 						</td>
 						<td class="description">
-							<ul>
-								<li id="panwePostRemote"></li>
-								<li id="pawnshopPostBattery"></li>
-								<li id="pawnshopPostBracelet"></li>
-								<li id="pawnshopPostCategory"></li>
-								<li id="pawnshopPostBrand"></li>
-								<li id="pawnshopPostCameraLen"></li>
-								<li id="pawnshopPostCapacity"></li>
-								<li id="pawnshopPostCase"></li>
-								<li id="pawnshopPostCategory"></li>
-								<li id="pawnshopPostDescription"></li>
-								<li id="pawnshopPostDevice"></li>
-								<li id="pawnshopPostDiamond"></li>
-								<li id="pawnshopPostHarddisk"></li>
-								<li id="pawnshopPostModel"></li>
-								<li id="pawnshopPostPackage"></li>
-								<li id="pawnshopPostProduction"></li>
-								<li id="pawnshopPostPure"></li>
-								<li id="pawnshopPostSerial"></li>
-								<li id="pawnshopPostRam"></li>
-								<li id="pawnshopPostSize"></li>
-								<li id="pawnshopPostStatus"></li>
-								<li id="pawnshopPostTypeCamera"></li>
-								<li id="pawnshopPostWarranty"></li>
-								<li id="pawnshopPostWeigh"></li>
-							</ul>
+								<i id="panwePostRemote"></i>
+								<i id="pawnshopPostBattery"></i>
+								<i id="pawnshopPostBracelet"></i>
+								<i id="pawnshopPostCategory"></i>
+								<i id="pawnshopPostBrand"></i>
+								<i id="pawnshopPostCameraLen"></i>
+								<i id="pawnshopPostCapacity"></i>
+								<i id="pawnshopPostCase"></i>
+								<i id="pawnshopPostCategory"></i>
+								<i id="pawnshopPostDescription"></i>
+								<i id="pawnshopPostDevice"></i>
+								<i id="pawnshopPostDiamond"></i>
+								<i id="pawnshopPostHarddisk"></i>
+								<i id="pawnshopPostModel"></i>
+								<i id="pawnshopPostPackage"></i>
+								<i id="pawnshopPostProduction"></i>
+								<i id="pawnshopPostPure"></i>
+								<i id="pawnshopPostSerial"></i>
+								<i id="pawnshopPostRam"></i>
+								<i id="pawnshopPostSize"></i>
+								<i id="pawnshopPostStatus"></i>
+								<i id="pawnshopPostTypeCamera"></i>
+								<i id="pawnshopPostWarranty"></i>
+								<i id="pawnshopPostWeigh"></i>
 						</td>
 						<td>
 							<p>1</p>
@@ -266,18 +270,12 @@ tr:hover {
 							<p id="pawnshopPostPrice"></p>
 						</td>
 					</tr>
-					<tr>
-						<td colspan="5">
-							<p>รูปสินค้า</p> <span id="pawnshopPostPicture"></span>
-						</td>
-					</tr>
 				</table>
-				<div id="terms">
-					<h5></h5>
-					<p>
-						<img src="img/logos/Artboard.png" style="height: 25px;" />b2pawn.com
-					</p>
-				</div>
+				<div style="text-align: center;margin-top:50px;">
+
+				<img src="img/logos/Artboard.png" style="height: 25px;" />
+				<p>b2pawn.com</p>
+			</div>
 			</div>
 		</div>
 
