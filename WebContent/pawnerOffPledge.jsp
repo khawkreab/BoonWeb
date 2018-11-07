@@ -14,7 +14,7 @@
 <head>
 <link rel="icon" href="img/logos/Artboard.png">
 
-<title>Boonyong</title>
+<title>รายการของหลุดจำนำ</title>
 
 <%-- <script type="text/javascript">
 	var checkLogin = <%= session.getAttribute("isLogin") %>;
@@ -53,14 +53,15 @@
 				</span>
 				</a>
 				<div class="card-body">
+				<form:form method="post" id="form">
 					<span class="card-body-title"><a
 						href="post-item-detail.html?item=${pawnshopPosts.pawnshopPostId}">
 							${pawnshopPosts.pawnshopPostName}
 							${pawnshopPosts.pawnshopPostBrand}</a></span> <span
 						class="card-body-location"><i class="fas fa-map-marker-alt"></i>
-						${pawnshopPosts.pawnshopId.pawnshopProvince }</span> <span
-						class="card-body-price">฿
-						${pawnshopPosts.pawnshopPostPrice}</span>
+						${pawnshopPosts.pawnshopId.pawnshopProvince }</span> 
+						<span class="card-body-price" >${pawnshopPosts.pawnshopPostPrice} บาท</span>
+					</form:form>
 				</div>
 			</div>
 
@@ -68,12 +69,11 @@
 	</div>
 
 
-	<jsp:include page="footer.jsp"></jsp:include>
+	<jsp:include page="footer.jsp"></jsp:include> 
 	
 	
 	
-		<script>
-
+	<script>
 		$(document).ready(function() {
 			var card = $('.card').length;
 
@@ -84,6 +84,5 @@
 
 		});
 	</script>
-	
 </body>
 </html>

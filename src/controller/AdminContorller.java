@@ -114,10 +114,57 @@ public class AdminContorller {
 	@RequestMapping("/deletePawner")
 	public String deletePawner(HttpServletRequest request) { 
 		pmService.delete(Long.valueOf(request.getParameter("id")));
-		return "redirect:admin_listpawner.html";
+		return "redirect:admin-list-pawner.html";
 
 	}
+	
+	@RequestMapping("/updatePawnerState")
+	public String editPawner(HttpServletRequest request) {
+		long paramId = Long.parseLong(request.getParameter("idPawner"));
+		
+		try {
+			pmService.updatePawnerState(paramId, "Pawner");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return "redirect:admin-list-pawner.html";
+	}
+	
+	@RequestMapping("/banPawnerState")
+	public String editBanPawner(HttpServletRequest request) {
+		long paramId = Long.parseLong(request.getParameter("idPawner"));
+		
+		try {
+			pmService.updatePawnerState(paramId, "Banned");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return "redirect:admin-list-pawner.html";
+	}
 
+	@RequestMapping("/updatePawnshopState")
+	public String editPawnshop(HttpServletRequest request) {
+		long paramId = Long.parseLong(request.getParameter("idPawnshop"));
+		
+		try {
+			pawnshopServ.updatePawnshopState(paramId, "Pawnshop");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return "redirect:admin-list-pawnshop.html";
+	}
+	
+	@RequestMapping("/banPawnshopState")
+	public String editBanPawnshop(HttpServletRequest request) {
+		long paramId = Long.parseLong(request.getParameter("idPawnshop"));
+		
+		try {
+			pawnshopServ.updatePawnshopState(paramId, "Banned");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return "redirect:admin-list-pawnshop.html";
+	}
 	@RequestMapping("/admin-index")
 	public ModelAndView adminIndex(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		ModelAndView mv = new ModelAndView("adminIndex.jsp");

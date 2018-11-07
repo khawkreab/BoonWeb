@@ -52,7 +52,8 @@
 											<input type="hidden" name="pawnerId.pawnerId" />
 											<input type="hidden" name="pawnerPostItemType" value="Laptop" />
 											<div class="wrap-input100 validate-input">
-												<input class="input100" type="text" name="pawnerPostName" placeholder="ชื่อสินค้าที่ต้องการจำนำ" required="required" pattern="[^'@.,!#$?:^%&*+/=()\\_`{|}~-]{1,30}">
+												<input class="input100" type="text" name="pawnerPostName" placeholder="ชื่อสินค้าที่ต้องการจำนำ" 
+												required="required" pattern="[^'@.,!#$?:^%&*+/=()\\_`{|}~-]{1,30}" title="ใช้เป็นตัวอักษร ภาษาไทย หรือ อังกฤษ เท่านั้น ความยาวไม่เกิน 30 ตัวอักษร และ ต้องไม่ใช้ อักษรพิเศษ">
 											</div>
 											<div class="wrap-input100 validate-input" style="margin-top:15px;">
 												<select class="input100" name="pawnerPostBrand" required="required">
@@ -68,15 +69,18 @@
 												</select>
 											</div>
 											<div class="wrap-input100 validate-input" style="margin-top:15px;" data-validate="Type first name">
-												<input class="input100" type="text" name="pawnerPostSerial" placeholder="หมายเลขประจำเครื่อง" required="required" pattern="[^'ก-ฮ@.,!#$?:^%&*+/=()\\_`{|}~-]{1,20}">
+												<input class="input100" type="text" name="pawnerPostSerial" placeholder="หมายเลขประจำเครื่อง" required="required" 
+												pattern="[^'ก-ฮ@.,!#$?:^%&*+/=()\\_`{|}~-]{1,20}" title="ห้ามใช้ อักษรพิเศษ และ ภาษาไทย">
 												<span class="focus-input100"></span>
 											</div>
 											<div class="wrap-input100  validate-input" style="margin-top:15px;" data-validate="Type last name">
-												<input class="input100" type="text" name="pawnerPostModel" placeholder="รุ่น" required="required" pattern="[^'ก-ฮ@.,!#$?:^%&*+/=()\\_`{|}~-]{1,20}">
+												<input class="input100" type="text" name="pawnerPostModel" placeholder="รุ่น" required="required"
+												 pattern="[^'ก-ฮ@.,!#$?:^%&*+/=()\\_`{|}~-]{1,20}" title="ห้ามใช้ อักษรพิเศษ">
 												<span class="focus-input100"></span>
 											</div>
 											<div class="wrap-input100 validate-input" data-validate="Type first name"style="margin-top:15px;">
-												<input class="input100" type="text" name="pawnerPostSize" placeholder="ขนาดหน้าจอ" required="required" pattern="[^'a-zA-Zก-ฮ@,!#$?:^%&*+/=()\\_`{|}~-]{1,5}">
+												<input class="input100" type="text" name="pawnerPostSize" placeholder="ขนาดหน้าจอ" required="required" 
+												pattern="[^'a-zA-Zก-ฮ@,!#$?:^%&*+/=()\\_`{|}~-]{1,5}" title="ตัวเลขเท่านั้น 0-9 หรือใช้ จุดทศนิยม เช่น  13.5">
 												<span class="focus-input100"></span>
 											</div>
 											<div class="wrap-input100 rs1-wrap-input100 validate-input" style="margin-top:15px;" data-validate="Type first name">
@@ -127,7 +131,7 @@
 														<div class="upload-options js--image-preview"
 															id="img-pic-1">
 															<label> <input type="file" class="image-upload"
-																accept="image/*" name="files" />
+																accept="image/*" name="files" required="required"/>
 															</label>
 														</div>
 													</div>

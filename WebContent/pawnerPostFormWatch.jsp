@@ -58,7 +58,10 @@
 										value="Watch" />
 									<div class="wrap-input100 validate-input"
 										data-validate="Valid email is required: ex@abc.xyz">
-										<input class="input100" type="text" name="pawnerPostName" placeholder="ชื่อสินค้าที่ต้องการจำนำ" required="required" pattern="[^'@.,!#$?:^%&*+/=()\\_`{|}~-]{1,30}">
+										<input class="input100" type="text" name="pawnerPostName" 
+										placeholder="ชื่อสินค้าที่ต้องการจำนำ" required="required" 
+										pattern="[^'@.,!#$?:^%&*+/=()\\_`{|}~-]{1,30}"
+										title="ใช้เป็นตัวอักษร ภาษาไทย หรือ อังกฤษ เท่านั้น ความยาวไม่เกิน 30 ตัวอักษร และ ต้องไม่ใช้ อักษรพิเศษ">
 									</div>
 									<div class="wrap-input100 validate-input"style="margin-top:15px;">
 										<select class="input100" name="pawnerPostBrand"
@@ -134,7 +137,7 @@
 														<div class="upload-options js--image-preview"
 															id="img-pic-1">
 															<label> <input type="file" class="image-upload"
-																accept="image/*" name="files" />
+																accept="image/*" name="files" required="required" />
 															</label>
 														</div>
 													</div>

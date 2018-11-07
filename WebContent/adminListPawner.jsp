@@ -106,18 +106,11 @@
               <!-- Sidebar scroll-->
               <div class="scroll-sidebar">
                   <!-- Sidebar navigation-->
-                  <nav class="sidebar-nav">
-                      <ul id="sidebarnav">
-                          <li class="nav-devider"></li>
+                 <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        
 
-                         <li class="nav-label">DashBoard</li>                     
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-bar-chart"></i><span class="hide-menu">Charts</span></a>
-                            <ul aria-expanded="false" class="collapse">
-
-                                <li><a href="admin-dashboard.html">Board</a></li>
-
-                            </ul>
-                        </li>
+                       
                         <li class="nav-label">List All</li>
 
                         <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-table"></i><span class="hide-menu">Tables</span></a>
@@ -130,10 +123,8 @@
                         </li>
 
 
-                              </ul>
-                          </li>
-                      </ul>
-                  </nav>
+                       </ul>
+                </nav>
                   <!-- End Sidebar navigation -->
               </div>
               <!-- End Sidebar scroll-->
@@ -156,6 +147,9 @@
 											<th>Last Name</th>
 											<th>E-mail</th>
 											<th>Password</th>
+											<th>Status</th>
+											<th>Ban</th>
+											<th>UnBan</th>
 											<th>Remove</th>
 										</tr>
 									</thead>
@@ -167,7 +161,10 @@
 												<td>${pm.pawnerLastname}</td>
 												<td>${pm.pawnerEmail}</td>
 												<td>${pm.pawnerPassword}</td>
-												<td><a href="deletePawner.html?id=${pm.pawnerId}">Remove</a></td>
+												<td>${pm.pawnerState}</td>
+												<td><a href="banPawnerState.html?idPawner=${pm.pawnerId}" class="btn btn-sm btn-warning">Ban</a></td>
+												<td><a href="updatePawnerState.html?idPawner=${pm.pawnerId}" class="btn btn-sm btn-primary">UnBan</a></td>
+												<td><a href="deletePawner.html?id=${pm.pawnerId}" class="btn btn-sm btn-red">Remove</a></td>
 
 											</tr>
 										</tbody>

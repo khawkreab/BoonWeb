@@ -6,6 +6,7 @@
  -->
 <!--//footer-->
 <div class="footer">
+<!--  
 	<div class="footer-middle">
 		<div class="container flex-wrap">
 			<div class="col-md-3 footer-middle-in">
@@ -13,7 +14,6 @@
 				<p>Suspendisse sed accumsan risus. Curabitur rhoncus, elit vel
 					tincidunt elementum, nunc urna tristique nisi, in interdum libero
 					magna tristique ante. adipiscing varius. Vestibulum dolor lorem.</p>
-				<!-- <p>โปรเจคนี้ จัดทำขึ้นเพื่อหวังคะแนนให้ผ่านในรายวิชา Senior Project1 ทางนักศึกษาหวังว่า อาจารย์ ทิว หงษ์ทอง จะเมตตาปราณีในการให้คะแนน และให้ S กับกลุ่ม บุญยงด้วยเทอน</p> -->
 			</div>
 
 			<div class="col-md-3 footer-middle-in">
@@ -56,9 +56,9 @@
 			<div class="clearfix"></div>
 		</div>
 	</div>
+	-->
 	<div class="footer-bottom">
 		<div class="container">
-
 			<p class="footer-class">
 				&copy; 2018 Bounyong. All Rights Reserved | Design by <a
 					href="#" target="_blank">UBfor</a>
