@@ -19,7 +19,7 @@
 %>
 </head>
 <body>
-	<jsp:include page="navbar.jsp" />
+
 
 	<!--banner-->
 	<div class="banner-top">
@@ -142,27 +142,28 @@
 
 								<!-- Electronic camera com telephone -->
 								<c:if test="${pawnshopPost.pawnshopPostBattery != null}">
-									<li class="col-md-6"> แบตเตอรี่ <span class="fas fa-check"
+									<li class="col-md-6">แบตเตอรี่ <span class="fas fa-check"
 										aria-hidden="true"> </span></li>
 								</c:if>
 
 								<!-- Electronic tv -->
 								<c:if test="${pawnshopPost.pawnshopPostRemote != null}">
-									<li class="col-md-6"> รีโมท <span class="fas fa-check"
+									<li class="col-md-6">รีโมท <span class="fas fa-check"
 										aria-hidden="true"> </span></li>
 								</c:if>
 
 								<!-- Watch -->
 								<c:if test="${pawnshopPost.pawnshopPostCase != null}">
 									<c:if test="${pawnshopPost.pawnshopPostPackage != null}">
-										<li class="col-md-6">กล่อง  <span class="fas fa-check"
-											aria-hidden="true"> </span> </li>
+										<li class="col-md-6">กล่อง <span class="fas fa-check"
+											aria-hidden="true"> </span>
+										</li>
 									</c:if>
 								</c:if>
 
 								<!-- Watch,Electronic -->
 								<c:if test="${pawnshopPost.pawnshopPostModel != null}">
-									<li class="col-md-6"> ประกัน  <span class="fas fa-check"
+									<li class="col-md-6">ประกัน <span class="fas fa-check"
 										aria-hidden="true"> </span></li>
 								</c:if>
 							</ul>
@@ -179,7 +180,8 @@
 					<div class="quantity">
 
 						<div class="quantity-select row">
-							<div class="text-orange">฿ ${pawnshopPost.pawnshopPostPrice} </div>
+							<div class="text-orange">฿
+								${pawnshopPost.pawnshopPostPrice}</div>
 							<div class="ml-auto">
 
 								<a href="#" id="${pawnshopPost.pawnshopPostId}"
@@ -239,14 +241,17 @@
 									<i id="cartNumberi"></i> ชิ้น)
 							</small></span>
 							<div class="d-flex small">
-								<span class="mr-auto">ยอดรวม</span> <span>฿ <i id="totalPrice"></i></span>
+								<span class="mr-auto">ยอดรวม</span> <span>฿ <i
+									id="totalPrice"></i></span>
 							</div>
 							<div class="d-flex h6">
-								<span class="mr-auto">ยอดรวมทั้งสิ้น</span> <span>฿ <i id="totalPriceFee"></i></span>
+								<span class="mr-auto">ยอดรวมทั้งสิ้น</span> <span>฿ <i
+									id="totalPriceFee"></i></span>
 							</div>
 							<div class="d-flex">
-								<span class="mr-auto"><a href="pawner-off-pledge.html" class="item-popup-continue">เลือกสินค้าต่อ</a></span>
-								<span class=""><a href="pawner-cart.html" class="item-popup-tocart">ไปยังตะกร้า</a></span>
+								<span class="mr-auto"><a href="pawner-off-pledge.html"
+									class="item-popup-continue">เลือกสินค้าต่อ</a></span> <span class=""><a
+									href="pawner-cart.html" class="item-popup-tocart">ไปยังตะกร้า</a></span>
 							</div>
 						</div>
 					</div>
@@ -256,7 +261,7 @@
 	</div>
 	<!-- -------------------------------------------------------------------------------------------------- -->
 
-
+	<jsp:include page="navbar.jsp" />
 	<!-- cart script -->
 	<script type="text/javascript">
 		var cart = {}
@@ -269,8 +274,8 @@
 			this.list.push(this.cart)
 			sessionStorage.setItem('carts', JSON.stringify(this.list))
 			this.check()
-			
-			console.log("this show => "+cart.pawnshopPostName)
+
+			console.log("this show => " + cart.pawnshopPostName)
 		}
 
 		function check() {
@@ -281,17 +286,21 @@
 				console.log("list legth => " + list.length)
 				if (list.length == null || list.length == 0) {
 					document.getElementById("cartNumber").style.display = "none";
+					document.getElementById("cartNumberlink").style.display = "none";
 				} else {
 					document.getElementById("cartNumber").style.display = "block";
+					document.getElementById("cartNumberlink").style.display = "block";
 					sessionStorage.setItem('pawnercartNumber', list.length)
 					document.getElementById("cartNumber").innerHTML = list.length
+					document.getElementById("cartNumberlink").innerHTML = list.length
 					document.getElementById("cartNumberi").innerHTML = list.length
 				}
-				
+
 				for ( var index in this.list) {
-					totalPrice += parseFloat(this.list[index].pawnshopPostPrice.replace(/\,/g,''), 10)
+					totalPrice += parseFloat(this.list[index].pawnshopPostPrice
+							.replace(/\,/g, ''), 10)
 				}
-				
+
 				document.getElementById("totalPrice").innerHTML = totalPrice
 				document.getElementById("totalPriceFee").innerHTML = totalPrice
 

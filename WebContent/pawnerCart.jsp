@@ -43,7 +43,7 @@ table {
 
 </head>
 <body>
-	<jsp:include page="navbar.jsp" />
+	
 	<!--banner-->
 	<div class="banner-top">
 		<div>
@@ -81,7 +81,7 @@ table {
 		</div>
 	</section>
 
-
+<jsp:include page="navbar.jsp" />
 	<!-- cart script  -->
 	<script>
 		var cart = {}
@@ -110,6 +110,7 @@ table {
 
 				if (list.length == null || list.length == 0) {
 					document.getElementById("cartNumber").style.display = "none";
+					document.getElementById("cartNumberlink").style.display = "none";
 					document.getElementById("comfirmOrder").style.display = "none";
 					document.getElementById("chechcarts").innerHTML = "ไม่มีรายการสินค้า"
 
@@ -134,6 +135,7 @@ table {
 				}
 			} else {
 				document.getElementById("cartNumber").style.display = "none";
+				document.getElementById("cartNumberlink").style.display = "none";
 				document.getElementById("comfirmOrder").style.display = "none";
 				document.getElementById("chechcarts").innerHTML = "ไม่มีรายการสินค้า"
 			}
