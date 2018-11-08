@@ -45,6 +45,13 @@ public class LoginCotroller {
 		return mv;
 	}
 	
+	@RequestMapping("/index")
+	public ModelAndView index() {
+		ModelAndView mv = new ModelAndView("index.jsp");
+		return mv;
+	}
+	
+	
 	@RequestMapping("/loginProcess")
 	public String login(HttpServletRequest request) {
 		
@@ -67,7 +74,7 @@ public class LoginCotroller {
 				request.getSession().setAttribute("username", pawner.getPawnerFirstname() + " " + pawner.getPawnerLastname());
 				request.getSession().setAttribute("email",pawner.getPawnerEmail());
 				request.getSession().setAttribute("pawnerState",pawner.getPawnerState());
-				return "redirect:pawner-index.html";
+				return "redirect:index.html";
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -84,7 +91,7 @@ public class LoginCotroller {
 				request.getSession().setAttribute("username", pawnshop.getPawnshopName());
 				request.getSession().setAttribute("email",pawnshop.getPawnshopEmail());
 				request.getSession().setAttribute("pawnshopState",pawnshop.getPawnshopState());
-				return "redirect:pawnshop-index.html";
+				return "redirect:index.html";
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

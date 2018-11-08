@@ -14,9 +14,12 @@
 <link href="vendor/font-awesome/css/fontawesome-all.min.css"
 	rel="stylesheet" type="text/css">
 
-<link rel="stylesheet" href="css/menu.css">
+<link rel="stylesheet" href="css/navbar.css">
 <link rel="stylesheet" href="css/customStyle.css">
 <link rel="stylesheet" href="css/animate.css">
+<link rel="stylesheet" href="css/login.css">
+<link rel="stylesheet" href="css/form.css">
+<link rel="stylesheet" href="css/banner.css">
 <!-- <link rel="stylesheet" href="css/sibling-fade.css"> -->
 
 
@@ -45,7 +48,7 @@
 			<div id="nav-custom-overlay"></div>
 			<nav id="nav-custom-fullscreen">
 				<ul class="flex d-inline-flex flex-wrap menu-icon">
-					<li class="menu-icon"><a href="#">หน้าหลัก</a></li>
+					<li class="menu-icon"><a href="index.html">หน้าหลัก</a></li>
 					<!-- ----------------------------if user has ban---------------------------------------- -->
 					<%
 						if (session.getAttribute("pawnerState").equals("Banned")) {
@@ -74,7 +77,8 @@
 			</nav>
 
 			<a id="nav-custom-toggle"> <span></span> <span></span> <span></span>
-			</a> <i id="cartNumber"></i>
+			 <i id="cartNumber" ></i>
+			</a>
 		</div>
 	</div>
 </div>
@@ -129,15 +133,25 @@
 <%
 	} else {
 %>
-<ul class="flex d-inline-flex" style="position:absolute; top:10px; right: 10px; list-style: none">
-	<li><a data-toggle="modal" data-target="#modalLogin"
-		class="nav-link " href="#">Login</a></li>
-	<li><a href="pawner-register-form.html" class="nav-link ">Register</a></li>
+<ul class="flex d-inline-flex"
+	style="position: absolute; top: 10px; right: 10px; list-style: none">
+	<li class="btn-linear btn-linear-two"><a data-toggle="modal"
+		data-target="#modalLogin" class="nav-link " href="#"><button
+				class="btn-ln">
+				เข้าสู่ระบบ
+				<div class="fill-two"></div>
+			</button></a></li>
+	<li class="btn-linear btn-linear-two"><a
+		href="pawner-register-form.html" class="nav-link "><button
+				class="btn-ln">
+				สมัครสมาชิก
+				<div class="fill-two"></div>
+			</button></a></li>
 </ul>
 <%
 	}
 %>
-<script src="js/menu.js"></script>
+<script src="js/navbar.js"></script>
 <script src="js/jquery.min.js"></script>
 <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
@@ -303,40 +317,67 @@
          </div>
      </nav>
   --%>
-<!------------------------------------------------ popup -------------------------------------------------->
+<!------------------------------------------------ pop-up login-------------------------------------------------->
 <div class="modal fade" id="modalLogin" role="dialog">
 	<div class="modal-dialog">
-		<div class="modal-content modal-login">
-			<div class="re-con">
-				<div class="row">
-					<div class="col-md-6 ">
-						<div class="form-login"
-							style="margin-top: 50px; margin-bottom: 60px;">
-							<h1 style="font-size: 32px; font-weight: 500;">ยินดีตอนรับ</h1>
-							<p class="Subhead-description" style="margin-bottom: 35px;">ระบบจำนำทางออนไลน์
-								จำนำง่ายจ่ายคล่องต้องบุญยง</p>
-							<form method="POST" action="loginProcess.html">
-								<div class="form-group">
-									<span style="font-weight: 500; color: #555;">อีเมลของคุณ</span>
-									<input class="post-login" name="email" required="required" />
-								</div>
-								<div class="form-group">
-									<span style="font-weight: 500; color: #555;">รหัสผ่าน</span> <input
-										type="password" class="post-login" name="password"
-										required="required" />
-								</div>
-								<div class="form-group">
-									<button type="submit" class="btn btn-sm btn-primary"
-										style="margin-right: 10px; font-size: 15px; background-color: #ff7f00; border-color: #9e9e9e00;">เข้าสู้ระบบ</button>
-									<button type="button" data-dismiss="modal"
-										class="btn btn-sm btn-default" style="font-size: 15px;">ยกเลิก</button>
-								</div>
-							</form>
-						</div>
+		<div class="modal-login modal-content">
+			<div class="containern">
+				<div class="left">
+					<div class="login">ยินดีตอนรับ</div>
+					<div class="eula">
+						เข้าสู่ระบบจำนำทางออนไลน์ <br> จำนำง่าย จ่ายคล่อง ต้องบุญยง
 					</div>
-					<div class="col-md-6 bg3"></div>
+				</div>
+				<div class="right">
+
+					<div class="form">
+						<form method="POST" action="loginProcess.html">
+							<!-- email -->
+							<label for="email">อีเมลของคุณ</label> <input type="text"
+								name="email" required="required" id="email">
+							<!-- password -->
+							<label for="password">รหัสผ่าน</label> <input type="password"
+								id="password" name="password" required="required">
+							<!-- login button -->
+							<div class="form-group">
+								<button type="submit" class="btn btn-sm btn-primary"
+									style="margin-right: 40px; font-size: 15px; background-color: #ff7f00; border-color: #9e9e9e00;">เข้าสู้ระบบ
+									</button>
+								<button type="button" data-dismiss="modal"
+									class="btn btn-sm btn-default" style="font-size: 15px;">ยกเลิก</button>
+							</div>
+						</form>
+					</div>
 				</div>
 			</div>
+			<!--  <div class="row">
+				<div class="col-md-6 ">
+					<div class="form-login"
+						style="margin-top: 50px; margin-bottom: 60px;">
+						<h1 style="font-size: 32px; font-weight: 500;">ยินดีตอนรับ</h1>
+						<p class="Subhead-description" style="margin-bottom: 35px;">ระบบจำนำทางออนไลน์
+							จำนำง่ายจ่ายคล่องต้องบุญยง</p>
+						<form method="POST" action="loginProcess.html">
+							<div class="form-group">
+								<span style="font-weight: 500; color: #555;">อีเมลของคุณ</span>
+								<input class="post-login" name="email" required="required" />
+							</div>
+							<div class="form-group">
+								<span style="font-weight: 500; color: #555;">รหัสผ่าน</span> <input
+									type="password" class="post-login" name="password"
+									required="required" />
+							</div>
+							<div class="form-group">
+								<button type="submit" class="btn btn-sm btn-primary"
+									style="margin-right: 10px; font-size: 15px; background-color: #ff7f00; border-color: #9e9e9e00;">เข้าสู้ระบบ</button>
+								<button type="button" data-dismiss="modal"
+									class="btn btn-sm btn-default" style="font-size: 15px;">ยกเลิก</button>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="col-md-6 bg3"></div>
+			</div>  -->
 		</div>
 	</div>
 </div>
