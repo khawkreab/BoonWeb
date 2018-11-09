@@ -626,7 +626,7 @@ function showsteptype(e) {
 		step2 += "</p>"
 
 		step2 += "<p>"
-		step2 += "<lable>ชนิดของกล้อง</lable>"
+		step2 += "<lable>ชนิดของเลนกล้อง</lable>"
 		step2 += "<input type='text' name='pawnerPostCameraLen' required='required' pattern='[^'ก-ฮ@.,!#$?:^%&*+/=()\\_`{|}~-]{1,20}'>"
 		step2 += "<i>ห้ามใช้ อักษรพิเศษ</i>"
 		step2 += "</p>"
@@ -638,7 +638,7 @@ function showsteptype(e) {
 
 		$('#step2').append(step2);
 
-		step3 += "<p>"
+		step3 = "<p>"
 		step3 += "<label>"
 		step3 += "<input type='checkbox' required='required' checked='checked' name='pawnerPostWarranty'/> "
 		step3 += "ประกันสินค้า</label>"
