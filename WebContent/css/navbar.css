@@ -48,7 +48,7 @@
 	/* transform: translate(-50%, -50%); */
 	border-radius: 5px;
 	background-color: #ff7755;
-	animation: show-profile 0.5s forwards ease-in-out;
+	/* animation: show-profile 0.5s forwards ease-in-out; */
 	color: #000;
 	 box-shadow: 0 0 .5rem #babbbc;
 	 background-image: linear-gradient(90deg, #a9ff00 0%, #a9ff00 80%, #c5ff55 100%)
@@ -134,7 +134,7 @@
 }
 
 #cartNumber {
-	display: flex;
+	display: none;
 	float: right;
     width: 20px;
     height: 20px;
@@ -148,6 +148,7 @@
     justify-content: center;
     vertical-align: middle;
      background-color: #f90000;
+   animation: rotate-photo 0.5s forwards ease-in-out;
    
 }
 

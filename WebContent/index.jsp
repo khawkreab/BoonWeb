@@ -68,7 +68,7 @@ body {
 
 	<section id="plage">
 		<div class="container">
-			<img alt="" src="img/Manual.jpg" width="100%">
+			<img alt="" src="img/background/Manual.jpg" width="100%">
 		</div>
 	</section>
 

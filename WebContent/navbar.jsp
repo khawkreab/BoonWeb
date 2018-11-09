@@ -18,9 +18,10 @@
 <link rel="stylesheet" href="css/customStyle.css">
 <link rel="stylesheet" href="css/animate.css">
 <link rel="stylesheet" href="css/login.css">
-<link rel="stylesheet" href="css/form.css">
+<link rel="stylesheet" href="css/pledgeForm.css">
 <link rel="stylesheet" href="css/banner.css">
-<!-- <link rel="stylesheet" href="css/sibling-fade.css"> -->
+<link rel="stylesheet" href="css/multiStepForm.css">
+
 
 
 <!-- nabar -->
@@ -57,7 +58,7 @@
 					<%
 						} else {
 					%>
-					<li class=""><a class="nav-link" href="pawner-pledge.html">จำนำของ</a></li>
+					<li class=""><a class="nav-link" href="pawner-post-form-gold.html">จำนำของ</a></li>
 					<%
 						}
 					%>
@@ -195,38 +196,6 @@
 
 <%-- <nav class="navbar navbar-expand-lg navbar-black bg-glay navbar-height">
          <div class="container">
-             <!-- ----------------------------pawner login---------------------------------------- -->
-             <%
-                 if (session.getAttribute("isLogin") == "yes") {
-                     if (session.getAttribute("userType") == "pawner") {
-             %>
-             <a class="navbar-brand" href="pawner-index.html"> <img
-                 src="img/logos/logo-white.png" alt=""> BOONYONG
-             </a>
-             <!-- -----------------------------pawnShop login--------------------------------------- -->
-             <%
-                 } else if (session.getAttribute("userType") == "pawnShop") {
-             %><a class="navbar-brand" href="pawnshop-index.html"> <img
-                 src="img/logos/logo-white.png" alt=""> BOONYONG
-             </a>
- 
-             <!-- -----------------------------not login--------------------------------------- -->
-             <%
-                 }
-                 } else {
-             %><a class="navbar-brand" href="index.jsp"> <img
-                 src="img/logos/logo-white.png" alt=""> BOONYONG
-             </a>
-             <%
-                 }
-             %>
-             <button class="navbar-toggler" type="button" data-toggle="collapse"
-                 data-target="#navbarSupportedContent"
-                 aria-controls="navbarSupportedContent" aria-expanded="false"
-                 aria-label="Toggle navigation">
-                 <i class="fas fa-bars"></i>
-             </button>
- 
              <ul class="navbar-nav ml-auto navbar-hidden">
                  <!-- ----------------------------pawner login---------------------------------------- -->
                  <%
@@ -350,34 +319,6 @@
 					</div>
 				</div>
 			</div>
-			<!--  <div class="row">
-				<div class="col-md-6 ">
-					<div class="form-login"
-						style="margin-top: 50px; margin-bottom: 60px;">
-						<h1 style="font-size: 32px; font-weight: 500;">ยินดีตอนรับ</h1>
-						<p class="Subhead-description" style="margin-bottom: 35px;">ระบบจำนำทางออนไลน์
-							จำนำง่ายจ่ายคล่องต้องบุญยง</p>
-						<form method="POST" action="loginProcess.html">
-							<div class="form-group">
-								<span style="font-weight: 500; color: #555;">อีเมลของคุณ</span>
-								<input class="post-login" name="email" required="required" />
-							</div>
-							<div class="form-group">
-								<span style="font-weight: 500; color: #555;">รหัสผ่าน</span> <input
-									type="password" class="post-login" name="password"
-									required="required" />
-							</div>
-							<div class="form-group">
-								<button type="submit" class="btn btn-sm btn-primary"
-									style="margin-right: 10px; font-size: 15px; background-color: #ff7f00; border-color: #9e9e9e00;">เข้าสู้ระบบ</button>
-								<button type="button" data-dismiss="modal"
-									class="btn btn-sm btn-default" style="font-size: 15px;">ยกเลิก</button>
-							</div>
-						</form>
-					</div>
-				</div>
-				<div class="col-md-6 bg3"></div>
-			</div>  -->
 		</div>
 	</div>
 </div>

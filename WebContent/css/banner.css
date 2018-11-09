@@ -1,4 +1,33 @@
 .banner-top{
-	height: 150px;
-	background-image: url("img/background/background.jpg");
+	background-image: url("../img/background/banner.jpg");
+	padding:5em 0;
+	text-align:center;
+	width: 100%;
+    height: 50px;
+    display: block;
+}
+
+.banner-top h1{
+	font-size:3em;
+	color:#fff;
+	font-family: 'Ubuntu-Regular';
+}
+.banner-top h2{
+	font-size:0.9em;
+	color:#fff;
+	margin-top:1em;
+}
+.banner-top h2 a{
+	color:#ff7f00;
+}
+.banner-top h2 label{
+	margin:0 0.4em;
+}
+.banner-top em {
+    width: 20%;
+    height: 2px;
+    display: block;
+    background: #fff;
+    border-radius: 10px;
+    margin: 0.5em auto;
 }
