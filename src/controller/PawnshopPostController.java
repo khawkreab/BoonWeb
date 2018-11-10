@@ -173,5 +173,6 @@ public class PawnshopPostController {
 		}
 
 		return "redirect:pawnshop-list-history.html";
+
 	}
 }

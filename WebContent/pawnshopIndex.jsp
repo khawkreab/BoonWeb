@@ -47,35 +47,32 @@
 
 
 	<div class="result-group">
-
+	
 
 
 		<c:forEach items="${pawnerPosts}" var="post">
 
 			<div class="result">
 				<div class="row">
-					<div class="col-md-4 float-left result-img" style="height: 122px">
-						<a href="pawnshop-estimate-form.html?item=${post.pawnerPostId}">
-							<img src="images/imageUpload/${post.pawnerPostPicture }"
-							class="img-responsive" alt="">
-						</a>
+					<div class="col-md-4 float-left result-img">
+						<img src="images/imageUpload/${post.pawnerPostPicture }" class="img-responsive" alt="">
 					</div>
 					<div class="col-md-8">
-						<h2 class="featured text-orange">
+						<h2 class="featured">
 							<a href="pawnshop-estimate-form.html?item=${post.pawnerPostId}">
 								${post.pawnerPostName} - ${post.pawnerPostBrand} </a>
 						</h2>
 						<div class="info-r">
-							<span class="text-orange">${post.pawnerPostName}</span> ลงจำนำ
-							วันที่<span class="text-black"><fmt:setLocale
+							ต้องการจำนำ <span class="color-orange">${post.pawnerPostName}</span>
+							โพสเมื่อ วันที่<span class="color-black"><fmt:setLocale
 									value="en_US" /> <fmt:formatDate type="date" dateStyle="long"
 									value="${post.pawnerPostDate }" /></span> โดย <span
-								class="text-orange">${post.pawnerId.pawnerFirstname }
-								${post.pawnerId.pawnerLastname }</span> จากจังหวัด <span
-								class="text-black"> ${post.pawnerId.pawnerProvince }</span>
+								class="color-orange">${post.pawnerId.pawnerFirstname }
+								${post.pawnerId.pawnerLastname }</span> จากจังหวัด  Province <span
+								class="color-black"> ${post.pawnerId.pawnerProvince }</span>
 						</div>
-						<div class="text-orange">
-							<a href="pawnshop-estimate-form.html?item=${post.pawnerPostId}">ต้องการประเมิน
+						<div>
+							<a href="pawnshop-estimate-form.html?item=${post.pawnerPostId}">ประเมินเลย
 							</a>
 						</div>
 					</div>
@@ -83,6 +80,18 @@
 			</div>
 		</c:forEach>
 	</div>
+
+	<script>
+		$(document).ready(function() {
+			var featured = $('.featured').length;
+
+			console.log("featured => " + featured)
+			if (featured == 0) {
+				$('#checkpost').text("ไม่มีรายการของจำนำ")
+			}
+
+		});
+	</script>
 
 </body>
 

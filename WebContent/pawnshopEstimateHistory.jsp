@@ -186,25 +186,25 @@
 														<!-- Status -->
 														<c:if test="${track.estimateStatus == 'complete'}">
 															<li class="col-md-6">สถานะ : <span
-																class="badge-success">เสร็จสิ้น</span>
+																class="badge badge-success">เสร็จสิ้น</span>
 															</li>
 														</c:if>
 
 														<c:if test="${track.estimateStatus == 'process'}">
 															<li class="col-md-6">Status : <span
-																class="badge-warning">กำลังดำเนินการ</span>
+																class="badge badge-warning">กำลังดำเนินการ</span>
 															</li>
 														</c:if>
 
 														<c:if test="${track.estimateStatus == 'approve'}">
 															<li class="col-md-6">สถานะ : <span
-																class="badge-success">ยอมรับ</span>
+																class="badge badge-success">ยอมรับ</span>
 															</li>
 														</c:if>
 
 														<c:if test="${track.estimateStatus == 'denei'}">
 															<li class="col-md-6">สถานะ : <span
-																class="badge-danger">ปฎิเสธ</span>
+																class="badge badge-danger">ปฎิเสธ</span>
 															</li>
 														</c:if>
 														<c:if test="${track.estimateStatus == 'approve'}">

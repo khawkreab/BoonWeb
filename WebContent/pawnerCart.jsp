@@ -51,22 +51,6 @@ table {
 			<em></em>
 		</div>
 	</div>
-<<<<<<< HEAD
-	<section id="clearCart">
-		<div id="list" style="overflow: auto;">
-			<!-- List Order Here!!!! -->
-		</div>
-		<div class="row">
-			<div class="item-info-content col-md-4 ml-auto"
-				style="text-align: right; line-height: 30px;">
-				<span>จำนวนสินค้าทั้งหมด <i id="cartNumbera"> </i> ชิ้น
-				</span> <span>ราคารวมสินค้าทั้งหมด <i id="totalPriceFee"> </i> บาท
-				</span><span> </span> <span><a id="comfirmOrder"
-					style="width: auto;" class="item-popup-tocart"
-					onClick="comfirmOrder()">ยืนยันการสั่งซื้อสินค้า</a></span>
-			</div>
-		</div>
-=======
 	<section style="background-color: #f5f5f5;">
 		<div class="row">
 			<!-- left -->
@@ -95,7 +79,6 @@ table {
 					onClick="comfirmOrder()">ยืนยันการสั่งซื้อสินค้า</button>
 			</div>
 		</div>
->>>>>>> doing
 	</section>
 
 <jsp:include page="navbar.jsp" />
@@ -114,14 +97,9 @@ table {
 		}
 		function check() {
 			var html
-<<<<<<< HEAD
-			var totalPrice = 0
-			html = "<table class='cartTable'>"
-=======
 			html = "<div class='row' style='background-color: #f1f1f1;border: 1px solid #fff;margin: 10px 0;padding: 5px 0;font-size: .8rem;'>"
 			html += "<div class='col-md-8'>สินค้า</div><div class='col-md-3'>ราคา</div><div class='col-md-1'>จำนวน</div></div>"
 
->>>>>>> doing
 			if (sessionStorage.getItem('carts')) {
 				list = JSON.parse(sessionStorage.getItem('carts'))
 
@@ -137,31 +115,6 @@ table {
 					document.getElementById("chechcarts").innerHTML = "ไม่มีรายการสินค้า"
 
 				} else {
-<<<<<<< HEAD
-
-					html += "<tr><th class='tha'>ชื่อสินค้า</th><th class='tha'>จำนวน</th><th class='tha'>ราคา</th><th class='tha'>โรงรับจำนำ</th><th class='tha'> ลบ </th></tr>"
-					for ( var index in this.list) {
-						html += "<tr>"
-						html += "<td class='tda'>"
-								+ this.list[index].pawnshopPostName + "</td>"
-						html += "<td class='tda'>1</td>"
-						html += "<td class='tda'>"
-								+ this.list[index].pawnshopPostPrice + "</td>"
-						html += "<td class='tda'></td>"
-						html += "<td class='tda'><a onClick='deleteSelf("
-								+ index
-								+ ")'><i class='fas fa-trash' style='font-size:20px;color:red'></i></a></td>"
-						html += "</tr>"
-
-						for ( var index in this.list) {
-							totalPrice += parseFloat(this.list[index].pawnshopPostPrice)
-						}
-						document.getElementById("totalPriceFee").innerHTML = totalPrice
-						document.getElementById("cartNumbera").innerHTML = list.length
-
-					}
-					html += "<tr><td></td><td></td><td></td><td></td><td><a class='item-popup-continue' style='width: auto' onClick='clearCart()'>ลบทั้งหมด</a></td></tr>"
-=======
 					var totalPrice = 0;
 					for ( var index in this.list) {
 						html += "<div style='background-color: #fff;font-size:.9rem;padding-bottom: 10px;margin: 10px 0;'>"
@@ -179,7 +132,6 @@ table {
 					}
 					document.getElementById("num").innerHTML = list.length
 					document.getElementById("totalPrice").innerHTML = totalPrice
->>>>>>> doing
 				}
 			} else {
 				document.getElementById("cartNumber").style.display = "none";
@@ -230,11 +182,7 @@ table {
 			//clear cart
 			this.clearCart()
 
-<<<<<<< HEAD
-			window.location.href = "http://localhost:8080/BoonWeb/pawner-order.html"
-=======
 			window.location.href = 'http://localhost:8080/BoonWeb/pawner-order.html';
->>>>>>> doing
 
 		}
 	</script>

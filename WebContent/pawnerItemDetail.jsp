@@ -225,7 +225,7 @@
 										src="images/imageUpload/${pawnshopPost.pawnshopPostPicture}">
 								</div>
 								<div class="col-md-8">
-									<span class="h6">${pawnshopPost.pawnshopPostName } ${post.pawnshopPostBrand }</span>
+									<span class="h6">${pawnshopPost.pawnshopPostName }${post.pawnshopPostBrand }</span>
 									<div class="clear-fix"></div>
 									<span class="small">By
 										${pawnshopPost.pawnshopId.pawnshopName} from
