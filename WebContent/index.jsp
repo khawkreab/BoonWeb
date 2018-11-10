@@ -23,15 +23,12 @@
 
 <title>Boonyong</title>
 
-<style>
+<style type="text/css">
 body {
 	width: 100%;
-	background-image: url("img/background/background.jpg");
-	background-size: cover;
 	overflow-x: hidden;
 }
 </style>
-
 <link href="css/pawnerCard.css" rel="stylesheet">
 </head>
 
@@ -47,7 +44,7 @@ body {
 	%>
 
 
-	<header class="masthead text-center text-white d-flex"
+	<section class="masthead text-center text-white d-flex header"
 		style="height: 678px;">
 		<div class="container my-auto">
 			<div class="row">
@@ -67,7 +64,7 @@ body {
 				</div>
 			</div>
 		</div>
-	</header>
+	</section>
 
 	<section id="plage">
 		<div class="container">
@@ -80,10 +77,7 @@ body {
 		} else if (session.getAttribute("userType") == "pawnShop") {
 	%>
 	<!--banner-->
-	<div class="banner-top">
-		<h1 id="checkpost">รายการของจำนำ</h1>
-		<em></em>
-	</div>
+	<section class="d-flex header"></section>
 	<div class="result-group">
 		<c:forEach items="${pawnerPosts}" var="post">
 			<div class="shop-card">
@@ -94,19 +88,19 @@ body {
 					</div>
 					<div class="title-bar">
 						<div class="title">${post.pawnerPostName}</div>
-						<div class="desc">${post.pawnerId.pawnerEmail}</div>
+						<div class="desc">${post.pawnerId.pawnerProvince }</div>
 					</div>
 					<figure>
-						<%-- <img src="images/imageUpload/${pawnshopPosts.pawnshopPostPicture}" /> --%>
-						<img src="img/icon/camera.png" />
+						<img src="img/uploadImge/${post.pawnerPostPicture}" />
 					</figure>
 				</div>
 				<div class="cta d-flex">
 					<div class="price mr-auto p-2">ประเมินราคา</div>
 					<div class="p-2 ly"></div>
-					<button class="btn">
-						<i class="fas fa-sign-in-alt" style="font-size: 1.25rem;"></i>
-					</button>
+					<a href="pawnshop-estimate-form.html?item=${post.pawnerPostId}"><button
+							class="btn">
+							<i class="fas fa-sign-in-alt" style="font-size: 1.25rem;"></i>
+						</button></a>
 				</div>
 			</div>
 			<%-- 	<div class="result">
@@ -154,10 +148,10 @@ body {
 		}
 		} else {
 	%>
+
 	<!--banner-->
 	<!-- element -->
-	<header class="d-flex"
-		style="width: 100%; height: 100%; text-align: center; align-items: center;">
+	<section class="d-flex header">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-10 mx-auto">
@@ -184,7 +178,7 @@ body {
 				</div>
 			</div>
 		</div>
-	</header>
+	</section>
 	<%
 		}
 	%>

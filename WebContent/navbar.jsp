@@ -148,7 +148,7 @@
 	} else {
 %><!-- ------------------------------not login-------------------------------------- -->
 <ul class="flex d-inline-flex"
-	style="position: absolute; top: 10px; right: 10px; list-style: none">
+	style="position: absolute; top: 10px; right: 10px; list-style: none; z-index: 999">
 	<li class="btn-linear btn-linear-two"><a data-toggle="modal"
 		data-target="#modalLogin" class="nav-link " href="#"><button
 				class="btn-ln">
