@@ -209,7 +209,7 @@
 			<div class="container">
 				<div class="history-main offer-info border-info">
 					<div class="shape">
-						<div class="shape-text">ยังไม่การประเมิน</div>
+						<div class="shape-text">ยังไม่มีการประเมิน</div>
 					</div>
 					<div class="d-flex history-title">
 						<div class="mr-auto p-2">
@@ -324,13 +324,5 @@
 		</c:forEach>
 	</section>
 
-	<!-- Bootstrap core JavaScript -->
-	<script type="text/javascript">
-		$('div span a').click(function() {
-			$(this).text(function(i, old) {
-				return old == 'more' ? 'less' : 'more';
-			});
-		});
-	</script>
 </body>
 </html>

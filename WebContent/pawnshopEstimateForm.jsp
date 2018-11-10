@@ -117,6 +117,25 @@
 								<li class="">Battery : ${pawnerPost.pawnerPostBattery }</li>
 							</c:if>
 
+<<<<<<< HEAD
+								<!-- Watch -->
+								<c:if test="${pawnerPost.pawnerPostCase != null}">
+									<li class="">Case : ${pawnerPost.pawnerPostCase }</li>
+									<li class="">Bracelet : ${pawnerPost.pawnerPostBracelet }</li>
+									<c:if test="${pawnerPost.pawnerPostDiamond != null}">
+										<li class="">Diamond : ${pawnerPost.pawnerPostDiamond }</li>
+									</c:if>
+									<c:if test="${pawnerPost.pawnerPostPackage != null}">
+										<li class=""><span class="fas fa-check"
+											aria-hidden="true"> </span> Package</li>
+									</c:if>
+								</c:if>
+
+								<!-- Electronic tv -->
+								<c:if test="${pawnerPost.panwePostRemote != null}">
+									<li class=""><span class="fas fa-check"
+										aria-hidden="true"> </span> Remote</li>
+=======
 							<!-- Electronic com telephone -->
 							<c:if test="${pawnerPost.pawnerPostHarddisk != null}">
 								<li class="">Harddisk : ${pawnerPost.pawnerPostHarddisk }</li>
@@ -137,6 +156,7 @@
 								<c:if test="${pawnerPost.pawnerPostPackage != null}">
 									<li class=""><span class="glyphicon glyphicon-check"
 										aria-hidden="true"> </span> Package</li>
+>>>>>>> doing
 								</c:if>
 							</c:if>
 
@@ -146,6 +166,17 @@
 									aria-hidden="true"> </span> Remote</li>
 							</c:if>
 
+<<<<<<< HEAD
+								<!-- Watch,Electronic -->
+								<c:if test="${pawnerPost.pawnerPostModel != null}">
+									<li class=""><span class="fas fa-check"
+										aria-hidden="true"> </span> Warranty</li>
+								</c:if>
+							</ul>
+						</div>
+					</div>
+=======
+>>>>>>> doing
 
 							<!-- Watch,Electronic -->
 							<c:if test="${pawnerPost.pawnerPostModel != null}">

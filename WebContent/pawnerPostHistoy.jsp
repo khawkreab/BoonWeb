@@ -230,8 +230,12 @@ tr:hover {
 									</div>
 									<a id="${post.pawnerPostId.pawnerPostId}"
 										onClick="select(this); return false;"
+<<<<<<< HEAD
+										data-cart='{"pawnhopAddress":"${post.pawnshopId.pawnshopAddress}","pawnerPostId":"${post.pawnerPostId.pawnerId.pawnerEmail}",
+=======
 										data-cart='{"pawnerFirstname":"${post.pawnerPostId.pawnerId.pawnerFirstname}",
 										"pawnerLastname":"${post.pawnerPostId.pawnerId.pawnerLastname}",
+>>>>>>> doing
 										"pawnerPostName":"${post.pawnerPostId.pawnerPostName }","pawnerPostDate":"${post.pawnerPostId.pawnerPostDate}",
 										"pawnerPostItemType":"${post.pawnerPostId.pawnerPostItemType}","pawnerPostBrand":"${post.pawnerPostId.pawnerPostBrand}",
 										"panwePostRemote":"${post.pawnerPostId.panwePostRemote}","pawnerPostBattery":"${post.pawnerPostId.pawnerPostBattery}",
@@ -440,6 +444,13 @@ tr:hover {
 			$("#estimatePriceMin").text(cart.estimatePriceMin)
 			$("#estimatePriceMax").text(cart.estimatePriceMax)
 			$("#estimateDate").text(cart.estimateDate)
+<<<<<<< HEAD
+			$("#pawnshopAddress").text(cart.pawnshopAddress)
+			$("#pawnerPostPicture").attr('src',
+					'images/imageUpload/' + cart.pawnerPostPicture)
+
+			window.print('.printable');
+=======
 			
 			/* pawnshop */
 			$("#pawnShopname").text(cart.pawnShopname)
@@ -454,6 +465,7 @@ tr:hover {
 					.getElementById('printable').innerHTML;
 			window.print();
 			document.body.innerHTML = originalContents;
+>>>>>>> doing
 		}
 	</script>
 
@@ -464,11 +476,42 @@ tr:hover {
 		<div>
 			<p style="font-size: 32px; border-bottom: 1px solid;">ใบยืนยันการจำนำ</p>
 			<div>
+<<<<<<< HEAD
+				<p style="font-size: 32px; border-bottom: 1px solid;">ใบยืนยันการจำนำ</p>
+				<div>
+					<div>
+						<p>ที่อยู๋โรงรับจำนำ</p>
+						<p id="pawnshopAddress"></p>
+					</div>
+					<div>
+						<table id="meta">
+							<tr>
+								<td>ชื่อเจ้าของโพส</td>
+								<td>
+									<div id="pawnerPostId"></div>
+								</td>
+							</tr>
+							<tr>
+								<td>ชื่อโพส</td>
+								<td>
+									<div id="pawnerPostName"></div>
+								</td>
+							</tr>
+							<tr>
+								<td>วันที่โพส</td>
+								<td>
+									<div id="pawnerPostDate"></div>
+								</td>
+							</tr>
+						</table>
+					</div>
+=======
 				<div style="text-align: right;">
 					<h5>ที่อยู๋โรงรับจำนำ</h5>
 					<i id="pawnShopname"></i><br>
 					<i id="pawnshopParish"></i> <i id="pawnshopProvince"></i>  <i id="pawnshopPostcodes">  </i><br>
 					โทร. <i id="pawnshopTel"></i>
+>>>>>>> doing
 				</div>
 				<div>
 					<table style="width: 100%; margin:30px 0;">
