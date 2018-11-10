@@ -32,11 +32,11 @@
 <%
 	if (session.getAttribute("isLogin") == "yes") {
 %>
-<!-- ----------------------------pawner login---------------------------------------- -->
+
 <%
 	if (session.getAttribute("userType") == "pawner") {
 %>
-
+<!-- ----------------------------pawner login---------------------------------------- -->
 <div class="profile">
 	<div class="photo">
 		<img
@@ -48,7 +48,6 @@
 			<span><%=session.getAttribute("username")%></span> <span><%=session.getAttribute("email")%></span>
 		</div>
 		<div id="nav-custom-container">
-
 			<div id="nav-custom-overlay"></div>
 			<nav id="nav-custom-fullscreen">
 				<ul class="flex d-inline-flex flex-wrap menu-icon">
@@ -61,7 +60,8 @@
 					<%
 						} else {
 					%>
-					<li class=""><a class="nav-link" href="pawner-post-form-gold.html">จำนำของ</a></li>
+					<li class=""><a class="nav-link"
+						href="pawner-post-form-gold.html">จำนำของ</a></li>
 					<%
 						}
 					%>
@@ -81,34 +81,73 @@
 			</nav>
 
 			<a id="nav-custom-toggle"> <span></span> <span></span> <span></span>
-			 <i id="cartNumber" ></i>
+				<i id="cartNumber"></i>
 			</a>
 		</div>
 	</div>
 </div>
 
 
-<!-- ----------------------------pawshop login---------------------------------------- -->
+
 <%
-	}
-	} else if (session.getAttribute("userType") == "pawnShop") {
+	}else if (session.getAttribute("userType") == "pawnShop") {
 %>
+<!-- ----------------------------pawshop login---------------------------------------- -->
+<div class="profile">
+	<div class="photo">
+		<img
+			src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/764024/profile/profile-512.jpg" />
+	</div>
+	<div class="content">
+		<div class="text">
+			<!-- ----------------------------user name & email---------------------------------------- -->
+			<span><%=session.getAttribute("username")%></span> <span><%=session.getAttribute("email")%></span>
+		</div>
+		<div id="nav-custom-container">
+			<div id="nav-custom-overlay"></div>
+			<nav id="nav-custom-fullscreen">
+				<ul class="flex d-inline-flex flex-wrap menu-icon">
+					<li class="menu-icon"><a href="index.html">หน้าหลัก</a></li>
+					<!-- ----------------------------if user has ban---------------------------------------- -->
+					<%
+						if (session.getAttribute("pawnshopState").equals("Banned")) {
+					%>
+					<li class=""><a class="" id="omn">จำนำของ</a></li>
+					<%
+						} else {
+					%>
+					<li class=""><a class="nav-link"
+						href="pawner-post-form-gold.html">จำนำของ</a></li>
+					<%
+						}
+					%>
+					<li class=""><a class="nav-link" href="pawner-off-pledge.html">รายการของหลุดจำนำ</a></li>
+					<li class=""><a class="nav-link" href="pawner-cart.html">ตะกร้า
+							<i id="cartNumberlink"></i>
+					</a></li>
+					<li class=""><a class="nav-link"
+						href="pawner-track-pledge.html">ติดตามการจำนำ</a></li>
+					<li class=""><a href="pawner-post-history.html"
+						class="nav-link ">ประวัติการจำนำ</a></li>
+					<li class=""><a href="pawner-order.html" class="nav-link ">ประวัติการสังซื้อ</a></li>
+					<li class=""><a href="logout.html" class="nav-link ">แก้ไขบัญชี</a></li>
+					<li class=""><a href="logout.html" class="nav-link ">ออกจากระบบ</a></li>
 
-<div id="nav-custom-container">
-	<a class="nav-link" href="pawner-cart.html"><i
-		class="fas fa-shopping-cart"></i><span class="cart-num"
-		id="cartNumber"></span></a>
-	<div id="nav-custom-overlay"></div>
+				</ul>
+			</nav>
 
-
-	<a id="nav-custom-toggle"> <span></span> <span></span> <span></span>
-	</a>
+			<a id="nav-custom-toggle"> <span></span> <span></span> <span></span>
+				<i id="cartNumber"></i>
+			</a>
+		</div>
+	</div>
 </div>
 
-<!-- ------------------------------not login-------------------------------------- -->
+
 <%
+	}
 	} else {
-%>
+%><!-- ------------------------------not login-------------------------------------- -->
 <ul class="flex d-inline-flex"
 	style="position: absolute; top: 10px; right: 10px; list-style: none">
 	<li class="btn-linear btn-linear-two"><a data-toggle="modal"
@@ -285,7 +324,7 @@
 							<div class="form-group">
 								<button type="submit" class="btn btn-sm btn-primary"
 									style="margin-right: 40px; font-size: 15px; background-color: #ff7f00; border-color: #9e9e9e00;">เข้าสู้ระบบ
-									</button>
+								</button>
 								<button type="button" data-dismiss="modal"
 									class="btn btn-sm btn-default" style="font-size: 15px;">ยกเลิก</button>
 							</div>
@@ -297,66 +336,6 @@
 	</div>
 </div>
 
-
-<!-- ----------------------------navbar-collapse---------------------------------------- -->
-<div class="collapse" id="navbarSupportedContent">
-	<ul class="ml-auto">
-		<!-- ----------------------------pawner login---------------------------------------- -->
-		<%
-			if (session.getAttribute("isLogin") == "yes") {
-				if (session.getAttribute("userType") == "pawner") {
-		%>
-		<li>
-			<div class="navbar-account">
-				<span class="navbar-account-photo">photo</span><span
-					class="navbar-account-info"><span
-					class="navbar-account-naem"><%=session.getAttribute("username")%></span><span
-					class="navbar-account-email">email</span></span>
-			</div>
-		</li>
-		<li><a class="nav-link" href="pawner-pledge.html">pledge</a></li>
-		<li><a class="nav-link" href="pawner-track-pledge.html">track
-				my pledge</a></li>
-		<li><a class="nav-link" href="pawner-post-history.html">history</a></li>
-		<li><a class="nav-link" href="pawner-order.html">my order</a></li>
-		<li><a href="logout.html" class="nav-link ">Logout</a></li>
-
-		<!-- -----------------------------pawnShop login--------------------------------------- -->
-		<%
-			} else if (session.getAttribute("userType") == "pawnShop") {
-		%>
-		<li>
-			<div class="navbar-account">
-				<span class="navbar-account-photo">photo</span><span
-					class="navbar-account-info"><span
-					class="navbar-account-naem"><%=session.getAttribute("username")%></span><span
-					class="navbar-account-email">email</span></span>
-			</div>
-		</li>
-
-
-		<li><a class="nav-link" href="pawnshop-pledge-sell.html">pledge
-				sell </a></li>
-		<li><a class="nav-link" href="pawnshop-track-estimate.html">track
-				my estimate</a></li>
-		<li><a class="nav-link" href="pawnshop-estimate-history.html">history</a></li>
-		<li><a class="nav-link" href="pawnshop-list-post.html">my
-				post </a></li>
-
-		<li><a href="logout.html" class="nav-link ">ออกจากระบบ</a></li>
-		<!-- ------------------------------not login-------------------------------------- -->
-		<%
-			}
-			} else {
-		%>
-		<li><a data-toggle="modal" data-target="#modalLogin"
-			class="nav-link " href="#">Login</a></li>
-		<li><a href="pawner-register-form.html" class="nav-link ">Register</a></li>
-		<%
-			}
-		%>
-	</ul>
-</div>
 
 <!-- ----------------- popup ban -------------------------------  -->
 <!-- The Modal -->

@@ -77,8 +77,7 @@ public class PawnshopController {
 	@RequestMapping("/pawnshop-index")
 	public ModelAndView pawnshopIndex(HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView("pawnshopIndex.jsp");
-
-List<Picture> pictures;
+		List<Picture> pictures;
 		List<PawnerPost> pawnerPosts;
 		try {
 			long userId = (long) request.getSession().getAttribute("id");

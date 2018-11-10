@@ -18,10 +18,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import entity.Pawner;
+import entity.PawnerPost;
 import entity.Pawnshop;
+import entity.Picture;
 import service.PawnerPostService;
 import service.PawnerService;
 import service.PawnshopService;
+import service.PictureService;
 
 
 
@@ -34,6 +37,9 @@ public class LoginCotroller {
 	@EJB(mappedName = "ejb:/BoonWeb//PawnshopServiceBean!service.PawnshopService")
 	PawnshopService pawnshopServ;
 
+	@EJB(mappedName = "ejb:/BoonWeb/PictureServiceBean!service.PictureService")
+	PictureService pictureService;
+	
 	@EJB(mappedName = "ejb:/BoonWeb//PawnerPostServiceBean!service.PawnerPostService")
 	PawnerPostService pawnerPostService;
 	
@@ -46,8 +52,19 @@ public class LoginCotroller {
 	}
 	
 	@RequestMapping("/index")
-	public ModelAndView index() {
+	public ModelAndView index(HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView("index.jsp");
+		List<Picture> pictures;
+		List<PawnerPost> pawnerPosts;
+		try {
+			long userId = (long) request.getSession().getAttribute("id");
+			pawnerPosts = pawnerPostService.findPawnerPostByPawnshopId(userId);
+			pictures = pictureService.getAllPicture();
+			mv.addObject("picture", pictures);
+			mv.addObject("pawnerPosts", pawnerPosts);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		return mv;
 	}
 	

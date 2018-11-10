@@ -31,6 +31,8 @@ body {
 	overflow-x: hidden;
 }
 </style>
+
+<link href="css/pawnerCard.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -45,7 +47,8 @@ body {
 	%>
 
 
-	<header class="masthead text-center text-white d-flex" style="height: 678px;">
+	<header class="masthead text-center text-white d-flex"
+		style="height: 678px;">
 		<div class="container my-auto">
 			<div class="row">
 				<div class="col-lg-10 mx-auto">
@@ -76,21 +79,37 @@ body {
 	<%
 		} else if (session.getAttribute("userType") == "pawnShop") {
 	%>
-
 	<!--banner-->
 	<div class="banner-top">
 		<h1 id="checkpost">รายการของจำนำ</h1>
 		<em></em>
 	</div>
-
-
 	<div class="result-group">
-
-
-
 		<c:forEach items="${pawnerPosts}" var="post">
-
-			<div class="result">
+			<div class="shop-card">
+				<div style="height: 200px;">
+					<div class="date">
+						<span class="day">12</span> <span class="month">Aug</span> <span
+							class="year">2016</span>
+					</div>
+					<div class="title-bar">
+						<div class="title">${post.pawnerPostName}</div>
+						<div class="desc">${post.pawnerId.pawnerEmail}</div>
+					</div>
+					<figure>
+						<%-- <img src="images/imageUpload/${pawnshopPosts.pawnshopPostPicture}" /> --%>
+						<img src="img/icon/camera.png" />
+					</figure>
+				</div>
+				<div class="cta d-flex">
+					<div class="price mr-auto p-2">ประเมินราคา</div>
+					<div class="p-2 ly"></div>
+					<button class="btn">
+						<i class="fas fa-sign-in-alt" style="font-size: 1.25rem;"></i>
+					</button>
+				</div>
+			</div>
+			<%-- 	<div class="result">
 				<div class="row">
 					<div class="col-md-4 float-left result-img">
 						<img src="images/imageUpload/${post.pawnerPostPicture }"
@@ -116,7 +135,7 @@ body {
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> --%>
 		</c:forEach>
 	</div>
 
@@ -128,10 +147,8 @@ body {
 			if (featured == 0) {
 				$('#checkpost').text("ไม่มีรายการของจำนำ")
 			}
-
 		});
 	</script>
-
 	<!-- ------------------------------not login-------------------------------------- -->
 	<%
 		}
