@@ -18,6 +18,7 @@
 <meta name="author" content="">
 
 <title>pawner-post-form</title>
+
 </head>
 
 <body style="background-color: #f4f4f4;">
@@ -42,14 +43,14 @@
 					<a id="" onclick="showsteptype(3)"><img src="img/icon/tv.png"
 						width="150" height="150px"></a>
 					<!-- type => Smart Phone -->
-					<a id="" onclick="showsteptype(4)"><img src="img/icon/mobile.png"
-						width="150" height="150px"></a>
+					<a id="" onclick="showsteptype(4)"><img
+						src="img/icon/mobile.png" width="150" height="150px"></a>
 					<!-- type => Watch -->
-					<a id="" onclick="showsteptype(5)"><img src="img/icon/watch.png"
-						width="150" height="150px"></a>
+					<a id="" onclick="showsteptype(5)"><img
+						src="img/icon/watch.png" width="150" height="150px"></a>
 					<!-- type => Camera -->
-					<a id="" onclick="showsteptype(6)"><img src="img/icon/camera.png"
-						width="150" height="150px"></a>
+					<a id="" onclick="showsteptype(6)"><img
+						src="img/icon/camera.png" width="150" height="150px"></a>
 
 				</div>
 				<!-- One "tab" for each step in the form: -->
@@ -64,7 +65,88 @@
 							class="step"></span>
 					</div>
 					<!-- step 1 -->
-					<div class="tab" id="step1"></div>
+					<div class="tab" id="step1">
+						<p>
+							<label>ชื่อสินค้าที่ต้องการจำนำ</label> <input type="text"
+								name="pawnerPostName" required="required"
+								pattern="[^'@.,!#$?:^%&*+/=()\\_`{|}~-]{1,30}"> <br>
+							<i>ใช้เป็นตัวอักษร ภาษาไทย หรือ อังกฤษ เท่านั้น
+								ความยาวไม่เกิน 30 ตัวอักษร และ ต้องไม่ใช้ อักษรพิเศษ</i>
+						</p>
+						<p>
+							<label>ยี่ห้อ</label> <input type="text" neme="pawnerPostBrand"
+								required="required"
+								pattern="[^'@.,!#$?:^%&*+/=()\\_`{|}~-]{1,20}" /> <br> <i>ใช้เป็นตัวอักษร
+								ภาษาไทย หรือ อังกฤษ เท่านั้น ความยาวไม่เกิน 30 ตัวอักษร และ
+								ต้องไม่ใช้ อักษรพิเศษ</i>
+						</p>
+						<!-- ------------------------upload image----------------------------  -->
+						<div style="margin-top: 15px; width: 100%">
+							<span style="font-size: 14px;">ลงรูปภาพประกอบการจำนำ</span>
+							<div class="wrap-input100 " style="border: none;">
+								<div class="box-img-list">
+									<div class="box box-img-1" style="display: block">
+										<div class="box-img-thumb">
+											<div class="upload-options js--image-preview" id="img-pic-1">
+												<label> <input type="file" class="image-upload"
+													accept="image/*" name="files" required="required" />
+												</label>
+											</div>
+										</div>
+									</div>
+									<div class="box box-img-2">
+										<div class="box-img-thumb">
+											<div class="upload-options js--image-preview" id="img-pic-2">
+												<label> <input type="file" class="image-upload"
+													accept="image/*" name="files" />
+												</label>
+											</div>
+										</div>
+									</div>
+									<div class="box box-img-3">
+										<div class="box-img-thumb">
+											<div class="upload-options js--image-preview" id="img-pic-3">
+												<label> <input type="file" class="image-upload"
+													accept="image/*" name="files" />
+												</label>
+											</div>
+										</div>
+									</div>
+									<div class="box box-img-4">
+										<div class="box-img-thumb">
+											<div class="upload-options js--image-preview" id="img-pic-4">
+												<label> <input type="file" class="image-upload"
+													accept="image/*" name="files" />
+												</label>
+											</div>
+										</div>
+									</div>
+									<div class="box box-img-5">
+										<div class="box-img-thumb">
+											<div class="upload-options js--image-preview" id="img-pic-5">
+												<label> <input type="file" class="image-upload"
+													accept="image/*" name="files" />
+												</label>
+											</div>
+										</div>
+									</div>
+									<div class="box box-img-6">
+										<div class="box-img-thumb">
+											<div class="upload-options js--image-preview" id="img-pic-6">
+												<label> <input type="file" class="image-upload"
+													accept="image/*" name="files" />
+												</label>
+											</div>
+										</div>
+									</div>
+									<span class="clear-trash d-flex"> <i class="mr-auto">ใส่รูปได้สูงสุด
+											6 รูป</i><i class="clear-img fas fa-trash-alt"> ลบรูป</i>
+									</span>
+								</div>
+							</div>
+						</div>
+					</div>
+
 
 					<!-- step 2 -->
 					<div class="tab" id="step2"></div>
@@ -97,186 +179,35 @@
 	<!-- Navigation   -->
 	<jsp:include page="navbar.jsp" />
 
-	<!--banner-->
-	<%-- 			<div class="banner-top">
-				<div class="">
-					<h1>ทองคำ</h1>
-					<em></em>
-				</div>
-			</div>
-			<!--content-->
-			<div class="content">
-				<div class="container">
-					<!--products-->
-					<div class="content-mid">
-						<div class="mid-popular">
-							<div class="container-contact100 ">
-								<div class="wrap-contact100">
-									<div class="contact100-form">
-										<form:form method="post" action="savePost.html" modelAttribute="pawnerPost" enctype="multipart/form-data">
-											<input type="hidden" name="pawnerPostId" />
-											<input type="hidden" name="pawnerId.pawnerId" />
-											<input type="hidden" name="pawnerPostItemType" value="Gold" />
-											<div class="wrap-input100 validate-input">
-												<input class="input100" type="text" name="pawnerPostName" placeholder="ชื่อสินค้าที่ต้องการจำนำ" required="required" 
-												pattern="[^'@.,!#$?:^%&*+/=()\\_`{|}~-]{1,30}" title="ใช้เป็นตัวอักษร ภาษาไทย หรือ อังกฤษ เท่านั้น ความยาวไม่เกิน 30 ตัวอักษร และ ต้องไม่ใช้ อักษรพิเศษ">
-											</div>
-											<div class="wrap-input100 validate-input" style="margin-top:15px;">
-												<input class="input100" type="text" name="pawnerPostBrand" placeholder="ยี่ห้อ" required="required" 
-												pattern="[^'@.,!#$?:^%&*+/=()\\_`{|}~-]{1,20}" title="ใช้เป็นตัวอักษร ภาษาไทย หรือ อังกฤษ เท่านั้น ความยาวไม่เกิน 30 ตัวอักษร และ ต้องไม่ใช้ อักษรพิเศษ">
-												<span class="focus-input100"></span>
-											</div>
-											<div class="wrap-input100  validate-input" style="margin-top:15px;">
-												<input class="input100" type="text" name="pawnerPostPure" placeholder="ความบริสุทธิ์" 
-												required="required" pattern="[^'a-zA-Zก-ฮ@,!#$?:^%&*+/=()\\_`{|}~-]{1,5}" title="ตัวเลขเท่านั้น 0-9 หรือใช้ จุดทศนิยม เช่น 99.99">
-												<span class="focus-input100"></span>
-											</div>
-											<div class="wrap-input100  validate-input" style="margin-top:15px;">
-												<input class="input100" type="text" name="pawnerPostWeigh" placeholder="น้ำหนัก(ใช้หน่วยเป็นกรัม)" 
-												required="required" pattern="[^'a-zA-Zก-ฮ@,!#$?:^%&*+/=()\\_`{|}~-]{1,5}" title="ตัวเลขเท่านั้น 0-9 หรือใช้ จุดทศนิยม เช่น 99.99">
-												<span class="focus-input100"></span>
-											</div>
-											<div class="wrap-input100 validate-input" style="margin-top:15px;">
-												<select class="input100" name="pawnerPostCategory" required="required">
-													<option>ชนิดหรือรูปแบบของทองคำ</option>
-													<option>ทองรูปพรรณ</option>
-													<option>ทองเค เช่น 18k, 14k</option>
-													<option>ทองเค(18k,14k)</option>
-													<option>ทอง 96.5 %</option>
-													<option>เงิน</option>
-													<option>ทองแท่ง 96.5 %</option>
-													<option>ทองแท่ง 99.99 %</option>
-													<option>พรีม่าโกลด์, โกลด์มาสเตอร์</option>
-													<option>เงิน</option>
-													<option>กรอบพระ</option>
-													<option>แพลตตินั่ม</option>
-													<option>อื่นๆ</option>
-												</select>
-											</div>
-											
-												<!-- ------------------------upload image----------------------------  -->
-									<div style="margin-top:15px;width:100%">
-										<span style="font-size:14px;">ลงรูปภาพประกอบการจำนำ</span>
-										<div class="wrap-input100 " style="border: none;">
-											<div class="box-img-list">
-												<div class="box box-img-1" style="display: block">
-													<div class="box-img-thumb">
-														<div class="upload-options js--image-preview"
-															id="img-pic-1">
-															<label> <input type="file" class="image-upload"
-																accept="image/*" name="files" required="required"/>
-															</label>
-														</div>
-													</div>
-												</div>
-												<div class="box box-img-2">
-													<div class="box-img-thumb">
-														<div class="upload-options js--image-preview"
-															id="img-pic-2">
-															<label> <input type="file" class="image-upload"
-																accept="image/*" name="files" />
-															</label>
-														</div>
-													</div>
-												</div>
-												<div class="box box-img-3">
-													<div class="box-img-thumb">
-														<div class="upload-options js--image-preview"
-															id="img-pic-3">
-															<label> <input type="file" class="image-upload"
-																accept="image/*" name="files" />
-															</label>
-														</div>
-													</div>
-												</div>
-												<div class="box box-img-4">
-													<div class="box-img-thumb">
-														<div class="upload-options js--image-preview"
-															id="img-pic-4">
-															<label> <input type="file" class="image-upload"
-																accept="image/*" name="files" />
-															</label>
-														</div>
-													</div>
-												</div>
-												<div class="box box-img-5">
-													<div class="box-img-thumb">
-														<div class="upload-options js--image-preview"
-															id="img-pic-5">
-															<label> <input type="file" class="image-upload"
-																accept="image/*" name="files" />
-															</label>
-														</div>
-													</div>
-												</div>
-												<div class="box box-img-6">
-													<div class="box-img-thumb">
-														<div class="upload-options js--image-preview"
-															id="img-pic-6">
-															<label> <input type="file" class="image-upload"
-																accept="image/*" name="files" />
-															</label>
-														</div>
-													</div>
-												</div>
-												<span class="clear-trash d-flex"> <i class="mr-auto">ใส่รูปได้สูงสุด
-														6 รูป</i><i class="clear-img fas fa-trash-alt"> ลบรูป</i>
-												</span>
-											</div>
-										</div>
-									</div>
-											
-											<div class="wrap-input100 validate-input" style="margin-top:15px;" data-validate="Message is required">
-												<textarea class="input100" name="pawnerPostDescription" placeholder="รายละเอียดสินค้าเพิ่มเติม"></textarea>
-												<span class="focus-input100"></span>
-											</div>
-											<div class="form-group-post float-left" style="font-size: 14.5px;font-weight: inherit;">
-												<input type="checkbox" required="required"> ฉันยอมรับและตกลง
-												<strong>เงือนไขการใช้งาน</strong> ของระบบบุญยง
-											</div>
-											<div class="container-contact100-form-btn">
-												<button type="submit" class="contact100-form-btn">
-													ยืนยัน
-												</button>
-											</div>
-										</form:form>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div> --%>
+
 	<script src="js/MultiStepForm.js"></script>
 	<script src="js/upimages.js"></script>
 	<script>
-		$(document).ready(function() {
-
-			$('#img-pic-1').click(function() {
-				$('.box-img-2').css("display", "block");
-			});
-
-			$('#img-pic-2').click(function() {
-				$('.box-img-3').css("display", "block");
-			});
-			$('#img-pic-3').click(function() {
-				$('.box-img-4').css("display", "block");
-			});
-			$('#img-pic-4').click(function() {
-				$('.box-img-5').css("display", "block");
-			});
-			$('#img-pic-5').click(function() {
-				$('.box-img-6').css("display", "block");
-			});
-
-			$('.clear-img').click(function() {
-				for (let i = 6; i > 1; i--) {
-					$('.box-img-' + i).css("display", "none");
-				}
-				$('.js--image-preview').css("background-image", "")
-				$('.image-upload').val('');
-			});
+		$('#img-pic-1').click(function() {
+			$('.box-img-2').css("display", "block");
 		});
+
+		$('#img-pic-2').click(function() {
+			$('.box-img-3').css("display", "block");
+		});
+		$('#img-pic-3').click(function() {
+			$('.box-img-4').css("display", "block");
+		});
+		$('#img-pic-4').click(function() {
+			$('.box-img-5').css("display", "block");
+		});
+		$('#img-pic-5').click(function() {
+			$('.box-img-6').css("display", "block");
+		});
+
+		$('.clear-img').click(function() {
+			for (let i = 6; i > 1; i--) {
+				$('.box-img-' + i).css("display", "none");
+			}
+			$('.js--image-preview').css("background-image", "")
+			$('.image-upload').val('');
+		});
+
 		function initImageUpload(box) {
 			let uploadField = box.querySelector('.image-upload');
 

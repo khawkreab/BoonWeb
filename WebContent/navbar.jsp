@@ -14,14 +14,16 @@
 <link href="vendor/font-awesome/css/fontawesome-all.min.css"
 	rel="stylesheet" type="text/css">
 
-<link rel="stylesheet" href="css/navbar.css">
+
 <link rel="stylesheet" href="css/customStyle.css">
 <link rel="stylesheet" href="css/animate.css">
 <link rel="stylesheet" href="css/login.css">
 <link rel="stylesheet" href="css/pledgeForm.css">
 <link rel="stylesheet" href="css/banner.css">
 <link rel="stylesheet" href="css/multiStepForm.css">
-
+<link rel="stylesheet" href="css/navbar.css">
+<link href="css/new-design.css" rel="stylesheet">
+<!-- <link rel="stylesheet" href="css/formUploadImg.css"> -->
 
 
 <!-- nabar -->
@@ -96,121 +98,7 @@
 		class="fas fa-shopping-cart"></i><span class="cart-num"
 		id="cartNumber"></span></a>
 	<div id="nav-custom-overlay"></div>
-	<nav id="nav-custom-fullscreen">
-		<ul class="flex d-inline-flex flex-wrap sibling-fade">
-			<li class="menu-icon"><a href="#">หน้าหลัก</a></li>
-			<!-- ----------------------------if user has ban---------------------------------------- -->
-			<%
-				if (session.getAttribute("pawnerState").equals("Banned")) {
-			%>
-			<li class="menu-icon"><a class="nav-link" id="omn">จำนำของ</a></li>
-			<%
-				} else {
-			%>
-			<li class="menu-icon"><a class="nav-link"
-				href="pawner-pledge.html">จำนำของ</a></li>
-			<%
-				}
-			%>
-<<<<<<< HEAD
-			<button class="navbar-toggler" type="button" data-toggle="collapse"
-				data-target="#navbarSupportedContent"
-				aria-controls="navbarSupportedContent" aria-expanded="false"
-				aria-label="Toggle navigation">
-				<i class="fas fa-bars"></i>
-			</button>
 
-			<ul class="navbar-nav ml-auto navbar-hidden">
-				<!-- ----------------------------pawner login---------------------------------------- -->
-				<%
-					if (session.getAttribute("isLogin") == "yes") {
-						if (session.getAttribute("userType") == "pawner") {
-				%>
-				<%if(session.getAttribute("pawnerState").equals("Banned")){  %>
-				<li><a class="nav-link" id="omn">จำนำ</a></li>
-				<%}else{ %>
-				<li><a class="nav-link" href="pawner-pledge.html">จำนำ</a></li>
-				<%} %>
-				<li><a class="nav-link" href="pawner-off-pledge.html">รายการของหลุดจำนำ</a></li>
-				<li><a class="nav-link" href="pawner-track-pledge.html">ติดตามการจำนำ</a></li>
-				<li><a class="nav-link" href="pawner-cart.html"><i
-						class="fas fa-shopping-cart"></i><span class="cart-num"
-						id="cartNumber"></span></a></li>
-				<li class="dropdown show"><a href="#" class="dropdown-toggle"
-					data-toggle="dropdown" role="button" aria-expanded="false"> <%=session.getAttribute("username")%></a>
-
-					<!-- -----------pawner login drop down menu---------------------- -->
-					<ul class="dropdown-menu" role="menu">
-						<li><p>บัญชีผู้ใช้งาน</p>
-							<div class="navbar-account">
-								<span class="navbar-account-photo"><i class="fas fa-user"></i></span><span
-									class="navbar-account-info"><span
-									class="navbar-account-naem"><%=session.getAttribute("username")%></span><span
-									class="navbar-account-email"><%=session.getAttribute("email")%></span></span>
-							</div></li>
-						<!--  <li><a href="logout.html" class="nav-link ">แก้ไขบัญชี</a></li> -->
-						<li><a href="pawner-post-history.html" class="nav-link ">ประวัติการจำนำ</a></li>
-						<li><a href="pawner-order.html" class="nav-link ">ประวัติการสังซื้อ</a></li>
-						<li><a href="logout.html" class="nav-link ">ออกจากระบบ</a></li>
-					</ul></li>
-				<!-- -----------------------------pawnShop login--------------------------------------- -->
-				<%
-					} else if (session.getAttribute("userType") == "pawnShop") {
-				%>
-				<%if(session.getAttribute("pawnshopState").equals("Banned")){  %>
-				<li><a class="nav-link" id="omn">ปล่อยของหลุดจำนำ</a></li>
-				<%}else{ %>
-				<li><a class="nav-link" href="pawnshop-pledge-sell.html">ปล่อยของหลุดจำนำ</a></li>
-				<%}%>
-					<li><a class="nav-link" href="pawnshop-index.html">รายการของจำนำ</a></li>
-				<li><a class="nav-link" href="pawnshop-track-estimate.html">ติดตามการประเมิน</a></li>
-				<li class="dropdown show"><a href="#" class="dropdown-toggle"
-					data-toggle="dropdown" role="button" aria-expanded="false"> <%=session.getAttribute("username")%></a>
-					<!-- -----------pawnShop login drop down menu---------------------- -->
-					<ul class="dropdown-menu" role="menu">
-						<li><p>บัญชีผู้ใช้งาน</p>
-							<div class="navbar-account">
-								<span class="navbar-account-photo">photo</span><span
-									class="navbar-account-info"><span
-									class="navbar-account-naem"><%=session.getAttribute("username")%></span><span
-									class="navbar-account-email"><%=session.getAttribute("email")%></span></span>
-							</div></li>
-						<!--  <li><a href="logout.html" class="nav-link ">แก้ไขบัญชี</a></li> -->
-						<li><a href="pawnshop-estimate-history.html"
-							class="nav-link ">ประวัติการประเมินของจำนำ</a></li>
-						<li><a href="pawnshop-list-post.html" class="nav-link ">ประวัติการปล่อยของหลุดจำนำ</a></li>
-						<li><a href="logout.html" class="nav-link ">ออกจากระบบ</a></li>
-					</ul></li>
-				<!-- ------------------------------not login-------------------------------------- -->
-				<%
-					}
-					} else {
-				%>
-				<li><a data-toggle="modal" data-target="#modalLogin"
-					class="nav-link js-scroll-trigger" href="#">ลงชื่อเข้าใช้</a></li>
-				<li><a href="pawner-register-form.html"
-					class="nav-link js-scroll-trigger">สมัครสมาชิก</a></li>
-				<%
-					}
-				%>
-
-			</ul>
-		</div>
-=======
-			<li class="menu-icon"><a class="nav-link"
-				href="pawner-off-pledge.html">รายการของหลุดจำนำ</a></li>
-			<li class="menu-icon"><a class="nav-link"
-				href="pawner-track-pledge.html">ติดตามการจำนำ</a></li>
-			<li class="menu-icon"><a href="pawner-post-history.html"
-				class="nav-link ">ประวัติการจำนำ</a></li>
-			<li class="menu-icon"><a href="pawner-order.html"
-				class="nav-link ">ประวัติการสังซื้อ</a></li>
-			<li class="menu-icon"><a href="logout.html" class="nav-link ">แก้ไขบัญชี</a></li>
-			<li class="menu-icon"><a href="logout.html" class="nav-link ">ออกจากระบบ</a></li>
-
-		</ul>
->>>>>>> doing
-	</nav>
 
 	<a id="nav-custom-toggle"> <span></span> <span></span> <span></span>
 	</a>
@@ -240,7 +128,6 @@
 %>
 <script src="js/navbar.js"></script>
 <script src="js/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
 <%
 	if (session.getAttribute("userType") == "pawner") {
@@ -514,7 +401,6 @@
 </script>
 
 <!-- -------------------------------------------------------------------------------------------------- -->
-
 <!-- Bootstrap core JavaScript -->
 <script src="vendor/jquery/jquery.min.js"></script>
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

@@ -85,6 +85,46 @@ input.invalid {
 	font-style: initial;
 }
 
+input[type=checkbox] {
+	width: 15px;
+	height: 15px;
+	margin: 0 5;
+}
+
+.tab textarea {
+	width: 100%;
+	height: 196px;
+	min-height: 200px;
+	max-height: 200px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	border: 2px solid #999;
+	border-radius: 10px;
+}
+
+.tab textarea:focus, .tab select:focus {
+	outline: none;
+	border-color: #ff7700;
+	border-radius: 10px;
+}
+
+.tab textarea:valid, .tab select:valid {
+	border-color: #24cf5f;
+}
+
+.tab span {
+	display: inline-flex;
+	width: 100%;
+	font-size: 1rem;
+}
+
+.tab select {
+	padding: 10px;
+    width: 100%;
+    border: 2px solid #999;
+	border-radius: 10px;
+}
+
 .step.active:after {
 	opacity: 1;
 	background-color: #f80303;

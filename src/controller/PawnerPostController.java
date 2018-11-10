@@ -123,9 +123,9 @@ public class PawnerPostController {
 			e.printStackTrace();
 		}
 		System.out.println("Start upload picture");
-	/*	String fileName ="";
+		String fileName ="";
 		
-		String dir = request.getServletContext().getRealPath("/")+"images\\imageUpload\\";
+		String dir = request.getServletContext().getRealPath("/")+"img\\uploadImge\\";
 		
 		Picture picture = new Picture();
 
@@ -148,7 +148,7 @@ public class PawnerPostController {
 				}
 			}
 		}
-		pawnerPostService.updatePicture(post.getPawnerPostId(), fileNames.get(0));*/
+		pawnerPostService.updatePicture(post.getPawnerPostId(), fileNames.get(0));
 		System.out.println("post.getPawnerPostId(), fileNames.get(0)");
 /*		System.out.println("test update picture => " +fileNames.get(0));
 */		return "redirect:pawner-track-pledge.html";
