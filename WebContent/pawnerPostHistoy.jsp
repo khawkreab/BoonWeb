@@ -114,7 +114,7 @@ tr:hover {
 							<div class="col-sm-5">
 								<div class="pro-img">
 									<img class="img-responsive"
-										src="images/imageUpload/${post.pawnerPostId.pawnerPostPicture }" />
+										src="img/uploadImge/${post.pawnerPostId.pawnerPostPicture }" />
 								</div>
 							</div>
 							<div class="col-md-7 single-top-in">

@@ -18,7 +18,7 @@
 <meta name="author" content="">
 
 <title>pawner-post-form</title>
-
+<link href="css/new-design.css" rel="stylesheet">
 </head>
 
 <body style="background-color: #f4f4f4;">

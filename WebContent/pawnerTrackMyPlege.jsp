@@ -225,7 +225,7 @@
 							<div class="col-sm-5">
 								<div class="pro-img">
 									<img class="img-responsive"
-										src="images/imageUpload/${post.pawnerPostPicture }" />
+										src="img/uploadImge/${post.pawnerPostPicture }" />
 								</div>
 							</div>
 							<div class="col-md-7 single-top-in">
