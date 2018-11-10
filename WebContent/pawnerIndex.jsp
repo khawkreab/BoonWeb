@@ -25,9 +25,7 @@
 
 <body id="page-top">
 
-	<!-- Navigation -->
-	<jsp:include page="navbar.jsp" />
-
+	
 
 	<header class="masthead text-center text-white d-flex">
       <div class="container my-auto">
@@ -52,8 +50,10 @@
       </div>
     </section>
 
+<!-- Navigation -->
+	<jsp:include page="navbar.jsp" />
 
-	<jsp:include page="footer.jsp"></jsp:include>
+	<%-- <jsp:include page="footer.jsp"></jsp:include> --%>
 
 	<!-- Plugin JavaScript -->
 	<script src="js/scollbardelay/jquery.easing.min.js"></script>

@@ -115,13 +115,15 @@ public class PawnerPostController {
 				pawnerPost.setPawnerPostWarranty(request.getParameter("pawnerPostTypeCamera"));
 				pawnerPost.setPawnerPostWeigh(request.getParameter("pawnerPostWeigh"));
 				post = pawnerPostService.insert(pawnerPost);
+				System.out.println("insert pawnerPost success!!!");
 			} else {
 				pawnerPostService.update(pawnerPost);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		String fileName ="";
+		System.out.println("Start upload picture");
+	/*	String fileName ="";
 		
 		String dir = request.getServletContext().getRealPath("/")+"images\\imageUpload\\";
 		
@@ -130,6 +132,7 @@ public class PawnerPostController {
 		List<String> fileNames = new ArrayList<String>();
 
 		if (null != Files && Files.size() > 0) {
+			System.out.println("picture != 0");
 			for (MultipartFile multipartFile : Files) {
 				fileName = multipartFile.getBytes().hashCode()+ "." + multipartFile.getContentType().split("/")[1];
 				if (!"".equalsIgnoreCase(fileName)) {
@@ -142,13 +145,13 @@ public class PawnerPostController {
 					pictureService.insert(picture);
 					
 					fileNames.add(fileName);
-					
 				}
 			}
 		}
-		pawnerPostService.updatePicture(post.getPawnerPostId(), fileNames.get(0));
-		System.out.println("test update picture => " +fileNames.get(0));
-		return "redirect:pawner-track-pledge.html";
+		pawnerPostService.updatePicture(post.getPawnerPostId(), fileNames.get(0));*/
+		System.out.println("post.getPawnerPostId(), fileNames.get(0)");
+/*		System.out.println("test update picture => " +fileNames.get(0));
+*/		return "redirect:pawner-track-pledge.html";
 	}
 	
 	

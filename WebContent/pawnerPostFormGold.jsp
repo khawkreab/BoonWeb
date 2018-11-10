@@ -6,34 +6,99 @@
  -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-		<html lang="en">
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<html lang="en">
 
-		<head>
-			<link rel="icon" href="img/logos/Artboard.png">
-			<meta charset="utf-8">
-			<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-			<meta name="description" content="">
-			<meta name="author" content="">
+<head>
+<link rel="icon" href="img/logos/Artboard.png">
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
 
-			<title>pawner-post-form</title>
+<title>pawner-post-form</title>
+</head>
 
-			<!-- Bootstrap core CSS -->
-			<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<body style="background-color: #f4f4f4;">
 
-			<!-- Custom styles for this template -->
-			<link href="css/new-design.css" rel="stylesheet">
-			<link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<div class="page">
+		<div class="pledge-container">
+			<div class="pledge-featured">
+				<div class="pledge-circle"></div>
+				<!--  <img src="#" class="pledge-product" /> -->
+			</div>
+			<div class="pledge-content">
+				<div id="choosetype">
+					<h4>กรอกข้อมูลการจำนำ</h4>
+					เลือกประเภทจำนำ :
+					<!-- type => gold -->
+					<a onclick="showsteptype(1)"><img src="img/icon/gold.png"
+						width="150" height="150px"></a>
+					<!-- type => com -->
+					<a id="" onclick="showsteptype(2)"><img src="img/icon/com.png"
+						width="150" height="150px"></a>
+					<!-- type => tv -->
+					<a id="" onclick="showsteptype(3)"><img src="img/icon/tv.png"
+						width="150" height="150px"></a>
+					<!-- type => Smart Phone -->
+					<a id="" onclick="showsteptype(4)"><img src="img/icon/mobile.png"
+						width="150" height="150px"></a>
+					<!-- type => Watch -->
+					<a id="" onclick="showsteptype(5)"><img src="img/icon/watch.png"
+						width="150" height="150px"></a>
+					<!-- type => Camera -->
+					<a id="" onclick="showsteptype(6)"><img src="img/icon/camera.png"
+						width="150" height="150px"></a>
 
-		</head>
+				</div>
+				<!-- One "tab" for each step in the form: -->
+				<form:form id="regForm" method="post" action="savePost.html"
+					modelAttribute="pawnerPost" enctype="multipart/form-data">
+					<input type="hidden" name="pawnerPostId" />
+					<input type="hidden" name="pawnerId.pawnerId" />
 
-		<body style="background-color:#f4f4f4;">
+					<!-- Circles which indicates the steps of the form: -->
+					<div style="text-align: center;" id="countstep">
+						<span class="step"></span> <span class="step"></span> <span
+							class="step"></span>
+					</div>
+					<!-- step 1 -->
+					<div class="tab" id="step1"></div>
 
-			<!-- Navigation   -->
-			<jsp:include page="navbar.jsp" />
+					<!-- step 2 -->
+					<div class="tab" id="step2"></div>
 
-			<!--banner-->
-			<div class="banner-top">
+					<!-- step 3 -->
+					<div class="tab" id="step3"></div>
+
+
+					<!-- Previous & Next button -->
+					<div style="overflow: auto;">
+						<div style="position: absolute; bottom: 20px; right: 20px;">
+							<button type="button" class="pledge-form-btn" id="chooseBtn"
+								onclick="choosetype()">เลือกประเภท</button>
+
+							<button type="button" class="pledge-form-btn" id="prevBtn"
+								onclick="nextPrev(-1)">ย้อนกลับ</button>
+
+							<button type="button" class="pledge-form-btn" id="nextBtn"
+								onclick="nextPrev(1)">ต่อไป</button>
+						</div>
+					</div>
+				</form:form>
+			</div>
+			<!-- END: .pledge-content -->
+		</div>
+		<!-- END: .pledge-container -->
+	</div>
+	<!-- END: .modal -->
+
+	<!-- Navigation   -->
+	<jsp:include page="navbar.jsp" />
+
+	<!--banner-->
+	<%-- 			<div class="banner-top">
 				<div class="">
 					<h1>ทองคำ</h1>
 					<em></em>
@@ -181,9 +246,9 @@
 						</div>
 					</div>
 				</div>
-			</div>
-			
-				<script src="js/upimages.js"></script>
+			</div> --%>
+	<script src="js/MultiStepForm.js"></script>
+	<script src="js/upimages.js"></script>
 	<script>
 		$(document).ready(function() {
 
@@ -312,6 +377,6 @@
 
 		//# sourceURL=pen.js
 	</script>
-		</body>
+</body>
 
-		</html>
+</html>

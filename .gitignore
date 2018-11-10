@@ -10,3 +10,7 @@ target/
 build/classes/controller/PawnerPostController.class
 build/classes/controller/LinkController.class
 build/classes/controller/EstimateController.class
+*.class
+*.class
+build/classes/controller/AdminContorller.class
+*.class
