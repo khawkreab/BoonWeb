@@ -60,7 +60,7 @@
 							<div class="col-sm-3">
 								<div class="pro-img">
 									<img class="img-responsive"
-										src="img/uploadImg/${postprocess.pawnerPostPicture }" />
+										src="img/uploadImge/${postprocess.pawnerPostPicture }" />
 								</div>
 							</div>
 							<div class="col-md-9 single-top-in">
