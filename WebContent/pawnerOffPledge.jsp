@@ -27,7 +27,6 @@
 
 <body id="page-top">
 
-
 	<!-- Navigation -->
 	<jsp:include page="navbar.jsp" />
 
