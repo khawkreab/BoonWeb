@@ -17,6 +17,7 @@ Shop Card
 	border-radius: 5px;
 	text-align: center;
 	z-index: 2;
+	margin: 20px;
 }
 
 .shop-card figure {
@@ -141,6 +142,7 @@ Date
 .shop-card .month, .shop-card .year {
 	font-size: 12px;
 }
+
 .ly {
 	border-left: 1px solid #FF3310;
 }
