@@ -49,6 +49,7 @@ public class PawnshopController {
 			HttpServletRequest request) {
 		try {
 			if (pawnshop.getPawnshopId() == 0) {
+				pawnshop.setPawnshopState("pawnshop");
 				pawnshopServ.insert(pawnshop);
 			} else {
 				pawnshopServ.update(pawnshop);

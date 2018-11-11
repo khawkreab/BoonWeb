@@ -48,6 +48,7 @@ public class PawnerController {
 	public String savePawner(@ModelAttribute("pawner") Pawner pawner, BindingResult result, HttpServletRequest request){
 		try {
 			if (pawner.getPawnerId() == 0){
+				pawner.setPawnerState("pawner");
 				pmService.insert(pawner);
 			}else{
 				pmService.update(pawner);
