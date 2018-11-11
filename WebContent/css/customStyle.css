@@ -24,8 +24,8 @@ html {
 }
 
 a:hover, a:active, a:focus {
-   outline: 0;
-   border: 0; 
+	outline: 0;
+	border: 0;
 }
 
 a:link {
@@ -33,12 +33,12 @@ a:link {
 }
 
 a:active {
-   border: none;
-} 
+	border: none;
+}
 
 .modal-open .modal {
-    overflow-x: hidden;
-    overflow-y: hidden;
+	overflow-x: hidden;
+	overflow-y: hidden;
 }
 
 .page {
@@ -88,11 +88,11 @@ a:active {
 }
 
 .btn-custom-defalt {
-	background-image: linear-gradient(to right, #ff6100, #ffac00);
+	background-image: linear-gradient(to right, #ffa500, #ff2300);
 }
 
 .btn-custom-cancel {
-	background-image: linear-gradient(to right, #0043ff, #00e7ff);
+	background-image: linear-gradient(to right, #00dcff, #0008ff);
 }
 
 .btn-custom:hover {

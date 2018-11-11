@@ -17,12 +17,10 @@
 <link rel="icon" href="img/logos/Artboard.png">
 <title>pawnshop-estimate-form</title>
 <link rel="stylesheet" href="css/carddetail.css">
-
+<link rel="stylesheet" href="css/slideimg.css">
 <%
-	int dataslideto = 0;
-	int dataslideto2 = 0;
-	String active = "active";
-	String active2 = "active";
+	int dataslideto = 0, dataslideto2 = 0;
+	String active = "active", active2 = "active";
 %>
 </head>
 <body style="overflow: hidden;">
@@ -32,8 +30,43 @@
 			<div class="mr-auto card-detail-left">
 				<!-- show image -->
 				<div class="card-detail-thumbnail">
-					<img class="left"
-						src="https://cdn2.hubspot.net/hubfs/322787/Mychefcom/images/BLOG/Header-Blog/photo-culinaire-pexels.jpg" />
+					<!-- slide image -->
+					     <div class="carousel slide article-slide" id="article-photo-carousel">
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner cont-slider">
+              
+                  <div class="item active">
+                    <img alt="" title="" src="http://placehold.it/600x400">
+                  </div>
+                  <div class="item">
+                    <img alt="" title="" src="http://placehold.it/600x400">
+                  </div>
+                  <div class="item">
+                    <img alt="" title="" src="https://cdn2.hubspot.net/hubfs/322787/Mychefcom/images/BLOG/Header-Blog/photo-culinaire-pexels.jpg">
+                  </div>
+                  <div class="item">
+                    <img alt="" title="" src="http://placehold.it/600x400">
+                  </div>
+                </div>
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                  <li class="active" data-slide-to="0" data-target="#article-photo-carousel">
+                    <img alt="" src="http://placehold.it/250x180">
+                  </li>
+                  <li class="" data-slide-to="1" data-target="#article-photo-carousel">
+                    <img alt="" src="http://placehold.it/250x180">
+                  </li>
+                  <li class="" data-slide-to="2" data-target="#article-photo-carousel">
+                    <img alt="" src="https://cdn2.hubspot.net/hubfs/322787/Mychefcom/images/BLOG/Header-Blog/photo-culinaire-pexels.jpg">
+                  </li>
+                  <li class="" data-slide-to="3" data-target="#article-photo-carousel">
+                    <img alt="" src="http://placehold.it/250x180">
+                  </li>
+                </ol>
+              </div>
+					<!-- 	<img class="left"
+						src="https://cdn2.hubspot.net/hubfs/322787/Mychefcom/images/BLOG/Header-Blog/photo-culinaire-pexels.jpg" /> -->
 				</div>
 				<!-- end show image -->
 				<!-- ---------------------- ประเมิน ---------------------  -->
@@ -65,7 +98,8 @@
 									id="maxNumber" onkeyup="check()" /> <!--<form:input path="estimatePriceMax" type="hidden" id="xx"/> -->
 							</li>
 							<li>
-								<button class="btn-custom btn-custom-defalt" type="submit" id="go" disabled>ให้ราคา</button>
+								<button class="btn-custom btn-custom-defalt" type="submit"
+									id="go" disabled>ให้ราคา</button>
 							</li>
 						</ul>
 						<!-- ------------- -->
@@ -208,8 +242,8 @@
 		</div>
 	</div> --%>
 
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script type="text/javascript">
 		var a;
 		var b;

@@ -146,22 +146,21 @@
 %><!-- ------------------------------not login-------------------------------------- -->
 <ul class="flex d-inline-flex"
 	style="position: absolute; top: 10px; right: 10px; list-style: none; z-index: 999">
-	<li class="btn-linear btn-linear-two"><a data-toggle="modal"
+	<li><a data-toggle="modal"
 		data-target="#modalLogin" class="nav-link " href="#"><button
-				class="btn-ln">
+				class="btn-custom btn-custom-defalt">
 				เข้าสู่ระบบ
-				<div class="fill-two"></div>
 			</button></a></li>
-	<li class="btn-linear btn-linear-two"><a
-		href="pawner-register-form.html" class="nav-link "><button
-				class="btn-ln">
+	<li ><a
+		href="pawner-register-form.html" class="nav-link ">
+		<button	class="btn-custom btn-custom-cancel">
 				สมัครสมาชิก
-				<div class="fill-two"></div>
 			</button></a></li>
 </ul>
 <%
 	}
 %>
+<!-- ------------------------------ End -------------------------------------- -->
 <script src="js/navbar.js"></script>
 <script src="js/jquery.min.js"></script>
 
