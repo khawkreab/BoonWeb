@@ -30,20 +30,20 @@ body {
 }
 </style>
 <link href="css/pawnerCard.css" rel="stylesheet">
+<link href="css/aos.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
 
-	<!-- ----------------------------login---------------------------------------- -->
+
 	<%
 		if (session.getAttribute("isLogin") == "yes") {
 	%>
-	<!-- ----------------------------pawner login---------------------------------------- -->
+	<!-- ----------------------------login---------------------------------------- -->
 	<%
 		if (session.getAttribute("userType") == "pawner") {
 	%>
-
-
+	<!-- ----------------------------pawner login---------------------------------------- -->
 	<section class="masthead text-center text-white d-flex header">
 		<div class="container my-auto">
 			<div class="row">
@@ -56,10 +56,14 @@ body {
 					<hr>
 				</div>
 				<div class="col-lg-8 mx-auto">
-					<p class="text-faded mb-5 animated lightSpeedIn delay-1s">“บุญยง เป็นสื่อกลางในการจำนำ
+					<p class="text-faded mb-5 animated lightSpeedIn delay-1s">“บุญยง
+						เป็นสื่อกลางในการจำนำ
 						ที่มีการรับประเมินราคาสินทรัพย์และปล่อยของหลุดจำนำทางออนไลน์
 						เพื่ออำนวยความสะดวกให้ลูกค้าสามารถเข้าถึงบริการได้ตลอด 24 ชั่วโมง”</p>
-					<a class="btn-custom" href="#plage">วิธีการจำนำของ</a>
+					<a class="btn-custom btn-custom-defalt" href="#plage">
+						<button class="btn-custom btn-custom-defalt">
+							วิธีการจำนำของ</button>
+					</a>
 				</div>
 			</div>
 		</div>
@@ -71,10 +75,11 @@ body {
 		</div>
 	</section>
 
-	<!-- ----------------------------pawn-shop login---------------------------------------- -->
+
 	<%
 		} else if (session.getAttribute("userType") == "pawnShop") {
 	%>
+	<!-- ----------------------------pawn-shop login---------------------------------------- -->
 	<!--banner-->
 	<section class="masthead text-center text-white d-flex header">
 		<div class="container my-auto">
@@ -88,17 +93,22 @@ body {
 					<hr>
 				</div>
 				<div class="col-lg-8 mx-auto">
-					<p class="text-faded mb-5 animated lightSpeedIn delay-1s">“บุญยง เป็นสื่อกลางในการจำนำ
+					<p class="text-faded mb-5 animated lightSpeedIn delay-1s">“บุญยง
+						เป็นสื่อกลางในการจำนำ
 						ที่มีการรับประเมินราคาสินทรัพย์และปล่อยของหลุดจำนำทางออนไลน์
 						เพื่ออำนวยความสะดวกให้ลูกค้าสามารถเข้าถึงบริการได้ตลอด 24 ชั่วโมง”</p>
-					<a class="btn-custom" href="#pledge">ประเมินของจำนำ</a>
+					<a href="#pledge">
+						<button class="btn-custom btn-custom-defalt">
+							ประเมินของจำนำ</button>
+					</a>
 				</div>
 			</div>
 		</div>
 	</section>
-	<section id="pledge">
+	<!-- ----------------------------shop-card-list ---------------------------------------- -->
+	<section id="pledge" class="shop-card-list">
 		<c:forEach items="${pawnerPosts}" var="post">
-			<div class="shop-card">
+			<div class="shop-card" data-aos="fade-up">
 				<div style="height: 200px;">
 					<div class="date">
 						<span class="day">12</span> <span class="month">Aug</span> <span
@@ -189,8 +199,9 @@ body {
 						ที่มีการรับประเมินราคาสินทรัพย์และปล่อยของหลุดจำนำทางออนไลน์
 						เพื่ออำนวยความสะดวกให้ลูกค้าสามารถเข้าถึงบริการได้ตลอด 24 ชั่วโมง”</p>
 					<div class="animated fadeInLeft delay-1s">
-						<a class="btn btn-primary btn-xl js-scroll-trigger"
-							href="#services">คลิกเพื่อดูรายละเอียด</a>
+						<a href="#services"><button
+								class="btn-custom btn-custom-defalt">
+								คลิกเพื่อดูรายละเอียด</button></a>
 					</div>
 				</div>
 			</div>
@@ -201,6 +212,10 @@ body {
 	%>
 	<!-- Navigation -->
 	<jsp:include page="navbar.jsp" />
+	<script type="text/javascript" src="js/aos.js"></script>
+	<script>
+		AOS.init();
+	</script>
 
 	<!-- footer  -->
 	<%-- <jsp:include page="footer.jsp"></jsp:include> --%>

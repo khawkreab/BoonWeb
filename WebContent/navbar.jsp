@@ -318,11 +318,11 @@
 								id="password" name="password" required="required">
 							<!-- login button -->
 							<div class="">
-								<button type="submit" class="btn-custom">
+								<button type="submit" class="btn-custom btn-custom-defalt">
 									เข้าสู้ระบบ
 								</button>
 								<button type="button" data-dismiss="modal"
-									class="btn btn-md btn-default" style="font-size: 15px;">ยกเลิก</button>
+									class="btn-custom btn-custom-cancel" style="font-size: 15px;">ยกเลิก</button>
 							</div>
 						</form>
 					</div>

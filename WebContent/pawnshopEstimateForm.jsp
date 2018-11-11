@@ -65,7 +65,7 @@
 									id="maxNumber" onkeyup="check()" /> <!--<form:input path="estimatePriceMax" type="hidden" id="xx"/> -->
 							</li>
 							<li>
-								<button class="btn-custom" type="submit" id="go" disabled>ให้ราคา</button>
+								<button class="btn-custom btn-custom-defalt" type="submit" id="go" disabled>ให้ราคา</button>
 							</li>
 						</ul>
 						<!-- ------------- -->

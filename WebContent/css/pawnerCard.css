@@ -7,6 +7,13 @@
 /*--------------------
 Shop Card
 ---------------------*/
+.shop-card-list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding-top: 20px;
+}
+
 .shop-card {
 	transform: translate(0%, 0%);
 	background: #f5f5f5;

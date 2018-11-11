@@ -1,30 +1,44 @@
 html {
-  scroll-behavior: smooth;
+	scroll-behavior: smooth;
 }
 
-
-::-webkit-scrollbar-track
-{
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 	border-radius: 10px;
 	background-color: #F5F5F5;
 }
 
-::-webkit-scrollbar
-{
+::-webkit-scrollbar {
 	width: 12px;
 	background-color: #F5F5F5;
 }
 
-::-webkit-scrollbar-thumb
-{
+::-webkit-scrollbar-thumb {
 	border-radius: 10px;
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
 	background-color: #555;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #ff3300; 
+	background: #ff3300;
+}
+
+a:hover, a:active, a:focus {
+   outline: 0;
+   border: 0; 
+}
+
+a:link {
+	text-decoration: none;
+}
+
+a:active {
+   border: none;
+} 
+
+.modal-open .modal {
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 .page {
@@ -39,11 +53,13 @@ html {
 	align-items: center;
 }
 
-.form label{
+.form label {
 	margin-top: 20px;
 }
-.form button{
+
+.form button {
 	margin: 20px;
+	font-size: 1rem;
 }
 
 .header {
@@ -59,8 +75,6 @@ html {
 	padding: 5px 20px;
 	border-radius: 2px;
 	border: none;
-	background-image: linear-gradient(to right, #ff6100, #ffac00);
-	font-family: Montserrat-Bold;
 	font-size: 18px;
 	color: #fff;
 	line-height: 1.2;
@@ -69,8 +83,18 @@ html {
 	display: inline-flex;
 	white-space: nowrap;
 	cursor: pointer;
+	transition: 0.5s;
+	background-size: 200% auto;
+}
+
+.btn-custom-defalt {
+	background-image: linear-gradient(to right, #ff6100, #ffac00);
+}
+
+.btn-custom-cancel {
+	background-image: linear-gradient(to right, #0043ff, #00e7ff);
 }
 
 .btn-custom:hover {
-	background-image: linear-gradient(to right, #ff8500, #ff7100, #ffac00);
+	background-position: right center;
 }
