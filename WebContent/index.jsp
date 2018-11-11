@@ -44,8 +44,7 @@ body {
 	%>
 
 
-	<section class="masthead text-center text-white d-flex header"
-		style="height: 678px;">
+	<section class="masthead text-center text-white d-flex header">
 		<div class="container my-auto">
 			<div class="row">
 				<div class="col-lg-10 mx-auto">
@@ -57,10 +56,10 @@ body {
 					<hr>
 				</div>
 				<div class="col-lg-8 mx-auto">
-					<p class="text-faded mb-5">“บุญยง เป็นสื่อกลางในการจำนำ
+					<p class="text-faded mb-5 animated lightSpeedIn delay-1s">“บุญยง เป็นสื่อกลางในการจำนำ
 						ที่มีการรับประเมินราคาสินทรัพย์และปล่อยของหลุดจำนำทางออนไลน์
 						เพื่ออำนวยความสะดวกให้ลูกค้าสามารถเข้าถึงบริการได้ตลอด 24 ชั่วโมง”</p>
-					<a class="btn btn-primary btn-xl js-scroll-trigger" href="#plage">วิธีการจำนำของ</a>
+					<a class="btn-custom" href="#plage">วิธีการจำนำของ</a>
 				</div>
 			</div>
 		</div>
@@ -77,8 +76,27 @@ body {
 		} else if (session.getAttribute("userType") == "pawnShop") {
 	%>
 	<!--banner-->
-	<section class="d-flex header"></section>
-	<div class="result-group">
+	<section class="masthead text-center text-white d-flex header">
+		<div class="container my-auto">
+			<div class="row">
+				<div class="col-lg-10 mx-auto">
+					<h2 class="text-uppercase">
+						<strong class="text-white">ยินดีต้อนรับ <br>โรงรับจำนำ
+							<%=session.getAttribute("username")%> <br>สู่เว็บจำนำออนไลน์
+						</strong>
+					</h2>
+					<hr>
+				</div>
+				<div class="col-lg-8 mx-auto">
+					<p class="text-faded mb-5 animated lightSpeedIn delay-1s">“บุญยง เป็นสื่อกลางในการจำนำ
+						ที่มีการรับประเมินราคาสินทรัพย์และปล่อยของหลุดจำนำทางออนไลน์
+						เพื่ออำนวยความสะดวกให้ลูกค้าสามารถเข้าถึงบริการได้ตลอด 24 ชั่วโมง”</p>
+					<a class="btn-custom" href="#pledge">ประเมินของจำนำ</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="pledge">
 		<c:forEach items="${pawnerPosts}" var="post">
 			<div class="shop-card">
 				<div style="height: 200px;">
@@ -131,8 +149,7 @@ body {
 				</div>
 			</div> --%>
 		</c:forEach>
-	</div>
-
+	</section>
 	<script>
 		$(document).ready(function() {
 			var featured = $('.featured').length;

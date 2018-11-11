@@ -1,7 +1,49 @@
+html {
+  scroll-behavior: smooth;
+}
+
+
+::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #555;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ff3300; 
+}
+
 .page {
 	display: flex;
 	width: 100%;
 	height: 100%;
+}
+
+.form {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.form label{
+	margin-top: 20px;
+}
+.form button{
+	margin: 20px;
 }
 
 .header {
@@ -13,4 +55,22 @@
 	align-items: center;
 }
 
+.btn-custom {
+	padding: 5px 20px;
+	border-radius: 2px;
+	border: none;
+	background-image: linear-gradient(to right, #ff6100, #ffac00);
+	font-family: Montserrat-Bold;
+	font-size: 18px;
+	color: #fff;
+	line-height: 1.2;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	display: inline-flex;
+	white-space: nowrap;
+	cursor: pointer;
+}
 
+.btn-custom:hover {
+	background-image: linear-gradient(to right, #ff8500, #ff7100, #ffac00);
+}

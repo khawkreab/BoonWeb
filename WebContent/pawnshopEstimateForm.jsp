@@ -25,9 +25,9 @@
 	String active2 = "active";
 %>
 </head>
-<body>
+<body style="overflow: hidden;">
 	<section class="card-section">
-		<div class="card-detail d-flex">
+		<div class="card-detail d-flex animated lightSpeedIn">
 			<!-- left -->
 			<div class="mr-auto card-detail-left">
 				<!-- show image -->
@@ -37,7 +37,7 @@
 				</div>
 				<!-- end show image -->
 				<!-- ---------------------- ประเมิน ---------------------  -->
-				<div class="">
+				<div class="card-estimate">
 					<p>
 						<i class="fas fa-info-circle item-info-tip"><span>
 								ประเมินราคาสินค้า โดยให้เป็นช่วงราคา </span></i>
@@ -51,7 +51,7 @@
 							value="${pawnerPost.pawnerPostId}" />
 						<!-- ------------- -->
 
-						<ul class="card-estimate">
+						<ul>
 							<li><i class="fas fa-tags item-info-price"></i></li>
 							<li><form:input class="#"
 									pattern="[^'a-zA-Zก-์@!#$?:^%&*+/=()\\_`{|}~-]{1,10}"
@@ -65,7 +65,7 @@
 									id="maxNumber" onkeyup="check()" /> <!--<form:input path="estimatePriceMax" type="hidden" id="xx"/> -->
 							</li>
 							<li>
-								<button type="submit" id="go" disabled>ให้ราคา</button>
+								<button class="btn-custom" type="submit" id="go" disabled>ให้ราคา</button>
 							</li>
 						</ul>
 						<!-- ------------- -->
@@ -76,8 +76,10 @@
 			<!-- right -->
 			<div class="card-detail-right ml-auto">
 				<div class="card-detail-title">
-					<span class="item-info-title">${pawnerPost.pawnerPostName }
-						${pawnerPost.pawnerPostBrand }</span>
+					<p>${pawnerPost.pawnerPostName }${pawnerPost.pawnerPostBrand }</p>
+					<span><i class="far fa-clock"></i> <fmt:setLocale
+							value="en_US" /> <fmt:formatDate type="date" dateStyle="long"
+							value="${pawnerPost.pawnerPostDate}" /></span>
 				</div>
 				<div class="card-detail-separator"></div>
 				<ul class="item-info-list">
@@ -153,15 +155,9 @@
 						class="item-info-location"><i class="fas fa-phone"></i>
 						${pawnerPost.pawnerId.pawnerPhone} <i
 						class="fas fa-map-marker-alt"></i>
-						${pawnerPost.pawnerId.pawnerProvince} </span> <span
-						class="item-info-location"><i class="far fa-clock"></i> </span>
+						${pawnerPost.pawnerId.pawnerProvince} </span>
 				</div>
 			</div>
-			<%-- <div>
-			<fmt:setLocale value="en_US" />
-			<fmt:formatDate type="date" dateStyle="long"
-				value="${pawnerPost.pawnerPostDate}" />
-		</div> --%>
 		</div>
 		<jsp:include page="footer.jsp"></jsp:include>
 	</section>

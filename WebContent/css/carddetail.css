@@ -1,7 +1,8 @@
 /* The card */
 .card-section {
 	display: flex;
-	flex-wrap: wrap; width : 100vw;
+	flex-wrap: wrap;
+	width: 100vw;
 	height: 100vh;
 	background: linear-gradient(-25deg, #ffffff 50%, #3ebeff 50.1%);
 	justify-content: center;
@@ -79,16 +80,31 @@
 }
 
 .card-estimate {
+	padding: 10px;
+}
+
+.card-estimate ul {
 	display: flex;
 	list-style: none;
 	padding-inline-start: 0px;
 	margin-block-start: 0px;
 }
 
-.card-estimate li {
+.card-estimate ul li {
 	margin: 0 5px;
 }
 
 .card-detail-title {
-	margin: auto 200px;
+	padding: 10px;
+	font-size: 2rem;
+	font-weight: 600;
+}
+
+.card-detail-title span {
+	display: block;
+	font-size: .8rem;
+}
+
+.card-detail-title p {
+	margin: 0px;
 }

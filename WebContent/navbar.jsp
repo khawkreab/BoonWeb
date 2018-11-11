@@ -317,12 +317,12 @@
 							<label for="password">รหัสผ่าน</label> <input type="password"
 								id="password" name="password" required="required">
 							<!-- login button -->
-							<div class="form-group">
-								<button type="submit" class="btn btn-sm btn-primary"
-									style="margin-right: 40px; font-size: 15px; background-color: #ff7f00; border-color: #9e9e9e00;">เข้าสู้ระบบ
+							<div class="">
+								<button type="submit" class="btn-custom">
+									เข้าสู้ระบบ
 								</button>
 								<button type="button" data-dismiss="modal"
-									class="btn btn-sm btn-default" style="font-size: 15px;">ยกเลิก</button>
+									class="btn btn-md btn-default" style="font-size: 15px;">ยกเลิก</button>
 							</div>
 						</form>
 					</div>
