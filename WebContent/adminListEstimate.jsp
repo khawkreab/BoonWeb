@@ -121,193 +121,622 @@
 			<div class="scroll-sidebar">
 				<!-- Sidebar navigation-->
 				<nav class="sidebar-nav">
-                    <ul id="sidebarnav">
-                        
-
-                       
-                        <li class="nav-label">List All</li>
-
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-table"></i><span class="hide-menu">Tables</span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="admin-list-pawner.html">List Pawner</a></li>
-                                <li><a href="admin-list-pawnshop.html">List Pawnshop</a></li>
-                                <li><a href="admin-list-estimate.html">List Estimate</a></li>
-                                <li><a href="admin-list-order.html">List Order</a></li>
-                            </ul>
-                        </li>
+					<ul id="sidebarnav">
 
 
-                       </ul>
-                </nav>
+
+						<li class="nav-label">List All</li>
+
+						<li><a class="has-arrow  " href="#" aria-expanded="false"><i
+								class="fa fa-table"></i><span class="hide-menu">Tables</span></a>
+							<ul aria-expanded="false" class="collapse">
+								<li><a href="admin-list-pawner.html">List Pawner</a></li>
+								<li><a href="admin-list-pawnshop.html">List Pawnshop</a></li>
+								<li><a href="admin-list-estimate.html">List Estimate</a></li>
+								<li><a href="admin-list-order.html">List Order</a></li>
+							</ul></li>
+
+
+					</ul>
+				</nav>
 				<!-- End Sidebar navigation -->
 			</div>
 			<!-- End Sidebar scroll-->
 		</div>
-		
-		
-		 <section style="margin-left: 240px">
-		<div class="container">
-			<div class="history-filter">
-				<div class="d-flex">
-					<div class="mr-auto p-2">List Estimate</div>
-					 
-				</div>
+		<!-- Page wrapper  -->
+
+		<!--------------------------------------------------Gold-------------------------------------------------------->
+		<div class="page-wrapper">
+			<!-- Bread crumb -->
+
+			<!-- /.panel-heading -->
+			<div class="panel-body">
+				<div class="mr-auto p-2">List Gold</div>
+				<table class="table table-striped table-bordered table-hover" id="">
+					<thead>
+						<tr>
+							<th>Picture</th>
+							<th>Post Name</th>
+							<th>Brand</th>
+							<th>Pure</th>
+							<th>Weigh</th>
+							<th>Category</th>
+							<th>Description</th>
+							<th>Price Min</th>
+							<th>Price Max</th>
+							<th>Date</th>
+							<th>AccessDate</th>
+							<th>Status</th>
+							<th>Pawner</th>
+							<th>Pawnshop</th>
+						</tr>
+					</thead>
+					<c:forEach items="${adminEList}" var="adEstimate">
+						<c:if test="${adEstimate.pawnerPostId.pawnerPostItemType == 'Gold'}">
+							<tbody>
+								<tr class="odd gradeX">
+									<td><img class="img-responsive"
+										src="images/uploadImage/${adEstimate.pawnerPostId.pawnerPostPicture }" /></td>
+									<td>${adEstimate.pawnerPostId.pawnerPostName}</td>
+									<td>${adEstimate.pawnerPostId.pawnerPostBrand}</td>
+									<td>${adEstimate.pawnerPostId.pawnerPostPure}</td>
+									<td>${adEstimate.pawnerPostId.pawnerPostWeigh}</td>
+									<td>${adEstimate.pawnerPostId.pawnerPostCategory}</td>
+									<td>${adEstimate.pawnerPostId.pawnerPostDescription}</td>
+									<td>${adEstimate.estimatePriceMin}</td>
+									<td>${adEstimate.estimatePriceMax}</td>
+									<td>${adEstimate.estimateDate}</td>
+									<td>${adEstimate.estimateAccessDate}</td>
+									<td>${adEstimate.estimateStatus}<!-- Status --> <c:if
+											test="${adEstimate.estimateStatus == 'complete'}">
+											<li>Status : <span class="badge badge-success">Complete</span>
+											</li>
+										</c:if> <c:if test="${adEstimate.estimateStatus == 'waiting'}">
+											<li>Status : <span class="badge badge-danger">Waiting</span>
+											</li>
+										</c:if> <c:if test="${adEstimate.estimateStatus == 'process'}">
+											<li>Status : <span class="badge badge-warning">Process</span>
+											</li>
+										</c:if> <c:if test="${adEstimate.estimateStatus == 'proceed'}">
+											<li>Status : <span class="badge badge-warning">Process</span>
+											</li>
+										</c:if> <c:if test="${adEstimate.estimateStatus == 'approve'}">
+											<li>Status : <span class="badge badge-primary">Approve</span>
+											</li>
+										</c:if> <c:if test="${adEstimate.estimateStatus == 'denei'}">
+											<li>Status : <span class="badge badge-danger">Denei</span>
+											</li>
+										</c:if>
+									</td>
+									<td>Pawner ID :<span class="badge badge-default">
+											${adEstimate.pawnerPostId.pawnerId.pawnerId} </span> Pawner Name :<span
+										class="badge badge-default">
+											${adEstimate.pawnerPostId.pawnerId.pawnerFirstname}
+											${adEstimate.pawnerPostId.pawnerId.pawnerLastname}</span> Pawner
+										Mail :<span class="badge badge-default">
+											${adEstimate.pawnerPostId.pawnerId.pawnerEmail} </span>
+									</td>
+									<td>Pawnshop ID :<span class="badge badge-default">
+											${adEstimate.pawnshopId.pawnshopId} </span> Pawnshop Name :<span
+										class="badge badge-default">
+											${adEstimate.pawnshopId.pawnshopName} </span> Pawnshop Address :<span
+										class="badge badge-default">
+											${adEstimate.pawnshopId.pawnshopParish}
+											${adEstimate.pawnshopId.pawnshopDistrict}
+											${adEstimate.pawnshopId.pawnshopProvince}
+											${adEstimate.pawnshopId.pawnshopPostcodes} </span> Pawnshop Mail :<span
+										class="badge badge-default">
+											${adEstimate.pawnshopId.pawnshopEmail} </span>
+									</td>
+								</tr>
+							</tbody>
+						</c:if>
+					</c:forEach>
+				</table>
 			</div>
 		</div>
-		 <c:forEach items="${adminEList}" var="adEstimate">
-			<div class="container"><div class="card">
-				<div class="history-main">
-					<div class="d-flex history-title">
-									
-						<div class="ml-auto p-2">
-							<span>${adEstimate.pawnerPostId.pawnerPostItemType}</span>
-						</div>
-					</div>
-					<div class="history-body">
-						<div class="row">
-							<div class="col-sm-5">
- 									<div class="pro-img">
-									<img class="img-responsive"
-										src="images/uploadImage/${adEstimate.pawnerPostId.pawnerPostPicture }" />
-								</div>
-							</div>
-							<div class="col-sm-7">
 
-								<span class="history-name">${adEstimate.pawnerPostId.pawnerPostName}
-									${adEstimate.pawnerPostId.pawnerPostBrand} ${adEstimate.pawnerPostId.pawnerPostTypeCamera}
-									${adEstimate.pawnerPostId.pawnerPostCameraLen} </span>
-								<div class="history-detail">
-									<ul>
+		<!--------------------------------------------------Watch-------------------------------------------------------->
+		<div class="page-wrapper">
+			<!-- Bread crumb -->
 
-										<!-- Watch,Electronic -->
-										<c:if test="${adEstimate.pawnerPostId.pawnerPostModel != null}">
-											<li>Model : ${adEstimate.pawnerPostId.pawnerPostModel}</li>
-											<li>Serial : ${adEstimate.pawnerPostId.pawnerPostSerial}</li>
+			<!-- /.panel-heading -->
+			<div class="panel-body">
+				<div class="mr-auto p-2">List Watch</div>
+				<table class="table table-striped table-bordered table-hover" id="">
+					<thead>
+						<tr>
+							<th>Picture</th>
+							<th>Post Name</th>
+							<th>Brand</th>
+							<th>Case</th>
+							<th>Bracelet</th>
+							<th>Diamond</th>
+							<th>Production</th>
+							<th>Package</th>
+							<th>Warranty</th>
+							<th>Description</th>
+							<th>Price Min</th>
+							<th>Price Max</th>
+							<th>Date</th>
+							<th>AccessDate</th>
+							<th>Status</th>
+							<th>Pawner</th>
+							<th>Pawnshop</th>
+						</tr>
+					</thead>
+					<c:forEach items="${adminEList}" var="adEstimate">
+							<c:if test="${adEstimate.pawnerPostId.pawnerPostItemType == 'Watch'}">
+							<tbody>
+								<tr class="odd gradeX">
+									<td><img class="img-responsive"
+										src="images/uploadImage/${adEstimate.pawnerPostId.pawnerPostPicture }" /></td>
+									<td>${adEstimate.pawnerPostId.pawnerPostName}</td>
+									<td>${adEstimate.pawnerPostId.pawnerPostBrand}</td>
+									<td>${adEstimate.pawnerPostId.pawnerPostCase}</td>
+									<td>${adEstimate.pawnerPostId.pawnerPostBracelet}</td>
+									<td>${adEstimate.pawnerPostId.pawnerPostDiamond}</td>
+									<td>${adEstimate.pawnerPostId.pawnerPostProduction}</td>
+									<td>${adEstimate.pawnerPostId.pawnerPostPackage}</td>
+									<td>${adEstimate.pawnerPostId.pawnerPostWarranty}</td>
+									<td>${adEstimate.pawnerPostId.pawnerPostDescription}</td>
+									<td>${adEstimate.estimatePriceMin}</td>
+									<td>${adEstimate.estimatePriceMax}</td>
+									<td>${adEstimate.estimateDate}</td>
+									<td>${adEstimate.estimateAccessDate}</td>
+									<td>${adEstimate.estimateStatus}<!-- Status --> <c:if
+											test="${adEstimate.estimateStatus == 'complete'}">
+											<li>Status : <span class="badge badge-success">Complete</span>
+											</li>
+										</c:if> <c:if test="${adEstimate.estimateStatus == 'waiting'}">
+											<li>Status : <span class="badge badge-danger">Waiting</span>
+											</li>
+										</c:if> <c:if test="${adEstimate.estimateStatus == 'process'}">
+											<li>Status : <span class="badge badge-warning">Process</span>
+											</li>
+										</c:if> <c:if test="${adEstimate.estimateStatus == 'proceed'}">
+											<li>Status : <span class="badge badge-warning">Process</span>
+											</li>
+										</c:if> <c:if test="${adEstimate.estimateStatus == 'approve'}">
+											<li>Status : <span class="badge badge-primary">Approve</span>
+											</li>
+										</c:if> <c:if test="${adEstimate.estimateStatus == 'denei'}">
+											<li>Status : <span class="badge badge-danger">Denei</span>
+											</li>
 										</c:if>
-										
-											<c:if test="${adEstimate.pawnerPostId.pawnerPostProduction != null}">
-											<li>Production : ${adEstimate.pawnerPostId.pawnerPostProduction}</li>
-										</c:if>
+									</td>
+									<td>Pawner ID :<span class="badge badge-default">
+											${adEstimate.pawnerPostId.pawnerId.pawnerId} </span> Pawner Name :<span
+										class="badge badge-default">
+											${adEstimate.pawnerPostId.pawnerId.pawnerFirstname}
+											${adEstimate.pawnerPostId.pawnerId.pawnerLastname}</span> Pawner
+										Mail :<span class="badge badge-default">
+											${adEstimate.pawnerPostId.pawnerId.pawnerEmail} </span>
+									</td>
+									<td>Pawnshop ID :<span class="badge badge-default">
+											${adEstimate.pawnshopId.pawnshopId} </span> Pawnshop Name :<span
+										class="badge badge-default">
+											${adEstimate.pawnshopId.pawnshopName} </span> Pawnshop Address :<span
+										class="badge badge-default">
+											${adEstimate.pawnshopId.pawnshopParish}
+											${adEstimate.pawnshopId.pawnshopDistrict}
+											${adEstimate.pawnshopId.pawnshopProvince}
+											${adEstimate.pawnshopId.pawnshopPostcodes} </span> Pawnshop Mail :<span
+										class="badge badge-default">
+											${adEstimate.pawnshopId.pawnshopEmail} </span>
+									</td>
+								</tr>
+							</tbody>
+						</c:if>
+					</c:forEach>
+				</table>
+			</div>
+		</div>
 
-										<c:if test="${adEstimate.pawnerPostId.pawnerPostWarranty != null}">
-											<li>Warranty : ${adEstimate.pawnerPostId.pawnerPostWarranty}</li>
-										</c:if>
-										<c:if test="${adEstimate.pawnerPostId.pawnerPostPurchase != null}">
-											<li>Purchase : ${adEstimate.pawnerPostId.pawnerPostPurchase}</li>
-										</c:if>
+		<!--------------------------------------------------SmartPhone-------------------------------------------------------->
+		<div class="page-wrapper">
+			<!-- Bread crumb -->
 
-										<!-- Gold -->
-										<c:if test="${adEstimate.pawnerPostId.pawnerPostPure != null}">
-											<li>Pure : ${adEstimate.pawnerPostId.pawnerPostPure  }</li>
-											<li>Weigh : ${adEstimate.pawnerPostId.pawnerPostWeigh }</li>
-											<li>Category : ${adEstimate.pawnerPostId.pawnerPostCategory }</li>
+			<!-- /.panel-heading -->
+			<div class="panel-body">
+				<div class="mr-auto p-2">List Watch</div>
+				<table class="table table-striped table-bordered table-hover" id="">
+					<thead>
+						<tr>
+							<th>Picture</th>
+							<th>Post Name</th>
+							<th>Brand</th>
+							<th>Serial</th>
+							<th>Model</th>
+							<th>Capacity</th>
+							<th>Purchase</th>
+							<th>Production</th>
+							<th>Battery</th>
+							<th>Warranty</th>
+							<th>Description</th>
+							<th>Price Min</th>
+							<th>Price Max</th>
+							<th>Date</th>
+							<th>AccessDate</th>
+							<th>Status</th>
+							<th>Pawner</th>
+							<th>Pawnshop</th>
+						</tr>
+					</thead>
+					<c:forEach items="${adminEList}" var="adEstimate">
+					<c:if test="${adEstimate.pawnerPostId.pawnerPostItemType == 'Smartphone'}">
+						<tbody>
+								<tr class="odd gradeX">
+									<td><img class="img-responsive"
+										src="images/uploadImage/${adEstimate.pawnerPostId.pawnerPostPicture }" /></td>
+									<td>${adEstimate.pawnerPostId.pawnerPostName}</td>
+									<td>${adEstimate.pawnerPostId.pawnerPostBrand}</td>
+									<td>${adEstimate.pawnerPostId.pawnerPostSerial}</td>
+									<td>${adEstimate.pawnerPostId.pawnerPostModel}</td>
+									<td>${adEstimate.pawnerPostId.pawnerPostCapacity}</td>
+									<td>${adEstimate.pawnerPostId.pawnerPostPurchase}</td>
+									<td>${adEstimate.pawnerPostId.pawnerPostProduction}</td>
+									<td>${adEstimate.pawnerPostId.pawnerPostBattery}</td>
+									<td>${adEstimate.pawnerPostId.pawnerPostWarranty}</td>
+									<td>${adEstimate.pawnerPostId.pawnerPostDescription}</td>
+									<td>${adEstimate.estimatePriceMin}</td>
+									<td>${adEstimate.estimatePriceMax}</td>
+									<td>${adEstimate.estimateDate}</td>
+									<td>${adEstimate.estimateAccessDate}</td>
+									<td>${adEstimate.estimateStatus}<!-- Status --> <c:if
+											test="${adEstimate.estimateStatus == 'complete'}">
+											<li>Status : <span class="badge badge-success">Complete</span>
+											</li>
+										</c:if> <c:if test="${adEstimate.estimateStatus == 'waiting'}">
+											<li>Status : <span class="badge badge-danger">Waiting</span>
+											</li>
+										</c:if> <c:if test="${adEstimate.estimateStatus == 'process'}">
+											<li>Status : <span class="badge badge-warning">Process</span>
+											</li>
+										</c:if> <c:if test="${adEstimate.estimateStatus == 'proceed'}">
+											<li>Status : <span class="badge badge-warning">Process</span>
+											</li>
+										</c:if> <c:if test="${adEstimate.estimateStatus == 'approve'}">
+											<li>Status : <span class="badge badge-primary">Approve</span>
+											</li>
+										</c:if> <c:if test="${adEstimate.estimateStatus == 'denei'}">
+											<li>Status : <span class="badge badge-danger">Denei</span>
+											</li>
 										</c:if>
+									</td>
+									<td>Pawner ID :<span class="badge badge-default">
+											${adEstimate.pawnerPostId.pawnerId.pawnerId} </span> Pawner Name :<span
+										class="badge badge-default">
+											${adEstimate.pawnerPostId.pawnerId.pawnerFirstname}
+											${adEstimate.pawnerPostId.pawnerId.pawnerLastname}</span> Pawner
+										Mail :<span class="badge badge-default">
+											${adEstimate.pawnerPostId.pawnerId.pawnerEmail} </span>
+									</td>
+									<td>Pawnshop ID :<span class="badge badge-default">
+											${adEstimate.pawnshopId.pawnshopId} </span> Pawnshop Name :<span
+										class="badge badge-default">
+											${adEstimate.pawnshopId.pawnshopName} </span> Pawnshop Address :<span
+										class="badge badge-default">
+											${adEstimate.pawnshopId.pawnshopParish}
+											${adEstimate.pawnshopId.pawnshopDistrict}
+											${adEstimate.pawnshopId.pawnshopProvince}
+											${adEstimate.pawnshopId.pawnshopPostcodes} </span> Pawnshop Mail :<span
+										class="badge badge-default">
+											${adEstimate.pawnshopId.pawnshopEmail} </span>
+									</td>
+								</tr>
+							</tbody>
+						</c:if>
+					</c:forEach>
+				</table>
+			</div>
+		</div>
 
-										<!-- Watch -->
-										<c:if test="${adEstimate.pawnerPostId.pawnerPostCase != null}">
-											<li>Case : ${adEstimate.pawnerPostId.pawnerPostCase }</li>
-											<li>Bracelet : ${adEstimate.pawnerPostId.pawnerPostBracelet }</li>
-											<c:if test="${adEstimate.pawnerPostId.pawnerPostDiamond != null}">
-												<li>Diamond : ${adEstimate.pawnerPostId.pawnerPostDiamond }</li>
-											</c:if>
-											<c:if test="${adEstimate.pawnerPostId.pawnerPostPackage != null}">
-												<li>Package : ${adEstimate.pawnerPostId.pawnerPostPackage}</li>
-											</c:if>
-										</c:if>
+		<!--------------------------------------------------Laptop-------------------------------------------------------->
+		<div class="page-wrapper">
+			<!-- Bread crumb -->
 
-										<!-- Electronic tv com telephone -->
-										<c:if test="${adEstimate.pawnerPostId.pawnerPostSize != null}">
-											<li>Size : ${adEstimate.pawnerPostId.pawnerPostSize }</li>
+			<!-- /.panel-heading -->
+			<div class="panel-body">
+				<div class="mr-auto p-2">List Laptop</div>
+				<table class="table table-striped table-bordered table-hover" id="">
+					<thead>
+						<tr>
+							<th>Picture</th>
+							<th>Post Name</th>
+							<th>Brand</th>
+							<th>Serial</th>
+							<th>Model</th>
+							<th>Size</th>
+							<th>Harddisk</th>
+							<th>Ram</th>
+							<th>Purchase</th>
+							<th>Production</th>
+							<th>Battery</th>
+							<th>Warranty</th>
+							<th>Description</th>
+							<th>Price Min</th>
+							<th>Price Max</th>
+							<th>Date</th>
+							<th>AccessDate</th>
+							<th>Status</th>
+							<th>Pawner</th>
+							<th>Pawnshop</th>
+						</tr>
+					</thead>
+					<c:forEach items="${adminEList}" var="adEstimate">
+						<c:if test="${adEstimate.pawnerPostId.pawnerPostItemType == 'Laptop'}">
+							<tbody>
+								<tr class="odd gradeX">
+									<td><img class="img-responsive"
+										src="images/uploadImage/${adEstimate.pawnerPostId.pawnerPostPicture }" /></td>
+									<td>${adEstimate.pawnerPostId.pawnerPostName}</td>
+									<td>${adEstimate.pawnerPostId.pawnerPostBrand}</td>
+									<td>${adEstimate.pawnerPostId.pawnerPostSerial}</td>
+									<td>${adEstimate.pawnerPostId.pawnerPostModel}</td>
+									<td>${adEstimate.pawnerPostId.pawnerPostSize}</td>
+									<td>${adEstimate.pawnerPostId.pawnerPostHarddisk}</td>
+									<td>${adEstimate.pawnerPostId.pawnerPostRam}</td>
+									<td>${adEstimate.pawnerPostId.pawnerPostPurchase}</td>
+									<td>${adEstimate.pawnerPostId.pawnerPostProduction}</td>
+									<td>${adEstimate.pawnerPostId.pawnerPostBattery}</td>
+									<td>${adEstimate.pawnerPostId.pawnerPostWarranty}</td>
+									<td>${adEstimate.pawnerPostId.pawnerPostDescription}</td>
+									<td>${adEstimate.estimatePriceMin}</td>
+									<td>${adEstimate.estimatePriceMax}</td>
+									<td>${adEstimate.estimateDate}</td>
+									<td>${adEstimate.estimateAccessDate}</td>
+									<td>${adEstimate.estimateStatus}<!-- Status --> <c:if
+											test="${adEstimate.estimateStatus == 'complete'}">
+											<li>Status : <span class="badge badge-success">Complete</span>
+											</li>
+										</c:if> <c:if test="${adEstimate.estimateStatus == 'waiting'}">
+											<li>Status : <span class="badge badge-danger">Waiting</span>
+											</li>
+										</c:if> <c:if test="${adEstimate.estimateStatus == 'process'}">
+											<li>Status : <span class="badge badge-warning">Process</span>
+											</li>
+										</c:if> <c:if test="${adEstimate.estimateStatus == 'proceed'}">
+											<li>Status : <span class="badge badge-warning">Process</span>
+											</li>
+										</c:if> <c:if test="${adEstimate.estimateStatus == 'approve'}">
+											<li>Status : <span class="badge badge-primary">Approve</span>
+											</li>
+										</c:if> <c:if test="${adEstimate.estimateStatus == 'denei'}">
+											<li>Status : <span class="badge badge-danger">Denei</span>
+											</li>
 										</c:if>
+									</td>
+									<td>Pawner ID :<span class="badge badge-default">
+											${adEstimate.pawnerPostId.pawnerId.pawnerId} </span> Pawner Name :<span
+										class="badge badge-default">
+											${adEstimate.pawnerPostId.pawnerId.pawnerFirstname}
+											${adEstimate.pawnerPostId.pawnerId.pawnerLastname}</span> Pawner
+										Mail :<span class="badge badge-default">
+											${adEstimate.pawnerPostId.pawnerId.pawnerEmail} </span>
+									</td>
+									<td>Pawnshop ID :<span class="badge badge-default">
+											${adEstimate.pawnshopId.pawnshopId} </span> Pawnshop Name :<span
+										class="badge badge-default">
+											${adEstimate.pawnshopId.pawnshopName} </span> Pawnshop Address :<span
+										class="badge badge-default">
+											${adEstimate.pawnshopId.pawnshopParish}
+											${adEstimate.pawnshopId.pawnshopDistrict}
+											${adEstimate.pawnshopId.pawnshopProvince}
+											${adEstimate.pawnshopId.pawnshopPostcodes} </span> Pawnshop Mail :<span
+										class="badge badge-default">
+											${adEstimate.pawnshopId.pawnshopEmail} </span>
+									</td>
+								</tr>
+							</tbody>
+						</c:if>
+					</c:forEach>
+				</table>
+			</div>
+		</div>
+		
+		<!--------------------------------------------------Camera-------------------------------------------------------->
+		<div class="page-wrapper">
+			<!-- Bread crumb -->
 
-										<!-- Electronic camera com telephone -->
-										<c:if test="${adEstimate.pawnerPostId.pawnerPostBattery != null}">
-											<li>Battery : ${adEstimate.pawnerPostId.pawnerPostBattery}</li>
+			<!-- /.panel-heading -->
+			<div class="panel-body">
+				<div class="mr-auto p-2">List Camera</div>
+				<table class="table table-striped table-bordered table-hover" id="">
+					<thead>
+						<tr>
+							<th>Picture</th>
+							<th>Post Name</th>
+							<th>Brand</th>
+							<th>Serial</th>
+							<th>Model</th>
+							<th>TypeCamera</th>
+							<th>CameraLen</th>
+							<th>Purchase</th>
+							<th>Production</th>
+							<th>Battery</th>
+							<th>Warranty</th>
+							<th>Description</th>
+							<th>Price Min</th>
+							<th>Price Max</th>
+							<th>Date</th>
+							<th>AccessDate</th>
+							<th>Status</th>
+							<th>Pawner</th>
+							<th>Pawnshop</th>
+						</tr>
+					</thead>
+					<c:forEach items="${adminEList}" var="adEstimate">
+						<c:if test="${adEstimate.pawnerPostId.pawnerPostItemType == 'Camera'}">
+							<tbody>
+								<tr class="odd gradeX">
+									<td><img class="img-responsive"
+										src="images/uploadImage/${adEstimate.pawnerPostId.pawnerPostPicture }" /></td>
+									<td>${adEstimate.pawnerPostId.pawnerPostName}</td>
+									<td>${adEstimate.pawnerPostId.pawnerPostBrand}</td>
+									<td>${adEstimate.pawnerPostId.pawnerPostSerial}</td>
+									<td>${adEstimate.pawnerPostId.pawnerPostModel}</td>
+									<td>${adEstimate.pawnerPostId.pawnerPostTypeCamera}</td>
+									<td>${adEstimate.pawnerPostId.pawnerPostCameraLen}</td>
+									<td>${adEstimate.pawnerPostId.pawnerPostPurchase}</td>
+									<td>${adEstimate.pawnerPostId.pawnerPostProduction}</td>
+									<td>${adEstimate.pawnerPostId.pawnerPostBattery}</td>
+									<td>${adEstimate.pawnerPostId.pawnerPostWarranty}</td>
+									<td>${adEstimate.pawnerPostId.pawnerPostDescription}</td>
+									<td>${adEstimate.estimatePriceMin}</td>
+									<td>${adEstimate.estimatePriceMax}</td>
+									<td>${adEstimate.estimateDate}</td>
+									<td>${adEstimate.estimateAccessDate}</td>
+									<td>${adEstimate.estimateStatus}<!-- Status --> <c:if
+											test="${adEstimate.estimateStatus == 'complete'}">
+											<li>Status : <span class="badge badge-success">Complete</span>
+											</li>
+										</c:if> <c:if test="${adEstimate.estimateStatus == 'waiting'}">
+											<li>Status : <span class="badge badge-danger">Waiting</span>
+											</li>
+										</c:if> <c:if test="${adEstimate.estimateStatus == 'process'}">
+											<li>Status : <span class="badge badge-warning">Process</span>
+											</li>
+										</c:if> <c:if test="${adEstimate.estimateStatus == 'proceed'}">
+											<li>Status : <span class="badge badge-warning">Process</span>
+											</li>
+										</c:if> <c:if test="${adEstimate.estimateStatus == 'approve'}">
+											<li>Status : <span class="badge badge-primary">Approve</span>
+											</li>
+										</c:if> <c:if test="${adEstimate.estimateStatus == 'denei'}">
+											<li>Status : <span class="badge badge-danger">Denei</span>
+											</li>
 										</c:if>
+									</td>
+									<td>Pawner ID :<span class="badge badge-default">
+											${adEstimate.pawnerPostId.pawnerId.pawnerId} </span> Pawner Name :<span
+										class="badge badge-default">
+											${adEstimate.pawnerPostId.pawnerId.pawnerFirstname}
+											${adEstimate.pawnerPostId.pawnerId.pawnerLastname}</span> Pawner
+										Mail :<span class="badge badge-default">
+											${adEstimate.pawnerPostId.pawnerId.pawnerEmail} </span>
+									</td>
+									<td>Pawnshop ID :<span class="badge badge-default">
+											${adEstimate.pawnshopId.pawnshopId} </span> Pawnshop Name :<span
+										class="badge badge-default">
+											${adEstimate.pawnshopId.pawnshopName} </span> Pawnshop Address :<span
+										class="badge badge-default">
+											${adEstimate.pawnshopId.pawnshopParish}
+											${adEstimate.pawnshopId.pawnshopDistrict}
+											${adEstimate.pawnshopId.pawnshopProvince}
+											${adEstimate.pawnshopId.pawnshopPostcodes} </span> Pawnshop Mail :<span
+										class="badge badge-default">
+											${adEstimate.pawnshopId.pawnshopEmail} </span>
+									</td>
+								</tr>
+							</tbody>
+						</c:if>
+					</c:forEach>
+				</table>
+			</div>
+		</div>
+		
+		<!--------------------------------------------------TV-------------------------------------------------------->
+		<div class="page-wrapper">
+			<!-- Bread crumb -->
 
-										<!-- Electronic com telephone -->
-										<c:if test="${adEstimate.pawnerPostId.pawnerPostHarddisk != null}">
-											<li>Harddisk : ${adEstimate.pawnerPostId.pawnerPostHarddisk }</li>
+			<!-- /.panel-heading -->
+			<div class="panel-body">
+				<div class="mr-auto p-2">List Camera</div>
+				<table class="table table-striped table-bordered table-hover" id="">
+					<thead>
+						<tr>
+							<th>Picture</th>
+							<th>Post Name</th>
+							<th>Brand</th>
+							<th>Serial</th>
+							<th>Model</th>
+							<th>Size</th> 
+							<th>Purchase</th>
+							<th>Production</th>
+							<th>Remote</th>
+							<th>Warranty</th>
+							<th>Description</th>
+							<th>Price Min</th>
+							<th>Price Max</th>
+							<th>Date</th>
+							<th>AccessDate</th>
+							<th>Status</th>
+							<th>Pawner</th>
+							<th>Pawnshop</th>
+						</tr>
+					</thead>
+					<c:forEach items="${adminEList}" var="adEstimate">
+						<c:if test="${adEstimate.pawnerPostId.pawnerPostItemType == 'Tv'}">
+							<tbody>
+								<tr class="odd gradeX">
+									<td><img class="img-responsive"
+										src="images/uploadImage/${adEstimate.pawnerPostId.pawnerPostPicture }" /></td>
+									<td>${adEstimate.pawnerPostId.pawnerPostName}</td>
+									<td>${adEstimate.pawnerPostId.pawnerPostBrand}</td>
+									<td>${adEstimate.pawnerPostId.pawnerPostSerial}</td>
+									<td>${adEstimate.pawnerPostId.pawnerPostModel}</td>
+									<td>${adEstimate.pawnerPostId.pawnerPostSize}</td> 
+									<td>${adEstimate.pawnerPostId.pawnerPostPurchase}</td>
+									<td>${adEstimate.pawnerPostId.pawnerPostProduction}</td>
+									<td>${adEstimate.pawnerPostId.pawnerPostRemote}</td>
+									<td>${adEstimate.pawnerPostId.pawnerPostWarranty}</td>
+									<td>${adEstimate.pawnerPostId.pawnerPostDescription}</td>
+									<td>${adEstimate.estimatePriceMin}</td>
+									<td>${adEstimate.estimatePriceMax}</td>
+									<td>${adEstimate.estimateDate}</td>
+									<td>${adEstimate.estimateAccessDate}</td>
+									<td>${adEstimate.estimateStatus}<!-- Status --> <c:if
+											test="${adEstimate.estimateStatus == 'complete'}">
+											<li>Status : <span class="badge badge-success">Complete</span>
+											</li>
+										</c:if> <c:if test="${adEstimate.estimateStatus == 'waiting'}">
+											<li>Status : <span class="badge badge-danger">Waiting</span>
+											</li>
+										</c:if> <c:if test="${adEstimate.estimateStatus == 'process'}">
+											<li>Status : <span class="badge badge-warning">Process</span>
+											</li>
+										</c:if> <c:if test="${adEstimate.estimateStatus == 'proceed'}">
+											<li>Status : <span class="badge badge-warning">Process</span>
+											</li>
+										</c:if> <c:if test="${adEstimate.estimateStatus == 'approve'}">
+											<li>Status : <span class="badge badge-primary">Approve</span>
+											</li>
+										</c:if> <c:if test="${adEstimate.estimateStatus == 'denei'}">
+											<li>Status : <span class="badge badge-danger">Denei</span>
+											</li>
 										</c:if>
+									</td>
+									<td>Pawner ID :<span class="badge badge-default">
+											${adEstimate.pawnerPostId.pawnerId.pawnerId} </span> Pawner Name :<span
+										class="badge badge-default">
+											${adEstimate.pawnerPostId.pawnerId.pawnerFirstname}
+											${adEstimate.pawnerPostId.pawnerId.pawnerLastname}</span> Pawner
+										Mail :<span class="badge badge-default">
+											${adEstimate.pawnerPostId.pawnerId.pawnerEmail} </span>
+									</td>
+									<td>Pawnshop ID :<span class="badge badge-default">
+											${adEstimate.pawnshopId.pawnshopId} </span> Pawnshop Name :<span
+										class="badge badge-default">
+											${adEstimate.pawnshopId.pawnshopName} </span> Pawnshop Address :<span
+										class="badge badge-default">
+											${adEstimate.pawnshopId.pawnshopParish}
+											${adEstimate.pawnshopId.pawnshopDistrict}
+											${adEstimate.pawnshopId.pawnshopProvince}
+											${adEstimate.pawnshopId.pawnshopPostcodes} </span> Pawnshop Mail :<span
+										class="badge badge-default">
+											${adEstimate.pawnshopId.pawnshopEmail} </span>
+									</td>
+								</tr>
+							</tbody>
+						</c:if>
+					</c:forEach>
+				</table>
+			</div>
+		</div>
+		<!-- /.panel-body -->
 
-										<!-- Electronic tv -->
-										<c:if test="${adEstimate.pawnerPostId.panwePostRemote != null}">
-											<li>Remote : ${adEstimate.pawnerPostId.panwePostRemote }</li>
-										</c:if>
-
-										<!-- Electronic com-->
-										<c:if test="${adEstimate.pawnerPostId.pawnerPostRam!= null}">
-											<li>Ram : ${adEstimate.pawnerPostId.pawnerPostRam }</li>
-										</c:if>
-
-
-										<!-- Electronic telephone-->
-										<li>Description : ${adEstimate.pawnerPostId.pawnerPostDescription }</li>
-										
-										<li>Price Min: ${adEstimate.estimatePriceMin }</li>
-										<li>Price Max: ${adEstimate.estimatePriceMax }</li>
-										<li>Estimate Date: ${adEstimate.estimateDate}</li>
-										<li>Access Date:   ${adEstimate.estimateAccessDate}</li>
-									 <li>Status   : ${adEstimate.estimateStatus }</li>  
-									 
-										<!-- Status -->
-										<c:if test="${adEstimate.estimateStatus == 'complete'}">
-											<li>Status :  <span class="badge badge-success">Complete</span> </li>
-										</c:if>
-										
-										<c:if test="${adEstimate.estimateStatus == 'waiting'}">
-											<li>Status :  <span class="badge badge-danger">Waiting</span> </li>
-										</c:if>
-										
-										<c:if test="${adEstimate.estimateStatus == 'process'}">
-											<li>Status :  <span class="badge badge-warning">Process</span> </li>
-										</c:if>
-										<c:if test="${adEstimate.estimateStatus == 'proceed'}">
-											<li>Status : <span class="badge badge-warning">Process</span> </li>
-										</c:if>
-										
-										<c:if test="${adEstimate.estimateStatus == 'approve'}">
-											<li>Status :  <span class="badge badge-primary">Approve</span> </li>
-										</c:if>
-										<c:if test="${adEstimate.estimateStatus == 'denei'}">
-												<li>Status : <span class="badge badge-danger">Denei</span>
-												</li>
-										</c:if>
-										
-										<p>
-										
-										
-										</p>
-										
-										<li> <h3><span class="badge badge-info">Post By</span></h3>	</li>	
-												<li> Pawner ID :<span class="badge badge-default"> ${adEstimate.pawnerPostId.pawnerId.pawnerId} </span></li>								 
-												<li> Pawner Name :<span class="badge badge-default"> ${adEstimate.pawnerPostId.pawnerId.pawnerFirstname}  ${adEstimate.pawnerPostId.pawnerId.pawnerLastname}</span></li>
-												<li> Pawner Mail :<span class="badge badge-default"> ${adEstimate.pawnerPostId.pawnerId.pawnerEmail} </span></li>
-										<p>
-										
-										
-										</p>
-											
-										<li> <h3><span class="badge badge-info">Estimate By</span></h3></li>
-												<li> Pawnshop ID :<span class="badge badge-default"> ${adEstimate.pawnshopId.pawnshopId} </span></li>	
-												<li> Pawnshop Name :<span class="badge badge-default"> ${adEstimate.pawnshopId.pawnshopName} </span></li>
-												<li> Pawnshop Address :<span class="badge badge-default">  ${adEstimate.pawnshopId.pawnshopParish} ${adEstimate.pawnshopId.pawnshopDistrict} ${adEstimate.pawnshopId.pawnshopProvince} ${adEstimate.pawnshopId.pawnshopPostcodes} </span></li>
-												<li> Pawnshop Mail :<span class="badge badge-default"> ${adEstimate.pawnshopId.pawnshopEmail} </span></li>
-											
-									</ul>
-								</div>
-							</div> 
-						</div>
-
-					</div>
-				</div>
-			</div></div>
-		</c:forEach> 
-	</section>
-		 
-
-
-		<!-- End Page wrapper  -->
+		<!-- End Container fluid  -->
 	</div>
 	<!-- End Wrapper -->
 	<!-- All Jquery -->
