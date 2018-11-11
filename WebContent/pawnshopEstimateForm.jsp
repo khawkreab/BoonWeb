@@ -35,47 +35,47 @@
 				<img class="left"
 					src="https://cdn2.hubspot.net/hubfs/322787/Mychefcom/images/BLOG/Header-Blog/photo-culinaire-pexels.jpg" />
 			</div>
+			<!-- end show image -->
 			<!-- ---------------------- ประเมิน ---------------------  -->
 			<div class="">
-
+				<p>
+					<i class="fas fa-info-circle item-info-tip"><span class="">ประเมินราคาสินค้า
+							โดยให้เป็นช่วงราคา </span></i>
+				</p>
+				<!-- ------------- -->
 				<form:form method="post" action="saveEstimate.html"
 					commandName="estimate" id="form">
 					<form:hidden path="estimateId" />
 					<form:hidden path="pawnshopId.pawnshopId" />
 					<form:hidden path="pawnerPostId.pawnerPostId"
 						value="${pawnerPost.pawnerPostId}" />
-					<p>
-						<i class="fas fa-info-circle item-info-tip"><span class="">ประเมินราคาสินค้า
-								โดยให้เป็นช่วงราคา </span></i>
-					</p>
-					<div class="d-flex">
-						<div class="mr-auto">
-							<i class="fas fa-tags item-info-price"></i>
-							<form:input class="#"
+					<!-- ------------- -->
+
+					<ul class="card-estimate">
+						<li><i class="fas fa-tags item-info-price"></i></li>
+						<li><form:input class="#"
 								pattern="[^'a-zA-Zก-์@!#$?:^%&*+/=()\\_`{|}~-]{1,10}"
 								required="required" placeholder="Min price" title="กรุณาใสราคา"
-								id="minNumber" onkeyup="check()" path="estimatePriceMin" />
-							<!--<form:input path="estimatePriceMin" type="hidden" id="oo"/>-->
-						</div>
-						<div class="p-2">
-							-
-							<form:input path="estimatePriceMax" class="#"
+								id="minNumber" onkeyup="check()" path="estimatePriceMin" /> <!--<form:input path="estimatePriceMin" type="hidden" id="oo"/>-->
+						</li>
+						<li>-</li>
+						<li><form:input path="estimatePriceMax" class="#"
 								pattern="[^'a-zA-Zก-์@!#$?:^%&*+/=()\\_`{|}~-]{1,10}"
 								required="required" placeholder="Max price" title="กรุณาใสราคา"
-								id="maxNumber" onkeyup="check()" />
-							<!--<form:input path="estimatePriceMax" type="hidden" id="xx"/> -->
-						</div>
-						<div class="p-2">
+								id="maxNumber" onkeyup="check()" /> <!--<form:input path="estimatePriceMax" type="hidden" id="xx"/> -->
+						</li>
+						<li>
 							<button type="submit" id="go" disabled>ให้ราคา</button>
-						</div>
-					</div>
+						</li>
+					</ul>
+					<!-- ------------- -->
 				</form:form>
 			</div>
 		</div>
-		<!-- end show image -->
+
 		<!-- right -->
 		<div class="card-detail-right ml-auto">
-			<div class="card-detail-author">
+			<div class="card-detail-title">
 				<h5>
 					<span class="item-info-title">${pawnerPost.pawnerPostName }
 						${pawnerPost.pawnerPostBrand }</span>
@@ -146,8 +146,9 @@
 					</span> Warranty</li>
 				</c:if>
 			</ul>
-			<div class="card-detail-separator"></div>
-			<div class="">
+			<!-- card profile -->
+			<div class="card-detail-author">
+				<div class="card-detail-separator"></div>
 				<span><i class="fas fa-user-circle"> </i>
 					${pawnerPost.pawnerId.pawnerFirstname}
 					${pawnerPost.pawnerId.pawnerLastname} </span> <span
@@ -209,7 +210,9 @@
 			</div>
 		</div>
 	</div> --%>
-
+	<jsp:include page="footer.jsp"></jsp:include>
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script type="text/javascript">
 		var a;
 		var b;
@@ -229,9 +232,8 @@
 			}
 		}
 	</script>
-	<jsp:include page="footer.jsp"></jsp:include>
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
 	<script>
 		(function($, undefined) {
 
