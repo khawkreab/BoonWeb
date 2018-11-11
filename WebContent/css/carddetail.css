@@ -1,13 +1,23 @@
 /* The card */
+.card-section {
+	display: flex;
+	flex-wrap: wrap; width : 100vw;
+	height: 100vh;
+	background: linear-gradient(-25deg, #ffffff 50%, #3ebeff 50.1%);
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+}
+
 .card-detail {
 	position: relative;
 	height: 450px;
 	width: 900px;
-	margin: 80px auto;
 	background-color: #FFF;
 	-webkit-box-shadow: 10px 10px 93px 0px rgba(0, 0, 0, 0.75);
 	-moz-box-shadow: 10px 10px 93px 0px rgba(0, 0, 0, 0.75);
 	box-shadow: 10px 10px 93px 0px rgba(0, 0, 0, 0.75);
+	margin: auto 200px;
 }
 
 /* Image on the left side */
@@ -65,7 +75,6 @@
 .card-detail-separator {
 	width: 90%;
 	height: 0px;
-	margin-top: 10px;
 	border: 1px solid #C3C3C3;
 }
 
@@ -78,4 +87,8 @@
 
 .card-estimate li {
 	margin: 0 5px;
+}
+
+.card-detail-title {
+	margin: auto 200px;
 }

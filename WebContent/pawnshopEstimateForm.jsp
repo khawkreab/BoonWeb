@@ -25,145 +25,146 @@
 	String active2 = "active";
 %>
 </head>
-<body style="background-color: #f9f9f9">
-
-	<div class="card-detail d-flex">
-		<!-- left -->
-		<div class="mr-auto card-detail-left">
-			<!-- show image -->
-			<div class="card-detail-thumbnail">
-				<img class="left"
-					src="https://cdn2.hubspot.net/hubfs/322787/Mychefcom/images/BLOG/Header-Blog/photo-culinaire-pexels.jpg" />
-			</div>
-			<!-- end show image -->
-			<!-- ---------------------- ประเมิน ---------------------  -->
-			<div class="">
-				<p>
-					<i class="fas fa-info-circle item-info-tip"><span class="">ประเมินราคาสินค้า
-							โดยให้เป็นช่วงราคา </span></i>
-				</p>
-				<!-- ------------- -->
-				<form:form method="post" action="saveEstimate.html"
-					commandName="estimate" id="form">
-					<form:hidden path="estimateId" />
-					<form:hidden path="pawnshopId.pawnshopId" />
-					<form:hidden path="pawnerPostId.pawnerPostId"
-						value="${pawnerPost.pawnerPostId}" />
+<body>
+	<section class="card-section">
+		<div class="card-detail d-flex">
+			<!-- left -->
+			<div class="mr-auto card-detail-left">
+				<!-- show image -->
+				<div class="card-detail-thumbnail">
+					<img class="left"
+						src="https://cdn2.hubspot.net/hubfs/322787/Mychefcom/images/BLOG/Header-Blog/photo-culinaire-pexels.jpg" />
+				</div>
+				<!-- end show image -->
+				<!-- ---------------------- ประเมิน ---------------------  -->
+				<div class="">
+					<p>
+						<i class="fas fa-info-circle item-info-tip"><span>
+								ประเมินราคาสินค้า โดยให้เป็นช่วงราคา </span></i>
+					</p>
 					<!-- ------------- -->
+					<form:form method="post" action="saveEstimate.html"
+						commandName="estimate" id="form">
+						<form:hidden path="estimateId" />
+						<form:hidden path="pawnshopId.pawnshopId" />
+						<form:hidden path="pawnerPostId.pawnerPostId"
+							value="${pawnerPost.pawnerPostId}" />
+						<!-- ------------- -->
 
-					<ul class="card-estimate">
-						<li><i class="fas fa-tags item-info-price"></i></li>
-						<li><form:input class="#"
-								pattern="[^'a-zA-Zก-์@!#$?:^%&*+/=()\\_`{|}~-]{1,10}"
-								required="required" placeholder="Min price" title="กรุณาใสราคา"
-								id="minNumber" onkeyup="check()" path="estimatePriceMin" /> <!--<form:input path="estimatePriceMin" type="hidden" id="oo"/>-->
-						</li>
-						<li>-</li>
-						<li><form:input path="estimatePriceMax" class="#"
-								pattern="[^'a-zA-Zก-์@!#$?:^%&*+/=()\\_`{|}~-]{1,10}"
-								required="required" placeholder="Max price" title="กรุณาใสราคา"
-								id="maxNumber" onkeyup="check()" /> <!--<form:input path="estimatePriceMax" type="hidden" id="xx"/> -->
-						</li>
-						<li>
-							<button type="submit" id="go" disabled>ให้ราคา</button>
-						</li>
-					</ul>
-					<!-- ------------- -->
-				</form:form>
+						<ul class="card-estimate">
+							<li><i class="fas fa-tags item-info-price"></i></li>
+							<li><form:input class="#"
+									pattern="[^'a-zA-Zก-์@!#$?:^%&*+/=()\\_`{|}~-]{1,10}"
+									required="required" placeholder="Min price" title="กรุณาใสราคา"
+									id="minNumber" onkeyup="check()" path="estimatePriceMin" /> <!--<form:input path="estimatePriceMin" type="hidden" id="oo"/>-->
+							</li>
+							<li>-</li>
+							<li><form:input path="estimatePriceMax" class="#"
+									pattern="[^'a-zA-Zก-์@!#$?:^%&*+/=()\\_`{|}~-]{1,10}"
+									required="required" placeholder="Max price" title="กรุณาใสราคา"
+									id="maxNumber" onkeyup="check()" /> <!--<form:input path="estimatePriceMax" type="hidden" id="xx"/> -->
+							</li>
+							<li>
+								<button type="submit" id="go" disabled>ให้ราคา</button>
+							</li>
+						</ul>
+						<!-- ------------- -->
+					</form:form>
+				</div>
 			</div>
-		</div>
 
-		<!-- right -->
-		<div class="card-detail-right ml-auto">
-			<div class="card-detail-title">
-				<h5>
+			<!-- right -->
+			<div class="card-detail-right ml-auto">
+				<div class="card-detail-title">
 					<span class="item-info-title">${pawnerPost.pawnerPostName }
 						${pawnerPost.pawnerPostBrand }</span>
-				</h5>
-			</div>
-			<div class="card-detail-separator"></div>
-			<ul class="item-info-list">
-
-				<!-- Watch,Electronic -->
-				<c:if test="${pawnerPost.pawnerPostModel != null}">
-					<li class="">Production : ${pawnerPost.pawnerPostProduction}</li>
-					<li class="">Model : ${pawnerPost.pawnerPostModel}</li>
-					<li class="">Serial : ${pawnerPost.pawnerPostSerial}</li>
-					<li class="">Purchase : ${pawnerPost.pawnerPostPurchase }</li>
-				</c:if>
-
-				<!-- Gold -->
-				<c:if test="${pawnerPost.pawnerPostPure != null}">
-					<li class="">Pure : ${pawnerPost.pawnerPostPure  }</li>
-					<li class="">Weigh : ${pawnerPost.pawnerPostWeigh }</li>
-					<li class="">Category : ${pawnerPost.pawnerPostCategory }</li>
-				</c:if>
-
-				<!-- Electronic tv com telephone -->
-				<c:if test="${pawnerPost.pawnerPostSize != null}">
-					<li class="">Size : ${pawnerPost.pawnerPostSize }</li>
-				</c:if>
-
-				<!-- Electronic camera com telephone -->
-				<c:if test="${pawnerPost.pawnerPostBattery != null}">
-					<li class="">Battery : ${pawnerPost.pawnerPostBattery }</li>
-				</c:if>
-
-
-				<!-- Electronic com telephone -->
-				<c:if test="${pawnerPost.pawnerPostHarddisk != null}">
-					<li class="">Harddisk : ${pawnerPost.pawnerPostHarddisk }</li>
-				</c:if>
-
-				<!-- Electronic com-->
-				<c:if test="${pawnerPost.pawnerPostRam != null}">
-					<li class="">Ram : ${pawnerPost.pawnerPostRam }</li>
-				</c:if>
-
-				<!-- Watch -->
-				<c:if test="${pawnerPost.pawnerPostCase != null}">
-					<li class="">Case : ${pawnerPost.pawnerPostCase }</li>
-					<li class="">Bracelet : ${pawnerPost.pawnerPostBracelet }</li>
-					<c:if test="${pawnerPost.pawnerPostDiamond != null}">
-						<li class="">Diamond : ${pawnerPost.pawnerPostDiamond }</li>
-					</c:if>
-					<c:if test="${pawnerPost.pawnerPostPackage != null}">
-						<li class=""><span class="glyphicon glyphicon-check"
-							aria-hidden="true"> </span> Package</li>
-
-					</c:if>
-				</c:if>
-
-				<!-- Electronic tv -->
-				<c:if test="${pawnerPost.panwePostRemote != null}">
-					<li class=""><span class="glyphicon glyphicon-check"
-						aria-hidden="true"> </span> Remote</li>
-				</c:if>
-
-				<!-- Watch,Electronic -->
-				<c:if test="${pawnerPost.pawnerPostModel != null}">
-					<li class=""><span class="fas fa-check" aria-hidden="true">
-					</span> Warranty</li>
-				</c:if>
-			</ul>
-			<!-- card profile -->
-			<div class="card-detail-author">
+				</div>
 				<div class="card-detail-separator"></div>
-				<span><i class="fas fa-user-circle"> </i>
-					${pawnerPost.pawnerId.pawnerFirstname}
-					${pawnerPost.pawnerId.pawnerLastname} </span> <span
-					class="item-info-location"><i class="fas fa-phone"></i>
-					${pawnerPost.pawnerId.pawnerPhone} <i class="fas fa-map-marker-alt"></i>
-					${pawnerPost.pawnerId.pawnerProvince} </span> <span
-					class="item-info-location"><i class="far fa-clock"></i> </span>
+				<ul class="item-info-list">
+
+					<!-- Watch,Electronic -->
+					<c:if test="${pawnerPost.pawnerPostModel != null}">
+						<li class="">Production : ${pawnerPost.pawnerPostProduction}</li>
+						<li class="">Model : ${pawnerPost.pawnerPostModel}</li>
+						<li class="">Serial : ${pawnerPost.pawnerPostSerial}</li>
+						<li class="">Purchase : ${pawnerPost.pawnerPostPurchase }</li>
+					</c:if>
+
+					<!-- Gold -->
+					<c:if test="${pawnerPost.pawnerPostPure != null}">
+						<li class="">Pure : ${pawnerPost.pawnerPostPure  }</li>
+						<li class="">Weigh : ${pawnerPost.pawnerPostWeigh }</li>
+						<li class="">Category : ${pawnerPost.pawnerPostCategory }</li>
+					</c:if>
+
+					<!-- Electronic tv com telephone -->
+					<c:if test="${pawnerPost.pawnerPostSize != null}">
+						<li class="">Size : ${pawnerPost.pawnerPostSize }</li>
+					</c:if>
+
+					<!-- Electronic camera com telephone -->
+					<c:if test="${pawnerPost.pawnerPostBattery != null}">
+						<li class="">Battery : ${pawnerPost.pawnerPostBattery }</li>
+					</c:if>
+
+
+					<!-- Electronic com telephone -->
+					<c:if test="${pawnerPost.pawnerPostHarddisk != null}">
+						<li class="">Harddisk : ${pawnerPost.pawnerPostHarddisk }</li>
+					</c:if>
+
+					<!-- Electronic com-->
+					<c:if test="${pawnerPost.pawnerPostRam != null}">
+						<li class="">Ram : ${pawnerPost.pawnerPostRam }</li>
+					</c:if>
+
+					<!-- Watch -->
+					<c:if test="${pawnerPost.pawnerPostCase != null}">
+						<li class="">Case : ${pawnerPost.pawnerPostCase }</li>
+						<li class="">Bracelet : ${pawnerPost.pawnerPostBracelet }</li>
+						<c:if test="${pawnerPost.pawnerPostDiamond != null}">
+							<li class="">Diamond : ${pawnerPost.pawnerPostDiamond }</li>
+						</c:if>
+						<c:if test="${pawnerPost.pawnerPostPackage != null}">
+							<li class=""><span class="glyphicon glyphicon-check"
+								aria-hidden="true"> </span> Package</li>
+
+						</c:if>
+					</c:if>
+
+					<!-- Electronic tv -->
+					<c:if test="${pawnerPost.panwePostRemote != null}">
+						<li class=""><span class="glyphicon glyphicon-check"
+							aria-hidden="true"> </span> Remote</li>
+					</c:if>
+
+					<!-- Watch,Electronic -->
+					<c:if test="${pawnerPost.pawnerPostModel != null}">
+						<li class=""><span class="fas fa-check" aria-hidden="true">
+						</span> Warranty</li>
+					</c:if>
+				</ul>
+				<!-- card profile -->
+				<div class="card-detail-author">
+					<div class="card-detail-separator"></div>
+					<span><i class="fas fa-user-circle"> </i>
+						${pawnerPost.pawnerId.pawnerFirstname}
+						${pawnerPost.pawnerId.pawnerLastname} </span> <span
+						class="item-info-location"><i class="fas fa-phone"></i>
+						${pawnerPost.pawnerId.pawnerPhone} <i
+						class="fas fa-map-marker-alt"></i>
+						${pawnerPost.pawnerId.pawnerProvince} </span> <span
+						class="item-info-location"><i class="far fa-clock"></i> </span>
+				</div>
 			</div>
-		</div>
-		<%-- <div>
+			<%-- <div>
 			<fmt:setLocale value="en_US" />
 			<fmt:formatDate type="date" dateStyle="long"
 				value="${pawnerPost.pawnerPostDate}" />
 		</div> --%>
-	</div>
+		</div>
+		<jsp:include page="footer.jsp"></jsp:include>
+	</section>
 
 	<jsp:include page="navbar.jsp" />
 
@@ -210,7 +211,7 @@
 			</div>
 		</div>
 	</div> --%>
-	<jsp:include page="footer.jsp"></jsp:include>
+
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script type="text/javascript">
