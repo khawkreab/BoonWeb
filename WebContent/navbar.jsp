@@ -112,7 +112,7 @@
 					<%
 						if (session.getAttribute("pawnshopState").equals("Banned")) {
 					%>
-					<li class=""><a class="" id="omn">จำนำของ</a></li>
+					<li class=""><a class="" id="omn"></a></li>
 					<%
 						} else {
 					%>
@@ -121,15 +121,12 @@
 					<%
 						}
 					%>
-					<li class=""><a class="nav-link" href="pawner-off-pledge.html">รายการของหลุดจำนำ</a></li>
-					<li class=""><a class="nav-link" href="pawner-cart.html">ตะกร้า
-							<i id="cartNumberlink"></i>
-					</a></li>
+					<li class=""><a class="nav-link" href="pawnshop-index.html">รายการของลงจำนำ</a></li>
 					<li class=""><a class="nav-link"
-						href="pawner-track-pledge.html">ติดตามการจำนำ</a></li>
-					<li class=""><a href="pawner-post-history.html"
-						class="nav-link ">ประวัติการจำนำ</a></li>
-					<li class=""><a href="pawner-order.html" class="nav-link ">ประวัติการสังซื้อ</a></li>
+						href="pawnshop-track-estimate.html">ติดตามการประเมิน</a></li>
+					<li class=""><a href="pawnshop-pledge-sell.html"
+						class="nav-link ">ประวัติการขาย</a></li>
+					<li class=""><a href="pawnshop-estimate-history.html" class="nav-link ">ประวัติการประเมิน</a></li>
 					<li class=""><a href="logout.html" class="nav-link ">แก้ไขบัญชี</a></li>
 					<li class=""><a href="logout.html" class="nav-link ">ออกจากระบบ</a></li>
 
