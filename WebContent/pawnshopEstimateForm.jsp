@@ -30,41 +30,34 @@
 			<div class="mr-auto card-detail-left">
 				<!-- show image -->
 				<div class="card-detail-thumbnail">
-					<!-- slide image -->
-					     <div class="carousel slide article-slide" id="article-photo-carousel">
+					<div id="demo" class="carousel slide" data-ride="carousel">
 
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner cont-slider">
-              
-                  <div class="item active">
-                    <img alt="" title="" src="http://placehold.it/600x400">
-                  </div>
-                  <div class="item">
-                    <img alt="" title="" src="http://placehold.it/600x400">
-                  </div>
-                  <div class="item">
-                    <img alt="" title="" src="https://cdn2.hubspot.net/hubfs/322787/Mychefcom/images/BLOG/Header-Blog/photo-culinaire-pexels.jpg">
-                  </div>
-                  <div class="item">
-                    <img alt="" title="" src="http://placehold.it/600x400">
-                  </div>
-                </div>
-                <!-- Indicators -->
-                <ol class="carousel-indicators">
-                  <li class="active" data-slide-to="0" data-target="#article-photo-carousel">
-                    <img alt="" src="http://placehold.it/250x180">
-                  </li>
-                  <li class="" data-slide-to="1" data-target="#article-photo-carousel">
-                    <img alt="" src="http://placehold.it/250x180">
-                  </li>
-                  <li class="" data-slide-to="2" data-target="#article-photo-carousel">
-                    <img alt="" src="https://cdn2.hubspot.net/hubfs/322787/Mychefcom/images/BLOG/Header-Blog/photo-culinaire-pexels.jpg">
-                  </li>
-                  <li class="" data-slide-to="3" data-target="#article-photo-carousel">
-                    <img alt="" src="http://placehold.it/250x180">
-                  </li>
-                </ol>
-              </div>
+						<!-- Indicators -->
+						<ul class="carousel-indicators">
+							<li data-target="#demo" data-slide-to="0" class="active"></li>
+							<li data-target="#demo" data-slide-to="1"></li>
+							<li data-target="#demo" data-slide-to="2"></li>
+						</ul>
+						<!-- The slideshow -->
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<img src="https://cdn2.hubspot.net/hubfs/322787/Mychefcom/images/BLOG/Header-Blog/photo-culinaire-pexels.jpg" alt="Los Angeles" width="1100" height="500">
+							</div>
+							<div class="carousel-item">
+								<img src="https://cdn2.hubspot.net/hubfs/322787/Mychefcom/images/BLOG/Header-Blog/photo-culinaire-pexels.jpg" alt="Chicago" width="1100" height="500">
+							</div>
+							<div class="carousel-item">
+								<img src="img/background/Manual.jpg" alt="New York" width="1100" height="500">
+							</div>
+						</div>
+
+						<!-- Left and right controls -->
+						<a class="carousel-control-prev" href="#demo" data-slide="prev">
+							<span class="carousel-control-prev-icon"></span>
+						</a> <a class="carousel-control-next" href="#demo" data-slide="next">
+							<span class="carousel-control-next-icon"></span>
+						</a>
+					</div>
 					<!-- 	<img class="left"
 						src="https://cdn2.hubspot.net/hubfs/322787/Mychefcom/images/BLOG/Header-Blog/photo-culinaire-pexels.jpg" /> -->
 				</div>
@@ -242,8 +235,10 @@
 		</div>
 	</div> --%>
 
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script type="text/javascript">
 		var a;
 		var b;
