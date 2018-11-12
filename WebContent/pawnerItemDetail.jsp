@@ -12,17 +12,182 @@
 <title>Detail</title>
 
 <%
-	int dataslideto = 0;
-	int dataslideto2 = 0;
-	String active = "active";
-	String active2 = "active";
+	int dataslideto = 0, dataslideto2 = 0;
+	String active = "active", active2 = "active";
 %>
 </head>
 <body>
+	<section>
+		<div class="banner-top">
+			<h1>รายละเอียดสินค้า</h1>
+			<em></em>
+		</div>
+		<div class="product-detail">
+			<div class="d-flex">
+				<!-- left -->
+				<div class="product-detail-left mr-auto">
+					<!-- date -->
+					<div class="date">
+						<span class="day"><fmt:formatDate pattern="dd"
+								value="${pawnshopPost.pawnshopPostDate }" /></span> <span
+							class="month"><fmt:formatDate pattern="MMM"
+								value="${pawnshopPost.pawnshopPostDate }" /></span> <span class="year"><fmt:formatDate
+								pattern="yyyy" value="${pawnshopPost.pawnshopPostDate }" /></span>
+					</div>
+					<div id="demo" class="carousel card-carousel slide"
+						data-ride="carousel">
+
+						<!-- Indicators -->
+						<ul class="card-carousel-indicators carousel-indicators">
+							<li data-target="#demo" data-slide-to="0" class="active"><img
+								src="img/background/background.jpg" alt="Los Angeles"></li>
+							<li data-target="#demo" data-slide-to="1"><img
+								src="img/background/banner.jpg" alt="Chicago"></li>
+							<li data-target="#demo" data-slide-to="2"><img
+								src="img/background/Manual.jpg" alt="New York"></li>
+						</ul>
+						<!-- The slideshow -->
+						<div class="carousel-inner card-carousel-inner">
+							<div class="carousel-item active">
+								<img src="img/background/background.jpg" alt="Los Angeles">
+							</div>
+							<div class="carousel-item">
+								<img src="img/background/banner.jpg" alt="Chicago">
+							</div>
+							<div class="carousel-item">
+								<img src="img/background/Manual.jpg" alt="New York" width="1100"
+									height="500">
+							</div>
+						</div>
+
+						<!-- Left and right controls -->
+						<a class="carousel-control-prev" href="#demo" data-slide="prev">
+							<span class="carousel-control-prev-icon"></span>
+						</a> <a class="carousel-control-next" href="#demo" data-slide="next">
+							<span class="carousel-control-next-icon"></span>
+						</a>
+					</div>
+				</div>
+				<!-- right -->
+				<div class="product-detail-right mr-auto">
+					<h1>${pawnshopPost.pawnshopPostName }${post.pawnshopPostBrand }</h1>
+					<p>
+						โดย <a href="">${pawnshopPost.pawnshopId.pawnshopName}</a> |
+						${pawnshopPost.pawnshopId.pawnshopProvince}
+					</p>
+					<line-x></line-x>
+					<ul class="row">
+
+						<!-- Electronic camera-->
+						<c:if test="${pawnshopPost.pawnshopPostTypeCamera != null}">
+							<li class="col-md-6">${pawnshopPost.pawnshopPostTypeCamera }</li>
+							<li class="col-md-6">${pawnshopPost.pawnshopPostCameraLen }</li>
+						</c:if>
+						<!-- Watch,Electronic -->
+						<c:if test="${pawnshopPost.pawnshopPostModel != null}">
+							<li class="col-md-6">ปีที่ผลิต :
+								${pawnshopPost.pawnshopPostProduction}</li>
+							<li class="col-md-6">โมเดล :
+								${pawnshopPost.pawnshopPostModel}</li>
+							<li class="col-md-6">รุ่น :
+								${pawnshopPost.pawnshopPostSerial}</li>
+							<li class="col-md-6">ปีที่ซื้อ :
+								${pawnshopPost.pawnshopPostPurchase }</li>
+						</c:if>
+
+						<!-- Gold -->
+						<c:if test="${pawnshopPost.pawnshopPostPure != null}">
+							<li class="col-md-6">ความบริสุทธิ์ :
+								${pawnshopPost.pawnshopPostPure  }</li>
+							<li class="col-md-6">น้ำหนัก :
+								${pawnshopPost.pawnshopPostWeigh } กรัม</li>
+							<li class="col-md-6">ชนิด :
+								${pawnshopPost.pawnshopPostCategory }</li>
+						</c:if>
+
+						<!-- Watch -->
+						<c:if test="${pawnshopPost.pawnshopPostCase != null}">
+							<li class="col-md-6">Case : ${pawnshopPost.pawnshopPostCase }</li>
+							<li class="col-md-6">สาย :
+								${pawnshopPost.pawnshopPostBracelet }</li>
+							<c:if test="${pawnshopPost.pawnshopPostDiamond != null}">
+								<li class="col-md-6">เพชร :
+									${pawnshopPost.pawnshopPostDiamond }</li>
+							</c:if>
+						</c:if>
+
+						<!-- Electronic tv com telephone -->
+						<c:if test="${pawnshopPost.pawnshopPostSize != null}">
+							<li class="col-md-6">ขนาด : ${pawnshopPost.pawnshopPostSize }</li>
+						</c:if>
 
 
+						<!-- Electronic com telephone -->
+						<c:if test="${pawnshopPost.pawnshopPostHarddisk != null}">
+							<li class="col-md-6">ฮาร์ดดิส :
+								${pawnshopPost.pawnshopPostHarddisk } GB</li>
+						</c:if>
+
+						<!-- Electronic com-->
+						<c:if test="${pawnshopPost.pawnshopPostRam != null}">
+							<li class="col-md-6">แรม : ${pawnshopPost.pawnshopPostRam }</li>
+						</c:if>
+
+						<!-- Electronic camera com telephone -->
+						<c:if test="${pawnshopPost.pawnshopPostBattery != null}">
+							<li class="col-md-6">แบตเตอรี่ <span class="fas fa-check"
+								aria-hidden="true"> </span></li>
+						</c:if>
+
+						<!-- Electronic tv -->
+						<c:if test="${pawnshopPost.pawnshopPostRemote != null}">
+							<li class="col-md-6">รีโมท <span class="fas fa-check"
+								aria-hidden="true"> </span></li>
+						</c:if>
+
+						<!-- Watch -->
+						<c:if test="${pawnshopPost.pawnshopPostCase != null}">
+							<c:if test="${pawnshopPost.pawnshopPostPackage != null}">
+								<li class="col-md-6">กล่อง <span class="fas fa-check"
+									aria-hidden="true"> </span>
+								</li>
+							</c:if>
+						</c:if>
+
+						<!-- Watch,Electronic -->
+						<c:if test="${pawnshopPost.pawnshopPostModel != null}">
+							<li class="col-md-6">ประกัน <span class="fas fa-check"
+								aria-hidden="true"> </span></li>
+						</c:if>
+					</ul>
+
+					<p class="quantity">
+						จำนวน : <span class="qt">1</span> ชิ้น
+					</p>
+				</div>
+			</div>
+			<!-- footer -->
+			<div class="product-detail-footer d-flex">
+				<div class="mr-auto">
+					<p id="price">ราคา ${pawnshopPost.pawnshopPostPrice} บาท</p>
+				</div>
+				<div class="ml-auto">
+					<a href="#" id="${pawnshopPost.pawnshopPostId}"
+						onClick="select(this); return false;"
+						data-cart='{"pawnshopPostId":"${pawnshopPost.pawnshopPostId}",
+									"pawnshopPostName":"${pawnshopPost.pawnshopPostName }",
+									"pawnshopPostPrice":" ${pawnshopPost.pawnshopPostPrice}",
+									"pawnshopName": "${pawnshopPost.pawnshopId.pawnshopName }",
+									"pawnshopPostPicture": "${pawnshopPost.pawnshopPostPicture}"}'
+						class="hvr-skew-backward" data-toggle="modal"
+						data-target="#modalCart"><button
+							class="btn-custom btn-custom-defalt">เพิ่มลงรถเข็น</button></a>
+				</div>
+			</div>
+		</div>
+	</section>
 	<!--banner-->
-	<div class="banner-top">
+	<%-- <div class="banner-top">
 		<h1>รายละเอียดสินค้า</h1>
 		<em></em>
 	</div>
@@ -75,144 +240,67 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-md-6 single-top-in">
-				<div class="span_2_of_a1 simpleCart_shelfItem">
-					<h3>${pawnshopPost.pawnshopPostName }${post.pawnshopPostBrand }</h3>
-					<p class="in-para">รายละเอียดสินค้า</p>
-					<div class="price_single">
-						<div class="preview">
-							<ul class="row">
-
-								<!-- Electronic camera-->
-								<c:if test="${pawnshopPost.pawnshopPostTypeCamera != null}">
-									<li class="col-md-6">${pawnshopPost.pawnshopPostTypeCamera }</li>
-									<li class="col-md-6">${pawnshopPost.pawnshopPostCameraLen }</li>
-								</c:if>
-								<!-- Watch,Electronic -->
-								<c:if test="${pawnshopPost.pawnshopPostModel != null}">
-									<li class="col-md-6">ปีที่ผลิต :
-										${pawnshopPost.pawnshopPostProduction}</li>
-									<li class="col-md-6">โมเดล :
-										${pawnshopPost.pawnshopPostModel}</li>
-									<li class="col-md-6">รุ่น :
-										${pawnshopPost.pawnshopPostSerial}</li>
-									<li class="col-md-6">ปีที่ซื้อ :
-										${pawnshopPost.pawnshopPostPurchase }</li>
-								</c:if>
-
-								<!-- Gold -->
-								<c:if test="${pawnshopPost.pawnshopPostPure != null}">
-									<li class="col-md-6">ความบริสุทธิ์ :
-										${pawnshopPost.pawnshopPostPure  }</li>
-									<li class="col-md-6">น้ำหนัก :
-										${pawnshopPost.pawnshopPostWeigh } กรัม</li>
-									<li class="col-md-6">ชนิด :
-										${pawnshopPost.pawnshopPostCategory }</li>
-								</c:if>
-
-								<!-- Watch -->
-								<c:if test="${pawnshopPost.pawnshopPostCase != null}">
-									<li class="col-md-6">Case :
-										${pawnshopPost.pawnshopPostCase }</li>
-									<li class="col-md-6">สาย :
-										${pawnshopPost.pawnshopPostBracelet }</li>
-									<c:if test="${pawnshopPost.pawnshopPostDiamond != null}">
-										<li class="col-md-6">เพชร :
-											${pawnshopPost.pawnshopPostDiamond }</li>
-									</c:if>
-								</c:if>
-
-								<!-- Electronic tv com telephone -->
-								<c:if test="${pawnshopPost.pawnshopPostSize != null}">
-									<li class="col-md-6">ขนาด :
-										${pawnshopPost.pawnshopPostSize }</li>
-								</c:if>
-
-
-								<!-- Electronic com telephone -->
-								<c:if test="${pawnshopPost.pawnshopPostHarddisk != null}">
-									<li class="col-md-6">ฮาร์ดดิส :
-										${pawnshopPost.pawnshopPostHarddisk } GB</li>
-								</c:if>
-
-								<!-- Electronic com-->
-								<c:if test="${pawnshopPost.pawnshopPostRam != null}">
-									<li class="col-md-6">แรม : ${pawnshopPost.pawnshopPostRam }</li>
-								</c:if>
-
-								<!-- Electronic camera com telephone -->
-								<c:if test="${pawnshopPost.pawnshopPostBattery != null}">
-									<li class="col-md-6">แบตเตอรี่ <span class="fas fa-check"
-										aria-hidden="true"> </span></li>
-								</c:if>
-
-								<!-- Electronic tv -->
-								<c:if test="${pawnshopPost.pawnshopPostRemote != null}">
-									<li class="col-md-6">รีโมท <span class="fas fa-check"
-										aria-hidden="true"> </span></li>
-								</c:if>
-
-								<!-- Watch -->
-								<c:if test="${pawnshopPost.pawnshopPostCase != null}">
-									<c:if test="${pawnshopPost.pawnshopPostPackage != null}">
-										<li class="col-md-6">กล่อง <span class="fas fa-check"
-											aria-hidden="true"> </span>
-										</li>
-									</c:if>
-								</c:if>
-
-								<!-- Watch,Electronic -->
-								<c:if test="${pawnshopPost.pawnshopPostModel != null}">
-									<li class="col-md-6">ประกัน <span class="fas fa-check"
-										aria-hidden="true"> </span></li>
-								</c:if>
-							</ul>
-						</div>
-						<div class="clearfix"></div>
-					</div>
-					<h4 class="quick">รายละเอียดเพิ่มเติม :</h4>
-					<p class="quick_desc">${pawnshopPost.pawnshopPostDescription }</p>
-					<div class="wish-list">โดย
-						${pawnshopPost.pawnshopId.pawnshopName} จาก
-						${pawnshopPost.pawnshopId.pawnshopProvince}
-						${pawnshopPost.pawnshopId.pawnshopParish}
-						${pawnshopPost.pawnshopId.pawnshopProvince}</div>
-					<div class="quantity">
-
-						<div class="quantity-select row">
-							<div class="text-orange">฿
-								${pawnshopPost.pawnshopPostPrice}</div>
-							<div class="ml-auto">
-
-								<a href="#" id="${pawnshopPost.pawnshopPostId}"
-									onClick="select(this); return false;"
-									data-cart='{"pawnshopPostId":"${pawnshopPost.pawnshopPostId}",
-									"pawnshopPostName":"${pawnshopPost.pawnshopPostName }",
-									"pawnshopPostPrice":" ${pawnshopPost.pawnshopPostPrice}",
-									"pawnshopName": "${pawnshopPost.pawnshopId.pawnshopName }",
-									"pawnshopPostPicture": "${pawnshopPost.pawnshopPostPicture}"}'
-									class="hvr-skew-backward" data-toggle="modal"
-									data-target="#modalCart">เพิ่มลงตะกร้า</a>
-							</div>
-
-
-						</div>
-						<div class="clearfix"></div>
-					</div>
-
-				</div>
-				<div class="clearfix"></div>
-			</div>
+			
 			<!--//content-->
+		</div>
+	</div> --%>
+
+
+	<!------------------------------------------------ pop up shopping cart -------------------------------------------------->
+	<div class="modal fade" id="modalCart" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content product-detail-modal">
+
+				<div class="product-detail-containern">
+					<div class="product-detail-modal-left">
+						<p class="col-md-12 text-success h5">
+							<i class="fas fa-check-circle"></i> สินค้าจำนวน 1
+							รายการได้ถูกเพิ่มลงในรถเข็นของท่านแล้ว
+						</p>
+						<p class="product-detail-eula d-flex">
+							<span class="h6">${pawnshopPost.pawnshopPostName }
+								${post.pawnshopPostBrand }</span> <span class="h6 ml-auto">
+								${pawnshopPost.pawnshopPostPrice} บาท </span>
+
+						</p>
+						<p class="product-detail-eula">
+							<span class="small">โดย
+								${pawnshopPost.pawnshopId.pawnshopName} |
+								${pawnshopPost.pawnshopId.pawnshopProvince}</span>
+
+						</p>
+					</div>
+					<div class="product-detail-modal-right">
+						<div class="product-detail-checkcart">
+							<div>
+								<span class="h5">รถเข็น <small class="text-secondary">(จำนวน
+										<i id="cartNumberi"></i> ชิ้น)
+								</small></span>
+							</div>
+							<div class="d-flex h6">
+								<span class="mr-auto">ยอดรวม</span> <span><i
+									id="totalPrice"></i> บาท </span>
+							</div>
+							<div class="d-flex h6">
+								<span class="mr-auto">ยอดรวมทั้งสิ้น</span> <span> <i
+									id="totalPriceFee"></i> บาท
+								</span>
+							</div>
+							<div class="d-flex">
+								<span class="mr-auto"><a href="pawner-off-pledge.html"
+									class="btn-custom btn-custom-blue">เลือกสินค้าต่อ</a></span> <span
+									class=""><a href="pawner-cart.html"
+									class="btn-custom btn-custom-defalt">ไปยังรถเข็น</a></span>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 
-
-	<!------------------------------------------------ pop up -------------------------------------------------->
-	<div class="modal fade" id="modalCart" role="dialog">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="re-con item-detail-popup">
+	<%-- 		<div class="re-con item-detail-popup">
 					<div class="row">
 						<div class="col-md-8 ">
 							<div class="col-md-12 text-success h5">
@@ -225,7 +313,8 @@
 										src="images/imageUpload/${pawnshopPost.pawnshopPostPicture}">
 								</div>
 								<div class="col-md-8">
-									<span class="h6">${pawnshopPost.pawnshopPostName } ${post.pawnshopPostBrand }</span>
+									<span class="h6">${pawnshopPost.pawnshopPostName }
+										${post.pawnshopPostBrand }</span>
 									<div class="clear-fix"></div>
 									<span class="small">By
 										${pawnshopPost.pawnshopId.pawnshopName} from
@@ -255,10 +344,7 @@
 							</div>
 						</div>
 					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+				</div> --%>
 	<!-- -------------------------------------------------------------------------------------------------- -->
 
 	<jsp:include page="navbar.jsp" />

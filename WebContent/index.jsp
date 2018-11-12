@@ -60,7 +60,7 @@ body {
 						เป็นสื่อกลางในการจำนำ
 						ที่มีการรับประเมินราคาสินทรัพย์และปล่อยของหลุดจำนำทางออนไลน์
 						เพื่ออำนวยความสะดวกให้ลูกค้าสามารถเข้าถึงบริการได้ตลอด 24 ชั่วโมง”</p>
-					<a class="btn-custom btn-custom-defalt" href="#plage">
+					<a href="#plage">
 						<button class="btn-custom btn-custom-defalt">
 							วิธีการจำนำของ</button>
 					</a>

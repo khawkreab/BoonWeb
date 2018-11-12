@@ -26,6 +26,7 @@ html {
 a:hover, a:active, a:focus {
 	outline: 0;
 	border: 0;
+	color: #fff;
 }
 
 a:link {
@@ -62,6 +63,15 @@ a:active {
 	font-size: 1rem;
 }
 
+section {
+	display: flex;
+	flex-direction: column;
+	width: 100vw;
+	height: 100vh;
+	align-items: center;
+	justify-content: center;
+}
+
 .header {
 	width: 100vw;
 	height: 100vh;
@@ -91,10 +101,18 @@ a:active {
 	background-image: linear-gradient(to right, #ffa500, #ff2300);
 }
 
-.btn-custom-cancel {
+.btn-custom-blue {
 	background-image: linear-gradient(to right, #00dcff, #0008ff);
 }
 
 .btn-custom:hover {
 	background-position: right center;
+}
+
+line-x {
+	display: block;
+	width: 95%;
+	height: 1px;
+	background-color: #ddd;
+	margin: auto;
 }
