@@ -21,7 +21,7 @@
 <link href="css/new-design.css" rel="stylesheet">
 </head>
 
-<body style="background-color: #f4f4f4;">
+<body style="background-color: #f4f4f4; overflow: hidden;">
 
 	<div class="page">
 		<div class="pledge-container">
@@ -31,27 +31,40 @@
 			</div>
 			<div class="pledge-content">
 				<div id="choosetype">
-					<h4>กรอกข้อมูลการจำนำ</h4>
-					เลือกประเภทจำนำ :
-					<!-- type => gold -->
-					<a onclick="showsteptype(1)"><img src="img/icon/gold.png"
-						width="150" height="150px"></a>
-					<!-- type => com -->
-					<a id="" onclick="showsteptype(2)"><img src="img/icon/com.png"
-						width="150" height="150px"></a>
-					<!-- type => tv -->
-					<a id="" onclick="showsteptype(3)"><img src="img/icon/tv.png"
-						width="150" height="150px"></a>
-					<!-- type => Smart Phone -->
-					<a id="" onclick="showsteptype(4)"><img
-						src="img/icon/mobile.png" width="150" height="150px"></a>
-					<!-- type => Watch -->
-					<a id="" onclick="showsteptype(5)"><img
-						src="img/icon/watch.png" width="150" height="150px"></a>
-					<!-- type => Camera -->
-					<a id="" onclick="showsteptype(6)"><img
-						src="img/icon/camera.png" width="150" height="150px"></a>
 
+					<h4>
+						<p> เลือกประเภทการจำนำ  </p>
+					</h4>
+					<table>
+						<tr>
+							<td>
+								<!-- type => gold --> <a onclick="showsteptype(1)"><img
+									src="img/icon/gold.png" width="150" height="150px"></a>
+							</td>
+							<td>
+								<!-- type => com --> <a id="" onclick="showsteptype(2)"><img
+									src="img/icon/com.png" width="150" height="150px"></a>
+							</td>
+							<td>
+								<!-- type => tv --> <a id="" onclick="showsteptype(3)"><img
+									src="img/icon/tv.png" width="150" height="150px"></a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<!-- type => Smart Phone --> <a id="" onclick="showsteptype(4)"><img
+									src="img/icon/mobile.png" width="150" height="150px"></a>
+							</td>
+							<td>
+								<!-- type => Watch --> <a id="" onclick="showsteptype(5)"><img
+									src="img/icon/watch.png" width="150" height="150px"></a>
+							</td>
+							<td>
+								<!-- type => Camera --> <a id="" onclick="showsteptype(6)"><img
+									src="img/icon/camera.png" width="150" height="150px"></a>
+							</td>
+						</tr>
+					</table>
 				</div>
 				<!-- One "tab" for each step in the form: -->
 				<form:form id="regForm" method="post" action="savePost.html"
@@ -64,6 +77,7 @@
 						<span class="step"></span> <span class="step"></span> <span
 							class="step"></span>
 					</div>
+					<h4>กรอกข้อมูลการจำนำ</h4>
 					<!-- step 1 -->
 					<div class="tab" id="step1">
 						<p>
