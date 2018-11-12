@@ -17,7 +17,7 @@
 <link rel="icon" href="img/logos/Artboard.png">
 <title>pawnshop-estimate-form</title>
 <link rel="stylesheet" href="css/carddetail.css">
-<link rel="stylesheet" href="css/slideimg.css">
+
 <%
 	int dataslideto = 0, dataslideto2 = 0;
 	String active = "active", active2 = "active";
@@ -30,24 +30,29 @@
 			<div class="mr-auto card-detail-left">
 				<!-- show image -->
 				<div class="card-detail-thumbnail">
-					<div id="demo" class="carousel slide" data-ride="carousel">
+					<div id="demo" class="carousel card-carousel slide"
+						data-ride="carousel">
 
 						<!-- Indicators -->
-						<ul class="carousel-indicators">
-							<li data-target="#demo" data-slide-to="0" class="active"></li>
-							<li data-target="#demo" data-slide-to="1"></li>
-							<li data-target="#demo" data-slide-to="2"></li>
+						<ul class="card-carousel-indicators carousel-indicators">
+							<li data-target="#demo" data-slide-to="0" class="active"><img
+								src="img/background/background.jpg" alt="Los Angeles"></li>
+							<li data-target="#demo" data-slide-to="1"><img
+								src="img/background/banner.jpg" alt="Chicago"></li>
+							<li data-target="#demo" data-slide-to="2"><img
+								src="img/background/Manual.jpg" alt="New York"></li>
 						</ul>
 						<!-- The slideshow -->
-						<div class="carousel-inner">
+						<div class="carousel-inner card-carousel-inner">
 							<div class="carousel-item active">
-								<img src="https://cdn2.hubspot.net/hubfs/322787/Mychefcom/images/BLOG/Header-Blog/photo-culinaire-pexels.jpg" alt="Los Angeles" width="1100" height="500">
+								<img src="img/background/background.jpg" alt="Los Angeles">
 							</div>
 							<div class="carousel-item">
-								<img src="https://cdn2.hubspot.net/hubfs/322787/Mychefcom/images/BLOG/Header-Blog/photo-culinaire-pexels.jpg" alt="Chicago" width="1100" height="500">
+								<img src="img/background/banner.jpg" alt="Chicago">
 							</div>
 							<div class="carousel-item">
-								<img src="img/background/Manual.jpg" alt="New York" width="1100" height="500">
+								<img src="img/background/Manual.jpg" alt="New York" width="1100"
+									height="500">
 							</div>
 						</div>
 

@@ -22,7 +22,7 @@
 <link rel="stylesheet" href="css/banner.css">
 <link rel="stylesheet" href="css/multiStepForm.css">
 <link rel="stylesheet" href="css/navbar.css">
-
+<link rel="stylesheet" href="css/slideimg.css">
 <!-- <link rel="stylesheet" href="css/formUploadImg.css"> -->
 
 
