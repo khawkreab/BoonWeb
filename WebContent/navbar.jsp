@@ -122,11 +122,10 @@
 					<%
 						}
 					%>
-					<li class=""><a class="nav-link" href="pawnshop-index.html">รายการของลงจำนำ</a></li>
-					<li class=""><a class="nav-link"
-						href="pawnshop-track-estimate.html">ติดตามการประเมิน</a></li>
-					<li class=""><a href="pawnshop-pledge-sell.html"
-						class="nav-link ">ประวัติการขาย</a></li>
+					<li class=""><a class="nav-link" href="index.html">รายการของลงจำนำ</a></li>
+					<li class=""><a class="nav-link" href="pawnshop-track-estimate.html">ติดตามการประเมิน</a></li>
+					<li class=""><a href="pawnshop-pledge-sell.html" class="nav-link ">ปล่อยของหลุดจำนำ</a></li>
+					<li class=""><a href="pawnshop-list-post.html" class="nav-link ">ประวัติปล่อยของหลุดจำนำ</a></li>
 					<li class=""><a href="pawnshop-estimate-history.html" class="nav-link ">ประวัติการประเมิน</a></li>
 					<li class=""><a href="logout.html" class="nav-link ">แก้ไขบัญชี</a></li>
 					<li class=""><a href="logout.html" class="nav-link ">ออกจากระบบ</a></li>
