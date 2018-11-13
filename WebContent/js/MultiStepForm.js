@@ -45,19 +45,46 @@ function nextPrev(n) {
 }
 
 function validateForm() {
-	// This function deals with validation of the form fields
+	// This function deals with validation of the form fields.
 	var x, y, i, valid = true;
 	x = $('.tab');
 	y = x[currentTab].getElementsByTagName("input");
+	// RegularExpression
+	var characterReg = /^[0-9A-Za-zก-๙]+$/;
+	var decimal = /^[-+]?[0-9]+.[0-9]+$/;
+	// validate
+	var postName = $('#textVal').val();
+	var brandName = $('#brandName').val();
+	var decimalOne = $('#decimalOne').val();
+	var decimalTwo = $('#decimalTwo').val();
+	var serial = $('#serial').val();
+	var model = $('#model').val();
 	// A loop that checks every input field in the current tab:
 	for (i = 0; i < y.length; i++) {
 		// If a field is empty...
-		if (y[i].value == "") {
-			// add an "invalid" class to the field:
-			y[i].className += " invalid";
-			// and set the current valid status to false
-			valid = false;
+		if (currentTab == 0) {
+			if (!characterReg.test(postName) || !characterReg.test(brandName)) {
+				// add an "invalid" class to the field:
+				y[i].className += " invalid";
+				// and set the current valid status to false
+				valid = false;
+			}
+		} else if (currentTab == 1) {
+			if (!decimal.test(decimalOne) || !decimal.test(decimalTwo)
+					|| !characterReg.test(model) || !characterReg.test(serial)) {
+				// add an "invalid" class to the field:
+				y[i].className += " invalid";
+				// and set the current valid status to false
+				valid = false
+			}
 		}
+
+		/*
+		 * if (y[i].value == "" || characterReg.test(y[i].value)) { // add an
+		 * "invalid" class to the field: y[i].className += " invalid"; // and
+		 * set the current valid status to false valid = false; }
+		 */
+
 	}
 	// If the valid status is true, mark the step as finished and valid:
 	if (valid) {
@@ -108,15 +135,18 @@ function showsteptype(e) {
 		step2 += "</select>"
 		step2 += "</p>"
 
+		step2 += "<input type='hidden' id='serial' value='test'>"
+		step2 += "<input type='hidden' id='model' value='test'>"
+
 		step2 += "<p>"
 		step2 += "<label>ความบริสุทธิ์</label>"
-		step2 += " <input type='text' name='pawnerPostPure' required='required'	 pattern='[^'a-zA-Zก-ฮ@,!#$?:^%&*+/=()\\_`{|}~-]{1,5}'/> <br>"
+		step2 += " <input type='text' name='pawnerPostPure' required='required'	id='decimalOne' /> <br>"
 		step2 += "<i>ตัวเลขเท่านั้น 0-9 หรือใช้ จุดทศนิยม เช่น 99.99</i>"
 		step2 += "</p>"
 
 		step2 += "<p>"
 		step2 += "<label>น้ำหนัก(ใช้หน่วยเป็นกรัม)</label>"
-		step2 += " <input type='text' name='pawnerPostWeigh' required='required' pattern='[^'a-zA-Zก-ฮ@,!#$?:^%&*+/=()\\_`{|}~-]{1,5}'/> <br>"
+		step2 += "<input type='text' name='pawnerPostWeigh' required='required' id='decimalTwo' /> <br>"
 		step2 += "<i>ตัวเลขเท่านั้น 0-9 หรือใช้ จุดทศนิยม เช่น 99.99</i>"
 		step2 += "</p>"
 
@@ -130,7 +160,7 @@ function showsteptype(e) {
 
 		step3 += "<p>"
 		step3 += "<span>"
-		step3 += "<input type='checkbox' required='required'/>"
+		step3 += "<input type='checkbox'/>"
 		step3 += "ฉันยอมรับและตกลง <strong>เงือนไขการใช้งาน </strong> ของระบบบุญยง"
 		step3 += "</span></p>"
 
@@ -138,23 +168,24 @@ function showsteptype(e) {
 
 	}
 	if (e == 2) {
-		
+
 		step2 = "<input type='hidden' name='pawnerPostItemType' value='Laptop' />"
 		step2 += "<p>"
 		step2 += "<lable>หมายเลขประจำเครื่อง</lable>"
-		step2 += "<input type='text' name='pawnerPostSerial' required='required' pattern='[^'ก-ฮ@.,!#$?:^%&*+/=()\\_`{|}~-]{1,20}'>"
+		step2 += "<input type='text' name='pawnerPostSerial' id='serial' required='required'>"
 		step2 += "<i>ห้ามใช้ อักษรพิเศษ และ ภาษาไทย</i>"
 		step2 += "</p>"
 
 		step2 += "<p>"
 		step2 += "<lable>รุ่น</lable>"
-		step2 += "<input type='text' name='pawnerPostModel' required='required' pattern='[^'ก-ฮ@.,!#$?:^%&*+/=()\\_`{|}~-]{1,20}'>"
+		step2 += "<input type='text' name='pawnerPostModel' id='model' required='required'>"
 		step2 += "<i>ห้ามใช้ อักษรพิเศษ และ ภาษาไทย</i>"
 		step2 += "</p>"
 
 		step2 += "<p>"
 		step2 += "<lable>ขนาดหน้าจอ</lable>"
-		step2 += "<input type='text' name='pawnerPostSize' required='required' pattern='[^'a-zA-Zก-ฮ@,!#$?:^%&*+/=()\\_`{|}~-]{1,5}'>"
+		step2 += "<input type='text' name='pawnerPostSize' id='decimalOne'>"
+		step2 += "<input type='hidden' id='decimalTwo' value='12.00'>"
 		step2 += "<i>ตัวเลขเท่านั้น 0-9 หรือใช้ จุดทศนิยม เช่น  13.5</i>"
 		step2 += "</p>"
 
@@ -164,7 +195,7 @@ function showsteptype(e) {
 		step2 += "<div>"
 		step2 += "<lable>Harddisk</lable>"
 		step2 += "<div class='form-list-row-inline'>"
-		step2 += "<select name='pawnerPostHarddisk' required='required'>"
+		step2 += "<select name='pawnerPostHarddisk' >"
 		step2 += "<option>250 GB</option>"
 		step2 += "<option>500 GB</option>"
 		step2 += "<option>1 TB</option>"
@@ -180,7 +211,7 @@ function showsteptype(e) {
 		step2 += "<div>"
 		step2 += "<lable>Ram</lable>"
 		step2 += "<div class='form-list-row-inline'>"
-		step2 += "<select name='pawnerPostRam' required='required'>"
+		step2 += "<select name='pawnerPostRam' >"
 		step2 += "<option>4 Gb</option>"
 		step2 += "<option>8 Gb</option>"
 		step2 += "<option>16 Gb</option>"
@@ -236,19 +267,20 @@ function showsteptype(e) {
 
 		step2 += "<p>"
 		step2 += "<lable>หมายเลขประจำเครื่อง</lable>"
-		step2 += "<input type='text' name='pawnerPostSerial' required='required' pattern='[^'ก-ฮ@.,!#$?:^%&*+/=()\\_`{|}~-]{1,20}'>"
+		step2 += "<input type='text' name='pawnerPostSerial' required='required' id='serial'>"
 		step2 += "<i>ห้ามใช้ อักษรพิเศษ และ ภาษาไทย</i>"
 		step2 += "</p>"
 
 		step2 += "<p>"
 		step2 += "<lable>รุ่น</lable>"
-		step2 += "<input type='text' name='pawnerPostModel' required='required' pattern='[^'ก-ฮ@.,!#$?:^%&*+/=()\\_`{|}~-]{1,20}'>"
+		step2 += "<input type='text' name='pawnerPostModel' required='required' id='model'>"
 		step2 += "<i>ห้ามใช้ อักษรพิเศษ และ ภาษาไทย</i>"
 		step2 += "</p>"
 
 		step2 += "<p>"
 		step2 += "<lable>ขนาดหน้าจอ</lable>"
-		step2 += "<input type='text' name='pawnerPostSize' required='required' pattern='[^'a-zA-Zก-ฮ@,!#$?:^%&*+/=()\\_`{|}~-]{1,5}'>"
+		step2 += "<input type='text' name='pawnerPostSize' required='required' id='decimalOne'>"
+		step2 += "<input type='hidden' value='12.00' id='decimalTwo'>"
 		step2 += "<i>ตัวเลขเท่านั้น 0-9 หรือใช้ จุดทศนิยม เช่น  13.5</i>"
 		step2 += "</p>"
 
@@ -298,27 +330,37 @@ function showsteptype(e) {
 
 		step2 += "<p>"
 		step2 += "<lable>หมายเลขประจำเครื่อง</lable>"
-		step2 += "<input type='text' name='pawnerPostSerial' required='required' pattern='[^'ก-ฮ@.,!#$?:^%&*+/=()\\_`{|}~-]{1,20}'>"
+		step2 += "<input type='text' name='pawnerPostSerial' required='required'  id='serial'>"
 		step2 += "<i>ห้ามใช้ อักษรพิเศษ และ ภาษาไทย</i>"
 		step2 += "</p>"
 
 		step2 += "<p>"
 		step2 += "<lable>รุ่น</lable>"
-		step2 += "<input type='text' name='pawnerPostModel' required='required' pattern='[^'ก-ฮ@.,!#$?:^%&*+/=()\\_`{|}~-]{1,20}'>"
+		step2 += "<input type='text' name='pawnerPostModel' required='required'  id='model'>"
 		step2 += "<i>ห้ามใช้ อักษรพิเศษ และ ภาษาไทย</i>"
 		step2 += "</p>"
 
 		step2 += "<p>"
 		step2 += "<lable>ขนาดหน้าจอ</lable>"
-		step2 += "<input type='text' name='pawnerPostSize' required='required' pattern='[^'a-zA-Zก-ฮ@,!#$?:^%&*+/=()\\_`{|}~-]{1,5}'>"
+		step2 += "<input type='text' name='pawnerPostSize' required='required' id='decimalOne'>"
+		step2 += "<input type='hidden' value='12.00' id='decimalTwo'>"
 		step2 += "<i>ตัวเลขเท่านั้น 0-9 หรือใช้ จุดทศนิยม เช่น  13.5</i>"
 		step2 += "</p>"
 
-		step2 += "<p>"
+		step2 += "<li class='form-list-row form-list-row-inline'>"
+		step2 += "<div>"
 		step2 += "<lable>หน่วยความจำ</lable>"
-		step2 += "<input type='text' name='pawnerPostCapacity'>"
-		step2 += "<i>ตัวเลขเท่านนั้ 0-9</i>"
-		step2 += "</p>"
+		step2 += "<div class='form-list-row-inline'>"
+		step2 += "<select name='pawnerPostCapacity' >"
+		step2 += "<option>8 Gb</option>"
+		step2 += "<option>16 Gb</option>"
+		step2 += "<option>32 Gb</option>"
+		step2 += "<option>64 Gb</option>"
+		step2 += "<option>More than 64 Gb</option>"
+		step2 += "</select>"
+		step2 += "</div>"
+		step2 += "</div>"
+		step2 += "</li>"
 
 		$('#step2').append(step2);
 
@@ -398,6 +440,10 @@ function showsteptype(e) {
 		step2 += "<input type='date'name='pawnerPostPurchase'>"
 		step2 += "</P>"
 
+		step2 += "<input type='hidden' value='test' required='required'  id='serial'>"
+		step2 += "<input type='hidden' value='test' required='required'  id='model'>"
+		step2 += "<input type='hidden' value='12.00' required='required' id='decimalOne'>"
+		step2 += "<input type='hidden' value='12.00' id='decimalTwo'>"
 		$('#step2').append(step2);
 
 		step3 = "<p>"
@@ -432,33 +478,48 @@ function showsteptype(e) {
 
 		step2 += "<p>"
 		step2 += "<lable>หมายเลขประจำเครื่อง</lable>"
-		step2 += "<input type='text' name='pawnerPostSerial' required='required' pattern='[^'ก-ฮ@.,!#$?:^%&*+/=()\\_`{|}~-]{1,20}'>"
+		step2 += "<input type='text' name='pawnerPostSerial' id='serial'>"
 		step2 += "<i>ห้ามใช้ อักษรพิเศษ และ ภาษาไทย</i>"
 		step2 += "</p>"
 
 		step2 += "<p>"
 		step2 += "<lable>รุ่น</lable>"
-		step2 += "<input type='text' name='pawnerPostModel' required='required' pattern='[^'ก-ฮ@.,!#$?:^%&*+/=()\\_`{|}~-]{1,20}'>"
+		step2 += "<input type='text' name='pawnerPostModel' id='model'>"
 		step2 += "<i>ห้ามใช้ อักษรพิเศษ และ ภาษาไทย</i>"
 		step2 += "</p>"
 
-		step2 += "<p>"
-		step2 += "<lable>ชนิดของกล้อง</lable>"
-		step2 += "<input type='text' name='pawnerPostTypeCamera' required='required' pattern='[^'ก-ฮ@.,!#$?:^%&*+/=()\\_`{|}~-]{1,20}'>"
-		step2 += "<i>ห้ามใช้ อักษรพิเศษ</i>"
-		step2 += "</p>"
-
-		step2 += "<p>"
+		step2 += "<div>"
 		step2 += "<lable>ชนิดของเลนกล้อง</lable>"
-		step2 += "<input type='text' name='pawnerPostCameraLen' required='required' pattern='[^'ก-ฮ@.,!#$?:^%&*+/=()\\_`{|}~-]{1,20}'>"
-		step2 += "<i>ห้ามใช้ อักษรพิเศษ</i>"
-		step2 += "</p>"
+		step2 += "<select name='pawnerPostCameraLen' required='required'>"
+		step2 += "<option>เลนส์ไพร์ม (Prime Lens)</option>"
+		step2 += "<option>เลนส์ซูม (Zoom Lens)</option>"
+		step2 += "<option>เลนส์มาตรฐาน (Normal Lens)</option>"
+		step2 += "<option>เลนส์เทเลโฟโต (Telephoto Lens)</option>"
+		step2 += "<option>เลนส์ไวด์ (Wide Angle Lens)</option>"
+		step2 += "<option>เลนส์ฟิชอาย (Fisheye Lens)</option>"
+		step2 += "<option>เลนส์มาโคร (Macro Lens) </option>"
+		step2 += "<option>เลนส์ไวด์ เลนส์ฟิกซ์ (Fixed Lens)</option>"
+		step2 += "<option>อื่นๆ</option>"
+		step2 += "</select>"
+		step2 += "</div>"
+
+		step2 += "<div>"
+		step2 += "<lable>ชนิดของกล้อง</lable>"
+		step2 += "<select name='pawnerPostTypeCamera' required='required'>"
+		step2 += "<option>กล้องคอมแพค (Compact)</option>"
+		step2 += "<option>กล้องมิลเลอร์เลส  (Mirrorless)</option>"
+		step2 += "<option>กล้องดีเอสแอลอา (DSLR)</option>"
+		step2 += "<option>อื่นๆ</option>"
+		step2 += "</select>"
+		step2 += "</div>"
 
 		step2 += "<p>"
 		step2 += "<lable>ปีที่ซื้อสินค้า</lable>"
 		step2 += "<input type='date'name='pawnerPostPurchase'>"
 		step2 += "</P>"
-
+			
+		step2 += "<input type='hidden' value='12.00' required='required' id='decimalOne'>"
+		step2 += "<input type='hidden' value='12.00' id='decimalTwo'>"
 		$('#step2').append(step2);
 
 		step3 = "<p>"

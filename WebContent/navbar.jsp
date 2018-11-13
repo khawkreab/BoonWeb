@@ -23,6 +23,8 @@
 <link rel="stylesheet" href="css/multiStepForm.css">
 <link rel="stylesheet" href="css/navbar.css">
 <link rel="stylesheet" href="css/slideimg.css">
+<link rel="stylesheet" href="css/pawnerDetailBuying.css">
+<link href="css/pawnerCard.css" rel="stylesheet">
 <!-- <link rel="stylesheet" href="css/formUploadImg.css"> -->
 
 
@@ -152,7 +154,7 @@
 			</button></a></li>
 	<li ><a
 		href="pawner-register-form.html" class="nav-link ">
-		<button	class="btn-custom btn-custom-cancel">
+		<button	class="btn-custom btn-custom-blue">
 				สมัครสมาชิก
 			</button></a></li>
 </ul>
@@ -297,14 +299,14 @@
 <div class="modal fade" id="modalLogin" role="dialog">
 	<div class="modal-dialog">
 		<div class="modal-login modal-content">
-			<div class="containern">
-				<div class="left">
+			<div class="login-containern">
+				<div class="login-left">
 					<div class="login">ยินดีตอนรับ</div>
-					<div class="eula">
+					<div class="login-eula">
 						เข้าสู่ระบบจำนำทางออนไลน์ <br> จำนำง่าย จ่ายคล่อง ต้องบุญยง
 					</div>
 				</div>
-				<div class="right">
+				<div class="login-right">
 
 					<div class="form">
 						<form method="POST" action="loginProcess.html">
@@ -320,7 +322,7 @@
 									เข้าสู้ระบบ
 								</button>
 								<button type="button" data-dismiss="modal"
-									class="btn-custom btn-custom-cancel" style="font-size: 15px;">ยกเลิก</button>
+									class="btn-custom btn-custom-blue" style="font-size: 15px;">ยกเลิก</button>
 							</div>
 						</form>
 					</div>

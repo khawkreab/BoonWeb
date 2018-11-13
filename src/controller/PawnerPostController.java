@@ -188,13 +188,13 @@ public class PawnerPostController {
 		List<Estimate> estimatesList;
 		try {
 			long userId = (long) request.getSession().getAttribute("id");
-			pawnerPostsWaiting = pawnerPostService.findPawnerPostByPawnerIdAndStatus(userId , "waiting");
-			pawnerPostsProcess = pawnerPostService.findPawnerPostByPawnerIdAndStatus(userId , "process");
+		/*	pawnerPostsWaiting = pawnerPostService.findPawnerPostByPawnerIdAndStatus(userId , "waiting");*/
+			pawnerPostsProcess = pawnerPostService.getAllPawnerPost();
 			estimatesList =estimateService.findEstimateByPawnerIdAndStatus(userId , "process");
 			
 			
 			mv.addObject("estimatesList", estimatesList);
-			mv.addObject("pawnerPosts", pawnerPostsWaiting);
+			/*mv.addObject("pawnerPosts", pawnerPostsWaiting);*/
 			mv.addObject("pawnerPostsProcess", pawnerPostsProcess);
 		} catch (Exception e) {
 			e.printStackTrace();
