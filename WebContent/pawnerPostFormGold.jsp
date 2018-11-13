@@ -69,14 +69,14 @@
 						<p>
 							<label>ชื่อสินค้าที่ต้องการจำนำ</label> <input type="text"
 								name="pawnerPostName" required="required"
-								pattern="[^'@.,!#$?:^%&*+/=()\\_`{|}~-]{1,30}"> <br>
+							 	id="textVal"> <br>
 							<i>ใช้เป็นตัวอักษร ภาษาไทย หรือ อังกฤษ เท่านั้น
 								ความยาวไม่เกิน 30 ตัวอักษร และ ต้องไม่ใช้ อักษรพิเศษ</i>
 						</p>
 						<p>
 							<label>ยี่ห้อ</label> <input type="text" neme="pawnerPostBrand"
 								required="required"
-								pattern="[^'@.,!#$?:^%&*+/=()\\_`{|}~-]{1,20}" /> <br> <i>ใช้เป็นตัวอักษร
+								id="brandName"/> <br> <i>ใช้เป็นตัวอักษร
 								ภาษาไทย หรือ อังกฤษ เท่านั้น ความยาวไม่เกิน 30 ตัวอักษร และ
 								ต้องไม่ใช้ อักษรพิเศษ</i>
 						</p>
@@ -146,7 +146,6 @@
 							</div>
 						</div>
 					</div>
-
 
 					<!-- step 2 -->
 					<div class="tab" id="step2"></div>
