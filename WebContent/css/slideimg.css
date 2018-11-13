@@ -2,6 +2,7 @@
 .card-carousel {
 	width: 500px;
 	height: 320px;
+	background-image: linear-gradient(to right, #ffa500, #ff2300);
 }
 
 /* Indicators list style */

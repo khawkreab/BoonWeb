@@ -24,11 +24,12 @@
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
 <!-- Custom styles for this template -->
-<link href="css/new-design.css" rel="stylesheet">
+<!-- <link href="css/new-design.css" rel="stylesheet"> -->
 <link href="vendor/font-awesome/css/font-awesome.min.css"
 	rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="css/timeline.css">
 </head>
-<body>
+<body style="background-color: #eee">
 	<jsp:include page="navbar.jsp" />
 
 	<!--banner-->
@@ -38,7 +39,170 @@
 			<em></em>
 		</div>
 	</div>
-	<!-- -------------------------------- status process ---------------------------------- -->
+
+	<section id="cd-timeline" class="cd-container">
+		<c:forEach items="${pawnerPostsProcess}" var="postprocess">
+			<c:if
+				test="${postprocess.pawnerPostStatus == 'process' || postprocess.pawnerPostStatus == 'waiting'}">
+				<div class="cd-timeline-block">
+					<!-------- icon -------->
+					<c:if test="${postprocess.pawnerPostStatus == 'waiting'}">
+						<div class="cd-timeline-img cd-wait">
+							<i class="fas fa-hourglass-half"></i>
+						</div>
+					</c:if>
+					<c:if test="${postprocess.pawnerPostStatus == 'process'}">
+						<div class="cd-timeline-img cd-process">
+							<i class="fas fa-clipboard-list"></i>
+						</div>
+					</c:if>
+					<!--------- end icon --------->
+
+					<div class="cd-timeline-content">
+						<!-- date -->
+						<span class="cd-date"><fmt:formatDate pattern="dd"
+								value="${postprocess.pawnerPostDate }" /> <fmt:formatDate
+								pattern="MMM" value="${postprocess.pawnerPostDate }" /> <fmt:formatDate
+								pattern="yyyy" value="${postprocess.pawnerPostDate }" /> </span>
+						<!--  -->
+						<h2>${postprocess.pawnerPostName }
+							${postprocess.pawnerPostBrand }
+							${postprocess.pawnerPostTypeCamera }
+							${postprocess.pawnerPostCameraLen }</h2>
+						<ul class="row">
+
+							<!-- Watch,Electronic -->
+							<c:if test="${postprocess.pawnerPostModel != null}">
+								<li class="col-md-6">รุ่น : ${postprocess.pawnerPostModel}</li>
+								<li class="col-md-6">หมายเลขประจำเครื่อง :
+									${postprocess.pawnerPostSerial}</li>
+								<li class="col-md-6">ปีที่ซื้อสินค้า :
+									${postprocess.pawnerPostPurchase }</li>
+							</c:if>
+
+							<c:if test="${postprocess.pawnerPostProduction != null}">
+								<li class="col-md-6">ปีที่ผลิตสินค้า :
+									${postprocess.pawnerPostProduction}</li>
+							</c:if>
+
+
+							<!-- Gold -->
+							<c:if test="${postprocess.pawnerPostPure != null}">
+								<li class="col-md-6">ยี่ห้อ : ${postprocess.pawnerPostBrand }</li>
+								<li class="col-md-6">ความบริสุทธ์ :
+									${postprocess.pawnerPostPure  }</li>
+								<li class="col-md-6">น้ำหนัก :
+									${postprocess.pawnerPostWeigh }</li>
+								<li class="col-md-6">ชนิดหรือรูปแบบของทองคำ :
+									${postprocess.pawnerPostCategory }</li>
+							</c:if>
+
+
+							<!-- Electronic tv com telephone -->
+							<c:if test="${postprocess.pawnerPostSize != null}">
+								<li class="col-md-6">ขนาดหน้าจอ :
+									${postprocess.pawnerPostSize }</li>
+							</c:if>
+
+							<!-- Electronic camera com telephone -->
+							<c:if test="${postprocess.pawnerPostBattery != null}">
+								<li class="col-md-6"><span class="fas fa-check"
+									aria-hidden="true"> </span>Battery</li>
+							</c:if>
+
+							<!-- Electronic com telephone -->
+							<c:if test="${postprocess.pawnerPostHarddisk != null}">
+								<li class="col-md-6">Harddisk : ${ postprocess.pawnerPostHarddisk }</li>
+							</c:if>
+
+							<!-- Electronic com-->
+							<c:if test="${postprocess.pawnerPostRam != null}">
+								<li class="col-md-6">Ram : ${postprocess.pawnerPostRam }</li>
+							</c:if>
+
+							<!-- Watch -->
+							<c:if test="${postprocess.pawnerPostCase != null}">
+								<li class="col-md-6">ชนิดของหน้าปัด :
+									${postprocess.pawnerPostCase }</li>
+								<li class="col-md-6">ชนิดของสายรัดข้อมือ :
+									${postprocess.pawnerPostBracelet }</li>
+								<c:if test="${postprocess.pawnerPostDiamond != null}">
+									<li class="col-md-6">เพรช :
+										${postprocess.pawnerPostDiamond }</li>
+								</c:if>
+								<c:if test="${postprocess.pawnerPostPackage != null}">
+									<li class="col-md-6"><span class="fas fa-check"
+										aria-hidden="true"> </span> กล้องบรรจุสินค้า</li>
+								</c:if>
+							</c:if>
+
+							<!-- Electronic tv -->
+							<c:if test="${postprocess.panwePostRemote != null}">
+								<li class="col-md-6"><span class="fas fa-check"
+									aria-hidden="true"> </span> Remote</li>
+							</c:if>
+
+
+							<!-- Watch,Electronic -->
+							<c:if test="${postprocess.pawnerPostModel != null}">
+								<li class="col-md-6"><span class="fas fa-check"
+									aria-hidden="true"> </span> การประกันสินค้า</li>
+							</c:if>
+
+						</ul>
+						<h6 class="quick">รายละเอียดเพิ่มเติม</h6>
+						<p class="quick_desc">${postprocess.pawnerPostDescription }</p>
+
+						<!---------- approve  ---------->
+						<c:if test="${postprocess.pawnerPostStatus == 'process'}">
+							<line-x></line-x>
+							<div class="history-show-estimate">
+								<div class="row">
+									<div class="col-md-4">โรงรับจำนำที่มาเสนอราคา</div>
+									<div class="col-md-2">ราคาน้อยสุดที่ได้รับ</div>
+									<div class="col-md-2">ราคามากสุดที่ได้รับ</div>
+									<div class="col-md-2"></div>
+								</div>
+								<ul>
+									<c:forEach items="${estimatesList}" var="estimate">
+										<c:if
+											test="${estimate.pawnerPostId.pawnerPostId == postprocess.pawnerPostId }">
+											<li>
+												<div class="row">
+													<div class="col-md-4">
+														${estimate.pawnshopId.pawnshopName}</div>
+													<div class="col-md-2">${estimate.estimatePriceMin}</div>
+													<div class="col-md-2">${estimate.estimatePriceMax}</div>
+													<div class="col-md-2">
+														<form action="pawner-approve.html" method="post">
+															<input type="hidden" name="estimateId"
+																value="${estimate.estimateId}"> <input
+																type="hidden" name="pawnerPostId"
+																value="${estimate.pawnerPostId.pawnerPostId}">
+															<button class="btn-custom btn-custom-defalt"
+																type="submit">ยืนยันราคาสินค้า</button>
+														</form>
+													</div>
+												</div>
+											</li>
+										</c:if>
+
+									</c:forEach>
+								</ul>
+							</div>
+						</c:if>
+						<!-- approve -->
+					</div>
+					<!-- cd-timeline-content -->
+				</div>
+				<!-- cd-timeline-block -->
+			</c:if>
+		</c:forEach>
+
+	</section>
+	<!-- cd-timeline -->
+
+	<%-- <!-- -------------------------------- status process ---------------------------------- -->
 	<section>
 		<c:forEach items="${pawnerPostsProcess}" var="postprocess">
 			<div class="container">
@@ -48,7 +212,7 @@
 					</div>
 					<div class="d-flex history-title">
 						<div class="mr-auto p-2">
-							<fmt:formatDate type="both" dateStyle="long" timeStyle="short"
+							<fmt:formatDate type="date" dateStyle="long" timeStyle="short"
 								value="${postprocess.pawnerPostDate }" />
 						</div>
 						<div class="ml-auto p-2">
@@ -83,12 +247,12 @@
 													<li class="col-md-6">ปีที่ซื้อสินค้า :
 														${postprocess.pawnerPostPurchase }</li>
 												</c:if>
-												
+
 												<c:if test="${postprocess.pawnerPostProduction != null}">
 													<li class="col-md-6">ปีที่ผลิตสินค้า :
 														${postprocess.pawnerPostProduction}</li>
 												</c:if>
-												
+
 
 												<!-- Gold -->
 												<c:if test="${postprocess.pawnerPostPure != null}">
@@ -187,7 +351,7 @@
 													<input type="hidden" name="estimateId"
 														value="${estimate.estimateId}"> <input
 														type="hidden" name="pawnerPostId"
-														value="${estimate.pawnerPostId.pawnerPostId}"> 
+														value="${estimate.pawnerPostId.pawnerPostId}">
 													<button
 														style="border-radius: 2px; background: #ff7f00; font-size: 13px; color: #fff; padding: 5px; border: none; margin: 5px"
 														type="submit">ยืนยันราคาสินค้า</button>
@@ -322,7 +486,7 @@
 				</div>
 			</div>
 		</c:forEach>
-	</section>
+	</section> --%>
 
 </body>
 </html>

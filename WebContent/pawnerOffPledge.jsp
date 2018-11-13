@@ -18,14 +18,7 @@
 <link rel="icon" href="img/logos/Artboard.png">
 <link href="css/pawnerCard.css" rel="stylesheet">
 <title>รายการของหลุดจำนำ</title>
-<%-- <script type="text/javascript">
-	var checkLogin = <%= session.getAttribute("isLogin") %>;
-	if(checkLogin !== null){
-		sessionStorage.setItem("login", "yes");
-	}
-	</script>
 
-<script src="js/checkLogin.js"></script> --%>
 </head>
 
 <body id="page-top">
@@ -65,34 +58,14 @@
 				<div class="cta d-flex">
 					<div class="price mr-auto p-2">${pawnshopPosts.pawnshopPostPrice}฿</div>
 					<div class="p-2 ly"></div>
-					<button class="btn">
-						<i class="fas fa-cart-arrow-down" style="font-size: 1.25rem;"></i>
-					</button>
+					<a
+						href="post-item-detail.html?item=${pawnshopPosts.pawnshopPostId}"><button
+							class="btn">
+							<i class="fas fa-cart-arrow-down" style="font-size: 1.25rem;"></i>
+						</button></a>
 				</div>
 			</div>
-			<div class="card">
-				<img class="card-img-top"
-					src="images/imageUpload/${pawnshopPosts.pawnshopPostPicture}"
-					alt="Card image cap"> <a
-					href="post-item-detail.html?item=${pawnshopPosts.pawnshopPostId}">
-					<span class="zoom-icon "> <i class="fas fa-search icon "></i>
-				</span>
-				</a>
-				<div class="card-body">
-					<form:form method="post" id="form">
-						<span class="card-body-title"><a
-							href="post-item-detail.html?item=${pawnshopPosts.pawnshopPostId}">
-								${pawnshopPosts.pawnshopPostName}
-								${pawnshopPosts.pawnshopPostBrand}</a></span>
-						<span class="card-body-location"><i
-							class="fas fa-map-marker-alt"></i>
-							${pawnshopPosts.pawnshopId.pawnshopProvince }</span>
-						<span class="card-body-price">${pawnshopPosts.pawnshopPostPrice}
-							บาท</span>
-					</form:form>
-				</div>
-			</div>
-
+			
 		</c:forEach>
 	</div>
 
