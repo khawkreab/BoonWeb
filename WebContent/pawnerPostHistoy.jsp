@@ -13,21 +13,14 @@
 <html>
 
 <head>
-<link rel="icon" href="img/logos/Artboard.png">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="">
 <meta name="author" content="">
 <title>pawner-post-history</title>
 
-<!-- Bootstrap core CSS -->
-<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-
-<!-- Custom styles for this template -->
-<link href="css/new-design.css" rel="stylesheet">
-<link href="vendor/font-awesome/css/font-awesome.min.css"
-	rel="stylesheet" type="text/css">
+<!-- import all css -->
+<jsp:include page="importCSS.jsp" />
 <style>
 table {
 	font-family: arial, sans-serif;
@@ -230,12 +223,8 @@ tr:hover {
 									</div>
 									<a id="${post.pawnerPostId.pawnerPostId}"
 										onClick="select(this); return false;"
-<<<<<<< HEAD
-										data-cart='{"pawnhopAddress":"${post.pawnshopId.pawnshopAddress}","pawnerPostId":"${post.pawnerPostId.pawnerId.pawnerEmail}",
-=======
 										data-cart='{"pawnerFirstname":"${post.pawnerPostId.pawnerId.pawnerFirstname}",
 										"pawnerLastname":"${post.pawnerPostId.pawnerId.pawnerLastname}",
->>>>>>> doing
 										"pawnerPostName":"${post.pawnerPostId.pawnerPostName }","pawnerPostDate":"${post.pawnerPostId.pawnerPostDate}",
 										"pawnerPostItemType":"${post.pawnerPostId.pawnerPostItemType}","pawnerPostBrand":"${post.pawnerPostId.pawnerPostBrand}",
 										"panwePostRemote":"${post.pawnerPostId.panwePostRemote}","pawnerPostBattery":"${post.pawnerPostId.pawnerPostBattery}",
@@ -473,116 +462,99 @@ tr:hover {
 	<!-- -------------------- print page --------------------------- -->
 	<div id="printable">
 		<div class="popup" data-popup="popup">
-		<div>
-			<p style="font-size: 32px; border-bottom: 1px solid;">ใบยืนยันการจำนำ</p>
 			<div>
-<<<<<<< HEAD
 				<p style="font-size: 32px; border-bottom: 1px solid;">ใบยืนยันการจำนำ</p>
 				<div>
+					<<<<<<< HEAD
+					<p style="font-size: 32px; border-bottom: 1px solid;">ใบยืนยันการจำนำ</p>
 					<div>
-						<p>ที่อยู๋โรงรับจำนำ</p>
-						<p id="pawnshopAddress"></p>
+						<div>
+							<p>ที่อยู๋โรงรับจำนำ</p>
+							<p id="pawnshopAddress"></p>
+						</div>
+						<div>
+							<table id="meta">
+								<tr>
+									<td>ชื่อเจ้าของโพส</td>
+									<td>
+										<div id="pawnerPostId"></div>
+									</td>
+								</tr>
+								<tr>
+									<td>ชื่อโพส</td>
+									<td>
+										<div id="pawnerPostName"></div>
+									</td>
+								</tr>
+								<tr>
+									<td>วันที่โพส</td>
+									<td>
+										<div id="pawnerPostDate"></div>
+									</td>
+								</tr>
+							</table>
+						</div>
+						=======
+						<div style="text-align: right;">
+							<h5>ที่อยู๋โรงรับจำนำ</h5>
+							<i id="pawnShopname"></i><br> <i id="pawnshopParish"></i> <i
+								id="pawnshopProvince"></i> <i id="pawnshopPostcodes"> </i><br>
+							โทร. <i id="pawnshopTel"></i> >>>>>>> doing
+						</div>
+						<div>
+							<table style="width: 100%; margin: 30px 0;">
+								<tr>
+									<td>ชื่อ <i id="pawnerName"></i></td>
+								</tr>
+								<tr>
+									<td>ชื่อของจำนำ <i id="pawnerPostName"></i></td>
+								</tr>
+								<tr>
+									<td>วันที่ลงของจำนำ <i id="pawnerPostDate"></i></td>
+								</tr>
+							</table>
+						</div>
 					</div>
-					<div>
-						<table id="meta">
-							<tr>
-								<td>ชื่อเจ้าของโพส</td>
-								<td>
-									<div id="pawnerPostId"></div>
-								</td>
-							</tr>
-							<tr>
-								<td>ชื่อโพส</td>
-								<td>
-									<div id="pawnerPostName"></div>
-								</td>
-							</tr>
-							<tr>
-								<td>วันที่โพส</td>
-								<td>
-									<div id="pawnerPostDate"></div>
-								</td>
-							</tr>
-						</table>
-					</div>
-=======
-				<div style="text-align: right;">
-					<h5>ที่อยู๋โรงรับจำนำ</h5>
-					<i id="pawnShopname"></i><br>
-					<i id="pawnshopParish"></i> <i id="pawnshopProvince"></i>  <i id="pawnshopPostcodes">  </i><br>
-					โทร. <i id="pawnshopTel"></i>
->>>>>>> doing
-				</div>
-				<div>
-					<table style="width: 100%; margin:30px 0;">
+					<table
+						style="width: 100%; text-align: center; border-spacing: 0px; border-color: #f80000; border-width: 0; border-left: 0; border-right: 0; border-bottom: 0; border-top: 0;"
+						border="1">
 						<tr>
-							<td>ชื่อ <i id="pawnerName"></i></td>
+							<th>ชื่อของจำนำ</th>
+							<th>รายละเอียด</th>
+							<th>วันที่เสนอราคา</th>
+							<th>ราคาที่เสนอ</th>
 						</tr>
-						<tr>
-							<td>ชื่อของจำนำ <i id="pawnerPostName"></i></td>
-						</tr>
-						<tr>
-							<td>วันที่ลงของจำนำ <i id="pawnerPostDate"></i></td>
+						<tr class="item-row">
+							<td>
+								<div id="pawnerPostNames"></div>
+							</td>
+							<td class="description"><i id="panwePostRemote"></i> <i
+								id="pawnerPostBattery"></i> <i id="pawnerPostBracelet"></i> <i
+								id="pawnerPostCategory"></i> <i id="pawnerPostBrand"></i> <i
+								id="pawnerPostCameraLen"></i> <i id="pawnerPostCapacity"></i> <i
+								id="pawnerPostCase"></i> <i id="pawnerPostCategory"></i> <i
+								id="pawnerPostDescription"></i> <i id="pawnerPostDevice"></i> <i
+								id="pawnerPostDiamond"></i> <i id="pawnerPostHarddisk"></i> <i
+								id="pawnerPostModel"></i> <i id="pawnerPostPackage"></i> <i
+								id="pawnerPostProduction"></i> <i id="pawnerPostPure"></i> <i
+								id="pawnerPostSerial"></i> <i id="pawnerPostRam"></i> <i
+								id="pawnerPostSize"></i> <i id="pawnerPostTypeCamera"></i> <i
+								id="pawnerPostWarranty"></i> <i id="pawnerPostWeigh"></i></td>
+							<td>
+								<p id="estimateDate"></p>
+							</td>
+							<td><i id="estimatePriceMin"></i> - <i id="estimatePriceMax"></i>
+								บาท</td>
 						</tr>
 					</table>
+					<div style="text-align: center; margin-top: 50px;">
+
+						<img src="img/logos/Artboard.png" style="height: 25px;" />
+						<p>b2pawn.com</p>
+					</div>
 				</div>
 			</div>
-			<table
-				style="width: 100%; text-align: center; border-spacing: 0px; border-color: #f80000; border-width: 0; border-left: 0; border-right: 0; border-bottom: 0; border-top: 0;"
-				border="1">
-				<tr>
-					<th>ชื่อของจำนำ</th>
-					<th>รายละเอียด</th>
-					<th>วันที่เสนอราคา</th>
-					<th>ราคาที่เสนอ</th>
-				</tr>
-				<tr class="item-row">
-					<td>
-						<div id="pawnerPostNames"></div>
-					</td>
-					<td class="description">
-						
-							<i id="panwePostRemote"></i>
-							<i id="pawnerPostBattery"></i>
-							<i id="pawnerPostBracelet"></i>
-							<i id="pawnerPostCategory"></i>
-							<i id="pawnerPostBrand"></i>
-							<i id="pawnerPostCameraLen"></i>
-							<i id="pawnerPostCapacity"></i>
-							<i id="pawnerPostCase"></i>
-							<i id="pawnerPostCategory"></i>
-							<i id="pawnerPostDescription"></i>
-							<i id="pawnerPostDevice"></i>
-							<i id="pawnerPostDiamond"></i>
-							<i id="pawnerPostHarddisk"></i>
-							<i id="pawnerPostModel"></i>
-							<i id="pawnerPostPackage"></i>
-							<i id="pawnerPostProduction"></i>
-							<i id="pawnerPostPure"></i>
-							<i id="pawnerPostSerial"></i>
-							<i id="pawnerPostRam"></i>
-							<i id="pawnerPostSize"></i>
-							<i id="pawnerPostTypeCamera"></i>
-							<i id="pawnerPostWarranty"></i>
-							<i id="pawnerPostWeigh"></i>
-					
-					</td>
-					<td>
-						<p id="estimateDate"></p>
-					</td>
-					<td><i id="estimatePriceMin"></i> - <i id="estimatePriceMax"></i> บาท
-					</td>
-				</tr>
-			</table>
-			<div style="text-align: center;margin-top:50px;">
-
-				<img src="img/logos/Artboard.png" style="height: 25px;" />
-				<p>b2pawn.com</p>
-			</div>
 		</div>
-	</div>
-	 </div> 
-
 </body>
 
 </html>

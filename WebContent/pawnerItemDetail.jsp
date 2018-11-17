@@ -8,9 +8,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="icon" href="img/logos/Artboard.png">
 <title>Detail</title>
 
+<!-- import all css -->
+<jsp:include page="importCSS.jsp" />
 <%
 	int dataslideto = 0, dataslideto2 = 0;
 	String active = "active", active2 = "active";

@@ -10,7 +10,6 @@
 <html lang="en">
 
 <head>
-<link rel="icon" href="img/logos/Artboard.png">
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -18,7 +17,8 @@
 <meta name="author" content="">
 
 <title>pawner-post-form</title>
-<link href="css/new-design.css" rel="stylesheet">
+<!-- import all css -->
+<jsp:include page="importCSS.jsp" />
 </head>
 
 <body style="background-color: #f4f4f4; overflow: hidden;">
@@ -33,7 +33,7 @@
 				<div id="choosetype">
 
 					<h4>
-						<p>เลือกประเภทการจำนำ</p>
+						<i>เลือกประเภทการจำนำ</i>
 					</h4>
 					<table>
 						<tr>

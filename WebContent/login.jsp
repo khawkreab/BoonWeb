@@ -19,14 +19,8 @@
 
 <title>Login</title>
 
-<!-- Bootstrap core CSS -->
-<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-<!-- Custom styles for this template -->
-<link href="css/new-design.css" rel="stylesheet">
-<link href="css/custom-style.min.css" rel="stylesheet">
-<link href="vendor/font-awesome/css/font-awesome.min.css"
-	rel="stylesheet" type="text/css">
+<!-- import all css -->
+<jsp:include page="importCSS.jsp" />
 
 <style>
 body {

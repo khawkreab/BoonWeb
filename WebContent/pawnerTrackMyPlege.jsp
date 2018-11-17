@@ -12,21 +12,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="icon" href="img/logos/Artboard.png">
 <meta charset="UTF-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="">
 <meta name="author" content="">
 <title>สถานะการจำนำ</title>
-
-<!-- Bootstrap core CSS -->
-<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-<!-- Custom styles for this template -->
-<!-- <link href="css/new-design.css" rel="stylesheet"> -->
-<link href="vendor/font-awesome/css/font-awesome.min.css"
-	rel="stylesheet" type="text/css">
+<!-- import all css -->
+<jsp:include page="importCSS.jsp" />
 <link rel="stylesheet" href="css/timeline.css">
 </head>
 <body style="background-color: #eee">

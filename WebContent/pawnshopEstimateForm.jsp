@@ -14,8 +14,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="icon" href="img/logos/Artboard.png">
 <title>pawnshop-estimate-form</title>
+
+<!-- import all css -->
+<jsp:include page="importCSS.jsp" />
 <link rel="stylesheet" href="css/carddetail.css">
 
 <%

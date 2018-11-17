@@ -7,57 +7,52 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"/>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html >
+<html lang="en">
 
 <head>
-<link rel="icon" href="img/logos/Artboard.png">
-	<meta charset="UTF-8">
+<meta charset="UTF-8">
+<title>Registration</title>
+<!-- import all css -->
+<jsp:include page="importCSS.jsp" />
+<script>
+	function checkPass() {
+		//Store the password field objects into variables ...
+		var pass1 = document.getElementById('pass1');
+		var pass2 = document.getElementById('pass2');
+		document.getElementById("pass-continue").value = pass2.value;
+		//Store the Confimation Message Object ...
+		var message = document.getElementById('confirmMessage');
+		//Set the colors we will be using ...
+		var goodColor = "#66cc66";
+		var badColor = "#ff6666";
+		//Compare the values in the password field 
+		//and the confirmation field
+		if (pass1.value == pass2.value) {
+			//The passwords match. 
+			//Set the color to the good color and inform
+			//the user that they have entered the correct password 
+			pass2.style.backgroundColor = goodColor;
+			message.style.color = goodColor;
+			message.innerHTML = "รหัสผ่านตรงกัน"
+		} else {
+			//The passwords do not match.
+			//Set the color to the bad color and
+			//notify the user.
+			pass2.style.backgroundColor = badColor;
+			message.style.color = badColor;
+			message.innerHTML = "รหัสผ่านไม่ตรงกัน!"
+		}
+	}
 
-		<title>Registration</title> <!-- Bootstrap core CSS -->
-		<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	function continueto() {
+		var emailto = document.getElementById("mail").value;
+		var telto = document.getElementById("telto").value;
+		document.getElementById("email-continue").value = emailto;
+		document.getElementById("tel-continue").value = telto;
 
-			<!-- Custom styles for this template -->
-			<link href="css/new-design.css" rel="stylesheet">
-
-				<script>
-					function checkPass() {
-						//Store the password field objects into variables ...
-						var pass1 = document.getElementById('pass1');
-						var pass2 = document.getElementById('pass2');
-						document.getElementById("pass-continue").value = pass2.value;
-						//Store the Confimation Message Object ...
-						var message = document.getElementById('confirmMessage');
-						//Set the colors we will be using ...
-						var goodColor = "#66cc66";
-						var badColor = "#ff6666";
-						//Compare the values in the password field 
-						//and the confirmation field
-						if (pass1.value == pass2.value) {
-							//The passwords match. 
-							//Set the color to the good color and inform
-							//the user that they have entered the correct password 
-							pass2.style.backgroundColor = goodColor;
-							message.style.color = goodColor;
-							message.innerHTML = "รหัสผ่านตรงกัน"
-						} else {
-							//The passwords do not match.
-							//Set the color to the bad color and
-							//notify the user.
-							pass2.style.backgroundColor = badColor;
-							message.style.color = badColor;
-							message.innerHTML = "รหัสผ่านไม่ตรงกัน!"
-						}
-					}
-
-					function continueto() {
-						var emailto = document.getElementById("mail").value;
-						var telto = document.getElementById("telto").value;
-						document.getElementById("email-continue").value = emailto;
-						document.getElementById("tel-continue").value = telto;
-
-					}
-				</script>
+	}
+</script>
 </head>
 <body>
 	<div class="container bg">
@@ -75,10 +70,12 @@
 							<ul style="padding-left: 7px;">
 								<li><form:input path="pawnerFirstname" type="text"
 										class="account-regis" placeholder="ชื่อ" required="required"
-										pattern="[a-zA-Zก-์]{1,30}" title="ใช้เป็นตัวอักษร ภาษาไทย หรือ อังกฤษ เท่านั้น ความยาวไม่เกิน 30 ตัวอักษร และ ต้องไม่ใช้ อักษรพิเศษ"/> <form:input
-										path="pawnerLastname" type="text" class="account-regis"
-										placeholder="นามสกุล" required="required"
-										pattern="[a-zA-Zก-์]{1,30}" title="ใช้เป็นตัวอักษร ภาษาไทย หรือ อังกฤษ เท่านั้น ความยาวไม่เกิน 30 ตัวอักษร และ ต้องไม่ใช้ อักษรพิเศษ"/></li>
+										pattern="[a-zA-Zก-์]{1,30}"
+										title="ใช้เป็นตัวอักษร ภาษาไทย หรือ อังกฤษ เท่านั้น ความยาวไม่เกิน 30 ตัวอักษร และ ต้องไม่ใช้ อักษรพิเศษ" />
+									<form:input path="pawnerLastname" type="text"
+										class="account-regis" placeholder="นามสกุล"
+										required="required" pattern="[a-zA-Zก-์]{1,30}"
+										title="ใช้เป็นตัวอักษร ภาษาไทย หรือ อังกฤษ เท่านั้น ความยาวไม่เกิน 30 ตัวอักษร และ ต้องไม่ใช้ อักษรพิเศษ" /></li>
 								<li><form:input type="text" id="telto"
 										class="account-regis" placeholder="เบอร์โทรศัพท์"
 										required="required" onkeyup="continueto();" path="pawnerPhone"
@@ -88,7 +85,7 @@
 										class="account-regis" placeholder="อีเมล" required="required"
 										onkeyup="continueto();"
 										pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,20}$"
-										required="required" title="เช่น boon@hotmail.com"/></li>
+										required="required" title="เช่น boon@hotmail.com" /></li>
 								<li><form:input path="pawnerPassword" type="password"
 										id="pass1" class="account-regis" placeholder="รหัสผ่าน"
 										required="required"

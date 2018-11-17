@@ -6,19 +6,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="icon" href="img/logos/Artboard.png">
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>order</title>
 
-<!-- Bootstrap core CSS -->
-<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-<!-- Custom styles for this template -->
-<link href="css/new-design.css" rel="stylesheet">
-<link href="vendor/font-awesome/css/font-awesome.min.css"
-	rel="stylesheet" type="text/css">
-<script src="js/checkLogin.js"></script>
+<!-- import all css -->
+<jsp:include page="importCSS.jsp" />
 
 <style>
 table {

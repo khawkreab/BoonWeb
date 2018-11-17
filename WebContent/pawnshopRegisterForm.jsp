@@ -8,17 +8,15 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html >
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
-<link rel="icon" href="img/logos/Artboard.png">
-	<title>Pawnshop Registation</title> <!-- Bootstrap core CSS -->
-	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<title>Pawnshop Registation</title>
 
-		<!-- Custom styles for this template -->
-		<link href="css/new-design.css" rel="stylesheet">
+<!-- import all css -->
+<jsp:include page="importCSS.jsp" />
 </head>
 
 <body>
@@ -41,12 +39,12 @@
 								<ul style="padding-left: 7px;">
 									<li><form:input type="text" class="input-regis"
 											placeholder="ชื่อโรงรับจำนำ" path="pawnshopName"
-											required="required" pattern="[a-zA-Zก-์]{1,30}" 
-											title="ใช้เป็นตัวอักษร ภาษาไทย หรือ อังกฤษ เท่านั้น ความยาวไม่เกิน 30 ตัวอักษร และ ต้องไม่ใช้ อักษรพิเศษ"/></li>
+											required="required" pattern="[a-zA-Zก-์]{1,30}"
+											title="ใช้เป็นตัวอักษร ภาษาไทย หรือ อังกฤษ เท่านั้น ความยาวไม่เกิน 30 ตัวอักษร และ ต้องไม่ใช้ อักษรพิเศษ" /></li>
 									<li><form:input type="text" class="input-regis"
 											placeholder="อีเมล" path="pawnshopEmail" required="required"
 											pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
-											value="<%=email%>" title="เช่น boon@hotmail.com"/></li>
+											value="<%=email%>" title="เช่น boon@hotmail.com" /></li>
 									<li><form:input type="password" class="input-regis"
 											placeholder="รหัสผ่าน" path="pawnshopPassword"
 											required="required"

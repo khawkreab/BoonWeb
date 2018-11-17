@@ -15,10 +15,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="icon" href="img/logos/Artboard.png">
 <link href="css/pawnerCard.css" rel="stylesheet">
 <title>รายการของหลุดจำนำ</title>
 
+<!-- import all css -->
+<jsp:include page="importCSS.jsp" />
 </head>
 
 <body id="page-top">
@@ -65,7 +66,7 @@
 						</button></a>
 				</div>
 			</div>
-			
+
 		</c:forEach>
 	</div>
 

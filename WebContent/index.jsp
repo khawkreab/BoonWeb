@@ -23,6 +23,9 @@
 
 <title>Boonyong</title>
 
+<!-- import all css -->
+<jsp:include page="importCSS.jsp" />
+
 <style type="text/css">
 body {
 	width: 100%;
@@ -30,7 +33,7 @@ body {
 }
 </style>
 <link href="css/pawnerCard.css" rel="stylesheet">
-<link href="css/aos.css" rel="stylesheet">
+
 </head>
 
 <body id="page-top">

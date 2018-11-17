@@ -6,17 +6,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="icon" href="img/logos/Artboard.png">
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>order</title>
 
-<!-- Bootstrap core CSS -->
-<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-<!-- Custom styles for this template -->
-<link href="css/new-design.css" rel="stylesheet">
-<link href="vendor/font-awesome/css/font-awesome.min.css"
-	rel="stylesheet" type="text/css">
+<!-- import all css -->
+<jsp:include page="importCSS.jsp" />
 <link rel="stylesheet" href="css/cartItem.css">
 </head>
 <body>
@@ -28,8 +22,9 @@
 			<em></em>
 		</div>
 	</div>
-	<section style="background-color: #f5f5f5;justify-content: unset;">
-		<div class="d-flex" id="cartitem">
+	<section id="cartitem"
+		style="background-color: #f5f5f5; justify-content: unset;">
+		<div class="d-flex">
 			<!-- left -->
 			<div id="list" class="cart-item-left">
 				<!-- List Order Here!!!! -->
@@ -56,8 +51,8 @@
 				</div>
 				<!--  <button id="clearCart" class="btn btn-primary btn-block btn-lg"
 					onClick="clearCart()">ลบทั้งหมด</button> -->
-				<button id="comfirmOrder" class="btn-custom btn-custom-defalt" style="width: 100%"
-					onClick="comfirmOrder()">ยืนยันการสั่งซื้อสินค้า</button>
+				<button id="comfirmOrder" class="btn-custom btn-custom-defalt"
+					style="width: 100%" onClick="comfirmOrder()">ยืนยันการสั่งซื้อสินค้า</button>
 			</div>
 		</div>
 	</section>
@@ -105,7 +100,8 @@
 								+ this.list[index].pawnshopPostName + "</i>"
 						html += "<i class='ml-auto small'>จำนวน  1  ชิ้น </i>"
 						html += "<i class='text-orange'>"
-								+ this.list[index].pawnshopPostPrice + " บาท   </i>"
+								+ this.list[index].pawnshopPostPrice
+								+ " บาท   </i>"
 						html += "</div>"
 						html += "<line-x></line-x>"
 						html += "<div class='d-flex align-items-center'>"
