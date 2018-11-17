@@ -48,7 +48,7 @@
 
 .cd-timeline-block {
 	position: relative;
-	margin: 2em 0;
+	margin: .8em 0;
 }
 
 .cd-timeline-block::after {
@@ -63,10 +63,6 @@
 
 .cd-timeline-block:last-child {
 	margin-bottom: 0;
-}
-
-.cd-timeline-block {
-	margin: 4em 0;
 }
 
 .cd-timeline-block:first-child {
@@ -136,11 +132,11 @@
 
 .cd-timeline-content {
 	position: relative;
-	margin-left: 60px;
+	margin-left: 0px;
 	background: #ffffff;
 	border-radius: 0.25em;
 	padding: 1em;
-	box-shadow: 0 3px 0 #d7e4ed;
+	box-shadow: 0 0 10px 1px #ccc;
 	left: 15%;
 	width: 80%;
 }
@@ -219,7 +215,7 @@
 	font-size: 16px;
 	font-size: 1rem;
 	left: auto;
-	right: 122%;
+	right: 112%;
 	text-align: right;
 	color: #ff3300;
 	font-weight: 900;
