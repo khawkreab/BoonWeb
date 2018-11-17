@@ -115,6 +115,10 @@ li {
 	color: #fff;
 }
 
+.text-gray {
+	color: #555;
+}
+
 .margin-auto {
 	display: block;
 	margin: 0 auto;
