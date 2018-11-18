@@ -143,7 +143,7 @@
 							</c:if>
 
 						</ul>
-						<h6 class="quick">รายละเอียดเพิ่มเติม</h6>
+						<h6 class="quick small">เพิ่มเติม</h6>
 						<p class="quick_desc">${postprocess.pawnerPostDescription }</p>
 
 						<!---------- approve  ---------->

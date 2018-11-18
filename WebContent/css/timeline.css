@@ -1,7 +1,8 @@
 .cd-container {
 	/* this class is used to give a max-width to the element it is applied to, and center it horizontally when it reaches that max-width */
 	width: 90%;
-	height: auto; max-width : 1170px;
+	height: auto;
+	max-width: 1170px;
 	margin: 0 auto;
 	align-items: unset;
 	justify-content: unset;
@@ -89,10 +90,6 @@
 	width: 24px;
 	height: 24px;
 	position: relative;
-	left: 50%;
-	top: 50%;
-	margin-left: -12px;
-	margin-top: -12px;
 	color: #fff;
 	font-size: 1.8rem;
 }
@@ -110,6 +107,9 @@
 }
 
 .cd-timeline-img {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	width: 60px;
 	height: 60px;
 	left: 10%;

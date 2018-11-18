@@ -15,73 +15,8 @@
 // task : nav bar design
 // edit by : khawkreab
 */
-body {
-	font-size: 100%;
-	overflow-x: hidden;
-	font-family: Oxygen-Regular;
-}
 
-body a {
-	transition: 0.5s all;
-	-webkit-transition: 0.5s all;
-	-o-transition: 0.5s all;
-	-moz-transition: 0.5s all;
-	-ms-transition: 0.5s all;
-}
 
-a {
-	cursor: pointer;
-}
-
-a:hover {
-	text-decoration: none;
-}
-
-a:focus {
-	box-shadow: none;
-	-webkit-box-shadow: none;
-	border: none;
-	border-radius: 0px;
-}
-
-h1, h2, h3, h4, h5, h6 h7 {
-	font-weight: 700;
-	font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif
-}
-
-dl, ol, ul {
-	padding: 0px;
-}
-
-button{
-	cursor: pointer;
-}
-
-input:focus {
-    outline:none;
-}
-
-li {
-	list-style: none;
-}
-
-.clear {
-	clear: both;
-}
-
-.bg-glay {
-	background-color: #E6E6E6;
-	color: #ffffff;
-}
-
-.bg-white {
-	background-color: #fff;
-}
-
-.bg-black {
-	background-color: #000000;
-	color: #ffffff;
-}
 
 .border-info {
 	border: 1px solid #5bc0de;
@@ -101,22 +36,6 @@ li {
 
 .justify-content-center {
 	justify-content: center;
-}
-
-.text-orange {
-	color: #FF7700;
-}
-
-.text-black {
-	color: #505459;
-}
-
-.text-white {
-	color: #fff;
-}
-
-.text-gray {
-	color: #555;
 }
 
 .margin-auto {
@@ -154,15 +73,6 @@ form {
 	margin: 0px;
 }
 
-section {
-	padding: 4rem 5rem;
-}
-
-hr {
-	max-width: 50px;
-	border-width: 3px;
-	border-color: #f05f40
-}
 
 hr.light {
 	border-color: #fff
@@ -285,21 +195,7 @@ header.masthead p {
 /*!
 * override modal
 */
-.modal-open .modal {
-	overflow-x: hidden;
-	overflow-y: hidden;
-}
 
-.modal-dialog {
-	overflow: hidden;
-	min-width: 900px;
-	width: 100%;
-	height: 100%;
-	justify-content: center;
-	display: flex;
-	align-items: center;
-	margin: auto;
-}
 
 /*!
 * modal footer override
@@ -1023,7 +919,7 @@ h2.featured {
 }
 
 .box-img-thumb {
-	background-image: url(../images/icon/pic-ico.png);
+	background-image: url(../img/icon/pic-ico.png);
 	background-repeat: no-repeat;
 	background-position: center;
 }
@@ -1179,26 +1075,6 @@ keyframes ripple { 100% {
 /*!
 * post form
 */
-select {
-	position: relative;
-	display: inline-block;
-	padding: 6px 12px;
-	font-size: 14px;
-	line-height: 20px;
-	white-space: nowrap;
-	cursor: pointer;
-	color: black;
-	border: 1px solid #d1d5da;
-	border-radius: 3px;
-	background-color: #fafbfc;
-	min-height: 34;
-}
-
-select:focus {
-	background-color: #fff;
-	border: 1px solid #2188ff;
-	border-radius: 3px;
-}
 
 .re-contain {
 	width: 700px;
@@ -1648,52 +1524,6 @@ footer {
 	margin-bottom: 0;
 }
 
-.wrap-input100 {
-	width: 100%;
-	position: relative;
-	border: 1px solid #e6e6e6;
-}
-
-.input100 {
-	display: block;
-	width: 100%;
-	background: transparent;
-	font-family: Poppins-Regular;
-	font-size: 14.5px;
-	color: #666666;
-	line-height: 1.2;
-	padding: 0 25px;
-	outline: none;
-	border: none;
-	height: 55px;
-}
-
-.rs1-wrap-input100, .rs2-wrap-input100 {
-	width: 50%;
-	float: left;
-	margin-bottom: 15px;
-}
-
-textarea.input100 {
-	min-height: 139px;
-	padding-top: 19px;
-	padding-bottom: 15px;
-}
-
-.input100:focus {
-	display: block;
-	width: 100%;
-	background: transparent;
-	font-family: Poppins-Regular;
-	font-size: 18px;
-	color: #666666;
-	line-height: 1.2;
-	padding: 0 25px;
-	outline: none;
-	border: none;
-	height: 55px;
-	border-bottom: 1px solid #ff7f00;
-}
 
 .container-contact100-form-btn {
 	width: 100%;

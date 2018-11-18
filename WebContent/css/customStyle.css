@@ -48,8 +48,8 @@ i{
 
 .page {
 	display: flex;
-	width: 100%;
-	height: 100%;
+	width: 100vw;
+	height: 100vh;
 }
 
 .form {
@@ -116,6 +116,40 @@ section {
 
 .btn-custom:hover {
 	background-position: right center;
+}
+
+.clear {
+	clear: both;
+}
+
+.bg-glay {
+	background-color: #E6E6E6;
+	color: #ffffff;
+}
+
+.bg-white {
+	background-color: #fff;
+}
+
+.bg-black {
+	background-color: #000000;
+	color: #ffffff;
+}
+
+.text-orange {
+	color: #FF7700;
+}
+
+.text-black {
+	color: #505459;
+}
+
+.text-white {
+	color: #fff;
+}
+
+.text-gray {
+	color: #555;
 }
 
 line-x {

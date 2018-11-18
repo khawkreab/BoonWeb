@@ -6,102 +6,110 @@
  -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
-		<html lang="en">
+<html lang="en">
 
-		<head>
-			<link rel="icon" href="img/logos/Artboard.png">
-			<meta charset="utf-8">
-			<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-			<meta name="description" content="">
-			<meta name="author" content="">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
 
-			<title>pawner-post-form</title>
+<title>pawner-post-form</title>
 
-			<!-- Bootstrap core CSS -->
-			<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-			<!-- Custom styles for this template -->
-			<link href="css/new-design.css" rel="stylesheet">
-			<link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<!-- import all css -->
+<jsp:include page="importCSS.jsp" />
 
 
-		</head>
+</head>
 
-		<body>
-			<!-- Navigation   -->
-			<jsp:include page="navbar.jsp" />
-			<!--banner-->
-			<div class="banner-top">
-				<div class="">
-					<h1>TV</h1>
-					<em></em>
-				</div>
-			</div>
-			<!--content-->
-			<div class="content">
-				<div class="container">
-					<!--products-->
-					<div class="content-mid">
-						<div class="mid-popular">
-							<div class="container-contact100 ">
-								<div class="wrap-contact100">
-									<div class="contact100-form">
-										<form:form method="post" action="savePost.html" modelAttribute="pawnerPost" enctype="multipart/form-data">
-											<input type="hidden" name="pawnerPostId" />
-											<input type="hidden" name="pawnerId.pawnerId" />
-											<input type="hidden" name="pawnerPostItemType" value="Tv" />
-											<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
-<<<<<<< HEAD
-												<input class="input100" type="text" name="pawnerPostName" placeholder="ชื่อสินค้าที่ต้องการจำนำ" required="required" pattern="[^'@.,!#$?:^%&*+/=()\\_`{|}~-]{1,30}">
-=======
-												<input class="input100" type="text" name="pawnerPostName" placeholder="ชื่อสินค้าที่ต้องการจำนำ" 
-												required="required" pattern="[^'@.,!#$?:^%&*+/=()\\_`{|}~-]{1,30}" 
-												title="ใช้เป็นตัวอักษร ภาษาไทย หรือ อังกฤษ เท่านั้น ความยาวไม่เกิน 30 ตัวอักษร และ ต้องไม่ใช้ อักษรพิเศษ">
->>>>>>> doing
-											</div>
-											<div class="wrap-input100 validate-input" style="margin-top:15px;">
-												<select class="input100" name="pawnerPostBrand" required="required">
-													<option>ยี่ห้อ</option>
-													<option>Apple</option>
-													<option>LG</option>
-													<option>Panasonic</option>
-													<option>Samsung</option>
-													<option>Sony</option>
-													<option>Sharp</option>
-													<option>TCL</option>
-													<option>Toshiba</option>
-													<option>Others</option>
-												</select>
-											</div>
-											<div class="wrap-input100 validate-input" style="margin-top:15px;" data-validate="Type first name">
-												<input class="input100" type="text" name="pawnerPostSerial" placeholder="หมายเลขประจำเครื่อง"
-												required="required" pattern="[^'ก-ฮ@.,!#$?:^%&*+/=()\\_`{|}~-]{1,20}" title="ห้ามใช้ อักษรพิเศษ">
-												<span class="focus-input100"></span>
-											</div>
-											<div class="wrap-input100  validate-input" style="margin-top:15px;" data-validate="Type last name">
-												<input class="input100" type="text" name="pawnerPostModel" placeholder="รุ่น" required="required" 
-												pattern="[^'ก-ฮ@.,!#$?:^%&*+/=()\\_`{|}~-]{1,20}" title="ห้ามใช้ อักษรพิเศษ และ ภาษาไทย">
-												<span class="focus-input100"></span>
-											</div>
-											<div class="wrap-input100  validate-input" data-validate="Type first name" style="margin-top:15px;">
-												<input class="input100" type="text" name="pawnerPostSize" placeholder="ขนาดหน้าจอ" 
-												required="required" pattern="[^'a-zก-ฮ@,!#$?:^%&*+/=()\\_`{|}~-]{1,10}" title="ตัวเลขเท่านั้น 0-9 หรือใช้ จุดทศนิยม เช่น  13.5">
-												<span class="focus-input100"></span>
-											</div>
-											<div style="margin-top:15px;width:100%">
-												<span style="font-size:14px;">ปีที่ซื้อสินค้า</span>
-												<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
-													<input class="input100" type="date" name="pawnerPostPurchase" placeholder="">
-													<span class="focus-input100"></span>
-												</div>
-											</div>
-											
-																	
-																	<!-- ------------------------upload image----------------------------  -->
-									<div style="margin-top:15px;width:100%">
-										<span style="font-size:14px;">ลงรูปภาพประกอบการจำนำ</span>
+<body>
+	<!-- Navigation   -->
+	<jsp:include page="navbar.jsp" />
+	<!--banner-->
+	<div class="banner-top">
+		<div class="">
+			<h1>TV</h1>
+			<em></em>
+		</div>
+	</div>
+	<!--content-->
+	<div class="content">
+		<div class="container">
+			<!--products-->
+			<div class="content-mid">
+				<div class="mid-popular">
+					<div class="container-contact100 ">
+						<div class="wrap-contact100">
+							<div class="contact100-form">
+								<form:form method="post" action="savePost.html"
+									modelAttribute="pawnerPost" enctype="multipart/form-data">
+									<input type="hidden" name="pawnerPostId" />
+									<input type="hidden" name="pawnerId.pawnerId" />
+									<input type="hidden" name="pawnerPostItemType" value="Tv" />
+									<div class="wrap-input100 validate-input"
+										data-validate="Valid email is required: ex@abc.xyz">
+								<input class="input100" type="text"
+											name="pawnerPostName" placeholder="ชื่อสินค้าที่ต้องการจำนำ"
+											required="required"
+											pattern="[^'@.,!#$?:^%&*+/=()\\_`{|}~-]{1,30}"
+											title="ใช้เป็นตัวอักษร ภาษาไทย หรือ อังกฤษ เท่านั้น ความยาวไม่เกิน 30 ตัวอักษร และ ต้องไม่ใช้ อักษรพิเศษ">
+									</div>
+									<div class="wrap-input100 validate-input"
+										style="margin-top: 15px;">
+										<select class="input100" name="pawnerPostBrand"
+											required="required">
+											<option>ยี่ห้อ</option>
+											<option>Apple</option>
+											<option>LG</option>
+											<option>Panasonic</option>
+											<option>Samsung</option>
+											<option>Sony</option>
+											<option>Sharp</option>
+											<option>TCL</option>
+											<option>Toshiba</option>
+											<option>Others</option>
+										</select>
+									</div>
+									<div class="wrap-input100 validate-input"
+										style="margin-top: 15px;" data-validate="Type first name">
+										<input class="input100" type="text" name="pawnerPostSerial"
+											placeholder="หมายเลขประจำเครื่อง" required="required"
+											pattern="[^'ก-ฮ@.,!#$?:^%&*+/=()\\_`{|}~-]{1,20}"
+											title="ห้ามใช้ อักษรพิเศษ"> <span
+											class="focus-input100"></span>
+									</div>
+									<div class="wrap-input100  validate-input"
+										style="margin-top: 15px;" data-validate="Type last name">
+										<input class="input100" type="text" name="pawnerPostModel"
+											placeholder="รุ่น" required="required"
+											pattern="[^'ก-ฮ@.,!#$?:^%&*+/=()\\_`{|}~-]{1,20}"
+											title="ห้ามใช้ อักษรพิเศษ และ ภาษาไทย"> <span
+											class="focus-input100"></span>
+									</div>
+									<div class="wrap-input100  validate-input"
+										data-validate="Type first name" style="margin-top: 15px;">
+										<input class="input100" type="text" name="pawnerPostSize"
+											placeholder="ขนาดหน้าจอ" required="required"
+											pattern="[^'a-zก-ฮ@,!#$?:^%&*+/=()\\_`{|}~-]{1,10}"
+											title="ตัวเลขเท่านั้น 0-9 หรือใช้ จุดทศนิยม เช่น  13.5">
+										<span class="focus-input100"></span>
+									</div>
+									<div style="margin-top: 15px; width: 100%">
+										<span style="font-size: 14px;">ปีที่ซื้อสินค้า</span>
+										<div class="wrap-input100 validate-input"
+											data-validate="Valid email is required: ex@abc.xyz">
+											<input class="input100" type="date" name="pawnerPostPurchase"
+												placeholder=""> <span class="focus-input100"></span>
+										</div>
+									</div>
+
+
+									<!-- ------------------------upload image----------------------------  -->
+									<div style="margin-top: 15px; width: 100%">
+										<span style="font-size: 14px;">ลงรูปภาพประกอบการจำนำ</span>
 										<div class="wrap-input100 " style="border: none;">
 											<div class="box-img-list">
 												<div class="box box-img-1" style="display: block">
@@ -109,7 +117,7 @@
 														<div class="upload-options js--image-preview"
 															id="img-pic-1">
 															<label> <input type="file" class="image-upload"
-																accept="image/*" name="files" required="required"/>
+																accept="image/*" name="files" required="required" />
 															</label>
 														</div>
 													</div>
@@ -119,7 +127,7 @@
 														<div class="upload-options js--image-preview"
 															id="img-pic-2">
 															<label> <input type="file" class="image-upload"
-																accept="image/*" name="files"/>
+																accept="image/*" name="files" />
 															</label>
 														</div>
 													</div>
@@ -170,44 +178,46 @@
 											</div>
 										</div>
 									</div>
-											<div class="wrap-input100 validate-input" style="margin-top:15px;" data-validate="Message is required">
-												<textarea class="input100" name="pawnerPostDescription" placeholder="รายละเอียดสินค้าเพิ่มเติม"></textarea>
-												<span class="focus-input100"></span>
-											</div>
-											<div class="form-group-post float-left">
-												<ul>
-													<li>
-														<span style="font-size: 14.5px;font-weight: inherit;">
-															<input type="checkbox" name="panwePostRemote" value="yes" /> Remote control
-														</span>
-													</li>
-													<li>
-														<span style="font-size: 14.5px;font-weight: inherit;">
-															<input type="checkbox" name="pawnerPostWarranty" value="yes" /> ประกันสินค้า
-														</span>
-													</li>
-													<li>
-														<span style="font-size: 14.5px;font-weight: inherit;">
-															<input type="checkbox" required="required"> ฉันยอมรับและตกลง
-															<strong>เงือนไขการใช้งาน</strong> ของระบบบุญยง
-														</span>
-													</li>
-												</ul>
-											</div>
-											<div class="container-contact100-form-btn">
-												<button type="submit" class="contact100-form-btn">
-													ยืนยัน
-												</button>
-											</div>
-										</form:form>
+									<div class="wrap-input100 validate-input"
+										style="margin-top: 15px;" data-validate="Message is required">
+										<textarea class="input100" name="pawnerPostDescription"
+											placeholder="รายละเอียดสินค้าเพิ่มเติม"></textarea>
+										<span class="focus-input100"></span>
 									</div>
-								</div>
+									<div class="form-group-post float-left">
+										<ul>
+											<li><span
+												style="font-size: 14.5px; font-weight: inherit;"> <input
+													type="checkbox" name="panwePostRemote" value="yes" />
+													Remote control
+											</span></li>
+											<li><span
+												style="font-size: 14.5px; font-weight: inherit;"> <input
+													type="checkbox" name="pawnerPostWarranty" value="yes" />
+													ประกันสินค้า
+											</span></li>
+											<li><span
+												style="font-size: 14.5px; font-weight: inherit;"> <input
+													type="checkbox" required="required">
+													ฉันยอมรับและตกลง <strong>เงือนไขการใช้งาน</strong>
+													ของระบบบุญยง
+											</span></li>
+										</ul>
+									</div>
+									<div class="container-contact100-form-btn">
+										<button type="submit" class="contact100-form-btn">
+											ยืนยัน</button>
+									</div>
+								</form:form>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<script src="js/upimages.js"></script>
+		</div>
+	</div>
+	<script src="js/MultiStepForm.js"></script>
+	<script src="js/upimages.js"></script>
 	<script>
 		$(document).ready(function() {
 
@@ -336,6 +346,6 @@
 
 		//# sourceURL=pen.js
 	</script>
-		</body>
+</body>
 
-		</html>
+</html>
