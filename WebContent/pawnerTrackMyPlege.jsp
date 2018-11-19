@@ -143,17 +143,17 @@
 							</c:if>
 
 						</ul>
-						<h6 class="quick small">เพิ่มเติม</h6>
-						<p class="quick_desc">${postprocess.pawnerPostDescription }</p>
+						<i class="quick small">เพิ่มเติม</i>
+						<span class="quick_desc">${postprocess.pawnerPostDescription }</span>
 
 						<!---------- approve  ---------->
 						<c:if test="${postprocess.pawnerPostStatus == 'process'}">
 							<line-x></line-x>
 							<div class="history-show-estimate">
-								<div class="row">
+								<div class="row d-flex">
 									<div class="col-md-4">โรงรับจำนำที่มาเสนอราคา</div>
-									<div class="col-md-2">ราคาน้อยสุดที่ได้รับ</div>
-									<div class="col-md-2">ราคามากสุดที่ได้รับ</div>
+									<div class="ml-auto col-md-2">ราคาต่ำสุด</div>
+									<div class="col-md-2">ราคาสูงสุด </div>
 									<div class="col-md-2"></div>
 								</div>
 								<ul>
@@ -161,10 +161,10 @@
 										<c:if
 											test="${estimate.pawnerPostId.pawnerPostId == postprocess.pawnerPostId }">
 											<li>
-												<div class="row">
+												<div class="row d-flex">
 													<div class="col-md-4">
 														${estimate.pawnshopId.pawnshopName}</div>
-													<div class="col-md-2">${estimate.estimatePriceMin}</div>
+													<div class="ml-auto col-md-2">${estimate.estimatePriceMin}</div>
 													<div class="col-md-2">${estimate.estimatePriceMax}</div>
 													<div class="col-md-2">
 														<form action="pawner-approve.html" method="post">
@@ -172,8 +172,8 @@
 																value="${estimate.estimateId}"> <input
 																type="hidden" name="pawnerPostId"
 																value="${estimate.pawnerPostId.pawnerPostId}">
-															<button class="btn-custom btn-custom-defalt"
-																type="submit">ยืนยันราคาสินค้า</button>
+															<button class="btn-custom btn-custom-defalt small"
+																type="submit">รับข้อเสนอ </button>
 														</form>
 													</div>
 												</div>

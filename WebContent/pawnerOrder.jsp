@@ -66,22 +66,20 @@ tr:hover {
 	width: 300px;
 	float: right;
 }
-
-
 </style>
 <link rel="stylesheet" href="css/loadingPage.css">
 </head>
 <body>
 
 	<jsp:include page="navbar.jsp" />
-<div class="loadpage" id="loadpage">
-<div class="wrap">
-  <div class="loading">
-    <div class="bounceball"></div>
-    <div class="text">NOW LOADING</div>
-  </div>
-</div>
-</div>
+	<div class="loadpage" id="loadpage">
+		<div class="wrap">
+			<div class="loading">
+				<div class="bounceball"></div>
+				<div class="text">NOW LOADING</div>
+			</div>
+		</div>
+	</div>
 
 	<!--banner-->
 	<div class="banner-top">
@@ -158,16 +156,16 @@ tr:hover {
 	</section>
 	<script>
 		window.onload = function() {
-			if(window.location.hash){
-			document.getElementById("loadpage").style.display = "none";
+			if (window.location.hash) {
+				document.getElementById("loadpage").style.display = "none";
 			}
-			setTimeout(function(){ 
-			if (!window.location.hash) {
-				window.location = window.location + '#loaded';
-				window.location.reload();
-			}
+			setTimeout(function() {
+				if (!window.location.hash) {
+					window.location = window.location + '#loaded';
+					window.location.reload();
+				}
 			}, 1000);
-		
+
 		}
 		function select(e) {
 
@@ -213,7 +211,7 @@ tr:hover {
 			$("#pawnshopParish").text(cart.pawnshopParish)
 			$("#pawnshopTel").text(cart.pawnshopTel)
 
-			/* 	var originalContents = document.documentElement.innerHTML; */
+			var originalContents = document.documentElement.innerHTML;
 
 			document.documentElement.innerHTML = document
 					.getElementById('printable').innerHTML;
@@ -223,6 +221,8 @@ tr:hover {
 	</script>
 
 	<div id="printable">
+		<!-- import all css here -->
+		
 		<div class="popup" data-popup="popup">
 			<div>
 				<p style="font-size: 32px; border-bottom: 1px solid;">ใบชำระของหลุดจำนำ</p>

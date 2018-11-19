@@ -37,25 +37,31 @@
 
 						<!-- Indicators -->
 						<ul class="card-carousel-indicators carousel-indicators">
-							<li data-target="#demo" data-slide-to="0" class="active"><img
-								src="img/background/background.jpg" alt="Los Angeles"></li>
-							<li data-target="#demo" data-slide-to="1"><img
-								src="img/background/banner.jpg" alt="Chicago"></li>
-							<li data-target="#demo" data-slide-to="2"><img
-								src="img/background/Manual.jpg" alt="New York"></li>
+							<c:forEach var="pic" items="${pictures}">
+								<li data-target="#demo" data-slide-to="<%=dataslideto%>"
+									class="<%=active%>"><img
+									src="img/uploadImge/${pic.picture}"></li>
+								<%
+									dataslideto++;
+										if (dataslideto > 0) {
+											active = "";
+										}
+								%>
+							</c:forEach>
 						</ul>
 						<!-- The slideshow -->
 						<div class="carousel-inner card-carousel-inner">
-							<div class="carousel-item active">
-								<img src="img/background/background.jpg" alt="Los Angeles">
-							</div>
-							<div class="carousel-item">
-								<img src="img/background/banner.jpg" alt="Chicago">
-							</div>
-							<div class="carousel-item">
-								<img src="img/background/Manual.jpg" alt="New York" width="1100"
-									height="500">
-							</div>
+							<c:forEach var="pic" items="${pictures}">
+								<div class="carousel-item <%=active2%>">
+									<img src="img/uploadImge/${pic.picture}" >
+								</div>
+								<%
+									dataslideto2++;
+										if (dataslideto2 > 0) {
+											active2 = "";
+										}
+								%>
+							</c:forEach>
 						</div>
 
 						<!-- Left and right controls -->
