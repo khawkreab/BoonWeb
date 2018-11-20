@@ -159,8 +159,15 @@ input:focus {
 	border-radius: 50%;
 	-ms-transform: translateX(-50%) translateY(-25%);
 	transform: translateX(-50%) translateY(-25%);
-	background-image: url("../img/background/header-bg.jpg");
 	background-size: cover;
+}
+
+.pledge-circle-img1 {
+	background-image: url("../img/background/header-bg.jpg");
+}
+
+.pledge-circle-img2 {
+	background-image: url("../img/background/header-bank.jpg");
 }
 
 .pledge-product {

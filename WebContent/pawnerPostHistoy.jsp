@@ -197,8 +197,8 @@ tr:hover {
 							</p>
 						</div>
 						<div class="p-2 bd-highlight">
-							<p style="color: #ff3300; font-weight: bold">${post.estimatePriceMin}฿
-								- ${post.estimatePriceMax}฿</p>
+							<p>ราคาที่ได้รับ: <span style="color: #ff3300; font-weight: bold">${post.estimatePriceMin}฿
+								- ${post.estimatePriceMax}฿</span></p>
 						</div>
 					</div>
 					<div>

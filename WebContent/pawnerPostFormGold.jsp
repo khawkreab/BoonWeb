@@ -28,7 +28,7 @@
 	<div class="page">
 		<div class="pledge-container">
 			<div class="pledge-featured">
-				<div class="pledge-circle"></div>
+				<div class="pledge-circle pledge-circle-img1"></div>
 				<!--  <img src="#" class="pledge-product" /> -->
 			</div>
 			<div class="pledge-content">
@@ -106,9 +106,6 @@
 									class="p-2 fas fa-trash-alt"> ลบรูป</i>
 								</span>
 							</div>
-
-
-
 						</div>
 					</div>
 

@@ -196,6 +196,7 @@ label[for=files] {
 	background-color: #ff6600;
 	border-radius: 5px;
 	color: #000;
+	padding: 0 10px
 }
 
 label[for=files] i {

@@ -69,47 +69,50 @@ body {
 						เพื่ออำนวยความสะดวกให้ลูกค้าสามารถเข้าถึงบริการได้ตลอด 24 ชั่วโมง”</p>
 					<a href="#pawning">
 						<button class="btn-custom btn-custom-defalt">
-							วิธีการจำนำของ</button>
+							วิธีการจำนำของ </button>
 					</a>
 				</div>
 			</div>
 		</div>
 	</section>
 
-<section id="pawning">
+<section id="pawning" >
+<h3 class="text-orange">  วิธีการจำนำของ  </h3>
 		<ul id="timelinecountstep">
 			<li class="timeline-step">
-				<p>step 1 : กรอกข้อมูล พร้อมอัพโหลดรูปถ่าย</p>
+				<p> กรอกข้อมูล พร้อมอัพโหลดรูปถ่ายของที่จะจำนำ และตรวจสอบความถูกต้องก่อนโพสของจำนำ  </p>
 			</li>
 			<li class="timeline-step">
-				<p>step 2 : ตรวจสอบความถูกต้องก่อนโพส</p>
+				<p> รอโรงรับจำนำมาประเมินราคา    </p>
 			</li>
 			<li class="timeline-step">
-				<p>step 3 : รอโรงรับจำนำมาประเมินราคา</p>
-			</li>
-			<li class="timeline-step">
-				<p>step 4 : หลังจากได้ราคาที่ถูกใจ ให้ท่านยืนยันกับโรงรับจำนำ</p>
-			</li>
-			<li class="timeline-step">
-				<p>step 5 : ท่านสามารถปริ้นใบหลักฐานและเดินทางไปที่โรงรับจำนำที่ท่าน ตกลง ไว้</p>
+				<p> หลังจากได้ราคาที่ถูกใจ ให้ท่านกด "ยืนยัน" โรงรับจำนำจะจำนำของ และปริ้นใบหลักฐานแล้วเดินทางไปที่โรงรับจำนำที่ท่าน ยืนยัน ไว้</p>
 			</li>
 		</ul>
+		<a href="pawner-post-form-gold.html">
+			<button class="btn-custom btn-custom-defalt"> จำนำของ เดี๋ยวนี้ !!! </button>
+		</a>
+		<br><br>
 		<a href="#buying">
-			<button class="btn-custom btn-custom-defalt">วิธีซื้อของหลุดจำนำ  </button>
+			<button class="btn-custom btn-custom-sky">วิธีซื้อของหลุดจำนำ  </button>
 		</a>
 	</section>
 	<section id="buying">
+	<h3 class="text-orange">  วิธีซื้อของหลุดจำนำ  </h3>
 		<ul id="timelinecountstep2">
 			<li class="timeline-step">
-				<p>step 1 : เข้าสู่เว็บไซต์ บุญยง เพื่อหาของหลุดจำนำที่ถูกใจ</p>
+				<p> เข้าสู่เว็บไซต์ บุญยง แล้วไปที่เมนู "รายการของหลูดจำนำ" เพื่อหาของหลุดจำนำที่ถูกใจ</p>
 			</li>
 			<li class="timeline-step">
-				<p>step 2 : เลือกสินค้าที่ถูกใจลงในตะกร้าสินค้า</p>
+				<p> เลือกสินค้าที่ถูกใจลงในตะกร้าสินค้า</p>
 			</li>
 			<li class="timeline-step">
-				<p>step 3 : ปริ้นใบเสร็จสั่งซื้อและเดินทางไปที่โรงรับจำนำได้ทันที</p>
+				<p> ปริ้นใบเสร็จสั่งซื้อและเดินทางไปที่โรงรับจำนำได้ทันที</p>
 			</li>
 		</ul>
+		<a href="pawner-off-pledge.html">
+			<button class="btn-custom btn-custom-defalt">ซื้อของหลุดจำนำ  </button>
+		</a>
 	</section>
 
 
