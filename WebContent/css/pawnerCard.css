@@ -49,6 +49,7 @@ Shop Card
 	font-size: 30px;
 	color: #23211f;
 	margin-bottom: 5px;
+	word-break: break-word;
 }
 
 .shop-card .desc {
