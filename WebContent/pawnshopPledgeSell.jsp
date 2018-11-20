@@ -67,7 +67,7 @@
 					</table>
 				</div>
 				<!-- One "tab" for each step in the form: -->
-				<form:form id="form" method="post" action="savePost.html"
+				<form:form id="regForm" method="post" action="saveShopPost.html"
 					modelAttribute="pawnerPost" enctype="multipart/form-data">
 					<input type="hidden" name="pawnerPostId" />
 					<input type="hidden" name="pawnerId.pawnerId" />
@@ -201,7 +201,7 @@
 
 			// When ready.
 			$(function() {
-				var $form = $("#form");
+				var $form = $("#regForm");
 				var $input = $form.find("#amounts");
 
 				$input.on("keyup", function(event) {
