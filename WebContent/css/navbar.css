@@ -14,11 +14,16 @@
 	background: #d63212;
 	padding: 1px;
 	flex: auto;
-	margin: 1px;
 	text-align: center;
 	color: #f05555;
 	text-decoration: none;
+	flex-direction: column;
 }
+
+.menu-icon i {
+	margin-top: 5px;
+
+	}
 
 .rainbow-button {
 	width: calc(20vw + 6px);

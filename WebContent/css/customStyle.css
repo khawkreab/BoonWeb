@@ -74,12 +74,13 @@ i {
 
 section {
 	display: flex;
-	flex-direction: column;
+	position: relative; flex-direction : column;
 	width: 100vw;
 	height: 100vh;
 	align-items: center;
 	justify-content: center;
 	padding-top: 20px;
+	flex-direction: column;
 }
 
 .header {
@@ -163,4 +164,16 @@ line-x {
 	height: 1px;
 	background-color: #ddd;
 	margin: auto;
+}
+
+.note {
+	color: #ff3300;
+	font-size: .8rem;
+	position: absolute;
+	top: 0;
+	left: 10px;
+}
+
+.note span {
+	margin: 0 5px;
 }
