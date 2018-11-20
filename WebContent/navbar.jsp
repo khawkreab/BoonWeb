@@ -54,7 +54,7 @@
 							src="img/ICONBOONYOUNG/Menu.png" height="50px" width="50px"><i>รายการของหลุดจำนำ</i></a></li>
 					<li class="menu-icon"><a class="nav-link" href="pawner-cart.html"><img
 							src="img/ICONBOONYOUNG/shopping-bag.png" height="50px"
-							width="50px"><i>ตะกร้า</i> <i id="cartNumberlink"></i> </a></li>
+							width="50px"><i>ตะกร้า</i> <i id="cartNumberlink" class="fas"></i> </a></li>
 					<li class="menu-icon"><a class="nav-link"
 						href="pawner-track-pledge.html"><img
 							src="img/ICONBOONYOUNG/Follow.png" height="50px" width="50px"><i>ติดตามการจำนำ</i></a></li>
@@ -74,7 +74,7 @@
 			</nav>
 
 			<a id="nav-custom-toggle"> <span></span> <span></span> <span></span>
-				<i id="cartNumber"></i>
+				<i id="cartNumber" class="fas"></i>
 			</a>
 		</div>
 	</div>
