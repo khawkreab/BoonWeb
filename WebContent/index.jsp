@@ -67,7 +67,7 @@ body {
 						เป็นสื่อกลางในการจำนำ
 						ที่มีการรับประเมินราคาสินทรัพย์และปล่อยของหลุดจำนำทางออนไลน์
 						เพื่ออำนวยความสะดวกให้ลูกค้าสามารถเข้าถึงบริการได้ตลอด 24 ชั่วโมง”</p>
-					<a href="#plage">
+					<a href="#pawning">
 						<button class="btn-custom btn-custom-defalt">
 							วิธีการจำนำของ</button>
 					</a>
@@ -76,7 +76,7 @@ body {
 		</div>
 	</section>
 
-	<section id="plage">
+	<section id="pawning">
 		<ul id="timelinecountstep">
 			<li class="timeline-step">
 				<p>step 1</p>
@@ -88,8 +88,11 @@ body {
 				<p>step 3</p>
 			</li>
 		</ul>
+		<a href="#buying">
+			<button class="btn-custom btn-custom-defalt">วิธีซื้อของหลุดจำนำ  </button>
+		</a>
 	</section>
-	<section id="plage">
+	<section id="buying">
 		<ul id="timelinecountstep2">
 			<li class="timeline-step">
 				<p>step 1</p>
