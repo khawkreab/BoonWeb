@@ -26,10 +26,14 @@
 <!-- import all css -->
 <jsp:include page="importCSS.jsp" />
 
+
+<!-- time line step css -->
+<link rel="stylesheet" href="css/timelineStep.css">
 <style type="text/css">
 body {
 	width: 100%;
 	overflow-x: hidden;
+	background-color: #222;
 }
 </style>
 <link href="css/pawnerCard.css" rel="stylesheet">
@@ -73,9 +77,30 @@ body {
 	</section>
 
 	<section id="plage">
-		<div class="container">
-			<img alt="" src="img/background/Manual.jpg" width="100%">
-		</div>
+		<ul>
+			<li class="timeline-step">
+				<p>step 1</p>
+			</li>
+			<li class="timeline-step">
+				<p>step 2</p>
+			</li>
+			<li class="timeline-step">
+				<p>step 3</p>
+			</li>
+		</ul>
+	</section>
+	<section id="plage">
+		<ul>
+			<li class="timeline-step">
+				<p>step 1</p>
+			</li>
+			<li class="timeline-step">
+				<p>step 2</p>
+			</li>
+			<li class="timeline-step">
+				<p>step 3</p>
+			</li>
+		</ul>
 	</section>
 
 

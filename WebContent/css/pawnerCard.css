@@ -10,6 +10,7 @@ Shop Card
 .shop-card-list {
 	display: flex;
 	flex-wrap: wrap;
+	flex-direction: row;
 	justify-content: center;
 	padding-top: 20px;
 }

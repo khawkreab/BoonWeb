@@ -22,6 +22,25 @@
 
 <!-- import all css -->
 <jsp:include page="importCSS.jsp" />
+<style type="text/css">
+.thumbnail {
+	height: 100px;
+	margin: 10px;
+	float: left;
+}
+
+#clear {
+	display: none;
+}
+
+#result {
+	border: 4px dotted #cccccc;
+	display: none;
+	float: right;
+	margin: 0 auto;
+	width: 511px;
+}
+</style>
 </head>
 
 <body style="background-color: #f4f4f4; overflow: hidden;">
@@ -36,7 +55,7 @@
 				<div id="choosetype">
 
 					<h4>
-						<i> เลือกประเภทการจำนำ  </i>
+						<i> เลือกประเภทการจำนำ </i>
 					</h4>
 					<table>
 						<tr>
@@ -85,82 +104,28 @@
 					<div class="tab" id="step1">
 						<p>
 							<label>ชื่อสินค้าที่ต้องการจำนำ</label> <input type="text"
-								name="pawnerPostName" required="required"
-							 	id="textVal"> <br>
-							<i>ใช้เป็นตัวอักษร ภาษาไทย หรือ อังกฤษ เท่านั้น
+								name="pawnerPostName" required="required" id="textVal">
+							<br> <i>ใช้เป็นตัวอักษร ภาษาไทย หรือ อังกฤษ เท่านั้น
 								ความยาวไม่เกิน 30 ตัวอักษร และ ต้องไม่ใช้ อักษรพิเศษ</i>
 						</p>
 						<p>
 							<label>ยี่ห้อ</label> <input type="text" name="pawnerPostBrand"
-								required="required"
-								id="brandName"/> <br> <i>ใช้เป็นตัวอักษร
+								required="required" id="brandName" /> <br> <i>ใช้เป็นตัวอักษร
 								ภาษาไทย หรือ อังกฤษ เท่านั้น ความยาวไม่เกิน 30 ตัวอักษร และ
 								ต้องไม่ใช้ อักษรพิเศษ</i>
 						</p>
 						<!-- ------------------------upload image----------------------------  -->
 						<div style="margin-top: 15px; width: 100%">
 							<span style="font-size: 14px;">ลงรูปภาพประกอบการจำนำ</span>
-							<div class="wrap-input100 " style="border: none;">
-								<div class="box-img-list">
-									<div class="box box-img-1" style="display: block">
-										<div class="box-img-thumb">
-											<div class="upload-options js--image-preview" id="img-pic-1">
-												<label> <input type="file" class="image-upload"
-													accept="image/*" name="files" required="required" />
-												</label>
-											</div>
-										</div>
-									</div>
-									<div class="box box-img-2">
-										<div class="box-img-thumb">
-											<div class="upload-options js--image-preview" id="img-pic-2">
-												<label> <input type="file" class="image-upload"
-													accept="image/*" name="files" />
-												</label>
-											</div>
-										</div>
-									</div>
-									<div class="box box-img-3">
-										<div class="box-img-thumb">
-											<div class="upload-options js--image-preview" id="img-pic-3">
-												<label> <input type="file" class="image-upload"
-													accept="image/*" name="files" />
-												</label>
-											</div>
-										</div>
-									</div>
-									<div class="box box-img-4">
-										<div class="box-img-thumb">
-											<div class="upload-options js--image-preview" id="img-pic-4">
-												<label> <input type="file" class="image-upload"
-													accept="image/*" name="files" />
-												</label>
-											</div>
-										</div>
-									</div>
-									<div class="box box-img-5">
-										<div class="box-img-thumb">
-											<div class="upload-options js--image-preview" id="img-pic-5">
-												<label> <input type="file" class="image-upload"
-													accept="image/*" name="files" />
-												</label>
-											</div>
-										</div>
-									</div>
-									<div class="box box-img-6">
-										<div class="box-img-thumb">
-											<div class="upload-options js--image-preview" id="img-pic-6">
-												<label> <input type="file" class="image-upload"
-													accept="image/*" name="files" />
-												</label>
-											</div>
-										</div>
-									</div>
-									<span class="clear-trash d-flex"> <i class="mr-auto">ใส่รูปได้สูงสุด
-											6 รูป</i><i class="clear-img fas fa-trash-alt"> ลบรูป</i>
-									</span>
-								</div>
-							</div>
+							
+							 <article>
+        <label for="files">Select multiple files: </label>
+        <input id="files" type="file" name="files" multiple/>
+      <button type="button" id="clear">Clear</button>
+        <output id="result" />
+    </article>
+							
+							
 						</div>
 					</div>
 
@@ -197,132 +162,68 @@
 
 
 	<script src="js/MultiStepForm.js"></script>
-	<script src="js/upimages.js"></script>
-	<script>
-		$('#img-pic-1').click(function() {
-			$('.box-img-2').css("display", "block");
-		});
+	<script type="text/javascript">
+	window.onload = function(){   
+	    //Check File API support
+	    if(window.File && window.FileList && window.FileReader)
+	    {
+	        $('#files').on("change", function(event) {
+	            var files = event.target.files; //FileList object
+	            var output = document.getElementById("result");
+	            for(var i = 0; i< files.length; i++)
+	            {
+	                var file = files[i];
+	                //Only pics
+	                // if(!file.type.match('image'))
+	                if(file.type.match('image.*')){
+		                if(files.length < 6){
+	                    if(this.files[0].size < 2097152){    
+	                  // continue;
+	                    var picReader = new FileReader();
+	                    picReader.addEventListener("load",function(event){
+	                        var picFile = event.target;
+	                        var div = document.createElement("div");
+	                        div.innerHTML = "<img class='thumbnail' src='" + picFile.result + "'" +
+	                                "title='preview image'/>";
+	                        output.insertBefore(div,null);            
+	                    });
+	                    //Read the image
+	                    $('#clear, #result').show();
+	                    picReader.readAsDataURL(file);
+	                    }else{
+	                        alert("Image Size is too big. Minimum size is 2MB.");
+	                        $(this).val("");
+	                    }}else{
+	                    	 alert("  คุณสามารถอัพโหลดรูปได้มากสุด 5 รูป    ");
+	     	                $(this).val("");
+		                    }
+	                }else{
+	                alert("You can only upload image file.");
+	                $(this).val("");
+	            }
+	            }                               
+	           
+	        });
+	    }
+	    else
+	    {
+	        console.log("Your browser does not support File API");
+	    }
+	}
 
-		$('#img-pic-2').click(function() {
-			$('.box-img-3').css("display", "block");
-		});
-		$('#img-pic-3').click(function() {
-			$('.box-img-4').css("display", "block");
-		});
-		$('#img-pic-4').click(function() {
-			$('.box-img-5').css("display", "block");
-		});
-		$('#img-pic-5').click(function() {
-			$('.box-img-6').css("display", "block");
-		});
+	   $('#files').on("click", function() {
+	        $('.thumbnail').parent().remove();
+	        $('result').hide();
+	        $(this).val("");
+	    });
 
-		$('.clear-img').click(function() {
-			for (let i = 6; i > 1; i--) {
-				$('.box-img-' + i).css("display", "none");
-			}
-			$('.js--image-preview').css("background-image", "")
-			$('.image-upload').val('');
-		});
+	    $('#clear').on("click", function() {
+	        $('.thumbnail').parent().remove();
+	        $('#result').hide();
+	        $('#files').val("");
+	        $(this).hide();
+	    });
 
-		function initImageUpload(box) {
-			let uploadField = box.querySelector('.image-upload');
-
-			uploadField.addEventListener('change', getFile);
-
-			function getFile(e) {
-				let file = e.currentTarget.files[0];
-				checkType(file);
-			}
-
-			function previewImage(file) {
-				let thumb = box.querySelector('.js--image-preview'), reader = new FileReader();
-
-				reader.onload = function() {
-					thumb.style.backgroundImage = 'url(' + reader.result + ')';
-				}
-				reader.readAsDataURL(file);
-				thumb.className += ' js--no-default';
-			}
-
-			function checkType(file) {
-				let imageType = /image.*/;
-				if (!file.type.match(imageType)) {
-					throw 'Datei ist kein Bild';
-				} else if (!file) {
-					throw 'Kein Bild gewählt';
-				} else {
-					previewImage(file);
-				}
-			}
-
-		}
-
-		// initialize box-scope
-		var boxes = document.querySelectorAll('.box');
-
-		for (let i = 0; i < boxes.length; i++) {
-			if (window.CP.shouldStopExecution(1)) {
-				break;
-			}
-			let box = boxes[i];
-			initDropEffect(box);
-			initImageUpload(box);
-		}
-		window.CP.exitedLoop(1);
-
-		/// drop-effect
-		function initDropEffect(box) {
-			let area, drop, areaWidth, areaHeight, maxDistance, dropWidth, dropHeight, x, y;
-
-			// get clickable area for drop effect
-			area = box.querySelector('.js--image-preview');
-			area.addEventListener('click', fireRipple);
-
-			function fireRipple(e) {
-				area = e.currentTarget
-				// create drop
-				if (!drop) {
-					drop = document.createElement('span');
-					drop.className = 'drop';
-					this.appendChild(drop);
-				}
-				// reset animate class
-				drop.className = 'drop';
-
-				// calculate dimensions of area (longest side)
-				areaWidth = getComputedStyle(this, null).getPropertyValue(
-						"width");
-				areaHeight = getComputedStyle(this, null).getPropertyValue(
-						"height");
-				maxDistance = Math.max(parseInt(areaWidth, 10), parseInt(
-						areaHeight, 10));
-
-				// set drop dimensions to fill area
-				drop.style.width = maxDistance + 'px';
-				drop.style.height = maxDistance + 'px';
-
-				// calculate dimensions of drop
-				dropWidth = getComputedStyle(this, null).getPropertyValue(
-						"width");
-				dropHeight = getComputedStyle(this, null).getPropertyValue(
-						"height");
-
-				// calculate relative coordinates of click
-				// logic: click coordinates relative to page - parent's position relative to page - half of self height/width to make it controllable from the center
-				x = e.pageX - this.offsetLeft - (parseInt(dropWidth, 10) / 2);
-				y = e.pageY - this.offsetTop - (parseInt(dropHeight, 10) / 2)
-						- 30;
-
-				// position drop and animate
-				drop.style.top = y + 'px';
-				drop.style.left = x + 'px';
-				drop.className += ' animate';
-				e.stopPropagation();
-
-			}
-		}
-
-		//# sourceURL=pen.js
 	</script>
 </body>
 
