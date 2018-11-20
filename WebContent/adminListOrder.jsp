@@ -185,20 +185,32 @@
 									<td>${adOrder.pawnshopPostId.pawnshopPostDescription}</td>
 									<td>${adOrder.pawnshopPostId.pawnshopPostPrice }</td> 
 									 
-									<td>Pawner ID :<span class="badge badge-default">
-											${adOrder.pawnerId.pawnerId} </span> Pawner Name :<span
+									<td>
+										<p>
+										Pawner ID :<span class="badge badge-default">
+											${adOrder.pawnerId.pawnerId} </span> 
+										</p><p>
+										Pawner Name :<span
 										class="badge badge-default">
 											${adOrder.pawnerId.pawnerFirstname}
-											${adOrder.pawnerId.pawnerLastname}</span> Pawner Mail :<span
+											${adOrder.pawnerId.pawnerLastname}</span> 
+										</p><p>
+										Pawner Mail :<span
 										class="badge badge-default">
 											${adOrder.pawnerId.pawnerEmail} </span>
+										</p>
 									</td>
-									<td>Pawnshop ID :<span class="badge badge-default">
-											${adOrder.pawnshopPostId.pawnshopId.pawnshopId} </span> Pawnshop
-										Name :<span class="badge badge-default">
-											${adOrder.pawnshopPostId.pawnshopId.pawnshopName} </span> Pawnshop
-										Mail :<span class="badge badge-default">
+									<td>
+										<p>
+										Pawnshop ID :<span class="badge badge-default">
+											${adOrder.pawnshopPostId.pawnshopId.pawnshopId} </span>
+										</p><p>
+										Pawnshop Name :<span class="badge badge-default">
+											${adOrder.pawnshopPostId.pawnshopId.pawnshopName} </span> 
+										</p><p>
+										Pawnshop Mail :<span class="badge badge-default">
 											${adOrder.pawnshopPostId.pawnshopId.pawnshopEmail} </span>
+										</p>
 									</td>
 								</tr>
 							</tbody>
@@ -253,20 +265,32 @@
 									<td>${adOrder.pawnshopPostId.pawnshopPostDescription}</td>
 									<td>${adOrder.pawnshopPostId.pawnshopPostPrice }</td>
 									 
-									<td>Pawner ID :<span class="badge badge-default">
-											${adOrder.pawnerId.pawnerId} </span> Pawner Name :<span
+									<td>
+										<p>
+										Pawner ID :<span class="badge badge-default">
+											${adOrder.pawnerId.pawnerId} </span> 
+										</p><p>
+										Pawner Name :<span
 										class="badge badge-default">
 											${adOrder.pawnerId.pawnerFirstname}
-											${adOrder.pawnerId.pawnerLastname}</span> Pawner Mail :<span
+											${adOrder.pawnerId.pawnerLastname}</span> 
+										</p><p>
+										Pawner Mail :<span
 										class="badge badge-default">
 											${adOrder.pawnerId.pawnerEmail} </span>
+										</p>
 									</td>
-									<td>Pawnshop ID :<span class="badge badge-default">
-											${adOrder.pawnshopPostId.pawnshopId.pawnshopId} </span> Pawnshop
-										Name :<span class="badge badge-default">
-											${adOrder.pawnshopPostId.pawnshopId.pawnshopName} </span> Pawnshop
-										Mail :<span class="badge badge-default">
+									<td>
+										<p>
+										Pawnshop ID :<span class="badge badge-default">
+											${adOrder.pawnshopPostId.pawnshopId.pawnshopId} </span>
+										</p><p>
+										Pawnshop Name :<span class="badge badge-default">
+											${adOrder.pawnshopPostId.pawnshopId.pawnshopName} </span> 
+										</p><p>
+										Pawnshop Mail :<span class="badge badge-default">
 											${adOrder.pawnshopPostId.pawnshopId.pawnshopEmail} </span>
+										</p>
 									</td>
 								</tr>
 							</tbody>
@@ -323,20 +347,32 @@
 									<td>${adOrder.pawnshopPostId.pawnshopPostDescription}</td>
 									<td>${adOrder.pawnshopPostId.pawnshopPostPrice}</td>
 																	
-									<td>Pawner ID :<span class="badge badge-default">
-											${adOrder.pawnerId.pawnerId} </span> Pawner Name :<span
+									<td>
+										<p>
+										Pawner ID :<span class="badge badge-default">
+											${adOrder.pawnerId.pawnerId} </span> 
+										</p><p>
+										Pawner Name :<span
 										class="badge badge-default">
 											${adOrder.pawnerId.pawnerFirstname}
-											${adOrder.pawnerId.pawnerLastname}</span> Pawner Mail :<span
+											${adOrder.pawnerId.pawnerLastname}</span> 
+										</p><p>
+										Pawner Mail :<span
 										class="badge badge-default">
 											${adOrder.pawnerId.pawnerEmail} </span>
+										</p>
 									</td>
-									<td>Pawnshop ID :<span class="badge badge-default">
-											${adOrder.pawnshopPostId.pawnshopId.pawnshopId} </span> Pawnshop
-										Name :<span class="badge badge-default">
-											${adOrder.pawnshopPostId.pawnshopId.pawnshopName} </span> Pawnshop
-										Mail :<span class="badge badge-default">
+									<td>
+										<p>
+										Pawnshop ID :<span class="badge badge-default">
+											${adOrder.pawnshopPostId.pawnshopId.pawnshopId} </span>
+										</p><p>
+										Pawnshop Name :<span class="badge badge-default">
+											${adOrder.pawnshopPostId.pawnshopId.pawnshopName} </span> 
+										</p><p>
+										Pawnshop Mail :<span class="badge badge-default">
 											${adOrder.pawnshopPostId.pawnshopId.pawnshopEmail} </span>
+										</p>
 									</td>
 								</tr>
 							</tbody>
@@ -397,20 +433,32 @@
 									<td>${adOrder.pawnshopPostId.pawnshopPostDescription}</td>
 									<td>${adOrder.pawnshopPostId.pawnshopPostPrice}</td>
 									
-									<td>Pawner ID :<span class="badge badge-default">
-											${adOrder.pawnerId.pawnerId} </span> Pawner Name :<span
+									<td>
+										<p>
+										Pawner ID :<span class="badge badge-default">
+											${adOrder.pawnerId.pawnerId} </span> 
+										</p><p>
+										Pawner Name :<span
 										class="badge badge-default">
 											${adOrder.pawnerId.pawnerFirstname}
-											${adOrder.pawnerId.pawnerLastname}</span> Pawner Mail :<span
+											${adOrder.pawnerId.pawnerLastname}</span> 
+										</p><p>
+										Pawner Mail :<span
 										class="badge badge-default">
 											${adOrder.pawnerId.pawnerEmail} </span>
+										</p>
 									</td>
-									<td>Pawnshop ID :<span class="badge badge-default">
-											${adOrder.pawnshopPostId.pawnshopId.pawnshopId} </span> Pawnshop
-										Name :<span class="badge badge-default">
-											${adOrder.pawnshopPostId.pawnshopId.pawnshopName} </span> Pawnshop
-										Mail :<span class="badge badge-default">
+									<td>
+										<p>
+										Pawnshop ID :<span class="badge badge-default">
+											${adOrder.pawnshopPostId.pawnshopId.pawnshopId} </span>
+										</p><p>
+										Pawnshop Name :<span class="badge badge-default">
+											${adOrder.pawnshopPostId.pawnshopId.pawnshopName} </span> 
+										</p><p>
+										Pawnshop Mail :<span class="badge badge-default">
 											${adOrder.pawnshopPostId.pawnshopId.pawnshopEmail} </span>
+										</p>
 									</td>
 								</tr>
 							</tbody>
@@ -470,20 +518,32 @@
 									<td>${adOrder.pawnshopPostId.pawnshopPostPrice}</td>
 									
 									
-									 <td>Pawner ID :<span class="badge badge-default">
-											${adOrder.pawnerId.pawnerId} </span> Pawner Name :<span
+									<td>
+										<p>
+										Pawner ID :<span class="badge badge-default">
+											${adOrder.pawnerId.pawnerId} </span> 
+										</p><p>
+										Pawner Name :<span
 										class="badge badge-default">
 											${adOrder.pawnerId.pawnerFirstname}
-											${adOrder.pawnerId.pawnerLastname}</span> Pawner Mail :<span
+											${adOrder.pawnerId.pawnerLastname}</span> 
+										</p><p>
+										Pawner Mail :<span
 										class="badge badge-default">
 											${adOrder.pawnerId.pawnerEmail} </span>
+										</p>
 									</td>
-									<td>Pawnshop ID :<span class="badge badge-default">
-											${adOrder.pawnshopPostId.pawnshopId.pawnshopId} </span> Pawnshop
-										Name :<span class="badge badge-default">
-											${adOrder.pawnshopPostId.pawnshopId.pawnshopName} </span> Pawnshop
-										Mail :<span class="badge badge-default">
+									<td>
+										<p>
+										Pawnshop ID :<span class="badge badge-default">
+											${adOrder.pawnshopPostId.pawnshopId.pawnshopId} </span>
+										</p><p>
+										Pawnshop Name :<span class="badge badge-default">
+											${adOrder.pawnshopPostId.pawnshopId.pawnshopName} </span> 
+										</p><p>
+										Pawnshop Mail :<span class="badge badge-default">
 											${adOrder.pawnshopPostId.pawnshopId.pawnshopEmail} </span>
+										</p>
 									</td>
 								</tr>
 							</tbody>
@@ -539,20 +599,32 @@
 									<td>${adOrder.pawnshopPostId.pawnshopPostDescription}</td>
 									<td>${adEstimate.pawnerPostId.pawnerPostPrice}</td>
 									
-									<td>Pawner ID :<span class="badge badge-default">
-											${adOrder.pawnerId.pawnerId} </span> Pawner Name :<span
+									<td>
+										<p>
+										Pawner ID :<span class="badge badge-default">
+											${adOrder.pawnerId.pawnerId} </span> 
+										</p><p>
+										Pawner Name :<span
 										class="badge badge-default">
 											${adOrder.pawnerId.pawnerFirstname}
-											${adOrder.pawnerId.pawnerLastname}</span> Pawner Mail :<span
+											${adOrder.pawnerId.pawnerLastname}</span> 
+										</p><p>
+										Pawner Mail :<span
 										class="badge badge-default">
 											${adOrder.pawnerId.pawnerEmail} </span>
+										</p>
 									</td>
-									<td>Pawnshop ID :<span class="badge badge-default">
-											${adOrder.pawnshopPostId.pawnshopId.pawnshopId} </span> Pawnshop
-										Name :<span class="badge badge-default">
-											${adOrder.pawnshopPostId.pawnshopId.pawnshopName} </span> Pawnshop
-										Mail :<span class="badge badge-default">
+									<td>
+										<p>
+										Pawnshop ID :<span class="badge badge-default">
+											${adOrder.pawnshopPostId.pawnshopId.pawnshopId} </span>
+										</p><p>
+										Pawnshop Name :<span class="badge badge-default">
+											${adOrder.pawnshopPostId.pawnshopId.pawnshopName} </span> 
+										</p><p>
+										Pawnshop Mail :<span class="badge badge-default">
 											${adOrder.pawnshopPostId.pawnshopId.pawnshopEmail} </span>
+										</p>
 									</td>
 								</tr>
 							</tbody>

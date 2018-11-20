@@ -208,25 +208,41 @@
 											</li>
 										</c:if>
 									</td>
-									<td>Pawner ID :<span class="badge badge-default">
-											${adEstimate.pawnerPostId.pawnerId.pawnerId} </span> Pawner Name :<span
+									
+									<td>
+										<p>
+										Pawner ID :<span class="badge badge-default">
+											${adEstimate.pawnerPostId.pawnerId.pawnerId} </span> 
+										</p><p>	
+										Pawner Name :<span
 										class="badge badge-default">
 											${adEstimate.pawnerPostId.pawnerId.pawnerFirstname}
-											${adEstimate.pawnerPostId.pawnerId.pawnerLastname}</span> Pawner
-										Mail :<span class="badge badge-default">
+											${adEstimate.pawnerPostId.pawnerId.pawnerLastname}</span> 
+										</p><p>	
+										Pawner Mail :<span class="badge badge-default">
 											${adEstimate.pawnerPostId.pawnerId.pawnerEmail} </span>
+										</p>
 									</td>
-									<td>Pawnshop ID :<span class="badge badge-default">
-											${adEstimate.pawnshopId.pawnshopId} </span> Pawnshop Name :<span
+									<td>
+										<p>
+										Pawnshop ID :<span class="badge badge-default">
+											${adEstimate.pawnshopId.pawnshopId} </span> 
+										</p><p>	
+										Pawnshop Name :<span
 										class="badge badge-default">
-											${adEstimate.pawnshopId.pawnshopName} </span> Pawnshop Address :<span
+											${adEstimate.pawnshopId.pawnshopName} </span> 
+										</p><p>	
+										Pawnshop Address :<span
 										class="badge badge-default">
 											${adEstimate.pawnshopId.pawnshopParish}
 											${adEstimate.pawnshopId.pawnshopDistrict}
 											${adEstimate.pawnshopId.pawnshopProvince}
-											${adEstimate.pawnshopId.pawnshopPostcodes} </span> Pawnshop Mail :<span
+											${adEstimate.pawnshopId.pawnshopPostcodes} </span> 
+										</p><p>	
+										Pawnshop Mail :<span
 										class="badge badge-default">
 											${adEstimate.pawnshopId.pawnshopEmail} </span>
+										</p>
 									</td>
 								</tr>
 							</tbody>
@@ -305,25 +321,43 @@
 											</li>
 										</c:if>
 									</td>
-									<td>Pawner ID :<span class="badge badge-default">
-											${adEstimate.pawnerPostId.pawnerId.pawnerId} </span> Pawner Name :<span
+									
+									
+									<td>
+										<p>
+										Pawner ID :<span class="badge badge-default">
+											${adEstimate.pawnerPostId.pawnerId.pawnerId} </span> 
+										</p><p>	
+										Pawner Name :<span
 										class="badge badge-default">
 											${adEstimate.pawnerPostId.pawnerId.pawnerFirstname}
-											${adEstimate.pawnerPostId.pawnerId.pawnerLastname}</span> Pawner
-										Mail :<span class="badge badge-default">
+											${adEstimate.pawnerPostId.pawnerId.pawnerLastname}</span> 
+										</p><p>	
+										Pawner Mail :<span class="badge badge-default">
 											${adEstimate.pawnerPostId.pawnerId.pawnerEmail} </span>
+										</p>
 									</td>
-									<td>Pawnshop ID :<span class="badge badge-default">
-											${adEstimate.pawnshopId.pawnshopId} </span> Pawnshop Name :<span
+									
+									<td>
+										<p>
+										Pawnshop ID :<span class="badge badge-default">
+											${adEstimate.pawnshopId.pawnshopId} </span> 
+										</p><p>	
+										Pawnshop Name :<span
 										class="badge badge-default">
-											${adEstimate.pawnshopId.pawnshopName} </span> Pawnshop Address :<span
+											${adEstimate.pawnshopId.pawnshopName} </span> 
+										</p><p>	
+										Pawnshop Address :<span
 										class="badge badge-default">
 											${adEstimate.pawnshopId.pawnshopParish}
 											${adEstimate.pawnshopId.pawnshopDistrict}
 											${adEstimate.pawnshopId.pawnshopProvince}
-											${adEstimate.pawnshopId.pawnshopPostcodes} </span> Pawnshop Mail :<span
+											${adEstimate.pawnshopId.pawnshopPostcodes} </span> 
+										</p><p>	
+										Pawnshop Mail :<span
 										class="badge badge-default">
 											${adEstimate.pawnshopId.pawnshopEmail} </span>
+										</p>
 									</td>
 								</tr>
 							</tbody>
@@ -404,25 +438,40 @@
 											</li>
 										</c:if>
 									</td>
-									<td>Pawner ID :<span class="badge badge-default">
-											${adEstimate.pawnerPostId.pawnerId.pawnerId} </span> Pawner Name :<span
+									<td>
+										<p>
+										Pawner ID :<span class="badge badge-default">
+											${adEstimate.pawnerPostId.pawnerId.pawnerId} </span> 
+										</p><p>	
+										Pawner Name :<span
 										class="badge badge-default">
 											${adEstimate.pawnerPostId.pawnerId.pawnerFirstname}
-											${adEstimate.pawnerPostId.pawnerId.pawnerLastname}</span> Pawner
-										Mail :<span class="badge badge-default">
+											${adEstimate.pawnerPostId.pawnerId.pawnerLastname}</span> 
+										</p><p>	
+										Pawner Mail :<span class="badge badge-default">
 											${adEstimate.pawnerPostId.pawnerId.pawnerEmail} </span>
+										</p>
 									</td>
-									<td>Pawnshop ID :<span class="badge badge-default">
-											${adEstimate.pawnshopId.pawnshopId} </span> Pawnshop Name :<span
+									<td>
+										<p>
+										Pawnshop ID :<span class="badge badge-default">
+											${adEstimate.pawnshopId.pawnshopId} </span> 
+										</p><p>	
+										Pawnshop Name :<span
 										class="badge badge-default">
-											${adEstimate.pawnshopId.pawnshopName} </span> Pawnshop Address :<span
+											${adEstimate.pawnshopId.pawnshopName} </span> 
+										</p><p>	
+										Pawnshop Address :<span
 										class="badge badge-default">
 											${adEstimate.pawnshopId.pawnshopParish}
 											${adEstimate.pawnshopId.pawnshopDistrict}
 											${adEstimate.pawnshopId.pawnshopProvince}
-											${adEstimate.pawnshopId.pawnshopPostcodes} </span> Pawnshop Mail :<span
+											${adEstimate.pawnshopId.pawnshopPostcodes} </span> 
+										</p><p>	
+										Pawnshop Mail :<span
 										class="badge badge-default">
 											${adEstimate.pawnshopId.pawnshopEmail} </span>
+										</p>
 									</td>
 								</tr>
 							</tbody>
@@ -507,25 +556,40 @@
 											</li>
 										</c:if>
 									</td>
-									<td>Pawner ID :<span class="badge badge-default">
-											${adEstimate.pawnerPostId.pawnerId.pawnerId} </span> Pawner Name :<span
+									<td>
+										<p>
+										Pawner ID :<span class="badge badge-default">
+											${adEstimate.pawnerPostId.pawnerId.pawnerId} </span> 
+										</p><p>	
+										Pawner Name :<span
 										class="badge badge-default">
 											${adEstimate.pawnerPostId.pawnerId.pawnerFirstname}
-											${adEstimate.pawnerPostId.pawnerId.pawnerLastname}</span> Pawner
-										Mail :<span class="badge badge-default">
+											${adEstimate.pawnerPostId.pawnerId.pawnerLastname}</span> 
+										</p><p>	
+										Pawner Mail :<span class="badge badge-default">
 											${adEstimate.pawnerPostId.pawnerId.pawnerEmail} </span>
+										</p>
 									</td>
-									<td>Pawnshop ID :<span class="badge badge-default">
-											${adEstimate.pawnshopId.pawnshopId} </span> Pawnshop Name :<span
+									<td>
+										<p>
+										Pawnshop ID :<span class="badge badge-default">
+											${adEstimate.pawnshopId.pawnshopId} </span> 
+										</p><p>	
+										Pawnshop Name :<span
 										class="badge badge-default">
-											${adEstimate.pawnshopId.pawnshopName} </span> Pawnshop Address :<span
+											${adEstimate.pawnshopId.pawnshopName} </span> 
+										</p><p>	
+										Pawnshop Address :<span
 										class="badge badge-default">
 											${adEstimate.pawnshopId.pawnshopParish}
 											${adEstimate.pawnshopId.pawnshopDistrict}
 											${adEstimate.pawnshopId.pawnshopProvince}
-											${adEstimate.pawnshopId.pawnshopPostcodes} </span> Pawnshop Mail :<span
+											${adEstimate.pawnshopId.pawnshopPostcodes} </span> 
+										</p><p>	
+										Pawnshop Mail :<span
 										class="badge badge-default">
 											${adEstimate.pawnshopId.pawnshopEmail} </span>
+										</p>
 									</td>
 								</tr>
 							</tbody>
@@ -608,25 +672,40 @@
 											</li>
 										</c:if>
 									</td>
-									<td>Pawner ID :<span class="badge badge-default">
-											${adEstimate.pawnerPostId.pawnerId.pawnerId} </span> Pawner Name :<span
+									<td>
+										<p>
+										Pawner ID :<span class="badge badge-default">
+											${adEstimate.pawnerPostId.pawnerId.pawnerId} </span> 
+										</p><p>	
+										Pawner Name :<span
 										class="badge badge-default">
 											${adEstimate.pawnerPostId.pawnerId.pawnerFirstname}
-											${adEstimate.pawnerPostId.pawnerId.pawnerLastname}</span> Pawner
-										Mail :<span class="badge badge-default">
+											${adEstimate.pawnerPostId.pawnerId.pawnerLastname}</span> 
+										</p><p>	
+										Pawner Mail :<span class="badge badge-default">
 											${adEstimate.pawnerPostId.pawnerId.pawnerEmail} </span>
+										</p>
 									</td>
-									<td>Pawnshop ID :<span class="badge badge-default">
-											${adEstimate.pawnshopId.pawnshopId} </span> Pawnshop Name :<span
+									<td>
+										<p>
+										Pawnshop ID :<span class="badge badge-default">
+											${adEstimate.pawnshopId.pawnshopId} </span> 
+										</p><p>	
+										Pawnshop Name :<span
 										class="badge badge-default">
-											${adEstimate.pawnshopId.pawnshopName} </span> Pawnshop Address :<span
+											${adEstimate.pawnshopId.pawnshopName} </span> 
+										</p><p>	
+										Pawnshop Address :<span
 										class="badge badge-default">
 											${adEstimate.pawnshopId.pawnshopParish}
 											${adEstimate.pawnshopId.pawnshopDistrict}
 											${adEstimate.pawnshopId.pawnshopProvince}
-											${adEstimate.pawnshopId.pawnshopPostcodes} </span> Pawnshop Mail :<span
+											${adEstimate.pawnshopId.pawnshopPostcodes} </span> 
+										</p><p>	
+										Pawnshop Mail :<span
 										class="badge badge-default">
 											${adEstimate.pawnshopId.pawnshopEmail} </span>
+										</p>
 									</td>
 								</tr>
 							</tbody>
@@ -707,25 +786,40 @@
 											</li>
 										</c:if>
 									</td>
-									<td>Pawner ID :<span class="badge badge-default">
-											${adEstimate.pawnerPostId.pawnerId.pawnerId} </span> Pawner Name :<span
+									<td>
+										<p>
+										Pawner ID :<span class="badge badge-default">
+											${adEstimate.pawnerPostId.pawnerId.pawnerId} </span> 
+										</p><p>	
+										Pawner Name :<span
 										class="badge badge-default">
 											${adEstimate.pawnerPostId.pawnerId.pawnerFirstname}
-											${adEstimate.pawnerPostId.pawnerId.pawnerLastname}</span> Pawner
-										Mail :<span class="badge badge-default">
+											${adEstimate.pawnerPostId.pawnerId.pawnerLastname}</span> 
+										</p><p>	
+										Pawner Mail :<span class="badge badge-default">
 											${adEstimate.pawnerPostId.pawnerId.pawnerEmail} </span>
+										</p>
 									</td>
-									<td>Pawnshop ID :<span class="badge badge-default">
-											${adEstimate.pawnshopId.pawnshopId} </span> Pawnshop Name :<span
+									<td>
+										<p>
+										Pawnshop ID :<span class="badge badge-default">
+											${adEstimate.pawnshopId.pawnshopId} </span> 
+										</p><p>	
+										Pawnshop Name :<span
 										class="badge badge-default">
-											${adEstimate.pawnshopId.pawnshopName} </span> Pawnshop Address :<span
+											${adEstimate.pawnshopId.pawnshopName} </span> 
+										</p><p>	
+										Pawnshop Address :<span
 										class="badge badge-default">
 											${adEstimate.pawnshopId.pawnshopParish}
 											${adEstimate.pawnshopId.pawnshopDistrict}
 											${adEstimate.pawnshopId.pawnshopProvince}
-											${adEstimate.pawnshopId.pawnshopPostcodes} </span> Pawnshop Mail :<span
+											${adEstimate.pawnshopId.pawnshopPostcodes} </span> 
+										</p><p>	
+										Pawnshop Mail :<span
 										class="badge badge-default">
 											${adEstimate.pawnshopId.pawnshopEmail} </span>
+										</p>
 									</td>
 								</tr>
 							</tbody>
