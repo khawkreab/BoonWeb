@@ -191,6 +191,7 @@ public class EstimateController {
 		long estimateId = Long.parseLong(request.getParameter("estimateId"));
 		long pawnerPostId = Long.parseLong(request.getParameter("pawnerPostId"));
 		String status = request.getParameter("status");
+		Date date = new Date();
 		try {
 
 			if(status == "complate") {
@@ -198,6 +199,7 @@ public class EstimateController {
 			}
 
 			estimate = estimateService.findEstimateById(estimateId);
+			estimate.setEstimateAccessDate(date);
 			estimate.setEstimateStatus(status);
 			estimateService.update(estimate);
 		} catch (Exception e) {

@@ -89,12 +89,11 @@ tr:hover {
 
 	<div id="content">
 		<ul class="timeline">
+			<li class="event" id="noOrder">
+				<h3>ไม่มีรายการ</h3>
+			</li>
 			<c:forEach items="${estimatesListComplete}" var="post">
-				<c:if test="${post.estimateAccessDate == null }">
-					<li class="event">
-						<h3>ไม่มีรายการ</h3>
-					</li>
-				</c:if>
+				<input type="hidden" value="hide" id="hide" />
 				<li class="event"
 					data-date="<fmt:formatDate pattern="dd MMM yyyy"
 								value="${post.estimateAccessDate }"/>">
@@ -191,12 +190,16 @@ tr:hover {
 							</ul>
 						</div>
 					</div>
-					<p>
-						<strong>จำนำที่: ${post.pawnshopId.pawnshopName}</strong>
-					</p>
-					<div class="d-flex justify-content-center">
-						<p style="font-size: 180%; color: red; font-weight: bold">${post.estimatePriceMin}฿
-							- ${post.estimatePriceMax}฿</p>
+					<div class="d-flex bd-highlight mb-3">
+						<div class="mr-auto  p-2 bd-highlight">
+							<p>
+								<strong>จำนำที่: ${post.pawnshopId.pawnshopName}</strong>
+							</p>
+						</div>
+						<div class="p-2 bd-highlight">
+							<p style="color: #ff3300; font-weight: bold">${post.estimatePriceMin}฿
+								- ${post.estimatePriceMax}฿</p>
+						</div>
 					</div>
 					<div>
 						<img src="img/background/background.jpg"
@@ -206,6 +209,14 @@ tr:hover {
 			</c:forEach>
 		</ul>
 	</div>
+	<script type="text/javascript">
+		window.onload = function() {
+			var x = document.getElementById("hide").value;
+			var order = document.getElementById("noOrder");
+			if (x == 'hide')
+				order.style.display = "none";
+		}
+	</script>
 	<%-- <section>
 		<!-- ---------------- status approve ----------------- -->
 		<c:forEach items="${estimatesListApprove}" var="post">
