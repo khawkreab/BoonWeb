@@ -76,16 +76,22 @@ body {
 		</div>
 	</section>
 
-	<section id="pawning">
+<section id="pawning">
 		<ul id="timelinecountstep">
 			<li class="timeline-step">
-				<p>step 1</p>
+				<p>step 1 : กรอกข้อมูล พร้อมอัพโหลดรูปถ่าย</p>
 			</li>
 			<li class="timeline-step">
-				<p>step 2</p>
+				<p>step 2 : ตรวจสอบความถูกต้องก่อนโพส</p>
 			</li>
 			<li class="timeline-step">
-				<p>step 3</p>
+				<p>step 3 : รอโรงรับจำนำมาประเมินราคา</p>
+			</li>
+			<li class="timeline-step">
+				<p>step 4 : หลังจากได้ราคาที่ถูกใจ ให้ท่านยืนยันกับโรงรับจำนำ</p>
+			</li>
+			<li class="timeline-step">
+				<p>step 5 : ท่านสามารถปริ้นใบหลักฐานและเดินทางไปที่โรงรับจำนำที่ท่าน ตกลง ไว้</p>
 			</li>
 		</ul>
 		<a href="#buying">
@@ -95,13 +101,13 @@ body {
 	<section id="buying">
 		<ul id="timelinecountstep2">
 			<li class="timeline-step">
-				<p>step 1</p>
+				<p>step 1 : เข้าสู่เว็บไซต์ บุญยง เพื่อหาของหลุดจำนำที่ถูกใจ</p>
 			</li>
 			<li class="timeline-step">
-				<p>step 2</p>
+				<p>step 2 : เลือกสินค้าที่ถูกใจลงในตะกร้าสินค้า</p>
 			</li>
 			<li class="timeline-step">
-				<p>step 3</p>
+				<p>step 3 : ปริ้นใบเสร็จสั่งซื้อและเดินทางไปที่โรงรับจำนำได้ทันที</p>
 			</li>
 		</ul>
 	</section>
