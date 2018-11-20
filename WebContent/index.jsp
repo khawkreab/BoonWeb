@@ -142,8 +142,12 @@ body {
 			<div class="shop-card" data-aos="fade-up">
 				<div style="height: 200px;">
 					<div class="date">
-						<span class="day">12</span> <span class="month">Aug</span> <span
-							class="year">2016</span>
+						<span class="day"><fmt:formatDate pattern="dd"
+								value="${post.pawnerPostDate }" /></span> <span
+							class="month"><fmt:formatDate pattern="MMM"
+								value="${post.pawnerPostDate }" /></span> <span
+							class="year"><fmt:formatDate pattern="yyyy"
+								value="${post.pawnerPostDate }" /></span>
 					</div>
 					<div class="title-bar">
 						<div class="title">${post.pawnerPostName}</div>
