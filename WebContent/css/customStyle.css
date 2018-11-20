@@ -79,6 +79,7 @@ section {
 	height: 100vh;
 	align-items: center;
 	justify-content: center;
+	padding-top: 20px;
 }
 
 .header {
@@ -141,7 +142,7 @@ section {
 }
 
 .text-orange {
-	color: #FF7700;
+	color: #FF3300;
 }
 
 .text-black {
