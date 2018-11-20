@@ -140,189 +140,62 @@
 
 
 	<script src="js/MultiStepFormPawnshop.js"></script>
-	<script src="js/upimages.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script>
-		(function($, undefined) {
+	<script type="text/javascript">
+	window.onload = function() {
+		//Check File API support
+		if (window.File && window.FileList && window.FileReader) {
+			$('#files')
+					.on(
+							"change",
+							function(event) {
+								var files = event.target.files; //FileList object
+								var output = document
+										.getElementById("result");
+								for (var i = 0; i < files.length; i++) {
+									var file = files[i];
+									//Only pics
+									// if(!file.type.match('image'))
+									if (file.type.match('image.*')) {
+										if (files.length < 6) {
+											if (this.files[0].size < 2097152) {
+												// continue;
+												var picReader = new FileReader();
+												picReader
+														.addEventListener(
+																"load",
+																function(
+																		event) {
+																	var picFile = event.target;
+																	var div = document
+																			.createElement("div");
+																	div.innerHTML = "<img class='thumbnail' src='" + picFile.result + "'" +
+                                "title='preview image'/>";
+																	output
+																			.insertBefore(
+																					div,
+																					null);
+																});
+												//Read the image
+												$('#clear, #result').show();
+												picReader
+														.readAsDataURL(file);
+											} else {
+												alert("Image Size is too big. Minimum size is 2MB.");
+												$(this).val("");
+											}
+										} else {
+											alert("  คุณสามารถอัพโหลดรูปได้มากสุด 5 รูป    ");
+											$(this).val("");
+										}
+									} else {
+										alert("You can only upload image file.");
+										$(this).val("");
+									}
+								}
 
-			"use strict";
-
-			// When ready.
-			$(function() {
-				var $form = $("#regForm");
-				var $input = $form.find("#amounts");
-
-				$input.on("keyup", function(event) {
-					// When user select text in the document, also abort.
-					var selection = window.getSelection().toString();
-					if (selection !== '') {
-						return;
-					}
-
-					// When the arrow keys are pressed, abort.
-					if ($.inArray(event.keyCode, [ 38, 40, 37, 39 ]) !== -1) {
-						return;
-					}
-
-					var $this = $(this);
-
-					// Get the value.
-					var input = $this.val();
-
-					var input = input.replace(/[\D\s\._\-]+/g, "");
-					input = input ? parseInt(input, 10) : 0;
-
-					$this.val(function() {
-						return (input === 0) ? "" : input
-								.toLocaleString("en-US");
-					});
-
-					document.getElementById("oo").value = input;
-				});
-
-				/**
-				 * ==================================
-				 * When Form Submitted
-				 * ==================================
-				 */
-				/* $form.on( "submit", function( event ) {
-				     
-				     var $this = $( this );
-				     var arr = $this.serializeArray();
-				 
-				     for (var i = 0; i < arr.length; i++) {
-				             arr[i].value = arr[i].value.replace(/[($)\s\._\-]+/g, ''); // Sanitize the values.
-				     };
-				     
-				     console.log("show this => " +arr );
-				     
-				     event.preventDefault();
-				 });
-				 */
-			});
-		})(jQuery);
-
-		$('#img-pic-1').click(function() {
-			$('.box-img-2').css("display", "block");
-		});
-
-		$('#img-pic-2').click(function() {
-			$('.box-img-3').css("display", "block");
-		});
-		$('#img-pic-3').click(function() {
-			$('.box-img-4').css("display", "block");
-		});
-		$('#img-pic-4').click(function() {
-			$('.box-img-5').css("display", "block");
-		});
-		$('#img-pic-5').click(function() {
-			$('.box-img-6').css("display", "block");
-		});
-
-		$('.clear-img').click(function() {
-			for (let i = 6; i > 1; i--) {
-				$('.box-img-' + i).css("display", "none");
-			}
-			$('.js--image-preview').css("background-image", "")
-			$('.image-upload').val('');
-		});
-
-		function initImageUpload(box) {
-			let uploadField = box.querySelector('.image-upload');
-
-			uploadField.addEventListener('change', getFile);
-
-			function getFile(e) {
-				let file = e.currentTarget.files[0];
-				checkType(file);
-			}
-
-			function previewImage(file) {
-				let thumb = box.querySelector('.js--image-preview'), reader = new FileReader();
-
-				reader.onload = function() {
-					thumb.style.backgroundImage = 'url(' + reader.result + ')';
-				}
-				reader.readAsDataURL(file);
-				thumb.className += ' js--no-default';
-			}
-
-			function checkType(file) {
-				let imageType = /image.*/;
-				if (!file.type.match(imageType)) {
-					throw 'Datei ist kein Bild';
-				} else if (!file) {
-					throw 'Kein Bild gewählt';
-				} else {
-					previewImage(file);
-				}
-			}
-
-		}
-
-		// initialize box-scope
-		var boxes = document.querySelectorAll('.box');
-
-		for (let i = 0; i < boxes.length; i++) {
-			if (window.CP.shouldStopExecution(1)) {
-				break;
-			}
-			let box = boxes[i];
-			initDropEffect(box);
-			initImageUpload(box);
-		}
-		window.CP.exitedLoop(1);
-
-		/// drop-effect
-		function initDropEffect(box) {
-			let area, drop, areaWidth, areaHeight, maxDistance, dropWidth, dropHeight, x, y;
-
-			// get clickable area for drop effect
-			area = box.querySelector('.js--image-preview');
-			area.addEventListener('click', fireRipple);
-
-			function fireRipple(e) {
-				area = e.currentTarget
-				// create drop
-				if (!drop) {
-					drop = document.createElement('span');
-					drop.className = 'drop';
-					this.appendChild(drop);
-				}
-				// reset animate class
-				drop.className = 'drop';
-
-				// calculate dimensions of area (longest side)
-				areaWidth = getComputedStyle(this, null).getPropertyValue(
-						"width");
-				areaHeight = getComputedStyle(this, null).getPropertyValue(
-						"height");
-				maxDistance = Math.max(parseInt(areaWidth, 10), parseInt(
-						areaHeight, 10));
-
-				// set drop dimensions to fill area
-				drop.style.width = maxDistance + 'px';
-				drop.style.height = maxDistance + 'px';
-
-				// calculate dimensions of drop
-				dropWidth = getComputedStyle(this, null).getPropertyValue(
-						"width");
-				dropHeight = getComputedStyle(this, null).getPropertyValue(
-						"height");
-
-				// calculate relative coordinates of click
-				// logic: click coordinates relative to page - parent's position relative to page - half of self height/width to make it controllable from the center
-				x = e.pageX - this.offsetLeft - (parseInt(dropWidth, 10) / 2);
-				y = e.pageY - this.offsetTop - (parseInt(dropHeight, 10) / 2)
-						- 30;
-
-				// position drop and animate
-				drop.style.top = y + 'px';
-				drop.style.left = x + 'px';
-				drop.className += ' animate';
-				e.stopPropagation();
-
-			}
+							});
+		} else {
+			console.log("Your browser does not support File API");
 		}
 	}
 
