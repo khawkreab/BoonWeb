@@ -77,7 +77,7 @@ body {
 	</section>
 
 	<section id="plage">
-		<ul>
+		<ul id="timelinecountstep">
 			<li class="timeline-step">
 				<p>step 1</p>
 			</li>
@@ -90,7 +90,7 @@ body {
 		</ul>
 	</section>
 	<section id="plage">
-		<ul>
+		<ul id="timelinecountstep2">
 			<li class="timeline-step">
 				<p>step 1</p>
 			</li>
