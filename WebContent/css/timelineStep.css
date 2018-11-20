@@ -8,6 +8,10 @@
 	counter-reset: step;
 }
 
+#pawning{
+	height: auto;
+}
+
 .timeline-step {
 	position: relative;
 	width: 70vw;

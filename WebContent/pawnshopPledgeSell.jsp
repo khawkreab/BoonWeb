@@ -26,7 +26,7 @@
 	<div class="page">
 		<div class="pledge-container">
 			<div class="pledge-featured">
-				<div class="pledge-circle"></div>
+				<div class="pledge-circle pledge-circle-img2"></div>
 				<!--  <img src="#" class="pledge-product" /> -->
 			</div>
 			<div class="pledge-content">
@@ -88,73 +88,21 @@
 						</p>
 						<p>
 							<label>ราคาที่ต้องการขาย</label> <input type="text"
-								neme="pawnshopPostPrice" id="amounts" required="required" /> <br>
+								name="pawnshopPostPrice" id="amounts" required="required" /> <br>
 							<i>ใช้เป็นตัวเลข 0-9 สามารถมีจุดทศนิยมได้</i> <input
 								type="hidden" id="oo" />
 						</p>
 						<!-- ------------------------upload image----------------------------  -->
-						<div style="margin-top: 15px; width: 100%">
+						<div style="margin-top: 15px; width: 100%; position: relative;">
 							<span style="font-size: 14px;">ลงรูปภาพประกอบการจำนำ</span>
-							<div class="wrap-input100 " style="border: none;">
-								<div class="box-img-list">
-									<div class="box box-img-1" style="display: block">
-										<div class="box-img-thumb">
-											<div class="upload-options js--image-preview" id="img-pic-1">
-												<label> <input type="file" class="image-upload"
-													accept="image/*" name="files" required="required" />
-												</label>
-											</div>
-										</div>
-									</div>
-									<div class="box box-img-2">
-										<div class="box-img-thumb">
-											<div class="upload-options js--image-preview" id="img-pic-2">
-												<label> <input type="file" class="image-upload"
-													accept="image/*" name="files" />
-												</label>
-											</div>
-										</div>
-									</div>
-									<div class="box box-img-3">
-										<div class="box-img-thumb">
-											<div class="upload-options js--image-preview" id="img-pic-3">
-												<label> <input type="file" class="image-upload"
-													accept="image/*" name="files" />
-												</label>
-											</div>
-										</div>
-									</div>
-									<div class="box box-img-4">
-										<div class="box-img-thumb">
-											<div class="upload-options js--image-preview" id="img-pic-4">
-												<label> <input type="file" class="image-upload"
-													accept="image/*" name="files" />
-												</label>
-											</div>
-										</div>
-									</div>
-									<div class="box box-img-5">
-										<div class="box-img-thumb">
-											<div class="upload-options js--image-preview" id="img-pic-5">
-												<label> <input type="file" class="image-upload"
-													accept="image/*" name="files" />
-												</label>
-											</div>
-										</div>
-									</div>
-									<div class="box box-img-6">
-										<div class="box-img-thumb">
-											<div class="upload-options js--image-preview" id="img-pic-6">
-												<label> <input type="file" class="image-upload"
-													accept="image/*" name="files" />
-												</label>
-											</div>
-										</div>
-									</div>
-									<span class="clear-trash d-flex"> <i class="mr-auto">ใส่รูปได้สูงสุด
-											6 รูป</i><i class="clear-img fas fa-trash-alt"> ลบรูป</i>
-									</span>
-								</div>
+							<div class="result">
+								<div id="result"></div>
+								<input id="files" type="file" name="files" multiple /> <span
+									class="clear-trash d-flex"> <label for="files">
+										<i class="fas fa-image"></i> เพิ่มรูป
+								</label><i class="ml-auto">ใส่รูปได้สูงสุด 5 รูป</i><i id="clear"
+									class="p-2 fas fa-trash-alt"> ลบรูป</i>
+								</span>
 							</div>
 						</div>
 					</div>
@@ -376,8 +324,22 @@
 
 			}
 		}
-		//# sourceURL=pen.js
+	}
+
+	$('#files').on("click", function() {
+		$('.thumbnail').parent().remove();
+		$('result').hide();
+		$(this).val("");
+	});
+
+	$('#clear').on("click", function() {
+		$('.thumbnail').parent().remove();
+		$('#result').hide();
+		$('#files').val("");
+		$(this).hide();
+	});
 	</script>
+	
 </body>
 
 </html>
