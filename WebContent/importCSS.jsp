@@ -18,5 +18,3 @@
 <link rel="stylesheet" href="css/slideimg.css">
 <link rel="stylesheet" href="css/pawnerDetailBuying.css">
 <link href="css/pawnerCard.css" rel="stylesheet">
-<!-- Custom styles for this template -->
-<link href="css/new-design.css" rel="stylesheet">

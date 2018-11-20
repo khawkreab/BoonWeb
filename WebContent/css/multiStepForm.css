@@ -119,10 +119,11 @@ input[type=checkbox] {
 }
 
 .tab select {
-	padding: 10px;
+	padding: 5px;
 	width: 100%;
 	border: 2px solid #999;
 	border-radius: 10px;
+	margin-bottom: 1rem;
 }
 
 .step.active:after {
@@ -150,4 +151,64 @@ input[type=checkbox] {
 	width: 300px;
 	height: 200px;
 	text-align: center;
+}
+
+.thumbnail {
+	height: 100px;
+	margin: 10px;
+	float: left;
+}
+
+#clear {
+	display: none;
+}
+
+.result {
+	margin: 10px 0px;
+	border: 2px dashed #aaa;
+	border-radius: 5px;
+	width: 100%;
+	display: flex;
+	max-width: 1000px;
+	align-items: flex-start;
+	justify-content: flex-start;
+	flex-direction: row;
+	flex-wrap: wrap;
+	height: 150px;
+	overflow-y: auto;
+}
+
+#result {
+	width: 100%;
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+input[type=file] {
+	display: none;
+}
+
+label[for=files] {
+	cursor: pointer;
+	background-color: #ff6600;
+	border-radius: 5px;
+	color: #000;
+}
+
+label[for=files] i {
+	color: #000;
+	font-size: 1.2rem
+}
+
+/****** upload image  *******/
+.clear-trash {
+	padding: 0px 0.5em;
+	color: #969696;
+	position: absolute;
+	bottom: 2px;
+	height: 25px;
+	align-items: center;
 }

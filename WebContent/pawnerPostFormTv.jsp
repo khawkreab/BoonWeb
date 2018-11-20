@@ -173,7 +173,7 @@
 													</div>
 												</div>
 												<span class="clear-trash d-flex"> <i class="mr-auto">ใส่รูปได้สูงสุด
-														6 รูป</i><i class="clear-img fas fa-trash-alt"> ลบรูป</i>
+														5 รูป</i><i class="clear-img fas fa-trash-alt"> ลบรูป</i>
 												</span>
 											</div>
 										</div>

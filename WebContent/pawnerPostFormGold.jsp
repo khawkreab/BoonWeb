@@ -18,29 +18,9 @@
 <meta name="author" content="">
 
 <title>pawner-post-form</title>
-<link href="css/new-design.css" rel="stylesheet">
 
 <!-- import all css -->
 <jsp:include page="importCSS.jsp" />
-<style type="text/css">
-.thumbnail {
-	height: 100px;
-	margin: 10px;
-	float: left;
-}
-
-#clear {
-	display: none;
-}
-
-#result {
-	border: 4px dotted #cccccc;
-	display: none;
-	float: right;
-	margin: 0 auto;
-	width: 511px;
-}
-</style>
 </head>
 
 <body style="background-color: #f4f4f4; overflow: hidden;">
@@ -115,17 +95,20 @@
 								ต้องไม่ใช้ อักษรพิเศษ</i>
 						</p>
 						<!-- ------------------------upload image----------------------------  -->
-						<div style="margin-top: 15px; width: 100%">
+						<div style="margin-top: 15px; width: 100%; position: relative;">
 							<span style="font-size: 14px;">ลงรูปภาพประกอบการจำนำ</span>
-							
-							 <article>
-        <label for="files">Select multiple files: </label>
-        <input id="files" type="file" name="files" multiple/>
-      <button type="button" id="clear">Clear</button>
-        <output id="result" />
-    </article>
-							
-							
+							<div class="result">
+								<div id="result"></div>
+								<input id="files" type="file" name="files" multiple /> <span
+									class="clear-trash d-flex"> <label for="files">
+										<i class="fas fa-image"></i> เพิ่มรูป
+								</label><i class="ml-auto">ใส่รูปได้สูงสุด 5 รูป</i><i id="clear"
+									class="p-2 fas fa-trash-alt"> ลบรูป</i>
+								</span>
+							</div>
+
+
+
 						</div>
 					</div>
 
@@ -163,67 +146,76 @@
 
 	<script src="js/MultiStepForm.js"></script>
 	<script type="text/javascript">
-	window.onload = function(){   
-	    //Check File API support
-	    if(window.File && window.FileList && window.FileReader)
-	    {
-	        $('#files').on("change", function(event) {
-	            var files = event.target.files; //FileList object
-	            var output = document.getElementById("result");
-	            for(var i = 0; i< files.length; i++)
-	            {
-	                var file = files[i];
-	                //Only pics
-	                // if(!file.type.match('image'))
-	                if(file.type.match('image.*')){
-		                if(files.length < 6){
-	                    if(this.files[0].size < 2097152){    
-	                  // continue;
-	                    var picReader = new FileReader();
-	                    picReader.addEventListener("load",function(event){
-	                        var picFile = event.target;
-	                        var div = document.createElement("div");
-	                        div.innerHTML = "<img class='thumbnail' src='" + picFile.result + "'" +
+		window.onload = function() {
+			//Check File API support
+			if (window.File && window.FileList && window.FileReader) {
+				$('#files')
+						.on(
+								"change",
+								function(event) {
+									var files = event.target.files; //FileList object
+									var output = document
+											.getElementById("result");
+									for (var i = 0; i < files.length; i++) {
+										var file = files[i];
+										//Only pics
+										// if(!file.type.match('image'))
+										if (file.type.match('image.*')) {
+											if (files.length < 6) {
+												if (this.files[0].size < 2097152) {
+													// continue;
+													var picReader = new FileReader();
+													picReader
+															.addEventListener(
+																	"load",
+																	function(
+																			event) {
+																		var picFile = event.target;
+																		var div = document
+																				.createElement("div");
+																		div.innerHTML = "<img class='thumbnail' src='" + picFile.result + "'" +
 	                                "title='preview image'/>";
-	                        output.insertBefore(div,null);            
-	                    });
-	                    //Read the image
-	                    $('#clear, #result').show();
-	                    picReader.readAsDataURL(file);
-	                    }else{
-	                        alert("Image Size is too big. Minimum size is 2MB.");
-	                        $(this).val("");
-	                    }}else{
-	                    	 alert("  คุณสามารถอัพโหลดรูปได้มากสุด 5 รูป    ");
-	     	                $(this).val("");
-		                    }
-	                }else{
-	                alert("You can only upload image file.");
-	                $(this).val("");
-	            }
-	            }                               
-	           
-	        });
-	    }
-	    else
-	    {
-	        console.log("Your browser does not support File API");
-	    }
-	}
+																		output
+																				.insertBefore(
+																						div,
+																						null);
+																	});
+													//Read the image
+													$('#clear, #result').show();
+													picReader
+															.readAsDataURL(file);
+												} else {
+													alert("Image Size is too big. Minimum size is 2MB.");
+													$(this).val("");
+												}
+											} else {
+												alert("  คุณสามารถอัพโหลดรูปได้มากสุด 5 รูป    ");
+												$(this).val("");
+											}
+										} else {
+											alert("You can only upload image file.");
+											$(this).val("");
+										}
+									}
 
-	   $('#files').on("click", function() {
-	        $('.thumbnail').parent().remove();
-	        $('result').hide();
-	        $(this).val("");
-	    });
+								});
+			} else {
+				console.log("Your browser does not support File API");
+			}
+		}
 
-	    $('#clear').on("click", function() {
-	        $('.thumbnail').parent().remove();
-	        $('#result').hide();
-	        $('#files').val("");
-	        $(this).hide();
-	    });
+		$('#files').on("click", function() {
+			$('.thumbnail').parent().remove();
+			$('result').hide();
+			$(this).val("");
+		});
 
+		$('#clear').on("click", function() {
+			$('.thumbnail').parent().remove();
+			$('#result').hide();
+			$('#files').val("");
+			$(this).hide();
+		});
 	</script>
 </body>
 
