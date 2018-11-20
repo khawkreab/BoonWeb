@@ -32,7 +32,7 @@
 			<div id="nav-custom-overlay"></div>
 			<nav id="nav-custom-fullscreen">
 				<ul class="flex d-inline-flex flex-wrap menu-icon">
-					<li class="menu-icon"><a href="index.html">หน้าหลัก</a></li>
+					<li class="menu-icon"><a href="index.html"><img src="img/ICONBOONYOUNG/house-outline.png" height="50px" width="50px">หน้าหลัก</a></li>
 					<!-- ----------------------------if user has ban---------------------------------------- -->
 					<%
 						if (session.getAttribute("pawnerState").equals("Banned")) {
@@ -42,21 +42,21 @@
 						} else {
 					%>
 					<li class=""><a class="nav-link"
-						href="pawner-post-form-gold.html">จำนำของ</a></li>
+						href="pawner-post-form-gold.html"><img src="img/ICONBOONYOUNG/Post.png" height="50px" width="50px">จำนำของ</a></li>
 					<%
 						}
 					%>
-					<li class=""><a class="nav-link" href="pawner-off-pledge.html">รายการของหลุดจำนำ</a></li>
-					<li class=""><a class="nav-link" href="pawner-cart.html">ตะกร้า
+					<li class=""><a class="nav-link" href="pawner-off-pledge.html"><img src="img/ICONBOONYOUNG/Menu.png" height="50px" width="50px">รายการของหลุดจำนำ</a></li>
+					<li class=""><a class="nav-link" href="pawner-cart.html"><img src="img/ICONBOONYOUNG/shopping-bag.png" height="50px" width="50px">ตะกร้า
 							<i id="cartNumberlink"></i>
 					</a></li>
 					<li class=""><a class="nav-link"
-						href="pawner-track-pledge.html">ติดตามการจำนำ</a></li>
+						href="pawner-track-pledge.html"><img src="img/ICONBOONYOUNG/tracking.png" height="50px" width="50px">ติดตามการจำนำ</a></li>
 					<li class=""><a href="pawner-post-history.html"
-						class="nav-link ">ประวัติการจำนำ</a></li>
-					<li class=""><a href="pawner-order.html#loaded" class="nav-link ">ประวัติการสังซื้อ</a></li>
-					<li class=""><a href="#" class="nav-link ">แก้ไขบัญชี</a></li>
-					<li class=""><a href="logout.html" class="nav-link ">ออกจากระบบ</a></li>
+						class="nav-link "><img src="img/ICONBOONYOUNG/history-pawn.png" height="50px" width="50px">ประวัติการจำนำ</a></li>
+					<li class=""><a href="pawner-order.html#loaded" class="nav-link "><img src="img/ICONBOONYOUNG/history.png" height="50px" width="50px">ประวัติการสังซื้อ</a></li>
+					<li class=""><a href="#" class="nav-link "><img src="img/ICONBOONYOUNG/Setting.png" height="50px" width="50px">แก้ไขบัญชี</a></li>
+					<li class=""><a href="logout.html" class="nav-link "><img src="img/ICONBOONYOUNG/log-out.png" height="50px" width="50px">ออกจากระบบ</a></li>
 
 				</ul>
 			</nav>
@@ -88,14 +88,14 @@
 			<div id="nav-custom-overlay"></div>
 			<nav id="nav-custom-fullscreen">
 				<ul class="flex d-inline-flex flex-wrap menu-icon">
-					<li class="menu-icon"><a href="index.html">หน้าหลัก</a></li>
-					<li class=""><a class="nav-link" href="index.html#pledge">รายการของลงจำนำ</a></li>
-					<li class=""><a href="pawnshop-pledge-sell.html" class="nav-link ">ปล่อยของหลุดจำนำ</a></li>
-					<li class=""><a class="nav-link" href="pawnshop-track-estimate.html">ติดตามการประเมิน</a></li>
-					<li class=""><a href="pawnshop-list-post.html" class="nav-link ">ประวัติปล่อยของหลุดจำนำ</a></li>
-					<li class=""><a href="pawnshop-estimate-history.html" class="nav-link ">ประวัติการประเมิน</a></li>
-					<li class=""><a href="logout.html" class="nav-link ">แก้ไขบัญชี</a></li>
-					<li class=""><a href="logout.html" class="nav-link ">ออกจากระบบ</a></li>
+					<li class="menu-icon"><a href="index.html"><img src="img/ICONBOONYOUNG/house-outline.png" height="50px" width="50px">หน้าหลัก</a></li>
+					<li class=""><a class="nav-link" href="index.html#pledge"><img src="img/ICONBOONYOUNG/Menu.png" height="50px" width="50px">รายการของลงจำนำ</a></li>
+					<li class=""><a href="pawnshop-pledge-sell.html" class="nav-link "><img src="img/ICONBOONYOUNG/Post.png" height="50px" width="50px">ปล่อยของหลุดจำนำ</a></li>
+					<li class=""><a class="nav-link" href="pawnshop-track-estimate.html"><img src="img/ICONBOONYOUNG/tracking.png" height="50px" width="50px">ติดตามการประเมิน</a></li>
+					<li class=""><a href="pawnshop-estimate-history.html" class="nav-link "><img src="img/ICONBOONYOUNG/history-pawn.png" height="50px" width="50px">ประวัติการประเมิน</a></li>
+					<li class=""><a href="pawnshop-list-post.html" class="nav-link "><img src="img/ICONBOONYOUNG/history.png" height="50px" width="50px">ประวัติปล่อยของหลุดจำนำ</a></li>
+					<li class=""><a href="logout.html" class="nav-link "><img src="img/ICONBOONYOUNG/Setting.png" height="50px" width="50px">แก้ไขบัญชี</a></li>
+					<li class=""><a href="logout.html" class="nav-link "><img src="img/ICONBOONYOUNG/log-out.png" height="50px" width="50px">ออกจากระบบ</a></li>
 
 				</ul>
 			</nav>
