@@ -54,8 +54,8 @@
 						href="pawner-track-pledge.html">ติดตามการจำนำ</a></li>
 					<li class=""><a href="pawner-post-history.html"
 						class="nav-link ">ประวัติการจำนำ</a></li>
-					<li class=""><a href="pawner-order.html" class="nav-link ">ประวัติการสังซื้อ</a></li>
-					<li class=""><a href="logout.html" class="nav-link ">แก้ไขบัญชี</a></li>
+					<li class=""><a href="pawner-order.html#loaded" class="nav-link ">ประวัติการสังซื้อ</a></li>
+					<li class=""><a href="#" class="nav-link ">แก้ไขบัญชี</a></li>
 					<li class=""><a href="logout.html" class="nav-link ">ออกจากระบบ</a></li>
 
 				</ul>
@@ -89,22 +89,9 @@
 			<nav id="nav-custom-fullscreen">
 				<ul class="flex d-inline-flex flex-wrap menu-icon">
 					<li class="menu-icon"><a href="index.html">หน้าหลัก</a></li>
-					<!-- ----------------------------if user has ban---------------------------------------- -->
-					<%
-						if (session.getAttribute("pawnshopState").equals("Banned")) {
-					%>
-					<li class=""><a class="" id="omn"></a></li>
-					<%
-						} else {
-					%>
-					<li class=""><a class="nav-link"
-						href="pawner-post-form-gold.html">จำนำของ</a></li>
-					<%
-						}
-					%>
-					<li class=""><a class="nav-link" href="index.html">รายการของลงจำนำ</a></li>
-					<li class=""><a class="nav-link" href="pawnshop-track-estimate.html">ติดตามการประเมิน</a></li>
+					<li class=""><a class="nav-link" href="index.html#pledge">รายการของลงจำนำ</a></li>
 					<li class=""><a href="pawnshop-pledge-sell.html" class="nav-link ">ปล่อยของหลุดจำนำ</a></li>
+					<li class=""><a class="nav-link" href="pawnshop-track-estimate.html">ติดตามการประเมิน</a></li>
 					<li class=""><a href="pawnshop-list-post.html" class="nav-link ">ประวัติปล่อยของหลุดจำนำ</a></li>
 					<li class=""><a href="pawnshop-estimate-history.html" class="nav-link ">ประวัติการประเมิน</a></li>
 					<li class=""><a href="logout.html" class="nav-link ">แก้ไขบัญชี</a></li>
