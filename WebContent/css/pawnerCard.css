@@ -44,9 +44,9 @@ Shop Card
 }
 
 .shop-card .title {
-	font-weight: 900;
+	font-weight: 600;
 	text-transform: uppercase;
-	font-size: 30px;
+	font-size: 1.5rem;
 	color: #23211f;
 	margin-bottom: 5px;
 	word-break: break-word;
