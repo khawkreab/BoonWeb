@@ -86,10 +86,18 @@ tr:hover {
 			<em></em>
 		</div>
 	</div>
-	<c:forEach items="${estimatesListApprove}" var="post">
-		<div id="content">
-			<ul class="timeline">
-				<li class="event" data-date="19 Nov 2018">
+
+	<div id="content">
+		<ul class="timeline">
+			<c:forEach items="${estimatesListComplete}" var="post">
+				<c:if test="${post.estimateAccessDate == null }">
+					<li class="event">
+						<h3>ไม่มีรายการ</h3>
+					</li>
+				</c:if>
+				<li class="event"
+					data-date="<fmt:formatDate pattern="dd MMM yyyy"
+								value="${post.estimateAccessDate }"/>">
 					<h3>${post.pawnerPostId.pawnerPostName}</h3>
 					<p>
 						<strong>รายละเอียด</strong>
@@ -187,16 +195,17 @@ tr:hover {
 						<strong>จำนำที่: ${post.pawnshopId.pawnshopName}</strong>
 					</p>
 					<div class="d-flex justify-content-center">
-					<p>${post.estimatePriceMin}฿ - </p><p>${post.estimatePriceMax}฿</p>
+						<p style="font-size: 180%; color: red; font-weight: bold">${post.estimatePriceMin}฿
+							- ${post.estimatePriceMax}฿</p>
 					</div>
 					<div>
 						<img src="img/background/background.jpg"
 							style="height: auto; width: 100%">
 					</div>
 				</li>
-			</ul>
-		</div>
-	</c:forEach>
+			</c:forEach>
+		</ul>
+	</div>
 	<%-- <section>
 		<!-- ---------------- status approve ----------------- -->
 		<c:forEach items="${estimatesListApprove}" var="post">

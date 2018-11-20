@@ -169,8 +169,8 @@ public class PawnerPostController {
 		List<Estimate> estimatesListApprove , estimatesListComplete;
 		try {
 			long userId = (long) request.getSession().getAttribute("id");
-			estimatesListApprove =estimateService.findEstimateByPawnerIdAndStatus(userId, "approve");
-			estimatesListComplete =estimateService.findEstimateByPawnerIdAndStatus(userId, "complete");
+			estimatesListApprove = estimateService.findEstimateByPawnerIdAndStatus(userId, "approve");
+			estimatesListComplete = estimateService.findEstimateByPawnerIdAndStatus(userId, "complete");
 			
 			
 			mv.addObject("estimatesListApprove", estimatesListApprove);
