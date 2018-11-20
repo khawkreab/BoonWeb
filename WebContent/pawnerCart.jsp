@@ -107,7 +107,7 @@
 						html += "<div class='d-flex align-items-center'>"
 						html += "<i class='mr-auto small text-gray'>โรงรับจำนำ "
 								+ this.list[index].pawnshopName + "</i>"
-						html += "<i class='ml-auro'><a class='fas fa-trash' onClick='deleteSelf("
+						html += "<i class='ml-auro'><a class='cursor fas fa-trash' onClick='deleteSelf("
 								+ index + ")'></a></i>"
 						html += "</div></div>"
 
