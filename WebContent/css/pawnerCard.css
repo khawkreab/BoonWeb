@@ -47,16 +47,14 @@ Shop Card
 .shop-card .title {
 	font-weight: 600;
 	text-transform: uppercase;
-	font-size: 1.5rem;
+	font-size: 17px;
 	color: #23211f;
-	margin-bottom: 5px;
 	word-break: break-word;
 }
 
 .shop-card .desc {
-	font-size: 17px;
+	font-size: 14px;
 	opacity: .8;
-	margin-bottom: 3px;
 }
 
 .shop-card .cta {
