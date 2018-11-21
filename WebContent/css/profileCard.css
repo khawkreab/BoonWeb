@@ -1,0 +1,89 @@
+.profile-card-head {
+	position: relative;
+	display: inline-block;
+	width: auto;
+	color: #0077ff;
+	cursor: pointer;
+	transition: all 0.2s ease-in-out;
+}
+
+.profile-card {
+	background-color: #fff;
+	justify-content: center;
+	align-items: center;
+	text-transform: uppercase;
+	color: #333;
+	font-size: 1.5em;
+}
+
+.profile-card-head.is-collapsed .profile-card {
+    height: 0;
+    width: 0;
+	overflow: hidden;
+	margin-top: 0;
+	opacity: 0;
+}
+
+.profile-card-head.is-expanded .card-inner {
+	color: #ff3300;
+}
+
+.profile-card-head.is-expanded .card-inner:after {
+	content: "";
+	opacity: 1;
+	display: block;
+	height: 0;
+	width: 0;
+	position: absolute;
+	top: 1px;
+	right: -15px;
+	border: 10px solid transparent;
+	border-right: 10px solid #aaa;
+}
+
+.profile-card-head.is-expanded .profile-card {
+	width: 250px;
+	height: auto;
+	overflow: visible;
+	opacity: 1;
+	position: absolute;
+	z-index: 9999;
+	display: flex;
+	flex-direction: column;
+	padding: 50px 0;
+	right: -265px;
+	top: 1px;
+	box-shadow: 0 0 10px 1px #ccc;
+}
+
+.profile-card span {
+	font-size: 1.5rem;
+}
+
+.profile-card i {
+	font-size: 1rem;
+	font-style: normal;
+	color: #333;
+}
+
+.profile-card-circle {
+	width: 110px;
+	height: 110px;
+	padding: 1px;
+	border-radius: 50%;
+	border: 1px solid #000;
+	margin-bottom: 25px;
+	overflow: hidden;
+}
+
+.profile-card-circle img {
+	width: 100%;
+	height: 100%;
+}
+
+.closed {
+	position: absolute;
+	top: 5px;
+	right: 15px;
+	cursor: pointer;
+}
