@@ -163,7 +163,7 @@
 									<c:forEach items="${estimatesList}" var="estimate">
 										<c:if
 											test="${estimate.pawnerPostId.pawnerPostId == postprocess.pawnerPostId }">
-											<li>
+											<li style="margin-bottom: 12px;">
 												<div class="row d-flex">
 													<div class="col-md-4">
 														${estimate.pawnshopId.pawnshopName}</div>

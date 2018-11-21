@@ -55,9 +55,11 @@
 						<!-- ---------------------- -->
 						<li class="event" data-date="<fmt:formatDate pattern="dd MMM yyyy" value="${post.estimateAccessDate }"/>">
 							<c:if test="${post.estimateStatus == 'approvedenei'}">
-								<i class="fas fa-times"></i>
+								<i class="fas fa-times bg-red"></i>
 							</c:if>
-							<i class="fas fa-check bg-success"></i>
+							<c:if test="${post.estimateStatus == 'complete'}">
+								<i class="fas fa-check bg-success"></i>
+							</c:if>
 							<div class="d-flex">
 								<div class="mr-auto">
 									<h3>${post.pawnerPostId.pawnerPostName}</h3>

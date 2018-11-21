@@ -149,7 +149,11 @@ section {
 }
 
 .bg-success {
-	background-color: #44cc55
+	background-color: #44cc55;
+}
+
+.bg-red {
+	background-color: #f44336;
 }
 
 .bg-warring {

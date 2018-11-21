@@ -70,7 +70,8 @@ li {
 								<fmt:formatDate pattern="yyyy"
 									value="${track.pawnerPostId.pawnerPostDate }" /> </span>
 							<!-- head -->
-							<h2>${track.pawnerPostId.pawnerPostName }${track.pawnerPostId.pawnerPostBrand }
+							<h2>${track.pawnerPostId.pawnerPostName }
+								${track.pawnerPostId.pawnerPostBrand }
 								${track.pawnerPostId.pawnerPostTypeCamera }
 								${track.pawnerPostId.pawnerPostCameraLen }</h2>
 							<ul class="row">
@@ -164,17 +165,20 @@ li {
 								<line-x></line-x>
 								<div class="history-show-estimate">
 									<div class="row d-flex">
-										<div class="col-md-3">เจ้าของโพส</div>
-										<div class="col-md-2">ราคาต่ำสุด</div>
-										<div class="col-md-2">ราคาสูงสุด</div>
-										<div class="col-md-2"></div>
-									</div>
-									<div class="row d-flex">
+										<div class="col-md-5">
+											<p>เจ้าของโพส คุณ
+												${track.pawnerPostId.pawnerId.pawnerFirstname}
+												${track.pawnerPostId.pawnerId.pawnerLastname} ณ จังหวัด
+												${track.pawnerPostId.pawnerId.pawnerProvince}</p>
+										</div>
+										<div class="col-md-4 ml-auto">
+											<p>
+												เสนอราคาที่ <span style="color: #ff3300; font-weight: bold;">${track.estimatePriceMin}-${track.estimatePriceMax}
+													บาท</span>
+											</p>
+										</div>
 										<div class="col-md-3">
-											${track.pawnerPostId.pawnerId.pawnerEmail}</div>
-										<div class="col-md-2">${track.estimatePriceMin}</div>
-										<div class="col-md-2">${track.estimatePriceMax}</div>
-										<div class="col-md-2">
+											<p>
 											<form action="pawnshop-estimate-approve.html" method="post">
 												<input type="hidden" name="estimateId"
 													value="${track.estimateId}"> <input type="hidden"
@@ -184,6 +188,9 @@ li {
 												<button class="btn-custom btn-custom-defalt small"
 													type="submit">สินค้าจำนำถึงโรงรับจำนำแล้ว</button>
 											</form>
+											</p>
+
+
 										</div>
 									</div>
 								</div>
@@ -195,17 +202,24 @@ li {
 								<line-x></line-x>
 								<div class="history-show-estimate">
 									<div class="row d-flex">
-										<div class="col-md-3">เจ้าของโพส</div>
-										<div class="col-md-2">ราคาต่ำสุด</div>
-										<div class="col-md-2">ราคาสูงสุด</div>
-										<div class="col-md-2"></div>
-									</div>
-									<div class="row d-flex">
-										<div class="col-md-3">
-											${track.pawnerPostId.pawnerId.pawnerEmail}</div>
-										<div class="col-md-2">${track.estimatePriceMin}</div>
-										<div class="col-md-2">${track.estimatePriceMax}</div>
+										<div class="col-md-5">
+											<p>เจ้าของโพส คุณ
+												${track.pawnerPostId.pawnerId.pawnerFirstname}
+												${track.pawnerPostId.pawnerId.pawnerLastname} ณ จังหวัด
+												${track.pawnerPostId.pawnerId.pawnerProvince}</p>
+										</div>
+										<div class="col-md-4 ml-auto">
+											<p>
+												เสนอราคาที่ <span style="color: #ff3300; font-weight: bold;">${track.estimatePriceMin}-${track.estimatePriceMax}
+													บาท</span>
+											</p>
+										</div>
 										<div class="col-md-2">
+											<p>
+												<span style="color: #ff3300; font-weight: bold;">ถูกปฏิเสธ</span>
+											</p>
+										</div>
+										<div class="col-md-1">
 											<form action="pawnshop-estimate-approve.html" method="post">
 												<input type="hidden" name="estimateId"
 													value="${track.estimateId}"> <input type="hidden"
@@ -213,13 +227,39 @@ li {
 													value="${track.pawnerPostId.pawnerPostId}"> <input
 													type="hidden" name="status" value="approvedenei">
 												<button class="btn-custom btn-custom-defalt small"
-													type="submit">รับรู้</button>
+													type="submit"
+													style="position: absolute; top: 16px; left: -21px;">ฉันรู้แล้ว</button>
 											</form>
 										</div>
 									</div>
 								</div>
 							</c:if>
 							<!-- approve -->
+							<!---------- process  ---------->
+							<c:if test="${track.estimateStatus == 'process'}">
+								<line-x></line-x>
+								<div class="history-show-estimate">
+									<div class="row d-flex">
+										<div class="col-md-5">
+											<p>เจ้าของโพส คุณ
+												${track.pawnerPostId.pawnerId.pawnerFirstname}
+												${track.pawnerPostId.pawnerId.pawnerLastname} ณ จังหวัด
+												${track.pawnerPostId.pawnerId.pawnerProvince}</p>
+										</div>
+										<div class="col-md-4 ml-auto">
+											<p>
+												เสนอราคาที่ <span style="color: #ff3300; font-weight: bold;">${track.estimatePriceMin}-${track.estimatePriceMax}
+													บาท</span>
+											</p>
+										</div>
+										<div class="col-md-3">
+											<p>
+												สถานะ: <span style="color: #ff3300; font-weight: bold;">รอการตอบรับ</span>
+											</p>
+										</div>
+									</div>
+								</div>
+							</c:if>
 						</div>
 					</div>
 				</c:if>
