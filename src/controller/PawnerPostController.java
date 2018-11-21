@@ -63,17 +63,6 @@ public class PawnerPostController {
 		return mv;
 	}
 	
-	@RequestMapping("/pawner-post-form-watch")
-	public ModelAndView watch(HttpServletRequest request) {
-		ModelAndView mv = new ModelAndView("pawnerPostFormWatch.jsp");
-		long userId = (long) request.getSession().getAttribute("id");
-		Pawner pm = pmService.findPawnerById(userId);
-		PawnerPost pawnerPost = new PawnerPost();
-		pawnerPost.setPawner(pm);
-		mv.addObject("pawnerPost", pawnerPost);
-		return mv;
-	}
-	
 	@RequestMapping("/savePost")
 	public String savePost(@ModelAttribute("pawnerPost") FileUpload fileUpload, BindingResult result,
 			HttpServletRequest request)throws IllegalStateException, IOException {
