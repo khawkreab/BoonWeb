@@ -98,7 +98,7 @@ public class EstimateController {
 
 		} catch (Exception e) {
 		}
-		return "redirect:pawnshop-index.html";
+		return "redirect:index.html#pledge";
 	}
 
 	@RequestMapping("/approveEsimate")

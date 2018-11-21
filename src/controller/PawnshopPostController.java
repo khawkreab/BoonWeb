@@ -125,7 +125,7 @@ public class PawnshopPostController {
 		}
 		pawnshopPostService.updatePicture(post.getPawnshopPostId(), fileNames.get(0));
 		System.out.println("update picture => " + fileNames.get(0));
-		return "redirect:index.html#pledge.html";
+		return "redirect:index.html#pledge";
 	}
 
 	@RequestMapping("/pawnshop-list-post")
