@@ -4,148 +4,204 @@
 // task : new design
 // edit by : khawkreab
  -->
-
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!-- nabar -->
 <!-- ----------------------------login---------------------------------------- -->
 <%
 	if (session.getAttribute("isLogin") == "yes") {
 %>
-
 <%
 	if (session.getAttribute("userType") == "pawner") {
 %>
 <!-- ----------------------------pawner login---------------------------------------- -->
 <div class="profile">
 	<div class="photo">
-		<img
-			src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/764024/profile/profile-512.jpg" />
+		<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/764024/profile/profile-512.jpg" />
 	</div>
 	<div class="content">
 		<div class="text">
 			<!-- ----------------------------user name & email---------------------------------------- -->
-			<span><%=session.getAttribute("username")%></span> <span><%=session.getAttribute("email")%></span>
+			<span><%=session.getAttribute("username")%></span>
+			<span><%=session.getAttribute("email")%></span>
 		</div>
 		<div id="nav-custom-container">
 			<div id="nav-custom-overlay"></div>
 			<nav id="nav-custom-fullscreen">
 				<ul class="flex d-inline-flex flex-wrap menu-icon">
-					<li class="menu-icon"><a href="index.html"><img
-							src="img/ICONBOONYOUNG/house-outline.png" height="50px"
-							width="50px"><i>หน้าหลัก</i></a></li>
+					<li class="menu-icon">
+						<a href="index.html">
+							<img src="img/ICONBOONYOUNG/house-outline.png" height="50px" width="50px">
+							<i>หน้าหลัก</i>
+						</a>
+					</li>
 					<!-- ----------------------------if user has ban---------------------------------------- -->
 					<%
 						if (session.getAttribute("pawnerState").equals("Banned")) {
 					%>
-					<li class="menu-icon"><a class="" id="omn"><img
-							src="img/ICONBOONYOUNG/Post.png" height="50px" width="50px"><i>จำนำของ</i></a></li>
+					<li class="menu-icon">
+						<a class="" id="banned">
+							<img src="img/ICONBOONYOUNG/Post.png" height="50px" width="50px">
+							<i>จำนำของ</i>
+						</a>
+					</li>
 					<%
 						} else {
 					%>
-					<li class="menu-icon"><a class="nav-link"
-						href="pawner-post-form-gold.html"><img
-							src="img/ICONBOONYOUNG/Post.png" height="50px" width="50px"><i>จำนำของ</i></a></li>
+					<li class="menu-icon">
+						<a class="nav-link" href="pawner-post-form-gold.html">
+							<img src="img/ICONBOONYOUNG/Post.png" height="50px" width="50px">
+							<i>จำนำของ</i>
+						</a>
+					</li>
 					<%
 						}
 					%>
-					<li class="menu-icon"><a class="nav-link" href="pawner-off-pledge.html"><img
-							src="img/ICONBOONYOUNG/Menu.png" height="50px" width="50px"><i>รายการของหลุดจำนำ</i></a></li>
-					<li class="menu-icon"><a class="nav-link" href="pawner-cart.html"><img
-							src="img/ICONBOONYOUNG/shopping-bag.png" height="50px"
-							width="50px"><i>ตะกร้า</i> <i id="cartNumberlink" class="fas"></i> </a></li>
-					<li class="menu-icon"><a class="nav-link"
-						href="pawner-track-pledge.html"><img
-							src="img/ICONBOONYOUNG/Follow.png" height="50px" width="50px"><i>ติดตามการจำนำ</i></a></li>
-					<li class="menu-icon"><a href="pawner-post-history.html"
-						class="nav-link "><img
-							src="img/ICONBOONYOUNG/history.png" height="50px"
-							width="50px"><i>ประวัติการจำนำ</i></a></li>
-					<li class="menu-icon"><a href="pawner-order.html#loaded"
-						class="nav-link "><img src="img/ICONBOONYOUNG/history.png"
-							height="50px" width="50px"><i>ประวัติการสังซื้อ</i></a></li>
-					<li class="menu-icon"><a href="#" class="nav-link "><img
-							src="img/ICONBOONYOUNG/Setting.png" height="50px" width="50px"><i>แก้ไขบัญชี</i></a></li>
-					<li class="menu-icon"><a href="logout.html" class="nav-link "><img
-							src="img/ICONBOONYOUNG/log-out.png" height="50px" width="50px"><i>ออกจากระบบ</i></a></li>
-
+					<li class="menu-icon">
+						<a class="nav-link" href="pawner-off-pledge.html">
+							<img src="img/ICONBOONYOUNG/Menu.png" height="50px" width="50px">
+							<i>รายการของหลุดจำนำ</i>
+						</a>
+					</li>
+					<li class="menu-icon">
+						<a class="nav-link" href="pawner-cart.html">
+							<img src="img/ICONBOONYOUNG/shopping-bag.png" height="50px" width="50px">
+							<i>ตะกร้า</i>
+							<i id="cartNumberlink" class="fas"></i>
+						</a>
+					</li>
+					<li class="menu-icon">
+						<a class="nav-link" href="pawner-track-pledge.html">
+							<img src="img/ICONBOONYOUNG/Follow.png" height="50px" width="50px">
+							<i>ติดตามการจำนำ</i>
+						</a>
+					</li>
+					<li class="menu-icon">
+						<a href="pawner-post-history.html" class="nav-link ">
+							<img src="img/ICONBOONYOUNG/history.png" height="50px" width="50px">
+							<i>ประวัติการจำนำ</i>
+						</a>
+					</li>
+					<li class="menu-icon">
+						<a href="pawner-order.html#loaded" class="nav-link ">
+							<img src="img/ICONBOONYOUNG/history.png" height="50px" width="50px">
+							<i>ประวัติการสังซื้อ</i>
+						</a>
+					</li>
+					<li class="menu-icon">
+						<a href="#" class="nav-link ">
+							<img src="img/ICONBOONYOUNG/Setting.png" height="50px" width="50px">
+							<i>แก้ไขบัญชี</i>
+						</a>
+					</li>
+					<li class="menu-icon">
+						<a href="logout.html" class="nav-link ">
+							<img src="img/ICONBOONYOUNG/log-out.png" height="50px" width="50px">
+							<i>ออกจากระบบ</i>
+						</a>
+					</li>
 				</ul>
 			</nav>
-
-			<a id="nav-custom-toggle"> <span></span> <span></span> <span></span>
+			<a id="nav-custom-toggle">
+				<span></span>
+				<span></span>
+				<span></span>
 				<i id="cartNumber" class="fas"></i>
 			</a>
 		</div>
 	</div>
 </div>
-
-
-
 <%
 	}else if (session.getAttribute("userType") == "pawnShop") {
 %>
 <!-- ----------------------------pawshop login---------------------------------------- -->
 <div class="profile">
 	<div class="photo">
-		<img
-			src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/764024/profile/profile-512.jpg" />
+		<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/764024/profile/profile-512.jpg" />
 	</div>
 	<div class="content">
 		<div class="text">
 			<!-- ----------------------------user name & email---------------------------------------- -->
-			<span><%=session.getAttribute("username")%></span> <span><%=session.getAttribute("email")%></span>
+			<span><%=session.getAttribute("username")%></span>
+			<span><%=session.getAttribute("email")%></span>
 		</div>
 		<div id="nav-custom-container">
 			<div id="nav-custom-overlay"></div>
 			<nav id="nav-custom-fullscreen">
 				<ul class="flex d-inline-flex flex-wrap menu-icon">
-					<li class="menu-icon"><a href="index.html"><img
-							src="img/ICONBOONYOUNG/house-outline.png" height="50px"
-							width="50px"><i>หน้าหลัก </i></a></li>
-					<li class="menu-icon"><a class="nav-link" href="index.html#pledge"><img
-							src="img/ICONBOONYOUNG/Menu.png" height="50px" width="50px"><i>รายการของลงจำนำ </i></a></li>
-					<li class="menu-icon"><a href="pawnshop-pledge-sell.html"
-						class="nav-link "><img src="img/ICONBOONYOUNG/Post.png"
-							height="50px" width="50px"><i>ปล่อยของหลุดจำนำ </i></a></li>
-					<li class="menu-icon"><a class="nav-link"
-						href="pawnshop-track-estimate.html"><img
-							src="img/ICONBOONYOUNG/Follow.png" height="50px" width="50px"><i>ติดตามการประเมิน</i></a></li>
-					<li class="menu-icon"><a href="pawnshop-estimate-history.html"
-						class="nav-link "><img
-							src="img/ICONBOONYOUNG/history.png" height="50px"
-							width="50px"><i>ประวัติการประเมิน</i></a></li>
-					<li class="menu-icon"><a href="pawnshop-list-post.html"
-						class="nav-link "><img src="img/ICONBOONYOUNG/history.png"
-							height="50px" width="50px"><i>ประวัติปล่อยของหลุดจำนำ</i></a></li>
-					<li class="menu-icon"><a href="logout.html" class="nav-link "><img
-							src="img/ICONBOONYOUNG/Setting.png" height="50px" width="50px"><i>แก้ไขบัญชี</i></a></li>
-					<li class="menu-icon"><a href="logout.html" class="nav-link "><img
-							src="img/ICONBOONYOUNG/log-out.png" height="50px" width="50px"><i>ออกจากระบบ</i></a></li>
-
+					<li class="menu-icon">
+						<a href="index.html">
+							<img src="img/ICONBOONYOUNG/house-outline.png" height="50px" width="50px">
+							<i>หน้าหลัก </i>
+						</a>
+					</li>
+					<li class="menu-icon">
+						<a class="nav-link" href="index.html#pledge">
+							<img src="img/ICONBOONYOUNG/Menu.png" height="50px" width="50px">
+							<i>รายการของลงจำนำ </i>
+						</a>
+					</li>
+					<li class="menu-icon">
+						<a href="pawnshop-pledge-sell.html" class="nav-link ">
+							<img src="img/ICONBOONYOUNG/Post.png" height="50px" width="50px">
+							<i>ปล่อยของหลุดจำนำ </i>
+						</a>
+					</li>
+					<li class="menu-icon">
+						<a class="nav-link" href="pawnshop-track-estimate.html">
+							<img src="img/ICONBOONYOUNG/Follow.png" height="50px" width="50px">
+							<i>ติดตามการประเมิน</i>
+						</a>
+					</li>
+					<li class="menu-icon">
+						<a href="pawnshop-estimate-history.html" class="nav-link ">
+							<img src="img/ICONBOONYOUNG/history.png" height="50px" width="50px">
+							<i>ประวัติการประเมิน</i>
+						</a>
+					</li>
+					<li class="menu-icon">
+						<a href="pawnshop-list-post.html" class="nav-link ">
+							<img src="img/ICONBOONYOUNG/history.png" height="50px" width="50px">
+							<i>ประวัติปล่อยของหลุดจำนำ</i>
+						</a>
+					</li>
+					<li class="menu-icon">
+						<a href="logout.html" class="nav-link ">
+							<img src="img/ICONBOONYOUNG/Setting.png" height="50px" width="50px">
+							<i>แก้ไขบัญชี</i>
+						</a>
+					</li>
+					<li class="menu-icon">
+						<a href="logout.html" class="nav-link ">
+							<img src="img/ICONBOONYOUNG/log-out.png" height="50px" width="50px">
+							<i>ออกจากระบบ</i>
+						</a>
+					</li>
 				</ul>
 			</nav>
-
-			<a id="nav-custom-toggle"> <span></span> <span></span> <span></span>
+			<a id="nav-custom-toggle">
+				<span></span>
+				<span></span>
+				<span></span>
 				<i id="cartNumber"></i>
 			</a>
 		</div>
 	</div>
 </div>
-
-
 <%
 	}
 	} else {
 %><!-- ------------------------------not login-------------------------------------- -->
-<ul class="flex d-inline-flex"
-	style="position: absolute; top: 10px; right: 10px; list-style: none; z-index: 999">
-	<li><a data-toggle="modal" data-target="#modalLogin"
-		class="nav-link " href="#"><button
-				class="btn-custom btn-custom-defalt">เข้าสู่ระบบ</button></a></li>
-	<li><a href="pawner-register-form.html" class="nav-link ">
+<ul class="flex d-inline-flex" style="position: absolute; top: 10px; right: 10px; list-style: none; z-index: 999">
+	<li>
+		<a data-toggle="modal" data-target="#modalLogin" class="nav-link " href="#">
+			<button class="btn-custom btn-custom-defalt">เข้าสู่ระบบ</button>
+		</a>
+	</li>
+	<li>
+		<a href="pawner-register-form.html" class="nav-link ">
 			<button class="btn-custom btn-custom-blue">สมัครสมาชิก</button>
-	</a></li>
+		</a>
+	</li>
 </ul>
 <%
 	}
@@ -153,21 +209,17 @@
 <!-- ------------------------------ End -------------------------------------- -->
 <script src="js/navbar.js"></script>
 <script src="js/jquery.min.js"></script>
-
 <%
 	if (session.getAttribute("userType") == "pawner") {
 %>
 <script type="text/javascript">
-	window.onload = function checkcart() {
+	var cartNum = sessionStorage.getItem('pawnercartNumber');
 
-		var cartNum = sessionStorage.getItem('pawnercartNumber');
-
-		if (null == cartNum || 0 == cartNum || cartNum == undefined) {
-			$("#cartNumber, #cartNumberlink").css("display", "none");
-		} else {
-			$("#cartNumber, #cartNumberlink").css("display", "block");
-			$("#cartNumber, #cartNumberlink").text(cartNum)
-		}
+	if (null == cartNum || 0 == cartNum || cartNum == undefined) {
+		$("#cartNumberlink").css("display", "none");
+	} else {
+		$("#cartNumber, #cartNumberlink").css("display", "block");
+		$("#cartNumberlink").text(cartNum)
 	}
 </script>
 <%
@@ -182,7 +234,7 @@
 						$(
 								"#nav-custom-toggle, #nav-custom-overlay, #nav-custom-fullscreen, #cartNumber")
 								.toggleClass("open");
-						checkcart()
+						/* checkcart() */
 					});
 
 	$(window).resize(resizeNav);
@@ -191,99 +243,6 @@
 
 	//});
 </script>
-
-<%-- <nav class="navbar navbar-expand-lg navbar-black bg-glay navbar-height">
-         <div class="container">
-             <ul class="navbar-nav ml-auto navbar-hidden">
-                 <!-- ----------------------------pawner login---------------------------------------- -->
-                 <%
-                     if (session.getAttribute("isLogin") == "yes") {
-                         if (session.getAttribute("userType") == "pawner") {
-                 %>
-                 <%
-                     if (session.getAttribute("pawnerState").equals("Banned")) {
-                 %>
-                 <li><a class="nav-link" id="omn">จำนำ</a></li>
-                 <%
-                     } else {
-                 %>
-                 <li><a class="nav-link" href="pawner-pledge.html">จำนำ</a></li>
-                 <%
-                     }
-                 %>
-                 <li><a class="nav-link" href="pawner-off-pledge.html">รายการของหลุดจำนำ</a></li>
-                 <li><a class="nav-link" href="pawner-track-pledge.html">ติดตามการจำนำ</a></li>
-                 <li><a class="nav-link" href="pawner-cart.html"><i
-                         class="fas fa-shopping-cart"></i><span class="cart-num"
-                         id="cartNumber"></span></a></li>
-                 <li class="dropdown show"><a href="#" class="dropdown-toggle"
-                     data-toggle="dropdown" role="button" aria-expanded="false"> <%=session.getAttribute("username")%></a>
- 
-                     <!-- -----------pawner login drop down menu---------------------- -->
-                     <ul class="dropdown-menu" role="menu">
-                         <li><p>บัญชีผู้ใช้งาน</p>
-                             <div class="navbar-account">
-                                 <span class="navbar-account-photo"><i class="fas fa-user"></i></span><span
-                                     class="navbar-account-info"><span
-                                     class="navbar-account-naem"><%=session.getAttribute("username")%></span><span
-                                     class="navbar-account-email"><%=session.getAttribute("email")%></span></span>
-                             </div></li>
-                         <!--  <li><a href="logout.html" class="nav-link ">แก้ไขบัญชี</a></li> -->
-                         <li><a href="pawner-post-history.html" class="nav-link ">ประวัติการจำนำ</a></li>
-                         <li><a href="pawner-order.html" class="nav-link ">ประวัติการสังซื้อ</a></li>
-                         <li><a href="logout.html" class="nav-link ">ออกจากระบบ</a></li>
-                     </ul></li>
-                 <!-- -----------------------------pawnShop login--------------------------------------- -->
-                 <%
-                     } else if (session.getAttribute("userType") == "pawnShop") {
-                 %>
-                 <%
-                     if (session.getAttribute("pawnshopState").equals("Banned")) {
-                 %>
-                 <li><a class="nav-link" id="omn">ปล่อยของหลุดจำนำ</a></li>
-                 <%
-                     } else {
-                 %>
-                 <li><a class="nav-link" href="pawnshop-pledge-sell.html">ปล่อยของหลุดจำนำ</a></li>
-                 <%
-                     }
-                 %>
-                 <li><a class="nav-link" href="pawnshop-index.html">รายการของจำนำ</a></li>
-                 <li><a class="nav-link" href="pawnshop-track-estimate.html">ติดตามการประเมิน</a></li>
-                 <li class="dropdown show"><a href="#" class="dropdown-toggle"
-                     data-toggle="dropdown" role="button" aria-expanded="false"> <%=session.getAttribute("username")%></a>
-                     <!-- -----------pawnShop login drop down menu---------------------- -->
-                     <ul class="dropdown-menu" role="menu">
-                         <li><p>บัญชีผู้ใช้งาน</p>
-                             <div class="navbar-account">
-                                 <span class="navbar-account-photo">photo</span><span
-                                     class="navbar-account-info"><span
-                                     class="navbar-account-naem"><%=session.getAttribute("username")%></span><span
-                                     class="navbar-account-email"><%=session.getAttribute("email")%></span></span>
-                             </div></li>
-                         <!--  <li><a href="logout.html" class="nav-link ">แก้ไขบัญชี</a></li> -->
-                         <li><a href="pawnshop-estimate-history.html"
-                             class="nav-link ">ประวัติการประเมิณของจำนำ</a></li>
-                         <li><a href="pawnshop-list-post.html" class="nav-link ">ประวัติการปล่อยของหลุดจำนำ</a></li>
-                         <li><a href="logout.html" class="nav-link ">ออกจากระบบ</a></li>
-                     </ul></li>
-                 <!-- ------------------------------not login-------------------------------------- -->
-                 <%
-                     }
-                     } else {
-                 %>
-                 <li><a data-toggle="modal" data-target="#modalLogin"
-                     class="nav-link js-scroll-trigger" href="#">ลงชื่อเข้าใช้</a></li>
-                 <li><a href="pawner-register-form.html"
-                     class="nav-link js-scroll-trigger">สมัครสมาชิก</a></li>
-                 <%
-                     }
-                 %>
- 
-             </ul>
-         </div>
-     </nav>
-  --%>
 <!------------------------------------------------ pop-up login-------------------------------------------------->
 <div class="modal fade" id="modalLogin" role="dialog">
 	<div class="modal-dialog">
@@ -292,25 +251,24 @@
 				<div class="login-left">
 					<div class="login">ยินดีตอนรับ</div>
 					<div class="login-eula">
-						เข้าสู่ระบบจำนำทางออนไลน์ <br> จำนำง่าย จ่ายคล่อง ต้องบุญยง
+						เข้าสู่ระบบจำนำทางออนไลน์
+						<br>
+						จำนำง่าย จ่ายคล่อง ต้องบุญยง
 					</div>
 				</div>
 				<div class="login-right">
-
 					<div class="form">
 						<form method="POST" action="loginProcess.html">
 							<!-- email -->
-							<label for="email">อีเมลของคุณ</label> <input type="text"
-								name="email" required="required" id="email">
+							<label for="email">อีเมลของคุณ</label>
+							<input type="text" name="email" required="required" id="email">
 							<!-- password -->
-							<label for="password">รหัสผ่าน</label> <input type="password"
-								id="password" name="password" required="required">
+							<label for="password">รหัสผ่าน</label>
+							<input type="password" id="password" name="password" required="required">
 							<!-- login button -->
 							<div class="">
-								<button type="submit" class="btn-custom btn-custom-defalt">
-									เข้าสู้ระบบ</button>
-								<button type="button" data-dismiss="modal"
-									class="btn-custom btn-custom-blue" style="font-size: 15px;">ยกเลิก</button>
+								<button type="submit" class="btn-custom btn-custom-defalt">เข้าสู้ระบบ</button>
+								<button type="button" data-dismiss="modal" class="btn-custom btn-custom-blue" style="font-size: 15px;">ยกเลิก</button>
 							</div>
 						</form>
 					</div>
@@ -319,55 +277,53 @@
 		</div>
 	</div>
 </div>
-
-
 <!-- ----------------- popup ban -------------------------------  -->
 <!-- The Modal -->
-<div id="jj" class="modal">
-
+<div id="bannedmodal" class="modal" style="z-index: 9999">
 	<!-- Modal content -->
-	<div class="modal-content" style="padding: 20px 0 0 50px;">
-		<span class="close"
-			style="position: absolute; right: 0; padding-right: 30px;">&times;</span>
-		<p style="color: #ff0101; text-align: center;">บัญชีของท่านถูกระงับชั่วคราว!!!
-			เนื่องจากการกระทำผิดกฏของทางเว็บไซต์
-			ท่านสามาถใช้บัญชีตามปกติได้หลังจากการตรวจสอบเสร็จสิ้น</p>
+	<div class="d-flex justify-content-center">
+		<div style="display: inline-flex;position: relative; align-items: center; background-color: #fff; width: 50vw; height: 15vh; padding: 15px; border-left: 5px solid #ffc007">
+			<div>
+				<i class="fas fa-exclamation-circle text-warring" style="font-size: 3rem; padding-right: 15px;"></i>
+			</div>
+			<div>
+				<span class="text-warring" style="font-size: 1.5rem;"> บัญชีของท่านถูกระงับชั่วคราว!!! </span>
+				<br>
+				<p class="">เนื่องจากการกระทำผิดกฏของทางเว็บไซต์ ท่านสามาถใช้บัญชีตามปกติได้หลังจากการตรวจสอบเสร็จสิ้น</p>
+			</div>
+			<span class="close" style="position: absolute; right: 5px; top: 0px; cursor: pointer;">&times;</span>
+		</div>
 	</div>
 
 </div>
-
 <script>
 	// Get the modal
-	var modal = document.getElementById('jj');
+	var bannedmodal = $('#bannedmodal');
 
 	// Get the button that opens the modal
-	var btn = document.getElementById("omn");
+	var banned = $("#banned");
 
 	// Get the <span> element that closes the modal
-	var span = document.getElementsByClassName("close")[0];
+	var close = $(".close");
 
 	// When the user clicks the button, open the modal 
-	btn.onclick = function() {
-		modal.style.display = "block";
-	}
+	banned.click(function() {
+		bannedmodal.css("display", "block");
+	});
 
 	// When the user clicks on <span> (x), close the modal
-	span.onclick = function() {
-		modal.style.display = "none";
-	}
+	bannedmodal.click(function() {
+		bannedmodal.css("display", "none");
+	});
 
 	// When the user clicks anywhere outside of the modal, close it
-	window.onclick = function(event) {
+	/* window.click(function(event) {
 		if (event.target == modal) {
-			modal.style.display = "none";
+			bannedmodal.css("display" , "none");
 		}
-	}
+	}); */
 </script>
-
 <!-- -------------------------------------------------------------------------------------------------- -->
 <!-- Bootstrap core JavaScript -->
 <script src="vendor/jquery/jquery.min.js"></script>
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-
-
