@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-	pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page import="java.util.Date"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
@@ -9,11 +8,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>order</title>
-
-
 <!-- import all css -->
 <jsp:include page="importCSS.jsp" />
-
 <style>
 table {
 	font-family: arial, sans-serif;
@@ -69,22 +65,34 @@ tr:hover {
 </style>
 <link rel="stylesheet" href="css/loadingPage.css">
 </head>
-<body>
-
+<body style="overflow: hidden;">
 	<jsp:include page="navbar.jsp" />
+	<!-- loading page -->
 	<div class="loadpage" id="loadpage">
-		<div class="wrap">
-			<div class="loading">
-				<div class="bounceball"></div>
-				<div class="text">NOW LOADING</div>
+		<div class='loading'>
+			<span>
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</span>
+			<div class='loading-base'>
+				<span></span>
+				<div class='loading-face'></div>
 			</div>
 		</div>
+		<div class='loading-longfazers'>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+		<i class="loading-text">Loading . . .</i>
 	</div>
-
 	<!--banner-->
 	<div class="banner-top">
 		<div>
-			<h1>ประวัตการสั่งซื้อ</h1>
+			<h1>ประวัติการสั่งซื้อ</h1>
 			<em></em>
 		</div>
 	</div>
@@ -110,16 +118,16 @@ tr:hover {
 						<tbody>
 							<tr>
 								<td class="tda" id="num"><%=i%></td>
-								<td class="tda"><img class="img-responsive"
-									style="width: 100px; height: 50px;"
-									src="img/uploadImge/${order.pawnshopPostId.pawnshopPostPicture }" /></td>
+								<td class="tda">
+									<img class="img-responsive" style="width: 100px; height: 50px;" src="img/uploadImge/${order.pawnshopPostId.pawnshopPostPicture }" />
+								</td>
 								<td class="tda">${order.pawnshopPostId.pawnshopPostName }</td>
 								<td class="tda">${order.pawnshopPostId.pawnshopPostItemType }</td>
 								<td class="tda">${order.pawnshopPostId.pawnshopId.pawnshopName }</td>
 								<td class="tda">${order.pawnshopPostId.pawnshopPostPrice }</td>
-								<td><a href="#" id="${pawnshopPost.pawnshopPostId}"
-									onClick="select(this); return false;"
-									data-cart='{"pawnshopPostId":"${order.pawnshopPostId.pawnshopId.pawnshopName}",
+								<td>
+									<a href="#" id="${pawnshopPost.pawnshopPostId}" onClick="select(this); return false;"
+										data-cart='{"pawnshopPostId":"${order.pawnshopPostId.pawnshopId.pawnshopName}",
 								"orderDateIn":"${ order.orderItemDateIn }",
 								"pawnerFirstname":"${order.pawnerId.pawnerFirstname}","pawnerLastname":"${order.pawnerId.pawnerLastname}",
 								"pawnshopPostName":"${order.pawnshopPostId.pawnshopPostName }","pawnshopPostDate":"${order.pawnshopPostId.pawnshopPostDate}",
@@ -143,7 +151,8 @@ tr:hover {
 								"pawnshopTel":"${order.pawnshopPostId.pawnshopId.pawnshopTel}"
 								}'>
 										<i class="far fa-file-alt"></i>
-								</a></td>
+									</a>
+								</td>
 							</tr>
 						</tbody>
 						<%
@@ -155,8 +164,10 @@ tr:hover {
 		</div>
 	</section>
 	<script>
-		window.onload = function() {
+		/* loading page */
+		window.onload = function loading() {
 			if (window.location.hash) {
+				document.body.style.overflowY = "auto";
 				document.getElementById("loadpage").style.display = "none";
 			}
 			setTimeout(function() {
@@ -167,6 +178,7 @@ tr:hover {
 			}, 1000);
 
 		}
+		/* print data */
 		function select(e) {
 
 			var cart = {}
@@ -211,40 +223,52 @@ tr:hover {
 			$("#pawnshopParish").text(cart.pawnshopParish)
 			$("#pawnshopTel").text(cart.pawnshopTel)
 
-			var originalContents = document.documentElement.innerHTML;
+			var w = window.open("", "", "width=1000,height=700");
+			var toNewWindow = $("#printable").html();
+			 $(w.document.body).html(toNewWindow);
+			    w.print();
+
+			/* var originalContents = document.documentElement.innerHTML;
 
 			document.documentElement.innerHTML = document
 					.getElementById('printable').innerHTML;
 			window.print();
-			document.body.innerHTML = originalContents;
+			document.documentElement.innerHTML = originalContents; */
 		}
 	</script>
-
 	<div id="printable">
 		<!-- import all css here -->
-		
 		<div class="popup" data-popup="popup">
 			<div>
 				<p style="font-size: 32px; border-bottom: 1px solid;">ใบชำระของหลุดจำนำ</p>
 				<div style="text-align: right;">
 					<h5>ที่อยู๋โรงรับจำนำ</h5>
-					<i id="pawnShopname"></i><br> <i id="pawnshopParish"></i> <i
-						id="pawnshopProvince"></i> <i id="pawnshopPostcodes"> </i><br>
-					โทร. <i id="pawnshopTel"></i>
+					<i id="pawnShopname"></i>
+					<br>
+					<i id="pawnshopParish"></i>
+					<i id="pawnshopProvince"></i>
+					<i id="pawnshopPostcodes"> </i>
+					<br>
+					โทร.
+					<i id="pawnshopTel"></i>
 				</div>
 				<div>
 					<table style="width: 100%; margin: 30px 0;">
 						<tr>
-							<td>ผู้ซื้อ <i id="pawnerName"></i></td>
+							<td>
+								ผู้ซื้อ
+								<i id="pawnerName"></i>
+							</td>
 						</tr>
 						<tr>
-							<td>สั่งซื่อวันที่<i id="orderDateIn"></i></td>
+							<td>
+								สั่งซื่อวันที่
+								<i id="orderDateIn"></i>
+							</td>
 						</tr>
 					</table>
 				</div>
-				<table
-					style="width: 100%; text-align: center; border-spacing: 0px; border-color: #f80000; border-width: 0; border-left: 0; border-right: 0; border-bottom: 0; border-top: 0;"
-					border="1">
+				<table style="width: 100%; text-align: center; border-spacing: 0px; border-color: #f80000; border-width: 0; border-left: 0; border-right: 0; border-bottom: 0; border-top: 0;" border="1">
 					<tr>
 						<th>รายการสินค้า</th>
 						<th>รายละเอียด</th>
@@ -255,19 +279,32 @@ tr:hover {
 						<td class="item-name">
 							<p id="pawnshopPostName"></p>
 						</td>
-						<td class="description"><i id="panwePostRemote"></i> <i
-							id="pawnshopPostBattery"></i> <i id="pawnshopPostBracelet"></i> <i
-							id="pawnshopPostCategory"></i> <i id="pawnshopPostBrand"></i> <i
-							id="pawnshopPostCameraLen"></i> <i id="pawnshopPostCapacity"></i>
-							<i id="pawnshopPostCase"></i> <i id="pawnshopPostCategory"></i> <i
-							id="pawnshopPostDescription"></i> <i id="pawnshopPostDevice"></i>
-							<i id="pawnshopPostDiamond"></i> <i id="pawnshopPostHarddisk"></i>
-							<i id="pawnshopPostModel"></i> <i id="pawnshopPostPackage"></i> <i
-							id="pawnshopPostProduction"></i> <i id="pawnshopPostPure"></i> <i
-							id="pawnshopPostSerial"></i> <i id="pawnshopPostRam"></i> <i
-							id="pawnshopPostSize"></i> <i id="pawnshopPostStatus"></i> <i
-							id="pawnshopPostTypeCamera"></i> <i id="pawnshopPostWarranty"></i>
-							<i id="pawnshopPostWeigh"></i></td>
+						<td class="description">
+							<i id="panwePostRemote"></i>
+							<i id="pawnshopPostBattery"></i>
+							<i id="pawnshopPostBracelet"></i>
+							<i id="pawnshopPostCategory"></i>
+							<i id="pawnshopPostBrand"></i>
+							<i id="pawnshopPostCameraLen"></i>
+							<i id="pawnshopPostCapacity"></i>
+							<i id="pawnshopPostCase"></i>
+							<i id="pawnshopPostCategory"></i>
+							<i id="pawnshopPostDescription"></i>
+							<i id="pawnshopPostDevice"></i>
+							<i id="pawnshopPostDiamond"></i>
+							<i id="pawnshopPostHarddisk"></i>
+							<i id="pawnshopPostModel"></i>
+							<i id="pawnshopPostPackage"></i>
+							<i id="pawnshopPostProduction"></i>
+							<i id="pawnshopPostPure"></i>
+							<i id="pawnshopPostSerial"></i>
+							<i id="pawnshopPostRam"></i>
+							<i id="pawnshopPostSize"></i>
+							<i id="pawnshopPostStatus"></i>
+							<i id="pawnshopPostTypeCamera"></i>
+							<i id="pawnshopPostWarranty"></i>
+							<i id="pawnshopPostWeigh"></i>
+						</td>
 						<td>
 							<p>1</p>
 						</td>
@@ -277,13 +314,11 @@ tr:hover {
 					</tr>
 				</table>
 				<div style="text-align: center; margin-top: 50px;">
-
-					<img src="img/logos/Artboard.png" style="height: 25px;" />
+					<img src="img/logos/logo.png" style="height: 25px;" />
 					<p>b2pawn.com</p>
 				</div>
 			</div>
 		</div>
-
 	</div>
 </body>
 </html>
