@@ -92,6 +92,7 @@ public class EstimateController {
 
 		try {
 			postService.updateStatus(postId , "process");
+			
 			estimate.setEstimateDate(date);
 			estimate.setEstimateStatus("process");
 			estimateService.insert(estimate);
@@ -154,7 +155,7 @@ public class EstimateController {
 		ModelAndView mv = new ModelAndView("pawnerPostList.jsp");
 		List<Estimate> estimatesList;
 		try {
-			long userId = (long) request.getSession().getAttribute("id");
+			/*long userId = (long) request.getSession().getAttribute("id");*/
 			long pawnerPostId = Long.parseLong(request.getParameter("pawnerPostId"));
 
 			estimatesList = estimateService.listEstimateByPawnerPost(pawnerPostId);
