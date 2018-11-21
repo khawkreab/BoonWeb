@@ -65,7 +65,7 @@
 					<div class="icon-header" style="width: 80%; margin: auto;">
 						<form:form method="post" action="savePawner.html"
 							commandName="pawner">
-							<img src="img/logos/Artboard.png"
+							<img src="img/logos/logo.png"
 								style="height: 50px; margin-bottom: 10px; margin-top: 20px;" />
 							<h1 style="font-size: 30px; letter-spacing: -1px; color: #555;">ยินดีตอนรับ</h1>
 							<ul style="padding-left: 7px;list-style-type: none;">
