@@ -22,6 +22,12 @@
 <!-- import all css -->
 <jsp:include page="importCSS.jsp" />
 <link rel="stylesheet" href="css/timeline.css">
+<!-- style ตรงนี้กูเอามาใสไวนี้ก่อนนะจะย้ายกะได้แต่กูไม่รู้มันจะไปชดตัวไหนไหมเลยไวนี้ก่อน -->
+<style>
+li {
+	list-style: none;
+}
+</style>
 </head>
 <body>
 	<!-- Navigation -->
@@ -158,32 +164,28 @@
 								<line-x></line-x>
 								<div class="history-show-estimate">
 									<div class="row d-flex">
-										<div class="col-md-2">เจ้าของโพส</div>
+										<div class="col-md-3">เจ้าของโพส</div>
 										<div class="col-md-2">ราคาต่ำสุด</div>
 										<div class="col-md-2">ราคาสูงสุด</div>
 										<div class="col-md-2"></div>
 									</div>
-									<ul>
-										<li>
-											<div class="row d-flex">
-												<div class="col-md-4">
-													${track.pawnerPostId.pawnerId.pawnerEmail}</div>
-												<div class="col-md-2">${track.estimatePriceMin}</div>
-												<div class="col-md-2">${track.estimatePriceMax}</div>
-												<div class="col-md-2">
-													<form action="pawnshop-estimate-approve.html" method="post">
-														<input type="hidden" name="estimateId"
-															value="${track.estimateId}"> <input type="hidden"
-															name="pawnerPostId"
-															value="${track.pawnerPostId.pawnerPostId}"> <input
-															type="hidden" name="status" value="complete">
-														<button class="btn-custom btn-custom-defalt small"
-															type="submit">สินค้าจำนำถึงโรงรับจำนำแล้ว</button>
-													</form>
-												</div>
-											</div>
-										</li>
-									</ul>
+									<div class="row d-flex">
+										<div class="col-md-3">
+											${track.pawnerPostId.pawnerId.pawnerEmail}</div>
+										<div class="col-md-2">${track.estimatePriceMin}</div>
+										<div class="col-md-2">${track.estimatePriceMax}</div>
+										<div class="col-md-2">
+											<form action="pawnshop-estimate-approve.html" method="post">
+												<input type="hidden" name="estimateId"
+													value="${track.estimateId}"> <input type="hidden"
+													name="pawnerPostId"
+													value="${track.pawnerPostId.pawnerPostId}"> <input
+													type="hidden" name="status" value="complete">
+												<button class="btn-custom btn-custom-defalt small"
+													type="submit">สินค้าจำนำถึงโรงรับจำนำแล้ว</button>
+											</form>
+										</div>
+									</div>
 								</div>
 							</c:if>
 							<!-- approve -->
@@ -193,32 +195,28 @@
 								<line-x></line-x>
 								<div class="history-show-estimate">
 									<div class="row d-flex">
-										<div class="col-md-4">เจ้าของโพส</div>
+										<div class="col-md-3">เจ้าของโพส</div>
 										<div class="col-md-2">ราคาต่ำสุด</div>
 										<div class="col-md-2">ราคาสูงสุด</div>
 										<div class="col-md-2"></div>
 									</div>
-									<ul>
-										<li>
-											<div class="row d-flex">
-												<div class="col-md-4">
-													${track.pawnerPostId.pawnerId.pawnerEmail}</div>
-												<div class="col-md-2">${track.estimatePriceMin}</div>
-												<div class="col-md-2">${track.estimatePriceMax}</div>
-												<div class="col-md-2">
-													<form action="pawnshop-estimate-approve.html" method="post">
-														<input type="hidden" name="estimateId"
-															value="${track.estimateId}"> <input type="hidden"
-															name="pawnerPostId"
-															value="${track.pawnerPostId.pawnerPostId}"> <input
-															type="hidden" name="status" value="approvedenei">
-														<button class="btn-custom btn-custom-defalt small"
-															type="submit">รับรู้</button>
-													</form>
-												</div>
-											</div>
-										</li>
-									</ul>
+									<div class="row d-flex">
+										<div class="col-md-3">
+											${track.pawnerPostId.pawnerId.pawnerEmail}</div>
+										<div class="col-md-2">${track.estimatePriceMin}</div>
+										<div class="col-md-2">${track.estimatePriceMax}</div>
+										<div class="col-md-2">
+											<form action="pawnshop-estimate-approve.html" method="post">
+												<input type="hidden" name="estimateId"
+													value="${track.estimateId}"> <input type="hidden"
+													name="pawnerPostId"
+													value="${track.pawnerPostId.pawnerPostId}"> <input
+													type="hidden" name="status" value="approvedenei">
+												<button class="btn-custom btn-custom-defalt small"
+													type="submit">รับรู้</button>
+											</form>
+										</div>
+									</div>
 								</div>
 							</c:if>
 							<!-- approve -->
