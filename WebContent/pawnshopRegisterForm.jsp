@@ -17,6 +17,8 @@
 
 <!-- import all css -->
 <jsp:include page="importCSS.jsp" />
+
+<link rel="stylesheet" href="css/new-design.css">
 </head>
 
 <body>
@@ -36,7 +38,7 @@
 								<div style="text-align: center; width: 45%;">
 									<h1 style="font-size: 24px; letter-spacing: -1px; color: #555;">ขยายขอบเขตธุรกิจของคุณกับการจำนำออนไลน์</h1>
 								</div>
-								<ul style="padding-left: 7px;">
+								<ul style="padding-left: 7px;list-style-type: none;">
 									<li><form:input type="text" class="input-regis"
 											placeholder="ชื่อโรงรับจำนำ" path="pawnshopName"
 											required="required" pattern="[a-zA-Zก-์]{1,30}"

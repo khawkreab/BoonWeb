@@ -15,6 +15,7 @@
 <title>Registration</title>
 <!-- import all css -->
 <jsp:include page="importCSS.jsp" />
+<link rel="stylesheet" href="css/new-design.css">
 <script>
 	function checkPass() {
 		//Store the password field objects into variables ...
@@ -67,7 +68,7 @@
 							<img src="img/logos/Artboard.png"
 								style="height: 50px; margin-bottom: 10px; margin-top: 20px;" />
 							<h1 style="font-size: 30px; letter-spacing: -1px; color: #555;">ยินดีตอนรับ</h1>
-							<ul style="padding-left: 7px;">
+							<ul style="padding-left: 7px;list-style-type: none;">
 								<li><form:input path="pawnerFirstname" type="text"
 										class="account-regis" placeholder="ชื่อ" required="required"
 										pattern="[a-zA-Zก-์]{1,30}"
