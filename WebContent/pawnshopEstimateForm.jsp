@@ -53,7 +53,7 @@
 						<div class="carousel-inner card-carousel-inner">
 							<c:forEach var="pic" items="${pictures}">
 								<div class="carousel-item <%=active2%>">
-									<img src="img/uploadImge/${pic.picture}" >
+									<img src="img/uploadImge/${pic.picture}">
 								</div>
 								<%
 									dataslideto2++;
@@ -92,16 +92,16 @@
 
 						<ul>
 							<li><i class="fas fa-tags item-info-price"></i></li>
-							<li><form:input class="#"
-									pattern="[^'a-zA-Zก-์@!#$?:^%&*+/=()\\_`{|}~-]{1,10}"
-									required="required" placeholder="Min price" title="กรุณาใสราคา"
-									id="minNumber" onkeyup="check()" path="estimatePriceMin" /> <!--<form:input path="estimatePriceMin" type="hidden" id="oo"/>-->
+							<li><form:input class="#" maxlength="6" required="required"
+									placeholder="Min price" title="กรุณาใสราคา" id="minNumber"
+									onkeyup="check()" path="estimatePriceMin" /> <i
+								style="color: #ff0000; display: none" id="desError">กรุณาใสราคาจากน้อยไปมาก</i>
+								<!--<form:input path="estimatePriceMin" type="hidden" id="oo"/>-->
 							</li>
 							<li>-</li>
 							<li><form:input path="estimatePriceMax" class="#"
-									pattern="[^'a-zA-Zก-์@!#$?:^%&*+/=()\\_`{|}~-]{1,10}"
-									required="required" placeholder="Max price" title="กรุณาใสราคา"
-									id="maxNumber" onkeyup="check()" /> <!--<form:input path="estimatePriceMax" type="hidden" id="xx"/> -->
+									maxlength="6" required="required" placeholder="Max price"
+									title="กรุณาใสราคา" id="maxNumber" onkeyup="check()" /> <!--<form:input path="estimatePriceMax" type="hidden" id="xx"/> -->
 							</li>
 							<li>
 								<button class="btn-custom btn-custom-defalt" type="submit"
@@ -262,11 +262,26 @@
 			checkdd();
 		}
 		function checkdd() {
-			var min = parseInt(a);
-			var max = parseInt(b);
+			console.log(a);
+			console.log(b);
+
+			var resA = a.split(",");
+			var aa = resA[0] + resA[1];
+			console.log(aa);
+
+			var resB = b.split(",");
+			var bb = resB[0] + resB[1];
+			console.log(bb);
+
+			var min = parseInt(aa);
+			var max = parseInt(bb);
+			console.log(min);
+			console.log(max);
 			if (min < max) {
+				document.getElementById("desError").style.display = "none";
 				document.getElementById("go").disabled = false;
 			} else {
+				document.getElementById("desError").style.display = "inline";
 				document.getElementById("go").disabled = true;
 			}
 		}
