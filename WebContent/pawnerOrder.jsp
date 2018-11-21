@@ -112,7 +112,7 @@ tr:hover {
 								<td class="tda" id="num"><%=i%></td>
 								<td class="tda"><img class="img-responsive"
 									style="width: 100px; height: 50px;"
-									src="images/imageUpload/${order.pawnshopPostId.pawnshopPostPicture }" /></td>
+									src="img/uploadImge/${order.pawnshopPostId.pawnshopPostPicture }" /></td>
 								<td class="tda">${order.pawnshopPostId.pawnshopPostName }</td>
 								<td class="tda">${order.pawnshopPostId.pawnshopPostItemType }</td>
 								<td class="tda">${order.pawnshopPostId.pawnshopId.pawnshopName }</td>

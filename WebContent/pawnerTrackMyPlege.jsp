@@ -46,7 +46,7 @@
 					</c:if>
 					<c:if test="${postprocess.pawnerPostStatus == 'process'}">
 						<div class="cd-timeline-img cd-process">
-							<i class="fas fa-clipboard-list"></i>
+							<i class="fas fa-handshake"></i>
 						</div>
 					</c:if>
 					<!--------- end icon --------->

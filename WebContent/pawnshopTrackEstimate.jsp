@@ -58,7 +58,7 @@ li {
 						</c:if>
 						<c:if test="${track.estimateStatus == 'approve'}">
 							<div class="cd-timeline-img cd-process">
-								<i class="fas fa-clipboard-list"></i>
+								<i class="fas fa-walking"></i>
 							</div>
 						</c:if>
 						<!--------- end icon --------->
