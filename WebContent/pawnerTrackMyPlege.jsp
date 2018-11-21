@@ -198,29 +198,29 @@
 											</div>
 											<div class="col-md-2">
 												<p>
-													<a id="${post.pawnerPostId.pawnerPostId}" onClick="select(this); return false;"
-														data-cart='{"pawnerFirstname":"${post.pawnerPostId.pawnerId.pawnerFirstname}",
-										"pawnerLastname":"${post.pawnerPostId.pawnerId.pawnerLastname}",
-										"pawnerPostName":"${post.pawnerPostId.pawnerPostName }","pawnerPostDate":"${post.pawnerPostId.pawnerPostDate}",
-										"pawnerPostItemType":"${post.pawnerPostId.pawnerPostItemType}","pawnerPostBrand":"${post.pawnerPostId.pawnerPostBrand}",
-										"panwePostRemote":"${post.pawnerPostId.panwePostRemote}","pawnerPostBattery":"${post.pawnerPostId.pawnerPostBattery}",
-										"pawnerPostBracelet":"${post.pawnerPostId.pawnerPostBracelet}","pawnerPostCameraLen":"${post.pawnerPostId.pawnerPostCameraLen}",
-										"pawnerPostCapacity":"${post.pawnerPostId.pawnerPostCapacity}","pawnerPostCase":"${post.pawnerPostId.pawnerPostCase}",
-										"pawnerPostDescription":"${post.pawnerPostId.pawnerPostDescription}","pawnerPostDevice":"${post.pawnerPostId.pawnerPostDevice}",
-										"pawnerPostDiamond":"${post.pawnerPostId.pawnerPostDiamond}","pawnerPostHarddisk":"${post.pawnerPostId.pawnerPostHarddisk}",
-										"pawnerPostModel":"${post.pawnerPostId.pawnerPostModel}","pawnerPostPackage":"${post.pawnerPostId.pawnerPostPackage}",
-										"pawnerPostProduction":"${post.pawnerPostId.pawnerPostProduction}","pawnerPostPurchase":"${post.pawnerPostId.pawnerPostPurchase}",
-										"pawnerPostSerial":"${post.pawnerPostId.pawnerPostSerial}","pawnerPostStatus":"${post.pawnerPostId.pawnerPostStatus}",
-										"pawnerPostTypeCamera":"${post.pawnerPostId.pawnerPostTypeCamera}","pawnerPostWarranty":"${post.pawnerPostId.pawnerPostWarranty}",
-										"pawnerPostWeigh":"${post.pawnerPostId.pawnerPostWeigh}","pawnerPostRam":"${post.pawnerPostId.pawnerPostRam}",
-										"pawnerPostPure":"${post.pawnerPostId.pawnerPostPure}","estimatePriceMin":"${post.estimatePriceMin}",
-										"estimatePriceMax":"${post.estimatePriceMax}","estimateDate":"${post.estimateDate}",
-										"pawnerPostPicture":"${post.pawnerPostId.pawnerPostPicture}",
-										"pawnShopname":"${post.pawnshopId.pawnshopName}",
-										"pawnshopProvince":"${post.pawnshopId.pawnshopProvince}",
-										"pawnshopPostcodes":"${post.pawnshopId.pawnshopPostcodes}",
-										"pawnshopParish":"${post.pawnshopId.pawnshopParish}",
-										"pawnshopTel":"${post.pawnshopId.pawnshopTel}"
+													<a id="${estimate.pawnerPostId.pawnerId}" onClick="select(this); return false;"
+														data-cart='{"pawnerFirstname":"${estimate.pawnerPostId.pawnerId.pawnerFirstname}",
+										"pawnerLastname":"${estimate.pawnerPostId.pawnerId.pawnerLastname}",
+										"pawnerPostName":"${estimate.pawnerPostId.pawnerPostName }","pawnerPostDate":"${estimate.pawnerPostId.pawnerPostDate}",
+										"pawnerPostItemType":"${estimate.pawnerPostId.pawnerPostItemType}","pawnerPostBrand":"${estimate.pawnerPostId.pawnerPostBrand}",
+										"panwePostRemote":"${estimate.pawnerPostId.panwePostRemote}","pawnerPostBattery":"${estimate.pawnerPostId.pawnerPostBattery}",
+										"pawnerPostBracelet":"${estimate.pawnerPostId.pawnerPostBracelet}","pawnerPostCameraLen":"${estimate.pawnerPostId.pawnerPostCameraLen}",
+										"pawnerPostCapacity":"${estimate.pawnerPostId.pawnerPostCapacity}","pawnerPostCase":"${estimate.pawnerPostId.pawnerPostCase}",
+										"pawnerPostDescription":"${estimate.pawnerPostId.pawnerPostDescription}","pawnerPostDevice":"${estimate.pawnerPostId.pawnerPostDevice}",
+										"pawnerPostDiamond":"${estimate.pawnerPostId.pawnerPostDiamond}","pawnerPostHarddisk":"${estimate.pawnerPostId.pawnerPostHarddisk}",
+										"pawnerPostModel":"${estimate.pawnerPostId.pawnerPostModel}","pawnerPostPackage":"${estimate.pawnerPostId.pawnerPostPackage}",
+										"pawnerPostProduction":"${estimate.pawnerPostId.pawnerPostProduction}","pawnerPostPurchase":"${estimate.pawnerPostId.pawnerPostPurchase}",
+										"pawnerPostSerial":"${estimate.pawnerPostId.pawnerPostSerial}","pawnerPostStatus":"${estimate.pawnerPostId.pawnerPostStatus}",
+										"pawnerPostTypeCamera":"${estimate.pawnerPostId.pawnerPostTypeCamera}","pawnerPostWarranty":"${estimate.pawnerPostId.pawnerPostWarranty}",
+										"pawnerPostWeigh":"${estimate.pawnerPostId.pawnerPostWeigh}","pawnerPostRam":"${estimate.pawnerPostId.pawnerPostRam}",
+										"pawnerPostPure":"${estimate.pawnerPostId.pawnerPostPure}","estimatePriceMin":"${estimate.estimatePriceMin}",
+										"estimatePriceMax":"${estimate.estimatePriceMax}","estimateDate":"${estimate.estimateDate}",
+										"pawnerPostPicture":"${estimate.pawnerPostId.pawnerPostPicture}",
+										"pawnShopname":"${estimate.pawnshopId.pawnshopName}",
+										"pawnshopProvince":"${estimate.pawnshopId.pawnshopProvince}",
+										"pawnshopPostcodes":"${estimate.pawnshopId.pawnshopPostcodes}",
+										"pawnshopParish":"${estimate.pawnshopId.pawnshopParish}",
+										"pawnshopTel":"${estimate.pawnshopId.pawnshopTel}"
 										}'
 														class="btn-custom btn-custom-sky small">
 														<i class="fas fa-print" style="margin: auto;"></i>
