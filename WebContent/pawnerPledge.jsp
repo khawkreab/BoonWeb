@@ -1,111 +1,219 @@
 <!-- 
-// page : pawner-pledge
-// version : 1.0
-// task : create
+// page : pawner-post-form
+// version : 5.0
+// task : แก้ ข้อมูลการบันทึก
 // edit by : ter
  -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <html lang="en">
 
 <head>
+<link rel="icon" href="img/logos/Artboard.png">
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>pawner-index</title>
+<title>pawner-post-form</title>
 
 <!-- import all css -->
 <jsp:include page="importCSS.jsp" />
-<style>
-.icon {
-	width: 150px;
-	margin: auto;
-}
-
-.scrollbar-auto {
-	overflow-y: auto;
-	height: 75%;
-}
-
-.card-icon {
-	/* margin: 16px; */
-	text-align: center;
-	width: 201px;
-	height: 201px;
-}
-
-.card-icon:hover {
-	text-align: center;
-	transition: 0.3s;
-	box-shadow: 0 0 2px 2px rgba(20, 23, 28, .1), 0 4px 1px 0
-		rgba(20, 23, 28, .1);
-	border: 1px solid #999999;
-	transform: scale3d(1.006, 1.006, 1);
-}
-</style>
 </head>
 
-<body id="page-top" style="overflow-y: hidden;">
+<body style="background-color: #f4f4f4; overflow: hidden;">
 
+	<div class="page">
+		<div class="pledge-container">
+			<div class="pledge-featured">
+				<div class="pledge-circle pledge-circle-img1"></div>
+				<!--  <img src="#" class="pledge-product" /> -->
+			</div>
+			<div class="pledge-content">
+				<div id="choosetype">
 
-	<!-- Navigation -->
-	<jsp:include page="navbar.jsp" />
+					<h4>
+						<i> เลือกประเภทการจำนำ </i>
+					</h4>
+					<table>
+						<tr>
+							<td>
+								<!-- type => gold --> <a onclick="showsteptype(1)"><img
+									src="img/icon/gold.png" width="150" height="150px"></a>
+							</td>
+							<td>
+								<!-- type => com --> <a id="" onclick="showsteptype(2)"><img
+									src="img/icon/com.png" width="150" height="150px"></a>
+							</td>
+							<td>
+								<!-- type => tv --> <a id="" onclick="showsteptype(3)"><img
+									src="img/icon/tv.png" width="150" height="150px"></a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<!-- type => Smart Phone --> <a id="" onclick="showsteptype(4)"><img
+									src="img/icon/mobile.png" width="150" height="150px"></a>
+							</td>
+							<td>
+								<!-- type => Watch --> <a id="" onclick="showsteptype(5)"><img
+									src="img/icon/watch.png" width="150" height="150px"></a>
+							</td>
+							<td>
+								<!-- type => Camera --> <a id="" onclick="showsteptype(6)"><img
+									src="img/icon/camera.png" width="150" height="150px"></a>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<!-- One "tab" for each step in the form: -->
+				<form:form id="regForm" method="post" action="savePost.html"
+					modelAttribute="pawnerPost" enctype="multipart/form-data">
+					<input type="hidden" name="pawnerPostId" />
+					<input type="hidden" name="pawnerId.pawnerId" />
 
-	<!--banner-->
-	<div class="banner-top">
-		<div>
-			<h1>เลือกประเภคของจำนำ</h1>
-			<em></em>
-		</div>
-	</div>
-	<!--content-->
-	<div class="content">
-		<div class="container">
-			<!--products-->
-			<div class="content-mid">
-				<div class="mid-popular">
-					<div class="scrollbar-auto">
-						<div class="row">
-							<div class="card-icon col-md-2">
-								<a href="pawner-post-form-gold.html"> <img class="icon"
-									src="images/icon/gold.png">
-								</a>
-							</div>
-							<div class="card-icon col-md-2">
-								<a href="pawner-post-form-watch.html"> <img class="icon"
-									src="images/icon/watch.png">
-								</a>
-							</div>
-							<div class="card-icon col-md-2">
-								<a href="pawner-post-form-smartphone.html"> <img
-									class="icon" src="images/icon/mobile.png">
-								</a>
-							</div>
-							<div class="card-icon col-md-2">
-								<a href="pawner-post-form-laptop.html"> <img class="icon"
-									src="images/icon/com.png">
-								</a>
-							</div>
-							<div class="card-icon col-md-2">
-								<a href="pawner-post-form-camera.html"> <img class="icon"
-									src="images/icon/camera.png">
-								</a>
-							</div>
-							<div class="card-icon col-md-2">
-								<a href="pawner-post-form-tv.html"> <img class="icon"
-									src="images/icon/tv.png">
-								</a>
+					<!-- Circles which indicates the steps of the form: -->
+					<div style="text-align: center;" id="countstep">
+						<span class="step"></span> <span class="step"></span> <span
+							class="step"></span>
+					</div>
+					<h4>กรอกข้อมูลการจำนำ</h4>
+					<!-- step 1 -->
+					<div class="tab" id="step1">
+						<p>
+							<label>ชื่อสินค้าที่ต้องการจำนำ</label> <input type="text"
+								name="pawnerPostName" required="required" id="textVal">
+							<br> <i>ใช้เป็นตัวอักษร ภาษาไทย หรือ อังกฤษ เท่านั้น
+								ความยาวไม่เกิน 30 ตัวอักษร และ ต้องไม่ใช้ อักษรพิเศษ</i>
+						</p>
+						<p>
+							<label>ยี่ห้อ</label> <input type="text" name="pawnerPostBrand"
+								required="required" id="brandName" /> <br> <i>ใช้เป็นตัวอักษร
+								ภาษาไทย หรือ อังกฤษ เท่านั้น ความยาวไม่เกิน 30 ตัวอักษร และ
+								ต้องไม่ใช้ อักษรพิเศษ</i>
+						</p>
+						<!-- ------------------------upload image----------------------------  -->
+						<div style="margin-top: 15px; width: 100%; position: relative;">
+							<span style="font-size: 14px;">ลงรูปภาพประกอบการจำนำ</span>
+							<div class="result">
+								<div id="result"></div>
+								<input id="files" type="file" name="files" multiple /> <span
+									class="clear-trash d-flex"> <label for="files">
+										<i class="fas fa-image"></i> เพิ่มรูป
+								</label><i class="ml-auto">ใส่รูปได้สูงสุด 5 รูป</i><i id="clear"
+									class="p-2 fas fa-trash-alt"> ลบรูป</i>
+								</span>
 							</div>
 						</div>
 					</div>
-				</div>
+
+					<!-- step 2 -->
+					<div class="tab" id="step2"></div>
+
+					<!-- step 3 -->
+					<div class="tab" id="step3"></div>
+
+
+					<!-- Previous & Next button -->
+					<div style="overflow: auto;">
+						<div style="position: absolute; bottom: 20px; right: 20px;">
+							<button type="button" class="pledge-form-btn" id="chooseBtn"
+								onclick="choosetype()">เลือกประเภท</button>
+
+							<button type="button" class="pledge-form-btn" id="prevBtn"
+								onclick="nextPrev(-1)">ย้อนกลับ</button>
+
+							<button type="button" class="pledge-form-btn" id="nextBtn"
+								onclick="nextPrev(1)">ต่อไป</button>
+						</div>
+					</div>
+				</form:form>
 			</div>
+			<!-- END: .pledge-content -->
 		</div>
+		<!-- END: .pledge-container -->
 	</div>
+	<!-- END: .modal -->
+
+	<!-- Navigation   -->
+	<jsp:include page="navbar.jsp" />
+
+
+	<script src="js/MultiStepForm.js"></script>
+	<script type="text/javascript">
+		window.onload = function() {
+			//Check File API support
+			if (window.File && window.FileList && window.FileReader) {
+				$('#files')
+						.on(
+								"change",
+								function(event) {
+									var files = event.target.files; //FileList object
+									var output = document
+											.getElementById("result");
+									for (var i = 0; i < files.length; i++) {
+										var file = files[i];
+										//Only pics
+										// if(!file.type.match('image'))
+										if (file.type.match('image.*')) {
+											if (files.length < 6) {
+												if (this.files[0].size < 2097152) {
+													// continue;
+													var picReader = new FileReader();
+													picReader
+															.addEventListener(
+																	"load",
+																	function(
+																			event) {
+																		var picFile = event.target;
+																		var div = document
+																				.createElement("div");
+																		div.innerHTML = "<img class='thumbnail' src='" + picFile.result + "'" +
+	                                "title='preview image'/>";
+																		output
+																				.insertBefore(
+																						div,
+																						null);
+																	});
+													//Read the image
+													$('#clear, #result').show();
+													picReader
+															.readAsDataURL(file);
+												} else {
+													alert("Image Size is too big. Minimum size is 2MB.");
+													$(this).val("");
+												}
+											} else {
+												alert("  คุณสามารถอัพโหลดรูปได้มากสุด 5 รูป    ");
+												$(this).val("");
+											}
+										} else {
+											alert("You can only upload image file.");
+											$(this).val("");
+										}
+									}
+
+								});
+			} else {
+				console.log("Your browser does not support File API");
+			}
+		}
+
+		$('#files').on("click", function() {
+			$('.thumbnail').parent().remove();
+			$('result').hide();
+			$(this).val("");
+		});
+
+		$('#clear').on("click", function() {
+			$('.thumbnail').parent().remove();
+			$('#result').hide();
+			$('#files').val("");
+			$(this).hide();
+		});
+	</script>
 </body>
 
 </html>
