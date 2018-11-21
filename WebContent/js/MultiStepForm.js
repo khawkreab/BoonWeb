@@ -189,9 +189,9 @@ function showsteptype(e) {
 		step2 += "<i>ตัวเลขเท่านั้น 0-9 หรือใช้ จุดทศนิยม เช่น  13.5</i>"
 		step2 += "</p>"
 
-		step2 += "<ul class='form-list'>"
+		step2 += "<ul class='form-list' style='display: inline-flex; list-style-type: none;'>"
 
-		step2 += "<li class='form-list-row form-list-row-inline'>"
+		step2 += "<li class='form-list-row form-list-row-inline' style='margin: auto; margin-right: 100px;'>"
 		step2 += "<div>"
 		step2 += "<lable>Harddisk</lable>"
 		step2 += "<div class='form-list-row-inline'>"
@@ -207,7 +207,7 @@ function showsteptype(e) {
 		step2 += "<div>"
 		step2 += "</li>"
 
-		step2 += "<li class='form-list-row form-list-row-inline'>"
+		step2 += "<li class='form-list-row form-list-row-inline' style='margin: auto; margin-right: 100px;'>"
 		step2 += "<div>"
 		step2 += "<lable>Ram</lable>"
 		step2 += "<div class='form-list-row-inline'>"
@@ -222,15 +222,29 @@ function showsteptype(e) {
 		step2 += "</div>"
 		step2 += "</li>"
 
-		step2 += "<li class='form-list-row form-list-row-inline'>"
+		step2 += "<li class='form-list-row form-list-row-inline' style='margin: auto; margin-right: 100px;'>"
 		step2 += "<div>"
-		step2 += "<lable>ปีที่ซื้อสินค้า</lable>"
+		step2 += "<lable>ขนาดหน้าจอ</lable>"
 		step2 += "<div class='form-list-row-inline'>"
-		step2 += "<input type='date'name='pawnerPostPurchase'>"
+		step2 += "<select name='pawnerPostSize' >"
+		step2 += "<option>10-11 นิ้ว</option>"
+		step2 += "<option>12-13 นิ้ว</option>"
+		step2 += "<option>14 นิ้ว</option>"
+		step2 += "<option>15 นิ้ว</option>"
+		step2 += "<option>17 นิ้ว</option>"
+		step2 += "</select>"
 		step2 += "</div>"
 		step2 += "</div>"
 		step2 += "</li>"
 
+		step2 += "<li class='form-list-row form-list-row-inline' style=' margin-right: 10px;'>"
+		step2 += "<div>"
+		step2 += "<lable>ปีที่ซื้อสินค้า</lable>"
+		step2 += "<input type='date'name='pawnerPostPurchase'>"
+		step2 += "</div>"
+		step2 += "</li>"
+
+		step2 += "</ul>"
 		step2 += "</ul>"
 
 		$('#step2').append(step2);
@@ -517,7 +531,7 @@ function showsteptype(e) {
 		step2 += "<lable>ปีที่ซื้อสินค้า</lable>"
 		step2 += "<input type='date'name='pawnerPostPurchase'>"
 		step2 += "</P>"
-			
+
 		step2 += "<input type='hidden' value='12.00' required='required' id='decimalOne'>"
 		step2 += "<input type='hidden' value='12.00' id='decimalTwo'>"
 		$('#step2').append(step2);

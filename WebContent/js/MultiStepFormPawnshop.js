@@ -197,9 +197,9 @@ function showsteptype(e) {
 		step2 += "<i>ห้ามใช้ อักษรพิเศษ และ ภาษาไทย</i>"
 		step2 += "</p>"
 
-		step2 += "<ul class='form-list' style='display: inline-flex;'>"
+		step2 += "<ul class='form-list' style='display: inline-flex; list-style-type: none;'>"
 
-		step2 += "<li class='form-list-row form-list-row-inline' style='margin: auto; margin-right: 10px;'>"
+		step2 += "<li class='form-list-row form-list-row-inline' style='margin: auto; margin-right: 100px;'>"
 		step2 += "<div>"
 		step2 += "<lable>Harddisk</lable>"
 		step2 += "<div class='form-list-row-inline'>"
@@ -215,7 +215,7 @@ function showsteptype(e) {
 		step2 += "<div>"
 		step2 += "</li>"
 
-		step2 += "<li class='form-list-row form-list-row-inline' style='margin: auto; margin-right: 10px;'>"
+		step2 += "<li class='form-list-row form-list-row-inline' style='margin: auto; margin-right: 100px;'>"
 		step2 += "<div>"
 		step2 += "<lable>Ram</lable>"
 		step2 += "<div class='form-list-row-inline'>"
@@ -229,12 +229,19 @@ function showsteptype(e) {
 		step2 += "</div>"
 		step2 += "</div>"
 		step2 += "</li>"
-
-		step2 += "<li class='form-list-row form-list-row-inline' style='margin: auto; margin-right: 10px;'>"
+			
+		step2 += "<li class='form-list-row form-list-row-inline' style='margin: auto; margin-right: 100px;'>"
 		step2 += "<div>"
 		step2 += "<lable>ขนาดหน้าจอ</lable>"
-		step2 += "<input type='text' name='pawnshopPostSize' id='decimalOne'>"
-		step2 += "<i>ตัวเลขเท่านั้น 0-9 หรือใช้ จุดทศนิยม เช่น  13.5</i>"
+		step2 += "<div class='form-list-row-inline'>"
+		step2 += "<select name='pawnshopPostSize' >"
+		step2 += "<option>10-11 นิ้ว</option>"
+		step2 += "<option>12-13 นิ้ว</option>"
+		step2 += "<option>14 นิ้ว</option>"
+		step2 += "<option>15 นิ้ว</option>"
+		step2 += "<option>17 นิ้ว</option>"
+		step2 += "</select>"
+		step2 += "</div>"
 		step2 += "</div>"
 		step2 += "</li>"
 
