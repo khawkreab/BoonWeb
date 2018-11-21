@@ -184,7 +184,7 @@ public class PawnerPostController {
 	@RequestMapping("/pawner-track-pledge")
 	public ModelAndView pledge(HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView("pawnerTrackMyPlege.jsp");
-		List<PawnerPost> pawnerPostsWaiting , pawnerPostsProcess;
+		List<PawnerPost> pawnerPostsProcess;
 		List<Estimate> estimatesList;
 		try {
 			long userId = (long) request.getSession().getAttribute("id");
