@@ -4,18 +4,15 @@
 // task : list Complete
 // edit by : K'win
  -->
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="">
 <meta name="author" content="">
 <title>pawner-track-pledge</title>
@@ -35,10 +32,17 @@
 	</div>
 	<section class="bg-glay" style="height: auto;">
 		<div class="note">
-			<span> ***หมายเหตุ </span><span><i class="fas fa-check"></i> =
-				เสร็จสิ้น </span> , <span><i class="fas fa-times"></i> = ถูกปฏิเสธ </span>
+			<span> ***หมายเหตุ </span>
+			<span>
+				<i class="fas fa-check"></i>
+				= เสร็จสิ้น
+			</span>
+			,
+			<span>
+				<i class="fas fa-times"></i>
+				= ถูกปฏิเสธ
+			</span>
 		</div>
-
 		<div id="content">
 			<ul class="timeline">
 				<li class="event" id="noOrder">
@@ -46,127 +50,129 @@
 				</li>
 				<!----------- list ----------->
 				<c:forEach items="${eList}" var="post">
-					<c:if
-						test="${post.estimateStatus != 'process' && post.estimateStatus != 'approve' && post.estimateStatus != 'denei'}">
+					<c:if test="${post.estimateStatus != 'process' && post.estimateStatus != 'approve' && post.estimateStatus != 'denei'}">
 						<input type="hidden" value="hide" id="hide" />
 						<!-- ---------------------- -->
-						<li class="event"
-							data-date="<fmt:formatDate pattern="dd MMM yyyy" value="${post.estimateAccessDate }"/>">
+						<li class="event" data-date="<fmt:formatDate pattern="dd MMM yyyy" value="${post.estimateAccessDate }"/>">
 							<c:if test="${post.estimateStatus == 'approvedenei'}">
 								<i class="fas fa-times"></i>
-							</c:if> <i class="fas fa-check"></i>
+							</c:if>
+							<i class="fas fa-check bg-success"></i>
 							<div class="d-flex">
 								<div class="mr-auto">
 									<h3>${post.pawnerPostId.pawnerPostName}</h3>
 									<p>
 										<strong>รายละเอียด</strong>
 									</p>
-
 									<ul class="row">
 										<!-- Watch,Electronic -->
 										<c:if test="${post.pawnerPostId.pawnerPostModel != null}">
 											<li class="col-md-6">
 												<p>รุ่น : ${post.pawnerPostId.pawnerPostModel}</p>
 											</li>
-											<li class="col-md-6"><p>หมายเลขประจำเครื่อง :
-													${post.pawnerPostId.pawnerPostSerial}</p></li>
-											<li class="col-md-6"><p>ปีที่ซื้อสินค้า :
-													${post.pawnerPostId.pawnerPostPurchase}</p></li>
-
+											<li class="col-md-6">
+												<p>หมายเลขประจำเครื่อง : ${post.pawnerPostId.pawnerPostSerial}</p>
+											</li>
+											<li class="col-md-6">
+												<p>ปีที่ซื้อสินค้า : ${post.pawnerPostId.pawnerPostPurchase}</p>
+											</li>
 										</c:if>
-
 										<c:if test="${post.pawnerPostId.pawnerPostProduction != null}">
-
-											<li class="col-md-6"><p>ปีที่ผลิตสินค้า :
-													${post.pawnerPostId.pawnerPostProduction}</p></li>
+											<li class="col-md-6">
+												<p>ปีที่ผลิตสินค้า : ${post.pawnerPostId.pawnerPostProduction}</p>
+											</li>
 										</c:if>
-
 										<!-- Gold -->
 										<c:if test="${post.pawnerPostId.pawnerPostPure != null}">
-											<li class="col-md-6"><p>ยี่ห้อ :
-													${post.pawnerPostId.pawnerPostBrand}</p></li>
-											<li class="col-md-6"><p>ความบริสุทธ์ :
-													${post.pawnerPostId.pawnerPostPure}</p></li>
-											<li class="col-md-6"><p>น้ำหนัก :
-													${post.pawnerPostId.pawnerPostWeigh}</p></li>
-											<li class="col-md-6"><p>ชนิดหรือรูปแบบของทองคำ :
-													${post.pawnerPostId.pawnerPostCategory}</p></li>
+											<li class="col-md-6">
+												<p>ยี่ห้อ : ${post.pawnerPostId.pawnerPostBrand}</p>
+											</li>
+											<li class="col-md-6">
+												<p>ความบริสุทธ์ : ${post.pawnerPostId.pawnerPostPure}</p>
+											</li>
+											<li class="col-md-6">
+												<p>น้ำหนัก : ${post.pawnerPostId.pawnerPostWeigh}</p>
+											</li>
+											<li class="col-md-6">
+												<p>ชนิดหรือรูปแบบของทองคำ : ${post.pawnerPostId.pawnerPostCategory}</p>
+											</li>
 										</c:if>
-
-
 										<!-- Electronic tv com telephone -->
 										<c:if test="${post.pawnerPostId.pawnerPostSize != null}">
-											<li class="col-md-6"><p>ขนาดหน้าจอ :
-													${post.pawnerPostId.pawnerPostSize}</p></li>
+											<li class="col-md-6">
+												<p>ขนาดหน้าจอ : ${post.pawnerPostId.pawnerPostSize}</p>
+											</li>
 										</c:if>
-
 										<!-- Electronic camera com telephone -->
 										<c:if test="${post.pawnerPostId.pawnerPostBattery != null}">
-											<li class="col-md-6"><span class="fas fa-check"
-												aria-hidden="true"> </span>Battery</li>
+											<li class="col-md-6">
+												<span class="fas fa-check" aria-hidden="true"> </span>
+												Battery
+											</li>
 										</c:if>
-
 										<!-- Electronic com telephone -->
 										<c:if test="${post.pawnerPostId.pawnerPostHarddisk != null}">
-											<li class="col-md-6"><p>Harddisk :
-													${post.pawnerPostId.pawnerPostHarddisk}</p></li>
+											<li class="col-md-6">
+												<p>Harddisk : ${post.pawnerPostId.pawnerPostHarddisk}</p>
+											</li>
 										</c:if>
-
 										<!-- Electronic com-->
 										<c:if test="${post.pawnerPostId.pawnerPostRam != null}">
-											<li class="col-md-6"><p>Ram :
-													${post.pawnerPostId.pawnerPostRam}</p></li>
+											<li class="col-md-6">
+												<p>Ram : ${post.pawnerPostId.pawnerPostRam}</p>
+											</li>
 										</c:if>
-
 										<!-- Watch -->
 										<c:if test="${post.pawnerPostId.pawnerPostCase != null}">
-											<li class="col-md-6"><p>ชนิดของหน้าปัด :
-													${post.pawnerPostId.pawnerPostCase}</p></li>
-											<li class="col-md-6"><p>ชนิดของสายรัดข้อมือ :
-													${post.pawnerPostId.pawnerPostBracelet}</p></li>
+											<li class="col-md-6">
+												<p>ชนิดของหน้าปัด : ${post.pawnerPostId.pawnerPostCase}</p>
+											</li>
+											<li class="col-md-6">
+												<p>ชนิดของสายรัดข้อมือ : ${post.pawnerPostId.pawnerPostBracelet}</p>
+											</li>
 											<c:if test="${post.pawnerPostId.pawnerPostDiamond != null}">
-												<li class="col-md-6"><p>เพรช :
-														${post.pawnerPostId.pawnerPostDiamond}</p></li>
+												<li class="col-md-6">
+													<p>เพรช : ${post.pawnerPostId.pawnerPostDiamond}</p>
+												</li>
 											</c:if>
 											<c:if test="${post.pawnerPostId.pawnerPostPackage != null}">
-												<li class="col-md-6"><span class="fas fa-check"
-													aria-hidden="true"> </span> กล้องบรรจุสินค้า</li>
+												<li class="col-md-6">
+													<span class="fas fa-check" aria-hidden="true"> </span>
+													กล้องบรรจุสินค้า
+												</li>
 											</c:if>
 										</c:if>
-
 										<!-- Electronic tv -->
 										<c:if test="${post.pawnerPostId.panwePostRemote != null}">
-											<li class="col-md-6"><span class="fas fa-check"
-												aria-hidden="true"> </span> Remote</li>
+											<li class="col-md-6">
+												<span class="fas fa-check" aria-hidden="true"> </span>
+												Remote
+											</li>
 										</c:if>
-
-
 										<!-- Watch,Electronic -->
 										<c:if test="${post.pawnerPostId.pawnerPostWarranty != null}">
-											<li class="col-md-6"><span class="fas fa-check"
-												aria-hidden="true"> </span> การประกันสินค้า</li>
+											<li class="col-md-6">
+												<span class="fas fa-check" aria-hidden="true"> </span>
+												การประกันสินค้า
+											</li>
 										</c:if>
-
-										<li class="col-md-6"><p>
-												${post.pawnerPostId.pawnerPostDescription}</p></li>
+										<li class="col-md-6">
+											<p>${post.pawnerPostId.pawnerPostDescription}</p>
+										</li>
 									</ul>
 									<!------ from pawner  ------>
-									<p>โดย คุณ ${post.pawnerPostId.pawnerId.pawnerFirstname}
-										${post.pawnerPostId.pawnerId.pawnerLastname} จาก
-										${post.pawnerPostId.pawnerId.pawnerProvince}</p>
+									<p>โดย คุณ ${post.pawnerPostId.pawnerId.pawnerFirstname} ${post.pawnerPostId.pawnerId.pawnerLastname} จาก ${post.pawnerPostId.pawnerId.pawnerProvince}</p>
 									<!----- for pawnshop ----->
 									<div class="">
 										<p>
-											เสนอราคาที่ <span style="color: #ff3300; font-weight: bold">
-												${post.estimatePriceMin} - ${post.estimatePriceMax} บาท </span>
+											เสนอราคาที่
+											<span style="color: #ff3300; font-weight: bold"> ${post.estimatePriceMin} - ${post.estimatePriceMax} บาท </span>
 										</p>
 									</div>
 								</div>
 								<!----- image ------>
 								<div class="p-2">
-									<img src="img/background/background.jpg"
-										style="height: auto; width: 300px">
-
+									<img src="img/uploadImge/${post.pawnerPostId.pawnerPostPicture}" style="height: auto; width: 300px" />
 								</div>
 							</div>
 						</li>
@@ -379,6 +385,5 @@
 			</c:if>
 		</c:forEach>
 	</section> --%>
-
 </body>
 </html>

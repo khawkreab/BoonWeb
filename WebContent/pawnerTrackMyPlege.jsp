@@ -36,7 +36,7 @@
 	<section id="cd-timeline" class="cd-container">
 		<c:forEach items="${pawnerPostsProcess}" var="postprocess">
 			<c:if
-				test="${postprocess.pawnerPostStatus == 'process' || postprocess.pawnerPostStatus == 'waiting'}">
+				test="${postprocess.pawnerPostStatus == 'process' || postprocess.pawnerPostStatus == 'waiting' || postprocess.pawnerPostStatus == 'approve'}">
 				<div class="cd-timeline-block">
 					<!-------- icon -------->
 					<c:if test="${postprocess.pawnerPostStatus == 'waiting'}">
@@ -46,7 +46,12 @@
 					</c:if>
 					<c:if test="${postprocess.pawnerPostStatus == 'process'}">
 						<div class="cd-timeline-img cd-process">
-							<i class="fas fa-clipboard-list"></i>
+							<i class="fas fa-handshake"></i>
+						</div>
+					</c:if>
+					<c:if test="${postprocess.pawnerPostStatus == 'approve'}">
+						<div class="cd-timeline-img bg-info">
+							<i class="fas fa-print"></i>
 						</div>
 					</c:if>
 					<!--------- end icon --------->
@@ -143,17 +148,16 @@
 							</c:if>
 
 						</ul>
-						<i class="quick small">เพิ่มเติม</i>
-						<span class="quick_desc">${postprocess.pawnerPostDescription }</span>
+						<i class="quick small">เพิ่มเติม</i> <span class="quick_desc">${postprocess.pawnerPostDescription }</span>
 
-						<!---------- approve  ---------->
+						<!---------- process  ---------->
 						<c:if test="${postprocess.pawnerPostStatus == 'process'}">
 							<line-x></line-x>
 							<div class="history-show-estimate">
 								<div class="row d-flex">
 									<div class="col-md-4">โรงรับจำนำที่มาเสนอราคา</div>
 									<div class="ml-auto col-md-2">ราคาต่ำสุด</div>
-									<div class="col-md-2">ราคาสูงสุด </div>
+									<div class="col-md-2">ราคาสูงสุด</div>
 									<div class="col-md-2"></div>
 								</div>
 								<ul>
@@ -173,18 +177,48 @@
 																type="hidden" name="pawnerPostId"
 																value="${estimate.pawnerPostId.pawnerPostId}">
 															<button class="btn-custom btn-custom-defalt small"
-																type="submit">รับข้อเสนอ </button>
+																type="submit">รับข้อเสนอ</button>
 														</form>
 													</div>
 												</div>
 											</li>
 										</c:if>
-
 									</c:forEach>
 								</ul>
 							</div>
 						</c:if>
 						<!-- approve -->
+						<c:if test="${postprocess.pawnerPostStatus == 'approve'}">
+							<line-x></line-x>
+							<div class="history-show-estimate">
+								<c:forEach items="${estimatesApprove}" var="estimate">
+									<c:if
+										test="${estimate.pawnerPostId.pawnerPostId == postprocess.pawnerPostId }">
+										<div class="row d-flex">
+											<div class="col-md-5">
+												<p>โรงรับจำนำ ${estimate.pawnshopId.pawnshopName} ณ
+													จังหวัด ${estimate.pawnshopId.pawnshopProvince}</p>
+											</div>
+											<div class="col-md-4 ml-auto">
+												<p>
+													ด้วยราคา <span style="color: #ff3300; font-weight: bold;">${estimate.estimatePriceMin}-${estimate.estimatePriceMax}
+														บาท</span>
+												</p>
+											</div>
+											<div class="col-md-2">
+												<p>
+													<button class="btn-custom btn-custom-sky small"
+														type="submit">
+														<i class="fas fa-print" style="margin: auto;"></i> <span
+															style="margin-left: 5px;">พิมพ์ใบจำนำ</span>
+													</button>
+												</p>
+											</div>
+										</div>
+									</c:if>
+								</c:forEach>
+							</div>
+						</c:if>
 					</div>
 					<!-- cd-timeline-content -->
 				</div>

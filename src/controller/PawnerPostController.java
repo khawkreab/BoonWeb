@@ -186,14 +186,17 @@ public class PawnerPostController {
 		ModelAndView mv = new ModelAndView("pawnerTrackMyPlege.jsp");
 		List<PawnerPost> pawnerPostsProcess;
 		List<Estimate> estimatesList;
+		List<Estimate> estimatesApprove;
 		try {
 			long userId = (long) request.getSession().getAttribute("id");
 		/*	pawnerPostsWaiting = pawnerPostService.findPawnerPostByPawnerIdAndStatus(userId , "waiting");*/
 			pawnerPostsProcess = pawnerPostService.getAllPawnerPost();
 			estimatesList =estimateService.findEstimateByPawnerIdAndStatus(userId , "process");
+			estimatesApprove =estimateService.findEstimateByPawnerIdAndStatus(userId , "approve");
 			
 			
 			mv.addObject("estimatesList", estimatesList);
+			mv.addObject("estimatesApprove", estimatesApprove);
 			/*mv.addObject("pawnerPosts", pawnerPostsWaiting);*/
 			mv.addObject("pawnerPostsProcess", pawnerPostsProcess);
 		} catch (Exception e) {
