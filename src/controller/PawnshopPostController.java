@@ -17,11 +17,13 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import entity.Estimate;
+import entity.OrderItem;
 import entity.Pawner;
 import entity.Pawnshop;
 import entity.PawnshopPost;
 import entity.Picture;
 import fileupload.FileUpload;
+import service.OrderItemService;
 import service.PawnshopPostService;
 import service.PawnshopService;
 import service.PictureService;
@@ -37,6 +39,9 @@ public class PawnshopPostController {
 
 	@EJB(mappedName = "ejb:/BoonWeb/PictureServiceBean!service.PictureService")
 	PictureService pictureService;
+	
+	@EJB(mappedName = "ejb:/BoonWeb//OrderItemServiceBean!service.OrderItemService")
+	OrderItemService orederService;
 
 	@RequestMapping("/saveShopPost")
 	public String savePost(@ModelAttribute("pawnshopPost") FileUpload fileUpload, BindingResult result,
@@ -127,10 +132,14 @@ public class PawnshopPostController {
 	public ModelAndView list(HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView("pawnshopListPost.jsp");
 		List<PawnshopPost> pawnshopPosts;
+		List<OrderItem> order;
 		try {
 			long userId = (long) request.getSession().getAttribute("id");
+			
+			order = orederService.findOrderByPawnshopId(userId);
+			mv.addObject("order", order);
+			
 			pawnshopPosts = pawnshopPostService.findPawnshopPostByPawnshopId(userId);
-
 			mv.addObject("pawnshopPosts", pawnshopPosts);
 		} catch (Exception e) {
 			e.printStackTrace();
