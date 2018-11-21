@@ -69,49 +69,54 @@ body {
 						เพื่ออำนวยความสะดวกให้ลูกค้าสามารถเข้าถึงบริการได้ตลอด 24 ชั่วโมง”</p>
 					<a href="#pawning">
 						<button class="btn-custom btn-custom-defalt">
-							วิธีการจำนำของ </button>
+							วิธีการจำนำของ</button>
 					</a>
 				</div>
 			</div>
 		</div>
 	</section>
 
-<section id="pawning" >
-<h3 class="text-orange">  วิธีการจำนำของ  </h3>
+	<section id="pawning">
+		<h3 class="text-orange">วิธีการจำนำของ</h3>
 		<ul id="timelinecountstep">
 			<li class="timeline-step">
-				<p> กรอกข้อมูล พร้อมอัพโหลดรูปถ่ายของที่จะจำนำ และตรวจสอบความถูกต้องก่อนโพสของจำนำ  </p>
+				<p>กรอกข้อมูล พร้อมอัพโหลดรูปถ่ายของที่จะจำนำ
+					และตรวจสอบความถูกต้องก่อนโพสของจำนำ</p>
 			</li>
 			<li class="timeline-step">
-				<p> รอโรงรับจำนำมาประเมินราคา    </p>
+				<p>รอโรงรับจำนำมาประเมินราคา</p>
 			</li>
 			<li class="timeline-step">
-				<p> หลังจากได้ราคาที่ถูกใจ ให้ท่านกด "ยืนยัน" โรงรับจำนำจะจำนำของ และปริ้นใบหลักฐานแล้วเดินทางไปที่โรงรับจำนำที่ท่าน ยืนยัน ไว้</p>
+				<p>หลังจากได้ราคาที่ถูกใจ ให้ท่านกด "ยืนยัน" โรงรับจำนำจะจำนำของ
+					และปริ้นใบหลักฐานแล้วเดินทางไปที่โรงรับจำนำที่ท่าน ยืนยัน ไว้</p>
 			</li>
 		</ul>
 		<a href="pawner-post-form-gold.html">
-			<button class="btn-custom btn-custom-defalt"> จำนำของ เดี๋ยวนี้ !!! </button>
-		</a>
-		<br><br>
-		<a href="#buying">
-			<button class="btn-custom btn-custom-sky">วิธีซื้อของหลุดจำนำ  </button>
+			<button class="btn-custom btn-custom-defalt">จำนำของ
+				เดี๋ยวนี้ !!!</button>
+		</a> <br>
+		<br> <a href="#buying">
+			<button class="btn-custom btn-custom-sky">วิธีซื้อของหลุดจำนำ
+			</button>
 		</a>
 	</section>
 	<section id="buying">
-	<h3 class="text-orange">  วิธีซื้อของหลุดจำนำ  </h3>
+		<h3 class="text-orange">วิธีซื้อของหลุดจำนำ</h3>
 		<ul id="timelinecountstep2">
 			<li class="timeline-step">
-				<p> เข้าสู่เว็บไซต์ บุญยง แล้วไปที่เมนู "รายการของหลูดจำนำ" เพื่อหาของหลุดจำนำที่ถูกใจ</p>
+				<p>เข้าสู่เว็บไซต์ บุญยง แล้วไปที่เมนู "รายการของหลูดจำนำ"
+					เพื่อหาของหลุดจำนำที่ถูกใจ</p>
 			</li>
 			<li class="timeline-step">
-				<p> เลือกสินค้าที่ถูกใจลงในตะกร้าสินค้า</p>
+				<p>เลือกสินค้าที่ถูกใจลงในตะกร้าสินค้า</p>
 			</li>
 			<li class="timeline-step">
-				<p> ปริ้นใบเสร็จสั่งซื้อและเดินทางไปที่โรงรับจำนำได้ทันที</p>
+				<p>ปริ้นใบเสร็จสั่งซื้อและเดินทางไปที่โรงรับจำนำได้ทันที</p>
 			</li>
 		</ul>
 		<a href="pawner-off-pledge.html">
-			<button class="btn-custom btn-custom-defalt">ซื้อของหลุดจำนำ  </button>
+			<button class="btn-custom btn-custom-defalt">ซื้อของหลุดจำนำ
+			</button>
 		</a>
 	</section>
 
@@ -152,22 +157,20 @@ body {
 				<div style="height: 200px;">
 					<div class="date">
 						<span class="day"><fmt:formatDate pattern="dd"
-								value="${post.pawnerPostDate }" /></span> <span
-							class="month"><fmt:formatDate pattern="MMM"
-								value="${post.pawnerPostDate }" /></span> <span
+								value="${post.pawnerPostDate }" /></span> <span class="month"><fmt:formatDate
+								pattern="MMM" value="${post.pawnerPostDate }" /></span> <span
 							class="year"><fmt:formatDate pattern="yyyy"
 								value="${post.pawnerPostDate }" /></span>
-					</div>
-					<div class="title-bar">
-						<div class="title">${post.pawnerPostName}</div>
-						<div class="desc">${post.pawnerId.pawnerProvince }</div>
 					</div>
 					<figure>
 						<img src="img/uploadImge/${post.pawnerPostPicture}" />
 					</figure>
 				</div>
 				<div class="cta d-flex">
-					<div class="price mr-auto p-2">ประเมินราคา</div>
+					<div class="price mr-auto p-2">
+						<div class="title">${post.pawnerPostName}</div>
+						<div class="desc">${post.pawnerId.pawnerProvince }</div>
+					</div>
 					<div class="p-2 ly"></div>
 					<a href="pawnshop-estimate-form.html?item=${post.pawnerPostId}"><button
 							class="btn">
