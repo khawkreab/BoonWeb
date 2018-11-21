@@ -49,6 +49,11 @@
 							<i class="fas fa-handshake"></i>
 						</div>
 					</c:if>
+					<c:if test="${postprocess.pawnerPostStatus == 'approve'}">
+						<div class="cd-timeline-img bg-info">
+							<i class="fas fa-print"></i>
+						</div>
+					</c:if>
 					<!--------- end icon --------->
 
 					<div class="cd-timeline-content">
