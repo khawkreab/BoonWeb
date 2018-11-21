@@ -229,7 +229,7 @@ function showsteptype(e) {
 		step2 += "</div>"
 		step2 += "</div>"
 		step2 += "</li>"
-			
+
 		step2 += "<li class='form-list-row form-list-row-inline' style='margin: auto; margin-right: 100px;'>"
 		step2 += "<div>"
 		step2 += "<lable>ขนาดหน้าจอ</lable>"
@@ -303,31 +303,23 @@ function showsteptype(e) {
 		step2 += "</p>"
 
 		step2 += "<p>"
-		step2 += "<lable>ขนาดหน้าจอ</lable>"
-		step2 += "<input type='text' name='pawnshopPostSize' required='required' id='decimalOne'>"
-		step2 += "<input type='hidden' value='12.00' id='decimalTwo'>"
-		step2 += "<i>ตัวเลขเท่านั้น 0-9 หรือใช้ จุดทศนิยม เช่น  13.5</i>"
+		step2 += "<div class='wrap-input100 validate-input' style='margin-top:15px;'>"
+		step2 += "<label>ขนาดหน้าจอ</label>"
+		step2 += "<select class='input100' name='pawnshopPostSize' required='required'>"
+		step2 += "<option>10-11 นิ้ว</option>"
+		step2 += "<option>12-13 นิ้ว</option>"
+		step2 += "<option>14 นิ้ว</option>"
+		step2 += "<option>15 นิ้ว</option>"
+		step2 += "<option>17 นิ้ว</option>"
+		step2 += "</select>"
 		step2 += "</p>"
 
-		step2 += "<ul class='form-list'>"
-
-		step2 += "<li class='form-list-row form-list-row-inline'>"
-		step2 += "<div>"
+		step2 += "<p>"
 		step2 += "<lable>ปีที่ซื้อสินค้า</lable>"
-		step2 += "<div class='form-list-row-inline'>"
 		step2 += "<input type='date'name='pawnshopPostPurchase'>"
-		step2 += "</div>"
-		step2 += "</div>"
-		step2 += "</li>"
-		step2 += "</ul>"
+		step2 += "</p>"
 
 		$('#step2').append(step2);
-
-		step3 = "<p>"
-		step3 += "<label>"
-		step3 += "<input type='checkbox' required='required' checked='checked' name='panwePostRemote'/> "
-		step3 += "Remote control</label>"
-		step3 += "</p>"
 
 		step3 += "<p>"
 		step3 += "<label>"
@@ -370,16 +362,19 @@ function showsteptype(e) {
 		step2 += "</p>"
 
 		step2 += "<p>"
-		step2 += "<lable>ขนาดหน้าจอ</lable>"
-		step2 += "<input type='text' name='pawnshopPostSize' required='required' id='decimalOne'>"
-		step2 += "<input type='hidden' value='12.00' id='decimalTwo'>"
-		step2 += "<i>ตัวเลขเท่านั้น 0-9 หรือใช้ จุดทศนิยม เช่น  13.5</i>"
+		step2 += "<div class='wrap-input100 validate-input' style='margin-top:15px;'>"
+		step2 += "<label>ขนาดหน้าจอ</label>"
+		step2 += "<select class='input100' name='pawnshopPostSize' required='required'>"
+		step2 += "<option>10-11 นิ้ว</option>"
+		step2 += "<option>12-13 นิ้ว</option>"
+		step2 += "<option>14 นิ้ว</option>"
+		step2 += "<option>15 นิ้ว</option>"
+		step2 += "<option>17 นิ้ว</option>"
+		step2 += "</select>"
 		step2 += "</p>"
 
-		step2 += "<li class='form-list-row form-list-row-inline'>"
 		step2 += "<div>"
 		step2 += "<lable>หน่วยความจำ</lable>"
-		step2 += "<div class='form-list-row-inline'>"
 		step2 += "<select name='pawnshopPostCapacity' >"
 		step2 += "<option>8 Gb</option>"
 		step2 += "<option>16 Gb</option>"
@@ -388,15 +383,13 @@ function showsteptype(e) {
 		step2 += "<option>More than 64 Gb</option>"
 		step2 += "</select>"
 		step2 += "</div>"
-		step2 += "</div>"
-		step2 += "</li>"
+
+		step2 += "<p>"
+		step2 += "<lable>ปีที่ซื้อสินค้า</lable>"
+		step2 += "<input type='date'name='pawnshopPostPurchase'>"
+		step2 += "</p>"
 
 		$('#step2').append(step2);
-
-		step3 = "<P>"
-		step3 += "<lable>ปีที่ซื้อสินค้า</lable>"
-		step3 += "<input type='date'name='pawnshopPostPurchase'>"
-		step3 += "</P>"
 
 		step3 += "<p>"
 		step3 += "<label>"
