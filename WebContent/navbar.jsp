@@ -39,7 +39,7 @@
 						if (session.getAttribute("pawnerState").equals("Banned")) {
 					%>
 					<li class="menu-icon">
-						<a class="" id="omn">
+						<a class="" id="banned">
 							<img src="img/ICONBOONYOUNG/Post.png" height="50px" width="50px">
 							<i>จำนำของ</i>
 						</a>
@@ -213,17 +213,14 @@
 	if (session.getAttribute("userType") == "pawner") {
 %>
 <script type="text/javascript">
-	/* 	window.onload = function checkcart() { */
-
 	var cartNum = sessionStorage.getItem('pawnercartNumber');
 
 	if (null == cartNum || 0 == cartNum || cartNum == undefined) {
-		$("#cartNumber, #cartNumberlink").css("display", "none");
+		$("#cartNumberlink").css("display", "none");
 	} else {
 		$("#cartNumber, #cartNumberlink").css("display", "block");
-		$("#cartNumber, #cartNumberlink").text(cartNum)
+		$("#cartNumberlink").text(cartNum)
 	}
-	/* } */
 </script>
 <%
 	}
@@ -282,39 +279,49 @@
 </div>
 <!-- ----------------- popup ban -------------------------------  -->
 <!-- The Modal -->
-<div id="jj" class="modal">
+<div id="bannedmodal" class="modal" style="z-index: 9999">
 	<!-- Modal content -->
-	<div class="modal-content" style="padding: 20px 0 0 50px;">
-		<span class="close" style="position: absolute; right: 0; padding-right: 30px;">&times;</span>
-		<p style="color: #ff0101; text-align: center;">บัญชีของท่านถูกระงับชั่วคราว!!! เนื่องจากการกระทำผิดกฏของทางเว็บไซต์ ท่านสามาถใช้บัญชีตามปกติได้หลังจากการตรวจสอบเสร็จสิ้น</p>
+	<div class="d-flex justify-content-center">
+		<div style="display: inline-flex;position: relative; align-items: center; background-color: #fff; width: 50vw; height: 15vh; padding: 15px; border-left: 5px solid #ffc007">
+			<div>
+				<i class="fas fa-exclamation-circle text-warring" style="font-size: 3rem; padding-right: 15px;"></i>
+			</div>
+			<div>
+				<span class="text-warring" style="font-size: 1.5rem;"> บัญชีของท่านถูกระงับชั่วคราว!!! </span>
+				<br>
+				<p class="">เนื่องจากการกระทำผิดกฏของทางเว็บไซต์ ท่านสามาถใช้บัญชีตามปกติได้หลังจากการตรวจสอบเสร็จสิ้น</p>
+			</div>
+			<span class="close" style="position: absolute; right: 5px; top: 0px; cursor: pointer;">&times;</span>
+		</div>
 	</div>
+
 </div>
 <script>
 	// Get the modal
-	var modal = document.getElementById('jj');
+	var bannedmodal = $('#bannedmodal');
 
 	// Get the button that opens the modal
-	var btn = document.getElementById("omn");
+	var banned = $("#banned");
 
 	// Get the <span> element that closes the modal
-	var span = document.getElementsByClassName("close")[0];
+	var close = $(".close");
 
 	// When the user clicks the button, open the modal 
-	btn.onclick = function() {
-		modal.style.display = "block";
-	}
+	banned.click(function() {
+		bannedmodal.css("display", "block");
+	});
 
 	// When the user clicks on <span> (x), close the modal
-	span.onclick = function() {
-		modal.style.display = "none";
-	}
+	bannedmodal.click(function() {
+		bannedmodal.css("display", "none");
+	});
 
 	// When the user clicks anywhere outside of the modal, close it
-	window.onclick = function(event) {
+	/* window.click(function(event) {
 		if (event.target == modal) {
-			modal.style.display = "none";
+			bannedmodal.css("display" , "none");
 		}
-	}
+	}); */
 </script>
 <!-- -------------------------------------------------------------------------------------------------- -->
 <!-- Bootstrap core JavaScript -->
