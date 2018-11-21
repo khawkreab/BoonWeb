@@ -183,7 +183,7 @@ public class EstimateController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return "redirect:pawner-post-history.html?";
+		return "redirect:pawner-track-pledge.html";
 	}
 	
 	@RequestMapping("/pawnshop-estimate-approve")

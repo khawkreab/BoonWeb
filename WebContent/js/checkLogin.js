@@ -1,8 +1,3 @@
-window.onload = function checkedLogin() {
-var checkLogin = sessionStorage.getItem("login");
-if(checkLogin == null){
-	
-		alert("please login");
-		window.location ="index.jsp?login=failed";
-	}
+if (window.location.pathname != "/BoonWeb/index.html") {
+	window.location.href = 'index.html';
 }
