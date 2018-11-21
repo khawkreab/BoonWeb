@@ -86,7 +86,6 @@
 
 							<!-- Gold -->
 							<c:if test="${postprocess.pawnerPostPure != null}">
-								<li class="col-md-6">ยี่ห้อ : ${postprocess.pawnerPostBrand }</li>
 								<li class="col-md-6">ความบริสุทธ์ :
 									${postprocess.pawnerPostPure  }</li>
 								<li class="col-md-6">น้ำหนัก :
