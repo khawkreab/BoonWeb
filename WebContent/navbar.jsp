@@ -203,6 +203,7 @@
 		</a>
 	</li>
 </ul>
+<script src="js/checkLogin.js"></script>
 <%
 	}
 %>
@@ -282,7 +283,7 @@
 <div id="bannedmodal" class="modal" style="z-index: 9999">
 	<!-- Modal content -->
 	<div class="d-flex justify-content-center">
-		<div style="display: inline-flex;position: relative; align-items: center; background-color: #fff; width: 50vw; height: 15vh; padding: 15px; border-left: 5px solid #ffc007">
+		<div style="display: inline-flex; position: relative; align-items: center; background-color: #fff; width: 50vw; height: 15vh; padding: 15px; border-left: 5px solid #ffc007">
 			<div>
 				<i class="fas fa-exclamation-circle text-warring" style="font-size: 3rem; padding-right: 15px;"></i>
 			</div>
@@ -294,7 +295,6 @@
 			<span class="close" style="position: absolute; right: 5px; top: 0px; cursor: pointer;">&times;</span>
 		</div>
 	</div>
-
 </div>
 <script>
 	// Get the modal
