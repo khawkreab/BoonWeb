@@ -9,7 +9,7 @@
 <%@ page import="java.util.Date"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
-<html>
+<html lang="th">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -88,9 +88,9 @@
 					<div class="cd-timeline-content">
 						<!-- date -->
 						<span class="cd-date">
-							<fmt:formatDate pattern="dd" value="${postprocess.pawnerPostDate }" />
-							<fmt:formatDate pattern="MMM" value="${postprocess.pawnerPostDate }" />
-							<fmt:formatDate pattern="yyyy" value="${postprocess.pawnerPostDate }" />
+						<fmt:setLocale value="th-TH"/>
+							<fmt:formatDate pattern="dd MMM yyyy" value="${postprocess.pawnerPostDate }" />
+							
 						</span>
 						<!--  -->
 						<h2>${postprocess.pawnerPostName }${postprocess.pawnerPostBrand }${postprocess.pawnerPostTypeCamera }${postprocess.pawnerPostCameraLen }</h2>
@@ -225,7 +225,7 @@
 												<a id="${estimate.pawnerPostId.pawnerId}" onClick="select(this); return false;"
 													data-cart='{"pawnerFirstname":"${estimate.pawnerPostId.pawnerId.pawnerFirstname}",
 										"pawnerLastname":"${estimate.pawnerPostId.pawnerId.pawnerLastname}",
-										"pawnerPostName":"${estimate.pawnerPostId.pawnerPostName }","pawnerPostDate":"${estimate.pawnerPostId.pawnerPostDate}",
+										"pawnerPostName":"${estimate.pawnerPostId.pawnerPostName }","pawnerPostDate":"<fmt:formatDate pattern='dd MMM yyyy' value='${estimate.pawnerPostId.pawnerPostDate}'/>",
 										"pawnerPostItemType":"${estimate.pawnerPostId.pawnerPostItemType}","pawnerPostBrand":"${estimate.pawnerPostId.pawnerPostBrand}",
 										"panwePostRemote":"${estimate.pawnerPostId.panwePostRemote}","pawnerPostBattery":"${estimate.pawnerPostId.pawnerPostBattery}",
 										"pawnerPostBracelet":"${estimate.pawnerPostId.pawnerPostBracelet}","pawnerPostCameraLen":"${estimate.pawnerPostId.pawnerPostCameraLen}",
@@ -238,7 +238,7 @@
 										"pawnerPostTypeCamera":"${estimate.pawnerPostId.pawnerPostTypeCamera}","pawnerPostWarranty":"${estimate.pawnerPostId.pawnerPostWarranty}",
 										"pawnerPostWeigh":"${estimate.pawnerPostId.pawnerPostWeigh}","pawnerPostRam":"${estimate.pawnerPostId.pawnerPostRam}",
 										"pawnerPostPure":"${estimate.pawnerPostId.pawnerPostPure}","estimatePriceMin":"${estimate.estimatePriceMin}",
-										"estimatePriceMax":"${estimate.estimatePriceMax}","estimateDate":"${estimate.estimateDate}",
+										"estimatePriceMax":"${estimate.estimatePriceMax}","estimateDate":"<fmt:formatDate pattern='dd MMM yyyy' value='${estimate.estimateDate}'/>",
 										"pawnerPostPicture":"${estimate.pawnerPostId.pawnerPostPicture}",
 										"pawnShopname":"${estimate.pawnshopId.pawnshopName}",
 										"pawnshopProvince":"${estimate.pawnshopId.pawnshopProvince}",
@@ -395,7 +395,7 @@
 							<i id="pawnerPostCapacity"></i>
 							<i id="pawnerPostCase"></i>
 							<i id="pawnerPostCategory"></i>
-							<i id="pawnerPostDescription"></i>
+							<!-- <i id="pawnerPostDescription"></i> -->
 							<i id="pawnerPostDevice"></i>
 							<i id="pawnerPostDiamond"></i>
 							<i id="pawnerPostHarddisk"></i>
