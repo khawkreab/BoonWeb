@@ -11,6 +11,7 @@ import java.awt.Window;
 import java.util.List;
 
 import javax.ejb.EJB;
+import javax.mail.Session;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
@@ -21,28 +22,30 @@ import entity.Pawner;
 import entity.PawnerPost;
 import entity.Pawnshop;
 import entity.Picture;
+import service.EstimateService;
 import service.PawnerPostService;
 import service.PawnerService;
 import service.PawnshopService;
 import service.PictureService;
 
-
-
 @Controller
 public class LoginCotroller {
-	
+
 	@EJB(mappedName = "ejb:/BoonWeb//PawnerServiceBean!service.PawnerService")
 	PawnerService pmService;
-	
+
 	@EJB(mappedName = "ejb:/BoonWeb//PawnshopServiceBean!service.PawnshopService")
 	PawnshopService pawnshopServ;
 
 	@EJB(mappedName = "ejb:/BoonWeb/PictureServiceBean!service.PictureService")
 	PictureService pictureService;
-	
+
 	@EJB(mappedName = "ejb:/BoonWeb//PawnerPostServiceBean!service.PawnerPostService")
 	PawnerPostService pawnerPostService;
-	
+
+	@EJB(mappedName = "ejb:/BoonWeb//EstimateServiceBean!service.EstimateService")
+	EstimateService estimateService;
+
 	@RequestMapping("/login")
 	public ModelAndView signIn() {
 		ModelAndView mv = new ModelAndView("navbar.jsp");
@@ -50,48 +53,58 @@ public class LoginCotroller {
 		mv.addObject("pawner", pawner);
 		return mv;
 	}
-	
+
 	@RequestMapping("/index")
 	public ModelAndView index(HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView("index.jsp");
 		List<Picture> pictures;
 		List<PawnerPost> pawnerPosts;
 		try {
-			long userId = (long) request.getSession().getAttribute("id");
-			pawnerPosts = pawnerPostService.findPawnerPostByPawnshopId(userId);
+			if (request.getSession().getAttribute("id") != null) {
+				long userId = (long) request.getSession().getAttribute("id");
+				pawnerPosts = pawnerPostService.findPawnerPostByPawnshopId(userId);
+				mv.addObject("pawnerPosts", pawnerPosts);
+			}
+
 			pictures = pictureService.getAllPicture();
 			mv.addObject("picture", pictures);
-			mv.addObject("pawnerPosts", pawnerPosts);
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return mv;
 	}
-	
-	
+
 	@RequestMapping("/loginProcess")
 	public String login(HttpServletRequest request) {
-		
+
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
-		
+
 		Pawner pawner;
 		Pawnshop pawnshop;
-		
+
 		String adminName = "admin";
 		String adminPassword = "admin";
 		try {
 			pawner = pmService.findPawnerByEmailAndPassword(email, password);
 			if (pawner.equals(null)) {
-				return "redirect:index.jsp";
+				return "redirect:index.html";
 			} else {
+
+				int nft = pawnerPostService.findPawnerPostByPawnerIdAndStatus(pawner.getPawnerId(), "process").size();
+				String kk = "" + nft;
 				request.getSession().setAttribute("id", pawner.getPawnerId());
 				request.getSession().setAttribute("isLogin", "yes");
 				request.getSession().setAttribute("userType", "pawner");
-				request.getSession().setAttribute("username", pawner.getPawnerFirstname() + " " + pawner.getPawnerLastname());
-				request.getSession().setAttribute("email",pawner.getPawnerEmail());
-				request.getSession().setAttribute("pawnerState",pawner.getPawnerState());
+				request.getSession().setAttribute("username",
+						pawner.getPawnerFirstname() + " " + pawner.getPawnerLastname());
+				request.getSession().setAttribute("email", pawner.getPawnerEmail());
+				request.getSession().setAttribute("pawnerState", pawner.getPawnerState());
+				request.getSession().setAttribute("kk", kk);
+
 				return "redirect:index.html";
+
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -100,38 +113,39 @@ public class LoginCotroller {
 		try {
 			pawnshop = pawnshopServ.findPawnShopByEmailAndPassword(email, password);
 			if (pawnshop.equals(null)) {
-				return "redirect:index.jsp";
+				return "redirect:index.html";
 			} else {
+				int nft = estimateService.findEstimateByPawnshopIdAndStatus(pawnshop.getPawnshopId(), "approve").size();
+				int nft1 = estimateService.findEstimateByPawnshopIdAndStatus(pawnshop.getPawnshopId(), "denai").size();
+				String kk = Integer.toString(nft + nft1);
 				request.getSession().setAttribute("id", pawnshop.getPawnshopId());
 				request.getSession().setAttribute("isLogin", "yes");
 				request.getSession().setAttribute("userType", "pawnShop");
 				request.getSession().setAttribute("username", pawnshop.getPawnshopName());
-				request.getSession().setAttribute("email",pawnshop.getPawnshopEmail());
-				request.getSession().setAttribute("pawnshopState",pawnshop.getPawnshopState());
+				request.getSession().setAttribute("email", pawnshop.getPawnshopEmail());
+				request.getSession().setAttribute("pawnshopState", pawnshop.getPawnshopState());
+				request.getSession().setAttribute("kk", kk);
 				return "redirect:index.html";
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
 
 		try {
-			if (adminName.equals(email)&&adminPassword.equals(password)) {
+			if (adminName.equals(email) && adminPassword.equals(password)) {
 				request.getSession().setAttribute("isLogin", "yes");
 				request.getSession().setAttribute("userType", "admin");
 				request.getSession().setAttribute("username", "Admin");
 				return "redirect:admin-index.html";
-			} 
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
 		request.getSession().setAttribute("error", "yes");
-		return "redirect:index.jsp";
+		return "redirect:index.html?login=fail";
 	}
-	
-	
-	
+
 	@SuppressWarnings("deprecation")
 	@RequestMapping("/logout")
 	public String signOut(HttpServletRequest request) {
@@ -139,6 +153,7 @@ public class LoginCotroller {
 			request.getSession().putValue("isLogin", "no");
 			request.getSession().removeAttribute("id");
 			request.getSession().removeAttribute("userType");
+			request.getSession().removeAttribute("notification");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -37,6 +37,13 @@
 	padding: 20px;
 }
 
+.login-right span {
+	display: none;
+	position: absolute;
+	margin: auto;
+	color: #ff0000;
+}
+
 .modal-login {
 	background-color: #0000;
 	border: none;

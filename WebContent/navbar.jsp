@@ -203,13 +203,13 @@
 		</a>
 	</li>
 </ul>
-<script src="js/checkLogin.js"></script>
 <%
 	}
 %>
 <!-- ------------------------------ End -------------------------------------- -->
 <script src="js/navbar.js"></script>
 <script src="js/jquery.min.js"></script>
+<script src="js/checkLogin.js"></script>
 <%
 	if (session.getAttribute("userType") == "pawner") {
 %>
@@ -227,57 +227,20 @@
 	}
 %>
 <script>
-	// Set up click and window resize callbacks, then init the nav.
-	//$(document).ready(function () {
+
 	$("#nav-custom-toggle")
 			.click(
 					function() {
 						$(
 								"#nav-custom-toggle, #nav-custom-overlay, #nav-custom-fullscreen, #cartNumber")
 								.toggleClass("open");
-						/* checkcart() */
 					});
 
 	$(window).resize(resizeNav);
 
 	resizeNav();
-
-	//});
 </script>
-<!------------------------------------------------ pop-up login-------------------------------------------------->
-<div class="modal fade" id="modalLogin" role="dialog">
-	<div class="modal-dialog">
-		<div class="modal-login modal-content">
-			<div class="login-containern">
-				<div class="login-left">
-					<div class="login">ยินดีตอนรับ</div>
-					<div class="login-eula">
-						เข้าสู่ระบบจำนำทางออนไลน์
-						<br>
-						จำนำง่าย จ่ายคล่อง ต้องบุญยง
-					</div>
-				</div>
-				<div class="login-right">
-					<div class="form">
-						<form method="POST" action="loginProcess.html">
-							<!-- email -->
-							<label for="email">อีเมลของคุณ</label>
-							<input type="text" name="email" required="required" id="email">
-							<!-- password -->
-							<label for="password">รหัสผ่าน</label>
-							<input type="password" id="password" name="password" required="required">
-							<!-- login button -->
-							<div class="">
-								<button type="submit" class="btn-custom btn-custom-defalt">เข้าสู้ระบบ</button>
-								<button type="button" data-dismiss="modal" class="btn-custom btn-custom-blue" style="font-size: 15px;">ยกเลิก</button>
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+
 <!-- ----------------- popup ban -------------------------------  -->
 <!-- The Modal -->
 <div id="bannedmodal" class="modal" style="z-index: 9999">

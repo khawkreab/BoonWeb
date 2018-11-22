@@ -4,29 +4,20 @@
 // task : new
 // edit by : khawkreab
  -->
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page import="java.util.Date"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-
 <html lang="en">
-
 <head>
 <meta charset="utf-8">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="">
 <meta name="author" content="">
-
-
 <title>Boonyong</title>
-
 <!-- import all css -->
 <jsp:include page="importCSS.jsp" />
-
-
 <!-- time line step css -->
 <link rel="stylesheet" href="css/timelineStep.css">
 <style type="text/css">
@@ -37,12 +28,10 @@ body {
 }
 </style>
 <link href="css/pawnerCard.css" rel="stylesheet">
-
 </head>
-
 <body id="page-top">
-
-
+	<!-- Navigation -->
+	<jsp:include page="navbar.jsp" />
 	<%
 		if (session.getAttribute("isLogin") == "yes") {
 	%>
@@ -56,56 +45,54 @@ body {
 			<div class="row">
 				<div class="col-lg-10 mx-auto">
 					<h2 class="text-uppercase">
-						<strong class="text-white">ยินดีต้อนรับ <br>คุณ <%=session.getAttribute("username")%>
-							<br>สู่เว็บจำนำออนไลน์
+						<strong class="text-white">
+							ยินดีต้อนรับ
+							<br>
+							คุณ
+							<%=session.getAttribute("username")%>
+							<br>
+							สู่เว็บจำนำออนไลน์
 						</strong>
 					</h2>
 					<hr>
 				</div>
 				<div class="col-lg-8 mx-auto">
-					<p class="text-faded mb-5 animated lightSpeedIn delay-1s">“บุญยง
-						เป็นสื่อกลางในการจำนำ
-						ที่มีการรับประเมินราคาสินทรัพย์และปล่อยของหลุดจำนำทางออนไลน์
+					<p class="text-faded mb-5 animated lightSpeedIn delay-1s">“บุญยง เป็นสื่อกลางในการจำนำ ที่มีการรับประเมินราคาสินทรัพย์และปล่อยของหลุดจำนำทางออนไลน์
 						เพื่ออำนวยความสะดวกให้ลูกค้าสามารถเข้าถึงบริการได้ตลอด 24 ชั่วโมง”</p>
 					<a href="#pawning">
-						<button class="btn-custom btn-custom-defalt">
-							วิธีการจำนำของ</button>
+						<button class="btn-custom btn-custom-defalt">วิธีการจำนำของ</button>
 					</a>
 				</div>
 			</div>
 		</div>
 	</section>
-
 	<section id="pawning">
 		<h3 class="text-orange">วิธีการจำนำของ</h3>
 		<ul id="timelinecountstep">
 			<li class="timeline-step">
-				<p>กรอกข้อมูล พร้อมอัพโหลดรูปถ่ายของที่จะจำนำ
-					และตรวจสอบความถูกต้องก่อนโพสของจำนำ</p>
+				<p>กรอกข้อมูล พร้อมอัพโหลดรูปถ่ายของที่จะจำนำ และตรวจสอบความถูกต้องก่อนโพสของจำนำ</p>
 			</li>
 			<li class="timeline-step">
 				<p>รอโรงรับจำนำมาประเมินราคา</p>
 			</li>
 			<li class="timeline-step">
-				<p>หลังจากได้ราคาที่ถูกใจ ให้ท่านกด "ยืนยัน" โรงรับจำนำจะจำนำของ
-					และปริ้นใบหลักฐานแล้วเดินทางไปที่โรงรับจำนำที่ท่าน ยืนยัน ไว้</p>
+				<p>หลังจากได้ราคาที่ถูกใจ ให้ท่านกด "ยืนยัน" โรงรับจำนำจะจำนำของ และปริ้นใบหลักฐานแล้วเดินทางไปที่โรงรับจำนำที่ท่าน ยืนยัน ไว้</p>
 			</li>
 		</ul>
 		<a href="pawner-post-form-gold.html">
-			<button class="btn-custom btn-custom-defalt">จำนำของ
-				เดี๋ยวนี้ !!!</button>
-		</a> <br>
-		<br> <a href="#buying">
-			<button class="btn-custom btn-custom-sky">วิธีซื้อของหลุดจำนำ
-			</button>
+			<button class="btn-custom btn-custom-defalt">จำนำของ เดี๋ยวนี้ !!!</button>
+		</a>
+		<br>
+		<br>
+		<a href="#buying">
+			<button class="btn-custom btn-custom-sky">วิธีซื้อของหลุดจำนำ</button>
 		</a>
 	</section>
 	<section id="buying">
 		<h3 class="text-orange">วิธีซื้อของหลุดจำนำ</h3>
 		<ul id="timelinecountstep2">
 			<li class="timeline-step">
-				<p>เข้าสู่เว็บไซต์ บุญยง แล้วไปที่เมนู "รายการของหลูดจำนำ"
-					เพื่อหาของหลุดจำนำที่ถูกใจ</p>
+				<p>เข้าสู่เว็บไซต์ บุญยง แล้วไปที่เมนู "รายการของหลูดจำนำ" เพื่อหาของหลุดจำนำที่ถูกใจ</p>
 			</li>
 			<li class="timeline-step">
 				<p>เลือกสินค้าที่ถูกใจลงในตะกร้าสินค้า</p>
@@ -115,12 +102,9 @@ body {
 			</li>
 		</ul>
 		<a href="pawner-off-pledge.html">
-			<button class="btn-custom btn-custom-defalt">ซื้อของหลุดจำนำ
-			</button>
+			<button class="btn-custom btn-custom-defalt">ซื้อของหลุดจำนำ</button>
 		</a>
 	</section>
-
-
 	<%
 		} else if (session.getAttribute("userType") == "pawnShop") {
 	%>
@@ -131,20 +115,22 @@ body {
 			<div class="row">
 				<div class="col-lg-10 mx-auto">
 					<h2 class="text-uppercase">
-						<strong class="text-white">ยินดีต้อนรับ <br>โรงรับจำนำ
-							<%=session.getAttribute("username")%> <br>สู่เว็บจำนำออนไลน์
+						<strong class="text-white">
+							ยินดีต้อนรับ
+							<br>
+							โรงรับจำนำ
+							<%=session.getAttribute("username")%>
+							<br>
+							สู่เว็บจำนำออนไลน์
 						</strong>
 					</h2>
 					<hr>
 				</div>
 				<div class="col-lg-8 mx-auto">
-					<p class="text-faded mb-5 animated lightSpeedIn delay-1s">“บุญยง
-						เป็นสื่อกลางในการจำนำ
-						ที่มีการรับประเมินราคาสินทรัพย์และปล่อยของหลุดจำนำทางออนไลน์
+					<p class="text-faded mb-5 animated lightSpeedIn delay-1s">“บุญยง เป็นสื่อกลางในการจำนำ ที่มีการรับประเมินราคาสินทรัพย์และปล่อยของหลุดจำนำทางออนไลน์
 						เพื่ออำนวยความสะดวกให้ลูกค้าสามารถเข้าถึงบริการได้ตลอด 24 ชั่วโมง”</p>
 					<a href="#pledge">
-						<button class="btn-custom btn-custom-defalt">
-							ประเมินของจำนำ</button>
+						<button class="btn-custom btn-custom-defalt">ประเมินของจำนำ</button>
 					</a>
 				</div>
 			</div>
@@ -156,11 +142,15 @@ body {
 			<div class="shop-card" data-aos="fade-up">
 				<div style="height: 200px;">
 					<div class="date">
-						<span class="day"><fmt:formatDate pattern="dd"
-								value="${post.pawnerPostDate }" /></span> <span class="month"><fmt:formatDate
-								pattern="MMM" value="${post.pawnerPostDate }" /></span> <span
-							class="year"><fmt:formatDate pattern="yyyy"
-								value="${post.pawnerPostDate }" /></span>
+						<span class="day">
+							<fmt:formatDate pattern="dd" value="${post.pawnerPostDate }" />
+						</span>
+						<span class="month">
+							<fmt:formatDate pattern="MMM" value="${post.pawnerPostDate }" />
+						</span>
+						<span class="year">
+							<fmt:formatDate pattern="yyyy" value="${post.pawnerPostDate }" />
+						</span>
 					</div>
 					<figure>
 						<img src="img/uploadImge/${post.pawnerPostPicture}" />
@@ -172,39 +162,13 @@ body {
 						<div class="desc">${post.pawnerId.pawnerProvince }</div>
 					</div>
 					<div class="p-2 ly"></div>
-					<a href="pawnshop-estimate-form.html?item=${post.pawnerPostId}"><button
-							class="btn">
+					<a href="pawnshop-estimate-form.html?item=${post.pawnerPostId}">
+						<button class="btn">
 							<i class="fas fa-sign-in-alt" style="font-size: 1.25rem;"></i>
-						</button></a>
+						</button>
+					</a>
 				</div>
 			</div>
-			<%-- 	<div class="result">
-				<div class="row">
-					<div class="col-md-4 float-left result-img">
-						<img src="images/imageUpload/${post.pawnerPostPicture }"
-							class="img-responsive" alt="">
-					</div>
-					<div class="col-md-8">
-						<h2 class="featured">
-							<a href="pawnshop-estimate-form.html?item=${post.pawnerPostId}">
-								${post.pawnerPostName} - ${post.pawnerPostBrand} </a>
-						</h2>
-						<div class="info-r">
-							ต้องการจำนำ <span class="color-orange">${post.pawnerPostName}</span>
-							โพสเมื่อ วันที่<span class="color-black"><fmt:setLocale
-									value="en_US" /> <fmt:formatDate type="date" dateStyle="long"
-									value="${post.pawnerPostDate }" /></span> โดย <span
-								class="color-orange">${post.pawnerId.pawnerFirstname }
-								${post.pawnerId.pawnerLastname }</span> จากจังหวัด Province <span
-								class="color-black"> ${post.pawnerId.pawnerProvince }</span>
-						</div>
-						<div>
-							<a href="pawnshop-estimate-form.html?item=${post.pawnerPostId}">ประเมินเลย
-							</a>
-						</div>
-					</div>
-				</div>
-			</div> --%>
 		</c:forEach>
 	</section>
 	<script>
@@ -222,7 +186,6 @@ body {
 		}
 		} else {
 	%>
-
 	<!--banner-->
 	<!-- element -->
 	<section class="d-flex header">
@@ -240,15 +203,12 @@ body {
 					</div>
 				</div>
 				<div class="col-lg-8 mx-auto">
-					<p
-						class="text-faded mb-5 animated lightSpeedIn delay-1s text-white">“บุญยง
-						เป็นสื่อกลางในการจำนำ
-						ที่มีการรับประเมินราคาสินทรัพย์และปล่อยของหลุดจำนำทางออนไลน์
+					<p class="text-faded mb-5 animated lightSpeedIn delay-1s text-white">“บุญยง เป็นสื่อกลางในการจำนำ ที่มีการรับประเมินราคาสินทรัพย์และปล่อยของหลุดจำนำทางออนไลน์
 						เพื่ออำนวยความสะดวกให้ลูกค้าสามารถเข้าถึงบริการได้ตลอด 24 ชั่วโมง”</p>
 					<div class="animated fadeInLeft delay-1s">
-						<a href="#services"><button
-								class="btn-custom btn-custom-defalt">
-								คลิกเพื่อดูรายละเอียด</button></a>
+						<a href="#services">
+							<button class="btn-custom btn-custom-defalt">คลิกเพื่อดูรายละเอียด</button>
+						</a>
 					</div>
 				</div>
 			</div>
@@ -257,15 +217,59 @@ body {
 	<%
 		}
 	%>
-	<!-- Navigation -->
-	<jsp:include page="navbar.jsp" />
+	<!------------------------------------------------ pop-up login-------------------------------------------------->
+	<div class="modal fade" id="modalLogin" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-login modal-content">
+				<div class="login-containern">
+					<div class="login-left">
+						<div class="login">ยินดีตอนรับ</div>
+						<div class="login-eula">
+							เข้าสู่ระบบจำนำทางออนไลน์
+							<br>
+							จำนำง่าย จ่ายคล่อง ต้องบุญยง
+						</div>
+					</div>
+					<div class="login-right">
+						<span id="loginfail">
+							<i class="fas fa-exclamation-circle"></i>
+							อีเมลหรือรหัสผ่านไม่ถูกต้อง
+						</span>
+						<div class="form">
+							<form method="POST" action="loginProcess.html">
+								<!-- email -->
+								<label for="email">อีเมลของคุณ</label>
+								<input type="text" name="email" required="required" id="email">
+								<!-- password -->
+								<label for="password">รหัสผ่าน</label>
+								<input type="password" id="password" name="password" required="required">
+								<!-- login button -->
+								<div class="">
+									<button type="submit" class="btn-custom btn-custom-defalt">เข้าสู่ระบบ</button>
+									<button type="button" data-dismiss="modal" class="btn-custom btn-custom-blue" >ยกเลิก</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- --------------------------------------------------------------------- -->
 	<script type="text/javascript" src="js/aos.js"></script>
 	<script>
 		AOS.init();
 	</script>
-
-	<!-- footer  -->
-	<%-- <jsp:include page="footer.jsp"></jsp:include> --%>
-
+	<script type="text/javascript">
+		// if login fail
+		let params = new URLSearchParams(document.location.search.substring(1));
+		let loginfail = params.get("login");
+		if (loginfail == "fail") {
+			$('#loginfail').css("display", "block")
+			$(document).ready(function() {
+				$('#modalLogin').modal()
+			});
+		}
+	</script>
 </body>
 </html>
