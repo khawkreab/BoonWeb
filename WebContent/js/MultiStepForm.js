@@ -238,7 +238,8 @@ function showsteptype(e) {
 		step2 += "</li>"
 
 		step2 += "</ul>"
-		step2 += "</ul>"
+		step2 += "<input type='hidden' id='decimalOne' value='12.00'>"
+		step2 += "<input type='hidden' id='decimalTwo' value='12.00'>"
 
 		$('#step2').append(step2);
 
@@ -288,11 +289,17 @@ function showsteptype(e) {
 		step2 += "<div class='wrap-input100 validate-input' style='margin-top:15px;'>"
 		step2 += "<label>ขนาดหน้าจอ</label>"
 		step2 += "<select class='input100' name='pawnerPostSize' required='required'>"
-		step2 += "<option>10-11 นิ้ว</option>"
-		step2 += "<option>12-13 นิ้ว</option>"
-		step2 += "<option>14 นิ้ว</option>"
-		step2 += "<option>15 นิ้ว</option>"
-		step2 += "<option>17 นิ้ว</option>"
+		step2 += "<option>26 นิ้ว</option>"
+		step2 += "<option>32 นิ้ว</option>"
+		step2 += "<option>42 นิ้ว</option>"
+		step2 += "<option>46 นิ้ว</option>"
+		step2 += "<option>47 นิ้ว</option>"
+		step2 += "<option>50 นิ้ว</option>"
+		step2 += "<option>55 นิ้ว</option>"
+		step2 += "<option>60 นิ้ว</option>"
+		step2 += "<option>65 นิ้ว</option>"
+		step2 += "<option>70 นิ้ว</option>"
+		step2 += "<option>75 นิ้ว</option>"
 		step2 += "</select>"
 		step2 += "</p>"
 
@@ -300,6 +307,9 @@ function showsteptype(e) {
 		step2 += "<lable>ปีที่ซื้อสินค้า</lable>"
 		step2 += "<input type='date'name='pawnerPostPurchase'>"
 		step2 += "</p>"
+
+		step2 += "<input type='hidden' id='decimalOne' value='12.00'>"
+		step2 += "<input type='hidden' id='decimalTwo' value='12.00'>"
 
 		$('#step2').append(step2);
 
@@ -372,7 +382,9 @@ function showsteptype(e) {
 		step2 += "<lable>ปีที่ซื้อสินค้า</lable>"
 		step2 += "<input type='date'name='pawnerPostPurchase'>"
 		step2 += "</p>"
-
+			
+		step2 += "<input type='hidden' id='decimalOne' value='12.00'>"
+		step2 += "<input type='hidden' id='decimalTwo' value='12.00'>"
 		$('#step2').append(step2);
 
 		step3 += "<p>"

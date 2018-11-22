@@ -141,78 +141,138 @@
 
 	<script src="js/MultiStepFormPawnshop.js"></script>
 	<script type="text/javascript">
-	window.onload = function() {
-		//Check File API support
-		if (window.File && window.FileList && window.FileReader) {
-			$('#files')
-					.on(
-							"change",
-							function(event) {
-								var files = event.target.files; //FileList object
-								var output = document
-										.getElementById("result");
-								for (var i = 0; i < files.length; i++) {
-									var file = files[i];
-									//Only pics
-									// if(!file.type.match('image'))
-									if (file.type.match('image.*')) {
-										if (files.length < 6) {
-											if (this.files[0].size < 2097152) {
-												// continue;
-												var picReader = new FileReader();
-												picReader
-														.addEventListener(
-																"load",
-																function(
-																		event) {
-																	var picFile = event.target;
-																	var div = document
-																			.createElement("div");
-																	div.innerHTML = "<img class='thumbnail' src='" + picFile.result + "'" +
+		window.onload = function() {
+			//Check File API support
+			if (window.File && window.FileList && window.FileReader) {
+				$('#files')
+						.on(
+								"change",
+								function(event) {
+									var files = event.target.files; //FileList object
+									var output = document
+											.getElementById("result");
+									for (var i = 0; i < files.length; i++) {
+										var file = files[i];
+										//Only pics
+										// if(!file.type.match('image'))
+										if (file.type.match('image.*')) {
+											if (files.length < 6) {
+												if (this.files[0].size < 2097152) {
+													// continue;
+													var picReader = new FileReader();
+													picReader
+															.addEventListener(
+																	"load",
+																	function(
+																			event) {
+																		var picFile = event.target;
+																		var div = document
+																				.createElement("div");
+																		div.innerHTML = "<img class='thumbnail' src='" + picFile.result + "'" +
                                 "title='preview image'/>";
-																	output
-																			.insertBefore(
-																					div,
-																					null);
-																});
-												//Read the image
-												$('#clear, #result').show();
-												picReader
-														.readAsDataURL(file);
+																		output
+																				.insertBefore(
+																						div,
+																						null);
+																	});
+													//Read the image
+													$('#clear, #result').show();
+													picReader
+															.readAsDataURL(file);
+												} else {
+													alert("Image Size is too big. Minimum size is 2MB.");
+													$(this).val("");
+												}
 											} else {
-												alert("Image Size is too big. Minimum size is 2MB.");
+												alert("  คุณสามารถอัพโหลดรูปได้มากสุด 5 รูป    ");
 												$(this).val("");
 											}
 										} else {
-											alert("  คุณสามารถอัพโหลดรูปได้มากสุด 5 รูป    ");
+											alert("You can only upload image file.");
 											$(this).val("");
 										}
-									} else {
-										alert("You can only upload image file.");
-										$(this).val("");
 									}
-								}
 
-							});
-		} else {
-			console.log("Your browser does not support File API");
+								});
+			} else {
+				console.log("Your browser does not support File API");
+			}
 		}
-	}
+		$('#files').on("click", function() {
+			$('.thumbnail').parent().remove();
+			$('result').hide();
+			$(this).val("");
+		});
 
-	$('#files').on("click", function() {
-		$('.thumbnail').parent().remove();
-		$('result').hide();
-		$(this).val("");
-	});
-
-	$('#clear').on("click", function() {
-		$('.thumbnail').parent().remove();
-		$('#result').hide();
-		$('#files').val("");
-		$(this).hide();
-	});
+		$('#clear').on("click", function() {
+			$('.thumbnail').parent().remove();
+			$('#result').hide();
+			$('#files').val("");
+			$(this).hide();
+		});
 	</script>
-	
+	<script>
+		(function($, undefined) {
+
+			"use strict";
+
+			// When ready.
+			$(function() {
+				var $form = $("#regForm");
+
+				var $minNumber = $form.find("#amounts");
+
+				$minNumber.on("keyup", function(event) {
+					// When user select text in the document, also abort.
+					var selection = window.getSelection().toString();
+					if (selection !== '') {
+						return;
+					}
+
+					// When the arrow keys are pressed, abort.
+					if ($.inArray(event.keyCode, [ 38, 40, 37, 39 ]) !== -1) {
+						return;
+					}
+
+					var $this = $(this);
+
+					// Get the value.
+					var minNumber = $this.val();
+
+					var minNumber = minNumber.replace(/[\D\s\._\-]+/g, "");
+					minNumber = minNumber ? parseInt(minNumber, 10) : 0;
+
+					$this.val(function() {
+						return (minNumber === 0) ? "" : minNumber
+								.toLocaleString("en-US");
+					});
+
+					document.getElementById("oo").value = minNumber;
+				});
+
+				/**
+				 * ==================================
+				 * When Form Submitted
+				 * ==================================
+				 */
+				/* $form.on( "submit", function( event ) {
+				     
+				     var $this = $( this );
+				     var arr = $this.serializeArray();
+				 
+				     for (var i = 0; i < arr.length; i++) {
+				             arr[i].value = arr[i].value.replace(/[($)\s\._\-]+/g, ''); // Sanitize the values.
+				     };
+				     
+				     console.log("show this => " +arr );
+				     
+				     event.preventDefault();
+				 });
+				 */
+			});
+		})(jQuery);
+	</script>
+
 </body>
 
 </html>
