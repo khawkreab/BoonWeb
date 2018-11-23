@@ -45,13 +45,14 @@ public class PawnerController {
 	@RequestMapping("/savePawner")
 	public String savePawner(@ModelAttribute("pawner") Pawner pawner, BindingResult result, HttpServletRequest request){
 		try {
-			if (pawner.getPawnerId() == 0){
+			if (pmService.findPawnerEmai(pawner.getPawnerEmail()) != null){
+				return "redirect:pawner-register-form.html";
+			}else if (pawner.getPawnerId() == 0){
 				pawner.setPawnerState("pawner");
 				pmService.insert(pawner);
 			}else{
 				pawner.setPawnerState("pawner");
 				pmService.update(pawner);
-				
 				return "redirect:pawner-index.html";
 			}
 		}catch (Exception e){

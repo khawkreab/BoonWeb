@@ -32,7 +32,7 @@ public class PawnshopController {
 
 	@EJB(mappedName = "ejb:/BoonWeb//PawnerPostServiceBean!service.PawnerPostService")
 	PawnerPostService pawnerPostService;
-	
+
 	@EJB(mappedName = "ejb:/BoonWeb/PictureServiceBean!service.PictureService")
 	PictureService pictureService;
 
@@ -48,7 +48,9 @@ public class PawnshopController {
 	public String savePawnshop(@ModelAttribute("pawnshop") Pawnshop pawnshop, BindingResult result,
 			HttpServletRequest request) {
 		try {
-			if (pawnshop.getPawnshopId() == 0) {
+			if (pawnshopServ.findPawnshopEmail(pawnshop.getPawnshopEmail()) != null) {
+				return "redirect:pawnshop-register-form.html";
+			} else if (pawnshop.getPawnshopId() == 0) {
 				pawnshop.setPawnshopState("pawnshop");
 				pawnshopServ.insert(pawnshop);
 			} else {
