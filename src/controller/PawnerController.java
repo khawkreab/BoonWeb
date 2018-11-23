@@ -42,8 +42,6 @@ public class PawnerController {
 		return mv;
 	}
 	
-	
-	
 	@RequestMapping("/savePawner")
 	public String savePawner(@ModelAttribute("pawner") Pawner pawner, BindingResult result, HttpServletRequest request){
 		try {
@@ -51,6 +49,7 @@ public class PawnerController {
 				pawner.setPawnerState("pawner");
 				pmService.insert(pawner);
 			}else{
+				pawner.setPawnerState("pawner");
 				pmService.update(pawner);
 				
 				return "redirect:pawner-index.html";

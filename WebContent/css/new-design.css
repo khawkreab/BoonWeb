@@ -1,4 +1,4 @@
-/*!
+	/*!
  * khawkreab Grid v1.0.0-beta.2 (new design)
  * Copyright 2011-2018 khawkreab
  * Licensed khawkreab
@@ -1423,6 +1423,7 @@ footer {
 	margin: 18.22px;
 	display: block;
 	width: 650px;
+	margin-left: 50px;
 }
 
 .form-login {

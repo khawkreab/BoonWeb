@@ -91,7 +91,7 @@
 										id="pass1" class="account-regis" placeholder="รหัสผ่าน"
 										required="required"
 										pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-										title="ต้องมีเลขอย่างน้อย 1 ตัว และมีทั้ง อังษรพิมเล็กและใหญ่ ความยาวอย่างน้อย 8 ตัว" />
+										title="ต้องมีเลขอย่างน้อย 1 ตัว และมีทั้ง อังษรพิมเล็กและใหญ่ความยาวอย่างน้อย 8 ตัว และ ห้ามใช้ภาษาไทย" />
 								</li>
 								<li><input type="password" id="pass2" class="account-regis"
 									placeholder="ยืนยันรหัสผ่าน" required="required"

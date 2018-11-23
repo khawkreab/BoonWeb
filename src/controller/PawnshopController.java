@@ -52,6 +52,7 @@ public class PawnshopController {
 				pawnshop.setPawnshopState("pawnshop");
 				pawnshopServ.insert(pawnshop);
 			} else {
+				pawnshop.setPawnshopState("pawnshop");
 				pawnshopServ.update(pawnshop);
 			}
 		} catch (Exception e) {
