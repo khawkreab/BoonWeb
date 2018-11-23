@@ -203,13 +203,14 @@
 		</a>
 	</li>
 </ul>
+<script src="js/checkLogin.js"></script>
 <%
 	}
 %>
 <!-- ------------------------------ End -------------------------------------- -->
 <script src="js/navbar.js"></script>
 <script src="js/jquery.min.js"></script>
-<script src="js/checkLogin.js"></script>
+
 <%
 	if (session.getAttribute("userType") == "pawner") {
 %>
