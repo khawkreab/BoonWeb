@@ -53,6 +53,8 @@ function validateForm() {
 	var characterReg = /^[0-9A-Za-zก-๙]+$/;
 	var decimal = /^[-+]?[.0-9]+$/;
 	// validate
+
+	var pawnerPostName = $("input['name' = 'pawnerPostName']").val();
 	var postName = $('#textVal').val();
 	var brandName = $('#brandName').val();
 	var decimalOne = $('#decimalOne').val();
@@ -62,6 +64,17 @@ function validateForm() {
 	// A loop that checks every input field in the current tab:
 	for (i = 0; i < y.length; i++) {
 		// If a field is empty...
+		// check all input value
+		y[i].classList.remove("invalid");
+		if (y[i].value == "") {
+			y[i].className += " invalid";
+			alert("incollect = > " + i);
+			valid = false;
+		} else {
+			y[i].classList.remove("invalid");
+			alert("collect = > " + i)
+		}
+
 		if (currentTab == 0) {
 			if (!characterReg.test(postName) || !characterReg.test(brandName)) {
 				// add an "invalid" class to the field:
