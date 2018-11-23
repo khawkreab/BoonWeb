@@ -171,14 +171,14 @@ function showsteptype(e) {
 
 		step2 = "<input type='hidden' name='pawnerPostItemType' value='Laptop' />"
 		step2 += "<p>"
-		step2 += "<lable>หมายเลขประจำเครื่อง</lable>"
-		step2 += "<input type='text' name='pawnerPostSerial' id='serial' required='required'>"
+		step2 += "<lable>รุ่น</lable>"
+		step2 += "<input type='text' name='pawnerPostModel' id='model' required='required'>"
 		step2 += "<i>ห้ามใช้ อักษรพิเศษ และ ภาษาไทย</i>"
 		step2 += "</p>"
 
 		step2 += "<p>"
-		step2 += "<lable>รุ่น</lable>"
-		step2 += "<input type='text' name='pawnerPostModel' id='model' required='required'>"
+		step2 += "<lable>หมายเลขประจำเครื่อง</lable>"
+		step2 += "<input type='text' name='pawnerPostSerial' id='serial' required='required'>"
 		step2 += "<i>ห้ามใช้ อักษรพิเศษ และ ภาษาไทย</i>"
 		step2 += "</p>"
 
@@ -274,14 +274,14 @@ function showsteptype(e) {
 		step2 = "<input type='hidden' name='pawnerPostItemType' value='Tv' />"
 
 		step2 += "<p>"
-		step2 += "<lable>หมายเลขประจำเครื่อง</lable>"
-		step2 += "<input type='text' name='pawnerPostSerial' required='required' id='serial'>"
+		step2 += "<lable>รุ่น</lable>"
+		step2 += "<input type='text' name='pawnerPostModel' required='required' id='model'>"
 		step2 += "<i>ห้ามใช้ อักษรพิเศษ และ ภาษาไทย</i>"
 		step2 += "</p>"
 
 		step2 += "<p>"
-		step2 += "<lable>รุ่น</lable>"
-		step2 += "<input type='text' name='pawnerPostModel' required='required' id='model'>"
+		step2 += "<lable>หมายเลขประจำเครื่อง</lable>"
+		step2 += "<input type='text' name='pawnerPostSerial' required='required' id='serial'>"
 		step2 += "<i>ห้ามใช้ อักษรพิเศษ และ ภาษาไทย</i>"
 		step2 += "</p>"
 
@@ -344,14 +344,14 @@ function showsteptype(e) {
 		step2 = "<input type='hidden' name='pawnerPostItemType' value='Smartphone' />"
 
 		step2 += "<p>"
-		step2 += "<lable>หมายเลขประจำเครื่อง</lable>"
-		step2 += "<input type='text' name='pawnerPostSerial' required='required'  id='serial'>"
+		step2 += "<lable>รุ่น</lable>"
+		step2 += "<input type='text' name='pawnerPostModel' required='required'  id='model'>"
 		step2 += "<i>ห้ามใช้ อักษรพิเศษ และ ภาษาไทย</i>"
 		step2 += "</p>"
 
 		step2 += "<p>"
-		step2 += "<lable>รุ่น</lable>"
-		step2 += "<input type='text' name='pawnerPostModel' required='required'  id='model'>"
+		step2 += "<lable>หมายเลขประจำเครื่อง</lable>"
+		step2 += "<input type='text' name='pawnerPostSerial' required='required'  id='serial'>"
 		step2 += "<i>ห้ามใช้ อักษรพิเศษ และ ภาษาไทย</i>"
 		step2 += "</p>"
 
@@ -359,11 +359,17 @@ function showsteptype(e) {
 		step2 += "<div class='wrap-input100 validate-input' style='margin-top:15px;'>"
 		step2 += "<label>ขนาดหน้าจอ</label>"
 		step2 += "<select class='input100' name='pawnerPostSize' required='required'>"
-		step2 += "<option>10-11 นิ้ว</option>"
-		step2 += "<option>12-13 นิ้ว</option>"
-		step2 += "<option>14 นิ้ว</option>"
-		step2 += "<option>15 นิ้ว</option>"
-		step2 += "<option>17 นิ้ว</option>"
+		step2 += "<option>น้อยกว่า 3.5 นิ้ว</option>"
+		step2 += "<option>3.6 ถึง 4 นิ้ว</option>"
+		step2 += "<option>4.1 ถึง 4.5 นิ้ว</option>"
+		step2 += "<option>4.6 ถึง 5 นิ้ว</option>"
+		step2 += "<option>5.1 ถึง 5.5  นิ้ว</option>"
+		step2 += "<option>มากกว่า 5.6  นิ้ว</option>"
+		step2 += "<option>7.0 ถึง 7.9  นิ้ว</option>"
+		step2 += "<option>8 ถึง 8.9 นิ้ว</option>"
+		step2 += "<option> 9 ถึง 9.9 นิ้ว</option>"
+		step2 += "<option>10 นิ้ว ขึ้นไป</option>"
+
 		step2 += "</select>"
 		step2 += "</p>"
 
@@ -382,7 +388,7 @@ function showsteptype(e) {
 		step2 += "<lable>ปีที่ซื้อสินค้า</lable>"
 		step2 += "<input type='date'name='pawnerPostPurchase'>"
 		step2 += "</p>"
-			
+
 		step2 += "<input type='hidden' id='decimalOne' value='12.00'>"
 		step2 += "<input type='hidden' id='decimalTwo' value='12.00'>"
 		$('#step2').append(step2);
@@ -495,14 +501,14 @@ function showsteptype(e) {
 		step2 = "<input type='hidden' name='pawnerPostItemType' value='Watch' />"
 
 		step2 += "<p>"
-		step2 += "<lable>หมายเลขประจำเครื่อง</lable>"
-		step2 += "<input type='text' name='pawnerPostSerial' id='serial'>"
+		step2 += "<lable>รุ่น</lable>"
+		step2 += "<input type='text' name='pawnerPostModel' id='model'>"
 		step2 += "<i>ห้ามใช้ อักษรพิเศษ และ ภาษาไทย</i>"
 		step2 += "</p>"
 
 		step2 += "<p>"
-		step2 += "<lable>รุ่น</lable>"
-		step2 += "<input type='text' name='pawnerPostModel' id='model'>"
+		step2 += "<lable>หมายเลขประจำเครื่อง</lable>"
+		step2 += "<input type='text' name='pawnerPostSerial' id='serial'>"
 		step2 += "<i>ห้ามใช้ อักษรพิเศษ และ ภาษาไทย</i>"
 		step2 += "</p>"
 
