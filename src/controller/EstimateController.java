@@ -172,6 +172,7 @@ public class EstimateController {
 		Estimate estimate;
 		long estimateId = Long.parseLong(request.getParameter("estimateId"));
 		long pawnerPostId = Long.parseLong(request.getParameter("pawnerPostId"));
+		long pawnerId = (long) request.getSession().getAttribute("id");
 		try {
 
 			estimateService.updateStatus(pawnerPostId , "denei");
@@ -180,6 +181,8 @@ public class EstimateController {
 			estimate = estimateService.findEstimateById(estimateId);
 			estimate.setEstimateStatus("approve");
 			estimateService.update(estimate);
+			String notifiPawnerFollowPlege = Integer.toString(pawnerPostService.findPawnerPostByPawnerIdAndStatus(pawnerId, "process").size());			
+			request.getSession().setAttribute("notifiPawnerFollowPlege", notifiPawnerFollowPlege);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

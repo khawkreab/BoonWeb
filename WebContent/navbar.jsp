@@ -1,9 +1,3 @@
-<!-- 
-// page : navber
-// version : 8.0
-// task : new design
-// edit by : khawkreab
- -->
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!-- nabar -->
 <!-- ----------------------------login---------------------------------------- -->
@@ -66,13 +60,14 @@
 						<a class="nav-link" href="pawner-cart.html">
 							<img src="img/ICONBOONYOUNG/shopping-bag.png" height="50px" width="50px">
 							<i>ตะกร้า</i>
-							<i id="cartNumberlink" class="fas"></i>
+							<i id="cartSize" class="fas"></i>
 						</a>
 					</li>
 					<li class="menu-icon">
 						<a class="nav-link" href="pawner-track-pledge.html">
 							<img src="img/ICONBOONYOUNG/Follow.png" height="50px" width="50px">
 							<i>ติดตามการจำนำ</i>
+							<i id="notifi-pawner-follow-plege" class="fas"><%=session.getAttribute("notifiPawnerFollowPlege") %></i>
 						</a>
 					</li>
 					<li class="menu-icon">
@@ -105,7 +100,7 @@
 				<span></span>
 				<span></span>
 				<span></span>
-				<i id="cartNumber" class="fas"></i>
+				<i id="notifi" class="fas"></i>
 			</a>
 		</div>
 	</div>
@@ -210,30 +205,12 @@
 <!-- ------------------------------ End -------------------------------------- -->
 <script src="js/navbar.js"></script>
 <script src="js/jquery.min.js"></script>
-
-<%
-	if (session.getAttribute("userType") == "pawner") {
-%>
-<script type="text/javascript">
-	var cartNum = sessionStorage.getItem('pawnercartNumber');
-
-	if (null == cartNum || 0 == cartNum || cartNum == undefined) {
-		$("#cartNumberlink").css("display", "none");
-	} else {
-		$("#cartNumber, #cartNumberlink").css("display", "block");
-		$("#cartNumberlink").text(cartNum)
-	}
-</script>
-<%
-	}
-%>
 <script>
-
 	$("#nav-custom-toggle")
 			.click(
 					function() {
 						$(
-								"#nav-custom-toggle, #nav-custom-overlay, #nav-custom-fullscreen, #cartNumber")
+								"#nav-custom-toggle, #nav-custom-overlay, #nav-custom-fullscreen, #notifi")
 								.toggleClass("open");
 					});
 
@@ -241,7 +218,9 @@
 
 	resizeNav();
 </script>
-
+<%
+	if (session.getAttribute("userType") == "pawner") {
+%>
 <!-- ----------------- popup ban -------------------------------  -->
 <!-- The Modal -->
 <div id="bannedmodal" class="modal" style="z-index: 9999">
@@ -261,32 +240,38 @@
 	</div>
 </div>
 <script>
-	// Get the modal
 	var bannedmodal = $('#bannedmodal');
-
-	// Get the button that opens the modal
 	var banned = $("#banned");
-
-	// Get the <span> element that closes the modal
 	var close = $(".close");
-
-	// When the user clicks the button, open the modal 
 	banned.click(function() {
 		bannedmodal.css("display", "block");
 	});
-
-	// When the user clicks on <span> (x), close the modal
 	bannedmodal.click(function() {
 		bannedmodal.css("display", "none");
 	});
-
-	// When the user clicks anywhere outside of the modal, close it
-	/* window.click(function(event) {
-		if (event.target == modal) {
-			bannedmodal.css("display" , "none");
-		}
-	}); */
 </script>
+<script type="text/javascript">
+	var cartSize = sessionStorage.getItem('pawnercartSize');
+	var notifiPawnerFollowPlege = '<%= session.getAttribute("notifiPawnerFollowPlege") %>' ;
+	 if ((cartSize != "0" && cartSize != null )|| "0" != notifiPawnerFollowPlege  ) {
+		$("#notifi").css("display", "block"); 
+		if ("0" != cartSize && cartSize != null) {
+			$("#cartSize").css("display", "block");
+			$("#cartSize").text(cartSize);
+			console.log("cartSize"+cartSize)
+		}
+		if (notifiPawnerFollowPlege != "0") {
+			$("#notifi-pawner-follow-plege").css("display", "block");
+			console.log("notifiPawnerFollowPlege"+notifiPawnerFollowPlege)
+		}
+	 } else {	
+		 console.log("else")			
+		$("#cartSize, #notifi, #notifi-pawner-follow-plege").css("display", "none");
+	} 
+</script>
+<%
+	}
+%>
 <!-- -------------------------------------------------------------------------------------------------- -->
 <!-- Bootstrap core JavaScript -->
 <script src="vendor/jquery/jquery.min.js"></script>

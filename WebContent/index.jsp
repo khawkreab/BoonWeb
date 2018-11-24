@@ -42,7 +42,7 @@ body {
 		if (session.getAttribute("userType") == "pawner") {
 	%>
 	<!-- ----------------------------pawner login---------------------------------------- -->
-	<section class="masthead text-center text-white d-flex header">
+	<section class="section-full text-white d-flex header">
 		<div class="container my-auto">
 			<div class="row">
 				<div class="col-lg-10 mx-auto">
@@ -68,7 +68,7 @@ body {
 			</div>
 		</div>
 	</section>
-	<section id="pawning">
+	<section id="pawning" class="section-full">
 		<h3 class="text-orange">วิธีการจำนำของ</h3>
 		<ul id="timelinecountstep">
 			<li class="timeline-step">
@@ -90,7 +90,7 @@ body {
 			<button class="btn-custom btn-custom-sky">วิธีซื้อของหลุดจำนำ</button>
 		</a>
 	</section>
-	<section id="buying">
+	<section id="buying" class="section-full">
 		<h3 class="text-orange">วิธีซื้อของหลุดจำนำ</h3>
 		<ul id="timelinecountstep2">
 			<li class="timeline-step">
@@ -112,7 +112,7 @@ body {
 	%>
 	<!-- ----------------------------pawn-shop login---------------------------------------- -->
 	<!--banner-->
-	<section class="masthead text-center text-white d-flex header">
+	<section class="section-full text-white d-flex header">
 		<div class="container my-auto">
 			<div class="row">
 				<div class="col-lg-10 mx-auto">
@@ -139,7 +139,7 @@ body {
 		</div>
 	</section>
 	<!-- ----------------------------shop-card-list ---------------------------------------- -->
-	<section id="pledge" class="shop-card-list">
+	<section id="pledge" class="shop-card-list section-full">
 		<c:forEach items="${pawnerPosts}" var="post">
 			<div class="shop-card" data-aos="fade-up">
 				<div style="height: 200px;">

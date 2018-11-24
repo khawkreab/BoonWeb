@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-	pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page import="java.util.Date"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
@@ -8,13 +7,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>order</title>
-
 <!-- import all css -->
 <jsp:include page="importCSS.jsp" />
 <link rel="stylesheet" href="css/cartItem.css">
 </head>
 <body>
-
 	<!--banner-->
 	<div class="banner-top">
 		<div>
@@ -22,41 +19,41 @@
 			<em></em>
 		</div>
 	</div>
-	<section id="cartitem"
-		style="background-color: #f5f5f5; justify-content: unset;">
+	<section id="cartitem" style="background-color: #f5f5f5; justify-content: unset;">
 		<div class="d-flex">
 			<!-- left -->
 			<div id="list" class="cart-item-left">
 				<!-- List Order Here!!!! -->
 			</div>
-
 			<!-- right -->
 			<div class="cart-item-right">
-				<div style="border-bottom: 1px solid #e1e1e1; padding-bottom: 5px;">
-					สรุปรายการสั่งซื้อ</div>
+				<div style="border-bottom: 1px solid #e1e1e1; padding-bottom: 5px;">สรุปรายการสั่งซื้อ</div>
 				<div style="padding: 8px">
 					<div class="d-flex">
 						<div class="mr-auto">จำนวน</div>
 						<div class="ml-auto ">
-							<span><i id="num"></i> ชิ้น</span>
+							<span>
+								<i id="num"></i>
+								ชิ้น
+							</span>
 						</div>
 					</div>
 					<div class="d-flex">
 						<div class="mr-auto">ยอมรวมทั้งสิ้น</div>
 						<div class="ml-auto">
-							<span> <i class="text-orange" id="totalPrice"></i> บาท
+							<span>
+								<i class="text-orange" id="totalPrice"></i>
+								บาท
 							</span>
 						</div>
 					</div>
 				</div>
 				<!--  <button id="clearCart" class="btn btn-primary btn-block btn-lg"
 					onClick="clearCart()">ลบทั้งหมด</button> -->
-				<button id="comfirmOrder" class="btn-custom btn-custom-defalt"
-					style="width: 100%" onClick="comfirmOrder()">ยืนยันการสั่งซื้อสินค้า</button>
+				<button id="comfirmOrder" class="btn-custom btn-custom-defalt" style="width: 100%" onClick="comfirmOrder()">ยืนยันการสั่งซื้อสินค้า</button>
 			</div>
 		</div>
 	</section>
-
 	<jsp:include page="navbar.jsp" />
 	<!-- cart script  -->
 	<script>
@@ -64,27 +61,19 @@
 		var list = []
 
 		window.onLoad = this.check();
-		function select(e) {
-			console.log(e.getAttribute('data-cart'))
-			cart = JSON.parse(e.getAttribute('data-cart'))
-			this.list.push(this.cart)
-			sessionStorage.setItem('carts', JSON.stringify(this.list))
-			this.check()
-		}
 		function check() {
 			var html
 			var totalPrice = 0;
 
 			if (sessionStorage.getItem('carts')) {
 				list = JSON.parse(sessionStorage.getItem('carts'))
-
-				document.getElementById("cartNumber").style.display = "block";
-				sessionStorage.setItem('pawnercartNumber', list.length)
-				document.getElementById("cartNumber").innerHTML = sessionStorage
-						.getItem('pawnercartNumber')
-
+				/* set cart size */
+				sessionStorage.setItem('pawnercartSize', list.length)
+				/* get cart size */
+				document.getElementById("cartSize").innerHTML = sessionStorage
+						.getItem('pawnercartSize')
 				if (list.length == null || list.length == 0) {
-					document.getElementById("cartNumber").style.display = "none";
+					document.getElementById("cartSize").style.display = "none";
 					document.getElementById("cartitem").style.display = "none";
 					document.getElementById("chechcarts").innerHTML = "ไม่มีรายการสินค้า"
 
@@ -96,8 +85,11 @@
 						html += "<div class='cart-item'>"
 						html += "<div class='d-flex align-items-center'>"
 						html += "<div class=''><img height='50px' src='img/uploadImge/"+this.list[index].pawnshopPostPicture+"'></div>"
-						html += "<a href='post-item-detail.html?item="+ this.list[index].pawnshopPostId +"'> <i class='mr-auto'>"
-								+ this.list[index].pawnshopPostName + "</i></a>"
+						html += "<a href='post-item-detail.html?item="
+								+ this.list[index].pawnshopPostId
+								+ "'> <i class='mr-auto'>"
+								+ this.list[index].pawnshopPostName
+								+ "</i></a>"
 						html += "<i class='ml-auto small'>จำนวน  1  ชิ้น </i>"
 						html += "<i class='text-orange'>"
 								+ this.list[index].pawnshopPostPrice
@@ -123,7 +115,7 @@
 				}
 			} else {
 				/* ---- no list item ------ */
-				document.getElementById("cartNumber").style.display = "none";
+				document.getElementById("cartSize").style.display = "none";
 				document.getElementById("cartitem").style.display = "none";
 				document.getElementById("chechcarts").innerHTML = "ไม่มีรายการสินค้า"
 			}
@@ -139,7 +131,7 @@
 		function clearCart() {
 			console.log('clear')
 			sessionStorage.removeItem('carts')
-			sessionStorage.removeItem('pawnercartNumber')
+			sessionStorage.removeItem('pawnercartSize')
 			this.list = []
 			this.check()
 		}
@@ -172,6 +164,5 @@
 
 		}
 	</script>
-
 </body>
 </html>

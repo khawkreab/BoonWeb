@@ -134,7 +134,7 @@ keyframes rotate-photo { 100% {
 	transition: .5s ease-in-out;
 }
 
-#cartNumber {
+#notifi {
 	display: none;
 	position: absolute;
 	font-size: 1rem;
@@ -147,7 +147,7 @@ keyframes rotate-photo { 100% {
 	top: -2px;
 }
 
-#cartNumber:before {
+#notifi:before {
 	content: "\f0f3";
 	position: absolute;
 	color: #ff0000;
@@ -157,13 +157,13 @@ keyframes rotate-photo { 100% {
 	top: -4px;
 }
 
-#cartNumber.open {
+#notifi.open {
 	display: none !important;
 }
 
-#cartNumberlink {
+#cartSize, #notifi-pawner-follow-plege{
     position: absolute;
-    display: block;
+    display: none;
     top: 10px;
     right: 20px;
     color: #080808;
@@ -172,7 +172,7 @@ keyframes rotate-photo { 100% {
     text-align: center;
 }
 
-#cartNumberlink:before {
+#cartSize:before, #notifi-pawner-follow-plege:before {
 	content: "\f0f3";
 	position: absolute;
 	color: #f3f3f3;

@@ -11,30 +11,6 @@
 <!-- import all css -->
 <jsp:include page="importCSS.jsp" />
 <style>
-table {
-	font-family: arial, sans-serif;
-	border-collapse: collapse;
-	width: 100%;
-}
-
-.tha {
-	text-align: left;
-	padding: 8px;
-	font-size: 14.5px;
-	background-color: #ff7f00;
-	color: #fff;
-}
-
-.tda {
-	text-align: left;
-	padding: 20px;
-	color: #000;
-}
-
-tr:hover {
-	background-color: #dddddd;
-}
-
 .popup {
 	width: 100%;
 	height: 100%;
@@ -55,12 +31,6 @@ tr:hover {
 	.popup {
 		display: block;
 	}
-}
-
-#meta {
-	margin-top: 1px;
-	width: 300px;
-	float: right;
 }
 </style>
 <link rel="stylesheet" href="css/loadingPage.css">
@@ -225,15 +195,9 @@ tr:hover {
 
 			var w = window.open("", "", "width=1000,height=700");
 			var toNewWindow = $("#printable").html();
-			 $(w.document.body).html(toNewWindow);
-			    w.print();
+			$(w.document.body).html(toNewWindow);
+			w.print();
 
-			/* var originalContents = document.documentElement.innerHTML;
-
-			document.documentElement.innerHTML = document
-					.getElementById('printable').innerHTML;
-			window.print();
-			document.documentElement.innerHTML = originalContents; */
 		}
 	</script>
 	<div id="printable">

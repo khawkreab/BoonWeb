@@ -15,11 +15,11 @@
 %>
 </head>
 <body>
+	<div class="banner-top">
+		<h1>รายละเอียดสินค้า</h1>
+		<em></em>
+	</div>
 	<section>
-		<div class="banner-top">
-			<h1>รายละเอียดสินค้า</h1>
-			<em></em>
-		</div>
 		<div class="product-detail">
 			<div class="d-flex">
 				<!-- left -->
@@ -295,16 +295,15 @@
 				list = JSON.parse(sessionStorage.getItem('carts'))
 
 				console.log("list legth => " + list.length)
-				if (list.length == null || list.length == 0) {
-					document.getElementById("cartNumber").style.display = "none";
-					document.getElementById("cartNumberlink").style.display = "none";
-				} else {
-					document.getElementById("cartNumber").style.display = "block";
-					document.getElementById("cartNumberlink").style.display = "block";
-					sessionStorage.setItem('pawnercartNumber', list.length)
-					document.getElementById("cartNumber").innerHTML = list.length
-					document.getElementById("cartNumberlink").innerHTML = list.length
-					document.getElementById("cartNumberi").innerHTML = list.length
+				if (list.length != 0) {
+					/* set cart size */
+					sessionStorage.setItem('pawnercartSize', list.length)
+					console.log(sessionStorage.getItem('pawnercartSize'))
+					/* get cart size */
+					document.getElementById("cartSize").style.display = "block";
+					document.getElementById("cartSize").innerHTML = list.length
+					/* get notification */
+					document.getElementById("notifi").style.display = "block";
 				}
 
 				for ( var index in this.list) {

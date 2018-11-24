@@ -92,8 +92,8 @@ public class LoginCotroller {
 				return "redirect:index.html";
 			} else {
 
-				int nft = pawnerPostService.findPawnerPostByPawnerIdAndStatus(pawner.getPawnerId(), "process").size();
-				String kk = "" + nft;
+				String notifiPawnerFollowPlege = Integer.toString(pawnerPostService.findPawnerPostByPawnerIdAndStatus(pawner.getPawnerId(), "process").size());
+			
 				request.getSession().setAttribute("id", pawner.getPawnerId());
 				request.getSession().setAttribute("isLogin", "yes");
 				request.getSession().setAttribute("userType", "pawner");
@@ -101,7 +101,7 @@ public class LoginCotroller {
 						pawner.getPawnerFirstname() + " " + pawner.getPawnerLastname());
 				request.getSession().setAttribute("email", pawner.getPawnerEmail());
 				request.getSession().setAttribute("pawnerState", pawner.getPawnerState());
-				request.getSession().setAttribute("kk", kk);
+				request.getSession().setAttribute("notifiPawnerFollowPlege", notifiPawnerFollowPlege);
 
 				return "redirect:index.html";
 
@@ -153,7 +153,7 @@ public class LoginCotroller {
 			request.getSession().putValue("isLogin", "no");
 			request.getSession().removeAttribute("id");
 			request.getSession().removeAttribute("userType");
-			request.getSession().removeAttribute("notification");
+			request.getSession().removeAttribute("notif");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

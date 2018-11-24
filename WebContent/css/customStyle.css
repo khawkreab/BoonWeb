@@ -81,12 +81,15 @@ section {
 	display: flex;
 	position: relative;
 	flex-direction: column;
-	width: 100vw;
-	height: 100vh;
 	align-items: center;
 	justify-content: center;
 	padding-top: 20px;
 	flex-direction: column;
+}
+
+.section-full{
+	width: 100vw;
+	height: 100vh;
 }
 
 .header {
