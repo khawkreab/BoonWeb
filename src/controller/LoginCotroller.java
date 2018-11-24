@@ -91,9 +91,11 @@ public class LoginCotroller {
 			if (pawner.equals(null)) {
 				return "redirect:index.html";
 			} else {
-
-				String notifiPawnerFollowPlege = Integer.toString(pawnerPostService.findPawnerPostByPawnerIdAndStatus(pawner.getPawnerId(), "process").size());
-			
+				/* set notification */
+				String notifiPawnerFollowPlege = Integer.toString(
+						pawnerPostService.findPawnerPostByPawnerIdAndStatus(pawner.getPawnerId(), "process").size());
+				request.getSession().setAttribute("notifiPawnerFollowPlege", notifiPawnerFollowPlege);
+				/* */
 				request.getSession().setAttribute("id", pawner.getPawnerId());
 				request.getSession().setAttribute("isLogin", "yes");
 				request.getSession().setAttribute("userType", "pawner");
@@ -101,7 +103,6 @@ public class LoginCotroller {
 						pawner.getPawnerFirstname() + " " + pawner.getPawnerLastname());
 				request.getSession().setAttribute("email", pawner.getPawnerEmail());
 				request.getSession().setAttribute("pawnerState", pawner.getPawnerState());
-				request.getSession().setAttribute("notifiPawnerFollowPlege", notifiPawnerFollowPlege);
 
 				return "redirect:index.html";
 
@@ -115,16 +116,19 @@ public class LoginCotroller {
 			if (pawnshop.equals(null)) {
 				return "redirect:index.html";
 			} else {
-				int nft = estimateService.findEstimateByPawnshopIdAndStatus(pawnshop.getPawnshopId(), "approve").size();
-				int nft1 = estimateService.findEstimateByPawnshopIdAndStatus(pawnshop.getPawnshopId(), "denai").size();
-				String kk = Integer.toString(nft + nft1);
+				/* set notification */
+				String notifiPawnshopFollowEstimate = Integer.toString(estimateService
+						.findEstimateByPawnshopIdAndStatus(pawnshop.getPawnshopId(), "approve").size()
+						+ estimateService.findEstimateByPawnshopIdAndStatus(pawnshop.getPawnshopId(), "denai").size());
+				request.getSession().setAttribute("notifiPawnshopFollowEstimate", notifiPawnshopFollowEstimate);
+				/* */
 				request.getSession().setAttribute("id", pawnshop.getPawnshopId());
 				request.getSession().setAttribute("isLogin", "yes");
 				request.getSession().setAttribute("userType", "pawnShop");
 				request.getSession().setAttribute("username", pawnshop.getPawnshopName());
 				request.getSession().setAttribute("email", pawnshop.getPawnshopEmail());
 				request.getSession().setAttribute("pawnshopState", pawnshop.getPawnshopState());
-				request.getSession().setAttribute("kk", kk);
+
 				return "redirect:index.html";
 			}
 		} catch (Exception e) {
@@ -142,7 +146,6 @@ public class LoginCotroller {
 			e.printStackTrace();
 		}
 
-		request.getSession().setAttribute("error", "yes");
 		return "redirect:index.html?login=fail";
 	}
 
@@ -153,7 +156,8 @@ public class LoginCotroller {
 			request.getSession().putValue("isLogin", "no");
 			request.getSession().removeAttribute("id");
 			request.getSession().removeAttribute("userType");
-			request.getSession().removeAttribute("notif");
+			request.getSession().removeAttribute("notifiPawnerFollowPlege");
+			request.getSession().removeAttribute("notifiPawnshopFollowEstimate");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

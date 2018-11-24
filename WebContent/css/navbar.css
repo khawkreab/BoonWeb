@@ -161,7 +161,7 @@ keyframes rotate-photo { 100% {
 	display: none !important;
 }
 
-#cartSize, #notifi-pawner-follow-plege{
+#cartSize, #notifi-pawner-follow-plege, #notifi-pawnshop-follow-estimate{
     position: absolute;
     display: none;
     top: 10px;
@@ -172,7 +172,7 @@ keyframes rotate-photo { 100% {
     text-align: center;
 }
 
-#cartSize:before, #notifi-pawner-follow-plege:before {
+#cartSize:before, #notifi-pawner-follow-plege:before, #notifi-pawnshop-follow-estimate:before {
 	content: "\f0f3";
 	position: absolute;
 	color: #f3f3f3;
