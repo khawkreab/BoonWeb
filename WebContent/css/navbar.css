@@ -30,8 +30,7 @@
 .rainbow-button {
 	width: calc(20vw + 6px);
 	height: calc(8vw + 6px);
-	background-image: linear-gradient(90deg, #00C0FF 0%, #FFCF00 49%, #FC4F4F 80%, #00C0FF
-		100%);
+	background-image: linear-gradient(90deg, #00C0FF 0%, #FFCF00 49%, #FC4F4F 80%, #00C0FF 100%);
 	border-radius: 5px;
 	display: flex;
 	align-items: center;
@@ -155,21 +154,31 @@ keyframes rotate-photo { 100% {
 	font-size: 1.8rem;
 	left: -5px;
 	top: -4px;
+	text-shadow: 0 0 1rem #ffffff;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-name: tada;
+	animation-name: tada;
+	background: -webkit-linear-gradient(#ec0505, #ff0000);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: #ff00008f;
 }
 
 #notifi.open {
 	display: none !important;
 }
 
-#cartSize, #notifi-pawner-follow-plege, #notifi-pawnshop-follow-estimate{
-    position: absolute;
-    display: none;
-    top: 10px;
-    right: 20px;
-    color: #080808;
-    z-index: 9999;
-    width: 16px;
-    text-align: center;
+#cartSize, #notifi-pawner-follow-plege, #notifi-pawnshop-follow-estimate {
+	position: absolute;
+	display: none;
+	top: 10px;
+	right: 20px;
+	color: #080808;
+	z-index: 9999;
+	width: 16px;
+	text-align: center;
 }
 
 #cartSize:before, #notifi-pawner-follow-plege:before, #notifi-pawnshop-follow-estimate:before {
@@ -295,8 +304,7 @@ keyframes rotate-photo { 100% {
 
 #nav-custom-fullscreen li:hover {
 	list-style: none;
-	background-image: linear-gradient(90deg, #00C0FF 0%, #FFCF00 49%, #FC4F4F 80%, #00C0FF
-		100%);
+	background-image: linear-gradient(90deg, #00C0FF 0%, #FFCF00 49%, #FC4F4F 80%, #00C0FF 100%);
 	animation: slidebg 2s linear infinite;
 }
 

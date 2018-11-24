@@ -72,10 +72,16 @@
 				/* get cart size */
 				document.getElementById("cartSize").innerHTML = sessionStorage
 						.getItem('pawnercartSize')
+				console.log("check notifiPawnerFollowPlege => "
+						+ notifiPawnerFollowPlege)
 				if (list.length == null || list.length == 0) {
 					document.getElementById("cartSize").style.display = "none";
 					document.getElementById("cartitem").style.display = "none";
+					document.getElementById("notifi").style.display = "none";
 					document.getElementById("chechcarts").innerHTML = "ไม่มีรายการสินค้า"
+					if (notifiPawnerFollowPlege != "0") {
+						document.getElementById("notifi").style.display = "block";
+					}
 
 				} else {
 					/* ---- list item ------ */
@@ -125,7 +131,7 @@
 		function deleteSelf(index) {
 			this.list.splice(index, 1)
 			sessionStorage.setItem('carts', JSON.stringify(this.list))
-			this.check()
+			this.check();
 		}
 
 		function clearCart() {
@@ -133,7 +139,7 @@
 			sessionStorage.removeItem('carts')
 			sessionStorage.removeItem('pawnercartSize')
 			this.list = []
-			this.check()
+			this.check();
 		}
 
 		function comfirmOrder() {

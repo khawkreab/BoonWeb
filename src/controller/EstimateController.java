@@ -188,7 +188,7 @@ public class EstimateController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return "redirect:pawner-track-pledge.html";
+		return "redirect:pawner-track-pledge.html#item"+pawnerPostId;
 	}
 
 	@RequestMapping("/pawnshop-estimate-approve")
