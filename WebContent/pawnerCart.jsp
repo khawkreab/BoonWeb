@@ -96,8 +96,8 @@
 						html += "<div class='cart-item'>"
 						html += "<div class='d-flex align-items-center'>"
 						html += "<div class=''><img height='50px' src='img/uploadImge/"+this.list[index].pawnshopPostPicture+"'></div>"
-						html += " <i class='mr-auto'>"
-								+ this.list[index].pawnshopPostName + "</i>"
+						html += "<a href='post-item-detail.html?item="+ this.list[index].pawnshopPostId +"'> <i class='mr-auto'>"
+								+ this.list[index].pawnshopPostName + "</i></a>"
 						html += "<i class='ml-auto small'>จำนวน  1  ชิ้น </i>"
 						html += "<i class='text-orange'>"
 								+ this.list[index].pawnshopPostPrice

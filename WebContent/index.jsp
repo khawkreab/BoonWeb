@@ -18,6 +18,8 @@
 <title>Boonyong</title>
 <!-- import all css -->
 <jsp:include page="importCSS.jsp" />
+<!-- anime css  -->
+<link href="css/aos.css" rel="stylesheet">
 <!-- time line step css -->
 <link rel="stylesheet" href="css/timelineStep.css">
 <style type="text/css">

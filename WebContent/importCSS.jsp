@@ -1,13 +1,9 @@
 <!-- logo -->
 <link rel="icon" href="img/logos/logo.png">
-<!-- anime css  -->
-<link href="css/aos.css" rel="stylesheet">
 <!-- Bootstrap core CSS -->
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <!-- font icon for this template -->
-<link href="vendor/font-awesome/css/fontawesome-all.min.css"
-	rel="stylesheet" type="text/css">
-
+<link href="vendor/font-awesome/css/fontawesome-all.min.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="css/customStyle.css">
 <link rel="stylesheet" href="css/animate.css">
 <link rel="stylesheet" href="css/login.css">
