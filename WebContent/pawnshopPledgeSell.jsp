@@ -19,6 +19,8 @@
 <title>pawner-post-form</title>
 <!-- import all css -->
 <jsp:include page="importCSS.jsp" />
+<link rel="stylesheet" href="css/checkBox.css">
+
 </head>
 
 <body style="background-color: #f4f4f4; overflow: hidden;">
@@ -82,16 +84,29 @@
 					<div class="tab" id="step1">
 						<p>
 							<label>ชื่อสินค้าที่ต้องการจำนำ</label> <input type="text"
-								name="pawnshopPostName" required="required" id="textVal">
+								name="pawnshopPostName" required="required" maxlength="30">
 							<br> <i>ใช้เป็นตัวอักษร ภาษาไทย หรือ อังกฤษ เท่านั้น
 								ความยาวไม่เกิน 30 ตัวอักษร และ ต้องไม่ใช้ อักษรพิเศษ</i>
 						</p>
-						<p>
-							<label>ราคาที่ต้องการขาย</label> <input type="text"
-								name="pawnshopPostPrice" id="amounts" required="required" /> <br>
-							<i>ใช้เป็นตัวเลข 0-9 สามารถมีจุดทศนิยมได้</i> <input
-								type="hidden" id="oo" />
-						</p>
+						<ul class='form-list'
+							style='display: inline-flex; list-style-type: none;'>
+							<li class='form-list-row form-list-row-inline'
+								style='margin: auto; margin-right: 100px;'>
+								<p>
+									<label>ยี่ห้อ</label> <input type="text" name="pawnshopPostBrand"
+										required="required" maxlength="20" /> <br> <i>
+										ภาษาไทย หรือ อังกฤษ เท่านั้น ความยาวไม่เกิน 20 ตัวอักษร </i>
+								</p>
+							</li>
+							<li class='form-list-row form-list-row-inline'
+								style='margin: auto; margin-right: 100px;'>
+								<p>
+									<label>ราคาที่ต้องการขาย</label> <input type="text"
+										name="pawnshopPostPrice" id="amounts" required="required"
+										maxlength="6" /> <br> <i>สามารถให้ราคาของ ที่มูลค่าไม่เกิน 6 หลัก</i> <input type="hidden" id="oo" />
+								</p>
+							</li>
+						</ul>
 						<!-- ------------------------upload image----------------------------  -->
 						<div style="margin-top: 15px; width: 100%; position: relative;">
 							<span style="font-size: 14px;">ลงรูปภาพประกอบการจำนำ</span>
