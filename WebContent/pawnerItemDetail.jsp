@@ -155,7 +155,7 @@
 					</ul>
 					<p class="quantity">
 						จำนวน :
-						<span class="qt">1</span>
+						<span>${pawnshopPost.pawnshopPostQuality}</span>
 						ชิ้น
 					</p>
 				</div>
@@ -173,7 +173,12 @@
 									"pawnshopName": "${pawnshopPost.pawnshopId.pawnshopName }",
 									"pawnshopPostPicture": "${pawnshopPost.pawnshopPostPicture}"}'
 						class="hvr-skew-backward">
-						<button class="btn-custom btn-custom-defalt">เพิ่มลงรถเข็น</button>
+						<c:if test="${pawnshopPost.pawnshopPostQuality != '0'}">
+							<button class="btn-custom btn-custom-defalt">เพิ่มลงรถเข็น</button>
+						</c:if>
+						<c:if test="${pawnshopPost.pawnshopPostQuality == '0'}">
+							<button class="btn-custom btn-custom-gray" disabled>เพิ่มลงรถเข็น</button>
+						</c:if>
 					</a>
 				</div>
 			</div>
@@ -264,58 +269,58 @@
 	<jsp:include page="navbar.jsp" />
 	<!-- cart script -->
 	<script type="text/javascript">
-		var cart = {}
-		var list = []
+	var cart = {}
+	var list = []
 
-		window.onload = this.check();
-		function select(e) {
-			var validitem = true;
-			/* check between item in cart with current item */
-			cart = JSON.parse(e.getAttribute('data-cart'))
-			for (i = 0; i < list.length; i++) {
-				if (list[i].pawnshopPostId == cart.pawnshopPostId) {
+	window.onload = this.check();
+	function select(e) {
+	    var validitem = true;
+	    /* check between item in cart with current item */
+	    cart = JSON.parse(e.getAttribute('data-cart'))
+	    for (i = 0; i < list.length; i++) {
+		if (list[i].pawnshopPostId == cart.pawnshopPostId) {
 
-					validitem = false;
-					$('#modalIncart').modal()
+		    validitem = false;
+		    $('#modalIncart').modal()
 
-				}
-			}
-			if (validitem) {
-				/* add item to cart */
-				$('#modalCart').modal()
-				this.list.push(this.cart)
-				sessionStorage.setItem('carts', JSON.stringify(this.list))
-				this.check()
-			}
+		}
+	    }
+	    if (validitem) {
+		/* add item to cart */
+		$('#modalCart').modal()
+		this.list.push(this.cart)
+		sessionStorage.setItem('carts', JSON.stringify(this.list))
+		this.check()
+	    }
+	}
+
+	function check() {
+	    var totalPrice = 0
+	    if (sessionStorage.getItem('carts')) {
+		list = JSON.parse(sessionStorage.getItem('carts'))
+
+		console.log("list legth => " + list.length)
+		if (list.length != 0) {
+		    /* set cart size */
+		    sessionStorage.setItem('pawnercartSize', list.length)
+		    console.log(sessionStorage.getItem('pawnercartSize'))
+		    /* get cart size */
+		    document.getElementById("cartSize").style.display = "block";
+		    document.getElementById("cartSize").innerHTML = list.length
+		    /* get notification */
+		    document.getElementById("notifi").style.display = "block";
 		}
 
-		function check() {
-			var totalPrice = 0
-			if (sessionStorage.getItem('carts')) {
-				list = JSON.parse(sessionStorage.getItem('carts'))
-
-				console.log("list legth => " + list.length)
-				if (list.length != 0) {
-					/* set cart size */
-					sessionStorage.setItem('pawnercartSize', list.length)
-					console.log(sessionStorage.getItem('pawnercartSize'))
-					/* get cart size */
-					document.getElementById("cartSize").style.display = "block";
-					document.getElementById("cartSize").innerHTML = list.length
-					/* get notification */
-					document.getElementById("notifi").style.display = "block";
-				}
-
-				for ( var index in this.list) {
-					totalPrice += parseFloat(this.list[index].pawnshopPostPrice
-							.replace(/\,/g, ''), 10)
-				}
-
-				$('#totalPrice, #totalPriceFee').text(
-						totalPrice.toLocaleString('en'))
-
-			}
+		for ( var index in this.list) {
+		    totalPrice += parseFloat(this.list[index].pawnshopPostPrice
+			    .replace(/\,/g, ''), 10)
 		}
-	</script>
+
+		$('#totalPrice, #totalPriceFee').text(
+			totalPrice.toLocaleString('en'))
+
+	    }
+	}
+    </script>
 </body>
 </html>
