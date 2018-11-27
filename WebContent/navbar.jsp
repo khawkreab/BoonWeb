@@ -42,7 +42,7 @@
 						} else {
 					%>
 					<li class="menu-icon">
-						<a class="nav-link" href="pawner-post-form-gold.html">
+						<a class="nav-link" href="pawner-pledge.html">
 							<img src="img/ICONBOONYOUNG/Post.png" height="50px" width="50px">
 							<i>จำนำของ</i>
 						</a>

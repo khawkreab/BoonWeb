@@ -102,14 +102,24 @@ input[type=checkbox] {
 	border-radius: 10px;
 }
 
-.tab textarea:focus, .tab select:focus {
+.tab textarea:focus {
 	outline: none;
 	border-color: #ff7700;
 	border-radius: 10px;
 }
 
-.tab textarea:valid, .tab select:valid {
-	border-color: #24cf5f;
+.tab select:focus {
+	outline: none;
+	border-color: #ff7700;
+}
+
+.tab textarea:valid {
+	border: 2px solid #00ff44;
+}
+
+.tab select:valid {
+	border: 1px solid #0000;
+	border-bottom: 2px solid #00ff44;
 }
 
 .tab span {
@@ -121,8 +131,7 @@ input[type=checkbox] {
 .tab select {
 	padding: 5px;
 	width: 100%;
-	border: 2px solid #999;
-	border-radius: 10px;
+	border-bottom: 2px solid #999;
 	margin-bottom: 1rem;
 }
 
@@ -161,6 +170,7 @@ input[type=checkbox] {
 
 #clear {
 	display: none;
+	cursor: pointer;
 }
 
 .result {

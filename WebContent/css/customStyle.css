@@ -192,7 +192,11 @@ section {
 }
 
 .text-success {
-	
+	color: #00ff44;
+}
+
+.text-red {
+	color: #ff0000;
 }
 
 line-x {
