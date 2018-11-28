@@ -17,22 +17,54 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="">
 <meta name="author" content="">
-<title>pawnshop-track-estimate</title>
+<title>สถานะของการประเมิน</title>
 
 <!-- import all css -->
 <jsp:include page="importCSS.jsp" />
 <link rel="stylesheet" href="css/timeline.css">
+<link rel="stylesheet" href="css/loadingPage.css">
+<link rel="stylesheet" href="css/profileCard.css">
 <!-- style ตรงนี้กูเอามาใสไวนี้ก่อนนะจะย้ายกะได้แต่กูไม่รู้มันจะไปชดตัวไหนไหมเลยไวนี้ก่อน -->
 <style>
 li {
 	list-style: none;
+}
+.popup {
+	width: 100%;
+	height: 100%;
+	display: none;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	background: rgba(0, 0, 0, 0.75);
 }
 </style>
 </head>
 <body>
 	<!-- Navigation -->
 	<jsp:include page="navbar.jsp" />
-
+	<!-- loading page -->
+	<div class="loadpage" id="loadpage">
+		<div class='loading'>
+			<span>
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</span>
+			<div class='loading-base'>
+				<span></span>
+				<div class='loading-face'></div>
+			</div>
+		</div>
+		<div class='loading-longfazers'>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+		<i class="loading-text">Loading . . .</i>
+	</div>
 	<!--banner-->
 	<div class="banner-top">
 		<div>
@@ -165,11 +197,22 @@ li {
 								<line-x></line-x>
 								<div class="history-show-estimate">
 									<div class="row d-flex">
-										<div class="col-md-5">
-											<p>เจ้าของโพส คุณ
-												${track.pawnerPostId.pawnerId.pawnerFirstname}
-												${track.pawnerPostId.pawnerId.pawnerLastname} ณ จังหวัด
-												${track.pawnerPostId.pawnerId.pawnerProvince}</p>
+										<div class="col-md-5 d-inline-flex">
+												เจ้าของโพส คุณ
+												<!-- profile card -->
+												<div class="profile-card-head is-collapsed">
+													<div class="card-inner js-expander">&nbsp;&nbsp; ${track.pawnerPostId.pawnerId.pawnerFirstname} ${track.pawnerPostId.pawnerId.pawnerLastname}</div>
+													<div class="profile-card">
+														<div class="profile-card-circle">
+															<img src="img/logos/logo.png">
+														</div>
+														<span>${track.pawnerPostId.pawnerId.pawnerFirstname} ${track.pawnerPostId.pawnerId.pawnerLastname}</span>
+														<i>${track.pawnerPostId.pawnerId.pawnerEmail}</i>
+														<i>${track.pawnerPostId.pawnerId.pawnerProvince}</i>
+														<i>Status:${track.estimateStatus}</i>
+														<span class="closed">&times;</span>
+													</div>
+												</div>
 										</div>
 										<div class="col-md-4 ml-auto">
 											<p>
@@ -202,11 +245,22 @@ li {
 								<line-x></line-x>
 								<div class="history-show-estimate">
 									<div class="row d-flex">
-										<div class="col-md-5">
-											<p>เจ้าของโพส คุณ
-												${track.pawnerPostId.pawnerId.pawnerFirstname}
-												${track.pawnerPostId.pawnerId.pawnerLastname} ณ จังหวัด
-												${track.pawnerPostId.pawnerId.pawnerProvince}</p>
+										<div class="col-md-5 d-inline-flex">
+												เจ้าของโพส คุณ
+												<!-- profile card -->
+												<div class="profile-card-head is-collapsed">
+													<div class="card-inner js-expander">&nbsp;&nbsp; ${track.pawnerPostId.pawnerId.pawnerFirstname} ${track.pawnerPostId.pawnerId.pawnerLastname}</div>
+													<div class="profile-card">
+														<div class="profile-card-circle">
+															<img src="img/logos/logo.png">
+														</div>
+														<span>${track.pawnerPostId.pawnerId.pawnerFirstname} ${track.pawnerPostId.pawnerId.pawnerLastname}</span>
+														<i>${track.pawnerPostId.pawnerId.pawnerEmail}</i>
+														<i>${track.pawnerPostId.pawnerId.pawnerProvince}</i>
+														<i>Status: ${track.estimateStatus}</i>
+														<span class="closed">&times;</span>
+													</div>
+												</div>
 										</div>
 										<div class="col-md-4 ml-auto">
 											<p>
@@ -240,11 +294,31 @@ li {
 								<line-x></line-x>
 								<div class="history-show-estimate">
 									<div class="row d-flex">
+										<!--  
 										<div class="col-md-5">
 											<p>เจ้าของโพส คุณ
 												${track.pawnerPostId.pawnerId.pawnerFirstname}
-												${track.pawnerPostId.pawnerId.pawnerLastname} ณ จังหวัด
+												${track.pawnerPostId.pawnerId.pawnerLastname}
+												${track.pawnerPostId.pawnerId.pawnerEmail} ณ จังหวัด
 												${track.pawnerPostId.pawnerId.pawnerProvince}</p>
+										</div> 
+										-->
+										<div class="col-md-5 d-inline-flex">
+												เจ้าของโพส คุณ
+												<!-- profile card -->
+												<div class="profile-card-head is-collapsed">
+													<div class="card-inner js-expander">&nbsp;&nbsp; ${track.pawnerPostId.pawnerId.pawnerFirstname} ${track.pawnerPostId.pawnerId.pawnerLastname}</div>
+													<div class="profile-card">
+														<div class="profile-card-circle">
+															<img src="img/logos/logo.png">
+														</div>
+														<span>${track.pawnerPostId.pawnerId.pawnerFirstname} ${track.pawnerPostId.pawnerId.pawnerLastname}</span>
+														<i>${track.pawnerPostId.pawnerId.pawnerEmail}</i>
+														<i>${track.pawnerPostId.pawnerId.pawnerProvince}</i>
+														<i>Status: ${track.estimateStatus}</i>
+														<span class="closed">&times;</span>
+													</div>
+												</div>
 										</div>
 										<div class="col-md-4 ml-auto">
 											<p>
@@ -266,6 +340,26 @@ li {
 			</c:if>
 		</c:forEach>
 	</section>
+	<!-- profile Card -->
+	<script src="js/profileCard.js"></script>
+	<!-- cd-timeline -->
+	<script type="text/javascript">
+		/* loading page */
+		window.onload = function loading() {
+			if (window.location.hash) {
+				document.body.style.overflowY = "auto";
+				document.getElementById("loadpage").style.display = "none";
+			}
+			setTimeout(function() {
+				if (!window.location.hash) {
+					window.location = window.location + '#loaded';
+					window.location.reload();
+				}
+			}, 1000);
+
+		}
+	</script>
+
 	<!-- Old source code -->
 	<%-- 	<section>
 		<c:forEach items="${trackMyEstimate}" var="track">
