@@ -21,6 +21,8 @@
 
 <!-- import all css -->
 <jsp:include page="importCSS.jsp" />
+
+<link rel="stylesheet" href="css/checkBox.css">
 </head>
 
 <body style="background-color: #f4f4f4; overflow: hidden;">
@@ -84,19 +86,18 @@
 					<div class="tab" id="step1">
 						<p>
 							<label>ชื่อสินค้าที่ต้องการจำนำ</label> <input type="text"
-								name="pawnerPostName" required="required" id="textVal">
+								name="pawnerPostName" required="required" maxlength="30">
 							<br> <i>ใช้เป็นตัวอักษร ภาษาไทย หรือ อังกฤษ เท่านั้น
-								ความยาวไม่เกิน 30 ตัวอักษร และ ต้องไม่ใช้ อักษรพิเศษ</i>
+								ความยาวไม่เกิน 30 ตัวอักษร</i>
 						</p>
 						<p>
 							<label>ยี่ห้อ</label> <input type="text" name="pawnerPostBrand"
-								required="required" id="brandName" /> <br> <i>ใช้เป็นตัวอักษร
-								ภาษาไทย หรือ อังกฤษ เท่านั้น ความยาวไม่เกิน 30 ตัวอักษร และ
-								ต้องไม่ใช้ อักษรพิเศษ</i>
+								required="required" maxlength="20" /> <br> <i>ใช้เป็นตัวอักษร
+								ภาษาไทย หรือ อังกฤษ เท่านั้น ความยาวไม่เกิน 20 ตัวอักษร </i>
 						</p>
 						<!-- ------------------------upload image----------------------------  -->
 						<div style="margin-top: 15px; width: 100%; position: relative;">
-							<span style="font-size: 14px;">ลงรูปภาพประกอบการจำนำ</span>
+							<span id="picturefiles" style="font-size: 14px;">ลงรูปภาพประกอบการจำนำอย่างน้อย 1 รูป   </span>
 							<div class="result">
 								<div id="result"></div>
 								<input id="files" type="file" name="files" multiple /> <span
@@ -114,7 +115,6 @@
 
 					<!-- step 3 -->
 					<div class="tab" id="step3"></div>
-
 
 					<!-- Previous & Next button -->
 					<div style="overflow: auto;">

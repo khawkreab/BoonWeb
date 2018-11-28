@@ -10,7 +10,7 @@
 <!-- ----------------------------pawner login---------------------------------------- -->
 <div class="profile">
 	<div class="photo">
-		<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/764024/profile/profile-512.jpg" />
+		<img src="img/icon/profile-icon.jpg" />
 	</div>
 	<div class="content">
 		<div class="text">
@@ -42,7 +42,7 @@
 						} else {
 					%>
 					<li class="menu-icon">
-						<a class="nav-link" href="pawner-post-form-gold.html">
+						<a class="nav-link" href="pawner-pledge.html">
 							<img src="img/ICONBOONYOUNG/Post.png" height="50px" width="50px">
 							<i>จำนำของ</i>
 						</a>
@@ -100,7 +100,7 @@
 				<span></span>
 				<span></span>
 				<span></span>
-				<i id="notifi" class="fas"></i>
+				<i id="notifi" class="fas animated tada"></i>
 			</a>
 		</div>
 	</div>
@@ -111,7 +111,7 @@
 <!-- ----------------------------pawshop login---------------------------------------- -->
 <div class="profile">
 	<div class="photo">
-		<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/764024/profile/profile-512.jpg" />
+		<img src="img/icon/profile-icon.jpg" />
 	</div>
 	<div class="content">
 		<div class="text">
@@ -145,6 +145,7 @@
 						<a class="nav-link" href="pawnshop-track-estimate.html">
 							<img src="img/ICONBOONYOUNG/Follow.png" height="50px" width="50px">
 							<i>ติดตามการประเมิน</i>
+							<i id="notifi-pawnshop-follow-estimate" class="fas"><%=session.getAttribute("notifiPawnshopFollowEstimate") %></i>
 						</a>
 					</li>
 					<li class="menu-icon">
@@ -177,7 +178,7 @@
 				<span></span>
 				<span></span>
 				<span></span>
-				<i id="cartNumber"></i>
+				<i id="notifi" class="fas animated tada"></i>
 			</a>
 		</div>
 	</div>
@@ -250,9 +251,11 @@
 		bannedmodal.css("display", "none");
 	});
 </script>
+<!-- check notification for pawner -->
 <script type="text/javascript">
 	var cartSize = sessionStorage.getItem('pawnercartSize');
 	var notifiPawnerFollowPlege = '<%= session.getAttribute("notifiPawnerFollowPlege") %>' ;
+	$(document).ready(function checknotification(){
 	 if ((cartSize != "0" && cartSize != null )|| "0" != notifiPawnerFollowPlege  ) {
 		$("#notifi").css("display", "block"); 
 		if ("0" != cartSize && cartSize != null) {
@@ -268,6 +271,28 @@
 		 console.log("else")			
 		$("#cartSize, #notifi, #notifi-pawner-follow-plege").css("display", "none");
 	} 
+	})
+</script>
+<%
+	}
+%>
+<%
+	if (session.getAttribute("userType") == "pawnShop") {
+%>
+<!-- check notification for pawnshop -->
+<script type="text/javascript">
+	var notifiPawnshopFollowEstimate = '<%= session.getAttribute("notifiPawnshopFollowEstimate")%>';
+	$(document).ready(function checknotification(){
+	if (notifiPawnshopFollowEstimate != "0") {
+		$("#notifi").css("display", "block");
+		$("#notifi-pawnshop-follow-estimate").css("display", "block");
+		console.log("notifiPawnshopFollowEstimate"
+				+ notifiPawnshopFollowEstimate)
+	} else {
+		console.log("else")
+		$("#notifi, #notifi-pawnshop-follow-estimate").css("display", "none");
+	}
+	})
 </script>
 <%
 	}

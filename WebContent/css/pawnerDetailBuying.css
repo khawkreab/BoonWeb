@@ -5,7 +5,7 @@
 .product-detail {
 	background: white;
 	position: relative;
-	width: 850px;
+	max-width: 1000px;
 	height: 450px;
 	margin: auto;
 }

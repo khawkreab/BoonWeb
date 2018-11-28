@@ -36,7 +36,7 @@ input:focus {
 	min-width: 200px;
 	height: 50px;
 	border-radius: 2px;
-	border:none;
+	border: none;
 	background: #ff7f00;;
 	font-family: Montserrat-Bold;
 	font-size: 18px;
@@ -131,7 +131,8 @@ input:focus {
 .pledge-container {
 	display: -ms-flexbox;
 	display: flex;
-	width: 100%; height : 100%;
+	width: 100%;
+	height: 100%;
 	margin: auto;
 	background-color: #ffffff;
 	border-radius: 5px;
@@ -185,3 +186,21 @@ input:focus {
 	padding: 40px 30px;
 }
 
+.form-list {
+	display: inline-flex;
+	list-style-type: none;
+	margin-block-end: unset;
+	margin-block-start: unset;
+	padding-inline-start: unset;
+}
+
+[type="date"] {
+  background:#fff url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png)  97% 50% no-repeat ;
+}
+
+[type="date"]::-webkit-inner-spin-button {
+  display: none;
+}
+[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}

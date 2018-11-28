@@ -47,16 +47,16 @@ public class EstimateController {
 
 	@EJB(mappedName = "ejb:/BoonWeb//PawnerPostServiceBean!service.PawnerPostService")
 	PawnerPostService pawnerPostService;
-	
+
 	@EJB(mappedName = "ejb:/BoonWeb/PictureServiceBean!service.PictureService")
 	PictureService pictureService;
-	
+
 	@RequestMapping("/pawnshop-estimate-form")
 	public ModelAndView newestimate(@ModelAttribute("estimate") Estimate estimate, BindingResult result,
 			HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView("pawnshopEstimateForm.jsp");
 		PawnerPost pawnerPost = new PawnerPost();
-		List <Picture> pictures;
+		List<Picture> pictures;
 
 		try {
 			long userId = (long) request.getSession().getAttribute("id");
@@ -76,7 +76,7 @@ public class EstimateController {
 		}
 		return mv;
 	}
-	
+
 	@RequestMapping("/uploadform")
 	public ModelAndView uploadform(HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView("uploadform.jsp");
@@ -91,8 +91,8 @@ public class EstimateController {
 		long postId = Long.parseLong(request.getParameter("pawnerPostId.pawnerPostId"));
 
 		try {
-			postService.updateStatus(postId , "process");
-			
+			postService.updateStatus(postId, "process");
+
 			estimate.setEstimateDate(date);
 			estimate.setEstimateStatus("process");
 			estimateService.insert(estimate);
@@ -155,7 +155,7 @@ public class EstimateController {
 		ModelAndView mv = new ModelAndView("pawnerPostList.jsp");
 		List<Estimate> estimatesList;
 		try {
-			/*long userId = (long) request.getSession().getAttribute("id");*/
+			/* long userId = (long) request.getSession().getAttribute("id"); */
 			long pawnerPostId = Long.parseLong(request.getParameter("pawnerPostId"));
 
 			estimatesList = estimateService.listEstimateByPawnerPost(pawnerPostId);
@@ -175,44 +175,51 @@ public class EstimateController {
 		long pawnerId = (long) request.getSession().getAttribute("id");
 		try {
 
-			estimateService.updateStatus(pawnerPostId , "denei");
-			postService.updateStatus(pawnerPostId , "approve");
+			estimateService.updateStatus(pawnerPostId, "denei");
+			postService.updateStatus(pawnerPostId, "approve");
 
 			estimate = estimateService.findEstimateById(estimateId);
 			estimate.setEstimateStatus("approve");
 			estimateService.update(estimate);
-			String notifiPawnerFollowPlege = Integer.toString(pawnerPostService.findPawnerPostByPawnerIdAndStatus(pawnerId, "process").size());			
+			/* set notification */
+			String notifiPawnerFollowPlege = Integer
+					.toString(pawnerPostService.findPawnerPostByPawnerIdAndStatus(pawnerId, "process").size());
 			request.getSession().setAttribute("notifiPawnerFollowPlege", notifiPawnerFollowPlege);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return "redirect:pawner-track-pledge.html";
+		return "redirect:pawner-track-pledge.html#item"+pawnerPostId;
 	}
-	
+
 	@RequestMapping("/pawnshop-estimate-approve")
 	public String pawnshopApprove(HttpServletRequest request) {
 		Estimate estimate;
 		long estimateId = Long.parseLong(request.getParameter("estimateId"));
 		long pawnerPostId = Long.parseLong(request.getParameter("pawnerPostId"));
+		long pawnshopId = (long) request.getSession().getAttribute("id");
 		String status = request.getParameter("status");
 		Date date = new Date();
 		try {
 
-			if(status == "complate") {
-			pawnerPostService.updateStatus(pawnerPostId , status);
+			if (status == "complate") {
+				pawnerPostService.updateStatus(pawnerPostId, status);
 			}
 
 			estimate = estimateService.findEstimateById(estimateId);
 			estimate.setEstimateAccessDate(date);
 			estimate.setEstimateStatus(status);
 			estimateService.update(estimate);
+			/* set notification */
+			String notifiPawnshopFollowEstimate = Integer
+					.toString(estimateService.findEstimateByPawnshopIdAndStatus(pawnshopId, "approve").size()
+							+ estimateService.findEstimateByPawnshopIdAndStatus(pawnshopId, "denai").size());
+			request.getSession().setAttribute("notifiPawnshopFollowEstimate", notifiPawnshopFollowEstimate);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return "redirect:pawnshop-estimate-history.html?";
 	}
-	
-	
+
 	@RequestMapping("/pawnshop-track-estimate")
 	public ModelAndView trackMyEstimate(HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView("pawnshopTrackEstimate.jsp");
@@ -228,7 +235,7 @@ public class EstimateController {
 			trackMyEstimate = estimateService.findEstimateByPawnshopId(userId);
 
 			mv.addObject("pawnshop", pawnshop);
-			mv.addObject("pawner",pawner);
+			mv.addObject("pawner", pawner);
 			mv.addObject("pawnerPosts", pawnerPosts);
 			mv.addObject("trackMyEstimate", trackMyEstimate);
 		} catch (Exception e) {

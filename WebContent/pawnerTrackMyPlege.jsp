@@ -67,7 +67,7 @@
 	<section id="cd-timeline" class="cd-container">
 		<c:forEach items="${pawnerPostsProcess}" var="postprocess">
 			<c:if test="${postprocess.pawnerPostStatus == 'process' || postprocess.pawnerPostStatus == 'waiting' || postprocess.pawnerPostStatus == 'approve'}">
-				<div class="cd-timeline-block">
+				<div class="cd-timeline-block" id="item${postprocess.pawnerPostId}">
 					<!-------- icon -------->
 					<c:if test="${postprocess.pawnerPostStatus == 'waiting'}">
 						<div class="cd-timeline-img cd-wait">

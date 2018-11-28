@@ -1,5 +1,6 @@
 var currentTab = 0; // Current tab is set to be the first tab (0)
 showTab(currentTab); // Display the crurrent tab
+var gold, other = false;
 
 function showTab(n) {
 	// This function will display the specified tab of the form...
@@ -49,45 +50,45 @@ function validateForm() {
 	var x, y, i, valid = true;
 	x = $('.tab');
 	y = x[currentTab].getElementsByTagName("input");
+
 	// RegularExpression
-	var characterReg = /^[0-9A-Za-zก-๙]+$/;
-	var decimal = /^[-+]?[.0-9]+$/;
+	var characterReg = /^[0-9A-Za-z]{0,22}$/;
+	var decimal = /^[1-9]|[1-9][0-9]/;
+	var model = /^.{0,20}$/;
+
 	// validate
-	var postName = $('#textVal').val();
-	var brandName = $('#brandName').val();
-	var decimalOne = $('#decimalOne').val();
-	var decimalTwo = $('#decimalTwo').val();
-	var serial = $('#serial').val();
-	var model = $('#model').val();
-	// A loop that checks every input field in the current tab:
-	for (i = 0; i < y.length; i++) {
-		// If a field is empty...
-		if (currentTab == 0) {
-			if (!characterReg.test(postName)) {
-				// add an "invalid" class to the field:
+	if (gold) {
+		var pawnshopPostPure = $("input[name = 'pawnshopPostPure']").val();
+		if (pawnshopPostPure == '')
+			pawnshopPostPure = '12'
+		for (i = 0; i < y.length; i++) {
+			y[i].classList.remove("invalid");
+			if (y[i].value == "" || !decimal.test(pawnshopPostPure)) {
 				y[i].className += " invalid";
-				// and set the current valid status to false
 				valid = false;
+			} else {
+				y[i].classList.remove("invalid");
 			}
-		} else if (currentTab == 1) {
-			if (!decimal.test(decimalOne) || !decimal.test(decimalTwo)
-					|| !characterReg.test(model) || !characterReg.test(serial)
-					|| !characterReg.test(brandName)) {
-				// add an "invalid" class to the field:
+		}
+	}
+	if (other) {
+		var pawnshopPostSerial = $("input[name = 'pawnshopPostSerial']").val();
+		if (pawnshopPostSerial == '')
+			pawnshopPostSerial = 'abc3'
+		var pawnshopPostModel = $("input[name = 'pawnshopPostModel']").val();
+		if (pawnshopPostModel == '')
+			pawnshopPostModel = 'abc3'
+		for (i = 0; i < y.length; i++) {
+			y[i].classList.remove("invalid");
+			if (y[i].value == "" || !characterReg.test(pawnshopPostSerial) || !model.test(pawnshopPostModel)) {
 				y[i].className += " invalid";
-				// and set the current valid status to false
-				valid = false
+				valid = false;
+			} else {
+				y[i].classList.remove("invalid");
 			}
 		}
 
-		/*
-		 * if (y[i].value == "" || characterReg.test(y[i].value)) { // add an
-		 * "invalid" class to the field: y[i].className += " invalid"; // and
-		 * set the current valid status to false valid = false; }
-		 */
-
 	}
-	// If the valid status is true, mark the step as finished and valid:
 	if (valid) {
 		document.getElementsByClassName("step")[currentTab].className += " finish";
 	}
@@ -105,6 +106,8 @@ function fixStepIndicator(n) {
 }
 
 function choosetype() {
+	gold = false, other = false;
+	console.log(gold, other);
 	$('#choosetype').css("display", "block")
 	$('#regForm').css("display", "none")
 }
@@ -118,14 +121,9 @@ function showsteptype(e) {
 	$('#regForm').css("display", "block")
 	$('#step2, #step3').empty()
 	if (e == 1) {
+		gold = true;
 
 		step2 = "<input type='hidden' name='pawnshopPostItemType' value='Gold' />"
-
-		step2 += "<p>"
-		step2 += "<label>ยี่ห้อ</label>"
-		step2 += "<input type='text' name='pawnshopPostBrand' required='required'	id='brandName' /> <br>"
-		step2 += "<i>ใช้เป็นตัวอักษรภาษาไทย หรือ อังกฤษ เท่านั้น ความยาวไม่เกิน 30 ตัวอักษร และต้องไม่ใช้ อักษรพิเศษ</i>"
-		step2 += "</p>"
 
 		step2 += "<p>"
 		step2 += "<div class='wrap-input100 validate-input' style='margin-top:15px;'>"
@@ -143,8 +141,22 @@ function showsteptype(e) {
 		step2 += "</select>"
 		step2 += "</p>"
 
-		step2 += "<input type='hidden' id='serial' value='test'>"
-		step2 += "<input type='hidden' id='model' value='test'>"
+		step2 += "<p>"
+		step2 += "<div class='wrap-input100 validate-input' style='margin-top:15px;'>"
+		step2 += "<label>น้ำหนักทองรูปพรรณ</label>"
+		step2 += "<select class='input100' name='pawnshopPostWeigh'>"
+		step2 += "<option></option>"
+		step2 += "<option>ทองหนัก ครึ่ง สลึง</option>"
+		step2 += "<option>ทองหนัก 1 สลึง</option>"
+		step2 += "<option>ทองหนัก 1 บาท</option>"
+		step2 += "<option>ทองหนัก 2 บาท</option>"
+		step2 += "<option>ทองหนัก 3 บาท</option>"
+		step2 += "<option>ทองหนัก 4 บาท</option>"
+		step2 += "<option>ทองหนัก 5 บาท</option>"
+		step2 += "<option>ทองหนัก 10 บาท</option>"
+		step2 += "<option>ทองหนัก 10 บาท ขึ้นไป</option>"
+		step2 += "</select>"
+		step2 += "</p>"
 
 		step2 += "<p>"
 		step2 += "<label>ความบริสุทธิ์</label>"
@@ -152,49 +164,36 @@ function showsteptype(e) {
 		step2 += "<i>ตัวเลขเท่านั้น 0-9 หรือใช้ จุดทศนิยม เช่น 99.99</i>"
 		step2 += "</p>"
 
-		step2 += "<p>"
-		step2 += "<label>น้ำหนัก(ใช้หน่วยเป็นกรัม)</label>"
-		step2 += "<input type='text' name='pawnshopPostWeigh' required='required' id='decimalTwo' /> <br>"
-		step2 += "<i>ตัวเลขเท่านั้น 0-9 หรือใช้ จุดทศนิยม เช่น 99.99</i>"
-		step2 += "</p>"
-
 		$('#step2').append(step2);
 
 		step3 = "<p>"
 		step3 += "<label>รายละเอียดสินค้าเพิ่มเติม</label>"
-		step3 += "<textarea class='input100' name='pawnshopPostDescription' required='required'></textarea> <br>"
+		step3 += "<textarea name='pawnshopPostDescription'></textarea> <br>"
 		step3 += "<i>พิมท์เนื้อหาสำคำคัญเพิ่มเติม</i>"
 		step3 += "</p>"
 
-		step3 += "<p>"
-		step3 += "<span>"
-		step3 += "<input type='checkbox'/>"
-		step3 += "ฉันยอมรับและตกลง <strong>เงือนไขการใช้งาน </strong> ของระบบบุญยง"
-		step3 += "</span></p>"
+		step3 += "<div class='inputGroup'>"
+		step3 += "<input  id='option1' name='option1' type='checkbox' />"
+		step3 += "<label for='option1'>ยอมรับเงือนไขการใช้งาน</label>"
+		step3 += "</div>"
+		step3 += "</p>"
 
 		$('#step3').append(step3);
 
 	}
 	if (e == 2) {
-
+		other = true;
 		step2 = "<input type='hidden' name='pawnshopPostItemType' value='Laptop' />"
 
 		step2 += "<p>"
-		step2 += "<label>ยี่ห้อ</label>"
-		step2 += "<input type='text' name='pawnshopPostBrand' required='required'	id='brandName' /> <br>"
-		step2 += "<i>ใช้เป็นตัวอักษรภาษาไทย หรือ อังกฤษ เท่านั้น ความยาวไม่เกิน 30 ตัวอักษร และต้องไม่ใช้ อักษรพิเศษ</i>"
-		step2 += "</p>"
-
-		step2 += "<p>"
 		step2 += "<lable>รุ่น</lable>"
-		step2 += "<input type='text' name='pawnshopPostModel' id='model' required='required'>"
-		step2 += "<i>ห้ามใช้ อักษรพิเศษ และ ภาษาไทย</i>"
+		step2 += "<input type='text' name='pawnshopPostModel' >"
 		step2 += "</p>"
 
 		step2 += "<p>"
-		step2 += "<lable>หมายเลขประจำเครื่อง</lable>"
-		step2 += "<input type='text' name='pawnshopPostSerial' id='serial' required='required'>"
-		step2 += "<i>ห้ามใช้ อักษรพิเศษ และ ภาษาไทย</i>"
+		step2 += "<lable>หมายเลขผลิตภัณฑ์ (Serial Number) หรือ หมายเลข SNID</lable>"
+		step2 += "<input type='text' name='pawnshopPostSerial' >"
+		step2 += "<i>ห้ามใช้ภ่ษาไทย และ ความยาวไม่เกิน 22 ตัวอักษร</i>"
 		step2 += "</p>"
 
 		step2 += "<ul class='form-list' style='display: inline-flex; list-style-type: none;'>"
@@ -254,55 +253,46 @@ function showsteptype(e) {
 
 		step2 += "</ul>"
 
-		step2 += "<input type='hidden' id='decimalOne' value='12'>"
-		step2 += "<input type='hidden' id='decimalTwo' value='12'>"
+		step2 += "<div class='inputGroup'>"
+		step2 += "<input  id='option2' name='pawnshopPostBattery' type='checkbox' />"
+		step2 += "<label for='option2'>Battery charger</label>"
+		step2 += "</div>"
+
+		step2 += "<div class='inputGroup'>"
+		step2 += "<input  id='option3' name='pawnshopPostWarranty' type='checkbox' />"
+		step2 += "<label for='option3'>ประกันสินค้า</label>"
+		step2 += "</div>"
+
 		$('#step2').append(step2);
 
 		step3 = "<p>"
-		step3 += "<label>"
-		step3 += "<input type='checkbox' required='required' checked='checked' name='pawnshopPostBattery'/> "
-		step3 += "Battery charger</label>"
-		step3 += "</p>"
-
-		step3 += "<p>"
-		step3 += "<label>"
-		step3 += "<input type='checkbox' required='required' checked='checked' name='pawnshopPostWarranty'/> "
-		step3 += "ประกันสินค้า</label>"
-		step3 += "</p>"
-
-		step3 += "<p>"
-		step3 += "<label>"
-		step3 += "<input type='checkbox' required='required' checked='checked'/> "
-		step3 += "ยอมรับเงือนไขการใช้งาน</label>"
-		step3 += "</p>"
-
-		step3 += "<p>"
 		step3 += "<label>รายละเอียดสินค้าเพิ่มเติม</label>"
 		step3 += "<textarea name='pawnshopPostDescription'></textarea> <br>"
 		step3 += "<i>พิมท์เนื้อหาสำคำคัญเพิ่มเติม</i>"
+		step3 += "</p>"
+
+		step3 += "<div class='inputGroup'>"
+		step3 += "<input  id='option1' name='option1' type='checkbox' />"
+		step3 += "<label for='option1'>ยอมรับเงือนไขการใช้งาน</label>"
+		step3 += "</div>"
 		step3 += "</p>"
 
 		$('#step3').append(step3);
 
 	}
 	if (e == 3) {
+		other = true;
 		step2 = "<input type='hidden' name='pawnshopPostItemType' value='Tv' />"
-		step2 += "<p>"
-		step2 += "<label>ยี่ห้อ</label>"
-		step2 += "<input type='text' name='pawnshopPostBrand' required='required'	id='brandName' /> <br>"
-		step2 += "<i>ใช้เป็นตัวอักษรภาษาไทย หรือ อังกฤษ เท่านั้น ความยาวไม่เกิน 30 ตัวอักษร และต้องไม่ใช้ อักษรพิเศษ</i>"
-		step2 += "</p>"
 
 		step2 += "<p>"
 		step2 += "<lable>รุ่น</lable>"
-		step2 += "<input type='text' name='pawnshopPostModel' required='required' id='model'>"
-		step2 += "<i>ห้ามใช้ อักษรพิเศษ และ ภาษาไทย</i>"
+		step2 += "<input type='text' name='pawnshopPostModel' >"
 		step2 += "</p>"
 
 		step2 += "<p>"
-		step2 += "<lable>หมายเลขประจำเครื่อง</lable>"
-		step2 += "<input type='text' name='pawnshopPostSerial' required='required' id='serial'>"
-		step2 += "<i>ห้ามใช้ อักษรพิเศษ และ ภาษาไทย</i>"
+		step2 += "<lable>หมายเลขผลิตภัณฑ์ (Serial Number) หรือ หมายเลข SNID</lable>"
+		step2 += "<input type='text' name='pawnshopPostSerial' >"
+		step2 += "<i>ห้ามใช้ภ่ษาไทย และ ความยาวไม่เกิน 22 ตัวอักษร</i>"
 		step2 += "</p>"
 
 		step2 += "<ul class='form-list' style='display: inline-flex; list-style-type: none;'>"
@@ -337,51 +327,46 @@ function showsteptype(e) {
 
 		step2 += "</ul>"
 
-		step2 += "<input type='hidden' id='decimalOne' value='12.00'>"
-		step2 += "<input type='hidden' id='decimalTwo' value='12.00'>"
+		step2 += "<div class='inputGroup'>"
+		step2 += "<input  id='option2' name='panwePostRemote' type='checkbox' />"
+		step2 += "<label for='option2'>Remote control</label>"
+		step2 += "</div>"
+
+		step2 += "<div class='inputGroup'>"
+		step2 += "<input  id='option3' name='pawnshopPostWarranty' type='checkbox' />"
+		step2 += "<label for='option3'>ประกันสินค้า</label>"
+		step2 += "</div>"
 
 		$('#step2').append(step2);
 
-		step3 += "<p>"
-		step3 += "<label>"
-		step3 += "<input type='checkbox' required='required' checked='checked' name='pawnshopPostWarranty'/> "
-		step3 += "ประกันสินค้า</label>"
-		step3 += "</p>"
-
-		step3 += "<p>"
-		step3 += "<label>"
-		step3 += "<input type='checkbox' required='required' checked='checked'/> "
-		step3 += "ยอมรับเงือนไขการใช้งาน</label>"
-		step3 += "</p>"
-
-		step3 += "<p>"
+		step3 = "<p>"
 		step3 += "<label>รายละเอียดสินค้าเพิ่มเติม</label>"
 		step3 += "<textarea name='pawnshopPostDescription'></textarea> <br>"
 		step3 += "<i>พิมท์เนื้อหาสำคำคัญเพิ่มเติม</i>"
+		step3 += "</p>"
+
+		step3 += "<div class='inputGroup'>"
+		step3 += "<input  id='option1' name='option1' type='checkbox' />"
+		step3 += "<label for='option1'>ยอมรับเงือนไขการใช้งาน</label>"
+		step3 += "</div>"
 		step3 += "</p>"
 
 		$('#step3').append(step3);
 	}
 
 	if (e == 4) {
+		other = true;
 		step2 = "<input type='hidden' name='pawnshopPostItemType' value='Smartphone' />"
 
 		step2 += "<p>"
-		step2 += "<label>ยี่ห้อ</label>"
-		step2 += "<input type='text' name='pawnshopPostBrand' required='required'	id='brandName' /> <br>"
-		step2 += "<i>ใช้เป็นตัวอักษรภาษาไทย หรือ อังกฤษ เท่านั้น ความยาวไม่เกิน 30 ตัวอักษร และต้องไม่ใช้ อักษรพิเศษ</i>"
-		step2 += "</p>"
-
-		step2 += "<p>"
 		step2 += "<lable>รุ่น</lable>"
-		step2 += "<input type='text' name='pawnshopPostModel' required='required'  id='model'>"
-		step2 += "<i>ห้ามใช้ อักษรพิเศษ และ ภาษาไทย</i>"
+		step2 += "<input type='text' name='pawnshopPostModel' >"
 		step2 += "</p>"
 
 		step2 += "<p>"
-		step2 += "<lable>หมายเลขประจำเครื่อง</lable>"
-		step2 += "<input type='text' name='pawnshopPostSerial' required='required'  id='serial'>"
-		step2 += "<i>ห้ามใช้ อักษรพิเศษ และ ภาษาไทย</i>"
+		step2 += "<lable>หมายเลขผลิตภัณฑ์ (Serial Number) หรือ หมายเลข SNID</lable>"
+		step2 += "<input type='text' name='pawnshopPostSerial' >"
+		step2 += "<i>ห้ามใช้ภ่ษาไทย และ ความยาวไม่เกิน 22 ตัวอักษร</i>"
 		step2 += "</p>"
 
 		step2 += "<ul class='form-list' style='display: inline-flex; list-style-type: none;'>"
@@ -406,18 +391,16 @@ function showsteptype(e) {
 		step2 += "</div>"
 		step2 += "</li>"
 
-		step2 += "<li class='form-list-row form-list-row-inline' style='margin: auto; margin-right: 100px;'>"
+		step2 += "<li class='form-list-row form-list-row-inline' style=' margin-right: 100px;'>"
 		step2 += "<div>"
 		step2 += "<lable>หน่วยความจำ</lable>"
-		step2 += "<div class='form-list-row-inline'>"
 		step2 += "<select name='pawnshopPostCapacity' >"
 		step2 += "<option>8 Gb</option>"
 		step2 += "<option>16 Gb</option>"
 		step2 += "<option>32 Gb</option>"
 		step2 += "<option>64 Gb</option>"
-		step2 += "<option>More than 64 Gb</option>"
+		step2 += "<option>64 Gb ขึ้นไป</option>"
 		step2 += "</select>"
-		step2 += "</div>"
 		step2 += "</div>"
 		step2 += "</li>"
 
@@ -430,28 +413,17 @@ function showsteptype(e) {
 
 		step2 += "</ul>"
 
-		step2 += "<input type='hidden' id='decimalOne' value='12.00'>"
-		step2 += "<input type='hidden' id='decimalTwo' value='12.00'>"
+		step2 += "<div class='inputGroup'>"
+		step2 += "<input  id='option2' name='pawnshopPostBattery' type='checkbox' />"
+		step2 += "<label for='option2'>Battery charger</label>"
+		step2 += "</div>"
+
+		step2 += "<div class='inputGroup'>"
+		step2 += "<input  id='option3' name='pawnshopPostWarranty' type='checkbox' />"
+		step2 += "<label for='option3'>ประกันสินค้า</label>"
+		step2 += "</div>"
 
 		$('#step2').append(step2);
-
-		step3 += "<p>"
-		step3 += "<label>"
-		step3 += "<input type='checkbox' required='required' checked='checked' name='pawnshopPostBattery'/> "
-		step3 += "Battery charger</label>"
-		step3 += "</p>"
-
-		step3 += "<p>"
-		step3 += "<label>"
-		step3 += "<input type='checkbox' required='required' checked='checked' name='pawnshopPostWarranty'/> "
-		step3 += "ประกันสินค้า</label>"
-		step3 += "</p>"
-
-		step3 += "<p>"
-		step3 += "<label>"
-		step3 += "<input type='checkbox' required='required' checked='checked'/> "
-		step3 += "ยอมรับเงือนไขการใช้งาน</label>"
-		step3 += "</p>"
 
 		step3 += "<p>"
 		step3 += "<label>รายละเอียดสินค้าเพิ่มเติม</label>"
@@ -459,17 +431,33 @@ function showsteptype(e) {
 		step3 += "<i>พิมท์เนื้อหาสำคำคัญเพิ่มเติม</i>"
 		step3 += "</p>"
 
+		step3 += "<div class='inputGroup'>"
+		step3 += "<input  id='option1' name='option1' type='checkbox' />"
+		step3 += "<label for='option1'>ยอมรับเงือนไขการใช้งาน</label>"
+		step3 += "</div>"
+		step3 += "</p>"
+
 		$('#step3').append(step3);
 
 	}
 	if (e == 5) {
-		step2 = "<input type='hidden' name='pawnshopPostItemType' value='Camera' />"
+		other = true;
+		step2 = "<input type='hidden' name='pawnshopPostItemType' value='Watch' />"
+
 		step2 += "<p>"
-		step2 += "<label>ยี่ห้อ</label>"
-		step2 += "<input type='text' name='pawnshopPostBrand' required='required'	id='brandName' /> <br>"
-		step2 += "<i>ใช้เป็นตัวอักษรภาษาไทย หรือ อังกฤษ เท่านั้น ความยาวไม่เกิน 30 ตัวอักษร และต้องไม่ใช้ อักษรพิเศษ</i>"
+		step2 += "<lable>รุ่น</lable>"
+		step2 += "<input type='text' name='pawnshopPostModel' >"
 		step2 += "</p>"
 
+		step2 += "<p>"
+		step2 += "<lable>หมายเลขผลิตภัณฑ์ (Serial Number) หรือ หมายเลข SNID</lable>"
+		step2 += "<input type='text' name='pawnshopPostSerial' >"
+		step2 += "<i>ห้ามใช้ภ่ษาไทย และ ความยาวไม่เกิน 22 ตัวอักษร</i>"
+		step2 += "</p>"
+
+		step2 += "<ul class='form-list' style='display: inline-flex; list-style-type: none;'>"
+
+		step2 += "<li class='form-list-row form-list-row-inline' style='margin: auto; margin-right: 20px;'>"
 		step2 += "<div>"
 		step2 += "<lable>ชนิดของหน้าปัด</lable>"
 		step2 += "<select name='pawnshopPostCase' required='required'>"
@@ -482,7 +470,9 @@ function showsteptype(e) {
 		step2 += "<option>Unknown</option>"
 		step2 += "</select>"
 		step2 += "</div>"
+		step2 += "</li>"
 
+		step2 += "<li class='form-list-row form-list-row-inline' style='margin: auto; margin-right: 20px;'>"
 		step2 += "<div>"
 		step2 += "<lable>ชนิดของสายรัดข้อมือ</lable>"
 		step2 += "<select name='pawnshopPostBracelet' required='required'>"
@@ -495,7 +485,9 @@ function showsteptype(e) {
 		step2 += "<option>Unknown</option>"
 		step2 += "</select>"
 		step2 += "</div>"
+		step2 += "</li>"
 
+		step2 += "<li class='form-list-row form-list-row-inline' style='margin: auto; margin-right: 20px;'>"
 		step2 += "<div>"
 		step2 += "<lable>มีเพรชอยู่บนบริเวณใดบาง</lable>"
 		step2 += "<select name='pawnshopPostDiamond' required='required'>"
@@ -505,73 +497,64 @@ function showsteptype(e) {
 		step2 += "<option>มีอยู๋บนบริเวณตัวเลข</option>"
 		step2 += "</select>"
 		step2 += "</div>"
+		step2 += "</li>"
 
+		step2 += "<li class='form-list-row form-list-row-inline' style='margin: auto; margin-right: 20px;'>"
 		step2 += "<p>"
 		step2 += "<lable>ปีที่ซื้อสินค้า</lable>"
 		step2 += "<input type='date'name='pawnshopPostPurchase'>"
 		step2 += "</P>"
+		step2 += "</li>"
 
-		step2 += "<input type='hidden' value='test' required='required'  id='serial'>"
-		step2 += "<input type='hidden' value='test' required='required'  id='model'>"
-		step2 += "<input type='hidden' value='12.00' required='required' id='decimalOne'>"
-		step2 += "<input type='hidden' value='12.00' id='decimalTwo'>"
+		step2 += "</ul>"
+
+		step2 += "<div class='inputGroup'>"
+		step2 += "<input  id='option2' name='pawnshopPostPackage' type='checkbox' />"
+		step2 += "<label for='option2'>กล้องบรรจุสินค้า</label>"
+		step2 += "</div>"
+
+		step2 += "<div class='inputGroup'>"
+		step2 += "<input  id='option3' name='pawnshopPostWarranty' type='checkbox' />"
+		step2 += "<label for='option3'>ประกันสินค้า</label>"
+		step2 += "</div>"
+
 		$('#step2').append(step2);
 
 		step3 = "<p>"
-		step3 += "<label>"
-		step3 += "<input type='checkbox' required='required' checked='checked' name='pawnshopPostPackage'/> "
-		step3 += "กล้องบรรจุสินค้า</label>"
-		step3 += "</p>"
-
-		step3 += "<p>"
-		step3 += "<label>"
-		step3 += "<input type='checkbox' required='required' checked='checked' name='pawnshopPostWarranty'/> "
-		step3 += "ประกันสินค้า</label>"
-		step3 += "</p>"
-
-		step3 += "<p>"
-		step3 += "<label>"
-		step3 += "<input type='checkbox' required='required' checked='checked'/> "
-		step3 += "ยอมรับเงือนไขการใช้งาน</label>"
-		step3 += "</p>"
-
-		step3 += "<p>"
 		step3 += "<label>รายละเอียดสินค้าเพิ่มเติม</label>"
 		step3 += "<textarea name='pawnshopPostDescription'></textarea> <br>"
 		step3 += "<i>พิมท์เนื้อหาสำคำคัญเพิ่มเติม</i>"
 		step3 += "</p>"
 
+		step3 += "<div class='inputGroup'>"
+		step3 += "<input  id='option1' name='option1' type='checkbox' />"
+		step3 += "<label for='option1'>ยอมรับเงือนไขการใช้งาน</label>"
+		step3 += "</div>"
+
 		$('#step3').append(step3);
 
 	}
 	if (e == 6) {
-		step2 = "<input type='hidden' name='pawnshopPostItemType' value='Watch' />"
-
-		step2 += "<p>"
-		step2 += "<label>ยี่ห้อ</label>"
-		step2 += "<input type='text' name='pawnshopPostBrand' required='required'	id='brandName' /> <br>"
-		step2 += "<i>ใช้เป็นตัวอักษรภาษาไทย หรือ อังกฤษ เท่านั้น ความยาวไม่เกิน 30 ตัวอักษร และต้องไม่ใช้ อักษรพิเศษ</i>"
-		step2 += "</p>"
+		other = true;
+		step2 = "<input type='hidden' name='pawnshopPostItemType' value='Camera' />"
 
 		step2 += "<p>"
 		step2 += "<lable>รุ่น</lable>"
-		step2 += "<input type='text' name='pawnshopPostModel' id='model'>"
-		step2 += "<i>ห้ามใช้ อักษรพิเศษ และ ภาษาไทย</i>"
+		step2 += "<input type='text' name='pawnshopPostModel' >"
 		step2 += "</p>"
 
 		step2 += "<p>"
-		step2 += "<lable>หมายเลขประจำเครื่อง</lable>"
-		step2 += "<input type='text' name='pawnshopPostSerial' id='serial'>"
-		step2 += "<i>ห้ามใช้ อักษรพิเศษ และ ภาษาไทย</i>"
+		step2 += "<lable>หมายเลขผลิตภัณฑ์ (Serial Number) หรือ หมายเลข SNID</lable>"
+		step2 += "<input type='text' name='pawnshopPostSerial' >"
+		step2 += "<i>ห้ามใช้ภ่ษาไทย และ ความยาวไม่เกิน 22 ตัวอักษร</i>"
 		step2 += "</p>"
 
 		step2 += "<ul class='form-list' style='display: inline-flex; list-style-type: none;'>"
 
-		step2 += "<li class='form-list-row form-list-row-inline' style='margin: auto; margin-right: 100px;'>"
+		step2 += "<li class='form-list-row form-list-row-inline' style='margin: auto; margin-right: 20px;'>"
 		step2 += "<div>"
 		step2 += "<lable>ชนิดของเลนกล้อง</lable>"
-		step2 += "<div class='form-list-row-inline'>"
-		step2 += "<select name='pawnshopPostCameraLen' >"
+		step2 += "<select name='pawnshopPostCameraLen' required='required'>"
 		step2 += "<option>เลนส์ไพร์ม (Prime Lens)</option>"
 		step2 += "<option>เลนส์ซูม (Zoom Lens)</option>"
 		step2 += "<option>เลนส์มาตรฐาน (Normal Lens)</option>"
@@ -583,52 +566,46 @@ function showsteptype(e) {
 		step2 += "<option>อื่นๆ</option>"
 		step2 += "</select>"
 		step2 += "</div>"
-		step2 += "</div>"
 		step2 += "</li>"
 
-		step2 += "<li class='form-list-row form-list-row-inline' style='margin: auto; margin-right: 100px;'>"
+		step2 += "<li class='form-list-row form-list-row-inline' style='margin: auto; margin-right: 20px;'>"
 		step2 += "<div>"
 		step2 += "<lable>ชนิดของกล้อง</lable>"
-		step2 += "<div class='form-list-row-inline'>"
-		step2 += "<select name='pawnshopPostTypeCamera' >"
+		step2 += "<select name='pawnshopPostTypeCamera' required='required'>"
 		step2 += "<option>กล้องคอมแพค (Compact)</option>"
 		step2 += "<option>กล้องมิลเลอร์เลส  (Mirrorless)</option>"
 		step2 += "<option>กล้องดีเอสแอลอา (DSLR)</option>"
 		step2 += "<option>อื่นๆ</option>"
 		step2 += "</select>"
 		step2 += "</div>"
-		step2 += "</div>"
 		step2 += "</li>"
 
-		step2 += "<li class='form-list-row form-list-row-inline' style=' margin-right: 10px;'>"
-		step2 += "<div>"
+		step2 += "<li class='form-list-row form-list-row-inline' style='margin: auto; margin-right: 20px;'>"
+		step2 += "<p>"
 		step2 += "<lable>ปีที่ซื้อสินค้า</lable>"
 		step2 += "<input type='date'name='pawnshopPostPurchase'>"
-		step2 += "</div>"
+		step2 += "</P>"
 		step2 += "</li>"
 
 		step2 += "</ul>"
 
-		step2 += "<input type='hidden' value='12.00' required='required' id='decimalOne'>"
-		step2 += "<input type='hidden' value='12.00' id='decimalTwo'>"
+		step2 += "<div class='inputGroup'>"
+		step2 += "<input  id='option3' name='pawnshopPostWarranty' type='checkbox' />"
+		step2 += "<label for='option3'>ประกันสินค้า</label>"
+		step2 += "</div>"
+
 		$('#step2').append(step2);
 
 		step3 = "<p>"
-		step3 += "<label>"
-		step3 += "<input type='checkbox' required='required' checked='checked' name='pawnshopPostWarranty'/> "
-		step3 += "ประกันสินค้า</label>"
-		step3 += "</p>"
-
-		step3 += "<p>"
-		step3 += "<label>"
-		step3 += "<input type='checkbox' required='required' checked='checked'/> "
-		step3 += "ยอมรับเงือนไขการใช้งาน</label>"
-		step3 += "</p>"
-
-		step3 += "<p>"
 		step3 += "<label>รายละเอียดสินค้าเพิ่มเติม</label>"
 		step3 += "<textarea name='pawnshopPostDescription'></textarea> <br>"
 		step3 += "<i>พิมท์เนื้อหาสำคำคัญเพิ่มเติม</i>"
+		step3 += "</p>"
+
+		step3 += "<div class='inputGroup'>"
+		step3 += "<input  id='option1' name='option1' type='checkbox' />"
+		step3 += "<label for='option1'>ยอมรับเงือนไขการใช้งาน</label>"
+		step3 += "</div>"
 		step3 += "</p>"
 
 		$('#step3').append(step3);

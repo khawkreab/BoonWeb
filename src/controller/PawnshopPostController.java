@@ -89,7 +89,7 @@ public class PawnshopPostController {
 				pawnshopPost.setPawnshopPostWarranty(request.getParameter("pawnshopPostTypeCamera"));
 				pawnshopPost.setPawnshopPostWeigh(request.getParameter("pawnshopPostWeigh"));
 				pawnshopPost.setPawnshopPostPrice(request.getParameter("pawnshopPostPrice"));
-
+				pawnshopPost.setPawnshopPostQuality("1");
 				post = pawnshopPostService.insert(pawnshopPost);
 			} else {
 				pawnshopPostService.update(pawnshopPost);
@@ -175,7 +175,7 @@ public class PawnshopPostController {
 		String status = request.getParameter("status");
 		try {
 
-			pawnshopPostService.updateStatus(pawnshopPostId, status);
+			pawnshopPostService.updateStatus(pawnshopPostId, status, "0");
 			
 		} catch (Exception e) {
 			e.printStackTrace();

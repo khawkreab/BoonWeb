@@ -238,7 +238,7 @@ li {
 									</div>
 								</div>
 							</c:if>
-							<!-- approve -->
+							<!-- end approve -->
 
 							<!---------- denei  ---------->
 							<c:if test="${track.estimateStatus == 'denei'}">
