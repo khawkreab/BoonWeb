@@ -34,8 +34,9 @@
 }
 </style>
 <link rel="stylesheet" href="css/loadingPage.css">
+<link rel="stylesheet" href="css/pawnerOder.css">
 </head>
-<body style="overflow: hidden;">
+<body style="overflow: hidden; background-color: #eee;">
 	<jsp:include page="navbar.jsp" />
 	<!-- loading page -->
 	<div class="loadpage" id="loadpage">
@@ -67,40 +68,39 @@
 		</div>
 	</div>
 	<section>
-		<div class="container">
-			<div class="history-filter">
-				<table>
-					<thead>
-						<tr>
-							<th class="tha">ลำดับ</th>
-							<th class="tha">รูป</th>
-							<th class="tha">ชื้อโพส</th>
-							<th class="tha">ชนิดสินค้า</th>
-							<th class="tha">โรงรับจำนำ</th>
-							<th class="tha">ราคา</th>
-							<th class="tha">พิม</th>
-						</tr>
-					</thead>
-					<%
-						int i = 1;
-					%>
-					<c:forEach items="${order}" var="order">
-						<tbody>
-							<tr>
-								<td class="tda" id="num"><%=i%></td>
-								<td class="tda">
-									<img class="img-responsive" style="width: 100px; height: 50px;" src="img/uploadImge/${order.pawnshopPostId.pawnshopPostPicture }" />
-								</td>
-								<td class="tda">${order.pawnshopPostId.pawnshopPostName }</td>
-								<td class="tda">${order.pawnshopPostId.pawnshopPostItemType }</td>
-								<td class="tda">${order.pawnshopPostId.pawnshopId.pawnshopName }</td>
-								<td class="tda">${order.pawnshopPostId.pawnshopPostPrice }</td>
-								<td>
-									<a href="#" id="${pawnshopPost.pawnshopPostId}" onClick="select(this); return false;"
-										data-cart='{"pawnshopPostId":"${order.pawnshopPostId.pawnshopId.pawnshopName}",
-								"orderDateIn":"${ order.orderItemDateIn }",
+		<div class="order">
+			<c:forEach items="${order}" var="order">
+				<div class="order-list">
+					<div class="d-flex">
+						<div class="mr-auto order-title">
+							<span> เลขที่สั่งซื้อ #${ order.orderItemId } </span>
+							<i>
+								สั่งซื้อวันที่
+								<fmt:formatDate pattern="dd MMMM yyyy" value="${ order.orderItemDateIn }" />
+							</i>
+							<i> จำหน่ายโดย ${order.pawnshopPostId.pawnshopId.pawnshopName } </i>
+						</div>
+						<div class="p-2">
+							ยอดรวมทั้งสิ้น
+							<strong class="text-orange">${order.pawnshopPostId.pawnshopPostPrice } </strong>
+							บาท
+						</div>
+					</div>
+					<line-x></line-x>
+					<div class="d-flex align-items-center">
+						<span class="p-2">
+							<img class="img-responsive" style="width: 100px; height: 50px;" src="img/uploadImge/${order.pawnshopPostId.pawnshopPostPicture }" />
+						</span>
+						<span class="p-2">${order.pawnshopPostId.pawnshopPostName }</span>
+						<span class="p-2">
+							<i class="order-quality"> 1 ชิ้น </i>
+						</span>
+						<span class="ml-auto">
+							<a class="btn-custom btn-custom-sky" href="#" id="${pawnshopPost.pawnshopPostId}" onClick="select(this); return false;"
+								data-cart='{"pawnshopPostId":"${order.pawnshopPostId.pawnshopId.pawnshopName}",
+								"orderDateIn":"<fmt:formatDate pattern='dd MMMM yyyy' value='${ order.orderItemDateIn }'/>",
 								"pawnerFirstname":"${order.pawnerId.pawnerFirstname}","pawnerLastname":"${order.pawnerId.pawnerLastname}",
-								"pawnshopPostName":"${order.pawnshopPostId.pawnshopPostName }","pawnshopPostDate":"${order.pawnshopPostId.pawnshopPostDate}",
+								"pawnshopPostName":"${order.pawnshopPostId.pawnshopPostName }","pawnshopPostDate":"<fmt:formatDate pattern='dd MMMM yyyy' value='${order.pawnshopPostId.pawnshopPostDate}'/>",
 								"pawnshopPostItemType":"${order.pawnshopPostId.pawnshopPostItemType}","pawnshopPostBrand":"${order.pawnshopPostId.pawnshopPostBrand}",
 								"panwePostRemote":"${order.pawnshopPostId.pawnshopPostRemote}","pawnshopPostBattery":"${order.pawnshopPostId.pawnshopPostBattery}",
 								"pawnshopPostBracelet":"${order.pawnshopPostId.pawnshopPostBracelet}","pawnshopPostCameraLen":"${order.pawnshopPostId.pawnshopPostCameraLen}",
@@ -120,89 +120,94 @@
 								"pawnshopParish":"${order.pawnshopPostId.pawnshopId.pawnshopParish}",
 								"pawnshopTel":"${order.pawnshopPostId.pawnshopId.pawnshopTel}"
 								}'>
-										<i class="far fa-file-alt"></i>
-									</a>
-								</td>
-							</tr>
-						</tbody>
-						<%
-							i++;
-						%>
-					</c:forEach>
-				</table>
-			</div>
+								<i class="far fa-file-alt"></i>
+								พิมพ์ใบสั่งซื้อ
+							</a>
+						</span>
+					</div>
+				</div>
+			</c:forEach>
 		</div>
 	</section>
 	<script>
-		/* loading page */
-		window.onload = function loading() {
-			if (window.location.hash) {
-				document.body.style.overflowY = "auto";
-				document.getElementById("loadpage").style.display = "none";
-			}
-			setTimeout(function() {
-				if (!window.location.hash) {
-					window.location = window.location + '#loaded';
-					window.location.reload();
-				}
-			}, 1000);
-
+	/* loading page */
+	window.onload = function loading() {
+	    if (window.location.hash) {
+		document.body.style.overflowY = "auto";
+		document.getElementById("loadpage").style.display = "none";
+	    }
+	    setTimeout(function() {
+		if (!window.location.hash) {
+		    window.location = window.location + '#loaded';
+		    window.location.reload();
 		}
-		/* print data */
-		function select(e) {
+	    }, 1000);
 
-			var cart = {}
-			cart = JSON.parse(e.getAttribute('data-cart'))
+	}
+	/* print data */
+	function select(e) {
 
-			$("#pawnerName").text(
-					cart.pawnerFirstname + " " + cart.pawnerLastname)
-			$("#orderDateIn").text(cart.orderDateIn)
-			$("#pawnshopPostName").text(cart.pawnshopPostName)
-			$("#pawnshopPostId").text(cart.pawnshopPostId)
-			$("#pawnshopPostItemType").text(cart.pawnshopPostItemType)
-			$("#panwePostRemote").text(cart.panwePostRemote)
-			$("#pawnshopPostBattery").text(cart.pawnshopPostBattery)
-			$("#pawnshopPostBracelet").text(cart.pawnshopPostBracelet)
-			$("#pawnshopPostBrand").text(cart.pawnshopPostBrand)
-			$("#pawnshopPostCameraLen").text(cart.pawnshopPostCameraLen)
-			$("#pawnshopPostCapacity").text('r' + cart.pawnshopPostCapacity)
-			$("#pawnshopPostCase").text(cart.pawnshopPostCase)
-			$("#pawnshopPostCategory").text(cart.pawnshopPostCategory)
-			$("#pawnshopPostDate").text(cart.pawnshopPostDate)
-			$("#pawnshopPostDescription").text(cart.pawnshopPostDescription)
-			$("#pawnshopPostDevice").text(cart.pawnshopPostDevice)
-			$("#pawnshopPostDiamond").text(cart.pawnshopPostDiamond)
-			$("#pawnshopPostHarddisk").text(cart.pawnshopPostHarddisk)
-			$("#pawnshopPostModel").text(cart.pawnshopPostModel)
-			$("#pawnshopPostPackage").text(cart.pawnshopPostPackage)
-			$("#pawnshopPostProduction").text(cart.pawnshopPostProduction)
-			$("#pawnshopPostPure").text(cart.pawnshopPostPure)
-			$("#pawnshopPostSerial").text(cart.pawnshopPostSerial)
-			$("#pawnshopPostRam").text(cart.pawnshopPostRam)
-			$("#pawnshopPostSize").text(cart.pawnshopPostSize)
-			$("#pawnshopPostStatus").text(cart.pawnshopPostStatus)
-			$("#pawnshopPostTypeCamera").text(cart.pawnshopPostTypeCamera)
-			$("#pawnshopPostWarranty").text(cart.pawnshopPostWarranty)
-			$("#pawnshopPostWeigh").text(cart.pawnshopPostWeigh)
-			$("#pawnshopPostPrice").text(cart.pawnshopPostPrice)
+	    var cart = {}
+	    cart = JSON.parse(e.getAttribute('data-cart'))
 
-			/* pawnshop */
-			$("#pawnShopname").text(cart.pawnShopname)
-			$("#pawnshopProvince").text(cart.pawnshopProvince)
-			$("#pawnshopPostcodes").text(cart.pawnshopPostcodes)
-			$("#pawnshopParish").text(cart.pawnshopParish)
-			$("#pawnshopTel").text(cart.pawnshopTel)
+	    $("#pawnerName").text(
+		    cart.pawnerFirstname + " " + cart.pawnerLastname)
+	    $("#orderDateIn").text(cart.orderDateIn)
+	    $("#pawnshopPostName").text(cart.pawnshopPostName)
+	    $("#pawnshopPostId").text(cart.pawnshopPostId)
+	    $("#pawnshopPostItemType").text(cart.pawnshopPostItemType)
+	    $("#panwePostRemote").text(cart.panwePostRemote)
+	    $("#pawnshopPostBattery").text(cart.pawnshopPostBattery)
+	    $("#pawnshopPostBracelet").text(cart.pawnshopPostBracelet)
+	    $("#pawnshopPostBrand").text(cart.pawnshopPostBrand)
+	    $("#pawnshopPostCameraLen").text(cart.pawnshopPostCameraLen)
+	    $("#pawnshopPostCapacity").text('r' + cart.pawnshopPostCapacity)
+	    $("#pawnshopPostCase").text(cart.pawnshopPostCase)
+	    $("#pawnshopPostCategory").text(cart.pawnshopPostCategory)
+	    $("#pawnshopPostDate").text(cart.pawnshopPostDate)
+	    $("#pawnshopPostDescription").text(cart.pawnshopPostDescription)
+	    $("#pawnshopPostDevice").text(cart.pawnshopPostDevice)
+	    $("#pawnshopPostDiamond").text(cart.pawnshopPostDiamond)
+	    $("#pawnshopPostHarddisk").text(cart.pawnshopPostHarddisk)
+	    $("#pawnshopPostModel").text(cart.pawnshopPostModel)
+	    $("#pawnshopPostPackage").text(cart.pawnshopPostPackage)
+	    $("#pawnshopPostProduction").text(cart.pawnshopPostProduction)
+	    $("#pawnshopPostPure").text(cart.pawnshopPostPure)
+	    $("#pawnshopPostSerial").text(cart.pawnshopPostSerial)
+	    $("#pawnshopPostRam").text(cart.pawnshopPostRam)
+	    $("#pawnshopPostSize").text(cart.pawnshopPostSize)
+	    $("#pawnshopPostStatus").text(cart.pawnshopPostStatus)
+	    $("#pawnshopPostTypeCamera").text(cart.pawnshopPostTypeCamera)
+	    $("#pawnshopPostWarranty").text(cart.pawnshopPostWarranty)
+	    $("#pawnshopPostWeigh").text(cart.pawnshopPostWeigh)
+	    $("#pawnshopPostPrice").text(cart.pawnshopPostPrice)
 
-			var w = window.open("", "", "width=1000,height=700");
-			var toNewWindow = $("#printable").html();
-			$(w.document.body).html(toNewWindow);
-			w.print();
+	    /* pawnshop */
+	    $("#pawnShopname").text(cart.pawnShopname)
+	    $("#pawnshopProvince").text(cart.pawnshopProvince)
+	    $("#pawnshopPostcodes").text(cart.pawnshopPostcodes)
+	    $("#pawnshopParish").text(cart.pawnshopParish)
+	    $("#pawnshopTel").text(cart.pawnshopTel)
 
-		}
-	</script>
+	    var w = window.open("", "", "width=1000,height=700");
+	    var toNewWindow = $("#printable").html();
+	    $(w.document.body).html(toNewWindow);
+	   /*  w.print(); */
+
+	}
+    </script>
 	<div id="printable">
-		<!-- import all css here -->
+		<!-- import all css -->
+		<link rel="stylesheet"
+			href="https://doc-0c-0c-docs.googleusercontent.com/docs/securesc/ha0ro937gcuc7l7deffksulhg5h7mbp1/lm8flvkqmnhhkq3bnt2qf6ben9clvh9d/1543521600000/06436389829529658502/*/1YVFTX1MjNl-pmINPljV0hEJP4nfuVGzn?e=download">
 		<div class="popup" data-popup="popup">
+			<!--banner-->
+			<div class="print-banner">
+				<div>
+					<h1>ประวัติการสั่งซื้อ</h1>
+					<em></em>
+				</div>
+			</div>
 			<div>
 				<p style="font-size: 32px; border-bottom: 1px solid;">ใบชำระของหลุดจำนำ</p>
 				<div style="text-align: right;">
@@ -278,7 +283,9 @@
 					</tr>
 				</table>
 				<div style="text-align: center; margin-top: 50px;">
-					<img src="img/logos/logo.png" style="height: 25px;" />
+					<img
+						src="https://doc-0s-0c-docs.googleusercontent.com/docs/securesc/ha0ro937gcuc7l7deffksulhg5h7mbp1/kjtnar7lb9cqb50gsam27iauegs1n1v9/1543521600000/06436389829529658502/*/1gLG7PJosdfdMYt7z-uW84CEsuNgZVJ0Z?e=download"
+						height="50" />
 					<p>b2pawn.com</p>
 				</div>
 			</div>
