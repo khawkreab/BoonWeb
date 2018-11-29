@@ -48,17 +48,19 @@ public class PawnshopController {
 	public String savePawnshop(@ModelAttribute("pawnshop") Pawnshop pawnshop, BindingResult result,
 			HttpServletRequest request) {
 		try {
-			if (pawnshopServ.findPawnshopEmail(pawnshop.getPawnshopEmail()) != null) {
-				return "redirect:pawnshop-register-form.html";
-			} else if (pawnshop.getPawnshopId() == 0) {
-				pawnshop.setPawnshopState("pawnshop");
-				pawnshopServ.insert(pawnshop);
+			if (pawnshopServ.findPawnshopEmail(pawnshop.getPawnshopEmail()).isEmpty()) {
+				if (pawnshop.getPawnshopId() == 0) {
+					pawnshop.setPawnshopState("pawnshop");
+					pawnshopServ.insert(pawnshop);
+				} else {
+					pawnshop.setPawnshopState("pawnshop");
+					pawnshopServ.update(pawnshop);
+				}
 			} else {
-				pawnshop.setPawnshopState("pawnshop");
-				pawnshopServ.update(pawnshop);
+				return "redirect:pawnshop-register-form.html#fail";
 			}
 		} catch (Exception e) {
-			return "redirect:pawnshop-register-form.html";
+			return "redirect:pawnshop-register-form.html#failed";
 		}
 		return "redirect:index.jsp";
 	}
