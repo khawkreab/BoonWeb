@@ -33,7 +33,7 @@
 	content: '';
 	position: absolute;
 	left: 18px;
-	height: 100%;
+	height: calc(100% - 72px);
 	width: 4px;
 	background: #69bdf7;
 }
@@ -81,8 +81,7 @@
 	width: 40px;
 	height: 40px;
 	border-radius: 50%;
-	box-shadow: 0 0 0 4px #ffffff, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px
-		0 4px rgba(0, 0, 0, 0.05);
+	box-shadow: 0 0 0 4px #ffffff, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
 }
 
 .cd-timeline-img i {
@@ -149,8 +148,7 @@
 	color: #303e49;
 }
 
-.cd-timeline-content p, .cd-timeline-content .cd-read-more,
-	.cd-timeline-content .cd-date {
+.cd-timeline-content p, .cd-timeline-content .cd-read-more, .cd-timeline-content .cd-date {
 	font-size: 13px;
 	font-size: 0.8125rem;
 }
