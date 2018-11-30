@@ -5,6 +5,7 @@
 <!-- font icon for this template -->
 <link href="vendor/font-awesome/css/fontawesome-all.min.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="css/customStyle.css">
+<link rel="stylesheet" href="css/loadingPage.css">
 <link rel="stylesheet" href="css/animate.css">
 <link rel="stylesheet" href="css/login.css">
 <link rel="stylesheet" href="css/pledgeForm.css">

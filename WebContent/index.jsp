@@ -34,6 +34,8 @@ body {
 <body id="page-top">
 	<!-- Navigation -->
 	<jsp:include page="navbar.jsp" />
+	<!-- loading page -->
+	<jsp:include page="loadingpage.jsp" />
 	<%
 		if (session.getAttribute("isLogin") == "yes") {
 	%>
@@ -42,6 +44,7 @@ body {
 		if (session.getAttribute("userType") == "pawner") {
 	%>
 	<!-- ----------------------------pawner login---------------------------------------- -->
+	
 	<section class="section-full text-white d-flex header">
 		<div class="container my-auto">
 			<div class="row">
@@ -174,15 +177,15 @@ body {
 		</c:forEach>
 	</section>
 	<script>
-		$(document).ready(function() {
-			var featured = $('.featured').length;
+	$(document).ready(function() {
+	    var featured = $('.featured').length;
 
-			console.log("featured => " + featured)
-			if (featured == 0) {
-				$('#checkpost').text("ไม่มีรายการของจำนำ")
-			}
-		});
-	</script>
+	    console.log("featured => " + featured)
+	    if (featured == 0) {
+		$('#checkpost').text("ไม่มีรายการของจำนำ")
+	    }
+	});
+    </script>
 	<!-- ------------------------------not login-------------------------------------- -->
 	<%
 		}
@@ -248,7 +251,7 @@ body {
 								<!-- login button -->
 								<div class="">
 									<button type="submit" class="btn-custom btn-custom-defalt">เข้าสู่ระบบ</button>
-									<button type="button" data-dismiss="modal" class="btn-custom btn-custom-blue" >ยกเลิก</button>
+									<button type="button" data-dismiss="modal" class="btn-custom btn-custom-blue">ยกเลิก</button>
 								</div>
 							</form>
 						</div>
@@ -260,18 +263,23 @@ body {
 	<!-- --------------------------------------------------------------------- -->
 	<script type="text/javascript" src="js/aos.js"></script>
 	<script>
-		AOS.init();
-	</script>
+	AOS.init();
+    </script>
 	<script type="text/javascript">
-		// if login fail
-		let params = new URLSearchParams(document.location.search.substring(1));
-		let loginfail = params.get("login");
-		if (loginfail == "fail") {
-			$('#loginfail').css("display", "block")
-			$(document).ready(function() {
-				$('#modalLogin').modal()
-			});
-		}
-	</script>
+	// if login fail
+	let params = new URLSearchParams(document.location.search.substring(1));
+	let loginfail = params.get("login");
+	if (loginfail == "fail") {
+	    $('#loginfail').css("display", "block")
+	    $(document).ready(function() {
+		$('#modalLogin').modal()
+	    });
+	}
+    </script>
+	<!-- loading page js -->
+	<script type="text/javascript" src="js/loadingpage.js"></script>
+	<script>
+	loadingpage("?isLogin");
+    </script>
 </body>
 </html>

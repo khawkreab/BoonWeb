@@ -104,7 +104,7 @@ public class LoginCotroller {
 				request.getSession().setAttribute("email", pawner.getPawnerEmail());
 				request.getSession().setAttribute("pawnerState", pawner.getPawnerState());
 
-				return "redirect:index.html";
+				return "redirect:index.html?isLogin";
 
 			}
 		} catch (Exception e) {
@@ -129,7 +129,7 @@ public class LoginCotroller {
 				request.getSession().setAttribute("email", pawnshop.getPawnshopEmail());
 				request.getSession().setAttribute("pawnshopState", pawnshop.getPawnshopState());
 
-				return "redirect:index.html";
+				return "redirect:index.html?isLogin";
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
