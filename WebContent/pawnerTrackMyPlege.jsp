@@ -21,6 +21,7 @@
 <link rel="stylesheet" href="css/timeline.css">
 <link rel="stylesheet" href="css/loadingPage.css">
 <link rel="stylesheet" href="css/profileCard.css">
+<link rel="stylesheet" href="css/sorting.css">
 <style>
 .popup {
 	width: 100%;
@@ -64,15 +65,19 @@
 			<em></em>
 		</div>
 	</div>
-	<select class="btn-custom btn-custom-defalt sort">
-		<option value="sortstatusall">sort status all</option>
-		<option value="sortstatusprocess">sort status process</option>
-	</select>
+	<div id="filterBtnContainer">
+		<button class="filter-btn active" onclick="filterSelection('all')">Show all</button>
+		<button class="filter-btn" onclick="filterSelection('waiting')">waiting</button>
+		<button class="filter-btn" onclick="filterSelection('process')">process</button>
+		<button class="filter-btn" onclick="filterSelection('approve')">approve</button>
+	</div>
+		<!-- not have item -->
+	<div id="noitem">ไม่มีรายการ </div>
 	<!-- sort status all -->
-	<section id="cd-timeline" class="cd-container sortstatusall">
+	<section id="cd-timeline" class="cd-container">
 		<c:forEach items="${pawnerPostsProcess}" var="postprocess">
 			<c:if test="${postprocess.pawnerPostStatus == 'process' || postprocess.pawnerPostStatus == 'waiting' || postprocess.pawnerPostStatus == 'approve'}">
-				<div class="cd-timeline-block" id="item${postprocess.pawnerPostId}">
+				<div class="cd-timeline-block filter-column ${postprocess.pawnerPostStatus}" id="item${postprocess.pawnerPostId}">
 					<!-------- icon -------->
 					<c:if test="${postprocess.pawnerPostStatus == 'waiting'}">
 						<div class="cd-timeline-img cd-wait">
@@ -280,148 +285,10 @@
 			</c:if>
 		</c:forEach>
 	</section>
-	<!-- sort status process -->
-	<section id="cd-timeline" class="cd-container sortstatusprocess" style="display: none">
-		<c:forEach items="${pawnerPostsProcess}" var="postprocess">
-			<c:if test="${postprocess.pawnerPostStatus == 'process' }">
-				<div class="cd-timeline-block" id="item${postprocess.pawnerPostId}">
-					<!-------- icon -------->
-					<c:if test="${postprocess.pawnerPostStatus == 'process'}">
-						<div class="cd-timeline-img cd-process">
-							<i class="fas fa-handshake"></i>
-						</div>
-					</c:if>
-					<!--------- end icon --------->
-					<div class="cd-timeline-content">
-						<!-- date -->
-						<span class="cd-date">
-							<fmt:setLocale value="th-TH" />
-							<fmt:formatDate pattern="dd MMM yyyy" value="${postprocess.pawnerPostDate }" />
-						</span>
-						<!--  -->
-						<h2>${postprocess.pawnerPostName }${postprocess.pawnerPostBrand }${postprocess.pawnerPostTypeCamera }${postprocess.pawnerPostCameraLen }</h2>
-						<ul class="row">
-							<!-- Watch,Electronic -->
-							<c:if test="${postprocess.pawnerPostModel != null}">
-								<li class="col-md-6">รุ่น : ${postprocess.pawnerPostModel}</li>
-								<li class="col-md-6">หมายเลขประจำเครื่อง : ${postprocess.pawnerPostSerial}</li>
-								<li class="col-md-6">ปีที่ซื้อสินค้า : ${postprocess.pawnerPostPurchase }</li>
-							</c:if>
-							<c:if test="${postprocess.pawnerPostProduction != null}">
-								<li class="col-md-6">ปีที่ผลิตสินค้า : ${postprocess.pawnerPostProduction}</li>
-							</c:if>
-							<!-- Gold -->
-							<c:if test="${postprocess.pawnerPostPure != null}">
-								<li class="col-md-6">ความบริสุทธ์ : ${postprocess.pawnerPostPure  }</li>
-								<li class="col-md-6">น้ำหนัก : ${postprocess.pawnerPostWeigh }</li>
-								<li class="col-md-6">ชนิดหรือรูปแบบของทองคำ : ${postprocess.pawnerPostCategory }</li>
-							</c:if>
-							<!-- Electronic tv com telephone -->
-							<c:if test="${postprocess.pawnerPostSize != null}">
-								<li class="col-md-6">ขนาดหน้าจอ : ${postprocess.pawnerPostSize }</li>
-							</c:if>
-							<!-- Electronic camera com telephone -->
-							<c:if test="${postprocess.pawnerPostBattery != null}">
-								<li class="col-md-6">
-									<span class="fas fa-check" aria-hidden="true"> </span>
-									Battery
-								</li>
-							</c:if>
-							<!-- Electronic com telephone -->
-							<c:if test="${postprocess.pawnerPostHarddisk != null}">
-								<li class="col-md-6">Harddisk : ${ postprocess.pawnerPostHarddisk }</li>
-							</c:if>
-							<!-- Electronic com-->
-							<c:if test="${postprocess.pawnerPostRam != null}">
-								<li class="col-md-6">Ram : ${postprocess.pawnerPostRam }</li>
-							</c:if>
-							<!-- Watch -->
-							<c:if test="${postprocess.pawnerPostCase != null}">
-								<li class="col-md-6">ชนิดของหน้าปัด : ${postprocess.pawnerPostCase }</li>
-								<li class="col-md-6">ชนิดของสายรัดข้อมือ : ${postprocess.pawnerPostBracelet }</li>
-								<c:if test="${postprocess.pawnerPostDiamond != null}">
-									<li class="col-md-6">เพรช : ${postprocess.pawnerPostDiamond }</li>
-								</c:if>
-								<c:if test="${postprocess.pawnerPostPackage != null}">
-									<li class="col-md-6">
-										<span class="fas fa-check" aria-hidden="true"> </span>
-										กล้องบรรจุสินค้า
-									</li>
-								</c:if>
-							</c:if>
-							<!-- Electronic tv -->
-							<c:if test="${postprocess.panwePostRemote != null}">
-								<li class="col-md-6">
-									<span class="fas fa-check" aria-hidden="true"> </span>
-									Remote
-								</li>
-							</c:if>
-							<!-- Watch,Electronic -->
-							<c:if test="${postprocess.pawnerPostModel != null}">
-								<li class="col-md-6">
-									<span class="fas fa-check" aria-hidden="true"> </span>
-									การประกันสินค้า
-								</li>
-							</c:if>
-						</ul>
-						<i class="quick small">เพิ่มเติม</i>
-						<span class="quick_desc">${postprocess.pawnerPostDescription }</span>
-						<!---------- process  ---------->
-						<c:if test="${postprocess.pawnerPostStatus == 'process'}">
-							<line-x></line-x>
-							<div class="history-show-estimate">
-								<div class="row d-flex">
-									<div class="col-md-4">โรงรับจำนำที่มาเสนอราคา</div>
-									<div class="ml-auto col-md-2">ราคาต่ำสุด</div>
-									<div class="col-md-2">ราคาสูงสุด</div>
-									<div class="col-md-2"></div>
-								</div>
-								<ul>
-									<c:forEach items="${estimatesList}" var="estimate">
-										<c:if test="${estimate.pawnerPostId.pawnerPostId == postprocess.pawnerPostId }">
-											<li style="margin-bottom: 12px;">
-												<div class="row d-flex">
-													<div class="col-md-4">
-														<div class="profile-card-head is-collapsed">
-															<div class="card-inner js-expander">&nbsp;&nbsp; ${estimate.pawnshopId.pawnshopName}</div>
-															<div class="profile-card">
-																<div class="profile-card-circle">
-																	<img src="img/logos/logo.png">
-																</div>
-																<span>${estimate.pawnshopId.pawnshopName}</span>
-																<i>${estimate.pawnshopId.pawnshopProvince}</i>
-																<i>${estimate.pawnshopId.pawnshopTel}</i>
-																<span class="closed">&times;</span>
-															</div>
-														</div>
-													</div>
-													<div class="ml-auto col-md-2">${estimate.estimatePriceMin}</div>
-													<div class="col-md-2">${estimate.estimatePriceMax}</div>
-													<div class="col-md-2">
-														<form action="pawner-approve.html" method="post">
-															<input type="hidden" name="estimateId" value="${estimate.estimateId}">
-															<input type="hidden" name="pawnerPostId" value="${estimate.pawnerPostId.pawnerPostId}">
-															<button class="btn-custom btn-custom-defalt small" type="submit">รับข้อเสนอ</button>
-														</form>
-													</div>
-												</div>
-											</li>
-										</c:if>
-									</c:forEach>
-								</ul>
-							</div>
-						</c:if>
-					</div>
-					<!-- cd-timeline-content -->
-				</div>
-				<!-- cd-timeline-block -->
-			</c:if>
-		</c:forEach>
-	</section>
 	<!-- --------------------------------------------------------------------------------- -->
 	<!-- import profile Card js -->
 	<script src="js/profileCard.js"></script>
-	<!-- cd-timeline -->
+	<!-- loading page -->
 	<script type="text/javascript">
 	/* loading page */
 	window.onload = function loading() {
@@ -435,22 +302,13 @@
 		    window.location.reload();
 		}
 	    }, 1000);
-
 	}
-	$(".sort").change(function() {
-	    var titlesort = "";
-	    $(".sort option:selected").each(function() {
-		if ($(this).val() == "sortstatusprocess") {
-		    $('.sortstatusall').css("display", "none")
-		    $('.sortstatusprocess').css("display", "block")
-		}
-		if ($(this).val() == "sortstatusall") {
-		    $('.sortstatusall').css("display", "block")
-		    $('.sortstatusprocess').css("display", "none")
-		}
-	    });
-	}).change();
     </script>
+	<!-- sorting -->
+	<script src="js/sorting.js">
+	
+    </script>
+	<!-- print page -->
 	<script>
 	function select(e) {
 

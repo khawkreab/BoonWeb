@@ -51,7 +51,7 @@ i {
 }
 
 }
-.modal-open .modal {
+.modal {
 	overflow-x: hidden;
 	overflow-y: hidden;
 }
@@ -221,4 +221,8 @@ line-x {
 
 .note span {
 	margin: 0 5px;
+}
+
+noitem{
+	display: none;
 }
