@@ -21,6 +21,8 @@
 <body style="background-color: #f4f4f4; overflow: hidden;">
 	<!-- nav bar -->
 	<jsp:include page="navbar.jsp" />
+	<!-- loading page -->
+	<jsp:include page="loadingpage.jsp" />
 	<!-- element -->
 	<div class="page">
 		<div class="pledge-container">
@@ -136,9 +138,10 @@
 		<!-- END: .pledge-container -->
 	</div>
 	<!-- END: .modal -->
-
-	<script src="js/MultiStepForm.js"></script>
 	<!-- image review js -->
-	<script src="js/imageReview.js"> </script>
+	<script src="js/imageReview.js"></script>
+	<!-- loading page js -->
+	<script type="text/javascript" src="js/loadingpage.js"></script>
+	<script src="js/MultiStepForm.js"></script>
 </body>
 </html>

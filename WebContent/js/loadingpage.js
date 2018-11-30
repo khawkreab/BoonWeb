@@ -1,5 +1,6 @@
 function loadingpage(e) {
     if (location.search == e) {
+	$('#loadpage').css("display", "block")
 	var timeLeft = 1;
 	var timerId = setInterval(countdown, 200);
 	$('body').css("overflow", "hidden")

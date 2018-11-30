@@ -1,3 +1,6 @@
+#loadpage{
+	display: none;
+}
 .loadpage{
 	width: 100vw;
     height: 100vh;
