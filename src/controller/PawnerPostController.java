@@ -179,7 +179,7 @@ public class PawnerPostController {
 		try {
 			long userId = (long) request.getSession().getAttribute("id");
 		/*	pawnerPostsWaiting = pawnerPostService.findPawnerPostByPawnerIdAndStatus(userId , "waiting");*/
-			pawnerPostsProcess = pawnerPostService.getAllPawnerPost();
+			pawnerPostsProcess = pawnerPostService.findPawnerPostByPawnerId(userId);
 			estimatesList =estimateService.findEstimateByPawnerIdAndStatus(userId , "process");
 			estimatesApprove =estimateService.findEstimateByPawnerIdAndStatus(userId , "approve");
 			

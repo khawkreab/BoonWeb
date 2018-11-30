@@ -2,16 +2,22 @@ filterSelection("all")
 function filterSelection(c) {
     var x, i;
     x = document.getElementsByClassName("filter-column");
-    if (c == "all")
+    if (c == "all") {
 	c = "";
-    $('#noitem').css("display", "none")
+	$('#noitem').css("display", "none")
+    }
     for (i = 0; i < x.length; i++) {
 	filterRemoveClass(x[i], "filter-show");
-	if (x[i].className.indexOf(c) > 0) {
+	if (x[i].className.indexOf(c) == -1) {
+	    var countindexOfc = 0;
+	    if (countindexOfc == i) {
+		$('#noitem').css("display", "block")
+	    }
+	    countindexOfc++
+	}
+	if (x[i].className.indexOf(c) > -1) {
 	    filterAddClass(x[i], "filter-show");
 	    $('#noitem').css("display", "none")
-	} else {
-	    $('#noitem').css("display", "block")
 	}
     }
 }

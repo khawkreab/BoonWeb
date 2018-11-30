@@ -38,17 +38,20 @@
 	<jsp:include page="navbar.jsp" />
 	<!-- loading page -->
 	<div class="loadpage" id="loadpage">
-		<div class='loading'>
+		<div class='loading loading-speed'>
+			BOONYONG
 			<span>
 				<span></span>
 				<span></span>
 				<span></span>
 				<span></span>
 			</span>
-			<div class='loading-base'>
+			<span style="top: 70%; right: 15px;">
 				<span></span>
-				<div class='loading-face'></div>
-			</div>
+				<span></span>
+				<span></span>
+				<span></span>
+			</span>
 		</div>
 		<div class='loading-longfazers'>
 			<span></span>
@@ -56,7 +59,15 @@
 			<span></span>
 			<span></span>
 		</div>
-		<i class="loading-text">Loading . . .</i>
+		<i class="loading-text loading-speed">
+			Loading
+			<span style="top: 70%; right: -10px;">
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</span>
+		</i>
 	</div>
 	<!--banner-->
 	<div class="banner-top">
@@ -71,8 +82,8 @@
 		<button class="filter-btn" onclick="filterSelection('process')">process</button>
 		<button class="filter-btn" onclick="filterSelection('approve')">approve</button>
 	</div>
-		<!-- not have item -->
-	<div id="noitem">ไม่มีรายการ </div>
+	<!-- not have item -->
+	<div id="noitem">ไม่มีรายการ</div>
 	<!-- sort status all -->
 	<section id="cd-timeline" class="cd-container">
 		<c:forEach items="${pawnerPostsProcess}" var="postprocess">
@@ -301,7 +312,7 @@
 		    window.location = window.location + '#loaded';
 		    window.location.reload();
 		}
-	    }, 1000);
+	    }, 80000);
 	}
     </script>
 	<!-- sorting -->

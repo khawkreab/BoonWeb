@@ -1,4 +1,4 @@
-filterBtnContainer {
+#filterBtnContainer {
 	display: flex;
 	justify-content: flex-end;
 }
