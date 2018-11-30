@@ -201,7 +201,7 @@ public class EstimateController {
 		Date date = new Date();
 		try {
 
-			if (status == "complate") {
+			if (status.equals("complete")) {
 				pawnerPostService.updateStatus(pawnerPostId, status);
 			}
 
