@@ -26,6 +26,31 @@ Shop Card
 	text-align: center;
 	z-index: 2;
 	margin: 20px;
+	position: relative;
+}
+
+.ashop-card:before {
+	content: '\f00e';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #ffffff99;
+	z-index: 2;
+	opacity: 0;
+	transition: all .2s;
+	font-size: 3rem;
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+
+.ashop-card:hover:before {
+	opacity: 1;
+	transition: all .2s;
 }
 
 .shop-card figure {
@@ -39,9 +64,9 @@ Shop Card
 
 .shop-card figure img {
 	margin: 0px;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
 }
 
 .shop-card .title {

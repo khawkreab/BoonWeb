@@ -31,7 +31,8 @@
 	<!--content-->
 	<div class="container flex-wrap">
 		<c:forEach items="${pawnshopPosts}" var="pawnshopPosts">
-			<div class="shop-card">
+			<div class="shop-card fas">
+			<a class="ashop-card fas" href="#"></a>
 				<div style="height: 200px;">
 					<div class="date">
 						<span class="day">
