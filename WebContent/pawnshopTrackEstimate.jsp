@@ -29,6 +29,7 @@
 li {
 	list-style: none;
 }
+
 .popup {
 	width: 100%;
 	height: 100%;
@@ -46,11 +47,7 @@ li {
 	<!-- loading page -->
 	<div class="loadpage" id="loadpage">
 		<div class='loading'>
-			<span>
-				<span></span>
-				<span></span>
-				<span></span>
-				<span></span>
+			<span> <span></span> <span></span> <span></span> <span></span>
 			</span>
 			<div class='loading-base'>
 				<span></span>
@@ -58,10 +55,7 @@ li {
 			</div>
 		</div>
 		<div class='loading-longfazers'>
-			<span></span>
-			<span></span>
-			<span></span>
-			<span></span>
+			<span></span> <span></span> <span></span> <span></span>
 		</div>
 		<i class="loading-text">Loading . . .</i>
 	</div>
@@ -73,9 +67,13 @@ li {
 		</div>
 	</div>
 	<section id="cd-timeline" class="cd-container">
+		<div class="cd-timeline-content" id="noOrder">
+			<h3>ไม่มีรายการ</h3>
+		</div>
 		<c:forEach items="${trackMyEstimate}" var="track">
 			<c:if test="${track.estimateStatus != 'complete'}">
 				<c:if test="${track.estimateStatus != 'approvedenei'}">
+					<input type="hidden" value="hide" id="hide" />
 					<div class="cd-timeline-block">
 						<!-------- icon -------->
 						<c:if test="${track.estimateStatus == 'denei'}">
@@ -198,21 +196,22 @@ li {
 								<div class="history-show-estimate">
 									<div class="row d-flex">
 										<div class="col-md-5 d-inline-flex">
-												เจ้าของโพส คุณ
-												<!-- profile card -->
-												<div class="profile-card-head is-collapsed">
-													<div class="card-inner js-expander">&nbsp;&nbsp; ${track.pawnerPostId.pawnerId.pawnerFirstname} ${track.pawnerPostId.pawnerId.pawnerLastname}</div>
-													<div class="profile-card">
-														<div class="profile-card-circle">
-															<img src="img/logos/logo.png">
-														</div>
-														<span>${track.pawnerPostId.pawnerId.pawnerFirstname} ${track.pawnerPostId.pawnerId.pawnerLastname}</span>
-														<i>${track.pawnerPostId.pawnerId.pawnerEmail}</i>
-														<i>${track.pawnerPostId.pawnerId.pawnerProvince}</i>
-														<i>Status:${track.estimateStatus}</i>
-														<span class="closed">&times;</span>
+											เจ้าของโพส คุณ
+											<!-- profile card -->
+											<div class="profile-card-head is-collapsed">
+												<div class="card-inner js-expander">&nbsp;&nbsp;
+													${track.pawnerPostId.pawnerId.pawnerFirstname}
+													${track.pawnerPostId.pawnerId.pawnerLastname}</div>
+												<div class="profile-card">
+													<div class="profile-card-circle">
+														<img src="img/logos/logo.png">
 													</div>
+													<span>${track.pawnerPostId.pawnerId.pawnerFirstname}
+														${track.pawnerPostId.pawnerId.pawnerLastname}</span> <i>${track.pawnerPostId.pawnerId.pawnerEmail}</i>
+													<i>${track.pawnerPostId.pawnerId.pawnerProvince}</i> <i>Status:${track.estimateStatus}</i>
+													<span class="closed">&times;</span>
 												</div>
+											</div>
 										</div>
 										<div class="col-md-4 ml-auto">
 											<p>
@@ -246,21 +245,22 @@ li {
 								<div class="history-show-estimate">
 									<div class="row d-flex">
 										<div class="col-md-5 d-inline-flex">
-												เจ้าของโพส คุณ
-												<!-- profile card -->
-												<div class="profile-card-head is-collapsed">
-													<div class="card-inner js-expander">&nbsp;&nbsp; ${track.pawnerPostId.pawnerId.pawnerFirstname} ${track.pawnerPostId.pawnerId.pawnerLastname}</div>
-													<div class="profile-card">
-														<div class="profile-card-circle">
-															<img src="img/logos/logo.png">
-														</div>
-														<span>${track.pawnerPostId.pawnerId.pawnerFirstname} ${track.pawnerPostId.pawnerId.pawnerLastname}</span>
-														<i>${track.pawnerPostId.pawnerId.pawnerEmail}</i>
-														<i>${track.pawnerPostId.pawnerId.pawnerProvince}</i>
-														<i>Status: ${track.estimateStatus}</i>
-														<span class="closed">&times;</span>
+											เจ้าของโพส คุณ
+											<!-- profile card -->
+											<div class="profile-card-head is-collapsed">
+												<div class="card-inner js-expander">&nbsp;&nbsp;
+													${track.pawnerPostId.pawnerId.pawnerFirstname}
+													${track.pawnerPostId.pawnerId.pawnerLastname}</div>
+												<div class="profile-card">
+													<div class="profile-card-circle">
+														<img src="img/logos/logo.png">
 													</div>
+													<span>${track.pawnerPostId.pawnerId.pawnerFirstname}
+														${track.pawnerPostId.pawnerId.pawnerLastname}</span> <i>${track.pawnerPostId.pawnerId.pawnerEmail}</i>
+													<i>${track.pawnerPostId.pawnerId.pawnerProvince}</i> <i>Status:
+														${track.estimateStatus}</i> <span class="closed">&times;</span>
 												</div>
+											</div>
 										</div>
 										<div class="col-md-4 ml-auto">
 											<p>
@@ -304,21 +304,22 @@ li {
 										</div> 
 										-->
 										<div class="col-md-5 d-inline-flex">
-												เจ้าของโพส คุณ
-												<!-- profile card -->
-												<div class="profile-card-head is-collapsed">
-													<div class="card-inner js-expander">&nbsp;&nbsp; ${track.pawnerPostId.pawnerId.pawnerFirstname} ${track.pawnerPostId.pawnerId.pawnerLastname}</div>
-													<div class="profile-card">
-														<div class="profile-card-circle">
-															<img src="img/logos/logo.png">
-														</div>
-														<span>${track.pawnerPostId.pawnerId.pawnerFirstname} ${track.pawnerPostId.pawnerId.pawnerLastname}</span>
-														<i>${track.pawnerPostId.pawnerId.pawnerEmail}</i>
-														<i>${track.pawnerPostId.pawnerId.pawnerProvince}</i>
-														<i>Status: ${track.estimateStatus}</i>
-														<span class="closed">&times;</span>
+											เจ้าของโพส คุณ
+											<!-- profile card -->
+											<div class="profile-card-head is-collapsed">
+												<div class="card-inner js-expander">&nbsp;&nbsp;
+													${track.pawnerPostId.pawnerId.pawnerFirstname}
+													${track.pawnerPostId.pawnerId.pawnerLastname}</div>
+												<div class="profile-card">
+													<div class="profile-card-circle">
+														<img src="img/logos/logo.png">
 													</div>
+													<span>${track.pawnerPostId.pawnerId.pawnerFirstname}
+														${track.pawnerPostId.pawnerId.pawnerLastname}</span> <i>${track.pawnerPostId.pawnerId.pawnerEmail}</i>
+													<i>${track.pawnerPostId.pawnerId.pawnerProvince}</i> <i>Status:
+														${track.estimateStatus}</i> <span class="closed">&times;</span>
 												</div>
+											</div>
 										</div>
 										<div class="col-md-4 ml-auto">
 											<p>
@@ -356,6 +357,11 @@ li {
 					window.location.reload();
 				}
 			}, 1000);
+
+			var x = document.getElementById("hide").value;
+			var order = document.getElementById("noOrder");
+			if (x == 'hide')
+				order.style.display = "none";
 
 		}
 	</script>

@@ -25,7 +25,7 @@
 <link rel="stylesheet" href="css/loadingPage.css">
 <link rel="stylesheet" href="css/profileCard.css">
 </head>
-<body>
+<body class="bg-glay">
 	<!-- Navigation -->
 	<jsp:include page="navbar.jsp" />
 
@@ -52,7 +52,7 @@
 			<em></em>
 		</div>
 	</div>
-	<section class="bg-glay" style="height: auto;">
+	<section style="height: auto;">
 		<div class="note">
 			<span> ***หมายเหตุ </span> <span> <i class="fas fa-check"></i>
 				= เสร็จสิ้น
@@ -201,6 +201,15 @@
 											เสนอราคาที่ <span style="color: #ff3300; font-weight: bold">
 												${post.estimatePriceMin} - ${post.estimatePriceMax} บาท </span>
 										</p>
+										<p>
+											<c:if test="${post.estimateStatus == 'approvedenei'}">
+												<span style="color: #ff3300; font-weight: bold">ถูกปฏิเสธ</span>
+											</c:if>
+											<c:if test="${post.estimateStatus == 'complete'}">
+												<span style="color: 00FF00; font-weight: bold">สำเร็จ</span>
+											</c:if>
+										</p>
+
 									</div>
 								</div>
 								<!----- image ------>
@@ -217,14 +226,6 @@
 			</ul>
 		</div>
 	</section>
-	<script type="text/javascript">
-		window.onload = function() {
-			var x = document.getElementById("hide").value;
-			var order = document.getElementById("noOrder");
-			if (x == 'hide')
-				order.style.display = "none";
-		}
-	</script>
 	<script src="js/profileCard.js"></script>
 	<!-- cd-timeline -->
 	<script type="text/javascript">
@@ -241,6 +242,10 @@
 				}
 			}, 1000);
 
+			var x = document.getElementById("hide").value;
+			var order = document.getElementById("noOrder");
+			if (x == 'hide')
+				order.style.display = "none";
 		}
 	</script>
 	<%-- 

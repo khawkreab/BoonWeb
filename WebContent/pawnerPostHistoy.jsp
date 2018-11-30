@@ -207,14 +207,6 @@
 			</ul>
 		</div>
 	</section>
-	<script type="text/javascript">
-		window.onload = function() {
-			var x = document.getElementById("hide").value;
-			var order = document.getElementById("noOrder");
-			if (x == 'hide')
-				order.style.display = "none";
-		}
-	</script>
 	<!-- profile Card -->
 	<script src="js/profileCard.js"></script>
 	<!-- cd-timeline -->
@@ -231,6 +223,11 @@
 					window.location.reload();
 				}
 			}, 1000);
+			
+			var x = document.getElementById("hide").value;
+			var order = document.getElementById("noOrder");
+			if (x == 'hide')
+				order.style.display = "none";
 
 		}
 	</script>

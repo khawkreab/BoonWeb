@@ -20,7 +20,7 @@
 <jsp:include page="importCSS.jsp" />
 <link rel="stylesheet" href="css/history.css">
 </head>
-<body>
+<body class="bg-glay">
 	<jsp:include page="navbar.jsp" />
 	<!--banner-->
 	<div class="banner-top">
@@ -29,7 +29,7 @@
 			<em></em>
 		</div>
 	</div>
-	<section class="bg-glay" style="height: auto">
+	<section style="height: auto">
 		<!-- note -->
 		<div class="note">
 			<span> ***หมายเหตุ </span>
