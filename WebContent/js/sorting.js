@@ -11,14 +11,15 @@ function filterSelection(c) {
 	if (x[i].className.indexOf(c) == -1) {
 	    var countindexOfc = 0;
 	    if (countindexOfc == i) {
-		$('#noitem').css("display", "block")
+		$('#noitem').css("display", "flex")
+		$('#sorting').css("display", "none")
 	    }
 	    countindexOfc++
 	}
 	if (x[i].className.indexOf(c) > -1) {
-		console.log("hello")
 	    filterAddClass(x[i], "filter-show");
 	    $('#noitem').css("display", "none")
+	    $('#sorting').css("display", "flex")
 	}
     }
 }
