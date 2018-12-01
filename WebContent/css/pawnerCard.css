@@ -29,7 +29,7 @@ Shop Card
 	position: relative;
 }
 
-.ashop-card:before {
+.shop-card-a:before {
 	content: '\f00e';
 	position: absolute;
 	top: 0;
@@ -48,7 +48,7 @@ Shop Card
 	cursor: pointer;
 }
 
-.ashop-card:hover:before {
+.shop-card-a:hover:before {
 	opacity: 1;
 	transition: all .2s;
 }
@@ -83,7 +83,7 @@ Shop Card
 }
 
 .shop-card .cta {
-	padding: 20px 20px 5px;
+	padding: 16px 20px 5px;
 	display: inline-flex;
 }
 
@@ -95,11 +95,9 @@ Shop Card
 
 .shop-card .price {
 	color: #FF3100;
-	font-size: 22px;
 	font-weight: 900;
 	padding-top: 2px;
 	transition: color .3s ease-in-out;
-	margin-right: 20px;
 }
 
 .shop-card .btn {

@@ -32,7 +32,7 @@
 	<div class="container flex-wrap">
 		<c:forEach items="${pawnshopPosts}" var="pawnshopPosts">
 			<div class="shop-card fas">
-			<a class="ashop-card fas" href="#"></a>
+			<a class="shop-card-a fas" href="post-item-detail.html?item=${pawnshopPosts.pawnshopPostId}"></a>
 				<div style="height: 200px;">
 					<div class="date">
 						<span class="day">
@@ -45,22 +45,27 @@
 							<fmt:formatDate pattern="yyyy" value="${pawnshopPosts.pawnshopPostDate }" />
 						</span>
 					</div>
-					<div class="title-bar">
-						<div class="title">${pawnshopPosts.pawnshopPostName}</div>
-						<div class="desc">${pawnshopPosts.pawnshopId.pawnshopProvince}</div>
-					</div>
 					<figure>
 						<img src="img/uploadImge/${pawnshopPosts.pawnshopPostPicture}" />
 					</figure>
 				</div>
 				<div class="cta d-flex">
-					<div class="price mr-auto p-2">${pawnshopPosts.pawnshopPostPrice}฿</div>
-					<div class="p-2 ly"></div>
-					<a href="post-item-detail.html?item=${pawnshopPosts.pawnshopPostId}">
-						<button class="btn">
-							<i class="fas fa-cart-arrow-down" style="font-size: 1.25rem;"></i>
-						</button>
-					</a>
+					<div class="mr-auto">
+						<div>
+							<div class="title">${pawnshopPosts.pawnshopPostName}</div>
+							<div class="desc" style="text-align: -webkit-left;">${pawnshopPosts.pawnshopId.pawnshopProvince}</div>
+						</div>
+					</div>
+					<div class=" ly" style="padding: 0 10px;">
+						<p class="price" style="margin-bottom: 0;">${pawnshopPosts.pawnshopPostPrice}</p>
+						<p style="margin-bottom: 0;">บาท</p>
+						<%-- <a
+							hr ef="post-item-detail.html?item=${pawnshopPosts.pawnshopPostId}">
+							<button class="btn">
+								<i class="fas fa-cart-arrow-down" style="font-size: 1.25rem;"></i>
+							</button>
+						</a> --%>
+					</div>
 				</div>
 			</div>
 		</c:forEach>
