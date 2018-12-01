@@ -32,7 +32,6 @@
 	<div class="container flex-wrap">
 		<c:forEach items="${pawnshopPosts}" var="pawnshopPosts">
 			<div class="shop-card fas">
-			<a class="shop-card-a fas" href="post-item-detail.html?item=${pawnshopPosts.pawnshopPostId}"></a>
 				<div style="height: 200px;">
 					<div class="date">
 						<span class="day">
@@ -46,6 +45,7 @@
 						</span>
 					</div>
 					<figure>
+						<a class="shop-card-a fas" href="post-item-detail.html?item=${pawnshopPosts.pawnshopPostId}"></a>
 						<img src="img/uploadImge/${pawnshopPosts.pawnshopPostPicture}" />
 					</figure>
 				</div>

@@ -26,7 +26,6 @@ Shop Card
 	text-align: center;
 	z-index: 2;
 	margin: 20px;
-	position: relative;
 }
 
 .shop-card-a:before {
@@ -60,6 +59,7 @@ Shop Card
 	outline: none !important;
 	width: 100%;
 	height: 100%;
+	position: relative;
 }
 
 .shop-card figure img {
