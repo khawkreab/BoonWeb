@@ -16,6 +16,7 @@ function filterSelection(c) {
 	    countindexOfc++
 	}
 	if (x[i].className.indexOf(c) > -1) {
+		console.log("hello")
 	    filterAddClass(x[i], "filter-show");
 	    $('#noitem').css("display", "none")
 	}

@@ -22,6 +22,7 @@
 <link rel="stylesheet" href="css/history.css">
 <link rel="stylesheet" href="css/loadingPage.css">
 <link rel="stylesheet" href="css/profileCard.css">
+<link rel="stylesheet" href="css/sorting.css">
 </head>
 <body>
 	<jsp:include page="navbar.jsp" />
@@ -49,6 +50,29 @@
 			<em></em>
 		</div>
 	</div>
+	<div id="noitem">ไม่มีรายการ</div>
+	<div id="filterBtnContainer">
+		<button class="filter-btn active" onclick="filterSelection('all')">
+			ทั้งหมด <i class="fas fa-th-list"> </i>
+		</button>
+		<button class="filter-btn" onclick="filterSelection('Gold')">
+			ทองคำ</button>
+		<button class="filter-btn" onclick="filterSelection('Laptop')">
+			แลปทอ็อป<i class="fas fa-laptop"></i>
+		</button>
+		<button class="filter-btn" onclick="filterSelection('Tv')">
+			โทรทัศน์ <i class="fas fa-tv-retro"></i>
+		</button>
+		<button class="filter-btn" onclick="filterSelection('Smartphone')">
+			โทรศัพท์ <i class="fas fa-mobile-alt"></i>
+		</button>
+		<button class="filter-btn" onclick="filterSelection('Watch')">
+			นาฬิกา<i class="fas fa-watch"></i>
+		</button>
+		<button class="filter-btn" onclick="filterSelection('Camera')">
+			กล้องถ่ายรูป <i class="fas fa-camera-retro"></i>
+		</button>
+	</div>
 	<section class="bg-glay" style="height: auto">
 		<div class="note">
 			<span> ***หมายเหตุ </span> <span> <i class="fas fa-check"></i>
@@ -62,7 +86,7 @@
 				</li>
 				<c:forEach items="${estimatesListComplete}" var="post">
 					<input type="hidden" value="hide" id="hide" />
-					<li class="event"
+					<li class="event filter-column ${post.pawnerPostId.pawnerPostItemType}"
 						data-date="<fmt:formatDate pattern="dd MMM yyyy"
 								value="${post.estimateAccessDate }"/>">
 						<i class="fas fa-check bg-success"></i>
@@ -170,19 +194,19 @@
 										</ul>
 										<!------ from pawner  ------>
 										<div class="col-md-5 d-inline-flex">
-										จำนำที่ :
-										<div class="profile-card-head is-collapsed">
-											<div class="card-inner js-expander">
-												&nbsp;&nbsp;
-												${post.pawnshopId.pawnshopName}</div>
-											<div class="profile-card">
-												<div class="profile-card-circle">
-													<img src="img/logos/logo.png">
+											จำนำที่ :
+											<div class="profile-card-head is-collapsed">
+												<div class="card-inner js-expander">&nbsp;&nbsp;
+													${post.pawnshopId.pawnshopName}</div>
+												<div class="profile-card">
+													<div class="profile-card-circle">
+														<img src="img/logos/logo.png">
+													</div>
+													<span>${post.pawnshopId.pawnshopName}</span> <span>${post.pawnshopId.pawnshopProvince}</span>
+													<span>${post.pawnshopId.pawnshopTel}</span> <span
+														class="closed">&times;</span>
 												</div>
-												<span>${post.pawnshopId.pawnshopName}</span> <span>${post.pawnshopId.pawnshopProvince}</span>
-												<span>${post.pawnshopId.pawnshopTel}</span> <span class="closed">&times;</span>
 											</div>
-										</div>
 										</div>
 										<!----- for pawnshop ----->
 										<div class="">
@@ -207,8 +231,11 @@
 			</ul>
 		</div>
 	</section>
+	<!-- sorting -->
+	<script src="js/sorting.js">
 	<!-- profile Card -->
-	<script src="js/profileCard.js"></script>
+		<script src="js/profileCard.js">
+	</script>
 	<!-- cd-timeline -->
 	<script type="text/javascript">
 		/* loading page */
@@ -223,7 +250,7 @@
 					window.location.reload();
 				}
 			}, 1000);
-			
+
 			var x = document.getElementById("hide").value;
 			var order = document.getElementById("noOrder");
 			if (x == 'hide')
