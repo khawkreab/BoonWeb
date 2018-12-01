@@ -46,10 +46,22 @@
 		</div>
 	</div>
 	<div id="filterBtnContainer">
-		<button class="filter-btn active" onclick="filterSelection('all')">Show all</button>
-		<button class="filter-btn" onclick="filterSelection('waiting')">waiting</button>
-		<button class="filter-btn" onclick="filterSelection('process')">process</button>
-		<button class="filter-btn" onclick="filterSelection('approve')">approve</button>
+		<button class="filter-btn active" onclick="filterSelection('all')">
+			ทั้งหมด
+			<i class="fas fa-th-list"> </i>
+		</button>
+		<button class="filter-btn" onclick="filterSelection('waiting')">
+			รอการประเมิน
+			<i class="fas fa-hourglass-half"></i>
+		</button>
+		<button class="filter-btn" onclick="filterSelection('process')">
+			รอการยืนยัน
+			<i class="fas fa-handshake"></i>
+		</button>
+		<button class="filter-btn" onclick="filterSelection('approve')">
+			ปริ้นใบจำนำ
+			<i class="fas fa-print"></i>
+		</button>
 	</div>
 	<!-- not have item -->
 	<div id="noitem">ไม่มีรายการ</div>
@@ -269,6 +281,7 @@
 	<!-- import profile Card js -->
 	<script src="js/profileCard.js"></script>
 	<!-- loading page -->
+	<script src="js/loadingpage.js"></script>
 	<script type="text/javascript">
 	/* loading page */
 	window.onload = function loading() {
@@ -276,12 +289,14 @@
 		document.body.style.overflowY = "auto";
 		document.getElementById("loadpage").style.display = "none";
 	    }
-	    setTimeout(function() {
-		if (!window.location.hash) {
+
+	    if (!window.location.hash) {
+		loadingpage("");
+		setTimeout(function() {
 		    window.location = window.location + '#loaded';
 		    window.location.reload();
-		}
-	    }, 600);
+		}, 600);
+	    }
 	}
     </script>
 	<!-- sorting -->
