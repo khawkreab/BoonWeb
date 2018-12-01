@@ -61,6 +61,13 @@ function validateForm() {
 		var pawnshopPostPure = $("input[name = 'pawnshopPostPure']").val();
 		if (pawnshopPostPure == '')
 			pawnshopPostPure = '12'
+				
+		if ($('#files').val() == "") {
+		    $('#picturefiles').addClass("fas fa-exclamation-circle text-red");
+		} else {
+		    $('#picturefiles')
+			    .removeClass("fas fa-exclamation-circle text-red");
+		}
 		for (i = 0; i < y.length; i++) {
 			y[i].classList.remove("invalid");
 			if (y[i].value == "" || !decimal.test(pawnshopPostPure)) {
@@ -73,11 +80,13 @@ function validateForm() {
 	}
 	if (other) {
 		var pawnshopPostSerial = $("input[name = 'pawnshopPostSerial']").val();
-		if (pawnshopPostSerial == '')
-			pawnshopPostSerial = 'abc3'
 		var pawnshopPostModel = $("input[name = 'pawnshopPostModel']").val();
-		if (pawnshopPostModel == '')
-			pawnshopPostModel = 'abc3'
+		if ($('#files').val() == "") {
+		    $('#picturefiles').addClass("fas fa-exclamation-circle text-red");
+		} else {
+		    $('#picturefiles')
+			    .removeClass("fas fa-exclamation-circle text-red");
+		}
 		for (i = 0; i < y.length; i++) {
 			y[i].classList.remove("invalid");
 			if (y[i].value == "" || !characterReg.test(pawnshopPostSerial)
@@ -109,6 +118,8 @@ function fixStepIndicator(n) {
 function choosetype() {
 	gold = false, other = false;
 	console.log(gold, other);
+	$('#picturefiles').removeClass("fas fa-exclamation-circle text-red");
+	$('input').removeClass("invalid");
 	$('#choosetype').css("display", "block")
 	$('#regForm').css("display", "none")
 }
@@ -121,6 +132,7 @@ function showsteptype(e) {
 	$(':input').val('')
 	$('#regForm').css("display", "block")
 	$('#step2, #step3').empty()
+	$('.thumbnail').parent().remove();
 	if (e == 1) {
 		gold = true;
 
@@ -129,7 +141,7 @@ function showsteptype(e) {
 		step2 += "<p>"
 		step2 += "<div class='wrap-input100 validate-input' style='margin-top:15px;'>"
 		step2 += "<label>ชนิดหรือรูปแบบของทองคำ</label>"
-		step2 += "<select class='input100' name='pawnshopPostCategory' required='required'>"
+		step2 += "<select class='input100' name='pawnshopPostCategory'>"
 		step2 += "<option></option>"
 		step2 += "<option>ทองรูปพรรณ</option>"
 		step2 += "<option>ทองเค เช่น 18k, 14k</option>"
