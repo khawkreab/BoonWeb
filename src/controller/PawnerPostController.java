@@ -112,6 +112,8 @@ public class PawnerPostController {
 			e.printStackTrace();
 		}
 		System.out.println("Start upload picture");
+		// set upload image you drive //
+		String saveDirectory = "L:/Project 3 1-2560/BoonWeb/WebContent/img/uploadImge/";
 		String fileName ="";
 		
 		String dir = request.getServletContext().getRealPath("/")+"img\\uploadImge\\";
@@ -125,7 +127,8 @@ public class PawnerPostController {
 			for (MultipartFile multipartFile : Files) {
 				fileName = multipartFile.getBytes().hashCode()+ "." + multipartFile.getContentType().split("/")[1];
 				if (!"".equalsIgnoreCase(fileName)) {
-					multipartFile.transferTo(new File(dir+ fileName ));
+//					multipartFile.transferTo(new File(dir+ fileName ));
+					multipartFile.transferTo(new File(saveDirectory + fileName));
 					System.out.println("multipartFile.transferTo => " +dir+fileName);
 					
 					picture.setPicture(fileName);
