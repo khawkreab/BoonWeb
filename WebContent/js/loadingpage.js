@@ -1,19 +1,19 @@
 function loadingpage(e) {
     if (location.search == e) {
-	$('#loadpage').css("display", "block")
+	$('#loadpage').addClass("active")
 	var timeLeft = 1;
 	var timerId = setInterval(countdown, 200);
 	$('body').css("overflow", "hidden")
 	function countdown() {
 	    if (timeLeft == -1) {
 		clearTimeout(timerId);
-		$('#loadpage').css("display", "none")
+		$('#loadpage').removeClass("active")
 		$('body').css("overflow-y", "auto")
 	    } else {
 		timeLeft--;
 	    }
 	}
     } else {
-	$('#loadpage').css("display", "none")
+	$('#loadpage').removeClass("active")
     }
 }

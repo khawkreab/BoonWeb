@@ -1,12 +1,14 @@
-#loadpage{
-	display: none;
-}
 .loadpage{
 	width: 100vw;
     height: 100vh;
     position: absolute;
     z-index: 99999;
     background-color: #fff;
+    display: none;
+}
+
+.loadpage.active{
+  display: block;
 }
 
   .loading-text {
