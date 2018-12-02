@@ -24,6 +24,7 @@
 <link rel="stylesheet" href="css/timeline.css">
 <link rel="stylesheet" href="css/loadingPage.css">
 <link rel="stylesheet" href="css/profileCard.css">
+<link rel="stylesheet" href="css/sorting.css">
 <!-- style ตรงนี้กูเอามาใสไวนี้ก่อนนะจะย้ายกะได้แต่กูไม่รู้มันจะไปชดตัวไหนไหมเลยไวนี้ก่อน -->
 <style>
 li {
@@ -66,15 +67,29 @@ li {
 			<em></em>
 		</div>
 	</div>
+	<div id="filterBtnContainer">
+		<button class="filter-btn active" onclick="filterSelection('all')">
+			ทั้งหมด <i class="fas fa-th-list"> </i>
+		</button>
+		<button class="filter-btn" onclick="filterSelection('process')">
+			รอการตอบรับ <i class="fas fa-handshake"></i>
+		</button>
+		<button class="filter-btn" onclick="filterSelection('approve')">
+			สินค้าจำนำกำลังเดินทาง <i class="fas fa-walking"></i>
+		</button>
+		<button class="filter-btn" onclick="filterSelection('denei')">
+			ถูกปฏิเสธ <i class="fas fa-times"></i> 
+		</button>
+	</div>
+	<!-- not have item -->
+	<div id="noitem">ไม่มีรายการ</div>
 	<section id="cd-timeline" class="cd-container">
-		<div class="cd-timeline-content" id="noOrder">
-			<h3>ไม่มีรายการ</h3>
-		</div>
 		<c:forEach items="${trackMyEstimate}" var="track">
 			<c:if test="${track.estimateStatus != 'complete'}">
 				<c:if test="${track.estimateStatus != 'approvedenei'}">
 					<input type="hidden" value="hide" id="hide" />
-					<div class="cd-timeline-block">
+					<div
+						class="cd-timeline-block filter-column ${track.estimateStatus}">
 						<!-------- icon -------->
 						<c:if test="${track.estimateStatus == 'denei'}">
 							<div class="cd-timeline-img cd-wait">
@@ -341,6 +356,8 @@ li {
 			</c:if>
 		</c:forEach>
 	</section>
+	<!-- sorting -->
+	<script src="js/sorting.js"></script>
 	<!-- profile Card -->
 	<script src="js/profileCard.js"></script>
 	<!-- cd-timeline -->

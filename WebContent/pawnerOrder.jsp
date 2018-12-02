@@ -62,7 +62,6 @@
 			<em></em>
 		</div>
 	</div>
-	<div id="noitem">ไม่มีรายการ</div>
 	<div id="filterBtnContainer">
 		<button class="filter-btn active" onclick="filterSelection('all')">
 			ทั้งหมด <i class="fas fa-th-list"> </i>
@@ -85,6 +84,7 @@
 			กล้องถ่ายรูป <i class="fas fa-camera-retro"></i>
 		</button>
 	</div>
+	<div id="noitem">ไม่มีรายการ</div>
 	<section>
 		<div class="order">
 			<c:forEach items="${order}" var="order">

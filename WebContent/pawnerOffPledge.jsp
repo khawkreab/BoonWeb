@@ -30,7 +30,6 @@
 			<em></em>
 		</div>
 	</div>
-	
 	<div id="filterBtnContainer">
 		<button class="filter-btn active" onclick="filterSelection('all')">
 			ทั้งหมด <i class="fas fa-th-list"> </i>
