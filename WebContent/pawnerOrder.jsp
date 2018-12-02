@@ -145,7 +145,7 @@
 		</div>
 	</section>
 	<!-- sorting -->
-	<script src="js/sorting.js">
+	<script src="js/sorting.js"></script>
 		<script>
 		/* loading page */
 		window.onload = function loading() {
@@ -216,7 +216,7 @@
 	<div id="printable">
 		<!-- import all css -->
 		<link rel="stylesheet"
-			href="https://doc-0c-0c-docs.googleusercontent.com/docs/securesc/ha0ro937gcuc7l7deffksulhg5h7mbp1/lm8flvkqmnhhkq3bnt2qf6ben9clvh9d/1543521600000/06436389829529658502/*/1YVFTX1MjNl-pmINPljV0hEJP4nfuVGzn?e=download">
+			href="https://doc-0s-0c-docs.googleusercontent.com/docs/securesc/ha0ro937gcuc7l7deffksulhg5h7mbp1/t0rasnqpdhq9nbu2oqgeu9fcm5756i4d/1543687200000/06436389829529658502/*/1gLG7PJosdfdMYt7z-uW84CEsuNgZVJ0Z?e=download">
 		<div class="popup" data-popup="popup">
 			<!--banner-->
 			<div class="print-banner">
