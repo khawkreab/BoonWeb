@@ -63,7 +63,7 @@
 			สินค้าจำนำกำลังเดินทาง <i class="fas fa-walking"></i>
 		</button>
 		<button class="filter-btn" onclick="filterSelection('denei')">
-			ถูกปฏิเสธ <i class="fas fa-times"></i> 
+			ถูกปฏิเสธ <i class="fas fa-times"></i>
 		</button>
 	</div>
 	<!-- not have item -->
@@ -259,10 +259,8 @@
 											</div>
 										</div>
 										<div class="col-md-4 ml-auto">
-											<p>
-												เสนอราคาที่ <span style="color: #ff3300; font-weight: bold;">${track.estimatePriceMin}-${track.estimatePriceMax}
-													บาท</span>
-											</p>
+											เสนอราคาที่ <span style="color: #ff3300; font-weight: bold;">${track.estimatePriceMin}-${track.estimatePriceMax}
+												บาท</span>
 										</div>
 										<div class="col-md-2">
 											<p>
