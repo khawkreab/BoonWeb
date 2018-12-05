@@ -67,6 +67,7 @@
 		<div class="timeline">
 			<c:forEach items="${estimatesListComplete}" var="post">
 				<div class="timeline-list filter-column ${post.pawnerPostId.pawnerPostItemType}">
+					<i class="fas fa-check"></i>
 					<div class="timeline-title">
 						<div class="mr-auto">
 							<span>เลขที่การจำนำ #</span>
@@ -192,7 +193,8 @@
 		</div>
 	</div>
 	<script src="js/popupShowImage.js"></script>
-	"<!-- end  -->
+	"
+	<!-- end  -->
 	<!-- sorting -->
 	<script src="js/sorting.js"></script>
 	<!-- profile Card -->
