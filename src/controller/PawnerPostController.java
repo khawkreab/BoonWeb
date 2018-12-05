@@ -52,17 +52,7 @@ public class PawnerPostController {
 	@EJB(mappedName = "ejb:/BoonWeb/PictureServiceBean!service.PictureService")
 	PictureService pictureService;
 	
-	@RequestMapping("/pawner-post-form-gold")
-	public ModelAndView newGold(HttpServletRequest request) {
-		ModelAndView mv = new ModelAndView("pawnerPostFormGold.jsp");
-		long userId = (long) request.getSession().getAttribute("id");
-		Pawner pm = pmService.findPawnerById(userId);
-		PawnerPost pawnerPost = new PawnerPost();
-		pawnerPost.setPawner(pm);
-		mv.addObject("pawnerPost", pawnerPost);
-		return mv;
-	}
-	
+
 	@RequestMapping("/savePost")
 	public String savePost(@ModelAttribute("pawnerPost") FileUpload fileUpload, BindingResult result,
 			HttpServletRequest request)throws IllegalStateException, IOException {
@@ -191,6 +181,22 @@ public class PawnerPostController {
 			mv.addObject("estimatesApprove", estimatesApprove);
 			/*mv.addObject("pawnerPosts", pawnerPostsWaiting);*/
 			mv.addObject("pawnerPostsProcess", pawnerPostsProcess);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return mv;
+	}
+	
+	@RequestMapping("/print-pledge")
+	public ModelAndView printpledge(HttpServletRequest request) {
+		ModelAndView mv = new ModelAndView("pawnerPrintPledge.jsp");
+		Estimate pledge;
+		try {
+			long pledgeNo = Long.parseLong(request.getParameter("pledgeNo"));
+			pledge =estimateService.findEstimateById(pledgeNo);
+			
+			
+			mv.addObject("pledge", pledge);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

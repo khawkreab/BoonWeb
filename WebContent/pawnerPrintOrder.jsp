@@ -33,14 +33,14 @@
 			<br>
 			<span>การสั่งซื้อ</span>
 			<i>สั่งซื้อวันที่  <fmt:formatDate pattern="dd MMMM yyyy" value="${ order.orderItemDateIn }" /></i>
-			<i>เลขที่ #${ order.orderItemId }</i>
+			<i>เลขที่สั่งซื้อ #${ order.orderItemId }</i>
 		</div>
 		<table class="print-order-table">
 			<tr>
 				<th>ชื่อสินค้า</th>
 				<th>รายละเอียด</th>
 				<th>จำนวน</th>
-				<th>ราคา ()บาท)</th>
+				<th>ราคา (บาท)</th>
 			</tr>
 			<tr>
 				<td>${order.pawnshopPostId.pawnshopPostName }</td>

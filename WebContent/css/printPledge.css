@@ -1,0 +1,104 @@
+body {
+    background-color: #fff;
+}
+
+section {
+    width: 900px;
+    margin: 20px;
+}
+
+i {
+    font-style: normal;
+}
+
+.print-pledge-title {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.print-pledge{
+	display: flex;
+}
+
+.print-pledge span{
+	font-weight: 600;
+}
+
+.print-pledge-web {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 20px 0 0;
+}
+
+.print-pledge-web img {
+    width: 200px;
+}
+
+.print-pledge-saler, .print-pledge-customer {
+    display: flex;
+    margin-bottom: 20px;
+    flex-direction: column;
+}
+
+.print-pledge-saler {
+    text-align: right;
+}
+
+.print-pledge-detail {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+
+.print-pledge-item {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    border-left: 1px solid #ddd;
+    padding-left: 20px;
+}
+
+.print-pledge-item-detail {
+    display: inline-flex;
+}
+
+.print-pledge-item-detail-img img {
+    width: 150px;
+    border: 1px solid #eee;
+}
+
+.print-pledge-item-detail-list {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.print-pledge-item-detail-list li {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+    list-style: none;
+}
+
+.print-pledge-item-detail-list li:before {
+    content: '- ';
+}
+
+.print-pledge-contact {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    align-items: center;
+    bottom: 10px;
+    left: calc(50% - 152px);
+}

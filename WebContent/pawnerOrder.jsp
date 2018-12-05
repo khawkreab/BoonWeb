@@ -10,29 +10,7 @@
 <title>order</title>
 <!-- import all css -->
 <jsp:include page="importCSS.jsp" />
-<style>
-.popup {
-	width: 100%;
-	height: 100%;
-	display: none;
-	position: fixed;
-	top: 0px;
-	left: 0px;
-	background: rgba(0, 0, 0, 0.75);
-}
 
-@media print {
-	body * {
-		visibility: hidden;
-	}
-	.printable * {
-		visibility: visible;
-	}
-	.popup {
-		display: block;
-	}
-}
-</style>
 <link rel="stylesheet" href="css/loadingPage.css">
 <link rel="stylesheet" href="css/pawnerOder.css">
 <link rel="stylesheet" href="css/sorting.css">

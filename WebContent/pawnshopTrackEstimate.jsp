@@ -25,22 +25,7 @@
 <link rel="stylesheet" href="css/loadingPage.css">
 <link rel="stylesheet" href="css/profileCard.css">
 <link rel="stylesheet" href="css/sorting.css">
-<!-- style ตรงนี้กูเอามาใสไวนี้ก่อนนะจะย้ายกะได้แต่กูไม่รู้มันจะไปชดตัวไหนไหมเลยไวนี้ก่อน -->
-<style>
-li {
-	list-style: none;
-}
 
-.popup {
-	width: 100%;
-	height: 100%;
-	display: none;
-	position: fixed;
-	top: 0px;
-	left: 0px;
-	background: rgba(0, 0, 0, 0.75);
-}
-</style>
 </head>
 <body>
 	<!-- Navigation -->
@@ -235,7 +220,6 @@ li {
 											</p>
 										</div>
 										<div class="col-md-3">
-											<p>
 											<form action="pawnshop-estimate-approve.html" method="post">
 												<input type="hidden" name="estimateId"
 													value="${track.estimateId}"> <input type="hidden"
@@ -245,9 +229,6 @@ li {
 												<button class="btn-custom btn-custom-defalt small"
 													type="submit">สินค้าจำนำถึงโรงรับจำนำแล้ว</button>
 											</form>
-											</p>
-
-
 										</div>
 									</div>
 								</div>

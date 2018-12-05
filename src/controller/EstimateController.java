@@ -173,12 +173,15 @@ public class EstimateController {
 		long estimateId = Long.parseLong(request.getParameter("estimateId"));
 		long pawnerPostId = Long.parseLong(request.getParameter("pawnerPostId"));
 		long pawnerId = (long) request.getSession().getAttribute("id");
+		Date date = new Date();
+
 		try {
 
 			estimateService.updateStatus(pawnerPostId, "denei");
 			postService.updateStatus(pawnerPostId, "approve");
 
 			estimate = estimateService.findEstimateById(estimateId);
+			estimate.setEstimateAccessDate(date);
 			estimate.setEstimateStatus("approve");
 			estimateService.update(estimate);
 			/* set notification */
@@ -198,7 +201,6 @@ public class EstimateController {
 		long pawnerPostId = Long.parseLong(request.getParameter("pawnerPostId"));
 		long pawnshopId = (long) request.getSession().getAttribute("id");
 		String status = request.getParameter("status");
-		Date date = new Date();
 		try {
 
 			if (status.equals("complete")) {
@@ -206,7 +208,6 @@ public class EstimateController {
 			}
 
 			estimate = estimateService.findEstimateById(estimateId);
-			estimate.setEstimateAccessDate(date);
 			estimate.setEstimateStatus(status);
 			estimateService.update(estimate);
 			/* set notification */
