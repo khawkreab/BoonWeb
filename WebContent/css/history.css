@@ -37,7 +37,8 @@
 	margin-bottom: 15px;
 }
 
-.timeline-list i {
+.timeline-list>i {
+	display: flex;
 	position: absolute;
 	height: 40px;
 	width: 40px;
