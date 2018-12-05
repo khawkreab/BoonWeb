@@ -220,3 +220,57 @@
 	-moz-animation: cd-bounce-2 0.6s;
 	animation: cd-bounce-2 0.6s;
 }
+
+.cd-timeline-detail {
+	display: flex;
+}
+
+.cd-timeline-detail-img {
+	position: relative;
+	display: flex;
+	margin: 5px 15px 5px 5px;
+	margin-left: auto !important;
+}
+
+.cd-timeline-detail-img img {
+	width: 250px;
+	height: 150px;
+	object-fit: contain;
+	object-position: center;
+	background-color: #000;
+}
+
+.cd-timeline-detail>div:nth-child(2) {
+	margin-left: 15px;
+}
+
+.cd-timeline-detail ul {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	list-style-type: disc;
+	margin-block-start: 0.5em;
+	margin-block-end: 1em;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
+	padding-inline-start: 10px;
+}
+
+.cd-timeline-detail ul li {
+	list-style: none;
+	position: relative;
+	-ms-flex: 0 0 50%;
+	flex: 0 0 50%;
+	max-width: 50%;
+	width: 100%;
+	min-height: 1px;
+	padding-right: 5px;
+	padding-left: 5px;
+	list-style: none;
+	line-height: 2rem;
+}
+
+.cd-timeline-detail ul li:before {
+	content: '- '
+}

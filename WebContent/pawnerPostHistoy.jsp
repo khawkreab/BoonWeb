@@ -199,7 +199,8 @@
 	<script src="js/sorting.js"></script>
 	<!-- profile Card -->
 	<script src="js/profileCard.js"></script>
-	<!-- cd-timeline -->
+	<!-- loading page -->
+	<script src="js/loadingpage.js"></script>
 	<script type="text/javascript">
 	/* loading page */
 	window.onload = function loading() {
@@ -207,12 +208,14 @@
 		document.body.style.overflowY = "auto";
 		document.getElementById("loadpage").style.display = "none";
 	    }
-	    setTimeout(function() {
-		if (!window.location.hash) {
+
+	    if (!window.location.hash) {
+		loadingpage("");
+		setTimeout(function() {
 		    window.location = window.location + '#loaded';
 		    window.location.reload();
-		}
-	    }, 1000);
+		}, 600);
+	    }
 	}
     </script>
 </body>

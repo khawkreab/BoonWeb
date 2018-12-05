@@ -93,74 +93,83 @@
 							<fmt:setLocale value="th-TH" />
 							<fmt:formatDate pattern="dd MMM yyyy" value="${postprocess.pawnerPostDate }" />
 						</span>
-						<!--  -->
-						<h2>${postprocess.pawnerPostName }${postprocess.pawnerPostBrand }${postprocess.pawnerPostTypeCamera }${postprocess.pawnerPostCameraLen }</h2>
-						<ul class="row">
-							<!-- Watch,Electronic -->
-							<c:if test="${postprocess.pawnerPostModel != null}">
-								<li class="col-md-6">รุ่น : ${postprocess.pawnerPostModel}</li>
-								<li class="col-md-6">หมายเลขประจำเครื่อง : ${postprocess.pawnerPostSerial}</li>
-								<li class="col-md-6">ปีที่ซื้อสินค้า : ${postprocess.pawnerPostPurchase }</li>
-							</c:if>
-							<c:if test="${postprocess.pawnerPostProduction != null}">
-								<li class="col-md-6">ปีที่ผลิตสินค้า : ${postprocess.pawnerPostProduction}</li>
-							</c:if>
-							<!-- Gold -->
-							<c:if test="${postprocess.pawnerPostPure != null}">
-								<li class="col-md-6">ความบริสุทธ์ : ${postprocess.pawnerPostPure  }</li>
-								<li class="col-md-6">น้ำหนัก : ${postprocess.pawnerPostWeigh }</li>
-								<li class="col-md-6">ชนิดหรือรูปแบบของทองคำ : ${postprocess.pawnerPostCategory }</li>
-							</c:if>
-							<!-- Electronic tv com telephone -->
-							<c:if test="${postprocess.pawnerPostSize != null}">
-								<li class="col-md-6">ขนาดหน้าจอ : ${postprocess.pawnerPostSize }</li>
-							</c:if>
-							<!-- Electronic camera com telephone -->
-							<c:if test="${postprocess.pawnerPostBattery != null}">
-								<li class="col-md-6">
-									<span class="fas fa-check" aria-hidden="true"> </span>
-									Battery
-								</li>
-							</c:if>
-							<!-- Electronic com telephone -->
-							<c:if test="${postprocess.pawnerPostHarddisk != null}">
-								<li class="col-md-6">Harddisk : ${ postprocess.pawnerPostHarddisk }</li>
-							</c:if>
-							<!-- Electronic com-->
-							<c:if test="${postprocess.pawnerPostRam != null}">
-								<li class="col-md-6">Ram : ${postprocess.pawnerPostRam }</li>
-							</c:if>
-							<!-- Watch -->
-							<c:if test="${postprocess.pawnerPostCase != null}">
-								<li class="col-md-6">ชนิดของหน้าปัด : ${postprocess.pawnerPostCase }</li>
-								<li class="col-md-6">ชนิดของสายรัดข้อมือ : ${postprocess.pawnerPostBracelet }</li>
-								<c:if test="${postprocess.pawnerPostDiamond != null}">
-									<li class="col-md-6">เพรช : ${postprocess.pawnerPostDiamond }</li>
+						<!-- item -->
+						<div class="cd-timeline-detail">
+							<div class="cd-timeline-detail-img">
+								<img src="img/uploadImge/${postprocess.pawnerPostPicture }">
+							</div>
+							<div>
+								<h2>${postprocess.pawnerPostName }</h2>
+								<ul>
+									<!-- Watch,Electronic -->
+									<c:if test="${postprocess.pawnerPostModel != null}">
+										<li >  รุ่น : ${postprocess.pawnerPostModel}         </li> 
+										<li >หมายเลขประจำเครื่อง : ${postprocess.pawnerPostSerial}</li>
+										<li >ปีที่ซื้อสินค้า : ${postprocess.pawnerPostPurchase }</li>
+									</c:if>
+									<c:if test="${postprocess.pawnerPostProduction != null}">
+										<li >ปีที่ผลิตสินค้า : ${postprocess.pawnerPostProduction}</li>
+									</c:if>
+									<!-- Gold -->
+									<c:if test="${postprocess.pawnerPostPure != null}">
+										<li >ความบริสุทธ์ : ${postprocess.pawnerPostPure  }</li>
+										<li >น้ำหนัก : ${postprocess.pawnerPostWeigh }</li>
+										<li >ชนิดหรือรูปแบบของทองคำ : ${postprocess.pawnerPostCategory }</li>
+									</c:if>
+									<!-- Electronic tv com telephone -->
+									<c:if test="${postprocess.pawnerPostSize != null}">
+										<li >ขนาดหน้าจอ : ${postprocess.pawnerPostSize }</li>
+									</c:if>
+									<!-- Electronic camera com telephone -->
+									<c:if test="${postprocess.pawnerPostBattery != null}">
+										<li >
+											<span class="fas fa-check" aria-hidden="true"> </span>
+											Battery
+										</li>
+									</c:if>
+									<!-- Electronic com telephone -->
+									<c:if test="${postprocess.pawnerPostHarddisk != null}">
+										<li >Harddisk : ${ postprocess.pawnerPostHarddisk }</li>
+									</c:if>
+									<!-- Electronic com-->
+									<c:if test="${postprocess.pawnerPostRam != null}">
+										<li >Ram : ${postprocess.pawnerPostRam }</li>
+									</c:if>
+									<!-- Watch -->
+									<c:if test="${postprocess.pawnerPostCase != null}">
+										<li >ชนิดของหน้าปัด : ${postprocess.pawnerPostCase }</li>
+										<li >ชนิดของสายรัดข้อมือ : ${postprocess.pawnerPostBracelet }</li>
+										<c:if test="${postprocess.pawnerPostDiamond != null}">
+											<li >เพรช : ${postprocess.pawnerPostDiamond }</li>
+										</c:if>
+										<c:if test="${postprocess.pawnerPostPackage != null}">
+											<li >
+												<span class="fas fa-check" aria-hidden="true"> </span>
+												กล้องบรรจุสินค้า
+											</li>
+										</c:if>
+									</c:if>
+									<!-- Electronic tv -->
+									<c:if test="${postprocess.panwePostRemote != null}">
+										<li >
+											<span class="fas fa-check" aria-hidden="true"> </span>
+											Remote
+										</li>
+									</c:if>
+									<!-- Watch,Electronic -->
+									<c:if test="${postprocess.pawnerPostModel != null}">
+										<li >
+											<span class="fas fa-check" aria-hidden="true"> </span>
+											การประกันสินค้า
+										</li>
+									</c:if>
+								</ul>
+								<c:if test="${postprocess.pawnerPostDescription != null || postprocess.pawnerPostDescription != ''}">
+									<i class="quick small">เพิ่มเติม</i>
+									<span class="quick_desc">${postprocess.pawnerPostDescription }</span>
 								</c:if>
-								<c:if test="${postprocess.pawnerPostPackage != null}">
-									<li class="col-md-6">
-										<span class="fas fa-check" aria-hidden="true"> </span>
-										กล้องบรรจุสินค้า
-									</li>
-								</c:if>
-							</c:if>
-							<!-- Electronic tv -->
-							<c:if test="${postprocess.panwePostRemote != null}">
-								<li class="col-md-6">
-									<span class="fas fa-check" aria-hidden="true"> </span>
-									Remote
-								</li>
-							</c:if>
-							<!-- Watch,Electronic -->
-							<c:if test="${postprocess.pawnerPostModel != null}">
-								<li class="col-md-6">
-									<span class="fas fa-check" aria-hidden="true"> </span>
-									การประกันสินค้า
-								</li>
-							</c:if>
-						</ul>
-						<i class="quick small">เพิ่มเติม</i>
-						<span class="quick_desc">${postprocess.pawnerPostDescription }</span>
+							</div>
+						</div>
 						<!---------- process  ---------->
 						<c:if test="${postprocess.pawnerPostStatus == 'process'}">
 							<line-x></line-x>
@@ -285,6 +294,6 @@
 	    window.open("print-pledge.html?pledgeNo="+e, "_blank",
 	    "width=950,height=700"); 
 	}
-    </script>	
+    </script>
 </body>
 </html>

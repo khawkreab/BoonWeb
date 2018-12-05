@@ -96,7 +96,6 @@
 	display: flex;
 	margin: 5px 15px 5px 5px;
 	margin-left: auto !important;
-	background-color: #000;
 }
 
 .timeline-img img {
@@ -104,4 +103,5 @@
 	height: 150px;
 	object-fit: contain;
 	object-position: center;
+	background-color: #000;
 }
