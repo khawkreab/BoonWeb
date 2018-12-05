@@ -199,7 +199,7 @@
 		</a>
 	</li>
 </ul>
-<script src="js/checkLogin.js"></script>
+ <script src="js/checkLogin.js"></script> 
 <%
 	}
 %>

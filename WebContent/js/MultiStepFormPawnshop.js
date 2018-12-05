@@ -61,6 +61,13 @@ function validateForm() {
 		var pawnshopPostPure = $("input[name = 'pawnshopPostPure']").val();
 		if (pawnshopPostPure == '')
 			pawnshopPostPure = '12'
+				
+		if ($('#files').val() == "") {
+		    $('#picturefiles').addClass("fas fa-exclamation-circle text-red");
+		} else {
+		    $('#picturefiles')
+			    .removeClass("fas fa-exclamation-circle text-red");
+		}
 		for (i = 0; i < y.length; i++) {
 			y[i].classList.remove("invalid");
 			if (y[i].value == "" || !decimal.test(pawnshopPostPure)) {
@@ -73,14 +80,17 @@ function validateForm() {
 	}
 	if (other) {
 		var pawnshopPostSerial = $("input[name = 'pawnshopPostSerial']").val();
-		if (pawnshopPostSerial == '')
-			pawnshopPostSerial = 'abc3'
 		var pawnshopPostModel = $("input[name = 'pawnshopPostModel']").val();
-		if (pawnshopPostModel == '')
-			pawnshopPostModel = 'abc3'
+		if ($('#files').val() == "") {
+		    $('#picturefiles').addClass("fas fa-exclamation-circle text-red");
+		} else {
+		    $('#picturefiles')
+			    .removeClass("fas fa-exclamation-circle text-red");
+		}
 		for (i = 0; i < y.length; i++) {
 			y[i].classList.remove("invalid");
-			if (y[i].value == "" || !characterReg.test(pawnshopPostSerial) || !model.test(pawnshopPostModel)) {
+			if (y[i].value == "" || !characterReg.test(pawnshopPostSerial)
+					|| !model.test(pawnshopPostModel)) {
 				y[i].className += " invalid";
 				valid = false;
 			} else {
@@ -108,6 +118,8 @@ function fixStepIndicator(n) {
 function choosetype() {
 	gold = false, other = false;
 	console.log(gold, other);
+	$('#picturefiles').removeClass("fas fa-exclamation-circle text-red");
+	$('input').removeClass("invalid");
 	$('#choosetype').css("display", "block")
 	$('#regForm').css("display", "none")
 }
@@ -120,6 +132,7 @@ function showsteptype(e) {
 	$(':input').val('')
 	$('#regForm').css("display", "block")
 	$('#step2, #step3').empty()
+	$('.thumbnail').parent().remove();
 	if (e == 1) {
 		gold = true;
 
@@ -128,7 +141,7 @@ function showsteptype(e) {
 		step2 += "<p>"
 		step2 += "<div class='wrap-input100 validate-input' style='margin-top:15px;'>"
 		step2 += "<label>ชนิดหรือรูปแบบของทองคำ</label>"
-		step2 += "<select class='input100' name='pawnshopPostCategory' required='required'>"
+		step2 += "<select class='input100' name='pawnshopPostCategory'>"
 		step2 += "<option></option>"
 		step2 += "<option>ทองรูปพรรณ</option>"
 		step2 += "<option>ทองเค เช่น 18k, 14k</option>"
@@ -172,9 +185,9 @@ function showsteptype(e) {
 		step3 += "<i>พิมท์เนื้อหาสำคำคัญเพิ่มเติม</i>"
 		step3 += "</p>"
 
-		step3 += "<div class='inputGroup'>"
-		step3 += "<input  id='option1' name='option1' type='checkbox' />"
-		step3 += "<label for='option1'>ยอมรับเงือนไขการใช้งาน</label>"
+		step3 += "<div class='d-inline-flex'>"
+		step3 += "<input type='checkbox' />"
+		step3 += "<label>ยอมรับเงือนไขการใช้งาน</label>"
 		step3 += "</div>"
 		step3 += "</p>"
 
@@ -187,12 +200,12 @@ function showsteptype(e) {
 
 		step2 += "<p>"
 		step2 += "<lable>รุ่น</lable>"
-		step2 += "<input type='text' name='pawnshopPostModel' >"
+		step2 += "<input type='text' name='pawnshopPostModel' maxlength='20'>"
 		step2 += "</p>"
 
 		step2 += "<p>"
 		step2 += "<lable>หมายเลขผลิตภัณฑ์ (Serial Number) หรือ หมายเลข SNID</lable>"
-		step2 += "<input type='text' name='pawnshopPostSerial' >"
+		step2 += "<input type='text' name='pawnshopPostSerial' maxlenght='22'>"
 		step2 += "<i>ห้ามใช้ภ่ษาไทย และ ความยาวไม่เกิน 22 ตัวอักษร</i>"
 		step2 += "</p>"
 
@@ -253,6 +266,7 @@ function showsteptype(e) {
 
 		step2 += "</ul>"
 
+		step2 += "<div class='d-inline-flex'>"
 		step2 += "<div class='inputGroup'>"
 		step2 += "<input  id='option2' name='pawnshopPostBattery' type='checkbox' />"
 		step2 += "<label for='option2'>Battery charger</label>"
@@ -261,6 +275,7 @@ function showsteptype(e) {
 		step2 += "<div class='inputGroup'>"
 		step2 += "<input  id='option3' name='pawnshopPostWarranty' type='checkbox' />"
 		step2 += "<label for='option3'>ประกันสินค้า</label>"
+		step2 += "</div>"
 		step2 += "</div>"
 
 		$('#step2').append(step2);
@@ -271,9 +286,9 @@ function showsteptype(e) {
 		step3 += "<i>พิมท์เนื้อหาสำคำคัญเพิ่มเติม</i>"
 		step3 += "</p>"
 
-		step3 += "<div class='inputGroup'>"
-		step3 += "<input  id='option1' name='option1' type='checkbox' />"
-		step3 += "<label for='option1'>ยอมรับเงือนไขการใช้งาน</label>"
+		step3 += "<div class='d-inline-flex'>"
+		step3 += "<input type='checkbox' />"
+		step3 += "<label>ยอมรับเงือนไขการใช้งาน</label>"
 		step3 += "</div>"
 		step3 += "</p>"
 
@@ -286,12 +301,12 @@ function showsteptype(e) {
 
 		step2 += "<p>"
 		step2 += "<lable>รุ่น</lable>"
-		step2 += "<input type='text' name='pawnshopPostModel' >"
+		step2 += "<input type='text' name='pawnshopPostModel' maxlength='20'>"
 		step2 += "</p>"
 
 		step2 += "<p>"
 		step2 += "<lable>หมายเลขผลิตภัณฑ์ (Serial Number) หรือ หมายเลข SNID</lable>"
-		step2 += "<input type='text' name='pawnshopPostSerial' >"
+		step2 += "<input type='text' name='pawnshopPostSerial' maxlength='22'>"
 		step2 += "<i>ห้ามใช้ภ่ษาไทย และ ความยาวไม่เกิน 22 ตัวอักษร</i>"
 		step2 += "</p>"
 
@@ -327,6 +342,7 @@ function showsteptype(e) {
 
 		step2 += "</ul>"
 
+		step2 += "<div class='d-inline-flex'>"
 		step2 += "<div class='inputGroup'>"
 		step2 += "<input  id='option2' name='panwePostRemote' type='checkbox' />"
 		step2 += "<label for='option2'>Remote control</label>"
@@ -335,6 +351,7 @@ function showsteptype(e) {
 		step2 += "<div class='inputGroup'>"
 		step2 += "<input  id='option3' name='pawnshopPostWarranty' type='checkbox' />"
 		step2 += "<label for='option3'>ประกันสินค้า</label>"
+		step2 += "</div>"
 		step2 += "</div>"
 
 		$('#step2').append(step2);
@@ -345,9 +362,9 @@ function showsteptype(e) {
 		step3 += "<i>พิมท์เนื้อหาสำคำคัญเพิ่มเติม</i>"
 		step3 += "</p>"
 
-		step3 += "<div class='inputGroup'>"
-		step3 += "<input  id='option1' name='option1' type='checkbox' />"
-		step3 += "<label for='option1'>ยอมรับเงือนไขการใช้งาน</label>"
+		step3 += "<div class='d-inlin-flex'>"
+		step3 += "<input type='checkbox' />"
+		step3 += "<label>ยอมรับเงือนไขการใช้งาน</label>"
 		step3 += "</div>"
 		step3 += "</p>"
 
@@ -360,12 +377,12 @@ function showsteptype(e) {
 
 		step2 += "<p>"
 		step2 += "<lable>รุ่น</lable>"
-		step2 += "<input type='text' name='pawnshopPostModel' >"
+		step2 += "<input type='text' name='pawnshopPostModel' maxlength='20'>"
 		step2 += "</p>"
 
 		step2 += "<p>"
 		step2 += "<lable>หมายเลขผลิตภัณฑ์ (Serial Number) หรือ หมายเลข SNID</lable>"
-		step2 += "<input type='text' name='pawnshopPostSerial' >"
+		step2 += "<input type='text' name='pawnshopPostSerial' maxlength='22'>"
 		step2 += "<i>ห้ามใช้ภ่ษาไทย และ ความยาวไม่เกิน 22 ตัวอักษร</i>"
 		step2 += "</p>"
 
@@ -413,6 +430,7 @@ function showsteptype(e) {
 
 		step2 += "</ul>"
 
+		step2 += "<div class='d-inline-flex'>"
 		step2 += "<div class='inputGroup'>"
 		step2 += "<input  id='option2' name='pawnshopPostBattery' type='checkbox' />"
 		step2 += "<label for='option2'>Battery charger</label>"
@@ -421,6 +439,7 @@ function showsteptype(e) {
 		step2 += "<div class='inputGroup'>"
 		step2 += "<input  id='option3' name='pawnshopPostWarranty' type='checkbox' />"
 		step2 += "<label for='option3'>ประกันสินค้า</label>"
+		step2 += "</div>"
 		step2 += "</div>"
 
 		$('#step2').append(step2);
@@ -431,9 +450,9 @@ function showsteptype(e) {
 		step3 += "<i>พิมท์เนื้อหาสำคำคัญเพิ่มเติม</i>"
 		step3 += "</p>"
 
-		step3 += "<div class='inputGroup'>"
-		step3 += "<input  id='option1' name='option1' type='checkbox' />"
-		step3 += "<label for='option1'>ยอมรับเงือนไขการใช้งาน</label>"
+		step3 += "<div class='d-inline-flex'>"
+		step3 += "<input type='checkbox' />"
+		step3 += "<label>ยอมรับเงือนไขการใช้งาน</label>"
 		step3 += "</div>"
 		step3 += "</p>"
 
@@ -446,12 +465,12 @@ function showsteptype(e) {
 
 		step2 += "<p>"
 		step2 += "<lable>รุ่น</lable>"
-		step2 += "<input type='text' name='pawnshopPostModel' >"
+		step2 += "<input type='text' name='pawnshopPostModel' maxlength='20'>"
 		step2 += "</p>"
 
 		step2 += "<p>"
 		step2 += "<lable>หมายเลขผลิตภัณฑ์ (Serial Number) หรือ หมายเลข SNID</lable>"
-		step2 += "<input type='text' name='pawnshopPostSerial' >"
+		step2 += "<input type='text' name='pawnshopPostSerial' maxlength='22'>"
 		step2 += "<i>ห้ามใช้ภ่ษาไทย และ ความยาวไม่เกิน 22 ตัวอักษร</i>"
 		step2 += "</p>"
 
@@ -508,6 +527,7 @@ function showsteptype(e) {
 
 		step2 += "</ul>"
 
+		step2 += "<div class='d-inline-flex'>"
 		step2 += "<div class='inputGroup'>"
 		step2 += "<input  id='option2' name='pawnshopPostPackage' type='checkbox' />"
 		step2 += "<label for='option2'>กล้องบรรจุสินค้า</label>"
@@ -516,6 +536,7 @@ function showsteptype(e) {
 		step2 += "<div class='inputGroup'>"
 		step2 += "<input  id='option3' name='pawnshopPostWarranty' type='checkbox' />"
 		step2 += "<label for='option3'>ประกันสินค้า</label>"
+		step2 += "</div>"
 		step2 += "</div>"
 
 		$('#step2').append(step2);
@@ -526,9 +547,9 @@ function showsteptype(e) {
 		step3 += "<i>พิมท์เนื้อหาสำคำคัญเพิ่มเติม</i>"
 		step3 += "</p>"
 
-		step3 += "<div class='inputGroup'>"
-		step3 += "<input  id='option1' name='option1' type='checkbox' />"
-		step3 += "<label for='option1'>ยอมรับเงือนไขการใช้งาน</label>"
+		step3 += "<div class='d-inline-flex'>"
+		step3 += "<input type='checkbox' />"
+		step3 += "<label>ยอมรับเงือนไขการใช้งาน</label>"
 		step3 += "</div>"
 
 		$('#step3').append(step3);
@@ -540,12 +561,12 @@ function showsteptype(e) {
 
 		step2 += "<p>"
 		step2 += "<lable>รุ่น</lable>"
-		step2 += "<input type='text' name='pawnshopPostModel' >"
+		step2 += "<input type='text' name='pawnshopPostModel' maxlength='20'>"
 		step2 += "</p>"
 
 		step2 += "<p>"
 		step2 += "<lable>หมายเลขผลิตภัณฑ์ (Serial Number) หรือ หมายเลข SNID</lable>"
-		step2 += "<input type='text' name='pawnshopPostSerial' >"
+		step2 += "<input type='text' name='pawnshopPostSerial' maxlength='22'>"
 		step2 += "<i>ห้ามใช้ภ่ษาไทย และ ความยาวไม่เกิน 22 ตัวอักษร</i>"
 		step2 += "</p>"
 
@@ -602,7 +623,7 @@ function showsteptype(e) {
 		step3 += "<i>พิมท์เนื้อหาสำคำคัญเพิ่มเติม</i>"
 		step3 += "</p>"
 
-		step3 += "<div class='inputGroup'>"
+		step3 += "<div class='d-inline-flex'>"
 		step3 += "<input  id='option1' name='option1' type='checkbox' />"
 		step3 += "<label for='option1'>ยอมรับเงือนไขการใช้งาน</label>"
 		step3 += "</div>"

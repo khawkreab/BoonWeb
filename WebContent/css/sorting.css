@@ -1,0 +1,45 @@
+#filterBtnContainer {
+	display: flex;
+	justify-content: flex-end;
+}
+
+#noitem {
+	height: 60vh;
+	width: 100%;
+	margin: auto;
+	align-items: center;
+	justify-content: center;
+}
+/* Create three equal columns that floats next to each other */
+.filter-column {
+	display: none !important; /* Hide all elements by default */
+}
+
+/* The "show" class is added to the filtered elements */
+.filter-show {
+	display: block !important;
+}
+
+/* Style the buttons */
+.filter-btn {
+	border: none;
+	outline: none;
+	padding: 5px 16px;
+	background-color: white;
+	cursor: pointer;
+	margin: 0 1px;
+}
+
+.filter-btn:hover {
+	background-color: #ddd;
+}
+
+.filter-btn:focus {
+	outline: transparent;
+}
+
+.filter-btn.active {
+	background-color: #666;
+	color: white;
+	outline: transparent;
+}

@@ -5,7 +5,7 @@
 // edit by : 
  -->
 <!--//footer-->
-<div class="footer">
+<footer>
 <!--  
 	<div class="footer-middle">
 		<div class="container flex-wrap">
@@ -66,7 +66,7 @@
 			<div class="clearfix"></div>
 		</div>
 	</div>
-</div>
+</footer>
 <!--//footer-->
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	

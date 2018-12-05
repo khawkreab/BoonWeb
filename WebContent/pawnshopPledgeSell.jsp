@@ -109,7 +109,7 @@
 						</ul>
 						<!-- ------------------------upload image----------------------------  -->
 						<div style="margin-top: 15px; width: 100%; position: relative;">
-							<span style="font-size: 14px;">ลงรูปภาพประกอบการจำนำ</span>
+							<span style="font-size: 14px;" id="picturefiles">ลงรูปภาพประกอบการจำนำ</span>
 							<div class="result">
 								<div id="result"></div>
 								<input id="files" type="file" name="files" multiple /> <span

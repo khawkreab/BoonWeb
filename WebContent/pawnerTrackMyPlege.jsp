@@ -21,6 +21,7 @@
 <link rel="stylesheet" href="css/timeline.css">
 <link rel="stylesheet" href="css/loadingPage.css">
 <link rel="stylesheet" href="css/profileCard.css">
+<link rel="stylesheet" href="css/sorting.css">
 <style>
 .popup {
 	width: 100%;
@@ -36,27 +37,7 @@
 <body style="background-color: #eee; overflow: hidden;">
 	<jsp:include page="navbar.jsp" />
 	<!-- loading page -->
-	<div class="loadpage" id="loadpage">
-		<div class='loading'>
-			<span>
-				<span></span>
-				<span></span>
-				<span></span>
-				<span></span>
-			</span>
-			<div class='loading-base'>
-				<span></span>
-				<div class='loading-face'></div>
-			</div>
-		</div>
-		<div class='loading-longfazers'>
-			<span></span>
-			<span></span>
-			<span></span>
-			<span></span>
-		</div>
-		<i class="loading-text">Loading . . .</i>
-	</div>
+	<jsp:include page="loadingpage.jsp" />
 	<!--banner-->
 	<div class="banner-top">
 		<div>
@@ -64,10 +45,31 @@
 			<em></em>
 		</div>
 	</div>
-	<section id="cd-timeline" class="cd-container">
+	<div id="filterBtnContainer">
+		<button class="filter-btn active" onclick="filterSelection('all')">
+			ทั้งหมด
+			<i class="fas fa-th-list"> </i>
+		</button>
+		<button class="filter-btn" onclick="filterSelection('waiting')">
+			รอการประเมิน
+			<i class="fas fa-hourglass-half"></i>
+		</button>
+		<button class="filter-btn" onclick="filterSelection('process')">
+			รอการยืนยัน
+			<i class="fas fa-handshake"></i>
+		</button>
+		<button class="filter-btn" onclick="filterSelection('approve')">
+			ปริ้นใบจำนำ
+			<i class="fas fa-print"></i>
+		</button>
+	</div>
+	<!-- not have item -->
+	<div id="noitem">ไม่มีรายการ</div>
+	<!-- sort status all -->
+	<section id="cd-timeline" id="sorting" class="cd-container">
 		<c:forEach items="${pawnerPostsProcess}" var="postprocess">
 			<c:if test="${postprocess.pawnerPostStatus == 'process' || postprocess.pawnerPostStatus == 'waiting' || postprocess.pawnerPostStatus == 'approve'}">
-				<div class="cd-timeline-block" id="item${postprocess.pawnerPostId}">
+				<div class="cd-timeline-block filter-column ${postprocess.pawnerPostStatus}" id="item${postprocess.pawnerPostId}">
 					<!-------- icon -------->
 					<c:if test="${postprocess.pawnerPostStatus == 'waiting'}">
 						<div class="cd-timeline-img cd-wait">
@@ -88,9 +90,8 @@
 					<div class="cd-timeline-content">
 						<!-- date -->
 						<span class="cd-date">
-						<fmt:setLocale value="th-TH"/>
+							<fmt:setLocale value="th-TH" />
 							<fmt:formatDate pattern="dd MMM yyyy" value="${postprocess.pawnerPostDate }" />
-							
 						</span>
 						<!--  -->
 						<h2>${postprocess.pawnerPostName }${postprocess.pawnerPostBrand }${postprocess.pawnerPostTypeCamera }${postprocess.pawnerPostCameraLen }</h2>
@@ -175,7 +176,20 @@
 										<c:if test="${estimate.pawnerPostId.pawnerPostId == postprocess.pawnerPostId }">
 											<li style="margin-bottom: 12px;">
 												<div class="row d-flex">
-													<div class="col-md-4">${estimate.pawnshopId.pawnshopName}</div>
+													<div class="col-md-4">
+														<div class="profile-card-head is-collapsed">
+															<div class="card-inner js-expander">&nbsp;&nbsp; ${estimate.pawnshopId.pawnshopName}</div>
+															<div class="profile-card">
+																<div class="profile-card-circle">
+																	<img src="img/logos/logo.png">
+																</div>
+																<span>${estimate.pawnshopId.pawnshopName}</span>
+																<i>${estimate.pawnshopId.pawnshopProvince}</i>
+																<i>${estimate.pawnshopId.pawnshopTel}</i>
+																<span class="closed">&times;</span>
+															</div>
+														</div>
+													</div>
 													<div class="ml-auto col-md-2">${estimate.estimatePriceMin}</div>
 													<div class="col-md-2">${estimate.estimatePriceMax}</div>
 													<div class="col-md-2">
@@ -217,36 +231,12 @@
 											</div>
 											<div class="col-md-4 ml-auto">
 												<i>
-													ด้วยราคา
+													เสนอราคาไว้ที่
 													<span style="color: #ff3300; font-weight: bold;">${estimate.estimatePriceMin}-${estimate.estimatePriceMax} บาท</span>
 												</i>
 											</div>
 											<div class="col-md-2">
-												<a id="${estimate.pawnerPostId.pawnerId}" onClick="select(this); return false;"
-													data-cart='{"pawnerFirstname":"${estimate.pawnerPostId.pawnerId.pawnerFirstname}",
-										"pawnerLastname":"${estimate.pawnerPostId.pawnerId.pawnerLastname}",
-										"pawnerPostName":"${estimate.pawnerPostId.pawnerPostName }","pawnerPostDate":"<fmt:formatDate pattern='dd MMM yyyy' value='${estimate.pawnerPostId.pawnerPostDate}'/>",
-										"pawnerPostItemType":"${estimate.pawnerPostId.pawnerPostItemType}","pawnerPostBrand":"${estimate.pawnerPostId.pawnerPostBrand}",
-										"panwePostRemote":"${estimate.pawnerPostId.panwePostRemote}","pawnerPostBattery":"${estimate.pawnerPostId.pawnerPostBattery}",
-										"pawnerPostBracelet":"${estimate.pawnerPostId.pawnerPostBracelet}","pawnerPostCameraLen":"${estimate.pawnerPostId.pawnerPostCameraLen}",
-										"pawnerPostCapacity":"${estimate.pawnerPostId.pawnerPostCapacity}","pawnerPostCase":"${estimate.pawnerPostId.pawnerPostCase}",
-										"pawnerPostDescription":"${estimate.pawnerPostId.pawnerPostDescription}","pawnerPostDevice":"${estimate.pawnerPostId.pawnerPostDevice}",
-										"pawnerPostDiamond":"${estimate.pawnerPostId.pawnerPostDiamond}","pawnerPostHarddisk":"${estimate.pawnerPostId.pawnerPostHarddisk}",
-										"pawnerPostModel":"${estimate.pawnerPostId.pawnerPostModel}","pawnerPostPackage":"${estimate.pawnerPostId.pawnerPostPackage}",
-										"pawnerPostProduction":"${estimate.pawnerPostId.pawnerPostProduction}","pawnerPostPurchase":"${estimate.pawnerPostId.pawnerPostPurchase}",
-										"pawnerPostSerial":"${estimate.pawnerPostId.pawnerPostSerial}","pawnerPostStatus":"${estimate.pawnerPostId.pawnerPostStatus}",
-										"pawnerPostTypeCamera":"${estimate.pawnerPostId.pawnerPostTypeCamera}","pawnerPostWarranty":"${estimate.pawnerPostId.pawnerPostWarranty}",
-										"pawnerPostWeigh":"${estimate.pawnerPostId.pawnerPostWeigh}","pawnerPostRam":"${estimate.pawnerPostId.pawnerPostRam}",
-										"pawnerPostPure":"${estimate.pawnerPostId.pawnerPostPure}","estimatePriceMin":"${estimate.estimatePriceMin}",
-										"estimatePriceMax":"${estimate.estimatePriceMax}","estimateDate":"<fmt:formatDate pattern='dd MMM yyyy' value='${estimate.estimateDate}'/>",
-										"pawnerPostPicture":"${estimate.pawnerPostId.pawnerPostPicture}",
-										"pawnShopname":"${estimate.pawnshopId.pawnshopName}",
-										"pawnshopProvince":"${estimate.pawnshopId.pawnshopProvince}",
-										"pawnshopPostcodes":"${estimate.pawnshopId.pawnshopPostcodes}",
-										"pawnshopParish":"${estimate.pawnshopId.pawnshopParish}",
-										"pawnshopTel":"${estimate.pawnshopId.pawnshopTel}"
-										}'
-													class="btn-custom btn-custom-sky small">
+												<a href="#" onClick="select(${estimate.estimateId}); return false;" class="btn-custom btn-custom-sky small">
 													<i class="fas fa-print" style="margin: auto;"></i>
 													<span style="margin-left: 5px;">พิมพ์ใบจำนำ</span>
 												</a>
@@ -263,170 +253,38 @@
 			</c:if>
 		</c:forEach>
 	</section>
-	<!-- profile Card -->
+	<!-- --------------------------------------------------------------------------------- -->
+	<!-- import profile Card js -->
 	<script src="js/profileCard.js"></script>
-	<!-- cd-timeline -->
+	<!-- loading page -->
+	<script src="js/loadingpage.js"></script>
 	<script type="text/javascript">
-		/* loading page */
-		window.onload = function loading() {
-			if (window.location.hash) {
-				document.body.style.overflowY = "auto";
-				document.getElementById("loadpage").style.display = "none";
-			}
-			setTimeout(function() {
-				if (!window.location.hash) {
-					window.location = window.location + '#loaded';
-					window.location.reload();
-				}
-			}, 1000);
+	/* loading page */
+	window.onload = function loading() {
+	    if (window.location.hash) {
+		document.body.style.overflowY = "auto";
+		document.getElementById("loadpage").style.display = "none";
+	    }
 
-		}
-	</script>
+	    if (!window.location.hash) {
+		loadingpage("");
+		setTimeout(function() {
+		    window.location = window.location + '#loaded';
+		    window.location.reload();
+		}, 600);
+	    }
+	}
+    </script>
+	<!-- sorting -->
+	<script src="js/sorting.js">
+	
+    </script>
+	<!-- print page -->
 	<script>
-		function select(e) {
-
-			var cart = {}
-			cart = JSON.parse(e.getAttribute('data-cart'))
-
-			$("#pawnerPostName").text(cart.pawnerPostName)
-			$("#pawnerPostNames").text(cart.pawnerPostName)
-			$("#pawnerName").text(
-					cart.pawnerFirstname + " " + cart.pawnerLastname)
-			$("#pawnerPostItemType").text(cart.pawnerPostItemType)
-			$("#panwePostRemote").text(cart.panwePostRemote)
-			$("#pawnerPostBattery").text(cart.pawnerPostBattery)
-			$("#pawnerPostBracelet").text(cart.pawnerPostBracelet)
-			$("#pawnerPostBrand").text(cart.pawnerPostBrand)
-			$("#pawnerPostCameraLen").text(cart.pawnerPostCameraLen)
-			$("#pawnerPostCapacity").text(cart.pawnerPostCapacity)
-			$("#pawnerPostCase").text(cart.pawnerPostCase)
-			$("#pawnerPostCategory").text(cart.pawnerPostCategory)
-			$("#pawnerPostDate").text(cart.pawnerPostDate)
-			$("#pawnerPostDescription").text(cart.pawnerPostDescription)
-			$("#pawnerPostDevice").text(cart.pawnerPostDevice)
-			$("#pawnerPostDiamond").text(cart.pawnerPostDiamond)
-			$("#pawnerPostHarddisk").text(cart.pawnerPostHarddisk)
-			$("#pawnerPostModel").text(cart.pawnerPostModel)
-			$("#pawnerPostPackage").text(cart.pawnerPostPackage)
-			$("#pawnerPostProduction").text(cart.pawnerPostProduction)
-			$("#pawnerPostPure").text(cart.pawnerPostPure)
-			$("#pawnerPostSerial").text(cart.pawnerPostSerial)
-			$("#pawnerPostRam").text(cart.pawnerPostRam)
-			$("#pawnerPostSize").text(cart.pawnerPostSize)
-			$("#pawnerPostStatus").text(cart.pawnerPostStatus)
-			$("#pawnerPostTypeCamera").text(cart.pawnerPostTypeCamera)
-			$("#pawnerPostWarranty").text(cart.pawnerPostWarranty)
-			$("#pawnerPostWeigh").text(cart.pawnerPostWeigh)
-			$("#estimatePriceMin").text(cart.estimatePriceMin)
-			$("#estimatePriceMax").text(cart.estimatePriceMax)
-			$("#estimateDate").text(cart.estimateDate)
-
-			/* pawnshop */
-			$("#pawnShopname").text(cart.pawnShopname)
-			$("#pawnshopProvince").text(cart.pawnshopProvince)
-			$("#pawnshopPostcodes").text(cart.pawnshopPostcodes)
-			$("#pawnshopParish").text(cart.pawnshopParish)
-			$("#pawnshopTel").text(cart.pawnshopTel)
-
-			var w = window.open("", "", "width=1000,height=700");
-			var toNewWindow = $("#printable").html();
-			$(w.document.body).html(toNewWindow);
-			w.print();
-		}
-	</script>
-	<!-- -------------------- print page --------------------------- -->
-	<div id="printable">
-		<div class="popup" data-popup="popup">
-			<div>
-				<p style="font-size: 32px; border-bottom: 1px solid;">ใบยืนยันการจำนำ</p>
-				<div>
-					<div style="text-align: right;">
-						<h5>ที่อยู๋โรงรับจำนำ</h5>
-						<i id="pawnShopname"></i>
-						<br>
-						<i id="pawnshopParish"></i>
-						<i id="pawnshopProvince"></i>
-						<i id="pawnshopPostcodes"> </i>
-						<br>
-						โทร.
-						<i id="pawnshopTel"></i>
-					</div>
-					<div>
-						<table style="width: 100%; margin: 30px 0;">
-							<tr>
-								<td>
-									ชื่อ
-									<i id="pawnerName"></i>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									ชื่อของจำนำ
-									<i id="pawnerPostName"></i>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									วันที่ลงของจำนำ
-									<i id="pawnerPostDate"></i>
-								</td>
-							</tr>
-						</table>
-					</div>
-				</div>
-				<table style="width: 100%; text-align: center; border-spacing: 0px; border-color: #f80000; border-width: 0; border-left: 0; border-right: 0; border-bottom: 0; border-top: 0;" border="1">
-					<tr>
-						<th>ชื่อของจำนำ</th>
-						<th>รายละเอียด</th>
-						<th>วันที่เสนอราคา</th>
-						<th>ราคาที่เสนอ</th>
-					</tr>
-					<tr class="item-row">
-						<td>
-							<div id="pawnerPostNames"></div>
-						</td>
-						<td class="description">
-							<i id="panwePostRemote"></i>
-							<i id="pawnerPostBattery"></i>
-							<i id="pawnerPostBracelet"></i>
-							<i id="pawnerPostCategory"></i>
-							<i id="pawnerPostBrand"></i>
-							<i id="pawnerPostCameraLen"></i>
-							<i id="pawnerPostCapacity"></i>
-							<i id="pawnerPostCase"></i>
-							<i id="pawnerPostCategory"></i>
-							<!-- <i id="pawnerPostDescription"></i> -->
-							<i id="pawnerPostDevice"></i>
-							<i id="pawnerPostDiamond"></i>
-							<i id="pawnerPostHarddisk"></i>
-							<i id="pawnerPostModel"></i>
-							<i id="pawnerPostPackage"></i>
-							<i id="pawnerPostProduction"></i>
-							<i id="pawnerPostPure"></i>
-							<i id="pawnerPostSerial"></i>
-							<i id="pawnerPostRam"></i>
-							<i id="pawnerPostSize"></i>
-							<i id="pawnerPostTypeCamera"></i>
-							<i id="pawnerPostWarranty"></i>
-							<i id="pawnerPostWeigh"></i>
-						</td>
-						<td>
-							<p id="estimateDate"></p>
-						</td>
-						<td>
-							<i id="estimatePriceMin"></i>
-							-
-							<i id="estimatePriceMax"></i>
-							บาท
-						</td>
-					</tr>
-				</table>
-				<div style="text-align: center; margin-top: 50px;">
-					<img src="img/logos/logo.png" style="height: 25px;" />
-					<p>b2pawn.com</p>
-				</div>
-			</div>
-		</div>
-	</div>
+	function select(e) {
+	    window.open("print-pledge.html?pledgeNo="+e, "_blank",
+	    "width=950,height=700"); 
+	}
+    </script>	
 </body>
 </html>

@@ -1,0 +1,82 @@
+body {
+	background-color: #fff;
+}
+
+section {
+	width: 900px;
+	margin: 20px;
+}
+
+i{
+	font-style: normal;
+}
+
+.print-order-title {
+	font-size: 1.5rem;
+	font-weight: 400;
+}
+
+.print-order-web {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 5px 20px 0 0;
+}
+
+.print-order-web img {
+	width: 200px;
+}
+
+.print-order-saler, .print-order-customer {
+	display: flex;
+	margin-bottom: 10px;
+	flex-direction: column;
+}
+
+.print-order-saler{
+	text-align: right;
+}
+
+.print-order-table {
+	display: flex;
+	border-spacing: unset;
+	border-collapse: collapse;
+}
+
+.print-order-table th, .print-order-table tr td {
+	border: 2px solid #999;
+}
+
+.print-order-table th {
+	text-align: center;
+}
+
+.print-order-table tr td {
+	min-width: 150px;
+	text-align: center;
+}
+
+.print-order-table tr td:nth-child(1) {
+	min-width: 250px;
+}
+
+.print-order-table tr td:nth-child(2) {
+	min-width: 350px;
+}
+
+.print-order-total {
+	margin: 20px auto;
+}
+
+.print-order-total, .print-order-contact {
+	display: flex;
+	flex-direction: column;
+}
+
+.print-order-contact {
+	position: absolute;
+	align-items: center;
+	bottom: 10px;
+	left: calc(50% - 152px);
+}

@@ -52,17 +52,7 @@ public class PawnerPostController {
 	@EJB(mappedName = "ejb:/BoonWeb/PictureServiceBean!service.PictureService")
 	PictureService pictureService;
 	
-	@RequestMapping("/pawner-post-form-gold")
-	public ModelAndView newGold(HttpServletRequest request) {
-		ModelAndView mv = new ModelAndView("pawnerPostFormGold.jsp");
-		long userId = (long) request.getSession().getAttribute("id");
-		Pawner pm = pmService.findPawnerById(userId);
-		PawnerPost pawnerPost = new PawnerPost();
-		pawnerPost.setPawner(pm);
-		mv.addObject("pawnerPost", pawnerPost);
-		return mv;
-	}
-	
+
 	@RequestMapping("/savePost")
 	public String savePost(@ModelAttribute("pawnerPost") FileUpload fileUpload, BindingResult result,
 			HttpServletRequest request)throws IllegalStateException, IOException {
@@ -112,6 +102,8 @@ public class PawnerPostController {
 			e.printStackTrace();
 		}
 		System.out.println("Start upload picture");
+		// set upload image you drive //
+		String saveDirectory = "L:/Project 3 1-2560/BoonWeb/WebContent/img/uploadImge/";
 		String fileName ="";
 		
 		String dir = request.getServletContext().getRealPath("/")+"img\\uploadImge\\";
@@ -125,7 +117,8 @@ public class PawnerPostController {
 			for (MultipartFile multipartFile : Files) {
 				fileName = multipartFile.getBytes().hashCode()+ "." + multipartFile.getContentType().split("/")[1];
 				if (!"".equalsIgnoreCase(fileName)) {
-					multipartFile.transferTo(new File(dir+ fileName ));
+//					multipartFile.transferTo(new File(dir+ fileName ));
+					multipartFile.transferTo(new File(saveDirectory + fileName));
 					System.out.println("multipartFile.transferTo => " +dir+fileName);
 					
 					picture.setPicture(fileName);
@@ -179,7 +172,7 @@ public class PawnerPostController {
 		try {
 			long userId = (long) request.getSession().getAttribute("id");
 		/*	pawnerPostsWaiting = pawnerPostService.findPawnerPostByPawnerIdAndStatus(userId , "waiting");*/
-			pawnerPostsProcess = pawnerPostService.getAllPawnerPost();
+			pawnerPostsProcess = pawnerPostService.findPawnerPostByPawnerId(userId);
 			estimatesList =estimateService.findEstimateByPawnerIdAndStatus(userId , "process");
 			estimatesApprove =estimateService.findEstimateByPawnerIdAndStatus(userId , "approve");
 			
@@ -188,6 +181,22 @@ public class PawnerPostController {
 			mv.addObject("estimatesApprove", estimatesApprove);
 			/*mv.addObject("pawnerPosts", pawnerPostsWaiting);*/
 			mv.addObject("pawnerPostsProcess", pawnerPostsProcess);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return mv;
+	}
+	
+	@RequestMapping("/print-pledge")
+	public ModelAndView printpledge(HttpServletRequest request) {
+		ModelAndView mv = new ModelAndView("pawnerPrintPledge.jsp");
+		Estimate pledge;
+		try {
+			long pledgeNo = Long.parseLong(request.getParameter("pledgeNo"));
+			pledge =estimateService.findEstimateById(pledgeNo);
+			
+			
+			mv.addObject("pledge", pledge);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

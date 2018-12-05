@@ -79,6 +79,17 @@ public class OrderController {
 		return mv;
 	}
 	
+	
+	@RequestMapping("/pawner-print-order")
+	public ModelAndView print(HttpServletRequest request) {
+		ModelAndView mv = new ModelAndView("pawnerPrintOrder.jsp");
+
+		long byorder = Long.parseLong(request.getParameter("order"));
+		OrderItem order = orederService.findorderItemById(byorder);
+		mv.addObject("order", order);
+		return mv;
+	}
+	
 	@RequestMapping("/pawner-cart")
 	public ModelAndView pawnercart() {
 		ModelAndView mv = new ModelAndView("pawnerCart.jsp");

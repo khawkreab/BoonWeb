@@ -24,21 +24,8 @@
 <link rel="stylesheet" href="css/timeline.css">
 <link rel="stylesheet" href="css/loadingPage.css">
 <link rel="stylesheet" href="css/profileCard.css">
-<!-- style ตรงนี้กูเอามาใสไวนี้ก่อนนะจะย้ายกะได้แต่กูไม่รู้มันจะไปชดตัวไหนไหมเลยไวนี้ก่อน -->
-<style>
-li {
-	list-style: none;
-}
-.popup {
-	width: 100%;
-	height: 100%;
-	display: none;
-	position: fixed;
-	top: 0px;
-	left: 0px;
-	background: rgba(0, 0, 0, 0.75);
-}
-</style>
+<link rel="stylesheet" href="css/sorting.css">
+
 </head>
 <body>
 	<!-- Navigation -->
@@ -46,11 +33,7 @@ li {
 	<!-- loading page -->
 	<div class="loadpage" id="loadpage">
 		<div class='loading'>
-			<span>
-				<span></span>
-				<span></span>
-				<span></span>
-				<span></span>
+			<span> <span></span> <span></span> <span></span> <span></span>
 			</span>
 			<div class='loading-base'>
 				<span></span>
@@ -58,10 +41,7 @@ li {
 			</div>
 		</div>
 		<div class='loading-longfazers'>
-			<span></span>
-			<span></span>
-			<span></span>
-			<span></span>
+			<span></span> <span></span> <span></span> <span></span>
 		</div>
 		<i class="loading-text">Loading . . .</i>
 	</div>
@@ -72,11 +52,29 @@ li {
 			<em></em>
 		</div>
 	</div>
+	<div id="filterBtnContainer">
+		<button class="filter-btn active" onclick="filterSelection('all')">
+			ทั้งหมด <i class="fas fa-th-list"> </i>
+		</button>
+		<button class="filter-btn" onclick="filterSelection('process')">
+			รอการตอบรับ <i class="fas fa-handshake"></i>
+		</button>
+		<button class="filter-btn" onclick="filterSelection('approve')">
+			สินค้าจำนำกำลังเดินทาง <i class="fas fa-walking"></i>
+		</button>
+		<button class="filter-btn" onclick="filterSelection('denei')">
+			ถูกปฏิเสธ <i class="fas fa-times"></i>
+		</button>
+	</div>
+	<!-- not have item -->
+	<div id="noitem">ไม่มีรายการ</div>
 	<section id="cd-timeline" class="cd-container">
 		<c:forEach items="${trackMyEstimate}" var="track">
 			<c:if test="${track.estimateStatus != 'complete'}">
 				<c:if test="${track.estimateStatus != 'approvedenei'}">
-					<div class="cd-timeline-block">
+					<input type="hidden" value="hide" id="hide" />
+					<div
+						class="cd-timeline-block filter-column ${track.estimateStatus}">
 						<!-------- icon -------->
 						<c:if test="${track.estimateStatus == 'denei'}">
 							<div class="cd-timeline-img cd-wait">
@@ -198,21 +196,22 @@ li {
 								<div class="history-show-estimate">
 									<div class="row d-flex">
 										<div class="col-md-5 d-inline-flex">
-												เจ้าของโพส คุณ
-												<!-- profile card -->
-												<div class="profile-card-head is-collapsed">
-													<div class="card-inner js-expander">&nbsp;&nbsp; ${track.pawnerPostId.pawnerId.pawnerFirstname} ${track.pawnerPostId.pawnerId.pawnerLastname}</div>
-													<div class="profile-card">
-														<div class="profile-card-circle">
-															<img src="img/logos/logo.png">
-														</div>
-														<span>${track.pawnerPostId.pawnerId.pawnerFirstname} ${track.pawnerPostId.pawnerId.pawnerLastname}</span>
-														<i>${track.pawnerPostId.pawnerId.pawnerEmail}</i>
-														<i>${track.pawnerPostId.pawnerId.pawnerProvince}</i>
-														<i>Status:${track.estimateStatus}</i>
-														<span class="closed">&times;</span>
+											เจ้าของโพส คุณ
+											<!-- profile card -->
+											<div class="profile-card-head is-collapsed">
+												<div class="card-inner js-expander">&nbsp;&nbsp;
+													${track.pawnerPostId.pawnerId.pawnerFirstname}
+													${track.pawnerPostId.pawnerId.pawnerLastname}</div>
+												<div class="profile-card">
+													<div class="profile-card-circle">
+														<img src="img/logos/logo.png">
 													</div>
+													<span>${track.pawnerPostId.pawnerId.pawnerFirstname}
+														${track.pawnerPostId.pawnerId.pawnerLastname}</span> <i>${track.pawnerPostId.pawnerId.pawnerEmail}</i>
+													<i>${track.pawnerPostId.pawnerId.pawnerProvince}</i> <i>Status:${track.estimateStatus}</i>
+													<span class="closed">&times;</span>
 												</div>
+											</div>
 										</div>
 										<div class="col-md-4 ml-auto">
 											<p>
@@ -221,7 +220,6 @@ li {
 											</p>
 										</div>
 										<div class="col-md-3">
-											<p>
 											<form action="pawnshop-estimate-approve.html" method="post">
 												<input type="hidden" name="estimateId"
 													value="${track.estimateId}"> <input type="hidden"
@@ -231,9 +229,6 @@ li {
 												<button class="btn-custom btn-custom-defalt small"
 													type="submit">สินค้าจำนำถึงโรงรับจำนำแล้ว</button>
 											</form>
-											</p>
-
-
 										</div>
 									</div>
 								</div>
@@ -246,27 +241,26 @@ li {
 								<div class="history-show-estimate">
 									<div class="row d-flex">
 										<div class="col-md-5 d-inline-flex">
-												เจ้าของโพส คุณ
-												<!-- profile card -->
-												<div class="profile-card-head is-collapsed">
-													<div class="card-inner js-expander">&nbsp;&nbsp; ${track.pawnerPostId.pawnerId.pawnerFirstname} ${track.pawnerPostId.pawnerId.pawnerLastname}</div>
-													<div class="profile-card">
-														<div class="profile-card-circle">
-															<img src="img/logos/logo.png">
-														</div>
-														<span>${track.pawnerPostId.pawnerId.pawnerFirstname} ${track.pawnerPostId.pawnerId.pawnerLastname}</span>
-														<i>${track.pawnerPostId.pawnerId.pawnerEmail}</i>
-														<i>${track.pawnerPostId.pawnerId.pawnerProvince}</i>
-														<i>Status: ${track.estimateStatus}</i>
-														<span class="closed">&times;</span>
+											เจ้าของโพส คุณ
+											<!-- profile card -->
+											<div class="profile-card-head is-collapsed">
+												<div class="card-inner js-expander">&nbsp;&nbsp;
+													${track.pawnerPostId.pawnerId.pawnerFirstname}
+													${track.pawnerPostId.pawnerId.pawnerLastname}</div>
+												<div class="profile-card">
+													<div class="profile-card-circle">
+														<img src="img/logos/logo.png">
 													</div>
+													<span>${track.pawnerPostId.pawnerId.pawnerFirstname}
+														${track.pawnerPostId.pawnerId.pawnerLastname}</span> <i>${track.pawnerPostId.pawnerId.pawnerEmail}</i>
+													<i>${track.pawnerPostId.pawnerId.pawnerProvince}</i> <i>Status:
+														${track.estimateStatus}</i> <span class="closed">&times;</span>
 												</div>
+											</div>
 										</div>
 										<div class="col-md-4 ml-auto">
-											<p>
-												เสนอราคาที่ <span style="color: #ff3300; font-weight: bold;">${track.estimatePriceMin}-${track.estimatePriceMax}
-													บาท</span>
-											</p>
+											เสนอราคาที่ <span style="color: #ff3300; font-weight: bold;">${track.estimatePriceMin}-${track.estimatePriceMax}
+												บาท</span>
 										</div>
 										<div class="col-md-2">
 											<p>
@@ -304,21 +298,22 @@ li {
 										</div> 
 										-->
 										<div class="col-md-5 d-inline-flex">
-												เจ้าของโพส คุณ
-												<!-- profile card -->
-												<div class="profile-card-head is-collapsed">
-													<div class="card-inner js-expander">&nbsp;&nbsp; ${track.pawnerPostId.pawnerId.pawnerFirstname} ${track.pawnerPostId.pawnerId.pawnerLastname}</div>
-													<div class="profile-card">
-														<div class="profile-card-circle">
-															<img src="img/logos/logo.png">
-														</div>
-														<span>${track.pawnerPostId.pawnerId.pawnerFirstname} ${track.pawnerPostId.pawnerId.pawnerLastname}</span>
-														<i>${track.pawnerPostId.pawnerId.pawnerEmail}</i>
-														<i>${track.pawnerPostId.pawnerId.pawnerProvince}</i>
-														<i>Status: ${track.estimateStatus}</i>
-														<span class="closed">&times;</span>
+											เจ้าของโพส คุณ
+											<!-- profile card -->
+											<div class="profile-card-head is-collapsed">
+												<div class="card-inner js-expander">&nbsp;&nbsp;
+													${track.pawnerPostId.pawnerId.pawnerFirstname}
+													${track.pawnerPostId.pawnerId.pawnerLastname}</div>
+												<div class="profile-card">
+													<div class="profile-card-circle">
+														<img src="img/logos/logo.png">
 													</div>
+													<span>${track.pawnerPostId.pawnerId.pawnerFirstname}
+														${track.pawnerPostId.pawnerId.pawnerLastname}</span> <i>${track.pawnerPostId.pawnerId.pawnerEmail}</i>
+													<i>${track.pawnerPostId.pawnerId.pawnerProvince}</i> <i>Status:
+														${track.estimateStatus}</i> <span class="closed">&times;</span>
 												</div>
+											</div>
 										</div>
 										<div class="col-md-4 ml-auto">
 											<p>
@@ -340,6 +335,8 @@ li {
 			</c:if>
 		</c:forEach>
 	</section>
+	<!-- sorting -->
+	<script src="js/sorting.js"></script>
 	<!-- profile Card -->
 	<script src="js/profileCard.js"></script>
 	<!-- cd-timeline -->
@@ -356,6 +353,11 @@ li {
 					window.location.reload();
 				}
 			}, 1000);
+
+			var x = document.getElementById("hide").value;
+			var order = document.getElementById("noOrder");
+			if (x == 'hide')
+				order.style.display = "none";
 
 		}
 	</script>
