@@ -21,6 +21,7 @@
 <link rel="stylesheet" href="css/loadingPage.css">
 <link rel="stylesheet" href="css/profileCard.css">
 <link rel="stylesheet" href="css/sorting.css">
+<link rel="stylesheet" href="css/popupShowImage.css">
 </head>
 <body>
 	<!-- Navigation -->
@@ -109,7 +110,7 @@
 						<div>
 							<span>${post.pawnerPostId.pawnerPostName}</span>
 							<ul>
-								<!-- Watch,Electronic --> 
+								<!-- Watch,Electronic -->
 								<c:if test="${post.pawnerPostId.pawnerPostModel != null}">
 									<li>รุ่น : ${post.pawnerPostId.pawnerPostModel}</li>
 									<li>หมายเลขประจำเครื่อง : ${post.pawnerPostId.pawnerPostSerial}</li>
@@ -182,6 +183,16 @@
 			</c:forEach>
 		</div>
 	</section>
+	<!-- pop up show image -->
+	<div class="show-image">
+		<div class="overlay"></div>
+		<i class="fas fa-times-circle close"></i>
+		<div class="img-show">
+			<img src="">
+		</div>
+	</div>
+	<script src="js/popupShowImage.js"></script>
+	"<!-- end  -->
 	<!-- sorting -->
 	<script src="js/sorting.js"></script>
 	<!-- profile Card -->
