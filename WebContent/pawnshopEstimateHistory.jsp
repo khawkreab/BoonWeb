@@ -22,6 +22,7 @@
 <link rel="stylesheet" href="css/timeline.css">
 <link rel="stylesheet" href="css/loadingPage.css">
 <link rel="stylesheet" href="css/profileCard.css">
+<link rel="stylesheet" href="css/sorting.css">
 </head>
 <body class="bg-glay">
 	<!-- Navigation -->
@@ -55,12 +56,25 @@
 			<em></em>
 		</div>
 	</div>
+	<div id="filterBtnContainer">
+		<button class="filter-btn active" onclick="filterSelection('all')">
+			ทั้งหมด <i class="fas fa-th-list"> </i>
+		</button>
+		<button class="filter-btn" onclick="filterSelection('complete')">
+			สำเร็จ <i class="fas fa-check"></i>
+		</button>
+		<button class="filter-btn" onclick="filterSelection('approvedenei')">
+			ถูกปฏิเสธ <i class="fas fa-times"></i> 
+		</button>
+	</div>
+	<!-- not have item -->
+	<div id="noitem">ไม่มีรายการ</div>
 	<section style="height: auto;">
 		<div class="timeline">
 			<!----------- list ----------->
 			<c:forEach items="${eList}" var="post">
 				<c:if test="${post.estimateStatus != 'process' && post.estimateStatus != 'approve' && post.estimateStatus != 'denei'}">
-					<div class="timeline-list filter-column ${post.pawnerPostId.pawnerPostItemType}">
+					<div class="timeline-list filter-column ${post.estimateStatus}">
 						<c:if test="${post.estimateStatus == 'approvedenei'}">
 							<i class="fas fa-times"></i>
 						</c:if>
@@ -185,6 +199,9 @@
 			</c:forEach>
 		</div>
 	</section>
+	<!-- sorting -->
+	<script src="js/sorting.js"></script>
+	
 	<script src="js/profileCard.js"></script>
 	<!-- cd-timeline -->
 	<script type="text/javascript">
@@ -200,11 +217,6 @@
 		    window.location.reload();
 		}
 	    }, 1000);
-
-	    var x = document.getElementById("hide").value;
-	    var order = document.getElementById("noOrder");
-	    if (x == 'hide')
-		order.style.display = "none";
 	}
     </script>
 </body>
