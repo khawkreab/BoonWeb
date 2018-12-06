@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import entity.OrderItem;
 import entity.Pawner;
+import entity.Pawnshop;
 import entity.PawnshopPost;
 import service.OrderItemService;
 import service.PawnerService;
@@ -60,11 +61,33 @@ public class PawnerController {
 		}return "redirect:index.jsp";
 	}
 	
+	@RequestMapping("/updatePawner")
+	public String updatePawnshop(@ModelAttribute("pawner") Pawner pawner, BindingResult result,
+			HttpServletRequest request) {
+		try {
+			pawner.setPawnerState("pawner");
+			pmService.update(pawner);
+			
+			/* */
+			request.getSession().setAttribute("id", pawner.getPawnerId());
+			request.getSession().setAttribute("isLogin", "yes");
+			request.getSession().setAttribute("userType", "pawner");
+			request.getSession().setAttribute("username",
+					pawner.getPawnerFirstname() + " " + pawner.getPawnerLastname());
+			request.getSession().setAttribute("email", pawner.getPawnerEmail());
+			request.getSession().setAttribute("pawnerState", pawner.getPawnerState());
+
+		} catch (Exception e) {
+			return "redirect:pawner-register-form.html#failed";
+		}
+		return "redirect:index.html?isLogin";
+	}
+	
 	@RequestMapping("/pawner-edit")
 	public ModelAndView editPawner(HttpServletRequest request) {
 		long paramId = (long) request.getSession().getAttribute("id");
 		Pawner foundPawner;
-		ModelAndView mv = new ModelAndView("pawnerEdit.jsp");
+		ModelAndView mv = new ModelAndView("pawnerProfile.jsp");
 		try {
 			foundPawner = pmService.findPawnerById(paramId);
 			mv.addObject("pawner", foundPawner);

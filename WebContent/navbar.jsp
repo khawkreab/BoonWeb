@@ -83,7 +83,7 @@
 						</a>
 					</li>
 					<li class="menu-icon">
-						<a href="#" class="nav-link ">
+						<a href="pawner-edit.html" class="nav-link ">
 							<img src="img/ICONBOONYOUNG/Setting.png" height="50px" width="50px">
 							<i>แก้ไขบัญชี</i>
 						</a>
