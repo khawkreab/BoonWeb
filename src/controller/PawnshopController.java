@@ -65,15 +65,35 @@ public class PawnshopController {
 		return "redirect:index.jsp";
 	}
 
+	@RequestMapping("/updatePawnshop")
+	public String updatePawnshop(@ModelAttribute("pawnshop") Pawnshop pawnshop, BindingResult result,
+			HttpServletRequest request) {
+		try {
+			pawnshop.setPawnshopState("pawnshop");
+			pawnshopServ.update(pawnshop);
+			
+			request.getSession().setAttribute("id", pawnshop.getPawnshopId());
+			request.getSession().setAttribute("isLogin", "yes");
+			request.getSession().setAttribute("userType", "pawnShop");
+			request.getSession().setAttribute("username", pawnshop.getPawnshopName());
+			request.getSession().setAttribute("email", pawnshop.getPawnshopEmail());
+			request.getSession().setAttribute("pawnshopState", pawnshop.getPawnshopState());
+
+		} catch (Exception e) {
+			return "redirect:pawnshop-register-form.html#failed";
+		}
+		return "redirect:index.html?isLogin";
+	}
+
 	// ********* ยังไม่มีหน้า ***********//
-	@RequestMapping("/editPawnshop")
+	@RequestMapping("/pawnhop-edit-profile.html")
 	public ModelAndView editPawnshop(HttpServletRequest request) {
-		long paramId = (long) request.getSession().getAttribute("id");
-		Pawnshop foundPawnshop;
+		long userId = (long) request.getSession().getAttribute("id");
+		Pawnshop Pawnshop;
 		ModelAndView mv = new ModelAndView("pawnshopProfile.jsp");
 		try {
-			foundPawnshop = pawnshopServ.findPawnshopById(paramId);
-			mv.addObject("pawnshop", foundPawnshop);
+			Pawnshop = pawnshopServ.findPawnshopById(userId);
+			mv.addObject("pawnshop", Pawnshop);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

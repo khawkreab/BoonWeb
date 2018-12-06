@@ -161,7 +161,7 @@
 						</a>
 					</li>
 					<li class="menu-icon">
-						<a href="logout.html" class="nav-link ">
+						<a href="pawnhop-edit-profile.html" class="nav-link ">
 							<img src="img/ICONBOONYOUNG/Setting.png" height="50px" width="50px">
 							<i>แก้ไขบัญชี</i>
 						</a>

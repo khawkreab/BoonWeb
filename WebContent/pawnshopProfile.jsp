@@ -19,36 +19,38 @@
 
 <title>Profile</title>
 
-<jsp:include page="importCSS.jsp" />
-
 </head>
 
 <body>
 
-	<!-- Navigation -->
-	<jsp:include page="navbar.jsp" />
-	<!-- form -->
-	<form:form method="post" action="savePawnshop.html"
+	<form:form method="post" action="updatePawnshop.html"
 		commandName="pawnshop">
-
-		<ul style="padding-left: 7px;">
-			<li><form:input type="text" class="input-regis"
-					placeholder="pawnshop name" path="pawnshopName" /></li>
-			<li><form:input type="text" class="input-regis"
-					placeholder="email" path="pawnshopEmail" /></li>
-			<li><form:input type="text" class="input-regis"
-					placeholder="password" path="pawnshopPassword" /></li>
-			<li><form:input type="text" class="input-regis"
-					placeholder="tell" path="pawnshopTel" /></li>
-			<li><form:select class="input-regis" path="pawnshopProvince">
-					<option value="1">province</option>
-					<option>Bangkok</option>
-					<option>Chiang rai</option>
-				</form:select></li>
-			<li>
-				<button type="submit" class="input-submit">Create Account</button>
-			</li>
-		</ul>
+		<form:input type="hidden" path="pawnshopId"/>
+		<form:input type="text" path="pawnshopName" />
+	<%-- 	<form:input type="text" path="pawnshopEmail" /> --%>
+		<form:input type="text" path="pawnshopPassword" />
+		<form:input type="text" path="pawnshopTel" />
+		<form:select id="province" path="pawnshopProvince">
+		</form:select>
+		<form:input type="text" placeholder="รหัสไปรษณีย์"
+			path="pawnshopPostcodes" />
+		<button type="submit">ยืนยันการแก้ไข</button>
 	</form:form>
+	<script src="vendor/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="province/AutoProvince.js"></script>
+	<script>
+		$('#clearval').click(function() {
+			$('option').removeAttr('value');
+		})
+
+		$('body').AutoProvince({
+			PROVINCE : '#province', // select div สำหรับรายชื่อจังหวัด
+			AMPHUR : '#amphur', // select div สำหรับรายชื่ออำเภอ
+			DISTRICT : '#district', // select div สำหรับรายชื่อตำบล
+			POSTCODE : '#postcode', // input field สำหรับรายชื่อรหัสไปรษณีย์
+			arrangeByName : false
+		// กำหนดให้เรียงตามตัวอักษร
+		});
+	</script>
 </body>
 </html>
