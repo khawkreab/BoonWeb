@@ -1,8 +1,9 @@
+
 <!-- 
-// page : pawnshop-index
-// version : 3.1
-// task : send data to pawnshop-estimate-form
-// edit by : khawkreab
+// page : pawner-out-off-pledge
+// version : 1.0
+// task : new
+// edit by : K'win
  -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -10,80 +11,104 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page import="java.util.Date"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-
 <!DOCTYPE html>
 <html>
-
 <head>
-<link rel="icon" href="img/logos/Artboard.png">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-<title>Shop</title>
-
-<!-- ----------------------------------checkLogin------------------------------------------  -->
-<%-- <script type="text/javascript">
-	var checkLogin =
-<%=session.getAttribute("isLogin")%>
-	;
-	if (checkLogin != null) {
-		sessionStorage.setItem("login", checkLogin);
-	}
-</script>
-<script src="js/checkLogin.js"></script> --%>
-
-
+<link href="css/pawnerCard.css" rel="stylesheet">
+<link rel="stylesheet" href="css/sorting.css">
+<title>รายการของหลุดจำนำ</title>
+<!-- import all css -->
+<jsp:include page="importCSS.jsp" />
 </head>
-
-<body>
+<body id="page-top">
 	<!-- Navigation -->
 	<jsp:include page="navbar.jsp" />
-
 	<!--banner-->
 	<div class="banner-top">
-		<h1 id="checkpost">รายการของจำนำ</h1>
-		<em></em>
+		<div>
+			<h1 id="checkpost">รายการของหลุดจำนำ</h1>
+			<em></em>
+		</div>
 	</div>
-
-
-	<div class="result-group">
-
-
-
+	<div id="filterBtnContainer">
+		<button class="filter-btn active" onclick="filterSelection('all')">
+			ทั้งหมด <i class="fas fa-th-list"> </i>
+		</button>
+		<button class="filter-btn" onclick="filterSelection('Gold')">
+			ทองคำ <i class="fas fa-square-full"></i>
+		</button>
+		<button class="filter-btn" onclick="filterSelection('Laptop')">
+			แลปทอ็อป <i class="fas fa-laptop"></i>
+		</button>
+		<button class="filter-btn" onclick="filterSelection('Tv')">
+			โทรทัศน์ <i class="fas fa-tv"></i>
+		</button>
+		<button class="filter-btn" onclick="filterSelection('Smartphone')">
+			โทรศัพท์ <i class="fas fa-mobile-alt"></i>
+		</button>
+		<button class="filter-btn" onclick="filterSelection('Watch')">
+			นาฬิกา <i class="fas fa-clock"></i>
+		</button>
+		<button class="filter-btn" onclick="filterSelection('Camera')">
+			กล้องถ่ายรูป <i class="fas fa-camera-retro"></i>
+		</button>
+	</div>
+	<div id="noitem">ไม่มีรายการ</div>
+	<!--content-->
+	<div class="container flex-wrap" id="sorting">
 		<c:forEach items="${pawnerPosts}" var="post">
-
-			<div class="result">
-				<div class="row">
-					<div class="col-md-4 float-left result-img" style="height: 122px">
-						<a href="pawnshop-estimate-form.html?item=${post.pawnerPostId}">
-							<img src="images/imageUpload/${post.pawnerPostPicture }"
-							class="img-responsive" alt="">
-						</a>
+			<div class="shop-card filter-column ${post.pawnerPostItemType}"
+				data-aos="fade-up">
+				<div style="height: 200px;">
+					<div class="date">
+						<span class="day"> <fmt:formatDate pattern="dd"
+								value="${post.pawnerPostDate }" />
+						</span> <span class="month"> <fmt:formatDate pattern="MMM"
+								value="${post.pawnerPostDate }" />
+						</span> <span class="year"> <fmt:formatDate pattern="yyyy"
+								value="${post.pawnerPostDate }" />
+						</span>
 					</div>
-					<div class="col-md-8">
-						<h2 class="featured text-orange">
-							<a href="pawnshop-estimate-form.html?item=${post.pawnerPostId}">
-								${post.pawnerPostName} - ${post.pawnerPostBrand} </a>
-						</h2>
-						<div class="info-r">
-							<span class="text-orange">${post.pawnerPostName}</span> ลงจำนำ
-							วันที่<span class="text-black"><fmt:setLocale
-									value="en_US" /> <fmt:formatDate type="date" dateStyle="long"
-									value="${post.pawnerPostDate }" /></span> โดย <span
-								class="text-orange">${post.pawnerId.pawnerFirstname }
-								${post.pawnerId.pawnerLastname }</span> จากจังหวัด <span
-								class="text-black"> ${post.pawnerId.pawnerProvince }</span>
-						</div>
-						<div class="text-orange">
-							<a href="pawnshop-estimate-form.html?item=${post.pawnerPostId}">ต้องการประเมิน
-							</a>
-						</div>
+					<figure>
+						<img src="img/uploadImge/${post.pawnerPostPicture}" />
+					</figure>
+				</div>
+				<div class="cta d-flex">
+					<div class="price mr-auto p-2">
+						<div class="title">${post.pawnerPostName}</div>
+						<div class="desc">${post.pawnerId.pawnerProvince }</div>
 					</div>
+					<div class="p-2 ly"></div>
+					<a href="pawnshop-estimate-form.html?item=${post.pawnerPostId}">
+						<button class="btn">
+							<i class="fas fa-sign-in-alt" style="font-size: 1.25rem;"></i>
+						</button>
+					</a>
 				</div>
 			</div>
 		</c:forEach>
 	</div>
+	<!-- sorting -->
+	<script src="js/sorting.js"></script>
+	<jsp:include page="footer.jsp"></jsp:include>
+	<script>
+		$(document).ready(function() {
+			var card = $('.shop-card').length;
+
+			console.log("card => " + card)
+			if (card == 0) {
+				$('#checkpost').text("ไม่มีรายการของหลุดจำนำ")
+			}
+
+		});
+	</script>
 
 </body>
-
 </html>
+
+<%-- 
+	<!-- ----------------------------shop-card-list ---------------------------------------- -->
+	<section id="pledge" class="shop-card-list section-full">
+		
+	</section>
+	 --%>

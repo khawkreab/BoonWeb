@@ -141,51 +141,6 @@ body {
 			</div>
 		</div>
 	</section>
-	<!-- ----------------------------shop-card-list ---------------------------------------- -->
-	<section id="pledge" class="shop-card-list section-full">
-		<c:forEach items="${pawnerPosts}" var="post">
-			<div class="shop-card" data-aos="fade-up">
-				<div style="height: 200px;">
-					<div class="date">
-						<span class="day">
-							<fmt:formatDate pattern="dd" value="${post.pawnerPostDate }" />
-						</span>
-						<span class="month">
-							<fmt:formatDate pattern="MMM" value="${post.pawnerPostDate }" />
-						</span>
-						<span class="year">
-							<fmt:formatDate pattern="yyyy" value="${post.pawnerPostDate }" />
-						</span>
-					</div>
-					<figure>
-						<img src="img/uploadImge/${post.pawnerPostPicture}" />
-					</figure>
-				</div>
-				<div class="cta d-flex">
-					<div class="price mr-auto p-2">
-						<div class="title">${post.pawnerPostName}</div>
-						<div class="desc">${post.pawnerId.pawnerProvince }</div>
-					</div>
-					<div class="p-2 ly"></div>
-					<a href="pawnshop-estimate-form.html?item=${post.pawnerPostId}">
-						<button class="btn">
-							<i class="fas fa-sign-in-alt" style="font-size: 1.25rem;"></i>
-						</button>
-					</a>
-				</div>
-			</div>
-		</c:forEach>
-	</section>
-	<script>
-	$(document).ready(function() {
-	    var featured = $('.featured').length;
-
-	    console.log("featured => " + featured)
-	    if (featured == 0) {
-		$('#checkpost').text("ไม่มีรายการของจำนำ")
-	    }
-	});
-    </script>
 	<!-- ------------------------------not login-------------------------------------- -->
 	<%
 		}

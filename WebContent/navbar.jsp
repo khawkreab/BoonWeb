@@ -130,7 +130,7 @@
 						</a>
 					</li>
 					<li class="menu-icon">
-						<a class="nav-link" href="index.html#pledge">
+						<a class="nav-link" href="pawnshop-index.html">
 							<img src="img/ICONBOONYOUNG/Menu.png" height="50px" width="50px">
 							<i>รายการของลงจำนำ </i>
 						</a>
