@@ -24,7 +24,22 @@
 </head>
 
 <body style="background-color: #f4f4f4; overflow: hidden;">
-
+	<!-- ----------------- popup -------------------------------  -->
+	<!-- The Modal -->
+	<div id="checkbox" class="modal" style="z-index: 9999">
+		<!-- Modal content -->
+		<div class="d-flex justify-content-center">
+			<div
+				style="display: inline-flex; position: relative; align-items: center; background-color: #ff3300; color: #fff; padding: 15px; margin-top: 10px; width: 550;">
+				<div>
+					<p style="margin: 0;">คุณต้องยอมรับข้อกำหนดของข้อตกลงการจำนำ
+						เพื่อนำเนินการให้เสร็จสมบูรณ์</p>
+				</div>
+				<span class="close"
+					style="position: absolute; right: 5px; top: 0px; cursor: pointer;">&times;</span>
+			</div>
+		</div>
+	</div>
 	<div class="page">
 		<div class="pledge-container">
 			<div class="pledge-featured">
@@ -93,9 +108,10 @@
 							<li class='form-list-row form-list-row-inline'
 								style='margin: auto; margin-right: 100px;'>
 								<p>
-									<label>ยี่ห้อ</label> <input type="text" name="pawnshopPostBrand"
-										required="required" maxlength="20" /> <br> <i>
-										ภาษาไทย หรือ อังกฤษ เท่านั้น ความยาวไม่เกิน 20 ตัวอักษร </i>
+									<label>ยี่ห้อ</label> <input type="text"
+										name="pawnshopPostBrand" required="required" maxlength="20" />
+									<br> <i> ภาษาไทย หรือ อังกฤษ เท่านั้น ความยาวไม่เกิน
+										20 ตัวอักษร </i>
 								</p>
 							</li>
 							<li class='form-list-row form-list-row-inline'
@@ -103,7 +119,8 @@
 								<p>
 									<label>ราคาที่ต้องการขาย</label> <input type="text"
 										name="pawnshopPostPrice" id="amounts" required="required"
-										maxlength="6" /> <br> <i>สามารถให้ราคาของ ที่มูลค่าไม่เกิน 6 หลัก</i> <input type="hidden" id="oo" />
+										maxlength="6" /> <br> <i>สามารถให้ราคาของ
+										ที่มูลค่าไม่เกิน 6 หลัก</i> <input type="hidden" id="oo" />
 								</p>
 							</li>
 						</ul>
@@ -152,8 +169,6 @@
 
 	<!-- Navigation   -->
 	<jsp:include page="navbar.jsp" />
-
-
 	<script src="js/MultiStepFormPawnshop.js"></script>
 	<script type="text/javascript">
 		window.onload = function() {
@@ -286,6 +301,12 @@
 				 */
 			});
 		})(jQuery);
+	</script>
+	<script>
+		var bannedmodal = $('#checkbox');
+		bannedmodal.click(function() {
+			bannedmodal.css("display", "none");
+		});
 	</script>
 
 </body>

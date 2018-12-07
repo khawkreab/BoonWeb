@@ -37,9 +37,19 @@ function nextPrev(n) {
 	currentTab = currentTab + n;
 	// if you have reached the end of the form...
 	if (currentTab >= x.length) {
-		// ... the form gets submitted:
-		$('#regForm').submit();
-		return false;
+		var isChecked = document.getElementById("checkboxs");
+		if (isChecked.checked == true) {
+			// ... the form gets submitted:
+			$.getScript("js/imageReview.js", function() {
+				loadingpage("");
+			});
+			$('#regForm').submit();
+			return false;
+		} else {
+			var bannedmodal = $('#checkbox');
+			bannedmodal.css("display", "block");
+			currentTab = currentTab - 1 ;
+		}
 	}
 	// Otherwise, display the correct tab:
 	showTab(currentTab);
@@ -142,7 +152,6 @@ function showsteptype(e) {
 		step2 += "<div class='wrap-input100 validate-input' style='margin-top:15px;'>"
 		step2 += "<label>ชนิดหรือรูปแบบของทองคำ</label>"
 		step2 += "<select class='input100' name='pawnshopPostCategory'>"
-		step2 += "<option></option>"
 		step2 += "<option>ทองรูปพรรณ</option>"
 		step2 += "<option>ทองเค เช่น 18k, 14k</option>"
 		step2 += "<option>เงิน</option>"
@@ -158,7 +167,6 @@ function showsteptype(e) {
 		step2 += "<div class='wrap-input100 validate-input' style='margin-top:15px;'>"
 		step2 += "<label>น้ำหนักทองรูปพรรณ</label>"
 		step2 += "<select class='input100' name='pawnshopPostWeigh'>"
-		step2 += "<option></option>"
 		step2 += "<option>ทองหนัก ครึ่ง สลึง</option>"
 		step2 += "<option>ทองหนัก 1 สลึง</option>"
 		step2 += "<option>ทองหนัก 1 บาท</option>"
@@ -186,7 +194,7 @@ function showsteptype(e) {
 		step3 += "</p>"
 
 		step3 += "<div class='d-inline-flex'>"
-		step3 += "<input type='checkbox' />"
+		step3 += "<input type='checkbox' id='checkboxs'/>"
 		step3 += "<label>ยอมรับเงือนไขการใช้งาน</label>"
 		step3 += "</div>"
 		step3 += "</p>"
@@ -287,7 +295,7 @@ function showsteptype(e) {
 		step3 += "</p>"
 
 		step3 += "<div class='d-inline-flex'>"
-		step3 += "<input type='checkbox' />"
+		step3 += "<input type='checkbox' id='checkboxs'/>"
 		step3 += "<label>ยอมรับเงือนไขการใช้งาน</label>"
 		step3 += "</div>"
 		step3 += "</p>"
@@ -363,7 +371,7 @@ function showsteptype(e) {
 		step3 += "</p>"
 
 		step3 += "<div class='d-inlin-flex'>"
-		step3 += "<input type='checkbox' />"
+		step3 += "<input type='checkbox' id='checkboxs'/>"
 		step3 += "<label>ยอมรับเงือนไขการใช้งาน</label>"
 		step3 += "</div>"
 		step3 += "</p>"
@@ -451,7 +459,7 @@ function showsteptype(e) {
 		step3 += "</p>"
 
 		step3 += "<div class='d-inline-flex'>"
-		step3 += "<input type='checkbox' />"
+		step3 += "<input type='checkbox' id='checkboxs'/>"
 		step3 += "<label>ยอมรับเงือนไขการใช้งาน</label>"
 		step3 += "</div>"
 		step3 += "</p>"
@@ -548,7 +556,7 @@ function showsteptype(e) {
 		step3 += "</p>"
 
 		step3 += "<div class='d-inline-flex'>"
-		step3 += "<input type='checkbox' />"
+		step3 += "<input type='checkbox' id='checkboxs'/>"
 		step3 += "<label>ยอมรับเงือนไขการใช้งาน</label>"
 		step3 += "</div>"
 
@@ -624,8 +632,8 @@ function showsteptype(e) {
 		step3 += "</p>"
 
 		step3 += "<div class='d-inline-flex'>"
-		step3 += "<input  id='option1' name='option1' type='checkbox' />"
-		step3 += "<label for='option1'>ยอมรับเงือนไขการใช้งาน</label>"
+		step3 += "<input  id='checkboxs' type='checkbox' />"
+		step3 += "<label>ยอมรับเงือนไขการใช้งาน</label>"
 		step3 += "</div>"
 		step3 += "</p>"
 
