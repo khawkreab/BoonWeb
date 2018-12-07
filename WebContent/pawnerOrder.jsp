@@ -8,7 +8,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>order</title>
+<title></title>
 <!-- import all css -->
 <jsp:include page="importCSS.jsp" />
 
@@ -122,8 +122,9 @@
 	
 
 	function printorder(e){
-	    window.open("pawner-print-order.html?order="+e, "_blank",
+	   var w  window.open("pawner-print-order.html?order="+e, "_blank",
 	    "width=950,height=700");
+	    w.print();
 		}
     </script>
 </body>

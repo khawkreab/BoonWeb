@@ -22,20 +22,21 @@
 	<!-- Navigation -->
 	<jsp:include page="navbar.jsp" />
 	<!--  -->
-	<section style="    padding-top: 0px;">
+	<section style="padding-top: 0px;">
 		<div class="profile-edit">
 			<div class="profile-cover">
 				<img src="https://png.pngtree.com/thumb_back/fw800/back_pic/00/08/57/41562ad4a92b16a.jpg">
 			</div>
 			<div class="profile-info">
 				<div class="profile-info-left">
-					<img src="https://www.jamf.com/jamf-nation/img/default-avatars/generic-user-purple.png">
-					<button class="btn-custom btn-custom-sky" style="height: 30px"> เปลี่ยนรูป</button>
+					<img id="blah" src="img/uploadimg/pawner/${pawner.picture}">
+					<label for="filed"  class="btn-custom btn-custom-sky" style="height: 30px">เปลี่ยนรูป</label>
+					<input id="filed" type='file' name="files" value="${pawner.picture}" onchange="readURL(this);" />
 				</div>
 				<div class="profile-info-right">
 					<div class="profile-info-title">
-						<span> khawkreab software </span>
-						<i>khawkreab@outlook.com</i>
+						<span>${pawner.pawnerFirstname} &nbsp; ${pawner.pawnerLastname}</span>
+						<i>${pawner.pawnerEmail}</i>
 					</div>
 					<div class="profile-info-overview">
 						<div class="profile-info-overview-title">
@@ -44,6 +45,7 @@
 						<div class="profile-info-overview-list">
 							<form:form method="post" action="updatePawner.html" commandName="pawner">
 								<form:input type="hidden" path="pawnerId" />
+								<form:input type="hidden" path="pawnerEmail" />
 								<ul>
 									<li>ชื่อ</li>
 									<li>
@@ -69,7 +71,7 @@
 									<li></li>
 								</ul>
 								<div class="d-flex">
-									<button class="ml-auto btn-custom btn-custom-defalt" >บันทึก</button>
+									<button class="ml-auto btn-custom btn-custom-defalt">บันทึก</button>
 								</div>
 							</form:form>
 						</div>
@@ -80,8 +82,19 @@
 	</section>
 	<script src="vendor/jquery/jquery.min.js"></script>
 	<script type="text/javascript" src="province/AutoProvince.js"></script>
-	<script src="js/Province.js">
-	
+	<script src="js/Province.js"></script>
+	<script type="text/javascript">
+	function readURL(input) {
+	    if (input.files && input.files[0]) {
+		var reader = new FileReader();
+
+		reader.onload = function(e) {
+		    $('#blah').attr('src', e.target.result);
+		};
+
+		reader.readAsDataURL(input.files[0]);
+	    }
+	}
     </script>
 </body>
 </html>

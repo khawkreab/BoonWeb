@@ -15,7 +15,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="">
 <meta name="author" content="">
-<title>สถานะการจำนำ</title>
+<title></title>
 <!-- import all css -->
 <jsp:include page="importCSS.jsp" />
 <link rel="stylesheet" href="css/timeline.css">
@@ -291,8 +291,9 @@
 	<!-- print page -->
 	<script>
 	function select(e) {
-	    window.open("print-pledge.html?pledgeNo="+e, "_blank",
+	   var w = window.open("print-pledge.html?pledgeNo="+e, "_blank",
 	    "width=950,height=700"); 
+	    w.print();
 	}
     </script>
 </body>
