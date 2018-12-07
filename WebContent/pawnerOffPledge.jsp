@@ -35,18 +35,19 @@
 			ทั้งหมด <i class="fas fa-th-list"> </i>
 		</button>
 		<button class="filter-btn" onclick="filterSelection('Gold')">
-			ทองคำ</button>
+			ทองคำ <i class="fas fa-square-full"></i>
+		</button>
 		<button class="filter-btn" onclick="filterSelection('Laptop')">
-			แลปทอ็อป<i class="fas fa-laptop"></i>
+			แลปทอ็อป <i class="fas fa-laptop"></i>
 		</button>
 		<button class="filter-btn" onclick="filterSelection('Tv')">
-			โทรทัศน์ <i class="fas fa-tv-retro"></i>
+			โทรทัศน์ <i class="fas fa-tv"></i>
 		</button>
 		<button class="filter-btn" onclick="filterSelection('Smartphone')">
 			โทรศัพท์ <i class="fas fa-mobile-alt"></i>
 		</button>
 		<button class="filter-btn" onclick="filterSelection('Watch')">
-			นาฬิกา<i class="fas fa-watch"></i>
+			นาฬิกา <i class="fas fa-clock"></i>
 		</button>
 		<button class="filter-btn" onclick="filterSelection('Camera')">
 			กล้องถ่ายรูป <i class="fas fa-camera-retro"></i>

@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page import="java.util.Date"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
@@ -20,11 +21,7 @@
 	<!-- loading page -->
 	<div class="loadpage" id="loadpage">
 		<div class='loading'>
-			<span>
-				<span></span>
-				<span></span>
-				<span></span>
-				<span></span>
+			<span> <span></span> <span></span> <span></span> <span></span>
 			</span>
 			<div class='loading-base'>
 				<span></span>
@@ -32,10 +29,7 @@
 			</div>
 		</div>
 		<div class='loading-longfazers'>
-			<span></span>
-			<span></span>
-			<span></span>
-			<span></span>
+			<span></span> <span></span> <span></span> <span></span>
 		</div>
 		<i class="loading-text">Loading . . .</i>
 	</div>
@@ -46,69 +40,61 @@
 			<em></em>
 		</div>
 	</div>
-	
+
 	<div id="filterBtnContainer">
 		<button class="filter-btn active" onclick="filterSelection('all')">
-			ทั้งหมด
-			<i class="fas fa-th-list"> </i>
+			ทั้งหมด <i class="fas fa-th-list"> </i>
 		</button>
-		<button class="filter-btn" onclick="filterSelection('Gold')">ทองคำ</button>
+		<button class="filter-btn" onclick="filterSelection('Gold')">
+			ทองคำ <i class="fas fa-square-full"></i>
+		</button>
 		<button class="filter-btn" onclick="filterSelection('Laptop')">
-			แลปทอ็อป
-			<i class="fas fa-laptop"></i>
+			แลปทอ็อป <i class="fas fa-laptop"></i>
 		</button>
 		<button class="filter-btn" onclick="filterSelection('Tv')">
-			โทรทัศน์
-			<i class="fas fa-tv-retro"></i>
+			โทรทัศน์ <i class="fas fa-tv"></i>
 		</button>
 		<button class="filter-btn" onclick="filterSelection('Smartphone')">
-			โทรศัพท์
-			<i class="fas fa-mobile-alt"></i>
+			โทรศัพท์ <i class="fas fa-mobile-alt"></i>
 		</button>
 		<button class="filter-btn" onclick="filterSelection('Watch')">
-			นาฬิกา
-			<i class="fas fa-watch"></i>
+			นาฬิกา <i class="fas fa-clock"></i>
 		</button>
 		<button class="filter-btn" onclick="filterSelection('Camera')">
-			กล้องถ่ายรูป
-			<i class="fas fa-camera-retro"></i>
+			กล้องถ่ายรูป <i class="fas fa-camera-retro"></i>
 		</button>
 	</div>
 	<div id="noitem">ไม่มีรายการ</div>
 	<section>
 		<div class="order">
 			<c:forEach items="${order}" var="order">
-				<div class="order-list filter-column ${order.pawnshopPostId.pawnshopPostItemType}">
+				<div
+					class="order-list filter-column ${order.pawnshopPostId.pawnshopPostItemType}">
 					<div class="d-flex">
 						<div class="mr-auto order-title">
-							<span> เลขที่สั่งซื้อ #${ order.orderItemId } </span>
-							<i>
-								สั่งซื้อวันที่
-								<fmt:formatDate pattern="dd MMMM yyyy" value="${ order.orderItemDateIn }" />
-							</i>
-							<i> จำหน่ายโดย ${order.pawnshopPostId.pawnshopId.pawnshopName } </i>
+							<span> เลขที่สั่งซื้อ #${ order.orderItemId } </span> <i>
+								สั่งซื้อวันที่ <fmt:formatDate pattern="dd MMMM yyyy"
+									value="${ order.orderItemDateIn }" />
+							</i> <i> จำหน่ายโดย
+								${order.pawnshopPostId.pawnshopId.pawnshopName } </i>
 						</div>
 						<div class="p-2">
-							ยอดรวมทั้งสิ้น
-							<strong class="text-orange">${order.pawnshopPostId.pawnshopPostPrice } </strong>
-							บาท
+							ยอดรวมทั้งสิ้น <strong class="text-orange">${order.pawnshopPostId.pawnshopPostPrice }
+							</strong> บาท
 						</div>
 					</div>
 					<line-x></line-x>
 					<div class="d-flex align-items-center">
-						<span class="p-2">
-							<img class="img-responsive" style="width: 100px; height: 50px;" src="img/uploadImge/${order.pawnshopPostId.pawnshopPostPicture }" />
-						</span>
-						<span class="p-2">${order.pawnshopPostId.pawnshopPostName }</span>
-						<span class="p-2">
-							<i class="order-quality"> 1 ชิ้น </i>
-						</span>
-						<span class="ml-auto">
-							<a class="btn-custom btn-custom-sky" href="#" onClick="printorder(${order.orderItemId}); return false;"
-								>
-								<i class="far fa-file-alt"></i>
-								พิมพ์ใบสั่งซื้อ
-							</a>
+						<span class="p-2"> <img class="img-responsive"
+							style="width: 100px; height: 50px;"
+							src="img/uploadImge/${order.pawnshopPostId.pawnshopPostPicture }" />
+						</span> <span class="p-2">${order.pawnshopPostId.pawnshopPostName }</span>
+						<span class="p-2"> <i class="order-quality"> 1 ชิ้น </i>
+						</span> <span class="ml-auto"> <a
+							class="btn-custom btn-custom-sky" href="#"
+							onClick="printorder(${order.orderItemId}); return false;">
+								<i class="far fa-file-alt"></i> พิมพ์ใบสั่งซื้อ
+						</a>
 						</span>
 					</div>
 				</div>

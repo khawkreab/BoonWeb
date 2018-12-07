@@ -4,14 +4,16 @@
 // task : pawner approve
 // edit by : khawkreab
  -->
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page import="java.util.Date"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="">
 <meta name="author" content="">
 <title>pawner-post-history</title>
@@ -37,67 +39,61 @@
 	</div>
 	<div id="filterBtnContainer">
 		<button class="filter-btn active" onclick="filterSelection('all')">
-			ทั้งหมด
-			<i class="fas fa-th-list"> </i>
+			ทั้งหมด <i class="fas fa-th-list"> </i>
 		</button>
-		<button class="filter-btn" onclick="filterSelection('Gold')">ทองคำ</button>
+		<button class="filter-btn" onclick="filterSelection('Gold')">
+			ทองคำ <i class="fas fa-square-full"></i>
+		</button>
 		<button class="filter-btn" onclick="filterSelection('Laptop')">
-			แลปทอ็อป
-			<i class="fas fa-laptop"></i>
+			แลปทอ็อป <i class="fas fa-laptop"></i>
 		</button>
 		<button class="filter-btn" onclick="filterSelection('Tv')">
-			โทรทัศน์
-			<i class="fas fa-tv-retro"></i>
+			โทรทัศน์ <i class="fas fa-tv"></i>
 		</button>
 		<button class="filter-btn" onclick="filterSelection('Smartphone')">
-			โทรศัพท์
-			<i class="fas fa-mobile-alt"></i>
+			โทรศัพท์ <i class="fas fa-mobile-alt"></i>
 		</button>
 		<button class="filter-btn" onclick="filterSelection('Watch')">
-			นาฬิกา
-			<i class="fas fa-watch"></i>
+			นาฬิกา <i class="fas fa-clock"></i>
 		</button>
 		<button class="filter-btn" onclick="filterSelection('Camera')">
-			กล้องถ่ายรูป
-			<i class="fas fa-camera-retro"></i>
+			กล้องถ่ายรูป <i class="fas fa-camera-retro"></i>
 		</button>
 	</div>
 	<div id="noitem">ไม่มีรายการ</div>
 	<section id="sorting" style="height: auto">
 		<div class="timeline">
 			<c:forEach items="${estimatesListComplete}" var="post">
-				<div class="timeline-list filter-column ${post.pawnerPostId.pawnerPostItemType}">
+				<div
+					class="timeline-list filter-column ${post.pawnerPostId.pawnerPostItemType}">
 					<i class="fas fa-check"></i>
 					<div class="timeline-title">
 						<div class="mr-auto">
-							<span>เลขที่การจำนำ #</span>
-							<i>
-								ลงจำนำวันที่
-								<fmt:formatDate pattern="d MMM yyyy" value="${post.estimateAccessDate }" />
+							<span>เลขที่การจำนำ #</span> <i> ลงจำนำวันที่ <fmt:formatDate
+									pattern="d MMM yyyy" value="${post.estimateAccessDate }" />
 							</i>
 							<!----- for pawnshop ----->
 							<div class="d-inline-flex">
 								จำนำที่ โรงรับจำนำ
 								<div class="profile-card-head is-collapsed">
-									<div class="card-inner js-expander">&nbsp;&nbsp; ${post.pawnshopId.pawnshopName}</div>
+									<div class="card-inner js-expander">&nbsp;&nbsp;
+										${post.pawnshopId.pawnshopName}</div>
 									<div class="profile-card">
 										<div class="profile-card-circle">
 											<img src="img/logos/logo.png">
 										</div>
-										<span>${post.pawnshopId.pawnshopName}</span>
-										<span>${post.pawnshopId.pawnshopProvince}</span>
-										<span>${post.pawnshopId.pawnshopTel}</span>
-										<span class="closed">&times;</span>
+										<span>${post.pawnshopId.pawnshopName}</span> <span>${post.pawnshopId.pawnshopProvince}</span>
+										<span>${post.pawnshopId.pawnshopTel}</span> <span
+											class="closed">&times;</span>
 									</div>
 								</div>
 							</div>
 						</div>
 						<div class="p-2">
-							<i>
-								จำนำวันที่
-								<fmt:formatDate pattern="d MMM yyyy" value="${post.estimateAccessDate }" />
-							</i>
-							<i style="color: #ff3300; font-weight: bold"> เสนอราคาไว้ที่ ${post.estimatePriceMin} - ${post.estimatePriceMax} บาท </i>
+							<i> จำนำวันที่ <fmt:formatDate pattern="d MMM yyyy"
+									value="${post.estimateAccessDate }" />
+							</i> <i style="color: #ff3300; font-weight: bold"> เสนอราคาไว้ที่
+								${post.estimatePriceMin} - ${post.estimatePriceMax} บาท </i>
 						</div>
 					</div>
 					<line-x></line-x>
@@ -114,18 +110,22 @@
 								<!-- Watch,Electronic -->
 								<c:if test="${post.pawnerPostId.pawnerPostModel != null}">
 									<li>รุ่น : ${post.pawnerPostId.pawnerPostModel}</li>
-									<li>หมายเลขประจำเครื่อง : ${post.pawnerPostId.pawnerPostSerial}</li>
-									<li>ปีที่ซื้อสินค้า : ${post.pawnerPostId.pawnerPostPurchase}</li>
+									<li>หมายเลขประจำเครื่อง :
+										${post.pawnerPostId.pawnerPostSerial}</li>
+									<li>ปีที่ซื้อสินค้า :
+										${post.pawnerPostId.pawnerPostPurchase}</li>
 								</c:if>
 								<c:if test="${post.pawnerPostId.pawnerPostProduction != null}">
-									<li>ปีที่ผลิตสินค้า : ${post.pawnerPostId.pawnerPostProduction}</li>
+									<li>ปีที่ผลิตสินค้า :
+										${post.pawnerPostId.pawnerPostProduction}</li>
 								</c:if>
 								<!-- Gold -->
 								<c:if test="${post.pawnerPostId.pawnerPostPure != null}">
 									<li>ยี่ห้อ : ${post.pawnerPostId.pawnerPostBrand}</li>
 									<li>ความบริสุทธ์ : ${post.pawnerPostId.pawnerPostPure}</li>
 									<li>น้ำหนัก : ${post.pawnerPostId.pawnerPostWeigh}</li>
-									<li>ชนิดหรือรูปแบบของทองคำ : ${post.pawnerPostId.pawnerPostCategory}</li>
+									<li>ชนิดหรือรูปแบบของทองคำ :
+										${post.pawnerPostId.pawnerPostCategory}</li>
 								</c:if>
 								<!-- Electronic tv com telephone -->
 								<c:if test="${post.pawnerPostId.pawnerPostSize != null}">
@@ -133,10 +133,8 @@
 								</c:if>
 								<!-- Electronic camera com telephone -->
 								<c:if test="${post.pawnerPostId.pawnerPostBattery != null}">
-									<li>
-										<span class="fas fa-check" aria-hidden="true"> </span>
-										Battery
-									</li>
+									<li><span class="fas fa-check" aria-hidden="true">
+									</span> Battery</li>
 								</c:if>
 								<!-- Electronic com telephone -->
 								<c:if test="${post.pawnerPostId.pawnerPostHarddisk != null}">
@@ -149,30 +147,25 @@
 								<!-- Watch -->
 								<c:if test="${post.pawnerPostId.pawnerPostCase != null}">
 									<li>ชนิดของหน้าปัด : ${post.pawnerPostId.pawnerPostCase}</li>
-									<li>ชนิดของสายรัดข้อมือ : ${post.pawnerPostId.pawnerPostBracelet}</li>
+									<li>ชนิดของสายรัดข้อมือ :
+										${post.pawnerPostId.pawnerPostBracelet}</li>
 									<c:if test="${post.pawnerPostId.pawnerPostDiamond != null}">
 										<li>เพรช : ${post.pawnerPostId.pawnerPostDiamond}</li>
 									</c:if>
 									<c:if test="${post.pawnerPostId.pawnerPostPackage != null}">
-										<li>
-											<span class="fas fa-check" aria-hidden="true"> </span>
-											กล้องบรรจุสินค้า
-										</li>
+										<li><span class="fas fa-check" aria-hidden="true">
+										</span> กล้องบรรจุสินค้า</li>
 									</c:if>
 								</c:if>
 								<!-- Electronic tv -->
 								<c:if test="${post.pawnerPostId.panwePostRemote != null}">
-									<li>
-										<span class="fas fa-check" aria-hidden="true"> </span>
-										Remote
-									</li>
+									<li><span class="fas fa-check" aria-hidden="true">
+									</span> Remote</li>
 								</c:if>
 								<!-- Watch,Electronic -->
 								<c:if test="${post.pawnerPostId.pawnerPostWarranty != null}">
-									<li>
-										<span class="fas fa-check" aria-hidden="true"> </span>
-										การประกันสินค้า
-									</li>
+									<li><span class="fas fa-check" aria-hidden="true">
+									</span> การประกันสินค้า</li>
 								</c:if>
 								<li>${post.pawnerPostId.pawnerPostDescription}</li>
 							</ul>
@@ -202,21 +195,21 @@
 	<!-- loading page -->
 	<script src="js/loadingpage.js"></script>
 	<script type="text/javascript">
-	/* loading page */
-	window.onload = function loading() {
-	    if (window.location.hash) {
-		document.body.style.overflowY = "auto";
-		document.getElementById("loadpage").style.display = "none";
-	    }
+		/* loading page */
+		window.onload = function loading() {
+			if (window.location.hash) {
+				document.body.style.overflowY = "auto";
+				document.getElementById("loadpage").style.display = "none";
+			}
 
-	    if (!window.location.hash) {
-		loadingpage("");
-		setTimeout(function() {
-		    window.location = window.location + '#loaded';
-		    window.location.reload();
-		}, 600);
-	    }
-	}
-    </script>
+			if (!window.location.hash) {
+				loadingpage("");
+				setTimeout(function() {
+					window.location = window.location + '#loaded';
+					window.location.reload();
+				}, 600);
+			}
+		}
+	</script>
 </body>
 </html>
