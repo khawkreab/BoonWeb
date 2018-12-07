@@ -27,7 +27,7 @@
 				${order.pawnshopPostId.pawnshopId.pawnshopProvince }</i> <i>${order.pawnshopPostId.pawnshopId.pawnshopTel }</i>
 		</div>
 		<div class="print-order-customer">
-			<i>รหัสลูกค้า</i> <i>ชื่อผู้ซื้อ ${order.pawnerId.pawnerFirstname }
+			<i>รหัสลูกค้า ${order.pawnerId.userCode}</i> <i>ชื่อผู้ซื้อ ${order.pawnerId.pawnerFirstname }
 				${order.pawnerId.pawnerLastname }</i> <i>ที่อยู่
 				${order.pawnerId.pawnerProvince }</i> <br> <span>การสั่งซื้อ</span>
 			<i>สั่งซื้อวันที่ <fmt:formatDate pattern="dd MMMM yyyy"

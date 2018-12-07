@@ -7,6 +7,7 @@
 package controller;
 
 import java.util.List;
+import java.util.Random;
 
 import javax.ejb.EJB;
 import javax.servlet.http.HttpServletRequest;
@@ -49,13 +50,9 @@ public class PawnshopController {
 			HttpServletRequest request) {
 		try {
 			if (pawnshopServ.findPawnshopEmail(pawnshop.getPawnshopEmail()).isEmpty()) {
-				if (pawnshop.getPawnshopId() == 0) {
-					pawnshop.setPawnshopState("pawnshop");
-					pawnshopServ.insert(pawnshop);
-				} else {
-					pawnshop.setPawnshopState("pawnshop");
-					pawnshopServ.update(pawnshop);
-				}
+				pawnshop.setPawnshopState("pawnshop");
+				pawnshop.setUserCode(generateRandomString());
+				pawnshopServ.insert(pawnshop);
 			} else {
 				return "redirect:pawnshop-register-form.html#fail";
 			}
@@ -65,13 +62,38 @@ public class PawnshopController {
 		return "redirect:index.jsp";
 	}
 
+	private final String CHAR_LIST = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+	private final int RANDOM_STRING_LENGTH = 10;
+
+	public String generateRandomString() {
+
+		StringBuffer randStr = new StringBuffer();
+		for (int i = 0; i < RANDOM_STRING_LENGTH; i++) {
+			int number = getRandomNumber();
+			char ch = CHAR_LIST.charAt(number);
+			randStr.append(ch);
+		}
+		return randStr.toString();
+	}
+
+	private int getRandomNumber() {
+		int randomInt = 0;
+		Random randomGenerator = new Random();
+		randomInt = randomGenerator.nextInt(CHAR_LIST.length());
+		if (randomInt - 1 == -1) {
+			return randomInt;
+		} else {
+			return randomInt - 1;
+		}
+	}
+
 	@RequestMapping("/updatePawnshop")
 	public String updatePawnshop(@ModelAttribute("pawnshop") Pawnshop pawnshop, BindingResult result,
 			HttpServletRequest request) {
 		try {
 			pawnshop.setPawnshopState("pawnshop");
 			pawnshopServ.update(pawnshop);
-			
+
 			request.getSession().setAttribute("id", pawnshop.getPawnshopId());
 			request.getSession().setAttribute("isLogin", "yes");
 			request.getSession().setAttribute("userType", "pawnShop");

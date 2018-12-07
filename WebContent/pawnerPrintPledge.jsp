@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+	<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="java.util.Date"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
@@ -27,7 +27,7 @@
 				${pledge.pawnshopId.pawnshopProvince }</i> <i>${pledge.pawnshopId.pawnshopTel }</i>
 		</div>
 		<div class="print-pledge-customer">
-			<i>รหัสลูกค้า</i> <i>ชื่อผู้จำนำ
+			<i>รหัสลูกค้า ${pledge.pawnerPostId.pawnerId.userCode}</i> <i>ชื่อผู้จำนำ
 				${pledge.pawnerPostId.pawnerId.pawnerFirstname }
 				${pledge.pawnerPostId.pawnerId.pawnerLastname }</i> <i>ที่อยู่
 				${pledge.pawnerPostId.pawnerId.pawnerProvince }</i>
@@ -48,7 +48,7 @@
 				<span>รายละเอียดของจำนำ</span><i>${pledge.pawnerPostId.pawnerPostName}</i>
 				<div class="print-pledge-item-detail">
 					<div class="print-pledge-item-detail-img">
-						<img src="img/logos/logofull.png">
+						<img src="img/uploadImge/${pledge.pawnerPostId.pawnerPostPicture}"/>
 					</div>
 					<div class="print-pledge-item-detail-list">
 						<ul class="row">
