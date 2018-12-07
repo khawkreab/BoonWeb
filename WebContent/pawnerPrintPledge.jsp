@@ -45,7 +45,7 @@
 					บาท</i>
 			</div>
 			<div class="print-pledge-item">
-				<span>รายละเอียดของจำนำ</span> <br> <i>${pledge.pawnerPostId.pawnerPostName}</i>
+				<span>รายละเอียดของจำนำ</span><i>${pledge.pawnerPostId.pawnerPostName}</i>
 				<div class="print-pledge-item-detail">
 					<div class="print-pledge-item-detail-img">
 						<img src="img/logos/logofull.png">
