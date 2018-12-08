@@ -62,7 +62,7 @@
 											<option>กรุณาเลือกจังหวัด</option>
 										</form:select></li>
 
-									<li><form:input class="input-regis" path="pawnerZipcode" placeholder="รหัสไปรษณีย์" pattern="[0-9]{5}"
+									<li><form:input class="input-regis" path="pawnshopZipcode" placeholder="รหัสไปรษณีย์" pattern="[0-9]{5}"
 										title="ตัวเลขเท่านั้น 0-9"/>
 									</li>
 									<li><form:textarea style="height: 90px;" type="text" class="input-regis"
