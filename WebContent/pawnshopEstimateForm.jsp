@@ -33,7 +33,7 @@
 						<ul class="card-carousel-indicators carousel-indicators">
 							<c:forEach var="pic" items="${pictures}">
 								<li data-target="#demo" data-slide-to="<%=dataslideto%>" class="<%=active%>">
-									<img src="img/uploadImge/${pic.picture}">
+									<img src="img/uploadimg/pawnerPost/${pic.picture}">
 								</li>
 								<%
 									dataslideto++;
