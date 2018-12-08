@@ -72,7 +72,7 @@
 					<figure>
 						<a class="shop-card-a fas"
 							href="post-item-detail.html?item=${pawnshopPosts.pawnshopPostId}"></a>
-						<img src="img/uploadImge/${pawnshopPosts.pawnshopPostPicture}" />
+						<img src="img/uploadimge/pawnshopPost/${pawnshopPosts.pawnshopPostPicture}" />
 					</figure>
 				</div>
 				<div class="cta d-flex">

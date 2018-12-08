@@ -99,7 +99,7 @@ public class PawnshopPostController {
 		}
 		String fileName = "";
 		
-		String dir = request.getServletContext().getRealPath("/")+"img\\uploadImge\\";
+		String dir = request.getServletContext().getRealPath("/")+"img\\uploadimge\\pawnshopPost";
 
 		Picture picture = new Picture();
 

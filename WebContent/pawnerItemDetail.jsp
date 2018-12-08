@@ -41,7 +41,7 @@
 						<ul class="card-carousel-indicators carousel-indicators">
 							<c:forEach var="pic" items="${pictures}">
 								<li data-target="#demo" data-slide-to="<%=dataslideto%>" class="<%=active%>">
-									<img src="img/uploadImge/${pic.picture}">
+									<img src="img/uploadimge/pawnhopPost/${pic.picture}">
 								</li>
 								<%
 									dataslideto++;
@@ -55,7 +55,7 @@
 						<div class="carousel-inner card-carousel-inner">
 							<c:forEach var="pic" items="${pictures}">
 								<div class="carousel-item <%=active2%>">
-									<img src="img/uploadImge/${pic.picture}">
+									<img src="img/uploadimge/pawnshopPost/${pic.picture}">
 								</div>
 								<%
 									dataslideto2++;

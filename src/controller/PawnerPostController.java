@@ -103,10 +103,10 @@ public class PawnerPostController {
 		}
 		System.out.println("Start upload picture");
 		// set upload image you drive //
-		String saveDirectory = "L:/Project 3 1-2560/BoonWeb/WebContent/img/uploadImge/";
+		String saveDirectory = "L:/Project 3 1-2560/BoonWeb/WebContent/img/uploadimge/pawnerPost";
 		String fileName ="";
 		
-		String dir = request.getServletContext().getRealPath("/")+"img\\uploadImge\\";
+		String dir = request.getServletContext().getRealPath("/")+"img\\uploadimge\\pawnerPost";
 		
 		Picture picture = new Picture();
 

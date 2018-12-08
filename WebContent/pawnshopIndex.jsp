@@ -70,7 +70,7 @@
 						</span>
 					</div>
 					<figure>
-						<img src="img/uploadImge/${post.pawnerPostPicture}" />
+						<img src="img/uploadimge/pawnerPost/${post.pawnerPostPicture}" />
 					</figure>
 				</div>
 				<div class="cta d-flex">
