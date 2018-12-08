@@ -80,6 +80,7 @@ public class PawnerController {
 			if (pmService.findPawnerEmai(pawner.getPawnerEmail()).isEmpty()) {
 				pawner.setPawnerState("pawner");
 				pawner.setPawnerUsercode(generateRandomString());
+				pawner.setPawnerPicture("profile-icon.jpg");
 				pmService.insert(pawner);
 			} else
 				return "redirect:pawner-index.html";
@@ -134,13 +135,9 @@ public class PawnerController {
 			pmService.update(pawner);
 
 			/* */
-			request.getSession().setAttribute("id", pawner.getPawnerId());
-			request.getSession().setAttribute("isLogin", "yes");
-			request.getSession().setAttribute("userType", "pawner");
 			request.getSession().setAttribute("username",
 					pawner.getPawnerFirstname() + " " + pawner.getPawnerLastname());
-			request.getSession().setAttribute("email", pawner.getPawnerEmail());
-			request.getSession().setAttribute("pawnerState", pawner.getPawnerState());
+			request.getSession().setAttribute("pawnerPicture", pawner.getPawnerPicture());
 
 		} catch (Exception e) {
 			return "redirect:pawner-register-form.html#failed";

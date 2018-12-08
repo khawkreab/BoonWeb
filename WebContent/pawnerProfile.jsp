@@ -48,6 +48,7 @@
 								<div id="showview">
 									<br>
 									<p>ชื่อ ${pawner.pawnerFirstname} &nbsp; ${pawner.pawnerLastname}</p>
+									<p>อีเมล  ${pawner.pawnerEmail}</p>
 									<p>เบอร์โทร ${pawner.pawnerPhone}</p>
 									<p>จังหวัด ${pawner.pawnerProvince}</p>
 									<p>รหัสไปรษณีย์ ${pawner.pawnerZipcode}</p>
@@ -66,6 +67,10 @@
 											<input type="text" name="pawnerFirstname" value="${pawner.pawnerFirstname}" />
 											&nbsp;&nbsp; นามสกุล &nbsp;&nbsp;
 											<input type="text" name="pawnerLastname" value="${pawner.pawnerLastname}" />
+										</li>
+										<li>อีเมล</li>
+										<li>
+											<input type="text"  value="${pawner.pawnerPassword}" readonly/>
 										</li>
 										<li>รหัสผ่าน</li>
 										<li>

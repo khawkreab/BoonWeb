@@ -52,6 +52,7 @@ public class PawnshopController {
 			if (pawnshopServ.findPawnshopEmail(pawnshop.getPawnshopEmail()).isEmpty()) {
 				pawnshop.setPawnshopState("pawnshop");
 				pawnshop.setPawnshopUsercode(generateRandomString());
+				pawnshop.setPawnshopPicture("profile-icon.jpg");
 				pawnshopServ.insert(pawnshop);
 			} else {
 				return "redirect:pawnshop-register-form.html#fail";

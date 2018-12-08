@@ -10,7 +10,7 @@
 <!-- ----------------------------pawner login---------------------------------------- -->
 <div class="profile">
 	<div class="photo">
-		<img src="img/icon/profile-icon.jpg" />
+		<img src="img/uploadimg/pawner/<%=session.getAttribute("pawnerPicture")%>" />
 	</div>
 	<div class="content">
 		<div class="text">
@@ -111,7 +111,7 @@
 <!-- ----------------------------pawshop login---------------------------------------- -->
 <div class="profile">
 	<div class="photo">
-		<img src="img/icon/profile-icon.jpg" />
+		<img src="img/uploadimg/pawnshop/<%=session.getAttribute("pawnshopPicture")%>" />
 	</div>
 	<div class="content">
 		<div class="text">
