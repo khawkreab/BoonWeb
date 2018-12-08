@@ -75,7 +75,7 @@ public class PawnerController {
 		try {
 			if (pmService.findPawnerEmai(pawner.getPawnerEmail()).isEmpty()) {
 				pawner.setPawnerState("pawner");
-				pawner.setUserCode(generateRandomString());
+				pawner.setPawnerUsercode(generateRandomString());
 				pmService.insert(pawner);
 			} else
 				return "redirect:pawner-index.html";

@@ -1,4 +1,4 @@
-	/*!
+/*!
  * khawkreab Grid v1.0.0-beta.2 (new design)
  * Copyright 2011-2018 khawkreab
  * Licensed khawkreab
@@ -15,9 +15,6 @@
 // task : nav bar design
 // edit by : khawkreab
 */
-
-
-
 .border-info {
 	border: 1px solid #5bc0de;
 }
@@ -72,7 +69,6 @@
 form {
 	margin: 0px;
 }
-
 
 hr.light {
 	border-color: #fff
@@ -195,7 +191,6 @@ header.masthead p {
 /*!
 * override modal
 */
-
 
 /*!
 * modal footer override
@@ -769,7 +764,7 @@ h2.featured {
 	height: 100%;
 }
 
-.item-info-content span{
+.item-info-content span {
 	display: block;
 	width: 100%
 }
@@ -791,7 +786,7 @@ h2.featured {
 
 .item-info-estimate {
 	padding: 0 0 10px 10px;
-    border-bottom: 1px solid #e6e6e6;
+	border-bottom: 1px solid #e6e6e6;
 }
 
 .item-info-estimate li {
@@ -868,19 +863,19 @@ h2.featured {
 }
 
 .item-info-estimate button {
-    cursor: pointer;
-    background-color: #fff;
-    width: 80%;
-    margin: 20px auto;
-    line-height: 26px;
-    padding: 0 10px;
-    border: 1px solid #ff7700;
-    border-radius: 13px;
-    font-size: 90%;
-    margin-bottom: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+	cursor: pointer;
+	background-color: #fff;
+	width: 80%;
+	margin: 20px auto;
+	line-height: 26px;
+	padding: 0 10px;
+	border: 1px solid #ff7700;
+	border-radius: 13px;
+	font-size: 90%;
+	margin-bottom: 4px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .item-info-estimate button:hover {
@@ -1075,7 +1070,6 @@ keyframes ripple { 100% {
 /*!
 * post form
 */
-
 .re-contain {
 	width: 700px;
 	line-height: 10px;
@@ -1356,7 +1350,8 @@ footer {
 }
 
 .account-submit {
-	width: 100%;
+	width: 30%;
+	cursor: pointer;
 	background-color: #ff7f00;
 	margin-top: 12px;
 	padding: 6px 8px;
@@ -1524,7 +1519,6 @@ footer {
 	margin-top: 15px;
 	margin-bottom: 0;
 }
-
 
 .container-contact100-form-btn {
 	width: 100%;
