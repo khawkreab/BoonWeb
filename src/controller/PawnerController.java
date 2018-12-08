@@ -1,5 +1,7 @@
 package controller;
 
+import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -10,12 +12,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import entity.OrderItem;
 import entity.Pawner;
 import entity.Pawnshop;
 import entity.PawnshopPost;
+import fileupload.FileUpload;
 import service.OrderItemService;
 import service.PawnerService;
 import service.PawnshopPostService;
@@ -87,10 +91,46 @@ public class PawnerController {
 	}
 
 	@RequestMapping("/updatePawner")
-	public String updatePawnshop(@ModelAttribute("pawner") Pawner pawner, BindingResult result,
+	public String updatePawnshop(@ModelAttribute("pawner") FileUpload fileUpload, BindingResult result,
 			HttpServletRequest request) {
+		long pawnerid = (long) request.getSession().getAttribute("id");
+		String change = request.getParameter("changepicture");
+		Pawner pawner = new Pawner();
+		pawner = pmService.findPawnerById(pawnerid);
 		try {
-			pawner.setPawnerState("pawner");
+			if (change.equals("change")) {
+				String saveDirectory = "L:/Project 3 1-2560/BoonWeb/WebContent/img/uploadimg/pawner/";
+				String fileName = "";
+				List<MultipartFile> Files = fileUpload.getFiles();
+				List<String> fileNames = new ArrayList<String>();
+				
+				if (Files != null && Files.size() > 0) {
+					System.out.println("picture != 0");
+					for (MultipartFile multipartFile : Files) {
+
+						fileName = multipartFile.getBytes().hashCode() + "."
+								+ multipartFile.getContentType().split("/")[1];
+						if (!"".equalsIgnoreCase(fileName)) {
+							// Handle file content - multipartFile.getInputStream()
+							multipartFile.transferTo(new File(saveDirectory + fileName));
+							fileNames.add(fileName);
+							pawner.setPawnerPicture(fileName);
+
+							System.out.println("multipartFile.transferTo => " + saveDirectory + fileName);
+
+						}
+					}
+				}
+			}
+			pawner.setPawnerFirstname(request.getParameter("pawnerFirstname"));
+			pawner.setPawnerLastname(request.getParameter("pawnerLastname"));
+			pawner.setPawnerPassword(request.getParameter("pawnerPassword"));
+			pawner.setPawnerPhone(request.getParameter("pawnerPhone"));
+			pawner.setPawnerAddress(request.getParameter("pawnerAddress"));
+			pawner.setPawnerProvince(request.getParameter("pawnerProvince"));
+			pawner.setPawnerZipcode(request.getParameter("pawnerZipcode"));
+			pawner.setPawnerCover(request.getParameter("pawnerCovere"));
+
 			pmService.update(pawner);
 
 			/* */
@@ -105,7 +145,7 @@ public class PawnerController {
 		} catch (Exception e) {
 			return "redirect:pawner-register-form.html#failed";
 		}
-		return "redirect:index.html?isLogin";
+		return "redirect:pawner-edit.html?saved";
 	}
 
 	@RequestMapping("/pawner-edit")

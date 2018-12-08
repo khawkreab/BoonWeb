@@ -29,9 +29,8 @@
 			</div>
 			<div class="profile-info">
 				<div class="profile-info-left">
-					<img id="blah" src="img/uploadimg/pawner/${pawner.picture}">
-					<label for="filed"  class="btn-custom btn-custom-sky" style="height: 30px">เปลี่ยนรูป</label>
-					<input id="filed" type='file' name="files" value="${pawner.picture}" onchange="readURL(this);" />
+					<img id="img" src="img/uploadimg/pawner/${pawner.pawnerPicture}">
+					<label for="filed" class="btn-custom btn-custom-sky" style="height: 30px">เปลี่ยนรูป</label>
 				</div>
 				<div class="profile-info-right">
 					<div class="profile-info-title">
@@ -43,35 +42,59 @@
 							<span>ภาพรวม</span>
 						</div>
 						<div class="profile-info-overview-list">
-							<form:form method="post" action="updatePawner.html" commandName="pawner">
-								<form:input type="hidden" path="pawnerId" />
-								<form:input type="hidden" path="pawnerEmail" />
-								<ul>
-									<li>ชื่อ</li>
-									<li>
-										<form:input type="text" path="pawnerFirstname" />
-										&nbsp;&nbsp;
-										<form:input type="text" path="pawnerLastname" />
-									</li>
-									<li>รหัสผ่าน</li>
-									<li>
-										<form:input type="text" path="pawnerPassword" />
-									</li>
-									<li>เบอร์โทร</li>
-									<li>
-										<form:input type="text" path="pawnerPhone" />
-									</li>
-									<li>จังหวัด</li>
-									<li>
-										<form:select id="province" path="pawnerProvince">
-											<option value="${pawner.pawnerProvince}">${pawner.pawnerProvince}</option>
-										</form:select>
-									</li>
-									<li>รหัสไปรษณืย์</li>
-									<li></li>
-								</ul>
-								<div class="d-flex">
-									<button class="ml-auto btn-custom btn-custom-defalt">บันทึก</button>
+							<form:form method="post" action="updatePawner.html" modelAttribute="pawner" enctype="multipart/form-data">
+								<input id="filed" type='file' name="files" onchange="readURL(this);" />
+								<input id="changepic" name="changepicture" type="hidden" value="">
+								<div id="showview">
+									<br>
+									<p>ชื่อ ${pawner.pawnerFirstname} &nbsp; ${pawner.pawnerLastname}</p>
+									<p>เบอร์โทร ${pawner.pawnerPhone}</p>
+									<p>จังหวัด ${pawner.pawnerProvince}</p>
+									<p>รหัสไปรษณีย์ ${pawner.pawnerZipcode}</p>
+									<p>ที่อยู่ ${pawner.pawnerAddress}</p>
+									<div class="d-flex">
+										<a id="editbtn" class="ml-auto btn-custom btn-custom-defalt" onclick="edit();">แก้ไข</a>
+										<button id="changepicbtn" class="ml-auto btn-custom btn-custom-defalt" onclick="edit();">บันทึก</button>
+										&nbsp;&nbsp;&nbsp;
+										<a id="cancelbtn" class="btn-custom btn-custom-sky" onclick="cancel();">ยกเลิก</a>
+									</div>
+								</div>
+								<div id="edit">
+									<ul>
+										<li>ชื่อ</li>
+										<li>
+											<input type="text" name="pawnerFirstname" value="${pawner.pawnerFirstname}" />
+											&nbsp;&nbsp; นามสกุล &nbsp;&nbsp;
+											<input type="text" name="pawnerLastname" value="${pawner.pawnerLastname}" />
+										</li>
+										<li>รหัสผ่าน</li>
+										<li>
+											<input type="password" name="pawnerPassword" value="${pawner.pawnerPassword}" />
+										</li>
+										<li>เบอร์โทร</li>
+										<li>
+											<input type="text" name="pawnerPhone" value="${pawner.pawnerPhone}" />
+										</li>
+										<li>จังหวัด</li>
+										<li>
+											<select id="province" name="pawnerProvince">
+												<option value="${pawner.pawnerProvince}">${pawner.pawnerProvince}</option>
+											</select>
+										</li>
+										<li>รหัสไปรษณืย์</li>
+										<li>
+											<input type="text" name="pawnerZipcode" value="${pawner.pawnerZipcode}" />
+										</li>
+										<li>ที่อยู่</li>
+										<li>
+											<textarea name="pawnerAddress">${pawner.pawnerAddress}</textarea>
+										</li>
+									</ul>
+									<div class="d-flex">
+										<button class="ml-auto btn-custom btn-custom-defalt">บันทึก</button>
+										&nbsp;&nbsp;&nbsp;
+										<a class="btn-custom btn-custom-sky" onclick="cancel();">ยกเลิก</a>
+									</div>
 								</div>
 							</form:form>
 						</div>
@@ -85,16 +108,32 @@
 	<script src="js/Province.js"></script>
 	<script type="text/javascript">
 	function readURL(input) {
+	    $('#changepic').val("change");
+	    $('#editbtn').css("display", "none")
+	    $('#changepicbtn, #cancelbtn').css("display", "block")
 	    if (input.files && input.files[0]) {
 		var reader = new FileReader();
 
 		reader.onload = function(e) {
-		    $('#blah').attr('src', e.target.result);
+		    $('#img').attr('src', e.target.result);
 		};
 
 		reader.readAsDataURL(input.files[0]);
 	    }
 	}
+
+	function edit() {
+	    $('#edit').css("display", "block")
+	    $('#showview').css("display", "none")
+	}
+
+	function cancel() {
+	    window.location.href = 'pawner-edit.html'
+	}
+
+	/* 	function cancelpic() {
+	 window.location.href = 'pawner-edit.html'
+	 } */
     </script>
 </body>
 </html>
