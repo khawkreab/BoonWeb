@@ -38,7 +38,7 @@
 								<div style="text-align: center; width: 45%;">
 									<h1 style="font-size: 24px; letter-spacing: -1px; color: #555;">ขยายขอบเขตธุรกิจของคุณกับการจำนำออนไลน์</h1>
 								</div>
-								<ul style="padding-left: 7px;list-style-type: none;">
+								<ul style="padding-left: 7px; list-style-type: none;">
 									<li><form:input type="text" class="input-regis"
 											placeholder="ชื่อโรงรับจำนำ" path="pawnshopName"
 											required="required" pattern="[a-zA-Zก-์]{1,30}"
@@ -61,17 +61,12 @@
 											path="pawnshopProvince">
 											<option>กรุณาเลือกจังหวัด</option>
 										</form:select></li>
-									<li><form:select id="amphur" class="input-regis"
-											path="pawnshopDistrict">
-											<option>กรุณาเลือกอำเภอ</option>
-										</form:select></li>
-									<li><form:select id="district" class="input-regis"
-											path="pawnshopParish">
-											<option>กรุณาเลือกตำบล</option>
-										</form:select></li>
-									<li><form:input id="postcode" type="text"
-											class="input-regis" placeholder="รหัสไปรษณีย์"
-											path="pawnshopPostcodes" /></li>
+
+									<li><form:input class="input-regis" path="pawnerZipcode" placeholder="รหัสไปรษณีย์" pattern="[0-9]{5}"
+										title="ตัวเลขเท่านั้น 0-9"/>
+									</li>
+									<li><form:textarea style="height: 90px;" type="text" class="input-regis"
+											placeholder="ที่อยู่อาศัย" path="pawnshopAddress" /></li>
 									<li>
 										<button id="clearval" type="submit" class="input-submit">ยืนยันการสร้างบัญ</button>
 									</li>
@@ -83,22 +78,9 @@
 			</div>
 		</div>
 	</form:form>
+	<!-- Bootstrap core JavaScript -->
 	<script src="vendor/jquery/jquery.min.js"></script>
-	<script type="text/javascript" src="province/AutoProvince.js"></script>
-	<script>
-		$('#clearval').click(function() {
-			$('option').removeAttr('value');
-		})
-
-		$('body').AutoProvince({
-			PROVINCE : '#province', // select div สำหรับรายชื่อจังหวัด
-			AMPHUR : '#amphur', // select div สำหรับรายชื่ออำเภอ
-			DISTRICT : '#district', // select div สำหรับรายชื่อตำบล
-			POSTCODE : '#postcode', // input field สำหรับรายชื่อรหัสไปรษณีย์
-			arrangeByName : false
-		// กำหนดให้เรียงตามตัวอักษร
-		});
-	</script>
+	<script src="js/Province.js"></script>
 </body>
 
 </html>
