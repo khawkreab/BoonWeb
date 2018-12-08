@@ -145,7 +145,7 @@
 							<!----- image ------>
 							<div class="timeline-img">
 								<img
-									src="img/uploadimge/pawnshopPost/${post.pawnshopPostId.pawnshopPostPicture }" />
+									src="img/uploadimg/pawnshopPost/${post.pawnshopPostId.pawnshopPostPicture }" />
 							</div>
 							<!----- detail ------>
 							<div>

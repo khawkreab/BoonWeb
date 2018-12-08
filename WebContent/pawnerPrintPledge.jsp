@@ -48,7 +48,7 @@
 				<span>รายละเอียดของจำนำ</span><i>${pledge.pawnerPostId.pawnerPostName}</i>
 				<div class="print-pledge-item-detail">
 					<div class="print-pledge-item-detail-img">
-						<img src="img/uploadimge/pawnerPost/${pledge.pawnerPostId.pawnerPostPicture}"/>
+						<img src="img/uploadimg/pawnerPost/${pledge.pawnerPostId.pawnerPostPicture}"/>
 					</div>
 					<div class="print-pledge-item-detail-list">
 						<ul class="row">

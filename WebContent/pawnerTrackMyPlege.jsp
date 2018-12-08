@@ -96,7 +96,7 @@
 						<!-- item -->
 						<div class="cd-timeline-detail">
 							<div class="cd-timeline-detail-img">
-								<img src="img/uploadimge/pawnerPost/${postprocess.pawnerPostPicture }">
+								<img src="img/uploadimg/pawnerPost/${postprocess.pawnerPostPicture}">
 							</div>
 							<div>
 								<h2>${postprocess.pawnerPostName }</h2>

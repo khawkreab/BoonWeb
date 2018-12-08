@@ -87,7 +87,7 @@
 					<div class="d-flex align-items-center">
 						<span class="p-2"> <img class="img-responsive"
 							style="width: 100px; height: 50px;"
-							src="img/uploadimge/pawnshopPost/${order.pawnshopPostId.pawnshopPostPicture }" />
+							src="img/uploadimg/pawnshopPost/${order.pawnshopPostId.pawnshopPostPicture }" />
 						</span> <span class="p-2">${order.pawnshopPostId.pawnshopPostName }</span>
 						<span class="p-2"> <i class="order-quality"> 1 ชิ้น </i>
 						</span> <span class="ml-auto"> <a

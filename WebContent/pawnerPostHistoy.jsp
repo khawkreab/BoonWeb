@@ -101,7 +101,7 @@
 					<div class="timeline-detail">
 						<!----- image ------>
 						<div class="timeline-img">
-							<img src="img/uploadimge/pawnerPost/${post.pawnerPostId.pawnerPostPicture }" />
+							<img src="img/uploadimg/pawnerPost/${post.pawnerPostId.pawnerPostPicture }" />
 						</div>
 						<!----- detail ------>
 						<div>

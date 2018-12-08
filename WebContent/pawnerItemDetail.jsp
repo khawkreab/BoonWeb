@@ -55,7 +55,7 @@
 						<div class="carousel-inner card-carousel-inner">
 							<c:forEach var="pic" items="${pictures}">
 								<div class="carousel-item <%=active2%>">
-									<img src="img/uploadimge/pawnshopPost/${pic.picture}">
+									<img src="img/uploadimg/pawnshopPost/${pic.picture}">
 								</div>
 								<%
 									dataslideto2++;

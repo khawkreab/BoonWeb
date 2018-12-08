@@ -90,7 +90,7 @@
 
 						html += "<div class='cart-item'>"
 						html += "<div class='d-flex align-items-center'>"
-						html += "<div class=''><img height='50px' src='img/uploadImge/"+this.list[index].pawnshopPostPicture+"'></div>"
+						html += "<div class=''><img height='50px' src='img/uploadimge/pawnshopPost/"+this.list[index].pawnshopPostPicture+"'></div>"
 						html += "<a href='post-item-detail.html?item="
 								+ this.list[index].pawnshopPostId
 								+ "'> <i class='mr-auto'>"
