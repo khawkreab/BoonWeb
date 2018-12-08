@@ -1,0 +1,77 @@
+<!-- 
+// page : profile
+// version : 1.0
+// task : --
+// edit by : khawkreab 
+ -->
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>
+	<%
+		if (session.getAttribute("userType") == "pawner") {
+	%> ${pawnshop.pawnshopName}
+	<%
+		} else {
+	%> ${pawner.pawnerFirstname} &nbsp; ${pawner.pawnerLastname}
+	<%
+		}
+	%>
+</title>
+<!-- import all css -->
+<jsp:include page="importCSS.jsp" />
+<!-- import profile css -->
+<link rel="stylesheet" href="css/profile.css">
+</head>
+<body>
+	<!-- Navigation -->
+	<jsp:include page="navbar.jsp" />
+	<!--  -->
+	<%
+		if (session.getAttribute("userType") == "pawner") {
+	%>
+	<%} else{ %>
+	<section style="padding-top: 0px;">
+		<div class="profile-edit">
+			<div class="profile-cover">
+				<img src="https://png.pngtree.com/thumb_back/fw800/back_pic/00/08/57/41562ad4a92b16a.jpg">
+			</div>
+			<div class="profile-info">
+				<div class="profile-info-left">
+					<img id="img" src="img/uploadimg/pawner/${pawner.pawnerPicture}">
+				</div>
+				<div class="profile-info-right">
+					<div class="profile-info-title">
+						<span>${pawner.pawnerFirstname} &nbsp; ${pawner.pawnerLastname}</span>
+						<i>${pawner.pawnerEmail}</i>
+					</div>
+					<div class="profile-info-overview">
+						<div class="profile-info-overview-title">
+							<span>ภาพรวม</span>
+						</div>
+						<div class="profile-info-overview-list">
+							<div id="showview">
+								<br>
+								<p>ชื่อ ${pawner.pawnerFirstname} &nbsp; ${pawner.pawnerLastname}</p>
+								<p>อีเมล ${pawner.pawnerEmail}</p>
+								<p>เบอร์โทร ${pawner.pawnerPhone}</p>
+								<p>จังหวัด ${pawner.pawnerProvince}</p>
+								<p>รหัสไปรษณีย์ ${pawner.pawnerZipcode}</p>
+								<p>ที่อยู่ ${pawner.pawnerAddress}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<%} %>
+	<script src="vendor/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="province/AutoProvince.js"></script>
+</body>
+</html>
