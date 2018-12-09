@@ -6,6 +6,8 @@
  --*/
 package controller;
 
+import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -16,11 +18,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import entity.PawnerPost;
 import entity.Pawnshop;
 import entity.Picture;
+import fileupload.FileUpload;
 import service.PawnerPostService;
 import service.PawnerService;
 import service.PawnshopService;
@@ -94,23 +98,54 @@ public class PawnshopController {
 	}
 
 	@RequestMapping("/updatePawnshop")
-	public String updatePawnshop(@ModelAttribute("pawnshop") Pawnshop pawnshop, BindingResult result,
+	public String updatePawnshop(@ModelAttribute("pawnshop") FileUpload fileUpload, BindingResult result,
 			HttpServletRequest request) {
+		long userid = (long) request.getSession().getAttribute("id");
+		String change = request.getParameter("changepicture");
+		Pawnshop pawnshop =  new Pawnshop();
+		pawnshop = pawnshopServ.findPawnshopById(userid);
 		try {
-			pawnshop.setPawnshopState("pawnshop");
+			if (change.equals("change")) {
+				String saveDirectory = "L:/Project 3 1-2560/BoonWeb/WebContent/img/uploadimg/pawnshop/";
+				String dir = request.getServletContext().getRealPath("/")+"img\\uploadimg\\pawnshop\\";
+				String fileName = "";
+				List<MultipartFile> Files = fileUpload.getFiles();
+				List<String> fileNames = new ArrayList<String>();
+				
+				if (Files != null && Files.size() > 0) {
+					System.out.println("picture != 0");
+					for (MultipartFile multipartFile : Files) {
+
+						fileName = multipartFile.getBytes().hashCode() + "."
+								+ multipartFile.getContentType().split("/")[1];
+						if (!"".equalsIgnoreCase(fileName)) {
+							// Handle file content - multipartFile.getInputStream()
+							multipartFile.transferTo(new File(saveDirectory + fileName));
+							//multipartFile.transferTo(new File(dir + fileName));
+							fileNames.add(fileName);
+							pawnshop.setPawnshopPicture(fileName);
+
+							System.out.println("multipartFile.transferTo => " + saveDirectory + fileName);
+
+						}
+					}
+				}
+			}
+			
+			pawnshop.setPawnshopName(request.getParameter("pawnshopName"));
+			pawnshop.setPawnshopPassword(request.getParameter("pawnshopPassword"));
+			pawnshop.setPawnshopTel(request.getParameter("pawnshopTel"));
+			pawnshop.setPawnshopAddress(request.getParameter("pawnshopAddress"));
+			pawnshop.setPawnshopProvince(request.getParameter("pawnshopProvince"));
+			pawnshop.setPawnshopZipcode(request.getParameter("pawnshopZipcode"));
+			//pawnshop.setPawnshopCover(request.getParameter("pawnshopCover"));
+			
 			pawnshopServ.update(pawnshop);
 
-			request.getSession().setAttribute("id", pawnshop.getPawnshopId());
-			request.getSession().setAttribute("isLogin", "yes");
-			request.getSession().setAttribute("userType", "pawnShop");
-			request.getSession().setAttribute("username", pawnshop.getPawnshopName());
-			request.getSession().setAttribute("email", pawnshop.getPawnshopEmail());
-			request.getSession().setAttribute("pawnshopState", pawnshop.getPawnshopState());
-
 		} catch (Exception e) {
-			return "redirect:pawnshop-register-form.html#failed";
+			return "redirect:pawnhop-edit-profile.html#failed";
 		}
-		return "redirect:index.html?isLogin";
+		return "redirect:pawnhop-edit-profile.html?failed";
 	}
 
 	// ********* ยังไม่มีหน้า ***********//
