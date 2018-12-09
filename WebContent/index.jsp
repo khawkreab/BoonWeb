@@ -33,7 +33,7 @@ body {
 </head>
 <body id="page-top">
 	<!-- Navigation -->
-	<jsp:include page="navbar.jsp" />
+	<jsp:include page="navbar.html" />
 	<!-- loading page -->
 	<jsp:include page="loadingpage.jsp" />
 	<%

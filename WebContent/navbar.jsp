@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!-- nabar -->
 <!-- ----------------------------login---------------------------------------- -->
 <%
@@ -10,13 +11,13 @@
 <!-- ----------------------------pawner login---------------------------------------- -->
 <div class="profile">
 	<div class="photo">
-		<img src="img/uploadimg/pawner/<%=session.getAttribute("pawnerPicture")%>" />
+		<img src="img/uploadimg/pawner/${pawner.pawnerPicture }" />
 	</div>
 	<div class="content">
 		<div class="text">
 			<!-- ----------------------------user name & email---------------------------------------- -->
-			<span><%=session.getAttribute("username")%></span>
-			<span><%=session.getAttribute("email")%></span>
+			<span>${pawner.pawnerFirstname } &nbsp; ${pawner.pawnerLastname}</span>
+			<span>${pawner.pawnerEmail }</span>
 		</div>
 		<div id="nav-custom-container">
 			<div id="nav-custom-overlay"></div>
@@ -29,27 +30,22 @@
 						</a>
 					</li>
 					<!-- ----------------------------if user has ban---------------------------------------- -->
-					<%
-						if (session.getAttribute("pawnerState").equals("Banned")) {
-					%>
-					<li class="menu-icon">
-						<a class="" id="banned">
-							<img src="img/ICONBOONYOUNG/Post.png" height="50px" width="50px">
-							<i>จำนำของ</i>
-						</a>
-					</li>
-					<%
-						} else {
-					%>
-					<li class="menu-icon">
-						<a class="nav-link" href="pawner-pledge.html">
-							<img src="img/ICONBOONYOUNG/Post.png" height="50px" width="50px">
-							<i>จำนำของ</i>
-						</a>
-					</li>
-					<%
-						}
-					%>
+					<c:if test="${pawner.pawnerState == 'Banned' }">
+						<li class="menu-icon">
+							<a class="" id="banned">
+								<img src="img/ICONBOONYOUNG/Post.png" height="50px" width="50px">
+								<i>จำนำของ</i>
+							</a>
+						</li>
+					</c:if>
+					<c:if test="${pawner.pawnerState != 'Banned' }">
+						<li class="menu-icon">
+							<a class="nav-link" href="pawner-pledge.html">
+								<img src="img/ICONBOONYOUNG/Post.png" height="50px" width="50px">
+								<i>จำนำของ</i>
+							</a>
+						</li>
+					</c:if>
 					<li class="menu-icon">
 						<a class="nav-link" href="pawner-off-pledge.html">
 							<img src="img/ICONBOONYOUNG/Menu.png" height="50px" width="50px">
@@ -111,13 +107,13 @@
 <!-- ----------------------------pawshop login---------------------------------------- -->
 <div class="profile">
 	<div class="photo">
-		<img src="img/uploadimg/pawnshop/<%=session.getAttribute("pawnshopPicture")%>" />
+		<img src="img/uploadimg/pawnshop/${pawnshop.pawnshopPicture }" />
 	</div>
 	<div class="content">
 		<div class="text">
 			<!-- ----------------------------user name & email---------------------------------------- -->
-			<span><%=session.getAttribute("username")%></span>
-			<span><%=session.getAttribute("email")%></span>
+			<span>${pawnshop.pawnshopName }</span>
+			<span>${pawnshop.pawnshopEmail }</span>
 		</div>
 		<div id="nav-custom-container">
 			<div id="nav-custom-overlay"></div>
@@ -199,7 +195,7 @@
 		</a>
 	</li>
 </ul>
- <script src="js/checkLogin.js"></script> 
+<script src="js/checkLogin.js"></script>
 <%
 	}
 %>
@@ -281,18 +277,22 @@
 %>
 <!-- check notification for pawnshop -->
 <script type="text/javascript">
-	var notifiPawnshopFollowEstimate = '<%= session.getAttribute("notifiPawnshopFollowEstimate")%>';
-	$(document).ready(function checknotification(){
-	if (notifiPawnshopFollowEstimate != "0") {
-		$("#notifi").css("display", "block");
-		$("#notifi-pawnshop-follow-estimate").css("display", "block");
-		console.log("notifiPawnshopFollowEstimate"
-				+ notifiPawnshopFollowEstimate)
-	} else {
-		console.log("else")
-		$("#notifi, #notifi-pawnshop-follow-estimate").css("display", "none");
-	}
-	})
+	var notifiPawnshopFollowEstimate = '<%= session.getAttribute("notifiPawnshopFollowEstimate")%>
+    ';
+    $(document).ready(
+	    function checknotification() {
+		if (notifiPawnshopFollowEstimate != "0") {
+		    $("#notifi").css("display", "block");
+		    $("#notifi-pawnshop-follow-estimate").css("display",
+			    "block");
+		    console.log("notifiPawnshopFollowEstimate"
+			    + notifiPawnshopFollowEstimate)
+		} else {
+		    console.log("else")
+		    $("#notifi, #notifi-pawnshop-follow-estimate").css(
+			    "display", "none");
+		}
+	    })
 </script>
 <%
 	}
