@@ -83,7 +83,7 @@
 					</c:if>
 					<div class="timeline-title">
 						<div class="mr-auto">
-							<span>เลขที่การจำนำ #</span> <i> ลงขายวันที่ <fmt:formatDate
+							<span>เลขที่การจำนำ ${post.pawnshopPostCode}</span> <i> ลงขายวันที่ <fmt:formatDate
 									pattern="dd MMM yyyy" value="${post.pawnshopPostDate}" />
 							</i>
 							<!----- for pawnshop ----->
