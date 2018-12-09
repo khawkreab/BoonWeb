@@ -112,9 +112,10 @@ public class PawnshopPostController {
 				pawnshopPost.setPawnshopPostSerial(request.getParameter("pawnshopPostSerial"));
 				pawnshopPost.setPawnshopPostSize(request.getParameter("pawnshopPostSize"));
 				pawnshopPost.setPawnshopPostTypeCamera(request.getParameter("pawnshopPostTypeCamera"));
-				pawnshopPost.setPawnshopPostWarranty(request.getParameter("pawnshopPostTypeCamera"));
+				pawnshopPost.setPawnshopPostWarranty(request.getParameter("pawnshopPostWarranty"));
 				pawnshopPost.setPawnshopPostWeigh(request.getParameter("pawnshopPostWeigh"));
 				pawnshopPost.setPawnshopPostPrice(request.getParameter("pawnshopPostPrice"));
+				pawnshopPost.setPawnshopPostRemote(request.getParameter("pawnshopPostRemote"));
 				pawnshopPost.setPawnshopPostQuality("1");
 				pawnshopPost.setPawnshopPostCode(generateRandomString());
 				post = pawnshopPostService.insert(pawnshopPost);

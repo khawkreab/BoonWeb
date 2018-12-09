@@ -122,8 +122,9 @@ public class PawnerPostController {
 				pawnerPost.setPawnerPostSerial(request.getParameter("pawnerPostSerial"));
 				pawnerPost.setPawnerPostSize(request.getParameter("pawnerPostSize"));
 				pawnerPost.setPawnerPostTypeCamera(request.getParameter("pawnerPostTypeCamera"));
-				pawnerPost.setPawnerPostWarranty(request.getParameter("pawnerPostTypeCamera"));
+				pawnerPost.setPawnerPostWarranty(request.getParameter("pawnerPostWarranty"));
 				pawnerPost.setPawnerPostWeigh(request.getParameter("pawnerPostWeigh"));
+				pawnerPost.setPanwePostRemote(request.getParameter("panwePostRemote"));
 				pawnerPost.setPawnerPostCode(generateRandomString());
 				post = pawnerPostService.insert(pawnerPost);
 				System.out.println("insert pawnerPost success!!!");
