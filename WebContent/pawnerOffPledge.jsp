@@ -21,8 +21,8 @@
 <jsp:include page="importCSS.jsp" />
 </head>
 <body id="page-top">
-	<!-- Navigation -->
-	<jsp:include page="navbar.jsp" />
+	<!-- Navigation bar -->
+	<jsp:include page="navbar.html" />
 	<!--banner-->
 	<div class="banner-top">
 		<div>

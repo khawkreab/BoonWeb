@@ -24,6 +24,8 @@
 </head>
 
 <body style="background-color: #f4f4f4; overflow: hidden;">
+	<!-- Navigation bar -->
+	<jsp:include page="navbar.html" />
 	<!-- ----------------- popup -------------------------------  -->
 	<!-- The Modal -->
 	<div id="checkbox" class="modal" style="z-index: 9999">
@@ -168,7 +170,6 @@
 	<!-- END: .modal -->
 
 	<!-- Navigation   -->
-	<jsp:include page="navbar.jsp" />
 	<script src="js/MultiStepFormPawnshop.js"></script>
 	<script type="text/javascript">
 		window.onload = function() {

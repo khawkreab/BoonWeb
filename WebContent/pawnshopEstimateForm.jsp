@@ -22,6 +22,8 @@
 %>
 </head>
 <body style="overflow: hidden;">
+	<!-- Navigation bar -->
+	<jsp:include page="navbar.html" />
 	<section class="card-section">
 		<div class="card-detail d-flex animated lightSpeedIn">
 			<!-- left -->
@@ -195,50 +197,6 @@
 		</div>
 		<jsp:include page="footer.jsp"></jsp:include>
 	</section>
-	<jsp:include page="navbar.jsp" />
-	<%-- 	<div class="container">
-		<div class="item-info-pic row">
-			<div class="col-md-1 item-info-thumb">
-
-				<ol class="">
-					<c:forEach var="pic" items="${pictures}">
-
-						<li data-target="#carouselExampleIndicators"
-							data-slide-to="<%=dataslideto%>" class="<%=active%>"><img
-							class="" src="images/imageUpload/${pic.picture}" alt=""></li>
-						<%
-							dataslideto++;
-								if (dataslideto > 0) {
-									active = "";
-								}
-						%>
-					</c:forEach>
-				</ol>
-			</div>
-			<div class="col-md-7 item-info-pic-list">
-
-				<div id="carouselExampleIndicators" class="carousel slide"
-					data-ride="carousel" data-interval="0">
-
-					<div class="carousel-inner" role="listbox">
-						<c:forEach var="pic" items="${pictures}">
-
-							<div class="carousel-item <%=active2%>">
-								<img class="d-block img-fluid"
-									src="images/imageUpload/${pic.picture}" alt="First slide">
-							</div>
-							<%
-								dataslideto2++;
-									if (dataslideto2 > 0) {
-										active2 = "";
-									}
-							%>
-						</c:forEach>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div> --%>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script type="text/javascript">

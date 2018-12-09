@@ -32,7 +32,7 @@ body {
 <link href="css/pawnerCard.css" rel="stylesheet">
 </head>
 <body id="page-top">
-	<!-- Navigation -->
+	<!-- Navigation bar -->
 	<jsp:include page="navbar.html" />
 	<!-- loading page -->
 	<jsp:include page="loadingpage.jsp" />

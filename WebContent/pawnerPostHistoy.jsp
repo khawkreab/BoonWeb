@@ -26,8 +26,8 @@
 <link rel="stylesheet" href="css/popupShowImage.css">
 </head>
 <body>
-	<!-- Navigation -->
-	<jsp:include page="navbar.jsp" />
+	<!-- Navigation bar -->
+	<jsp:include page="navbar.html" />
 	<!-- loading page -->
 	<jsp:include page="loadingpage.jsp" />
 	<!--banner-->

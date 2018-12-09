@@ -12,6 +12,8 @@
 <link rel="stylesheet" href="css/cartItem.css">
 </head>
 <body>
+	<!-- Navigation bar -->
+	<jsp:include page="navbar.html" />
 	<!--banner-->
 	<div class="banner-top">
 		<div>
@@ -54,121 +56,120 @@
 			</div>
 		</div>
 	</section>
-	<jsp:include page="navbar.jsp" />
 	<!-- cart script  -->
 	<script>
-		var cart = {}
-		var list = []
+	var cart = {}
+	var list = []
 
-		window.onLoad = this.check();
-		function check() {
-			var html
-			var totalPrice = 0;
+	window.onLoad = this.check();
+	function check() {
+	    var html
+	    var totalPrice = 0;
 
-			if (sessionStorage.getItem('carts')) {
-				list = JSON.parse(sessionStorage.getItem('carts'))
-				/* set cart size */
-				sessionStorage.setItem('pawnercartSize', list.length)
-				/* get cart size */
-				document.getElementById("cartSize").innerHTML = sessionStorage
-						.getItem('pawnercartSize')
-				console.log("check notifiPawnerFollowPlege => "
-						+ notifiPawnerFollowPlege)
-				if (list.length == null || list.length == 0) {
-					document.getElementById("cartSize").style.display = "none";
-					document.getElementById("cartitem").style.display = "none";
-					document.getElementById("notifi").style.display = "none";
-					document.getElementById("chechcarts").innerHTML = "ไม่มีรายการสินค้า"
-					if (notifiPawnerFollowPlege != "0") {
-						document.getElementById("notifi").style.display = "block";
-					}
+	    if (sessionStorage.getItem('carts')) {
+		list = JSON.parse(sessionStorage.getItem('carts'))
+		/* set cart size */
+		sessionStorage.setItem('pawnercartSize', list.length)
+		/* get cart size */
+		document.getElementById("cartSize").innerHTML = sessionStorage
+			.getItem('pawnercartSize')
+		console.log("check notifiPawnerFollowPlege => "
+			+ notifiPawnerFollowPlege)
+		if (list.length == null || list.length == 0) {
+		    document.getElementById("cartSize").style.display = "none";
+		    document.getElementById("cartitem").style.display = "none";
+		    document.getElementById("notifi").style.display = "none";
+		    document.getElementById("chechcarts").innerHTML = "ไม่มีรายการสินค้า"
+		    if (notifiPawnerFollowPlege != "0") {
+			document.getElementById("notifi").style.display = "block";
+		    }
 
-				} else {
-					/* ---- list item ------ */
-					html = ""
-					for ( var index in this.list) {
+		} else {
+		    /* ---- list item ------ */
+		    html = ""
+		    for ( var index in this.list) {
 
-						html += "<div class='cart-item'>"
-						html += "<div class='d-flex align-items-center'>"
-						html += "<div class=''><img height='50px' src='img/uploadimge/pawnshopPost/"+this.list[index].pawnshopPostPicture+"'></div>"
-						html += "<a href='post-item-detail.html?item="
-								+ this.list[index].pawnshopPostId
-								+ "'> <i class='mr-auto'>"
-								+ this.list[index].pawnshopPostName
-								+ "</i></a>"
-						html += "<i class='ml-auto small'>จำนวน  1  ชิ้น </i>"
-						html += "<i class='text-orange'>"
-								+ this.list[index].pawnshopPostPrice
-								+ " บาท   </i>"
-						html += "</div>"
-						html += "<line-x></line-x>"
-						html += "<div class='d-flex align-items-center'>"
-						html += "<i class='mr-auto small text-gray'>โรงรับจำนำ "
-								+ this.list[index].pawnshopName + "</i>"
-						html += "<i class='ml-auro'><a class='cursor fas fa-trash' onClick='deleteSelf("
-								+ index + ")'></a></i>"
-						html += "</div></div>"
+			html += "<div class='cart-item'>"
+			html += "<div class='d-flex align-items-center'>"
+			html += "<div class=''><img height='50px' src='img/uploadimge/pawnshopPost/"+this.list[index].pawnshopPostPicture+"'></div>"
+			html += "<a href='post-item-detail.html?item="
+				+ this.list[index].pawnshopPostId
+				+ "'> <i class='mr-auto'>"
+				+ this.list[index].pawnshopPostName
+				+ "</i></a>"
+			html += "<i class='ml-auto small'>จำนวน  1  ชิ้น </i>"
+			html += "<i class='text-orange'>"
+				+ this.list[index].pawnshopPostPrice
+				+ " บาท   </i>"
+			html += "</div>"
+			html += "<line-x></line-x>"
+			html += "<div class='d-flex align-items-center'>"
+			html += "<i class='mr-auto small text-gray'>โรงรับจำนำ "
+				+ this.list[index].pawnshopName + "</i>"
+			html += "<i class='ml-auro'><a class='cursor fas fa-trash' onClick='deleteSelf("
+				+ index + ")'></a></i>"
+			html += "</div></div>"
 
-						/* ---- end list item ------ */
-						/* ---- process total price ------ */
-						totalPrice += parseFloat(this.list[index].pawnshopPostPrice
-								.replace(/[^0-9.-]+/g, ""))
-					}
-					/* ---- show total price ------ */
-					document.getElementById("num").innerHTML = list.length
-					document.getElementById("totalPrice").innerHTML = parseFloat(
-							totalPrice).toLocaleString('en');
-				}
-			} else {
-				/* ---- no list item ------ */
-				document.getElementById("cartSize").style.display = "none";
-				document.getElementById("cartitem").style.display = "none";
-				document.getElementById("chechcarts").innerHTML = "ไม่มีรายการสินค้า"
-			}
-			document.getElementById("list").innerHTML = html
+			/* ---- end list item ------ */
+			/* ---- process total price ------ */
+			totalPrice += parseFloat(this.list[index].pawnshopPostPrice
+				.replace(/[^0-9.-]+/g, ""))
+		    }
+		    /* ---- show total price ------ */
+		    document.getElementById("num").innerHTML = list.length
+		    document.getElementById("totalPrice").innerHTML = parseFloat(
+			    totalPrice).toLocaleString('en');
 		}
+	    } else {
+		/* ---- no list item ------ */
+		document.getElementById("cartSize").style.display = "none";
+		document.getElementById("cartitem").style.display = "none";
+		document.getElementById("chechcarts").innerHTML = "ไม่มีรายการสินค้า"
+	    }
+	    document.getElementById("list").innerHTML = html
+	}
 
-		function deleteSelf(index) {
-			this.list.splice(index, 1)
-			sessionStorage.setItem('carts', JSON.stringify(this.list))
-			this.check();
-		}
+	function deleteSelf(index) {
+	    this.list.splice(index, 1)
+	    sessionStorage.setItem('carts', JSON.stringify(this.list))
+	    this.check();
+	}
 
-		function clearCart() {
-			console.log('clear')
-			sessionStorage.removeItem('carts')
-			sessionStorage.removeItem('pawnercartSize')
-			this.list = []
-			this.check();
-		}
+	function clearCart() {
+	    console.log('clear')
+	    sessionStorage.removeItem('carts')
+	    sessionStorage.removeItem('pawnercartSize')
+	    this.list = []
+	    this.check();
+	}
 
-		function comfirmOrder() {
+	function comfirmOrder() {
 
-			var URL = 'http://localhost:8080/BoonWeb/saveOrder.html'
+	    var URL = 'http://localhost:8080/BoonWeb/saveOrder.html'
 
-			var method = 'POST'
-			var cart = sessionStorage.getItem('carts')
+	    var method = 'POST'
+	    var cart = sessionStorage.getItem('carts')
 
-			var shouldBeAsync = true
-			var request = new XMLHttpRequest()
+	    var shouldBeAsync = true
+	    var request = new XMLHttpRequest()
 
-			request.onload = function() {
-				// You can get all kinds of information about the HTTP response.
-				var status = request.status // HTTP response status, e.g., 200 for "200 OK"
-				var data = request.responseText // Returned data, e.g., an HTML document.
-				console.log(status, data)
-			}
+	    request.onload = function() {
+		// You can get all kinds of information about the HTTP response.
+		var status = request.status // HTTP response status, e.g., 200 for "200 OK"
+		var data = request.responseText // Returned data, e.g., an HTML document.
+		console.log(status, data)
+	    }
 
-			request.open(method, URL, shouldBeAsync)
-			request.setRequestHeader("Content-Type",
-					"application/json;charset=UTF-8")
-			request.send(cart)
+	    request.open(method, URL, shouldBeAsync)
+	    request.setRequestHeader("Content-Type",
+		    "application/json;charset=UTF-8")
+	    request.send(cart)
 
-			//clear cart
-			this.clearCart()
-			location.href = "http://localhost:8080/BoonWeb/pawner-order.html"
+	    //clear cart
+	    this.clearCart()
+	    location.href = "http://localhost:8080/BoonWeb/pawner-order.html"
 
-		}
-	</script>
+	}
+    </script>
 </body>
 </html>

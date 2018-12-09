@@ -25,8 +25,8 @@
 <link rel="stylesheet" href="css/sorting.css">
 </head>
 <body class="bg-glay">
-	<!-- Navigation -->
-	<jsp:include page="navbar.jsp" />
+	<!-- Navigation bar -->
+	<jsp:include page="navbar.html" />
 	<!-- loading page -->
 	<div class="loadpage" id="loadpage">
 		<div class='loading'>

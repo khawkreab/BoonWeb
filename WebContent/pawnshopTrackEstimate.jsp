@@ -28,8 +28,8 @@
 
 </head>
 <body>
-	<!-- Navigation -->
-	<jsp:include page="navbar.jsp" />
+	<!-- Navigation bar -->
+	<jsp:include page="navbar.html" />
 	<!-- loading page -->
 	<div class="loadpage" id="loadpage">
 		<div class='loading'>

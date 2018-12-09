@@ -22,20 +22,10 @@
 <link rel="stylesheet" href="css/loadingPage.css">
 <link rel="stylesheet" href="css/profileCard.css">
 <link rel="stylesheet" href="css/sorting.css">
-<style>
-.popup {
-	width: 100%;
-	height: 100%;
-	display: none;
-	position: fixed;
-	top: 0px;
-	left: 0px;
-	background: rgba(0, 0, 0, 0.75);
-}
-</style>
 </head>
 <body style="background-color: #eee; overflow: hidden;">
-	<jsp:include page="navbar.jsp" />
+	<!-- Navigation bar -->
+	<jsp:include page="navbar.html" />
 	<!-- loading page -->
 	<jsp:include page="loadingpage.jsp" />
 	<!--banner-->
@@ -103,47 +93,47 @@
 								<ul>
 									<!-- Watch,Electronic -->
 									<c:if test="${postprocess.pawnerPostModel != null}">
-										<li >  รุ่น : ${postprocess.pawnerPostModel}         </li> 
-										<li >หมายเลขประจำเครื่อง : ${postprocess.pawnerPostSerial}</li>
-										<li >ปีที่ซื้อสินค้า : ${postprocess.pawnerPostPurchase }</li>
+										<li>รุ่น : ${postprocess.pawnerPostModel}</li>
+										<li>หมายเลขประจำเครื่อง : ${postprocess.pawnerPostSerial}</li>
+										<li>ปีที่ซื้อสินค้า : ${postprocess.pawnerPostPurchase }</li>
 									</c:if>
 									<c:if test="${postprocess.pawnerPostProduction != null}">
-										<li >ปีที่ผลิตสินค้า : ${postprocess.pawnerPostProduction}</li>
+										<li>ปีที่ผลิตสินค้า : ${postprocess.pawnerPostProduction}</li>
 									</c:if>
 									<!-- Gold -->
 									<c:if test="${postprocess.pawnerPostPure != null}">
-										<li >ความบริสุทธ์ : ${postprocess.pawnerPostPure  }</li>
-										<li >น้ำหนัก : ${postprocess.pawnerPostWeigh }</li>
-										<li >ชนิดหรือรูปแบบของทองคำ : ${postprocess.pawnerPostCategory }</li>
+										<li>ความบริสุทธ์ : ${postprocess.pawnerPostPure  }</li>
+										<li>น้ำหนัก : ${postprocess.pawnerPostWeigh }</li>
+										<li>ชนิดหรือรูปแบบของทองคำ : ${postprocess.pawnerPostCategory }</li>
 									</c:if>
 									<!-- Electronic tv com telephone -->
 									<c:if test="${postprocess.pawnerPostSize != null}">
-										<li >ขนาดหน้าจอ : ${postprocess.pawnerPostSize }</li>
+										<li>ขนาดหน้าจอ : ${postprocess.pawnerPostSize }</li>
 									</c:if>
 									<!-- Electronic camera com telephone -->
 									<c:if test="${postprocess.pawnerPostBattery != null}">
-										<li >
+										<li>
 											<span class="fas fa-check" aria-hidden="true"> </span>
 											Battery
 										</li>
 									</c:if>
 									<!-- Electronic com telephone -->
 									<c:if test="${postprocess.pawnerPostHarddisk != null}">
-										<li >Harddisk : ${ postprocess.pawnerPostHarddisk }</li>
+										<li>Harddisk : ${ postprocess.pawnerPostHarddisk }</li>
 									</c:if>
 									<!-- Electronic com-->
 									<c:if test="${postprocess.pawnerPostRam != null}">
-										<li >Ram : ${postprocess.pawnerPostRam }</li>
+										<li>Ram : ${postprocess.pawnerPostRam }</li>
 									</c:if>
 									<!-- Watch -->
 									<c:if test="${postprocess.pawnerPostCase != null}">
-										<li >ชนิดของหน้าปัด : ${postprocess.pawnerPostCase }</li>
-										<li >ชนิดของสายรัดข้อมือ : ${postprocess.pawnerPostBracelet }</li>
+										<li>ชนิดของหน้าปัด : ${postprocess.pawnerPostCase }</li>
+										<li>ชนิดของสายรัดข้อมือ : ${postprocess.pawnerPostBracelet }</li>
 										<c:if test="${postprocess.pawnerPostDiamond != null}">
-											<li >เพรช : ${postprocess.pawnerPostDiamond }</li>
+											<li>เพรช : ${postprocess.pawnerPostDiamond }</li>
 										</c:if>
 										<c:if test="${postprocess.pawnerPostPackage != null}">
-											<li >
+											<li>
 												<span class="fas fa-check" aria-hidden="true"> </span>
 												กล้องบรรจุสินค้า
 											</li>
@@ -151,14 +141,14 @@
 									</c:if>
 									<!-- Electronic tv -->
 									<c:if test="${postprocess.panwePostRemote != null}">
-										<li >
+										<li>
 											<span class="fas fa-check" aria-hidden="true"> </span>
 											Remote
 										</li>
 									</c:if>
 									<!-- Watch,Electronic -->
 									<c:if test="${postprocess.pawnerPostModel != null}">
-										<li >
+										<li>
 											<span class="fas fa-check" aria-hidden="true"> </span>
 											การประกันสินค้า
 										</li>

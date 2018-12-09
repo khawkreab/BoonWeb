@@ -21,7 +21,8 @@
 <jsp:include page="importCSS.jsp" />
 </head>
 <body>
-	<jsp:include page="navbar.jsp" />
+	<!-- Navigation bar -->
+	<jsp:include page="navbar.html" />
 	<!-- -------------------------------------------------------------------------- -->
 	<section>
 	<div class="container">

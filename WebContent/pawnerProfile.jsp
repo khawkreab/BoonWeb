@@ -19,8 +19,8 @@
 <link rel="stylesheet" href="css/profile.css">
 </head>
 <body>
-	<!-- Navigation -->
-	<jsp:include page="navbar.jsp" />
+	<!-- Navigation bar -->
+	<jsp:include page="navbar.html" />
 	<!--  -->
 	<section style="padding-top: 0px;">
 		<div class="profile-edit">

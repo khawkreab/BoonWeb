@@ -29,8 +29,8 @@
 <link rel="stylesheet" href="css/profile.css">
 </head>
 <body>
-	<!-- Navigation -->
-	<jsp:include page="navbar.jsp" />
+	<!-- Navigation bar -->
+	<jsp:include page="navbar.html" />
 	<!--  -->
 	<%
 		if (session.getAttribute("userType") == "pawner") {

@@ -17,7 +17,8 @@
 <link rel="stylesheet" href="css/sorting.css">
 </head>
 <body style="overflow: hidden; background-color: #eee;">
-	<jsp:include page="navbar.jsp" />
+	<!-- Navigation bar -->
+	<jsp:include page="navbar.html" />
 	<!-- loading page -->
 	<div class="loadpage" id="loadpage">
 		<div class='loading'>

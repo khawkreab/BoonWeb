@@ -21,8 +21,8 @@
 <link rel="stylesheet" href="css/checkBox.css">
 </head>
 <body style="background-color: #f4f4f4; overflow: hidden;">
-	<!-- nav bar -->
-	<jsp:include page="navbar.jsp" />
+	<!-- Navigation bar -->
+	<jsp:include page="navbar.html" />
 	<!-- loading page -->
 	<jsp:include page="loadingpage.jsp" />
 	<!-- ----------------- popup -------------------------------  -->

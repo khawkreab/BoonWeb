@@ -15,6 +15,9 @@
 %>
 </head>
 <body>
+	<!-- Navigation bar -->
+	<jsp:include page="navbar.html" />
+	<!-- banner -->
 	<div class="banner-top">
 		<h1>รายละเอียดสินค้า</h1>
 		<em></em>
@@ -266,7 +269,6 @@
 		</div>
 	</div>
 	<!-- -------------------------------------------------------------------------------------------------- -->
-	<jsp:include page="navbar.jsp" />
 	<!-- cart script -->
 	<script type="text/javascript">
 	var cart = {}
