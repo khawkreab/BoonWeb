@@ -4,8 +4,7 @@
 // task : pawner approve
 // edit by : khawkreab
  -->
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page import="java.util.Date"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
@@ -13,8 +12,7 @@
 <html lang="th">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="">
 <meta name="author" content="">
 <title></title>
@@ -39,19 +37,24 @@
 	</div>
 	<div id="filterBtnContainer">
 		<button class="filter-btn active" onclick="filterSelection('all')">
-			ทั้งหมด <i class="fas fa-th-list"> </i>
+			ทั้งหมด
+			<i class="fas fa-th-list"> </i>
 		</button>
 		<button class="filter-btn" onclick="filterSelection('waiting')">
-			รอการประเมิน <i class="fas fa-hourglass-half"></i>
+			รอการประเมิน
+			<i class="fas fa-hourglass-half"></i>
 		</button>
 		<button class="filter-btn" onclick="filterSelection('process')">
-			รอการยืนยัน <i class="fas fa-handshake"></i>
+			รอการยืนยัน
+			<i class="fas fa-handshake"></i>
 		</button>
 		<button class="filter-btn" onclick="filterSelection('approve')">
-			ปริ้นใบจำนำ <i class="fas fa-print"></i>
+			ปริ้นใบจำนำ
+			<i class="fas fa-print"></i>
 		</button>
 		<button class="filter-btn" onclick="filterSelection('delete')">
-			ยกเลิกการจำนำ<i class="fas fa-trash-alt"></i>
+			ยกเลิกการจำนำ
+			<i class="fas fa-trash-alt"></i>
 		</button>
 	</div>
 	<!-- not have item -->
@@ -59,11 +62,8 @@
 	<!-- sort status all -->
 	<section id="cd-timeline" id="sorting" class="cd-container">
 		<c:forEach items="${pawnerPostsProcess}" var="postprocess">
-			<c:if
-				test="${postprocess.pawnerPostStatus == 'process' || postprocess.pawnerPostStatus == 'waiting' || postprocess.pawnerPostStatus == 'approve' || postprocess.pawnerPostStatus == 'delete'}">
-				<div
-					class="cd-timeline-block filter-column ${postprocess.pawnerPostStatus}"
-					id="item${postprocess.pawnerPostId}">
+			<c:if test="${postprocess.pawnerPostStatus == 'process' || postprocess.pawnerPostStatus == 'waiting' || postprocess.pawnerPostStatus == 'approve' || postprocess.pawnerPostStatus == 'delete'}">
+				<div class="cd-timeline-block filter-column ${postprocess.pawnerPostStatus}" id="item${postprocess.pawnerPostId}">
 					<!-------- icon -------->
 					<c:if test="${postprocess.pawnerPostStatus == 'waiting'}">
 						<div class="cd-timeline-img cd-wait">
@@ -88,14 +88,14 @@
 					<!--------- end icon --------->
 					<div class="cd-timeline-content">
 						<!-- date -->
-						<span class="cd-date"> <fmt:setLocale value="th-TH" /> <fmt:formatDate
-								pattern="dd MMM yyyy" value="${postprocess.pawnerPostDate }" />
+						<span class="cd-date">
+							<fmt:setLocale value="th-TH" />
+							<fmt:formatDate pattern="dd MMM yyyy" value="${postprocess.pawnerPostDate }" />
 						</span>
 						<!-- item -->
 						<div class="cd-timeline-detail">
 							<div class="cd-timeline-detail-img">
-								<img
-									src="img/uploadimg/pawnerPost/${postprocess.pawnerPostPicture}">
+								<img src="img/uploadimg/pawnerPost/${postprocess.pawnerPostPicture}">
 							</div>
 							<div>
 								<div class="d-flex">
@@ -104,10 +104,8 @@
 									<c:if test="${postprocess.pawnerPostStatus == 'waiting'}">
 										<div class="ml-auto">
 											<form action="pawnerPost-delete.html" method="post">
-												<input type="hidden" name="pawnerPostId"
-													value="${postprocess.pawnerPostId}">
-												<button class="btn-custom btn-custom-defalt small"
-													type="submit">ยกเลิกการจำนำ</button>
+												<input type="hidden" name="pawnerPostId" value="${postprocess.pawnerPostId}">
+												<button class="btn-custom btn-custom-defalt small" type="submit">ยกเลิกการจำนำ</button>
 											</form>
 										</div>
 									</c:if>
@@ -117,7 +115,6 @@
 										</h2>
 									</c:if>
 								</div>
-
 								<ul>
 									<!-- Watch,Electronic -->
 									<c:if test="${postprocess.pawnerPostModel != null}">
@@ -132,8 +129,7 @@
 									<c:if test="${postprocess.pawnerPostPure != null}">
 										<li>ความบริสุทธ์ : ${postprocess.pawnerPostPure  }</li>
 										<li>น้ำหนัก : ${postprocess.pawnerPostWeigh }</li>
-										<li>ชนิดหรือรูปแบบของทองคำ :
-											${postprocess.pawnerPostCategory }</li>
+										<li>ชนิดหรือรูปแบบของทองคำ : ${postprocess.pawnerPostCategory }</li>
 									</c:if>
 									<!-- Electronic tv com telephone -->
 									<c:if test="${postprocess.pawnerPostSize != null}">
@@ -141,8 +137,10 @@
 									</c:if>
 									<!-- Electronic camera com telephone -->
 									<c:if test="${postprocess.pawnerPostBattery != null}">
-										<li><span class="fas fa-check" aria-hidden="true">
-										</span> Battery</li>
+										<li>
+											<span class="fas fa-check" aria-hidden="true"> </span>
+											Battery
+										</li>
 									</c:if>
 									<!-- Electronic com telephone -->
 									<c:if test="${postprocess.pawnerPostHarddisk != null}">
@@ -155,29 +153,33 @@
 									<!-- Watch -->
 									<c:if test="${postprocess.pawnerPostCase != null}">
 										<li>ชนิดของหน้าปัด : ${postprocess.pawnerPostCase }</li>
-										<li>ชนิดของสายรัดข้อมือ :
-											${postprocess.pawnerPostBracelet }</li>
+										<li>ชนิดของสายรัดข้อมือ : ${postprocess.pawnerPostBracelet }</li>
 										<c:if test="${postprocess.pawnerPostDiamond != null}">
 											<li>เพรช : ${postprocess.pawnerPostDiamond }</li>
 										</c:if>
 										<c:if test="${postprocess.pawnerPostPackage != null}">
-											<li><span class="fas fa-check" aria-hidden="true">
-											</span> กล้องบรรจุสินค้า</li>
+											<li>
+												<span class="fas fa-check" aria-hidden="true"> </span>
+												กล้องบรรจุสินค้า
+											</li>
 										</c:if>
 									</c:if>
 									<!-- Electronic tv -->
 									<c:if test="${postprocess.panwePostRemote != null}">
-										<li><span class="fas fa-check" aria-hidden="true">
-										</span> Remote</li>
+										<li>
+											<span class="fas fa-check" aria-hidden="true"> </span>
+											Remote
+										</li>
 									</c:if>
 									<!-- Watch,Electronic -->
 									<c:if test="${postprocess.pawnerPostModel != null}">
-										<li><span class="fas fa-check" aria-hidden="true">
-										</span> การประกันสินค้า</li>
+										<li>
+											<span class="fas fa-check" aria-hidden="true"> </span>
+											การประกันสินค้า
+										</li>
 									</c:if>
 								</ul>
-								<c:if
-									test="${postprocess.pawnerPostDescription != null || postprocess.pawnerPostDescription != ''}">
+								<c:if test="${postprocess.pawnerPostDescription != null || postprocess.pawnerPostDescription != ''}">
 									<i class="quick small">เพิ่มเติม</i>
 									<span class="quick_desc">${postprocess.pawnerPostDescription }</span>
 								</c:if>
@@ -195,34 +197,19 @@
 								</div>
 								<ul style="list-style: none;">
 									<c:forEach items="${estimatesList}" var="estimate">
-										<c:if
-											test="${estimate.pawnerPostId.pawnerPostId == postprocess.pawnerPostId }">
+										<c:if test="${estimate.pawnerPostId.pawnerPostId == postprocess.pawnerPostId }">
 											<li style="margin-bottom: 12px;">
 												<div class="row d-flex">
 													<div class="col-md-4">
-														<div class="profile-card-head is-collapsed">
-															<div class="card-inner js-expander">&nbsp;&nbsp;
-																${estimate.pawnshopId.pawnshopName}</div>
-															<div class="profile-card">
-																<div class="profile-card-circle">
-																	<img src="img/logos/logo.png">
-																</div>
-																<span>${estimate.pawnshopId.pawnshopName}</span> <i>${estimate.pawnshopId.pawnshopProvince}</i>
-																<i>${estimate.pawnshopId.pawnshopTel}</i> <span
-																	class="closed">&times;</span>
-															</div>
-														</div>
+														<a href="profile.html?usercode=${estimate.pawnshopId.pawnshopUsercode}">${estimate.pawnshopId.pawnshopName}</a>
 													</div>
 													<div class="ml-auto col-md-2">${estimate.estimatePriceMin}</div>
 													<div class="col-md-2">${estimate.estimatePriceMax}</div>
 													<div class="col-md-2">
 														<form action="pawner-approve.html" method="post">
-															<input type="hidden" name="estimateId"
-																value="${estimate.estimateId}"> <input
-																type="hidden" name="pawnerPostId"
-																value="${estimate.pawnerPostId.pawnerPostId}">
-															<button class="btn-custom btn-custom-defalt small"
-																type="submit">รับข้อเสนอ</button>
+															<input type="hidden" name="estimateId" value="${estimate.estimateId}">
+															<input type="hidden" name="pawnerPostId" value="${estimate.pawnerPostId.pawnerPostId}">
+															<button class="btn-custom btn-custom-defalt small" type="submit">รับข้อเสนอ</button>
 														</form>
 													</div>
 												</div>
@@ -237,37 +224,22 @@
 							<line-x></line-x>
 							<div class="history-show-estimate">
 								<c:forEach items="${estimatesApprove}" var="estimate">
-									<c:if
-										test="${estimate.pawnerPostId.pawnerPostId == postprocess.pawnerPostId }">
+									<c:if test="${estimate.pawnerPostId.pawnerPostId == postprocess.pawnerPostId }">
 										<div class="row d-flex">
 											<div class="col-md-5 d-inline-flex">
-												โรงรับจำนำ
-												<!-- profile card -->
-												<div class="profile-card-head is-collapsed">
-													<div class="card-inner js-expander">&nbsp;&nbsp;
-														${estimate.pawnshopId.pawnshopName}</div>
-													<div class="profile-card">
-														<div class="profile-card-circle">
-															<img src="img/logos/logo.png">
-														</div>
-														<span>${estimate.pawnshopId.pawnshopName}</span> <i>${estimate.pawnshopId.pawnshopProvince}</i>
-														<i>${estimate.pawnshopId.pawnshopTel}</i> <span
-															class="closed">&times;</span>
-													</div>
-												</div>
+												โรงรับจำนำ &nbsp;
+												<a href="profile.html?usercode=${estimate.pawnshopId.pawnshopUsercode}">${estimate.pawnshopId.pawnshopName}</a>
 											</div>
 											<div class="col-md-4 ml-auto">
-												<i> เสนอราคาไว้ที่ <span
-													style="color: #ff3300; font-weight: bold;">${estimate.estimatePriceMin}-${estimate.estimatePriceMax}
-														บาท</span>
+												<i>
+													เสนอราคาไว้ที่
+													<span style="color: #ff3300; font-weight: bold;">${estimate.estimatePriceMin}-${estimate.estimatePriceMax} บาท</span>
 												</i>
 											</div>
 											<div class="col-md-2">
-												<a href="#"
-													onClick="select(${estimate.estimateId}); return false;"
-													class="btn-custom btn-custom-sky small"> <i
-													class="fas fa-print" style="margin: auto;"></i> <span
-													style="margin-left: 5px;">พิมพ์ใบจำนำ</span>
+												<a href="#" onClick="select(${estimate.estimateId}); return false;" class="btn-custom btn-custom-sky small">
+													<i class="fas fa-print" style="margin: auto;"></i>
+													<span style="margin-left: 5px;">พิมพ์ใบจำนำ</span>
 												</a>
 											</div>
 										</div>

@@ -49,7 +49,7 @@
 						<div class="carousel-inner card-carousel-inner">
 							<c:forEach var="pic" items="${pictures}">
 								<div class="carousel-item <%=active2%>">
-									<img src="img/uploadimge/pawnerPost/${pic.picture}">
+									<img src="img/uploadimg/pawnerPost/${pic.picture}">
 								</div>
 								<%
 									dataslideto2++;
@@ -67,8 +67,7 @@
 							<span class="carousel-control-next-icon"></span>
 						</a>
 					</div>
-					<!-- 	<img class="left"
-						src="https://cdn2.hubspot.net/hubfs/322787/Mychefcom/images/BLOG/Header-Blog/photo-culinaire-pexels.jpg" /> -->
+				
 				</div>
 				<!-- end show image -->
 				<!-- ---------------------- ประเมิน ---------------------  -->
@@ -184,7 +183,7 @@
 					<div class="card-detail-separator"></div>
 					<span>
 						<i class="fas fa-user-circle"> </i>
-						${pawnerPost.pawnerId.pawnerFirstname} ${pawnerPost.pawnerId.pawnerLastname}
+						<a href="profile.html?usercode=${pawnerPost.pawnerId.pawnerUsercode}">${pawnerPost.pawnerId.pawnerFirstname} ${pawnerPost.pawnerId.pawnerLastname}</a>
 					</span>
 					<span class="item-info-location">
 						<i class="fas fa-phone"></i>

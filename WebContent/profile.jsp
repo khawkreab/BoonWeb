@@ -35,14 +35,48 @@
 	<%
 		if (session.getAttribute("userType") == "pawner") {
 	%>
+	<section style="padding-top: 0px;">
+		<div class="profile-edit">
+			<div class="profile-cover">
+				<img src="img/uploadimg/pawnshopcover/cover.jpg">
+			</div>
+			<div class="profile-info">
+				<div class="profile-info-left profile-info-left-b2">
+					<img id="img" src="img/uploadimg/pawnshop/${pawnshop.pawnshopPicture}">
+				</div>
+				<div class="profile-info-right">
+					<div class="profile-info-title">
+						<span>${pawnshop.pawnshopName} </span>
+						<i>${pawnshop.pawnshopEmail}</i>
+					</div>
+					<div class="profile-info-overview">
+						<div class="profile-info-overview-title">
+							<span>ภาพรวม</span>
+						</div>
+						<div class="profile-info-overview-list">
+							<div id="showview">
+								<br>
+								<p>โรงรับจำนำ  ${pawnshop.pawnshopName} </p>
+								<p>อีเมล ${pawnshop.pawnshopEmail}</p>
+								<p>เบอร์โทร ${pawnshop.pawnshopTel}</p>
+								<p>จังหวัด ${pawnshop.pawnshopProvince}</p>
+								<p>รหัสไปรษณีย์ ${pawnshop.pawnshopZipcode}</p>
+								<p>ที่อยู่ ${pawnshop.pawnshopAddress}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 	<%} else{ %>
 	<section style="padding-top: 0px;">
 		<div class="profile-edit">
 			<div class="profile-cover">
-				<img src="https://png.pngtree.com/thumb_back/fw800/back_pic/00/08/57/41562ad4a92b16a.jpg">
+				<img src="img/uploadimg/pawnercover/cover.jpg">
 			</div>
 			<div class="profile-info">
-				<div class="profile-info-left">
+				<div class="profile-info-left profile-info-left-b1">
 					<img id="img" src="img/uploadimg/pawner/${pawner.pawnerPicture}">
 				</div>
 				<div class="profile-info-right">

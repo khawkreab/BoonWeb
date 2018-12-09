@@ -77,7 +77,7 @@
 					<div class="cta d-flex">
 						<div class="price mr-auto p-2">
 							<div class="title">${post.pawnerPostName}</div>
-							<div class="desc">${post.pawnerId.pawnerProvince }</div>
+							<div class="desc">จังหวัด  ${post.pawnerId.pawnerProvince }</div>
 						</div>
 						<div class="p-2 ly"></div>
 						<a href="pawnshop-estimate-form.html?item=${post.pawnerPostId}">
