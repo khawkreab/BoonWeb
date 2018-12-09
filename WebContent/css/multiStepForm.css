@@ -160,6 +160,13 @@ input[type=checkbox] {
 	width: 300px;
 	height: 200px;
 	text-align: center;
+	cursor: pointer;
+	transition: all 1s;
+}
+
+#choosetype td:hover {
+	border: 1px solid #ccc;
+	transition: all 1s;
 }
 
 .thumbnail {

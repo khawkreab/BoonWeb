@@ -44,6 +44,7 @@ input:focus {
 	line-height: 1.2;
 	text-transform: uppercase;
 	letter-spacing: 1px;
+	cursor: pointer;
 }
 
 .pledge-form-btn:hover {

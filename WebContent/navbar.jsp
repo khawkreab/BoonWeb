@@ -277,8 +277,7 @@
 %>
 <!-- check notification for pawnshop -->
 <script type="text/javascript">
-	var notifiPawnshopFollowEstimate = '<%= session.getAttribute("notifiPawnshopFollowEstimate")%>
-    ';
+	var notifiPawnshopFollowEstimate = '<%= session.getAttribute("notifiPawnshopFollowEstimate")%>';
     $(document).ready(
 	    function checknotification() {
 		if (notifiPawnshopFollowEstimate != "0") {

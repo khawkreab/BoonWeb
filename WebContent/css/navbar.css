@@ -304,8 +304,7 @@ keyframes rotate-photo { 100% {
 
 #nav-custom-fullscreen li:hover {
 	list-style: none;
-	background-image: linear-gradient(90deg, #00C0FF 0%, #FFCF00 49%, #FC4F4F 80%, #00C0FF 100%);
-	animation: slidebg 2s linear infinite;
+	border: 1px solid #fff;
 }
 
 #nav-custom-fullscreen li {
@@ -313,8 +312,3 @@ keyframes rotate-photo { 100% {
 	
 }
 
-@
-keyframes slidebg {to { background-position:20vw;
-	
-}
-}
