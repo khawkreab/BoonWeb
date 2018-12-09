@@ -69,6 +69,12 @@ public class PawnshopPostController {
 		}
 	}
 	
+	@RequestMapping("/pawnshop-pledge-sell")
+	public ModelAndView pledgesell(HttpServletRequest request) {
+		ModelAndView mv = new ModelAndView("pawnshopPledgeSell.jsp");
+		return mv;
+	}
+	
 	@RequestMapping("/saveShopPost")
 	public String savePost(@ModelAttribute("pawnshopPost") FileUpload fileUpload, BindingResult result,
 			HttpServletRequest request) throws IllegalStateException, IOException {
