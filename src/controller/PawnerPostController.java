@@ -77,6 +77,12 @@ public class PawnerPostController {
 			return randomInt - 1;
 		}
 	}
+	
+	@RequestMapping("/pawner-pledge")
+	public ModelAndView pledge(HttpServletRequest request) {
+		ModelAndView mv = new ModelAndView("pawnerPledge.jsp");
+		return mv;
+	}
 	@RequestMapping("/savePost")
 	public String savePost(@ModelAttribute("pawnerPost") FileUpload fileUpload, BindingResult result,
 			HttpServletRequest request)throws IllegalStateException, IOException {
@@ -189,7 +195,7 @@ public class PawnerPostController {
 	}
 	
 	@RequestMapping("/pawner-track-pledge")
-	public ModelAndView pledge(HttpServletRequest request) {
+	public ModelAndView trackpledge(HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView("pawnerTrackMyPlege.jsp");
 		List<PawnerPost> pawnerPostsProcess;
 		List<Estimate> estimatesList;
