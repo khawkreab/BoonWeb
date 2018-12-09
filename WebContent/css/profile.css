@@ -7,21 +7,21 @@ input:valid {
 }
 
 input:read-only {
-    border: 1px solid #ccc;
-    background-color: #ddd;
+	border: 1px solid #ccc;
+	background-color: #ddd;
 }
 
-#edit , #changepicbtn, #cancelbtn{
+#edit, #changepicbtn, #cancelbtn {
 	display: none;
 }
 
 input {
-    width: auto;
-    min-height: 30px;
-    padding-left: 5px;
-    padding-right: 5px;
-    letter-spacing: .5px;
-    border: 0;
+	width: auto;
+	min-height: 30px;
+	padding-left: 5px;
+	padding-right: 5px;
+	letter-spacing: .5px;
+	border: 0;
 }
 
 .profile-edit {
@@ -57,6 +57,16 @@ input {
 	justify-content: center;
 	background-color: #ffffff;
 	border: 1px solid #ddd;
+}
+
+.profile-info-left-b1 {
+	background-image: url(../img/background/background-p.png);
+}
+
+.profile-info-left-b2 {
+	background-image: url(../img/background/background-p2.png);
+	background-position-y: bottom;
+    background-position-x: right;
 }
 
 .profile-info-left img {

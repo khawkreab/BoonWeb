@@ -25,7 +25,7 @@
 	<section style="padding-top: 0px;">
 		<div class="profile-edit">
 			<div class="profile-cover">
-				<img src="https://png.pngtree.com/thumb_back/fw800/back_pic/00/08/57/41562ad4a92b16a.jpg">
+				<img src="img/uploadimg/pawnercover/cover.jpg">
 			</div>
 			<div class="profile-info">
 				<div class="profile-info-left">
