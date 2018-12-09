@@ -178,15 +178,14 @@
 		</div>
 	</section>
 	<!-- pop up show image -->
-	<div class="show-image">
+<!-- 	<div class="show-image">
 		<div class="overlay"></div>
 		<i class="fas fa-times-circle close"></i>
 		<div class="img-show">
 			<img src="">
 		</div>
-	</div>
+	</div> -->
 	<script src="js/popupShowImage.js"></script>
-	"
 	<!-- end  -->
 	<!-- sorting -->
 	<script src="js/sorting.js"></script>
