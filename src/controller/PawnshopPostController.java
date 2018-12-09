@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Random;
 
 import javax.ejb.EJB;
 import javax.servlet.http.HttpServletRequest;
@@ -42,7 +43,32 @@ public class PawnshopPostController {
 	
 	@EJB(mappedName = "ejb:/BoonWeb//OrderItemServiceBean!service.OrderItemService")
 	OrderItemService orederService;
+	
+	private final String CHAR_LIST = "1234567890";
+	private final int RANDOM_STRING_LENGTH = 10;
 
+	public String generateRandomString() {
+
+		StringBuffer randStr = new StringBuffer();
+		for (int i = 0; i < RANDOM_STRING_LENGTH; i++) {
+			int number = getRandomNumber();
+			char ch = CHAR_LIST.charAt(number);
+			randStr.append(ch);
+		}
+		return randStr.toString();
+	}
+
+	private int getRandomNumber() {
+		int randomInt = 0;
+		Random randomGenerator = new Random();
+		randomInt = randomGenerator.nextInt(CHAR_LIST.length());
+		if (randomInt - 1 == -1) {
+			return randomInt;
+		} else {
+			return randomInt - 1;
+		}
+	}
+	
 	@RequestMapping("/saveShopPost")
 	public String savePost(@ModelAttribute("pawnshopPost") FileUpload fileUpload, BindingResult result,
 			HttpServletRequest request) throws IllegalStateException, IOException {
@@ -90,6 +116,7 @@ public class PawnshopPostController {
 				pawnshopPost.setPawnshopPostWeigh(request.getParameter("pawnshopPostWeigh"));
 				pawnshopPost.setPawnshopPostPrice(request.getParameter("pawnshopPostPrice"));
 				pawnshopPost.setPawnshopPostQuality("1");
+				pawnshopPost.setPawnshopPostCode(generateRandomString());
 				post = pawnshopPostService.insert(pawnshopPost);
 			} else {
 				pawnshopPostService.update(pawnshopPost);

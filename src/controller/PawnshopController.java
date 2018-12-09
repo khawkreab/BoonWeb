@@ -69,7 +69,7 @@ public class PawnshopController {
 	}
 
 	private final String CHAR_LIST = "1234567890";
-	private final int RANDOM_STRING_LENGTH = 10;
+	private final int RANDOM_STRING_LENGTH = 6;
 
 	public String generateRandomString() {
 

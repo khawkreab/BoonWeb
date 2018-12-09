@@ -180,7 +180,7 @@
 									<div class="col-md-2">ราคาสูงสุด</div>
 									<div class="col-md-2"></div>
 								</div>
-								<ul>
+								<ul style="list-style: none;">
 									<c:forEach items="${estimatesList}" var="estimate">
 										<c:if test="${estimate.pawnerPostId.pawnerPostId == postprocess.pawnerPostId }">
 											<li style="margin-bottom: 12px;">

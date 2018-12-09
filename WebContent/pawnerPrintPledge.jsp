@@ -27,14 +27,14 @@
 				${pledge.pawnshopId.pawnshopProvince }</i> <i>${pledge.pawnshopId.pawnshopTel }</i>
 		</div>
 		<div class="print-pledge-customer">
-			<i>รหัสลูกค้า ${pledge.pawnerPostId.pawnerId.userCode}</i> <i>ชื่อผู้จำนำ
+			<i>รหัสลูกค้า ${pledge.pawnerPostId.pawnerId.pawnerUsercode}</i> <i>ชื่อผู้จำนำ
 				${pledge.pawnerPostId.pawnerId.pawnerFirstname }
 				${pledge.pawnerPostId.pawnerId.pawnerLastname }</i> <i>ที่อยู่
 				${pledge.pawnerPostId.pawnerId.pawnerProvince }</i>
 		</div>
 		<div class="print-pledge">
 			<div class="print-pledge-detail">
-				<span>การจำนำ</span> <i>เลขที่การจำนำ #</i> <i> วันที่ลงของจำนำ
+				<span>การจำนำ</span> <i>เลขที่การจำนำ  ${pledge.pawnerPostId.pawnerPostCode}</i> <i> วันที่ลงของจำนำ
 					<fmt:formatDate pattern="dd MMMM yyyy"
 						value="${ pledge.pawnerPostId.pawnerPostDate }" />
 				</i> <i> วันที่มีการเสนอราคา <fmt:formatDate pattern="dd MMMM yyyy"
