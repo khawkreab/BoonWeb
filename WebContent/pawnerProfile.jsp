@@ -12,7 +12,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="">
 <meta name="author" content="">
-<title>Profile</title>
+<title>${pawner.pawnerFirstname} &nbsp; ${pawner.pawnerLastname}</title>
 <!-- import all css -->
 <jsp:include page="importCSS.jsp" />
 <!-- import profile css -->
@@ -86,7 +86,7 @@
 												<option value="${pawner.pawnerProvince}">${pawner.pawnerProvince}</option>
 											</select>
 										</li>
-										<li>รหัสไปรษณืย์</li>
+										<li>รหัสไปรษณีย์</li>
 										<li>
 											<input type="text" name="pawnerZipcode" value="${pawner.pawnerZipcode}" />
 										</li>

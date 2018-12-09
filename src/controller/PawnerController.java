@@ -98,13 +98,14 @@ public class PawnerController {
 	@RequestMapping("/updatePawner")
 	public String updatePawnshop(@ModelAttribute("pawner") FileUpload fileUpload, BindingResult result,
 			HttpServletRequest request) {
-		long pawnerid = (long) request.getSession().getAttribute("id");
+		long userid = (long) request.getSession().getAttribute("id");
 		String change = request.getParameter("changepicture");
 		Pawner pawner = new Pawner();
-		pawner = pmService.findPawnerById(pawnerid);
+		pawner = pmService.findPawnerById(userid);
 		try {
 			if (change.equals("change")) {
 				String saveDirectory = "L:/Project 3 1-2560/BoonWeb/WebContent/img/uploadimg/pawner/";
+				String dir = request.getServletContext().getRealPath("/")+"img\\uploadimg\\pawner\\";
 				String fileName = "";
 				List<MultipartFile> Files = fileUpload.getFiles();
 				List<String> fileNames = new ArrayList<String>();
@@ -118,6 +119,7 @@ public class PawnerController {
 						if (!"".equalsIgnoreCase(fileName)) {
 							// Handle file content - multipartFile.getInputStream()
 							multipartFile.transferTo(new File(saveDirectory + fileName));
+						//	multipartFile.transferTo(new File(dir + fileName));
 							fileNames.add(fileName);
 							pawner.setPawnerPicture(fileName);
 
@@ -134,7 +136,7 @@ public class PawnerController {
 			pawner.setPawnerAddress(request.getParameter("pawnerAddress"));
 			pawner.setPawnerProvince(request.getParameter("pawnerProvince"));
 			pawner.setPawnerZipcode(request.getParameter("pawnerZipcode"));
-			pawner.setPawnerCover(request.getParameter("pawnerCovere"));
+			//pawner.setPawnerCover(request.getParameter("pawnerCovere"));
 
 			pmService.update(pawner);
 
