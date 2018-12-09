@@ -22,6 +22,7 @@ import entity.PawnerPost;
 import entity.Pawnshop;
 import entity.Picture;
 import service.PawnerPostService;
+import service.PawnerService;
 import service.PawnshopService;
 import service.PictureService;
 
@@ -36,6 +37,10 @@ public class PawnshopController {
 
 	@EJB(mappedName = "ejb:/BoonWeb/PictureServiceBean!service.PictureService")
 	PictureService pictureService;
+	
+	@EJB(mappedName = "ejb:/BoonWeb/PawnerServiceBean!service.PawnerService")
+	PawnerService pmService;
+
 
 	@RequestMapping("/pawnshop-register-form")
 	public ModelAndView newPawner() {
@@ -49,7 +54,7 @@ public class PawnshopController {
 	public String savePawnshop(@ModelAttribute("pawnshop") Pawnshop pawnshop, BindingResult result,
 			HttpServletRequest request) {
 		try {
-			if (pawnshopServ.findPawnshopEmail(pawnshop.getPawnshopEmail()).isEmpty()) {
+			if (pawnshopServ.findPawnshopEmail(pawnshop.getPawnshopEmail()).isEmpty() && pmService.findPawnerEmai(pawnshop.getPawnshopEmail()).isEmpty()) {
 				pawnshop.setPawnshopState("pawnshop");
 				pawnshop.setPawnshopUsercode(generateRandomString());
 				pawnshop.setPawnshopPicture("profile-icon.jpg");
@@ -63,7 +68,7 @@ public class PawnshopController {
 		return "redirect:index.jsp";
 	}
 
-	private final String CHAR_LIST = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+	private final String CHAR_LIST = "1234567890";
 	private final int RANDOM_STRING_LENGTH = 10;
 
 	public String generateRandomString() {

@@ -23,6 +23,7 @@ import fileupload.FileUpload;
 import service.OrderItemService;
 import service.PawnerService;
 import service.PawnshopPostService;
+import service.PawnshopService;
 import service.PictureService;
 
 @Controller
@@ -39,6 +40,9 @@ public class PawnerController {
 
 	@EJB(mappedName = "ejb:/BoonWeb/PictureServiceBean!service.PictureService")
 	PictureService pictureService;
+	
+	@EJB(mappedName = "ejb:/BoonWeb//PawnshopServiceBean!service.PawnshopService")
+	PawnshopService pawnshopServ;
 
 	@RequestMapping("/pawner-register-form")
 	public ModelAndView newGold() {
@@ -48,7 +52,7 @@ public class PawnerController {
 		return mv;
 	}
 
-	private final String CHAR_LIST = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+	private final String CHAR_LIST = "1234567890";
 	private final int RANDOM_STRING_LENGTH = 10;
 
 	public String generateRandomString() {
@@ -77,7 +81,7 @@ public class PawnerController {
 	public String savePawner(@ModelAttribute("pawner") Pawner pawner, BindingResult result,
 			HttpServletRequest request) {
 		try {
-			if (pmService.findPawnerEmai(pawner.getPawnerEmail()).isEmpty()) {
+			if (pmService.findPawnerEmai(pawner.getPawnerEmail()).isEmpty() && pawnshopServ.findPawnshopEmail(pawner.getPawnerEmail()).isEmpty()) {
 				pawner.setPawnerState("pawner");
 				pawner.setPawnerUsercode(generateRandomString());
 				pawner.setPawnerPicture("profile-icon.jpg");

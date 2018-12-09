@@ -85,7 +85,7 @@
 									<form:input path="pawnerZipcode" type="text"
 										class="account-regis" placeholder="รหัสไปรษณีย์"
 										required="required" pattern="[0-9]{5}"
-										title="ตัวเลขเท่านั้น 0-9" />
+										title="โปรใส่ รหัสไปรษณีย์ ให้ถูกต้อง" />
 									<form:select id="province" path="pawnerProvince"
 										class="account-regis">
 										<option>- กรุณาเลือกจังหวัด -</option>

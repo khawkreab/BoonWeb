@@ -19,8 +19,36 @@
 <jsp:include page="importCSS.jsp" />
 
 <link rel="stylesheet" href="css/new-design.css">
+<script>
+	function checkPass() {
+		//Store the password field objects into variables ...
+		var pass1 = document.getElementById('pa1');
+		var pass2 = document.getElementById('pa2');
+		//Store the Confimation Message Object ...
+		var message = document.getElementById('confirmMessage');
+		//Set the colors we will be using ...
+		var goodColor = "#66cc66";
+		var badColor = "#ff6666";
+		//Compare the values in the password field 
+		//and the confirmation field
+		if (pass1.value == pass2.value) {
+			//The passwords match. 
+			//Set the color to the good color and inform
+			//the user that they have entered the correct password 
+			pass2.style.backgroundColor = goodColor;
+			message.style.color = goodColor;
+			/* message.innerHTML = "รหัสผ่านตรงกัน" */
+		} else {
+			//The passwords do not match.
+			//Set the color to the bad color and
+			//notify the user.
+			pass2.style.backgroundColor = badColor;
+			message.style.color = badColor;
+			/* message.innerHTML = "รหัสผ่านไม่ตรงกัน!" */
+		}
+	}
+</script>
 </head>
-
 <body>
 	<%
 		String email = request.getParameter("emailto"), pass = request.getParameter("passto"),
@@ -47,12 +75,15 @@
 											placeholder="อีเมล" path="pawnshopEmail" required="required"
 											pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
 											value="<%=email%>" title="เช่น boon@hotmail.com" /></li>
-									<li><form:input type="password" class="input-regis"
-											placeholder="รหัสผ่าน" path="pawnshopPassword"
+									<li><form:input path="pawnshopPassword" type="password"
+											id="pa1" class="input-regis" placeholder="รหัสผ่าน"
 											required="required"
 											pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-											title="ต้องมีเลขอย่างน้อย 1 ตัว และมีทั้ง อังษรพิมเล็กและใหญ่ ความยาวอย่างน้อย 8 ตัว"
-											value="<%=pass%>" /></li>
+											title="ต้องมีเลขอย่างน้อย 1 ตัว และมีทั้ง อังษรพิมเล็กและใหญ่ความยาวอย่างน้อย 8 ตัว และ ห้ามใช้ภาษาไทย" /></li>
+									<li><input type="password" id="pa2" class="input-regis"
+										placeholder="ยืนยันรหัสผ่าน" required="required"
+										onkeyup="checkPass(); return false;" /><span
+										id="confirmMessage" class="confirmMessage"></span></li>
 									<li><form:input type="text" class="input-regis"
 											placeholder="เบอร์โทร" path="pawnshopTel" required="required"
 											pattern="[0-9]{1,10}" title="ตัวเลขเท่านั้น" value="<%=tel%>" />
@@ -62,11 +93,12 @@
 											<option>กรุณาเลือกจังหวัด</option>
 										</form:select></li>
 
-									<li><form:input class="input-regis" path="pawnshopZipcode" placeholder="รหัสไปรษณีย์" pattern="[0-9]{5}"
-										title="ตัวเลขเท่านั้น 0-9"/>
-									</li>
-									<li><form:textarea style="height: 90px;" type="text" class="input-regis"
-											placeholder="ที่อยู่อาศัย" path="pawnshopAddress" /></li>
+									<li><form:input class="input-regis" path="pawnshopZipcode"
+											placeholder="รหัสไปรษณีย์" pattern="[0-9]{5}"
+											title="โปรใส่ รหัสไปรษณีย์ ให้ถูกต้อง" /></li>
+									<li><form:textarea style="height: 90px;" type="text"
+											class="input-regis" placeholder="ที่อยู่อาศัย"
+											path="pawnshopAddress" /></li>
 									<li>
 										<button id="clearval" type="submit" class="input-submit">ยืนยันการสร้างบัญ</button>
 									</li>
