@@ -2,6 +2,8 @@ package controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -40,10 +42,10 @@ public class PawnshopPostController {
 
 	@EJB(mappedName = "ejb:/BoonWeb/PictureServiceBean!service.PictureService")
 	PictureService pictureService;
-	
+
 	@EJB(mappedName = "ejb:/BoonWeb//OrderItemServiceBean!service.OrderItemService")
 	OrderItemService orederService;
-	
+
 	private final String CHAR_LIST = "1234567890";
 	private final int RANDOM_STRING_LENGTH = 10;
 
@@ -68,21 +70,26 @@ public class PawnshopPostController {
 			return randomInt - 1;
 		}
 	}
-	
+
 	@RequestMapping("/pawnshop-pledge-sell")
 	public ModelAndView pledgesell(HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView("pawnshopPledgeSell.jsp");
 		return mv;
 	}
-	
+
 	@RequestMapping("/saveShopPost")
 	public String savePost(@ModelAttribute("pawnshopPost") FileUpload fileUpload, BindingResult result,
-			HttpServletRequest request) throws IllegalStateException, IOException {
+			HttpServletRequest request) throws IllegalStateException, IOException, ParseException {
 
 		PawnshopPost pawnshopPost = new PawnshopPost();
 		PawnshopPost post = new PawnshopPost();
 
 		Date date = new Date();
+
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		String buy = request.getParameter("pawnshopPostPurchase");
+		Date buyDate = sdf.parse(buy);
+
 		String status = "waiting";
 
 		long userId = (long) request.getSession().getAttribute("id");
@@ -112,7 +119,7 @@ public class PawnshopPostController {
 				pawnshopPost.setPawnshopPostModel(request.getParameter("pawnshopPostModel"));
 				pawnshopPost.setPawnshopPostPackage(request.getParameter("pawnshopPostPackage"));
 				pawnshopPost.setPawnshopPostProduction(request.getParameter("pawnshopPostProduction"));
-				pawnshopPost.setPawnshopPostPurchase(request.getParameter("pawnshopPostPurchase"));
+				pawnshopPost.setPawnshopPostPurchase(buyDate);
 				pawnshopPost.setPawnshopPostPure(request.getParameter("pawnshopPostPure"));
 				pawnshopPost.setPawnshopPostRam(request.getParameter("pawnshopPostRam"));
 				pawnshopPost.setPawnshopPostSerial(request.getParameter("pawnshopPostSerial"));
@@ -132,8 +139,8 @@ public class PawnshopPostController {
 			e.printStackTrace();
 		}
 		String fileName = "";
-		
-		String dir = request.getServletContext().getRealPath("/")+"img\\uploadimg\\pawnshopPost\\";
+
+		String dir = request.getServletContext().getRealPath("/") + "img\\uploadimg\\pawnshopPost\\";
 
 		Picture picture = new Picture();
 
@@ -146,7 +153,7 @@ public class PawnshopPostController {
 				fileName = multipartFile.getBytes().hashCode() + "." + multipartFile.getContentType().split("/")[1];
 				if (!"".equalsIgnoreCase(fileName)) {
 					multipartFile.transferTo(new File(dir + fileName));
-					System.out.println("multipartFile.transferTo => " +dir+fileName);
+					System.out.println("multipartFile.transferTo => " + dir + fileName);
 					fileNames.add(fileName);
 
 					picture.setPicture(fileName);
@@ -169,10 +176,10 @@ public class PawnshopPostController {
 		List<OrderItem> order;
 		try {
 			long userId = (long) request.getSession().getAttribute("id");
-			
+
 			order = orederService.findOrderByPawnshopId(userId);
 			mv.addObject("order", order);
-			
+
 			pawnshopPosts = pawnshopPostService.findPawnshopPostByPawnshopId(userId);
 			mv.addObject("pawnshopPosts", pawnshopPosts);
 		} catch (Exception e) {
@@ -201,16 +208,16 @@ public class PawnshopPostController {
 		}
 		return mv;
 	}
-	
+
 	@RequestMapping("/pawnshop-complete-post")
 	public String shopcom(HttpServletRequest request) {
-		
+
 		long pawnshopPostId = Long.parseLong(request.getParameter("pawnshopPostId"));
 		String status = request.getParameter("status");
 		try {
 
 			pawnshopPostService.updateStatus(pawnshopPostId, status, "0");
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

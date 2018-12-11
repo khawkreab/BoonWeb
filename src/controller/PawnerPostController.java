@@ -9,6 +9,8 @@ package controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -86,11 +88,16 @@ public class PawnerPostController {
 
 	@RequestMapping("/savePost")
 	public String savePost(@ModelAttribute("pawnerPost") FileUpload fileUpload, BindingResult result,
-			HttpServletRequest request) throws IllegalStateException, IOException {
+			HttpServletRequest request) throws IllegalStateException, IOException, ParseException {
 		PawnerPost pawnerPost = new PawnerPost();
 		PawnerPost post = new PawnerPost();
 		List<MultipartFile> Files = fileUpload.getFiles();
 		Date date = new Date();
+		
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		String buy = request.getParameter("pawnerPostPurchase");;
+		Date buyDate = sdf.parse(buy);
+		
 		String status = "waiting";
 		long userId = (long) request.getSession().getAttribute("id");
 		Pawner pm = pmService.findPawnerById(userId);
@@ -116,7 +123,7 @@ public class PawnerPostController {
 				pawnerPost.setPawnerPostModel(request.getParameter("pawnerPostModel"));
 				pawnerPost.setPawnerPostPackage(request.getParameter("pawnerPostPackage"));
 				pawnerPost.setPawnerPostProduction(request.getParameter("pawnerPostProduction"));
-				pawnerPost.setPawnerPostPurchase(request.getParameter("pawnerPostPurchase"));
+				pawnerPost.setPawnerPostPurchase(buyDate);
 				pawnerPost.setPawnerPostPure(request.getParameter("pawnerPostPure"));
 				pawnerPost.setPawnerPostRam(request.getParameter("pawnerPostRam"));
 				pawnerPost.setPawnerPostSerial(request.getParameter("pawnerPostSerial"));
