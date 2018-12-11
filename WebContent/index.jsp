@@ -166,9 +166,9 @@ body {
 					<p class="text-faded mb-5 animated lightSpeedIn delay-1s text-white">“บุญยง เป็นสื่อกลางในการจำนำ ที่มีการรับประเมินราคาสินทรัพย์และปล่อยของหลุดจำนำทางออนไลน์
 						เพื่ออำนวยความสะดวกให้ลูกค้าสามารถเข้าถึงบริการได้ตลอด 24 ชั่วโมง”</p>
 					<div class="animated fadeInLeft delay-1s">
-						<a href="#services">
+						<!-- <a href="#services">
 							<button class="btn-custom btn-custom-defalt">คลิกเพื่อดูรายละเอียด</button>
-						</a>
+						</a> -->
 					</div>
 				</div>
 			</div>

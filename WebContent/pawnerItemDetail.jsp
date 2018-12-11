@@ -97,7 +97,7 @@
 							<li class="col-md-6">ปีที่ผลิต : ${pawnshopPost.pawnshopPostProduction}</li>
 							<li class="col-md-6">โมเดล : ${pawnshopPost.pawnshopPostModel}</li>
 							<li class="col-md-6">รุ่น : ${pawnshopPost.pawnshopPostSerial}</li>
-							<li class="col-md-6">ปีที่ซื้อ : ${pawnshopPost.pawnshopPostPurchase }</li>
+							<li class="col-md-6">ปีที่ซื้อ :  ${pawnshopPost.pawnshopPostPurchase } </li>
 						</c:if>
 						<!-- Gold -->
 						<c:if test="${pawnshopPost.pawnshopPostPure != null}">
@@ -156,6 +156,13 @@
 							</li>
 						</c:if>
 					</ul>
+					<c:if test="${pawnshopPost.pawnshopPostDescription != null}">
+						<p class="quantity">
+							เพิ่มเติม :
+							<span>${pawnshopPost.pawnshopPostDescription}</span>
+							ชิ้น
+						</p>
+					</c:if>
 					<p class="quantity">
 						จำนวน :
 						<span>${pawnshopPost.pawnshopPostQuality}</span>

@@ -118,8 +118,8 @@ public class PawnerController {
 								+ multipartFile.getContentType().split("/")[1];
 						if (!"".equalsIgnoreCase(fileName)) {
 							// Handle file content - multipartFile.getInputStream()
-							multipartFile.transferTo(new File(saveDirectory + fileName));
-						//	multipartFile.transferTo(new File(dir + fileName));
+							// multipartFile.transferTo(new File(saveDirectory + fileName));
+							multipartFile.transferTo(new File(dir + fileName));
 							fileNames.add(fileName);
 							pawner.setPawnerPicture(fileName);
 

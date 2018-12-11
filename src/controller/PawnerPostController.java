@@ -150,8 +150,8 @@ public class PawnerPostController {
 			for (MultipartFile multipartFile : Files) {
 				fileName = multipartFile.getBytes().hashCode() + "." + multipartFile.getContentType().split("/")[1];
 				if (!"".equalsIgnoreCase(fileName)) {
-					// multipartFile.transferTo(new File(dir+ fileName ));
-					multipartFile.transferTo(new File(saveDirectory + fileName));
+					// multipartFile.transferTo(new File(saveDirectory + fileName));
+					multipartFile.transferTo(new File(dir + fileName));
 					System.out.println("multipartFile.transferTo => " + dir + fileName);
 
 					picture.setPicture(fileName);
@@ -167,7 +167,7 @@ public class PawnerPostController {
 		System.out.println("post.getPawnerPostId(), fileNames.get(0)");
 		/*
 		 * System.out.println("test update picture => " +fileNames.get(0));
-		 */ return "redirect:pawner-track-pledge.html";
+		 */ return "redirect:pawner-track-pledge.html#loaded";
 	}
 
 	@RequestMapping("/deletePost")
