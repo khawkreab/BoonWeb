@@ -19,6 +19,13 @@
 		<div>
 			<h1 id="chechcarts">สินค้าทั้งหมด</h1>
 			<em></em>
+			<!--  -->
+			<div class="backhome">
+				<a href="index.html">หน้าหลัก</a>
+				<i class="fas fa-angle-right"></i>
+				<a href="pawner-cart.html">ตะกร้าสินค้า</a>
+			</div>
+			<!--  -->
 		</div>
 	</div>
 	<section id="cartitem" style="background-color: #f5f5f5; justify-content: unset;">

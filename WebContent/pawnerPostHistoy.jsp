@@ -16,7 +16,7 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="">
 <meta name="author" content="">
-<title>pawner-post-history</title>
+<title>ประวัติการจำนำ</title>
 <!-- import all css -->
 <jsp:include page="importCSS.jsp" />
 <link rel="stylesheet" href="css/history.css">
@@ -33,8 +33,15 @@
 	<!--banner-->
 	<div class="banner-top">
 		<div>
-			<h1>การดำเนินการและประวัติการจำนำ</h1>
+			<h1>ประวัติการจำนำ</h1>
 			<em></em>
+			<!--  -->
+			<div class="backhome">
+				<a href="index.html">หน้าหลัก</a>
+				<i class="fas fa-angle-right"></i>
+				<a href="pawner-post-history.html#loaded">ประวัติการจำนำ</a>
+			</div>
+			<!--  -->
 		</div>
 	</div>
 	<div id="filterBtnContainer">

@@ -15,7 +15,7 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="">
 <meta name="author" content="">
-<title>pawner pledge</title>
+<title>การจำนำ</title>
 <!-- import all css -->
 <jsp:include page="importCSS.jsp" />
 <link rel="stylesheet" href="css/checkBox.css">
@@ -40,6 +40,13 @@
 			</div>
 		</div>
 	</div>
+	<!--  -->
+		<div class="backhome">
+			<a href="index.html">หน้าหลัก</a>
+			<i class="fas fa-angle-right"></i>
+			<a href="pawner-pledge.html">การจำนำ</a>
+		</div>
+		<!--  -->
 	<!-- element -->
 	<div class="page">
 		<div class="pledge-container">

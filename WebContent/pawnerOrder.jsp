@@ -8,7 +8,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title></title>
+<title>ประวัติการสั่งซื้อ</title>
 <!-- import all css -->
 <jsp:include page="importCSS.jsp" />
 
@@ -20,25 +20,19 @@
 	<!-- Navigation bar -->
 	<jsp:include page="navbar.html" />
 	<!-- loading page -->
-	<div class="loadpage" id="loadpage">
-		<div class='loading'>
-			<span> <span></span> <span></span> <span></span> <span></span>
-			</span>
-			<div class='loading-base'>
-				<span></span>
-				<div class='loading-face'></div>
-			</div>
-		</div>
-		<div class='loading-longfazers'>
-			<span></span> <span></span> <span></span> <span></span>
-		</div>
-		<i class="loading-text">Loading . . .</i>
-	</div>
+	<jsp:include page="loadingpage.jsp" />
 	<!--banner-->
 	<div class="banner-top">
 		<div>
 			<h1>ประวัติการสั่งซื้อ</h1>
 			<em></em>
+			<!--  -->
+			<div class="backhome">
+				<a href="index.html">หน้าหลัก</a>
+				<i class="fas fa-angle-right"></i>
+				<a href="pawner-order.html#loaded">ประวัติการสั่งซื้อ</a>
+			</div>
+			<!--  -->
 		</div>
 	</div>
 

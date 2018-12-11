@@ -28,6 +28,13 @@
 		<div>
 			<h1 id="checkpost">รายการของหลุดจำนำ</h1>
 			<em></em>
+			<!--  -->
+		<div class="backhome">
+			<a href="index.html">หน้าหลัก</a>
+			<i class="fas fa-angle-right"></i>
+			<a href="pawner-off-pledge.html">รายการของหลุดจำนำ</a>
+		</div>
+		<!--  -->
 		</div>
 	</div>
 	<div id="filterBtnContainer">

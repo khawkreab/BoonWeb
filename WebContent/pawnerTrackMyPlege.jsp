@@ -15,7 +15,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="">
 <meta name="author" content="">
-<title></title>
+<title>ติดตามการจำนำ</title>
 <!-- import all css -->
 <jsp:include page="importCSS.jsp" />
 <link rel="stylesheet" href="css/timeline.css">
@@ -33,6 +33,13 @@
 		<div>
 			<h1>สถานะการจำนำ</h1>
 			<em></em>
+			<!--  -->
+			<div class="backhome">
+				<a href="index.html">หน้าหลัก</a>
+				<i class="fas fa-angle-right"></i>
+				<a href="pawner-track-pledge.html#loaded">ติดตามการจำนำ</a>
+			</div>
+			<!--  -->
 		</div>
 	</div>
 	<div id="filterBtnContainer">
