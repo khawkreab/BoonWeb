@@ -88,7 +88,7 @@
 										id="confirmMessage" class="confirmMessage"></span></li>
 									<li><form:input type="text" class="input-regis"
 											placeholder="เบอร์โทร" path="pawnshopTel" required="required"
-											pattern="[0-9]{1,10}" title="ตัวเลขเท่านั้น" value="<%=tel%>" />
+											pattern="[0-9]{1,10}" title="โปรใส่  หมายเลขโทรศัพท์ให้ถูกต้อง" value="<%=tel%>" />
 									</li>
 									<li><form:select id="province" class="input-regis"
 											path="pawnshopProvince">

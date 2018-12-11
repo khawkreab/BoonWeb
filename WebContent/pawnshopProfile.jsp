@@ -64,7 +64,8 @@
 									<ul>
 										<li>ชื่อ</li>
 										<li>
-											<input type="text" name="pawnshopName" value="${pawnshop.pawnshopName}" />
+											<input type="text" name="pawnshopName" value="${pawnshop.pawnshopName}" pattern="[a-zA-Zก-์]{1,30}"
+								title="ใช้เป็นตัวอักษร ภาษาไทย หรือ อังกฤษ เท่านั้น ความยาวไม่เกิน 30 ตัวอักษร และ ต้องไม่ใช้ อักษรพิเศษ" required="required"/>
 											
 										</li>
 										<li>อีเมล</li>
@@ -73,11 +74,12 @@
 										</li>
 										<li>รหัสผ่าน</li>
 										<li>
-											<input type="password" name="pawnshopPassword" value="${pawnshop.pawnshopPassword}" />
+											<input type="password" name="pawnshopPassword" value="${pawnshop.pawnshopPassword}" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+								title="ต้องมีเลขอย่างน้อย 1 ตัว และมีทั้ง อังษรพิมเล็กและใหญ่ความยาวอย่างน้อย 8 ตัว และ ห้ามใช้ภาษาไทย" required="required"/>
 										</li>
 										<li>เบอร์โทร</li>
 										<li>
-											<input type="text" name="pawnshopTel" value="${pawnshop.pawnshopTel}" />
+											<input type="text" name="pawnshopTel" value="${pawnshop.pawnshopTel}" pattern="[0-9]{10}" title="โปรใส่  หมายเลขโทรศัพท์ให้ถูกต้อง" required="required"/>
 										</li>
 										<li>จังหวัด</li>
 										<li>
@@ -87,7 +89,8 @@
 										</li>
 										<li>รหัสไปรษณีย์</li>
 										<li>
-											<input type="text" name="pawnshopZipcode" value="${pawnshop.pawnshopZipcode}" />
+											<input type="text" name="pawnshopZipcode" value="${pawnshop.pawnshopZipcode}" pattern="[0-9]{5}"
+								title="โปรใส่ รหัสไปรษณีย์ ให้ถูกต้อง" required="required"/>
 										</li>
 										<li>ที่อยู่</li>
 										<li>

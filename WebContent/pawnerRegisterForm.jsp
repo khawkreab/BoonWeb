@@ -70,7 +70,7 @@
 							<form:input path="pawnerFirstname" type="text"
 								class="account-regis" placeholder="ชื่อ" required="required"
 								pattern="[a-zA-Zก-์]{1,30}"
-								title="ใช้เป็นตัวอักษร ภาษาไทย หรือ อังกฤษ เท่านั้น ความยาวไม่เกิน 30 ตัวอักษร และ ต้องไม่ใช้ อักษรพิเศษ" />
+								title="ใช้เป็นตัวอักษร ภาษาไทย หรือ อังกฤษ  ความยาวไม่เกิน 30 ตัวอักษร และ ต้องไม่ใช้ อักษรพิเศษ" />
 							<form:input path="pawnerEmail" type="text" id="mail"
 								class="account-regis" placeholder="อีเมล" required="required"
 								onkeyup="continueto();"
@@ -93,11 +93,11 @@
 							<form:input path="pawnerLastname" type="text"
 								class="account-regis" placeholder="นามสกุล" required="required"
 								pattern="[a-zA-Zก-์]{1,30}"
-								title="ใช้เป็นตัวอักษร ภาษาไทย หรือ อังกฤษ เท่านั้น ความยาวไม่เกิน 30 ตัวอักษร และ ต้องไม่ใช้ อักษรพิเศษ" />
+								title="ใช้เป็นตัวอักษร ภาษาไทย หรือ อังกฤษ  ความยาวไม่เกิน 30 ตัวอักษร และ ต้องไม่ใช้ อักษรพิเศษ" />
 							<form:input type="text" id="telto" class="account-regis"
 								placeholder="เบอร์โทรศัพท์" required="required"
 								onkeyup="continueto();" path="pawnerPhone" required="required"
-								pattern="[0-9]{1,10}" title="ตัวเลขเท่านั้น 0-9" />
+								pattern="[0-9]{1,10}" title="โปรใส่  หมายเลขโทรศัพท์ให้ถูกต้อง" />
 							<input type="password" id="pass2" class="account-regis"
 								placeholder="ยืนยันรหัสผ่าน" required="required"
 								onkeyup="checkPass(); return false;" /> <span
