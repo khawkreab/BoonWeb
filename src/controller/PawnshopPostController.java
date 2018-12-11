@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Random;
 
 import javax.ejb.EJB;
+import javax.persistence.criteria.Order;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
@@ -212,14 +213,24 @@ public class PawnshopPostController {
 
 	@RequestMapping("/pawnshop-complete-post")
 	public String shopcom(HttpServletRequest request) {
-
+		OrderItem order;
 		long pawnshopPostId = Long.parseLong(request.getParameter("pawnshopPostId"));
 		String status = request.getParameter("status");
+
 		try {
+			if (request.getParameter("status").equals("waiting")) {
+				order = orederService.findOrderByPawnshopPostId(pawnshopPostId);
+				order.setOrderStatus("cancel");
+				orederService.update(order);
+				pawnshopPostService.updateStatus(pawnshopPostId, status, "1");
+			}
+			if (request.getParameter("status").equals("complete")) {
+				pawnshopPostService.updateStatus(pawnshopPostId, status, "0");
+			}
 
-			pawnshopPostService.updateStatus(pawnshopPostId, status, "0");
+		} catch (
 
-		} catch (Exception e) {
+		Exception e) {
 			e.printStackTrace();
 		}
 

@@ -29,12 +29,11 @@
 			<h1 id="checkpost">รายการของหลุดจำนำ</h1>
 			<em></em>
 			<!--  -->
-		<div class="backhome">
-			<a href="index.html">หน้าหลัก</a>
-			<i class="fas fa-angle-right"></i>
-			<a href="pawner-off-pledge.html">รายการของหลุดจำนำ</a>
-		</div>
-		<!--  -->
+			<div class="backhome">
+				<a href="index.html">หน้าหลัก</a> <i class="fas fa-angle-right"></i>
+				<a href="pawner-off-pledge.html">รายการของหลุดจำนำ</a>
+			</div>
+			<!--  -->
 		</div>
 	</div>
 	<div id="filterBtnContainer">
@@ -64,37 +63,40 @@
 	<!--content-->
 	<div class="container flex-wrap" id="sorting">
 		<c:forEach items="${pawnshopPosts}" var="pawnshopPosts">
-			<div
-				class="shop-card fas filter-column ${pawnshopPosts.pawnshopPostItemType}">
-				<div style="height: 200px;">
-					<div class="date">
-						<span class="day"> <fmt:formatDate pattern="dd"
-								value="${pawnshopPosts.pawnshopPostDate }" />
-						</span> <span class="month"> <fmt:formatDate pattern="MMM"
-								value="${pawnshopPosts.pawnshopPostDate }" />
-						</span> <span class="year"> <fmt:formatDate pattern="yyyy"
-								value="${pawnshopPosts.pawnshopPostDate }" />
-						</span>
+			<c:if test="${pawnshopPosts.pawnshopPostQuality != '0'}">
+				<div
+					class="shop-card fas filter-column ${pawnshopPosts.pawnshopPostItemType}">
+					<div style="height: 200px;">
+						<div class="date">
+							<span class="day"> <fmt:formatDate pattern="dd"
+									value="${pawnshopPosts.pawnshopPostDate }" />
+							</span> <span class="month"> <fmt:formatDate pattern="MMM"
+									value="${pawnshopPosts.pawnshopPostDate }" />
+							</span> <span class="year"> <fmt:formatDate pattern="yyyy"
+									value="${pawnshopPosts.pawnshopPostDate }" />
+							</span>
+						</div>
+						<figure>
+							<a class="shop-card-a fas"
+								href="post-item-detail.html?item=${pawnshopPosts.pawnshopPostId}"></a>
+							<img
+								src="img/uploadimg/pawnshopPost/${pawnshopPosts.pawnshopPostPicture}" />
+						</figure>
 					</div>
-					<figure>
-						<a class="shop-card-a fas"
-							href="post-item-detail.html?item=${pawnshopPosts.pawnshopPostId}"></a>
-						<img src="img/uploadimg/pawnshopPost/${pawnshopPosts.pawnshopPostPicture}" />
-					</figure>
-				</div>
-				<div class="cta d-flex">
-					<div class="mr-auto">
-						<div>
-							<div class="title">${pawnshopPosts.pawnshopPostName}</div>
-							<div class="desc" style="text-align: -webkit-left;">${pawnshopPosts.pawnshopId.pawnshopProvince}</div>
+					<div class="cta d-flex">
+						<div class="mr-auto">
+							<div>
+								<div class="title">${pawnshopPosts.pawnshopPostName}</div>
+								<div class="desc" style="text-align: -webkit-left;">จังหวัด ${pawnshopPosts.pawnshopId.pawnshopProvince}</div>
+							</div>
+						</div>
+						<div class=" ly" style="padding: 0 10px;">
+							<p class="price" style="margin-bottom: 0;">${pawnshopPosts.pawnshopPostPrice}</p>
+							<p style="margin-bottom: 0;">บาท</p>
 						</div>
 					</div>
-					<div class=" ly" style="padding: 0 10px;">
-						<p class="price" style="margin-bottom: 0;">${pawnshopPosts.pawnshopPostPrice}</p>
-						<p style="margin-bottom: 0;">บาท</p>
-					</div>
 				</div>
-			</div>
+			</c:if>
 		</c:forEach>
 	</div>
 	<!-- sorting -->

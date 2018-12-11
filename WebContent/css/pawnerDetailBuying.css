@@ -52,7 +52,7 @@
 
 .product-detail-left .day {
 	font-weight: 700;
-	font-size: 24px;
+	font-size: 1.4rem;
 	text-shadow: 2px 3px 2px rgba(black, 0.18);
 }
 
@@ -61,7 +61,7 @@
 }
 
 .product-detail-left .month, .shop-card .year {
-	font-size: 12px;
+	font-size: 1.2rem;
 }
 
 .product-detail-right {
