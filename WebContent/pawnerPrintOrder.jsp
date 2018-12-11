@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>order</title>
+<title>${order.pawnshopPostId.pawnshopPostName }</title>
 <link rel="icon" href="img/logos/logo.png">
 <!-- import all css -->
 <!-- Bootstrap core CSS -->
@@ -17,22 +17,29 @@
 <body>
 	<section>
 		<div class="print-order-title">
-			<span class="mr-auto">ใบกำกับการซื้อ</span>
+			<span class="mr-auto">ใบกำกับการซื้อสินค้า</span>
 		</div>
 		<div class="print-order-web">
 			<img src="img/logos/logofull.png"> <span>b2pawn.com</span>
 		</div>
 		<div class="print-order-saler">
-			<i>โรงรับจำนำ ${order.pawnshopPostId.pawnshopId.pawnshopName }</i> <i>ที่อยู่
-				${order.pawnshopPostId.pawnshopId.pawnshopProvince }</i> <i>${order.pawnshopPostId.pawnshopId.pawnshopTel }</i>
+			<i>โรงรับจำนำ ${order.pawnshopPostId.pawnshopId.pawnshopName }</i> <i
+				style="max-width: 300px; height: auto; word-wrap: break-word; text-align: right;">ที่อยู่
+				${order.pawnshopPostId.pawnshopId.pawnshopAddress }
+				${order.pawnshopPostId.pawnshopId.pawnshopProvince }
+				${order.pawnshopPostId.pawnshopId.pawnshopZipcode }</i> <i>${order.pawnshopPostId.pawnshopId.pawnshopTel }</i>
 		</div>
 		<div class="print-order-customer">
-			<i>รหัสลูกค้า ${order.pawnerId.userCode}</i> <i>ชื่อผู้ซื้อ
+			<i>รหัสลูกค้า ${order.pawnerId.pawnerUsercode}</i> <i>ชื่อผู้ซื้อ
 				${order.pawnerId.pawnerFirstname } ${order.pawnerId.pawnerLastname }</i>
-			<i>ที่อยู่ ${order.pawnerId.pawnerProvince }</i> <br> <span>การสั่งซื้อ</span>
-			<i>สั่งซื้อวันที่ <fmt:formatDate pattern="dd MMMM yyyy"
-					value="${ order.orderItemDateIn }" /></i> <i>เลขที่สั่งซื้อ #${
-				order.orderItemId }</i>
+			<i
+				style="max-width: 300px; height: auto; word-wrap: break-word; text-align: left;">ที่อยู่
+				${order.pawnerId.pawnerAddress } ${order.pawnerId.pawnerProvince }
+				${order.pawnerId.pawnerZipcode }</i> <br> <span>การสั่งซื้อ</span>
+			<i>เลขที่สั่งซื้อ #${order.pawnshopPostId.pawnshopPostCode }</i> <i>สั่งซื้อวันที่
+				<fmt:formatDate pattern="d MMMM yyyy"
+					value="${ order.orderItemDateIn }" />
+			</i>
 		</div>
 		<table class="print-order-table">
 			<tr>
@@ -50,14 +57,15 @@
 							<li>รุ่น : ${order.pawnshopPostId.pawnshopPostModel}</li>
 							<li>หมายเลขประจำเครื่อง :
 								${order.pawnshopPostId.pawnshopPostSerial}</li>
-							<li>ปีที่ซื้อสินค้า :
-								${order.pawnshopPostId.pawnshopPostPurchase}</li>
+							<li>ปีที่ซื้อสินค้า : <fmt:formatDate pattern="d MMMM yyyy"
+									value="${order.pawnshopPostId.pawnshopPostPurchase}" /></li>
 						</c:if>
-						<c:if test="${order.pawnshopPostId.pawnerPostTypeCamera != null}">
+						<c:if
+							test="${order.pawnshopPostId.pawnshopPostTypeCamera != null}">
 							<li>ชนิดของกล้อง :
-								${order.pawnshopPostId.pawnerPostTypeCamera}</li>
+								${order.pawnshopPostId.pawnshopPostTypeCamera}</li>
 							<li>ชนิดของเลนกล้อง :
-								${order.pawnshopPostId.pawnerPostCameraLen}</li>
+								${order.pawnshopPostId.pawnshopPostCameraLen}</li>
 						</c:if>
 						<!-- Gold -->
 						<c:if test="${order.pawnshopPostId.pawnshopPostPure != null}">
@@ -74,7 +82,7 @@
 						<!-- Electronic camera com telephone -->
 						<c:if test="${order.pawnshopPostId.pawnshopPostBattery != null}">
 							<li><span class="fas fa-check" aria-hidden="true"> </span>
-								แบตเตอรี่</li>
+								แบตเตอร์รี่</li>
 						</c:if>
 						<!-- Electronic com telephone -->
 						<c:if test="${order.pawnshopPostId.pawnshopPostHarddisk != null}">
@@ -94,19 +102,16 @@
 								<li>เพรช : ${order.pawnshopPostId.pawnshopPostDiamond}</li>
 							</c:if>
 							<c:if test="${order.pawnshopPostId.pawnshopPostPackage != null}">
-								<li><span class="fas fa-check" aria-hidden="true"> </span>
-									กล้องบรรจุสินค้า</li>
+								<li>มีกล้องบรรจุสินค้า</li>
 							</c:if>
 						</c:if>
 						<!-- Electronic tv -->
 						<c:if test="${order.pawnshopPostId.pawnshopPostRemote != null}">
-							<li><span class="fas fa-check" aria-hidden="true"> </span>
-								รีโมท</li>
+							<li>มีรีโมท</li>
 						</c:if>
 						<!-- Watch,Electronic -->
 						<c:if test="${order.pawnshopPostId.pawnshopPostWarranty != null}">
-							<li><span class="fas fa-check" aria-hidden="true"> </span>
-								การประกันสินค้า</li>
+							<li>มีการประกันสินค้า</li>
 						</c:if>
 						<c:if
 							test="${order.pawnshopPostId.pawnshopPostDescription != null && order.pawnshopPostId.pawnshopPostDescription != ''}">

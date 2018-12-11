@@ -24,31 +24,39 @@
 			<img src="img/logos/logofull.png"> <span>b2pawn.com</span>
 		</div>
 		<div class="print-pledge-saler">
-			<i>โรงรับจำนำ ${pledge.pawnshopId.pawnshopName }</i> <i>ที่อยู่
-				${pledge.pawnshopId.pawnshopProvince }</i> <i>${pledge.pawnshopId.pawnshopTel }</i>
+			<i>โรงรับจำนำ ${pledge.pawnshopId.pawnshopName }</i> <i
+				style="max-width: 300px; height: auto; word-wrap: break-word; text-align: right;">ที่อยู่
+				${pledge.pawnshopId.pawnshopAddress }
+				${pledge.pawnshopId.pawnshopProvince }
+				${pledge.pawnshopId.pawnshopZipcode }</i> <i>${pledge.pawnshopId.pawnshopTel }</i>
 		</div>
 		<div class="print-pledge">
 			<div class="print-pledge-customer">
 				<i>รหัสลูกค้า ${pledge.pawnerPostId.pawnerId.pawnerUsercode}</i> <i>ชื่อผู้จำนำ
 					${pledge.pawnerPostId.pawnerId.pawnerFirstname }
-					${pledge.pawnerPostId.pawnerId.pawnerLastname }</i> <i>ที่อยู่
-					${pledge.pawnerPostId.pawnerId.pawnerProvince }</i>
+					${pledge.pawnerPostId.pawnerId.pawnerLastname }</i> <i
+					style="max-width: 300px; height: auto; word-wrap: break-word; text-align: left;">ที่อยู่
+					${pledge.pawnerPostId.pawnerId.pawnerAddress }
+					${pledge.pawnerPostId.pawnerId.pawnerProvince }
+					${pledge.pawnerPostId.pawnerId.pawnerZipcode }</i>
 			</div>
-			<div class="print-pledge-detail ml-auto">
-				<span>การจำนำ</span> <i>เลขที่การจำนำ
-					${pledge.pawnerPostId.pawnerPostCode}</i> <i> วันที่ลงของจำนำ <fmt:formatDate
-						pattern="dd MMMM yyyy"
-						value="${ pledge.pawnerPostId.pawnerPostDate }" />
-				</i> <i> วันที่มีการเสนอราคา <fmt:formatDate pattern="dd MMMM yyyy"
-						value="${ pledge.estimateDate }" />
-				</i> <i> วันที่รับข้อเสนอ <fmt:formatDate pattern="dd MMMM yyyy"
-						value="${ pledge.estimateAccessDate }" />
-				</i> <i>ราคาที่ถูกเสนอไว้ ${ pledge.estimatePriceMin } - ${ pledge.estimatePriceMax }
-					บาท</i>
-			</div>
+
+		</div>
+		<div class="print-pledge-detail">
+			<span style="font-weight: 900">การจำนำ</span> <i>เลขที่การจำนำ
+				#${pledge.pawnerPostId.pawnerPostCode}</i> <i> วันที่ลงของจำนำ <fmt:formatDate
+					pattern="d MMMM yyyy"
+					value="${ pledge.pawnerPostId.pawnerPostDate }" />
+			</i> <i> วันที่มีการเสนอราคา <fmt:formatDate pattern="d MMMM yyyy"
+					value="${ pledge.estimateDate }" />
+			</i> <i> วันที่รับข้อเสนอ <fmt:formatDate pattern="d MMMM yyyy"
+					value="${ pledge.estimateAccessDate }" />
+			</i> <i>ราคาที่ถูกเสนอไว้ ${ pledge.estimatePriceMin } - ${ pledge.estimatePriceMax }
+				บาท</i>
 		</div>
 		<div class="print-pledge-item">
-			<span>รายละเอียดของจำนำ</span><i>${pledge.pawnerPostId.pawnerPostName}</i>
+			<span style="font-weight: 900">รายละเอียดของจำนำ</span> <span
+				style="font-weight: 900">${pledge.pawnerPostId.pawnerPostName}</span>
 			<div class="print-pledge-item-detail">
 				<div class="print-pledge-item-detail-img">
 					<img
@@ -59,10 +67,10 @@
 						<!-- Watch,Electronic -->
 						<c:if test="${pledge.pawnerPostId.pawnerPostModel != null}">
 							<li>รุ่น : ${pledge.pawnerPostId.pawnerPostModel}</li>
-							<li>หมายเลขประจำเครื่อง :
+							<li>หมายเลขผลิตภัณฑ์ :
 								${pledge.pawnerPostId.pawnerPostSerial}</li>
-							<li>ปีที่ซื้อสินค้า :
-								${pledge.pawnerPostId.pawnerPostPurchase}</li>
+							<li>ปีที่ซื้อสินค้า : <fmt:formatDate pattern="d MMMM yyyy"
+									value="${pledge.pawnerPostId.pawnerPostPurchase}" /></li>
 						</c:if>
 						<c:if test="${pledge.pawnerPostId.pawnerPostTypeCamera != null}">
 							<li>ชนิดของกล้อง :
@@ -104,19 +112,16 @@
 								<li>เพรช : ${pledge.pawnerPostId.pawnerPostDiamond}</li>
 							</c:if>
 							<c:if test="${pledge.pawnerPostId.pawnerPostPackage != null}">
-								<li><span class="fas fa-check" aria-hidden="true"> </span>
-									กล้องบรรจุภัณฑ์</li>
+								<li>มีกล้องบรรจุภัณฑ์</li>
 							</c:if>
 						</c:if>
 						<!-- Electronic tv -->
 						<c:if test="${pledge.pawnerPostId.panwePostRemote != null}">
-							<li><span class="fas fa-check" aria-hidden="true"> </span>
-								รีโมท</li>
+							<li>มีรีโมท</li>
 						</c:if>
 						<!-- Watch,Electronic -->
 						<c:if test="${pledge.pawnerPostId.pawnerPostWarranty != null}">
-							<li><span class="fas fa-check" aria-hidden="true"> </span>
-								การประกันสินค้า</li>
+							<li>มีการประกันสินค้า</li>
 						</c:if>
 						<c:if
 							test="${pledge.pawnerPostId.pawnerPostDescription != null && pledge.pawnerPostId.pawnerPostDescription != ''}">

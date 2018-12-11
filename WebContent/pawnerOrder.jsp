@@ -67,11 +67,11 @@
 					class="order-list filter-column ${order.pawnshopPostId.pawnshopPostItemType}">
 					<div class="d-flex">
 						<div class="mr-auto order-title">
-							<span> เลขที่สั่งซื้อ #${ order.orderItemId } </span> <i>
+							<span> เลขที่สั่งซื้อ #${ order.pawnshopPostId.pawnshopPostCode } </span> <i>
 								สั่งซื้อวันที่ <fmt:formatDate pattern="dd MMMM yyyy"
 									value="${ order.orderItemDateIn }" />
 							</i> <i> จำหน่ายโดย
-								${order.pawnshopPostId.pawnshopId.pawnshopName } </i>
+								<a href="profile.html?usercode=${order.pawnshopPostId.pawnshopId.pawnshopUsercode }">${order.pawnshopPostId.pawnshopId.pawnshopName } </a></i>
 						</div>
 						<div class="p-2">
 							ยอดรวมทั้งสิ้น <strong class="text-orange">${order.pawnshopPostId.pawnshopPostPrice }
@@ -81,13 +81,13 @@
 					<line-x></line-x>
 					<div class="d-flex align-items-center">
 						<span class="p-2"> <img class="img-responsive"
-							style="width: 100px; height: 50px;"
+							style="width: 100px; height: 50px; object-fit: contain;"
 							src="img/uploadimg/pawnshopPost/${order.pawnshopPostId.pawnshopPostPicture }" />
 						</span> <span class="p-2">${order.pawnshopPostId.pawnshopPostName }</span>
 						<span class="p-2"> <i class="order-quality"> 1 ชิ้น </i>
 						</span> <span class="ml-auto"> <a
 							class="btn-custom btn-custom-sky" href="#"
-							onClick="printorder(${order.orderItemId}); return false;"> <i
+							onClick="select(${order.orderItemId});return false;""> <i
 								class="far fa-file-alt"></i> พิมพ์ใบสั่งซื้อ
 						</a>
 						</span>
@@ -116,10 +116,10 @@
 	/* print data */
 	
 
-	function printorder(e){
-	   var w  window.open("pawner-print-order.html?order="+e, "_blank",
-	    "width=950,height=700");
-	    w.print();
+	function select(e) {
+		   var pp = window.open("pawner-print-order.html?order="+e, "_blank",
+		    "width=950,height=700"); 
+		    pp.print();
 		}
     </script>
 </body>

@@ -7,7 +7,7 @@ section {
 	margin: 20px;
 }
 
-i{
+i {
 	font-style: normal;
 }
 
@@ -34,7 +34,16 @@ i{
 	flex-direction: column;
 }
 
-.print-order-saler{
+.print-order-saler {
+	display: flex;
+	align-items: flex-end;
+	text-align: right;
+}
+
+.print-order-saler i {
+	max-width: 300px;
+	height: auto;
+	word-wrap: break-word;
 	text-align: right;
 }
 
@@ -81,8 +90,8 @@ i{
 	margin-top: 30px;
 }
 
-.print-order-contact span{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.print-order-contact span {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }

@@ -42,7 +42,16 @@ i {
 	flex-direction: column;
 }
 
+.print-pledge-saler i {
+	max-width: 300px;
+	height: auto;
+	word-wrap: break-word;
+	text-align: right;
+}
+
 .print-pledge-saler {
+	display: flex;
+	align-items: flex-end;
 	text-align: right;
 }
 

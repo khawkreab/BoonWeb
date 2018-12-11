@@ -245,8 +245,8 @@
 											</div>
 											<div class="col-md-2">
 												<a href="#" onClick="select(${estimate.estimateId}); return false;" class="btn-custom btn-custom-sky small">
-													<i class="fas fa-print" style="margin: auto;"></i>
-													<span style="margin-left: 5px;">พิมพ์ใบจำนำ</span>
+													<i class="fas fa-print" style="margin: auto; color: #fff;"></i>
+													<span style="margin-left: 5px; color: #fff;">พิมพ์ใบจำนำ</span>
 												</a>
 											</div>
 										</div>
