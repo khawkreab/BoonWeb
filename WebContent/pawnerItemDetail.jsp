@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Detail</title>
+<title>${pawnshopPost.pawnshopPostName }</title>
 <!-- import all css -->
 <jsp:include page="importCSS.jsp" />
 <%
@@ -44,7 +44,7 @@
 						<ul class="card-carousel-indicators carousel-indicators">
 							<c:forEach var="pic" items="${pictures}">
 								<li data-target="#demo" data-slide-to="<%=dataslideto%>" class="<%=active%>">
-									<img src="img/uploadimg/pawnhopPost/${pic.picture}">
+									<img src="img/uploadimg/pawnshopPost/${pic.picture}">
 								</li>
 								<%
 									dataslideto++;
@@ -79,11 +79,11 @@
 				</div>
 				<!-- right -->
 				<div class="product-detail-right mr-auto">
-					<h1>${pawnshopPost.pawnshopPostName }${post.pawnshopPostBrand }</h1>
+					<h1>${pawnshopPost.pawnshopPostName }</h1>
 					<p>
 						โดย
-						<a href="">${pawnshopPost.pawnshopId.pawnshopName}</a>
-						| ${pawnshopPost.pawnshopId.pawnshopProvince}
+						<a href="profile.html?usercode=${pawnshopPost.pawnshopId.pawnshopUsercode}">${pawnshopPost.pawnshopId.pawnshopName}</a>
+						| จังหวัด ${pawnshopPost.pawnshopId.pawnshopProvince}
 					</p>
 					<line-x></line-x>
 					<ul class="row">
@@ -94,9 +94,8 @@
 						</c:if>
 						<!-- Watch,Electronic -->
 						<c:if test="${pawnshopPost.pawnshopPostModel != null}">
-							<li class="col-md-6">ปีที่ผลิต : ${pawnshopPost.pawnshopPostProduction}</li>
-							<li class="col-md-6">โมเดล : ${pawnshopPost.pawnshopPostModel}</li>
-							<li class="col-md-6">รุ่น : ${pawnshopPost.pawnshopPostSerial}</li>
+							<li class="col-md-6">รุ่น : ${pawnshopPost.pawnshopPostModel}</li>
+							<li class="col-md-6">หมายเลขผลิตภัณฑ์: ${pawnshopPost.pawnshopPostSerial}</li>
 							<li class="col-md-6">ปีที่ซื้อ : ${pawnshopPost.pawnshopPostPurchase }</li>
 						</c:if>
 						<!-- Gold -->
@@ -128,8 +127,8 @@
 						<!-- Electronic camera com telephone -->
 						<c:if test="${pawnshopPost.pawnshopPostBattery != null}">
 							<li class="col-md-6">
-								แบตเตอรี่
 								<span class="fas fa-check" aria-hidden="true"> </span>
+								แบตเตอรี่
 							</li>
 						</c:if>
 						<!-- Electronic tv -->
@@ -183,10 +182,10 @@
 									"pawnshopPostPicture": "${pawnshopPost.pawnshopPostPicture}"}'
 						class="hvr-skew-backward">
 						<c:if test="${pawnshopPost.pawnshopPostQuality != '0'}">
-							<button class="btn-custom btn-custom-defalt">เพิ่มลงรถเข็น</button>
+							<button class="btn-custom btn-custom-defalt">เพิ่มลงตะกร้าสินค้า</button>
 						</c:if>
 						<c:if test="${pawnshopPost.pawnshopPostQuality == '0'}">
-							<button class="btn-custom btn-custom-gray" disabled>เพิ่มลงรถเข็น</button>
+							<button class="btn-custom btn-custom-gray" disabled>เพิ่มลงตะกร้าสินค้า</button>
 						</c:if>
 					</a>
 				</div>
@@ -201,7 +200,7 @@
 					<div class="product-detail-modal-left">
 						<p class="col-md-12 text-success h5">
 							<i class="fas fa-check-circle"></i>
-							สินค้าจำนวน 1 รายการได้ถูกเพิ่มลงในรถเข็นของท่านแล้ว
+							สินค้าจำนวน 1 รายการได้ถูกเพิ่มลงในตะกร้าของท่านแล้ว
 						</p>
 						<p class="product-detail-eula d-flex">
 							<span class="h6">${pawnshopPost.pawnshopPostName } ${post.pawnshopPostBrand }</span>
@@ -215,7 +214,7 @@
 						<div class="product-detail-checkcart">
 							<div>
 								<span class="h5">
-									รถเข็น
+									ตะกร้าสินค้า
 									<small class="text-secondary">
 										(จำนวน
 										<i id="cartNumberi"></i>
@@ -241,8 +240,9 @@
 								<span class="mr-auto">
 									<a href="pawner-off-pledge.html" class="btn-custom btn-custom-blue">เลือกสินค้าต่อ</a>
 								</span>
+								&nbsp;
 								<span class="">
-									<a href="pawner-cart.html" class="btn-custom btn-custom-defalt">ไปยังรถเข็น</a>
+									<a href="pawner-cart.html" class="btn-custom btn-custom-defalt">ไปยังตะกร้าสินค้า </a>
 								</span>
 							</div>
 						</div>
@@ -266,7 +266,7 @@
 						<div class="mr-auto">
 							<p class="text-warring" style="font-size: 1.5rem;">ท่านมีรายการสินค้านี้ในตะกร้าแล้ว</p>
 							<p>
-								<a href="pawner-cart.html" class="btn-custom btn-custom-defalt">ไปยังรถเข็น</a>
+								<a href="pawner-cart.html" class="btn-custom btn-custom-defalt">ไปยังตะกร้าสินค้า </a>
 							</p>
 						</div>
 					</div>
@@ -315,6 +315,7 @@
 		    /* get cart size */
 		    document.getElementById("cartSize").style.display = "block";
 		    document.getElementById("cartSize").innerHTML = list.length
+		    document.getElementById("cartNumberi").innerHTML = list.length
 		    /* get notification */
 		    document.getElementById("notifi").style.display = "block";
 		}
@@ -330,5 +331,5 @@
 	    }
 	}
     </script>
-	</ body>
+</body>
 </html>
