@@ -97,7 +97,7 @@
 							<li class="col-md-6">ปีที่ผลิต : ${pawnshopPost.pawnshopPostProduction}</li>
 							<li class="col-md-6">โมเดล : ${pawnshopPost.pawnshopPostModel}</li>
 							<li class="col-md-6">รุ่น : ${pawnshopPost.pawnshopPostSerial}</li>
-							<li class="col-md-6">ปีที่ซื้อ :  ${pawnshopPost.pawnshopPostPurchase } </li>
+							<li class="col-md-6">ปีที่ซื้อ : ${pawnshopPost.pawnshopPostPurchase }</li>
 						</c:if>
 						<!-- Gold -->
 						<c:if test="${pawnshopPost.pawnshopPostPure != null}">
@@ -135,24 +135,24 @@
 						<!-- Electronic tv -->
 						<c:if test="${pawnshopPost.pawnshopPostRemote != null}">
 							<li class="col-md-6">
-								รีโมท
 								<span class="fas fa-check" aria-hidden="true"> </span>
+								รีโมท
 							</li>
 						</c:if>
 						<!-- Watch -->
 						<c:if test="${pawnshopPost.pawnshopPostCase != null}">
 							<c:if test="${pawnshopPost.pawnshopPostPackage != null}">
 								<li class="col-md-6">
-									กล่อง
 									<span class="fas fa-check" aria-hidden="true"> </span>
+									กล่อง
 								</li>
 							</c:if>
 						</c:if>
 						<!-- Watch,Electronic -->
 						<c:if test="${pawnshopPost.pawnshopPostModel != null}">
 							<li class="col-md-6">
-								ประกัน
 								<span class="fas fa-check" aria-hidden="true"> </span>
+								ประกัน
 							</li>
 						</c:if>
 					</ul>
@@ -330,5 +330,5 @@
 	    }
 	}
     </script>
-</body>
+	</ body>
 </html>
