@@ -137,7 +137,7 @@
 									<c:if test="${postprocess.pawnerPostPure != null}">
 										<li>ความบริสุทธ์ : ${postprocess.pawnerPostPure  }</li>
 										<li>น้ำหนัก : ${postprocess.pawnerPostWeigh }</li>
-										<li>ชนิดหรือรูปแบบของทองคำ : ${postprocess.pawnerPostCategory }</li>
+										<li>รูปแบบของทองคำ : ${postprocess.pawnerPostCategory }</li>
 									</c:if>
 									<!-- Electronic tv com telephone -->
 									<c:if test="${postprocess.pawnerPostSize != null}">
