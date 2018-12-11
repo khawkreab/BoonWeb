@@ -69,6 +69,10 @@
 		<button class="filter-btn" onclick="filterSelection('complete')">
 			สินค้าถูกขายแล้ว <i class="fas fa-check"></i>
 		</button>
+		<button class="filter-btn" onclick="filterSelection('delete')">
+			ยกเลิกการปล่อยของหลุดจำนำ
+			<i class="fas fa-trash-alt"></i>
+		</button>
 	</div>
 	<!-- not have item -->
 	<div id="noitem">ไม่มีรายการ</div>
@@ -85,6 +89,9 @@
 					</c:if>
 					<c:if test="${post.pawnshopPostStatus == 'complete'}">
 						<i class="fas fa-check"></i>
+					</c:if>
+					<c:if test="${post.pawnshopPostStatus == 'delete'}">
+							<i class="fas fa-trash-alt"></i>
 					</c:if>
 					<div class="timeline-title">
 						<div class="mr-auto">
@@ -117,6 +124,12 @@
 						</div>
 						<div class="p-2">
 							<c:if test="${post.pawnshopPostStatus == 'waiting'}">
+								<form action="pawnshopPost-delete.html" method="post">
+									<input type="hidden" name="pawnshopPostId" value="${post.pawnshopPostId}">
+									<button class="btn-custom btn-custom-defalt small" type="submit">ยกเลิกการปล่อยของหลุดจำนำ</button>
+								</form>
+							</c:if>
+							<c:if test="${post.pawnshopPostStatus == 'delete'}">
 								<i style="color: #ff3300; font-weight: bold">สินค้ายังไม่ถูกซื้อ</i>
 							</c:if>
 							<i style="color: #ff3300; font-weight: bold"> ขายในราคา
