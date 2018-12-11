@@ -143,7 +143,7 @@
 										<!-- Electronic camera com telephone -->
 										<c:if test="${track.pawnerPostId.pawnerPostBattery != null}">
 											<li><span class="fas fa-check" aria-hidden="true">
-											</span> แบตเตอร์รี่</li>
+											</span> แบตเตอรี่</li>
 										</c:if>
 										<!-- Electronic com telephone -->
 										<c:if test="${track.pawnerPostId.pawnerPostHarddisk != null}">

@@ -109,6 +109,13 @@
 									</c:if>
 								</c:forEach>
 							</div>
+						</div>
+						<div class="p-2">
+							<c:if test="${post.pawnshopPostStatus == 'waiting'}">
+								<i style="color: #ff3300; font-weight: bold">สินค้ายังไม่ถูกซื้อ</i>
+							</c:if>
+							<i style="color: #ff3300; font-weight: bold"> ขายในราคา
+								${post.pawnshopPostPrice} บาท </i>
 							<c:forEach items="${order}" var="postw">
 								<c:if
 									test="${postw.pawnshopPostId.pawnshopPostId == post.pawnshopPostId}">
@@ -126,19 +133,12 @@
 												<input type="hidden" name="pawnshopPostId"
 													value="${postw.pawnshopPostId.pawnshopPostId}"> <input
 													type="hidden" name="status" value="waiting">
-												<button class="btn-custom btn-custom-blue" type="submit">ไม่มีคนมารับของ</button>
+												<button class="btn-custom btn-custom-sky" type="submit">ไม่มีคนมารับของ</button>
 											</form>
 										</div>
 									</c:if>
 								</c:if>
 							</c:forEach>
-						</div>
-						<div class="p-2">
-							<c:if test="${post.pawnshopPostStatus == 'waiting'}">
-								<i style="color: #ff3300; font-weight: bold">สินค้ายังไม่ถูกซื้อ</i>
-							</c:if>
-							<i style="color: #ff3300; font-weight: bold"> ขายในราคา
-								${post.pawnshopPostPrice} บาท </i>
 						</div>
 					</div>
 					<line-x></line-x>
@@ -160,8 +160,9 @@
 									<li>ปีที่ซื้อสินค้า : <fmt:formatDate
 											pattern="d MMMM yyyy" value="${post.pawnshopPostPurchase}" /></li>
 								</c:if>
-								<c:if test="${post.pawnshopPostProduction != null}">
-									<li>ปีที่ผลิตสินค้า : ${post.pawnshopPostProduction}</li>
+								<c:if test="${post.pawnshopPostTypeCamera != null}">
+									<li>ชนิดของกล้อง : ${post.pawnshopPostTypeCamera}</li>
+									<li>ชนิดของเลนกล้อง : ${post.pawnshopPostCameraLen}</li>
 								</c:if>
 								<!-- Gold -->
 								<c:if test="${post.pawnshopPostPure != null}">
@@ -177,7 +178,7 @@
 								<!-- Electronic camera com telephone -->
 								<c:if test="${post.pawnshopPostBattery != null}">
 									<li><span class="fas fa-check" aria-hidden="true">
-									</span> แบตเตอร์รี่</li>
+									</span> แบตเตอรี่</li>
 								</c:if>
 								<!-- Electronic com telephone -->
 								<c:if test="${post.pawnshopPostHarddisk != null}">

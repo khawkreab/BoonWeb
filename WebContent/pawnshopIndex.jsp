@@ -16,7 +16,7 @@
 <head>
 <link href="css/pawnerCard.css" rel="stylesheet">
 <link rel="stylesheet" href="css/sorting.css">
-<title>รายการของหลุดจำนำ</title>
+<title>รายการของลงจำนำ</title>
 <!-- import all css -->
 <jsp:include page="importCSS.jsp" />
 </head>
@@ -26,7 +26,7 @@
 	<!--banner-->
 	<div class="banner-top">
 		<div>
-			<h1 id="checkpost">รายการของหลุดจำนำ</h1>
+			<h1 id="checkpost">รายการของลงจำนำ</h1>
 			<em></em>
 		</div>
 	</div>
@@ -99,7 +99,7 @@
 
 			console.log("card => " + card)
 			if (card == 0) {
-				$('#checkpost').text("ไม่มีรายการของหลุดจำนำ")
+				$('#checkpost').text("ไม่มีรายการของลงจำนำ")
 			}
 
 		});

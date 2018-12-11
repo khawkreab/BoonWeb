@@ -64,16 +64,18 @@
 							<li>ปีที่ซื้อสินค้า :
 								${pledge.pawnerPostId.pawnerPostPurchase}</li>
 						</c:if>
-						<c:if test="${pledge.pawnerPostId.pawnerPostProduction != null}">
-							<li>ปีที่ผลิตสินค้า :
-								${pledge.pawnerPostId.pawnerPostProduction}</li>
+						<c:if test="${pledge.pawnerPostId.pawnerPostTypeCamera != null}">
+							<li>ชนิดของกล้อง :
+								${pledge.pawnerPostId.pawnerPostTypeCamera}</li>
+							<li>ชนิดของเลนกล้อง :
+								${pledge.pawnerPostId.pawnerPostCameraLen}</li>
 						</c:if>
 						<!-- Gold -->
 						<c:if test="${pledge.pawnerPostId.pawnerPostPure != null}">
 							<li>ยี่ห้อ : ${pledge.pawnerPostId.pawnerPostBrand}</li>
 							<li>ความบริสุทธ์ : ${pledge.pawnerPostId.pawnerPostPure}</li>
 							<li>น้ำหนัก : ${pledge.pawnerPostId.pawnerPostWeigh}</li>
-							<li>ชนิดหรือรูปแบบของทองคำ :
+							<li>รูปแบบของทองคำ :
 								${pledge.pawnerPostId.pawnerPostCategory}</li>
 						</c:if>
 						<!-- Electronic tv com telephone -->
@@ -83,15 +85,15 @@
 						<!-- Electronic camera com telephone -->
 						<c:if test="${pledge.pawnerPostId.pawnerPostBattery != null}">
 							<li><span class="fas fa-check" aria-hidden="true"> </span>
-								Battery</li>
+								แบตเตอรี่</li>
 						</c:if>
 						<!-- Electronic com telephone -->
 						<c:if test="${pledge.pawnerPostId.pawnerPostHarddisk != null}">
-							<li>Harddisk : ${pledge.pawnerPostId.pawnerPostHarddisk}</li>
+							<li>ฮาร์ดดิส : ${pledge.pawnerPostId.pawnerPostHarddisk}</li>
 						</c:if>
 						<!-- Electronic com-->
 						<c:if test="${pledge.pawnerPostId.pawnerPostRam != null}">
-							<li>Ram : ${pledge.pawnerPostId.pawnerPostRam}</li>
+							<li>แรม : ${pledge.pawnerPostId.pawnerPostRam}</li>
 						</c:if>
 						<!-- Watch -->
 						<c:if test="${pledge.pawnerPostId.pawnerPostCase != null}">
@@ -103,20 +105,24 @@
 							</c:if>
 							<c:if test="${pledge.pawnerPostId.pawnerPostPackage != null}">
 								<li><span class="fas fa-check" aria-hidden="true"> </span>
-									กล้องบรรจุสินค้า</li>
+									กล้องบรรจุภัณฑ์</li>
 							</c:if>
 						</c:if>
 						<!-- Electronic tv -->
 						<c:if test="${pledge.pawnerPostId.panwePostRemote != null}">
 							<li><span class="fas fa-check" aria-hidden="true"> </span>
-								Remote</li>
+								รีโมท</li>
 						</c:if>
 						<!-- Watch,Electronic -->
 						<c:if test="${pledge.pawnerPostId.pawnerPostWarranty != null}">
 							<li><span class="fas fa-check" aria-hidden="true"> </span>
 								การประกันสินค้า</li>
 						</c:if>
-						<li>${pledge.pawnerPostId.pawnerPostDescription}</li>
+						<c:if
+							test="${pledge.pawnerPostId.pawnerPostDescription != null && pledge.pawnerPostId.pawnerPostDescription != ''}">
+							<i class="quick small">เพิ่มเติม
+								${pledge.pawnerPostId.pawnerPostDescription }</i>
+						</c:if>
 					</ul>
 				</div>
 			</div>

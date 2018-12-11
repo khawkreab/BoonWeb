@@ -27,9 +27,9 @@
 				${order.pawnshopPostId.pawnshopId.pawnshopProvince }</i> <i>${order.pawnshopPostId.pawnshopId.pawnshopTel }</i>
 		</div>
 		<div class="print-order-customer">
-			<i>รหัสลูกค้า ${order.pawnerId.userCode}</i> <i>ชื่อผู้ซื้อ ${order.pawnerId.pawnerFirstname }
-				${order.pawnerId.pawnerLastname }</i> <i>ที่อยู่
-				${order.pawnerId.pawnerProvince }</i> <br> <span>การสั่งซื้อ</span>
+			<i>รหัสลูกค้า ${order.pawnerId.userCode}</i> <i>ชื่อผู้ซื้อ
+				${order.pawnerId.pawnerFirstname } ${order.pawnerId.pawnerLastname }</i>
+			<i>ที่อยู่ ${order.pawnerId.pawnerProvince }</i> <br> <span>การสั่งซื้อ</span>
 			<i>สั่งซื้อวันที่ <fmt:formatDate pattern="dd MMMM yyyy"
 					value="${ order.orderItemDateIn }" /></i> <i>เลขที่สั่งซื้อ #${
 				order.orderItemId }</i>
@@ -53,10 +53,11 @@
 							<li>ปีที่ซื้อสินค้า :
 								${order.pawnshopPostId.pawnshopPostPurchase}</li>
 						</c:if>
-						<c:if
-							test="${order.pawnshopPostId.pawnshopPostProduction != null}">
-							<li>ปีที่ผลิตสินค้า :
-								${order.pawnshopPostId.pawnshopPostProduction}</li>
+						<c:if test="${order.pawnshopPostId.pawnerPostTypeCamera != null}">
+							<li>ชนิดของกล้อง :
+								${order.pawnshopPostId.pawnerPostTypeCamera}</li>
+							<li>ชนิดของเลนกล้อง :
+								${order.pawnshopPostId.pawnerPostCameraLen}</li>
 						</c:if>
 						<!-- Gold -->
 						<c:if test="${order.pawnshopPostId.pawnshopPostPure != null}">
@@ -73,15 +74,15 @@
 						<!-- Electronic camera com telephone -->
 						<c:if test="${order.pawnshopPostId.pawnshopPostBattery != null}">
 							<li><span class="fas fa-check" aria-hidden="true"> </span>
-								Battery</li>
+								แบตเตอรี่</li>
 						</c:if>
 						<!-- Electronic com telephone -->
 						<c:if test="${order.pawnshopPostId.pawnshopPostHarddisk != null}">
-							<li>Harddisk : ${order.pawnshopPostId.pawnshopPostHarddisk}</li>
+							<li>ฮาร์ดดิส : ${order.pawnshopPostId.pawnshopPostHarddisk}</li>
 						</c:if>
 						<!-- Electronic com-->
 						<c:if test="${order.pawnshopPostId.pawnshopPostRam != null}">
-							<li>Ram : ${order.pawnshopPostId.pawnshopPostRam}</li>
+							<li>แรม : ${order.pawnshopPostId.pawnshopPostRam}</li>
 						</c:if>
 						<!-- Watch -->
 						<c:if test="${order.pawnshopPostId.pawnshopPostCase != null}">
@@ -100,14 +101,18 @@
 						<!-- Electronic tv -->
 						<c:if test="${order.pawnshopPostId.pawnshopPostRemote != null}">
 							<li><span class="fas fa-check" aria-hidden="true"> </span>
-								Remote</li>
+								รีโมท</li>
 						</c:if>
 						<!-- Watch,Electronic -->
 						<c:if test="${order.pawnshopPostId.pawnshopPostWarranty != null}">
 							<li><span class="fas fa-check" aria-hidden="true"> </span>
 								การประกันสินค้า</li>
 						</c:if>
-						<li>${order.pawnshopPostId.pawnshopPostDescription}</li>
+						<c:if
+							test="${order.pawnshopPostId.pawnshopPostDescription != null && order.pawnshopPostId.pawnshopPostDescription != ''}">
+							<i class="quick small">เพิ่มเติม
+								${order.pawnshopPostId.pawnshopPostDescription }</i>
+						</c:if>
 					</ul>
 				</td>
 				<td>1</td>

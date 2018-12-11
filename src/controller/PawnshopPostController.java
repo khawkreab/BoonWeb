@@ -223,6 +223,6 @@ public class PawnshopPostController {
 			e.printStackTrace();
 		}
 
-		return "redirect:pawnshop-list-history.html";
+		return "redirect:pawnshop-list-post.html";
 	}
 }
