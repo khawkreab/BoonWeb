@@ -13,7 +13,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>pawnshop-estimate-form</title>
+<title>${pawnerPost.pawnerPostName}</title>
 <!-- import all css -->
 <jsp:include page="importCSS.jsp" />
 <link rel="stylesheet" href="css/carddetail.css">
@@ -26,6 +26,13 @@
 	<!-- Navigation bar -->
 	<jsp:include page="navbar.html" />
 	<section class="card-section">
+	<div class="backhome">
+				<a href="index.html">หน้าหลัก</a>
+				<i class="fas fa-angle-right"></i>
+				<a href="pawnshop-index.html#loaded">รายการของลงจำนำ</a>
+				<i class="fas fa-angle-right"></i>
+				<a href="pawnshop-estimate-form.html?item=${pawnerPost.pawnerPostId}">${pawnerPost.pawnerPostName}</a>
+	</div>
 		<div class="card-detail d-flex animated lightSpeedIn">
 			<!-- left -->
 			<div class="mr-auto card-detail-left">

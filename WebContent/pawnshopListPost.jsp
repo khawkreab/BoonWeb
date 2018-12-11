@@ -17,7 +17,7 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="">
 <meta name="author" content="">
-<title>pawnshop-post</title>
+<title>ประวัติการปล่อยของหลุดจำนำ</title>
 <!-- import all css -->
 <jsp:include page="importCSS.jsp" />
 <link rel="stylesheet" href="css/history.css">
@@ -49,6 +49,11 @@
 		<div class="">
 			<h1>ประวัติการปล่อยของหลุดจำนำ</h1>
 			<em></em>
+			<div class="backhome">
+				<a href="index.html">หน้าหลัก</a>
+				<i class="fas fa-angle-right" style="color: black;"></i>
+				<a href="pawnshop-list-post.html#loaded">ประวัติการปล่อยของหลุดจำนำ</a>
+			</div>
 		</div>
 	</div>
 	<div id="filterBtnContainer">

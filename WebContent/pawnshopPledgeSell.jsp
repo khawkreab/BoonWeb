@@ -42,6 +42,11 @@
 			</div>
 		</div>
 	</div>
+	<div class="backhome">
+			<a href="index.html">หน้าหลัก</a>
+			<i class="fas fa-angle-right"></i>
+			<a href="pawnshop-pledge-sell.html">การปล่อยของหลุดจำนำ</a>
+		</div>
 	<div class="page">
 		<div class="pledge-container">
 			<div class="pledge-featured">
@@ -52,7 +57,7 @@
 				<div id="choosetype">
 
 					<h4>
-						<i>เลือกประเภทการจำนำ</i>
+						<i>เลือกประเภทการปล่อยของหลุดจำนำ</i>
 					</h4>
 					<table>
 						<tr>

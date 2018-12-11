@@ -49,6 +49,11 @@
 		<div class="">
 			<h1>ประวัติการประเมิน</h1>
 			<em></em>
+			<div class="backhome">
+				<a href="index.html">หน้าหลัก</a>
+				<i class="fas fa-angle-right" style="color: black;"></i>
+				<a href="pawnshop-estimate-history.html#loaded">ประวัติการประเมิน</a>
+			</div>
 		</div>
 	</div>
 	<div id="filterBtnContainer">

@@ -28,6 +28,11 @@
 		<div>
 			<h1 id="checkpost">รายการของลงจำนำ</h1>
 			<em></em>
+			<div class="backhome">
+				<a href="index.html">หน้าหลัก</a>
+				<i class="fas fa-angle-right"></i>
+				<a href="pawnshop-index.html#loaded">รายการของลงจำนำ</a>
+			</div>
 		</div>
 	</div>
 	<div id="filterBtnContainer">

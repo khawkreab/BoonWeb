@@ -48,6 +48,11 @@
 		<div>
 			<h1>สถานะของการประเมิน</h1>
 			<em></em>
+			<div class="backhome">
+				<a href="index.html">หน้าหลัก</a>
+				<i class="fas fa-angle-right"></i>
+				<a href="pawnshop-track-estimate.html#loaded">สถานะของการประเมิน</a>
+			</div>
 		</div>
 	</div>
 	<div id="filterBtnContainer">
