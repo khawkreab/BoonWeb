@@ -114,7 +114,7 @@
 						<c:if test="${pawnshopPost.pawnshopPostPure != null}">
 							<li class="col-md-6">ความบริสุทธิ์ : ${pawnshopPost.pawnshopPostPure  }</li>
 							<li class="col-md-6">น้ำหนัก : ${pawnshopPost.pawnshopPostWeigh } กรัม</li>
-							<li class="col-md-6">ชนิด : ${pawnshopPost.pawnshopPostCategory }</li>
+							<li class="col-md-6">รูปแบบของทองคำ : ${pawnshopPost.pawnshopPostCategory }</li>
 						</c:if>
 						<!-- Watch -->
 						<c:if test="${pawnshopPost.pawnshopPostCase != null}">
