@@ -98,8 +98,11 @@
 	</section>
 	<!-- sorting -->
 	<script src="js/sorting.js"></script>
+	<script type="text/javascript" src="js/loadingpage.js"></script>
 	<script>
 	/* loading page */
+	loadingpage("?success");
+	/* print data */
 	window.onload = function loading() {
 	    if (window.location.hash) {
 		document.body.style.overflowY = "auto";

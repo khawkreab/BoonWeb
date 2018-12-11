@@ -61,12 +61,12 @@ public class OrderController {
 				orederService.insert(pawnerOreder);
 				pawnshopPostService.updateStatus(order.getPawnshopPostId(), "coming", "0");
 			}
-			return "redirect:pawner-order.html";
+			return "redirect:pawner-order.html?success";
 			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return "redirect:pawner-order.html";
+		return "redirect:pawner-order.html?success";
 	}
 
 	@RequestMapping("/pawner-order")

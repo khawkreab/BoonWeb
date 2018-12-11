@@ -174,7 +174,7 @@
 
 	    //clear cart
 	    this.clearCart()
-	    location.href = "http://localhost:8080/BoonWeb/pawner-order.html"
+	    location.href = "http://localhost:8080/BoonWeb/pawner-order.html?success"
 
 	}
     </script>
