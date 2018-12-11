@@ -119,6 +119,9 @@
 							<c:if test="${post.pawnshopPostStatus == 'waiting'}">
 								<i style="color: #ff3300; font-weight: bold">สินค้ายังไม่ถูกซื้อ</i>
 							</c:if>
+							<c:if test="${post.pawnshopPostStatus == 'complete'}">
+								<i style="color: #ff3300; font-weight: bold">สินค้าถูกขายแล้ว</i>
+							</c:if>
 							<i style="color: #ff3300; font-weight: bold"> ขายในราคา
 								${post.pawnshopPostPrice} บาท </i>
 							<c:forEach items="${order}" var="postw">
