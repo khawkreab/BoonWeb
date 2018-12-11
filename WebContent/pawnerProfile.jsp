@@ -64,21 +64,24 @@
 									<ul>
 										<li>ชื่อ</li>
 										<li>
-											<input type="text" name="pawnerFirstname" value="${pawner.pawnerFirstname}" />
+											<input type="text" name="pawnerFirstname" value="${pawner.pawnerFirstname}" pattern="[a-zA-Zก-์]{1,30}"
+								title="ใช้เป็นตัวอักษร ภาษาไทย หรือ อังกฤษ  ความยาวไม่เกิน 30 ตัวอักษร และ ต้องไม่ใช้ อักษรพิเศษ" required="required"/>
 											&nbsp;&nbsp; นามสกุล &nbsp;&nbsp;
-											<input type="text" name="pawnerLastname" value="${pawner.pawnerLastname}" />
+											<input type="text" name="pawnerLastname" value="${pawner.pawnerLastname}" pattern="[a-zA-Zก-์]{1,30}"
+								title="ใช้เป็นตัวอักษร ภาษาไทย หรือ อังกฤษ เท่านั้น ความยาวไม่เกิน 30 ตัวอักษร และ ต้องไม่ใช้ อักษรพิเศษ" required="required"/>
 										</li>
 										<li>อีเมล</li>
 										<li>
-											<input type="text"  value="${pawner.pawnerPassword}" readonly/>
+											<input type="text"  value="${pawner.pawnerEmail}" readonly/>
 										</li>
 										<li>รหัสผ่าน</li>
 										<li>
-											<input type="password" name="pawnerPassword" value="${pawner.pawnerPassword}" />
+											<input type="password" name="pawnerPassword" value="${pawner.pawnerPassword}" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+								title="ต้องมีเลขอย่างน้อย 1 ตัว และมีทั้ง อังษรพิมเล็กและใหญ่ความยาวอย่างน้อย 8 ตัว และ ห้ามใช้ภาษาไทย" required="required"/>
 										</li>
 										<li>เบอร์โทร</li>
 										<li>
-											<input type="text" name="pawnerPhone" value="${pawner.pawnerPhone}" />
+											<input type="text" name="pawnerPhone" value="${pawner.pawnerPhone}" pattern="[0-9]{10}" title="โปรใส่  หมายเลขโทรศัพท์ให้ถูกต้อง" required="required"/>
 										</li>
 										<li>จังหวัด</li>
 										<li>
@@ -88,11 +91,12 @@
 										</li>
 										<li>รหัสไปรษณีย์</li>
 										<li>
-											<input type="text" name="pawnerZipcode" value="${pawner.pawnerZipcode}" />
+											<input type="text" name="pawnerZipcode" value="${pawner.pawnerZipcode}" pattern="[0-9]{5}"
+								title="โปรใส่ รหัสไปรษณีย์ ให้ถูกต้อง" required="required"/>
 										</li>
 										<li>ที่อยู่</li>
 										<li>
-											<textarea name="pawnerAddress">${pawner.pawnerAddress}</textarea>
+											<textarea name="pawnerAddress" required="required">${pawner.pawnerAddress}</textarea>
 										</li>
 									</ul>
 									<div class="d-flex">
