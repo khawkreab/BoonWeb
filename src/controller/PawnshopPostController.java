@@ -225,17 +225,4 @@ public class PawnshopPostController {
 
 		return "redirect:pawnshop-list-post.html";
 	}
-	
-	@RequestMapping("/pawnshopPost-delete")
-	public String pawnshopPostDelete(HttpServletRequest request) {
-		long pawnshopPostId = Long.parseLong(request.getParameter("pawnshopPostId"));
-		try {
-
-			pawnshopPostService.updateStatus(pawnshopPostId, "delete", "0");
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return "redirect:pawnshop-list-post.html#loaded";
-	}
 }

@@ -64,7 +64,6 @@
 	<!--content-->
 	<div class="container flex-wrap" id="sorting">
 		<c:forEach items="${pawnshopPosts}" var="pawnshopPosts">
-		<c:if test="${pawnshopPosts.pawnshopPostStatus != 'delete'}">
 			<div
 				class="shop-card fas filter-column ${pawnshopPosts.pawnshopPostItemType}">
 				<div style="height: 200px;">
@@ -96,7 +95,6 @@
 					</div>
 				</div>
 			</div>
-			</c:if>
 		</c:forEach>
 	</div>
 	<!-- sorting -->
