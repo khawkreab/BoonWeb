@@ -27,7 +27,7 @@
 			<i class="fas fa-angle-right"></i>
 			<a href="pawner-off-pledge.html">รายการของหลุดจำนำ</a>
 			<i class="fas fa-angle-right"></i>
-			<a href="">ชื่อสินค้า</a>
+			<a href="post-item-detail.html?item=${pawnshopPost.pawnshopPostId }">${pawnshopPost.pawnshopPostName }</a>
 		</div>
 		<!--  -->
 	</div>
