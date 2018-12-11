@@ -160,7 +160,6 @@
 						<p class="quantity">
 							เพิ่มเติม :
 							<span>${pawnshopPost.pawnshopPostDescription}</span>
-							ชิ้น
 						</p>
 					</c:if>
 					<p class="quantity">
