@@ -76,7 +76,7 @@
 		<div class="timeline">
 			<!----------- list ----------->
 			<c:forEach items="${pawnshopPosts}" var="post">
-				<div class="timeline-list filter-column ${post.pawnshopPostStatus}">
+				<div id="${post.pawnshopPostCode}" class="timeline-list filter-column ${post.pawnshopPostStatus}">
 					<c:if test="${post.pawnshopPostStatus == 'waiting'}">
 						<i class="fas fa-hourglass-half"></i>
 					</c:if>
@@ -134,6 +134,8 @@
 												<input type="hidden" name="pawnshopPostId"
 													value="${postw.pawnshopPostId.pawnshopPostId}"> <input
 													type="hidden" name="status" value="complete">
+													<input
+													type="hidden" name="code" value="${post.pawnshopPostCode}">
 												<button class="btn-custom btn-custom-defalt"
 													style="margin-right: 10px" type="submit">ขายแล้ว</button>
 											</form>
@@ -141,6 +143,8 @@
 												<input type="hidden" name="pawnshopPostId"
 													value="${postw.pawnshopPostId.pawnshopPostId}"> <input
 													type="hidden" name="status" value="waiting">
+													<input
+													type="hidden" name="code" value="${post.pawnshopPostCode}">
 												<button class="btn-custom btn-custom-sky" type="submit">ไม่มีคนมารับของ</button>
 											</form>
 										</div>

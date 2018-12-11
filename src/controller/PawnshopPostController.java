@@ -216,6 +216,7 @@ public class PawnshopPostController {
 		OrderItem order;
 		long pawnshopPostId = Long.parseLong(request.getParameter("pawnshopPostId"));
 		String status = request.getParameter("status");
+		String code = request.getParameter("code");
 
 		try {
 			if (status.equals("waiting")) {
@@ -223,14 +224,14 @@ public class PawnshopPostController {
 				order.setOrderStatus("cancel");
 				orederService.update(order);
 				pawnshopPostService.updateStatus(pawnshopPostId, status, "1");
-				return "redirect:pawnshop-list-post.html?saved";
+				return "redirect:pawnshop-list-post.html?saved#"+code;
 			}
 			if (status.equals("complete")) {
 				order = orederService.findOrderByPawnshopPostIdAndStatus(pawnshopPostId, "coming");
 				order.setOrderStatus(status);
 				orederService.update(order);
 				pawnshopPostService.updateStatus(pawnshopPostId, status, "0");
-				return "redirect:pawnshop-list-post.html?saved";
+				return "redirect:pawnshop-list-post.html?saved#"+code;
 			}
 
 		} catch (
