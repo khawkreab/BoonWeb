@@ -128,7 +128,7 @@
 								<c:if
 									test="${postw.pawnshopPostId.pawnshopPostId == post.pawnshopPostId}">
 									<c:if
-										test="${postw.pawnshopPostId.pawnshopPostStatus == 'coming'}">
+										test="${postw.orderStatus == 'coming'}">
 										<div class="d-inline-flex">
 											<form action="pawnshop-complete-post.html" method="post">
 												<input type="hidden" name="pawnshopPostId"

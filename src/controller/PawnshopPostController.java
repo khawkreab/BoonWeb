@@ -218,14 +218,19 @@ public class PawnshopPostController {
 		String status = request.getParameter("status");
 
 		try {
-			if (request.getParameter("status").equals("waiting")) {
-				order = orederService.findOrderByPawnshopPostId(pawnshopPostId);
+			if (status.equals("waiting")) {
+				order = orederService.findOrderByPawnshopPostIdAndStatus(pawnshopPostId, "coming");
 				order.setOrderStatus("cancel");
 				orederService.update(order);
 				pawnshopPostService.updateStatus(pawnshopPostId, status, "1");
+				return "redirect:pawnshop-list-post.html?saved";
 			}
-			if (request.getParameter("status").equals("complete")) {
+			if (status.equals("complete")) {
+				order = orederService.findOrderByPawnshopPostIdAndStatus(pawnshopPostId, "coming");
+				order.setOrderStatus(status);
+				orederService.update(order);
 				pawnshopPostService.updateStatus(pawnshopPostId, status, "0");
+				return "redirect:pawnshop-list-post.html?saved";
 			}
 
 		} catch (
@@ -234,6 +239,6 @@ public class PawnshopPostController {
 			e.printStackTrace();
 		}
 
-		return "redirect:pawnshop-list-post.html";
+		return "redirect:pawnshop-list-post.html?failed";
 	}
 }

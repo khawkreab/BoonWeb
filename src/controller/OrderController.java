@@ -58,8 +58,9 @@ public class OrderController {
 				pawnerOreder.setPawnshopPostId(ppId);
 				pawnerOreder.setOrderItemDateIn(date);
 				pawnerOreder.setPawnerId(pawner);
+				pawnerOreder.setOrderStatus("coming");
 				orederService.insert(pawnerOreder);
-				pawnshopPostService.updateStatus(order.getPawnshopPostId(), "coming", "0");
+				pawnshopPostService.updateStatus(ppId.getPawnshopPostId(), "coming", "0");
 			}
 			return "redirect:pawner-order.html?success";
 			

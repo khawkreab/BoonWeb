@@ -113,7 +113,7 @@
 		    window.location = window.location + '#loaded';
 		    window.location.reload();
 		}
-	    }, 1000);
+	    }, 200);
 
 	}
 	/* print data */
