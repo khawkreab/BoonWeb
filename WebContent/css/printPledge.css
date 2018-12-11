@@ -55,8 +55,6 @@ i {
 .print-pledge-item {
 	display: flex;
 	flex-direction: column;
-	width: 60%;
-	border-left: 1px solid #ddd;
 	padding-left: 20px;
 }
 
