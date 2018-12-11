@@ -10,9 +10,9 @@ body {
 
 footer {
 	display: block;
-    text-align: center;
-    justify-content: center;
-    left: calc(50% - 215px);
+	text-align: center;
+	justify-content: center;
+	left: calc(50% - 215px);
 }
 
 ::-webkit-scrollbar-track {
@@ -231,6 +231,18 @@ line-x {
 	margin: 0 5px;
 }
 
-noitem {
+#noitem {
 	display: none;
+}
+
+.backhome {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 1px 50px 1px 10px;
+	background-image: linear-gradient(90deg, #ffffff 0%, #ffffff 80%, transparent 100%);
+}
+
+.backhome a:hover, .backhome a:active, .backhome a:focus{
+	color: #0056b3;
 }

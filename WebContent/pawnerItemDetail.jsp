@@ -21,6 +21,15 @@
 	<div class="banner-top">
 		<h1>รายละเอียดสินค้า</h1>
 		<em></em>
+		<!--  -->
+		<div class="backhome">
+			<a href="index.html">หน้าหลัก</a>
+			<i class="fas fa-angle-right"></i>
+			<a href="pawner-off-pledge.html">รายการของหลุดจำนำ</a>
+			<i class="fas fa-angle-right"></i>
+			<a href="">ชื่อสินค้า</a>
+		</div>
+		<!--  -->
 	</div>
 	<section>
 		<div class="product-detail">
@@ -96,7 +105,10 @@
 						<c:if test="${pawnshopPost.pawnshopPostModel != null}">
 							<li class="col-md-6">รุ่น : ${pawnshopPost.pawnshopPostModel}</li>
 							<li class="col-md-6">หมายเลขผลิตภัณฑ์: ${pawnshopPost.pawnshopPostSerial}</li>
-							<li class="col-md-6">ปีที่ซื้อ : <fmt:formatDate pattern="dd MMMM yyyy" value="${pawnshopPost.pawnshopPostPurchase }"/></li>
+							<li class="col-md-6">
+								ปีที่ซื้อ :
+								<fmt:formatDate pattern="dd MMMM yyyy" value="${pawnshopPost.pawnshopPostPurchase }" />
+							</li>
 						</c:if>
 						<!-- Gold -->
 						<c:if test="${pawnshopPost.pawnshopPostPure != null}">
