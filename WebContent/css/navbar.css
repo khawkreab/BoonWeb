@@ -30,7 +30,8 @@
 .rainbow-button {
 	width: calc(20vw + 6px);
 	height: calc(8vw + 6px);
-	background-image: linear-gradient(90deg, #00C0FF 0%, #FFCF00 49%, #FC4F4F 80%, #00C0FF 100%);
+	background-image: linear-gradient(90deg, #00C0FF 0%, #FFCF00 49%, #FC4F4F 80%, #00C0FF
+		100%);
 	border-radius: 5px;
 	display: flex;
 	align-items: center;
@@ -83,6 +84,8 @@ keyframes rotate-photo { 100% {
 }
 .profile .photo img {
 	width: 100%;
+	height: 100%;
+	object-fit: cover;
 }
 
 .profile .content .text {
@@ -170,7 +173,8 @@ keyframes rotate-photo { 100% {
 	display: none !important;
 }
 
-#cartSize, #notifi-pawner-follow-plege, #notifi-pawnshop-follow-estimate {
+#cartSize, #notifi-pawner-follow-plege, #notifi-pawnshop-follow-estimate
+	{
 	position: absolute;
 	display: none;
 	top: 10px;
@@ -181,7 +185,8 @@ keyframes rotate-photo { 100% {
 	text-align: center;
 }
 
-#cartSize:before, #notifi-pawner-follow-plege:before, #notifi-pawnshop-follow-estimate:before {
+#cartSize:before, #notifi-pawner-follow-plege:before,
+	#notifi-pawnshop-follow-estimate:before {
 	content: "\f0f3";
 	position: absolute;
 	color: #f3f3f3;
@@ -311,4 +316,3 @@ keyframes rotate-photo { 100% {
 	/* background-image: linear-gradient(90deg, #00C0FF 0%, #FFCF00 49%, #FC4F4F 80%, #00C0FF 100%); */
 	
 }
-

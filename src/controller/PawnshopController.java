@@ -145,7 +145,7 @@ public class PawnshopController {
 		} catch (Exception e) {
 			return "redirect:pawnhop-edit-profile.html#failed";
 		}
-		return "redirect:pawnhop-edit-profile.html?failed";
+		return "redirect:pawnhop-edit-profile.html?saved";
 	}
 
 	// ********* ยังไม่มีหน้า ***********//

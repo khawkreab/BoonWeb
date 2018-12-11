@@ -80,6 +80,15 @@
 	border: 1px solid #C3C3C3;
 }
 
+.card-detail-author a:link,.history-show-estimate a:link {
+	color: #007bff;
+}
+
+.card-detail-author a:hover, .card-detail-author a:focus,
+	.card-detail-author a:active ,.history-show-estimate a:hover,.history-show-estimate a:focus,.history-show-estimate a:active{
+	color: #0056b3;
+}
+
 .card-estimate {
 	padding: 10px;
 }

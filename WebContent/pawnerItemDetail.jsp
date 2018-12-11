@@ -96,7 +96,7 @@
 						<c:if test="${pawnshopPost.pawnshopPostModel != null}">
 							<li class="col-md-6">รุ่น : ${pawnshopPost.pawnshopPostModel}</li>
 							<li class="col-md-6">หมายเลขผลิตภัณฑ์: ${pawnshopPost.pawnshopPostSerial}</li>
-							<li class="col-md-6">ปีที่ซื้อ : ${pawnshopPost.pawnshopPostPurchase }</li>
+							<li class="col-md-6">ปีที่ซื้อ : <fmt:formatDate pattern="dd MMMM yyyy" value="${pawnshopPost.pawnshopPostPurchase }"/></li>
 						</c:if>
 						<!-- Gold -->
 						<c:if test="${pawnshopPost.pawnshopPostPure != null}">

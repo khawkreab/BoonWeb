@@ -93,11 +93,7 @@ public class PawnerPostController {
 		PawnerPost post = new PawnerPost();
 		List<MultipartFile> Files = fileUpload.getFiles();
 		Date date = new Date();
-		
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-		String buy = request.getParameter("pawnerPostPurchase");;
-		Date buyDate = sdf.parse(buy);
-		
+
 		String status = "waiting";
 		long userId = (long) request.getSession().getAttribute("id");
 		Pawner pm = pmService.findPawnerById(userId);
@@ -108,8 +104,8 @@ public class PawnerPostController {
 				pawnerPost.setPawnerPostStatus(status);
 				pawnerPost.setPawner(pm);
 				pawnerPost.setPawnerPostName(request.getParameter("pawnerPostName"));
-				pawnerPost.setPawnerPostBracelet(request.getParameter("PawnerPostBracelet"));
-				pawnerPost.setPawnerPostBattery(request.getParameter("PawnerPostBattery"));
+				pawnerPost.setPawnerPostBracelet(request.getParameter("pawnerPostBracelet"));
+				pawnerPost.setPawnerPostBattery(request.getParameter("pawnerPostBattery"));
 				pawnerPost.setPawnerPostBrand(request.getParameter("pawnerPostBrand"));
 				pawnerPost.setPawnerPostCameraLen(request.getParameter("pawnerPostCameraLen"));
 				pawnerPost.setPawnerPostCapacity(request.getParameter("pawnerPostCapacity"));
@@ -123,7 +119,13 @@ public class PawnerPostController {
 				pawnerPost.setPawnerPostModel(request.getParameter("pawnerPostModel"));
 				pawnerPost.setPawnerPostPackage(request.getParameter("pawnerPostPackage"));
 				pawnerPost.setPawnerPostProduction(request.getParameter("pawnerPostProduction"));
-				pawnerPost.setPawnerPostPurchase(buyDate);
+				if (request.getParameter("pawnerPostPurchase") != null) {
+					SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+					String buy = request.getParameter("pawnerPostPurchase");
+					Date buyDate = sdf.parse(buy);
+					pawnerPost.setPawnerPostPurchase(buyDate);
+				}
+
 				pawnerPost.setPawnerPostPure(request.getParameter("pawnerPostPure"));
 				pawnerPost.setPawnerPostRam(request.getParameter("pawnerPostRam"));
 				pawnerPost.setPawnerPostSerial(request.getParameter("pawnerPostSerial"));
@@ -157,7 +159,8 @@ public class PawnerPostController {
 			for (MultipartFile multipartFile : Files) {
 				fileName = multipartFile.getBytes().hashCode() + "." + multipartFile.getContentType().split("/")[1];
 				if (!"".equalsIgnoreCase(fileName)) {
-					// multipartFile.transferTo(new File(saveDirectory + fileName));
+					// multipartFile.transferTo(new File(saveDirectory +
+					// fileName));
 					multipartFile.transferTo(new File(dir + fileName));
 					System.out.println("multipartFile.transferTo => " + dir + fileName);
 

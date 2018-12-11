@@ -274,3 +274,11 @@
 .cd-timeline-detail ul li:before {
 	content: '- '
 }
+
+.history-show-estimate a:link {
+	color: #007bff;
+}
+
+.history-show-estimate a:hover,.history-show-estimate a:focus,.history-show-estimate a:active{
+	color: #0056b3;
+}

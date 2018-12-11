@@ -15,7 +15,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="">
 <meta name="author" content="">
-<title>Boonyong</title>
+<title>หน้าหลัก</title>
 <!-- import all css -->
 <jsp:include page="importCSS.jsp" />
 <!-- anime css  -->
@@ -84,7 +84,7 @@ body {
 				<p>หลังจากได้ราคาที่ถูกใจ ให้ท่านกด "ยืนยัน" โรงรับจำนำจะจำนำของ และปริ้นใบหลักฐานแล้วเดินทางไปที่โรงรับจำนำที่ท่าน ยืนยัน ไว้</p>
 			</li>
 		</ul>
-		<a href="pawner-post-form-gold.html">
+		<a href="pawner-pledge.html">
 			<button class="btn-custom btn-custom-defalt">จำนำของ เดี๋ยวนี้ !!!</button>
 		</a>
 		<br>
@@ -134,7 +134,7 @@ body {
 				<div class="col-lg-8 mx-auto">
 					<p class="text-faded mb-5 animated lightSpeedIn delay-1s">“บุญยง เป็นสื่อกลางในการจำนำ ที่มีการรับประเมินราคาสินทรัพย์และปล่อยของหลุดจำนำทางออนไลน์
 						เพื่ออำนวยความสะดวกให้ลูกค้าสามารถเข้าถึงบริการได้ตลอด 24 ชั่วโมง”</p>
-					<a href="#pledge">
+					<a href="pawnshop-index.html">
 						<button class="btn-custom btn-custom-defalt">ประเมินของจำนำ</button>
 					</a>
 				</div>

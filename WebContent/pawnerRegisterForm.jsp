@@ -11,7 +11,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Registration</title>
+<title>สมัคร สมาชิก</title>
 <!-- import all css -->
 <jsp:include page="importCSS.jsp" />
 <link rel="stylesheet" href="css/new-design.css">
@@ -34,6 +34,7 @@
 			//the user that they have entered the correct password 
 			pass2.style.backgroundColor = goodColor;
 			message.style.color = goodColor;
+			document.getElementById("confirm").disabled = false;
 			/* message.innerHTML = "รหัสผ่านตรงกัน" */
 		} else {
 			//The passwords do not match.
@@ -41,6 +42,7 @@
 			//notify the user.
 			pass2.style.backgroundColor = badColor;
 			message.style.color = badColor;
+			document.getElementById("confirm").disabled = true;
 			/* message.innerHTML = "รหัสผ่านไม่ตรงกัน!" */
 		}
 	}
@@ -106,7 +108,7 @@
 								pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
 								title="ต้องมีเลขอย่างน้อย 1 ตัว และมีทั้ง อังษรพิมเล็กและใหญ่ความยาวอย่างน้อย 8 ตัว และ ห้ามใช้ภาษาไทย" />
 						</div>
-						<button type="submit" class="account-submit">สร้างบัญชี</button>
+						<button type="submit" class="account-submit" id="confirm">สร้างบัญชี</button>
 						<p class="Subhead-description" style="margin-top: 5px;">หรือ</p>
 					</div>
 				</form:form>

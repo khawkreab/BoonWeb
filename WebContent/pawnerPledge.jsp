@@ -33,7 +33,7 @@
 			<div
 				style="display: inline-flex; position: relative; align-items: center; background-color: #ff3300; color:#fff; padding: 15px; margin-top: 10px;width: 550;">
 				<div>
-					<p style="margin: 0;">คุณต้องยอมรับข้อกำหนดของข้อตกลงการจำนำ เพื่อนำเนินการให้เสร็จสมบูรณ์</p>
+					<p style="margin: 0;">คุณต้องกดยอมรับเงื่อนไขของข้อตกลงการจำนำ เพื่อนำเนินการให้เสร็จสมบูรณ์</p>
 				</div>
 				<span class="close"
 					style="position: absolute; right: 5px; top: 0px; cursor: pointer;">&times;</span>
@@ -104,13 +104,11 @@
 						<p>
 							<label>ชื่อสินค้าที่ต้องการจำนำ</label> <input type="text"
 								name="pawnerPostName" required="required" maxlength="30">
-							<br> <i>ใช้เป็นตัวอักษร ภาษาไทย หรือ อังกฤษ เท่านั้น
-								ความยาวไม่เกิน 30 ตัวอักษร</i>
+							<br> <i>ความยาวไม่เกิน 30 ตัวอักษร</i>
 						</p>
 						<p>
 							<label>ยี่ห้อ</label> <input type="text" name="pawnerPostBrand"
-								required="required" maxlength="20" /> <br> <i>ใช้เป็นตัวอักษร
-								ภาษาไทย หรือ อังกฤษ เท่านั้น ความยาวไม่เกิน 20 ตัวอักษร </i>
+								required="required" maxlength="20" /> <br> <i> ความยาวไม่เกิน 20 ตัวอักษร </i>
 						</p>
 						<!-- ------------------------upload image----------------------------  -->
 						<div style="margin-top: 15px; width: 100%; position: relative;">

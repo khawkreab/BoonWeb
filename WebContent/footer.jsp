@@ -5,7 +5,7 @@
 // edit by : 
  -->
 <!--//footer-->
-<footer>
+<!-- <footer> -->
 <!--  
 	<div class="footer-middle">
 		<div class="container flex-wrap">
@@ -57,7 +57,7 @@
 		</div>
 	</div>
 	-->
-	<div class="footer-bottom">
+	<!-- <div class="footer-bottom">
 		<div class="container">
 			<p class="footer-class">
 				&copy; 2018 Bounyong. All Rights Reserved | Design by <a
@@ -66,7 +66,7 @@
 			<div class="clearfix"></div>
 		</div>
 	</div>
-</footer>
+</footer> -->
 <!--//footer-->
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	

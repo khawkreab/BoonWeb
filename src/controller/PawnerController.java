@@ -87,7 +87,7 @@ public class PawnerController {
 				pawner.setPawnerPicture("profile-icon.jpg");
 				pmService.insert(pawner);
 			} else
-				return "redirect:pawner-index.html";
+				return "redirect:pawner-register-form.html?fail";
 
 		} catch (Exception e) {
 			return "redirect:pawner-register-form.html";
@@ -146,7 +146,7 @@ public class PawnerController {
 			request.getSession().setAttribute("pawnerPicture", pawner.getPawnerPicture());
 
 		} catch (Exception e) {
-			return "redirect:pawner-register-form.html#failed";
+			return "redirect:pawner-edit.html?failed";
 		}
 		return "redirect:pawner-edit.html?saved";
 	}

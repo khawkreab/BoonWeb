@@ -102,8 +102,7 @@
 						<p>
 							<label>ชื่อสินค้าที่ต้องการจำนำ</label> <input type="text"
 								name="pawnshopPostName" required="required" maxlength="30">
-							<br> <i>ใช้เป็นตัวอักษร ภาษาไทย หรือ อังกฤษ เท่านั้น
-								ความยาวไม่เกิน 30 ตัวอักษร และ ต้องไม่ใช้ อักษรพิเศษ</i>
+							<br> <i>ความยาวไม่เกิน 30 ตัวอักษร </i>
 						</p>
 						<ul class='form-list'
 							style='display: inline-flex; list-style-type: none;'>
@@ -112,8 +111,7 @@
 								<p>
 									<label>ยี่ห้อ</label> <input type="text"
 										name="pawnshopPostBrand" required="required" maxlength="20" />
-									<br> <i> ภาษาไทย หรือ อังกฤษ เท่านั้น ความยาวไม่เกิน
-										20 ตัวอักษร </i>
+									<br> <i>ความยาวไม่เกิน 20 ตัวอักษร </i>
 								</p>
 							</li>
 							<li class='form-list-row form-list-row-inline'
@@ -121,7 +119,7 @@
 								<p>
 									<label>ราคาที่ต้องการขาย</label> <input type="text"
 										name="pawnshopPostPrice" id="amounts" required="required"
-										maxlength="6" /> <br> <i>สามารถให้ราคาของ
+										maxlength="7" /> <br> <i>สามารถให้ราคาของ
 										ที่มูลค่าไม่เกิน 6 หลัก</i> <input type="hidden" id="oo" />
 								</p>
 							</li>

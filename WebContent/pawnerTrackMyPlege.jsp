@@ -90,7 +90,7 @@
 						<!-- date -->
 						<span class="cd-date">
 							<fmt:setLocale value="th-TH" />
-							<fmt:formatDate pattern="dd MMM yyyy" value="${postprocess.pawnerPostDate }" />
+							<fmt:formatDate pattern="d MMM yyyy" value="${postprocess.pawnerPostDate }" />
 						</span>
 						<!-- item -->
 						<div class="cd-timeline-detail">
@@ -120,10 +120,11 @@
 									<c:if test="${postprocess.pawnerPostModel != null}">
 										<li>รุ่น : ${postprocess.pawnerPostModel}</li>
 										<li>หมายเลขประจำเครื่อง : ${postprocess.pawnerPostSerial}</li>
-										<li>ปีที่ซื้อสินค้า : ${postprocess.pawnerPostPurchase }</li>
+										<li>ปีที่ซื้อสินค้า : <fmt:formatDate pattern="d MMMM yyyy" value="${postprocess.pawnerPostPurchase }"/></li>
 									</c:if>
-									<c:if test="${postprocess.pawnerPostProduction != null}">
-										<li>ปีที่ผลิตสินค้า : ${postprocess.pawnerPostProduction}</li>
+									<c:if test="${postprocess.pawnerPostTypeCamera != null}">
+										<li>ชนิดของกล้อง : ${postprocess.pawnerPostTypeCamera}</li>
+										<li>ชนิดของเลนกล้อง : ${postprocess.pawnerPostCameraLen}</li>
 									</c:if>
 									<!-- Gold -->
 									<c:if test="${postprocess.pawnerPostPure != null}">
@@ -139,16 +140,16 @@
 									<c:if test="${postprocess.pawnerPostBattery != null}">
 										<li>
 											<span class="fas fa-check" aria-hidden="true"> </span>
-											Battery
+											แบตเตอร์รี่
 										</li>
 									</c:if>
 									<!-- Electronic com telephone -->
 									<c:if test="${postprocess.pawnerPostHarddisk != null}">
-										<li>Harddisk : ${ postprocess.pawnerPostHarddisk }</li>
+										<li>ฮาร์ดดิส : ${ postprocess.pawnerPostHarddisk }</li>
 									</c:if>
 									<!-- Electronic com-->
 									<c:if test="${postprocess.pawnerPostRam != null}">
-										<li>Ram : ${postprocess.pawnerPostRam }</li>
+										<li>แรม : ${postprocess.pawnerPostRam }</li>
 									</c:if>
 									<!-- Watch -->
 									<c:if test="${postprocess.pawnerPostCase != null}">
@@ -168,7 +169,7 @@
 									<c:if test="${postprocess.panwePostRemote != null}">
 										<li>
 											<span class="fas fa-check" aria-hidden="true"> </span>
-											Remote
+											รีโมท
 										</li>
 									</c:if>
 									<!-- Watch,Electronic -->
@@ -179,9 +180,8 @@
 										</li>
 									</c:if>
 								</ul>
-								<c:if test="${postprocess.pawnerPostDescription != null || postprocess.pawnerPostDescription != ''}">
-									<i class="quick small">เพิ่มเติม</i>
-									<span class="quick_desc">${postprocess.pawnerPostDescription }</span>
+								<c:if test="${postprocess.pawnerPostDescription != null && postprocess.pawnerPostDescription != ''}">
+									<i class="quick small">เพิ่มเติม  ${postprocess.pawnerPostDescription }</i>
 								</c:if>
 							</div>
 						</div>

@@ -13,7 +13,7 @@
 <html>
 
 <head>
-<title>Pawnshop Registation</title>
+<title>สมัคร สมาชิก</title>
 
 <!-- import all css -->
 <jsp:include page="importCSS.jsp" />
@@ -37,6 +37,7 @@
 			//the user that they have entered the correct password 
 			pass2.style.backgroundColor = goodColor;
 			message.style.color = goodColor;
+			document.getElementById("clearval").disabled = false;
 			/* message.innerHTML = "รหัสผ่านตรงกัน" */
 		} else {
 			//The passwords do not match.
@@ -44,6 +45,7 @@
 			//notify the user.
 			pass2.style.backgroundColor = badColor;
 			message.style.color = badColor;
+			document.getElementById("clearval").disabled = true;
 			/* message.innerHTML = "รหัสผ่านไม่ตรงกัน!" */
 		}
 	}

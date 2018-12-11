@@ -48,7 +48,7 @@ function nextPrev(n) {
 		} else {
 			var bannedmodal = $('#checkbox');
 			bannedmodal.css("display", "block");
-			currentTab = currentTab - 1 ;
+			currentTab = currentTab - 1;
 		}
 	}
 	// Otherwise, display the correct tab:
@@ -78,7 +78,7 @@ function validateForm() {
 			$('#picturefiles')
 					.removeClass("fas fa-exclamation-circle text-red");
 		}
-	
+
 		for (i = 0; i < y.length; i++) {
 			y[i].classList.remove("invalid");
 			if (y[i].value == "" || !decimal.test(pawnerPostPure)) {
@@ -184,7 +184,7 @@ function showsteptype(e) {
 		step2 += "<p>"
 		step2 += "<label>ความบริสุทธิ์</label>"
 		step2 += " <input type='text' name='pawnerPostPure' required='required'	id='decimalOne' /> <br>"
-		step2 += "<i>ตัวเลขเท่านั้น 0-9 หรือใช้ จุดทศนิยม เช่น 99.99</i>"
+		step2 += "<i>ตัวเลข 0-9 หรือใช้ จุดทศนิยม เช่น 99.99</i>"
 		step2 += "</p>"
 
 		$('#step2').append(step2);
@@ -197,7 +197,7 @@ function showsteptype(e) {
 
 		step3 += "<div class='d-inline-flex'>"
 		step3 += "<input type='checkbox' id='checkboxs'/>"
-		step3 += "<label>ยอมรับเงือนไขการใช้งาน</label>"
+		step3 += "<label>ยอมรับเงือนไขการการจำนำ</label>"
 		step3 += "</div>"
 
 		$('#step3').append(step3);
@@ -210,6 +210,7 @@ function showsteptype(e) {
 		step2 += "<p>"
 		step2 += "<lable>รุ่น</lable>"
 		step2 += "<input type='text' name='pawnerPostModel' maxlength='20'>"
+		step2 += "<i>ความยาวไม่เกิน 20 ตัวอักษร</i>"
 		step2 += "</p>"
 
 		step2 += "<p>"
@@ -297,7 +298,7 @@ function showsteptype(e) {
 
 		step3 += "<div class='d-inline-flex'>"
 		step3 += "<input type='checkbox' id='checkboxs'/>"
-		step3 += "<label'>ยอมรับเงือนไขการใช้งาน</label>"
+		step3 += "<label'>ยอมรับเงือนไขการการจำนำ</label>"
 		step3 += "</div>"
 
 		$('#step3').append(step3);
@@ -310,6 +311,7 @@ function showsteptype(e) {
 		step2 += "<p>"
 		step2 += "<lable>รุ่น</lable>"
 		step2 += "<input type='text' name='pawnerPostModel' maxlength='20'>"
+		step2 += "<i>ความยาวไม่เกิน 20 ตัวอักษร</i>"
 		step2 += "</p>"
 
 		step2 += "<p>"
@@ -372,7 +374,7 @@ function showsteptype(e) {
 
 		step3 += "<div class='d-inline-flex'>"
 		step3 += "<input type='checkbox' id='checkboxs'/>"
-		step3 += "<label>ยอมรับเงือนไขการใช้งาน</label>"
+		step3 += "<label>ยอมรับเงือนไขการการจำนำ</label>"
 		step3 += "</div>"
 
 		$('#step3').append(step3);
@@ -385,6 +387,7 @@ function showsteptype(e) {
 		step2 += "<p>"
 		step2 += "<lable>รุ่น</lable>"
 		step2 += "<input type='text' name='pawnerPostModel' maxlength='20'>"
+		step2 += "<i>ความยาวไม่เกิน 20 ตัวอักษร</i>"
 		step2 += "</p>"
 
 		step2 += "<p>"
@@ -451,7 +454,7 @@ function showsteptype(e) {
 
 		$('#step2').append(step2);
 
-		step3 += "<p>"
+		step3 = "<p>"
 		step3 += "<label>รายละเอียดสินค้าเพิ่มเติม</label>"
 		step3 += "<textarea name='pawnerPostDescription'></textarea> <br>"
 		step3 += "<i>พิมท์เนื้อหาสำคำคัญเพิ่มเติม</i>"
@@ -459,7 +462,7 @@ function showsteptype(e) {
 
 		step3 += "<div class='d-inline-flex'>"
 		step3 += "<input type='checkbox' id='checkboxs'/>"
-		step3 += "<label>ยอมรับเงือนไขการใช้งาน</label>"
+		step3 += "<label>ยอมรับเงือนไขการการจำนำ</label>"
 		step3 += "</div>"
 
 		$('#step3').append(step3);
@@ -472,6 +475,7 @@ function showsteptype(e) {
 		step2 += "<p>"
 		step2 += "<lable>รุ่น</lable>"
 		step2 += "<input type='text' name='pawnerPostModel' maxlength='20'>"
+		step2 += "<i>ความยาวไม่เกิน 20 ตัวอักษร</i>"
 		step2 += "</p>"
 
 		step2 += "<p>"
@@ -555,7 +559,7 @@ function showsteptype(e) {
 
 		step3 += "<div class='d-inline-flex'>"
 		step3 += "<input type='checkbox' id='checkboxs'/>"
-		step3 += "<label>ยอมรับเงือนไขการใช้งาน</label>"
+		step3 += "<label>ยอมรับเงือนไขการการจำนำ</label>"
 		step3 += "</div>"
 
 		$('#step3').append(step3);
@@ -568,6 +572,7 @@ function showsteptype(e) {
 		step2 += "<p>"
 		step2 += "<lable>รุ่น</lable>"
 		step2 += "<input type='text' name='pawnerPostModel' maxlength='20'>"
+		step2 += "<i>ความยาวไม่เกิน 20 ตัวอักษร</i>"
 		step2 += "</p>"
 
 		step2 += "<p>"
@@ -631,7 +636,7 @@ function showsteptype(e) {
 
 		step3 += "<div class='d-inline-flex'>"
 		step3 += "<input type='checkbox' id='checkboxs'/>"
-		step3 += "<label>ยอมรับเงือนไขการใช้งาน</label>"
+		step3 += "<label>ยอมรับเงือนไขการการจำนำ</label>"
 		step3 += "</div>"
 		step3 += "</p>"
 

@@ -99,27 +99,7 @@ public class EstimateController {
 
 		} catch (Exception e) {
 		}
-		return "redirect:index.html#pledge";
-	}
-
-	@RequestMapping("/approveEsimate")
-	public String approveProposePrice(@ModelAttribute("estimate") Estimate estimate, BindingResult result,
-			HttpServletRequest request) {
-
-		Date date = new Date();
-
-		try {
-			if (estimate.getEstimateId() == 0) {
-				estimate.setEstimateDate(date);
-				estimateService.insert(estimate);
-
-			} else {
-				estimate.setEstimateDate(date);
-				estimateService.update(estimate);
-			}
-		} catch (Exception e) {
-		}
-		return "redirect:listPawnerGold.do";
+		return "redirect:pawnshop-track-estimate.html";
 	}
 
 	@RequestMapping("/deleteEstimate")

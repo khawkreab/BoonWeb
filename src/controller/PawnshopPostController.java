@@ -86,10 +86,6 @@ public class PawnshopPostController {
 
 		Date date = new Date();
 
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-		String buy = request.getParameter("pawnshopPostPurchase");
-		Date buyDate = sdf.parse(buy);
-
 		String status = "waiting";
 
 		long userId = (long) request.getSession().getAttribute("id");
@@ -119,7 +115,12 @@ public class PawnshopPostController {
 				pawnshopPost.setPawnshopPostModel(request.getParameter("pawnshopPostModel"));
 				pawnshopPost.setPawnshopPostPackage(request.getParameter("pawnshopPostPackage"));
 				pawnshopPost.setPawnshopPostProduction(request.getParameter("pawnshopPostProduction"));
-				pawnshopPost.setPawnshopPostPurchase(buyDate);
+				if (request.getParameter("pawnshopPostPurchase") != null) {
+					SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+					String buy = request.getParameter("pawnshopPostPurchase");
+					Date buyDate = sdf.parse(buy);
+					pawnshopPost.setPawnshopPostPurchase(buyDate);
+				}
 				pawnshopPost.setPawnshopPostPure(request.getParameter("pawnshopPostPure"));
 				pawnshopPost.setPawnshopPostRam(request.getParameter("pawnshopPostRam"));
 				pawnshopPost.setPawnshopPostSerial(request.getParameter("pawnshopPostSerial"));
