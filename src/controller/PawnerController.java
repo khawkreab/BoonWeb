@@ -90,9 +90,9 @@ public class PawnerController {
 				return "redirect:pawner-register-form.html?fail";
 
 		} catch (Exception e) {
-			return "redirect:pawner-register-form.html";
+			return "redirect:pawner-register-form.html?failed";
 		}
-		return "redirect:index.jsp";
+		return "redirect:index.html?success";
 	}
 
 	@RequestMapping("/updatePawner")

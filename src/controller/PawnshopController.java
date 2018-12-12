@@ -69,7 +69,7 @@ public class PawnshopController {
 		} catch (Exception e) {
 			return "redirect:pawnshop-register-form.html#failed";
 		}
-		return "redirect:index.jsp";
+		return "redirect:index.html?success";
 	}
 
 	private final String CHAR_LIST = "1234567890";

@@ -215,6 +215,35 @@ body {
 			</div>
 		</div>
 	</div>
+	<!-- ----------------- popup regist success -------------------------------  -->
+<!-- The Modal -->
+<div id="successmodal" class="modal" style="z-index: 9999">
+	<!-- Modal content -->
+	<div class="d-flex justify-content-center">
+		<div style="display: inline-flex; position: relative; align-items: center; background-color: #fff; width: 25vw; height: 10vh; padding: 15px; border-left: 5px solid #039a06;">
+			<div>
+				<i class="fas fa-check-circle text-success" style="font-size: 2rem; padding-right: 15px;"></i>
+			</div>
+			<div>
+				<span class="text-success" style="font-size: 1.5rem;"> สมัครสมาชิกสำเร็จ </span>
+				<br>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+console.log("location.search => "+ location.search)
+if (location.search == "?success") {
+    $('#successmodal').css("display", "block");
+    $('#modalLogin').modal()
+    setTimeout(function() {
+	$('#successmodal').css("display", "none");
+    }, 1500);
+    
+}
+
+
+</script>
 	<!-- --------------------------------------------------------------------- -->
 	<script type="text/javascript" src="js/aos.js"></script>
 	<script>
