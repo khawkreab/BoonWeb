@@ -180,7 +180,7 @@ function showsteptype(e) {
 	step2 += "</p>"
 
 	step2 += "<p>"
-	step2 += "<label>ความบริสุทธิ์</label>"
+	step2 += "<label>ความบริสุทธิ์ กี่เปอร์เซ็น</label>"
 	step2 += " <input type='text' name='pawnshopPostPure' required='required' id='decimalOne' maxlength='4'/> <br>"
 	step2 += "<i>ตัวเลข 0-9 หรือใช้ จุดทศนิยม เช่น 99.99</i>"
 	step2 += "</p>"

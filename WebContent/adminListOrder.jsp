@@ -159,11 +159,7 @@
 						<tr>
 							<th>Picture</th>
 							<th>Post Name</th>
-							<th>Brand</th>
-							<th>Pure</th>
-							<th>Weigh</th>
-							<th>Category</th>
-							<th>Description</th>
+							<th>รายละเอียด</th>
 							<th>Price</th>  
 							 
 							<th>Pawner</th>
@@ -176,13 +172,13 @@
 							<tbody>
 								<tr class="odd gradeX">
 									<td><img class="img-responsive"
-										src="images/uploadImage/${adOrder.pawnshopPostId.pawnshopPostPicture }" /></td>
+										src="img/uploadimg/pawnshopPost/${adOrder.pawnshopPostId.pawnshopPostPicture }" /></td>
 									<td>${adOrder.pawnshopPostId.pawnshopPostName}</td>
-									<td>${adOrder.pawnshopPostId.pawnshopPostBrand}</td>
-									<td>${adOrder.pawnshopPostId.pawnshopPostPure}</td>
-									<td>${adOrder.pawnshopPostId.pawnshopPostWeigh}</td>
-									<td>${adOrder.pawnshopPostId.pawnshopPostCategory}</td>
-									<td>${adOrder.pawnshopPostId.pawnshopPostDescription}</td>
+									<td>${adOrder.pawnshopPostId.pawnshopPostBrand}
+									${adOrder.pawnshopPostId.pawnshopPostPure}
+									${adOrder.pawnshopPostId.pawnshopPostWeigh}
+									${adOrder.pawnshopPostId.pawnshopPostCategory}
+									${adOrder.pawnshopPostId.pawnshopPostDescription}</td>
 									<td>${adOrder.pawnshopPostId.pawnshopPostPrice }</td> 
 									 
 									<td>
@@ -232,14 +228,8 @@
 						<tr>
 							<th>Picture</th>
 							<th>Post Name</th>
-							<th>Brand</th>
-							<th>Case</th>
-							<th>Bracelet</th>
-							<th>Diamond</th>
-							<th>Production</th>
-							<th>Package</th>
-							<th>Warranty</th>
-							<th>Description</th>
+							
+							<th>รายละเอียด</th>
 							
 							<th>Price</th>
 							
@@ -253,16 +243,16 @@
 							<tbody>
 								<tr class="odd gradeX">
 									<td><img class="img-responsive"
-										src="images/uploadImage/${adOrder.pawnshopPostId.pawnshopPostPicture }" /></td>
+										src="img/uploadimg/pawnshopPost/${adOrder.pawnshopPostId.pawnshopPostPicture }" /></td>
 									<td>${adOrder.pawnshopPostId.pawnshopPostName}</td>
-									<td>${adOrder.pawnshopPostId.pawnshopPostBrand}</td>
-									<td>${adOrder.pawnshopPostId.pawnshopPostCase}</td>
-									<td>${adOrder.pawnshopPostId.pawnshopPostBracelet}</td>
-									<td>${adOrder.pawnshopPostId.pawnshopPostDiamond}</td>
-									<td>${adOrder.pawnshopPostId.pawnshopPostProduction}</td>
-									<td>${adOrder.pawnshopPostId.pawnshopPostPackage}</td>
-									<td>${adOrder.pawnshopPostId.pawnshopPostWarranty}</td>
-									<td>${adOrder.pawnshopPostId.pawnshopPostDescription}</td>
+									<td>${adOrder.pawnshopPostId.pawnshopPostBrand}
+									${adOrder.pawnshopPostId.pawnshopPostCase}
+									${adOrder.pawnshopPostId.pawnshopPostBracelet}
+									${adOrder.pawnshopPostId.pawnshopPostDiamond}
+									${adOrder.pawnshopPostId.pawnshopPostProduction}
+									${adOrder.pawnshopPostId.pawnshopPostPackage}
+									${adOrder.pawnshopPostId.pawnshopPostWarranty}
+									${adOrder.pawnshopPostId.pawnshopPostDescription}</td>
 									<td>${adOrder.pawnshopPostId.pawnshopPostPrice }</td>
 									 
 									<td>
@@ -312,15 +302,8 @@
 						<tr>
 							<th>Picture</th>
 							<th>Post Name</th>
-							<th>Brand</th>
-							<th>Serial</th>
-							<th>Model</th>
-							<th>Capacity</th>
-							<th>Purchase</th>
-							<th>Production</th>
-							<th>Battery</th>
-							<th>Warranty</th>
-							<th>Description</th>
+							
+							<th>รายละเอียด</th>
 							
 							<th>Price</th>
 							 
@@ -334,17 +317,17 @@
 							<tbody>
 								<tr class="odd gradeX">
 									<td><img class="img-responsive"
-										src="images/uploadImage/${adOrder.pawnshopPostId.pawnshopPostPicture }" /></td>
+										src="img/uploadimg/pawnshopPost/${adOrder.pawnshopPostId.pawnshopPostPicture }" /></td>
 									<td>${adOrder.pawnshopPostId.pawnshopPostName}</td>
-									<td>${adOrder.pawnshopPostId.pawnshopPostBrand}</td>
-									<td>${adOrder.pawnshopPostId.pawnshopPostSerial}</td>
-									<td>${adOrder.pawnshopPostId.pawnshopPostModel}</td>
-									<td>${adOrder.pawnshopPostId.pawnshopPostCapacity}</td>
-									<td>${adOrder.pawnshopPostId.pawnshopPostPurchase}</td>
-									<td>${adOrder.pawnshopPostId.pawnshopPostProduction}</td>
-									<td>${adOrder.pawnshopPostId.pawnshopPostBattery}</td>
-									<td>${adOrder.pawnshopPostId.pawnshopPostWarranty}</td>
-									<td>${adOrder.pawnshopPostId.pawnshopPostDescription}</td>
+									<td>${adOrder.pawnshopPostId.pawnshopPostBrand}
+									${adOrder.pawnshopPostId.pawnshopPostSerial}
+									${adOrder.pawnshopPostId.pawnshopPostModel}
+									${adOrder.pawnshopPostId.pawnshopPostCapacity}
+									${adOrder.pawnshopPostId.pawnshopPostPurchase}
+									${adOrder.pawnshopPostId.pawnshopPostProduction}
+									${adOrder.pawnshopPostId.pawnshopPostBattery}
+									${adOrder.pawnshopPostId.pawnshopPostWarranty}
+									${adOrder.pawnshopPostId.pawnshopPostDescription}</td>
 									<td>${adOrder.pawnshopPostId.pawnshopPostPrice}</td>
 																	
 									<td>
@@ -394,17 +377,8 @@
 						<tr>
 							<th>Picture</th>
 							<th>Post Name</th>
-							<th>Brand</th>
-							<th>Serial</th>
-							<th>Model</th>
-							<th>Size</th>
-							<th>Harddisk</th>
-							<th>Ram</th>
-							<th>Purchase</th>
-							<th>Production</th>
-							<th>Battery</th>
-							<th>Warranty</th>
-							<th>Description</th>
+							
+							<th>รายละเอียด</th>
 							
 							<th>Price</th>
 							 
@@ -418,19 +392,19 @@
 							<tbody>
 								<tr class="odd gradeX">
 									<td><img class="img-responsive"
-										src="images/uploadImage/${adOrder.pawnshopPostId.pawnshopPostPicture }" /></td>
+										src="img/uploadimg/pawnshopPost/${adOrder.pawnshopPostId.pawnshopPostPicture }" /></td>
 									<td>${adOrder.pawnshopPostId.pawnshopPostName}</td>
-									<td>${adOrder.pawnshopPostId.pawnshopPostBrand}</td>
-									<td>${adOrder.pawnshopPostId.pawnshopPostSerial}</td>
-									<td>${adOrder.pawnshopPostId.pawnshopPostModel}</td>
-									<td>${adOrder.pawnshopPostId.pawnshopPostSize}</td>
-									<td>${adOrder.pawnshopPostId.pawnshopPostHarddisk}</td>
-									<td>${adOrder.pawnshopPostId.pawnshopPostRam}</td>
-									<td>${adOrder.pawnshopPostId.pawnshopPostPurchase}</td>
-									<td>${adOrder.pawnshopPostId.pawnshopPostProduction}</td>
-									<td>${adOrder.pawnshopPostId.pawnshopPostBattery}</td>
-									<td>${adOrder.pawnshopPostId.pawnshopPostWarranty}</td>
-									<td>${adOrder.pawnshopPostId.pawnshopPostDescription}</td>
+									<td>${adOrder.pawnshopPostId.pawnshopPostBrand}
+									${adOrder.pawnshopPostId.pawnshopPostSerial}
+									${adOrder.pawnshopPostId.pawnshopPostModel}
+									${adOrder.pawnshopPostId.pawnshopPostSize}
+									${adOrder.pawnshopPostId.pawnshopPostHarddisk}
+									${adOrder.pawnshopPostId.pawnshopPostRam}
+									${adOrder.pawnshopPostId.pawnshopPostPurchase}
+									${adOrder.pawnshopPostId.pawnshopPostProduction}
+									${adOrder.pawnshopPostId.pawnshopPostBattery}
+									${adOrder.pawnshopPostId.pawnshopPostWarranty}
+									${adOrder.pawnshopPostId.pawnshopPostDescription}</td>
 									<td>${adOrder.pawnshopPostId.pawnshopPostPrice}</td>
 									
 									<td>
@@ -480,16 +454,8 @@
 						<tr>
 							<th>Picture</th>
 							<th>Post Name</th>
-							<th>Brand</th>
-							<th>Serial</th>
-							<th>Model</th>
-							<th>TypeCamera</th>
-							<th>CameraLen</th>
-							<th>Purchase</th>
-							<th>Production</th>
-							<th>Battery</th>
-							<th>Warranty</th>
-							<th>Description</th>
+							
+							<th>รายละเอียด</th>
 							
 							<th>Price</th>
 							 
@@ -503,18 +469,18 @@
 							<tbody>
 								<tr class="odd gradeX">
 									<td><img class="img-responsive"
-										src="images/uploadImage/${adOrder.pawnshopPostId.pawnshopPostPicture }" /></td>
+										src="img/uploadimg/pawnshopPost/${adOrder.pawnshopPostId.pawnshopPostPicture }" /></td>
 									<td>${adOrder.pawnshopPostId.pawnshopPostName}</td>
-									<td>${adOrder.pawnshopPostId.pawnshopPostBrand}</td>
-									<td>${adOrder.pawnshopPostId.pawnshopPostSerial}</td>
-									<td>${adOrder.pawnshopPostId.pawnshopPostModel}</td>
-									<td>${adOrder.pawnshopPostId.pawnshopPostTypeCamera}</td>
-									<td>${adOrder.pawnshopPostId.pawnshopPostCameraLen}</td>
-									<td>${adOrder.pawnshopPostId.pawnshopPostPurchase}</td>
-									<td>${adOrder.pawnshopPostId.pawnshopPostProduction}</td>
-									<td>${adOrder.pawnshopPostId.pawnshopPostBattery}</td>
-									<td>${adOrder.pawnshopPostId.pawnshopPostWarranty}</td>
-									<td>${adOrder.pawnshopPostId.pawnshopPostDescription}</td>
+									<td>${adOrder.pawnshopPostId.pawnshopPostBrand}
+									${adOrder.pawnshopPostId.pawnshopPostSerial}
+									${adOrder.pawnshopPostId.pawnshopPostModel}
+									${adOrder.pawnshopPostId.pawnshopPostTypeCamera}
+									${adOrder.pawnshopPostId.pawnshopPostCameraLen}
+									${adOrder.pawnshopPostId.pawnshopPostPurchase}
+									${adOrder.pawnshopPostId.pawnshopPostProduction}
+									${adOrder.pawnshopPostId.pawnshopPostBattery}
+									${adOrder.pawnshopPostId.pawnshopPostWarranty}
+									${adOrder.pawnshopPostId.pawnshopPostDescription}</td>
 									<td>${adOrder.pawnshopPostId.pawnshopPostPrice}</td>
 									
 									
@@ -565,15 +531,8 @@
 						<tr>
 							<th>Picture</th>
 							<th>Post Name</th>
-							<th>Brand</th>
-							<th>Serial</th>
-							<th>Model</th>
-							<th>Size</th>
-							<th>Purchase</th>
-							<th>Production</th>
-							<th>Remote</th>
-							<th>Warranty</th>
-							<th>Description</th>
+						
+							<th>รายละเอียด</th>
 							
 							<th>Price</th>
 							 
@@ -586,17 +545,17 @@
 							<tbody>
 								<tr class="odd gradeX">
 									<td><img class="img-responsive"
-										src="images/uploadImage/${adOrder.pawnshopPostId.pawnshopPostPicture }" /></td>
+										src="img/uploadimg/pawnshopPost/${adOrder.pawnshopPostId.pawnshopPostPicture }" /></td>
 									<td>${adOrder.pawnshopPostId.pawnshopPostName}</td>
-									<td>${adOrder.pawnshopPostId.pawnshopPostBrand}</td>
-									<td>${adOrder.pawnshopPostId.pawnshopPostSerial}</td>
-									<td>${adOrder.pawnshopPostId.pawnshopPostModel}</td>
-									<td>${adOrder.pawnshopPostId.pawnshopPostSize}</td>
-									<td>${adOrder.pawnshopPostId.pawnshopPostPurchase}</td>
-									<td>${adOrder.pawnshopPostId.pawnshopPostProduction}</td>
-									<td>${adOrder.pawnshopPostId.pawnshopPostRemote}</td>
-									<td>${adOrder.pawnshopPostId.pawnshopPostWarranty}</td>
-									<td>${adOrder.pawnshopPostId.pawnshopPostDescription}</td>
+									<td>${adOrder.pawnshopPostId.pawnshopPostBrand}
+									${adOrder.pawnshopPostId.pawnshopPostSerial}
+									${adOrder.pawnshopPostId.pawnshopPostModel}
+									${adOrder.pawnshopPostId.pawnshopPostSize}
+									${adOrder.pawnshopPostId.pawnshopPostPurchase}
+									${adOrder.pawnshopPostId.pawnshopPostProduction}
+									${adOrder.pawnshopPostId.pawnshopPostRemote}
+									${adOrder.pawnshopPostId.pawnshopPostWarranty}
+									${adOrder.pawnshopPostId.pawnshopPostDescription}</td>
 									<td>${adEstimate.pawnerPostId.pawnerPostPrice}</td>
 									
 									<td>

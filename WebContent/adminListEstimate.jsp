@@ -157,11 +157,7 @@
 						<tr>
 							<th>Picture</th>
 							<th>Post Name</th>
-							<th>Brand</th>
-							<th>Pure</th>
-							<th>Weigh</th>
-							<th>Category</th>
-							<th>Description</th>
+							<th>รายละเอียด</th>
 							<th>Price Min</th>
 							<th>Price Max</th>
 							<th>Date</th>
@@ -176,13 +172,13 @@
 							<tbody>
 								<tr class="odd gradeX">
 									<td><img class="img-responsive"
-										src="images/uploadImage/${adEstimate.pawnerPostId.pawnerPostPicture }" /></td>
+										src="img/uploadimg/pawnerPost/${adEstimate.pawnerPostId.pawnerPostPicture }" /></td>
 									<td>${adEstimate.pawnerPostId.pawnerPostName}</td>
-									<td>${adEstimate.pawnerPostId.pawnerPostBrand}</td>
-									<td>${adEstimate.pawnerPostId.pawnerPostPure}</td>
-									<td>${adEstimate.pawnerPostId.pawnerPostWeigh}</td>
-									<td>${adEstimate.pawnerPostId.pawnerPostCategory}</td>
-									<td>${adEstimate.pawnerPostId.pawnerPostDescription}</td>
+									<td>${adEstimate.pawnerPostId.pawnerPostBrand}
+									${adEstimate.pawnerPostId.pawnerPostPure}
+									${adEstimate.pawnerPostId.pawnerPostWeigh}
+									${adEstimate.pawnerPostId.pawnerPostCategory}
+									${adEstimate.pawnerPostId.pawnerPostDescription}</td>
 									<td>${adEstimate.estimatePriceMin}</td>
 									<td>${adEstimate.estimatePriceMax}</td>
 									<td>${adEstimate.estimateDate}</td>
@@ -234,10 +230,9 @@
 										</p><p>	
 										Pawnshop Address :<span
 										class="badge badge-default">
-											${adEstimate.pawnshopId.pawnshopParish}
-											${adEstimate.pawnshopId.pawnshopDistrict}
 											${adEstimate.pawnshopId.pawnshopProvince}
-											${adEstimate.pawnshopId.pawnshopPostcodes} </span> 
+											
+										</span> 
 										</p><p>	
 										Pawnshop Mail :<span
 										class="badge badge-default">
@@ -264,14 +259,7 @@
 						<tr>
 							<th>Picture</th>
 							<th>Post Name</th>
-							<th>Brand</th>
-							<th>Case</th>
-							<th>Bracelet</th>
-							<th>Diamond</th>
-							<th>Production</th>
-							<th>Package</th>
-							<th>Warranty</th>
-							<th>Description</th>
+							<th>รายละเอียด</th>
 							<th>Price Min</th>
 							<th>Price Max</th>
 							<th>Date</th>
@@ -286,16 +274,16 @@
 							<tbody>
 								<tr class="odd gradeX">
 									<td><img class="img-responsive"
-										src="images/uploadImage/${adEstimate.pawnerPostId.pawnerPostPicture }" /></td>
+										src="img/uploadimg/pawnerPost/${adEstimate.pawnerPostId.pawnerPostPicture }" /></td>
 									<td>${adEstimate.pawnerPostId.pawnerPostName}</td>
-									<td>${adEstimate.pawnerPostId.pawnerPostBrand}</td>
-									<td>${adEstimate.pawnerPostId.pawnerPostCase}</td>
-									<td>${adEstimate.pawnerPostId.pawnerPostBracelet}</td>
-									<td>${adEstimate.pawnerPostId.pawnerPostDiamond}</td>
-									<td>${adEstimate.pawnerPostId.pawnerPostProduction}</td>
-									<td>${adEstimate.pawnerPostId.pawnerPostPackage}</td>
-									<td>${adEstimate.pawnerPostId.pawnerPostWarranty}</td>
-									<td>${adEstimate.pawnerPostId.pawnerPostDescription}</td>
+									<td>${adEstimate.pawnerPostId.pawnerPostBrand}
+									${adEstimate.pawnerPostId.pawnerPostCase}
+									${adEstimate.pawnerPostId.pawnerPostBracelet}
+									${adEstimate.pawnerPostId.pawnerPostDiamond}
+									${adEstimate.pawnerPostId.pawnerPostProduction}
+									${adEstimate.pawnerPostId.pawnerPostPackage}
+									${adEstimate.pawnerPostId.pawnerPostWarranty}
+									${adEstimate.pawnerPostId.pawnerPostDescription}</td>
 									<td>${adEstimate.estimatePriceMin}</td>
 									<td>${adEstimate.estimatePriceMax}</td>
 									<td>${adEstimate.estimateDate}</td>
@@ -349,10 +337,8 @@
 										</p><p>	
 										Pawnshop Address :<span
 										class="badge badge-default">
-											${adEstimate.pawnshopId.pawnshopParish}
-											${adEstimate.pawnshopId.pawnshopDistrict}
 											${adEstimate.pawnshopId.pawnshopProvince}
-											${adEstimate.pawnshopId.pawnshopPostcodes} </span> 
+ 										</span> 
 										</p><p>	
 										Pawnshop Mail :<span
 										class="badge badge-default">
@@ -379,15 +365,7 @@
 						<tr>
 							<th>Picture</th>
 							<th>Post Name</th>
-							<th>Brand</th>
-							<th>Serial</th>
-							<th>Model</th>
-							<th>Capacity</th>
-							<th>Purchase</th>
-							<th>Production</th>
-							<th>Battery</th>
-							<th>Warranty</th>
-							<th>Description</th>
+							<th>รายละเอียด</th>
 							<th>Price Min</th>
 							<th>Price Max</th>
 							<th>Date</th>
@@ -402,17 +380,17 @@
 						<tbody>
 								<tr class="odd gradeX">
 									<td><img class="img-responsive"
-										src="images/uploadImage/${adEstimate.pawnerPostId.pawnerPostPicture }" /></td>
+										src="img/uploadimg/pawnerPost/${adEstimate.pawnerPostId.pawnerPostPicture }" /></td>
 									<td>${adEstimate.pawnerPostId.pawnerPostName}</td>
-									<td>${adEstimate.pawnerPostId.pawnerPostBrand}</td>
-									<td>${adEstimate.pawnerPostId.pawnerPostSerial}</td>
-									<td>${adEstimate.pawnerPostId.pawnerPostModel}</td>
-									<td>${adEstimate.pawnerPostId.pawnerPostCapacity}</td>
-									<td>${adEstimate.pawnerPostId.pawnerPostPurchase}</td>
-									<td>${adEstimate.pawnerPostId.pawnerPostProduction}</td>
-									<td>${adEstimate.pawnerPostId.pawnerPostBattery}</td>
-									<td>${adEstimate.pawnerPostId.pawnerPostWarranty}</td>
-									<td>${adEstimate.pawnerPostId.pawnerPostDescription}</td>
+									<td>${adEstimate.pawnerPostId.pawnerPostBrand}
+									${adEstimate.pawnerPostId.pawnerPostSerial}
+									${adEstimate.pawnerPostId.pawnerPostModel}
+									${adEstimate.pawnerPostId.pawnerPostCapacity}
+									${adEstimate.pawnerPostId.pawnerPostPurchase}
+									${adEstimate.pawnerPostId.pawnerPostProduction}
+									${adEstimate.pawnerPostId.pawnerPostBattery}
+									${adEstimate.pawnerPostId.pawnerPostWarranty}
+									${adEstimate.pawnerPostId.pawnerPostDescription}</td>
 									<td>${adEstimate.estimatePriceMin}</td>
 									<td>${adEstimate.estimatePriceMax}</td>
 									<td>${adEstimate.estimateDate}</td>
@@ -463,10 +441,10 @@
 										</p><p>	
 										Pawnshop Address :<span
 										class="badge badge-default">
-											${adEstimate.pawnshopId.pawnshopParish}
-											${adEstimate.pawnshopId.pawnshopDistrict}
+
+											
 											${adEstimate.pawnshopId.pawnshopProvince}
-											${adEstimate.pawnshopId.pawnshopPostcodes} </span> 
+											 </span> 
 										</p><p>	
 										Pawnshop Mail :<span
 										class="badge badge-default">
@@ -493,17 +471,7 @@
 						<tr>
 							<th>Picture</th>
 							<th>Post Name</th>
-							<th>Brand</th>
-							<th>Serial</th>
-							<th>Model</th>
-							<th>Size</th>
-							<th>Harddisk</th>
-							<th>Ram</th>
-							<th>Purchase</th>
-							<th>Production</th>
-							<th>Battery</th>
-							<th>Warranty</th>
-							<th>Description</th>
+							<th>รายละเอียด</th>
 							<th>Price Min</th>
 							<th>Price Max</th>
 							<th>Date</th>
@@ -518,19 +486,19 @@
 							<tbody>
 								<tr class="odd gradeX">
 									<td><img class="img-responsive"
-										src="images/uploadImage/${adEstimate.pawnerPostId.pawnerPostPicture }" /></td>
+										src="img/uploadimg/pawnerPost/${adEstimate.pawnerPostId.pawnerPostPicture }" /></td>
 									<td>${adEstimate.pawnerPostId.pawnerPostName}</td>
-									<td>${adEstimate.pawnerPostId.pawnerPostBrand}</td>
-									<td>${adEstimate.pawnerPostId.pawnerPostSerial}</td>
-									<td>${adEstimate.pawnerPostId.pawnerPostModel}</td>
-									<td>${adEstimate.pawnerPostId.pawnerPostSize}</td>
-									<td>${adEstimate.pawnerPostId.pawnerPostHarddisk}</td>
-									<td>${adEstimate.pawnerPostId.pawnerPostRam}</td>
-									<td>${adEstimate.pawnerPostId.pawnerPostPurchase}</td>
-									<td>${adEstimate.pawnerPostId.pawnerPostProduction}</td>
-									<td>${adEstimate.pawnerPostId.pawnerPostBattery}</td>
-									<td>${adEstimate.pawnerPostId.pawnerPostWarranty}</td>
-									<td>${adEstimate.pawnerPostId.pawnerPostDescription}</td>
+									<td>${adEstimate.pawnerPostId.pawnerPostBrand}
+									${adEstimate.pawnerPostId.pawnerPostSerial}
+									${adEstimate.pawnerPostId.pawnerPostModel}
+									${adEstimate.pawnerPostId.pawnerPostSize}
+									${adEstimate.pawnerPostId.pawnerPostHarddisk}
+									${adEstimate.pawnerPostId.pawnerPostRam}
+									${adEstimate.pawnerPostId.pawnerPostPurchase}
+									${adEstimate.pawnerPostId.pawnerPostProduction}
+									${adEstimate.pawnerPostId.pawnerPostBattery}
+									${adEstimate.pawnerPostId.pawnerPostWarranty}
+									${adEstimate.pawnerPostId.pawnerPostDescription}</td>
 									<td>${adEstimate.estimatePriceMin}</td>
 									<td>${adEstimate.estimatePriceMax}</td>
 									<td>${adEstimate.estimateDate}</td>
@@ -581,10 +549,9 @@
 										</p><p>	
 										Pawnshop Address :<span
 										class="badge badge-default">
-											${adEstimate.pawnshopId.pawnshopParish}
-											${adEstimate.pawnshopId.pawnshopDistrict}
+										
 											${adEstimate.pawnshopId.pawnshopProvince}
-											${adEstimate.pawnshopId.pawnshopPostcodes} </span> 
+										 </span> 
 										</p><p>	
 										Pawnshop Mail :<span
 										class="badge badge-default">
@@ -611,16 +578,7 @@
 						<tr>
 							<th>Picture</th>
 							<th>Post Name</th>
-							<th>Brand</th>
-							<th>Serial</th>
-							<th>Model</th>
-							<th>TypeCamera</th>
-							<th>CameraLen</th>
-							<th>Purchase</th>
-							<th>Production</th>
-							<th>Battery</th>
-							<th>Warranty</th>
-							<th>Description</th>
+							<th>รายละเอียด</th>
 							<th>Price Min</th>
 							<th>Price Max</th>
 							<th>Date</th>
@@ -635,18 +593,18 @@
 							<tbody>
 								<tr class="odd gradeX">
 									<td><img class="img-responsive"
-										src="images/uploadImage/${adEstimate.pawnerPostId.pawnerPostPicture }" /></td>
+										src="img/uploadimg/pawnerPost/${adEstimate.pawnerPostId.pawnerPostPicture }" /></td>
 									<td>${adEstimate.pawnerPostId.pawnerPostName}</td>
-									<td>${adEstimate.pawnerPostId.pawnerPostBrand}</td>
-									<td>${adEstimate.pawnerPostId.pawnerPostSerial}</td>
-									<td>${adEstimate.pawnerPostId.pawnerPostModel}</td>
-									<td>${adEstimate.pawnerPostId.pawnerPostTypeCamera}</td>
-									<td>${adEstimate.pawnerPostId.pawnerPostCameraLen}</td>
-									<td>${adEstimate.pawnerPostId.pawnerPostPurchase}</td>
-									<td>${adEstimate.pawnerPostId.pawnerPostProduction}</td>
-									<td>${adEstimate.pawnerPostId.pawnerPostBattery}</td>
-									<td>${adEstimate.pawnerPostId.pawnerPostWarranty}</td>
-									<td>${adEstimate.pawnerPostId.pawnerPostDescription}</td>
+									<td>${adEstimate.pawnerPostId.pawnerPostBrand}
+									${adEstimate.pawnerPostId.pawnerPostSerial}
+									${adEstimate.pawnerPostId.pawnerPostModel}
+									${adEstimate.pawnerPostId.pawnerPostTypeCamera}
+									${adEstimate.pawnerPostId.pawnerPostCameraLen}
+									${adEstimate.pawnerPostId.pawnerPostPurchase}
+									${adEstimate.pawnerPostId.pawnerPostProduction}
+									${adEstimate.pawnerPostId.pawnerPostBattery}
+									${adEstimate.pawnerPostId.pawnerPostWarranty}
+									${adEstimate.pawnerPostId.pawnerPostDescription}</td>
 									<td>${adEstimate.estimatePriceMin}</td>
 									<td>${adEstimate.estimatePriceMax}</td>
 									<td>${adEstimate.estimateDate}</td>
@@ -697,10 +655,8 @@
 										</p><p>	
 										Pawnshop Address :<span
 										class="badge badge-default">
-											${adEstimate.pawnshopId.pawnshopParish}
-											${adEstimate.pawnshopId.pawnshopDistrict}
 											${adEstimate.pawnshopId.pawnshopProvince}
-											${adEstimate.pawnshopId.pawnshopPostcodes} </span> 
+										 </span> 
 										</p><p>	
 										Pawnshop Mail :<span
 										class="badge badge-default">
@@ -727,15 +683,7 @@
 						<tr>
 							<th>Picture</th>
 							<th>Post Name</th>
-							<th>Brand</th>
-							<th>Serial</th>
-							<th>Model</th>
-							<th>Size</th> 
-							<th>Purchase</th>
-							<th>Production</th>
-							<th>Remote</th>
-							<th>Warranty</th>
-							<th>Description</th>
+							<th>รายละเอียด</th>
 							<th>Price Min</th>
 							<th>Price Max</th>
 							<th>Date</th>
@@ -750,17 +698,16 @@
 							<tbody>
 								<tr class="odd gradeX">
 									<td><img class="img-responsive"
-										src="images/uploadImage/${adEstimate.pawnerPostId.pawnerPostPicture }" /></td>
+										src="img/uploadimg/pawnerPost/${adEstimate.pawnerPostId.pawnerPostPicture }" /></td>
 									<td>${adEstimate.pawnerPostId.pawnerPostName}</td>
-									<td>${adEstimate.pawnerPostId.pawnerPostBrand}</td>
-									<td>${adEstimate.pawnerPostId.pawnerPostSerial}</td>
-									<td>${adEstimate.pawnerPostId.pawnerPostModel}</td>
-									<td>${adEstimate.pawnerPostId.pawnerPostSize}</td> 
-									<td>${adEstimate.pawnerPostId.pawnerPostPurchase}</td>
-									<td>${adEstimate.pawnerPostId.pawnerPostProduction}</td>
-									<td>${adEstimate.pawnerPostId.pawnerPostRemote}</td>
-									<td>${adEstimate.pawnerPostId.pawnerPostWarranty}</td>
-									<td>${adEstimate.pawnerPostId.pawnerPostDescription}</td>
+									<td>${adEstimate.pawnerPostId.pawnerPostBrand}
+									${adEstimate.pawnerPostId.pawnerPostSerial}
+									${adEstimate.pawnerPostId.pawnerPostModel}
+									${adEstimate.pawnerPostId.pawnerPostSize} 
+									${adEstimate.pawnerPostId.pawnerPostPurchase}
+									${adEstimate.pawnerPostId.pawnerPostProduction}
+									${adEstimate.pawnerPostId.pawnerPostWarranty}
+									${adEstimate.pawnerPostId.pawnerPostDescription}</td>
 									<td>${adEstimate.estimatePriceMin}</td>
 									<td>${adEstimate.estimatePriceMax}</td>
 									<td>${adEstimate.estimateDate}</td>
@@ -811,10 +758,8 @@
 										</p><p>	
 										Pawnshop Address :<span
 										class="badge badge-default">
-											${adEstimate.pawnshopId.pawnshopParish}
-											${adEstimate.pawnshopId.pawnshopDistrict}
 											${adEstimate.pawnshopId.pawnshopProvince}
-											${adEstimate.pawnshopId.pawnshopPostcodes} </span> 
+										 </span> 
 										</p><p>	
 										Pawnshop Mail :<span
 										class="badge badge-default">

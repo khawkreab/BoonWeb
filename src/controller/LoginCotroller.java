@@ -56,7 +56,7 @@ public class LoginCotroller {
 			if (request.getSession().getAttribute("id") != null) {
 				long userid = (long) request.getSession().getAttribute("id");
 				String usertype = (String) request.getSession().getAttribute("userType");
-				
+
 				if (usertype.equals("pawner")) {
 					pawner = pmService.findPawnerById(userid);
 					request.getSession().setAttribute("username",
@@ -72,8 +72,10 @@ public class LoginCotroller {
 					request.getSession().setAttribute("username", pawnshop.getPawnshopName());
 
 					/* set notification */
-					String notifiPawnshopFollowEstimate = Integer.toString(estimateService.findEstimateByPawnshopIdAndStatus(pawnshop.getPawnshopId(), "approve").size()
-							+ estimateService.findEstimateByPawnshopIdAndStatus(pawnshop.getPawnshopId(), "denai").size());
+					String notifiPawnshopFollowEstimate = Integer.toString(estimateService
+							.findEstimateByPawnshopIdAndStatus(pawnshop.getPawnshopId(), "approve").size()
+							+ estimateService.findEstimateByPawnshopIdAndStatus(pawnshop.getPawnshopId(), "denai")
+									.size());
 					request.getSession().setAttribute("notifiPawnshopFollowEstimate", notifiPawnshopFollowEstimate);
 					mv.addObject("pawnshop", pawnshop);
 				}
@@ -198,6 +200,7 @@ public class LoginCotroller {
 			request.getSession().removeAttribute("userType");
 			request.getSession().removeAttribute("notifiPawnerFollowPlege");
 			request.getSession().removeAttribute("notifiPawnshopFollowEstimate");
+			  
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -85,7 +85,7 @@
 						</a>
 					</li>
 					<li class="menu-icon">
-						<a href="logout.html" class="nav-link ">
+						<a href="logout.html" class="nav-link " id="logout">
 							<img src="img/ICONBOONYOUNG/log-out.png" height="50px" width="50px">
 							<i>ออกจากระบบ</i>
 						</a>
@@ -297,6 +297,13 @@
 <%
 	}
 %>
+
+<script type="text/javascript">
+$('#logout').click(function(){
+	sessionStorage.removeItem('carts')
+sessionStorage.removeItem('pawnercartSize')
+});
+</script>
 <!-- -------------------------------------------------------------------------------------------------- -->
 <!-- Bootstrap core JavaScript -->
 <script src="vendor/jquery/jquery.min.js"></script>

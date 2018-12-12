@@ -143,7 +143,6 @@
 										<tr>
 											<th>ID</th>
 											<th>Pawnshop Name</th>
-											<th>Credential</th>
 											<th>E-mail</th>
 											<th>Password</th>
 											<th>Status</th>
@@ -157,7 +156,6 @@
 											<tr class="odd gradeX">
 												<td>${pawnshop.pawnshopId}</td>
 												<td>${pawnshop.pawnshopName}</td>
-												<td>${pawnshop.pawnshopCredential}</td>
 												<td>${pawnshop.pawnshopEmail}</td>
 												<td>${pawnshop.pawnshopPassword}</td>
 												<td>${pawnshop.pawnshopState}</td>
